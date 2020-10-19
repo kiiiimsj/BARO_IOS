@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NFf-Ks-lre">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--About Store-->
+        <scene sceneID="oOM-qc-aYh">
+            <objects>
+                <viewController id="NFf-Ks-lre" customClass="AboutStore" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5NG-UF-3Ia">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OQq-P4-UBq" colorLabel="IBBuiltInLabel-Gray">
+                                <rect key="frame" x="0.0" y="94" width="414" height="135"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q3f-2f-NEV">
+                                    <size key="itemSize" width="118" height="134"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ASFirstBarCell" id="3bT-WT-e6V" customClass="ASFirstStoreCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="134"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dZC-BJ-gbF">
+                                            <rect key="frame" x="0.0" y="0.0" width="118" height="134"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5s-GI-bJq">
+                                                    <rect key="frame" x="5" y="5" width="108" height="124"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="e5s-GI-bJq" secondAttribute="bottom" constant="5" id="S5G-cO-cEt"/>
+                                                <constraint firstAttribute="trailing" secondItem="e5s-GI-bJq" secondAttribute="trailing" constant="5" id="VbC-em-dT6"/>
+                                                <constraint firstItem="e5s-GI-bJq" firstAttribute="top" secondItem="dZC-BJ-gbF" secondAttribute="top" constant="5" id="kJM-In-X6m"/>
+                                                <constraint firstItem="e5s-GI-bJq" firstAttribute="leading" secondItem="dZC-BJ-gbF" secondAttribute="leading" constant="5" id="x8B-Pe-z4i"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="118" height="134"/>
+                                        <connections>
+                                            <outlet property="state" destination="e5s-GI-bJq" id="Phx-0B-Jef"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gbn-G0-7Ms">
+                                <rect key="frame" x="0.0" y="229" width="414" height="633"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wJe-Z1-ija">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RtK-gG-fti">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Uku-rS-lqZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rMy-9g-6CR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gbn-G0-7Ms" firstAttribute="top" secondItem="OQq-P4-UBq" secondAttribute="bottom" id="3cI-FY-2Bk"/>
+                            <constraint firstItem="rMy-9g-6CR" firstAttribute="bottom" secondItem="gbn-G0-7Ms" secondAttribute="bottom" id="6p1-4e-VEd"/>
+                            <constraint firstItem="rMy-9g-6CR" firstAttribute="trailing" secondItem="gbn-G0-7Ms" secondAttribute="trailing" id="A5G-gW-e8v"/>
+                            <constraint firstItem="OQq-P4-UBq" firstAttribute="top" secondItem="rMy-9g-6CR" secondAttribute="top" constant="50" id="AGN-Yn-UjF"/>
+                            <constraint firstItem="gbn-G0-7Ms" firstAttribute="leading" secondItem="rMy-9g-6CR" secondAttribute="leading" id="Onl-Z8-9qo"/>
+                            <constraint firstItem="OQq-P4-UBq" firstAttribute="leading" secondItem="rMy-9g-6CR" secondAttribute="leading" id="Q36-y1-hfq"/>
+                            <constraint firstItem="rMy-9g-6CR" firstAttribute="bottom" secondItem="OQq-P4-UBq" secondAttribute="bottom" constant="633" id="bQI-Bp-qNp"/>
+                            <constraint firstItem="OQq-P4-UBq" firstAttribute="trailing" secondItem="rMy-9g-6CR" secondAttribute="trailing" id="qfd-dB-eeR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="FirstBar" destination="OQq-P4-UBq" id="FJD-32-7ac"/>
+                        <outlet property="FirstPage" destination="gbn-G0-7Ms" id="oaP-GA-hek"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pqT-vZ-Vo3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-284.05797101449275" y="-1.3392857142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
