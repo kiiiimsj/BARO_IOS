@@ -53,7 +53,6 @@ class CallRequest {
         ).validate().responseJSON { response in
 
             let statusCode = StatusCode(rawValue: response.response?.statusCode ?? 500)
-
             switch statusCode {
             case .success:
                 switch response.result {
