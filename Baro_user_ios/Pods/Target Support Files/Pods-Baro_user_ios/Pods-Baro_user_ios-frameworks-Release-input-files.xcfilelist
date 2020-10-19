@@ -1,0 +1,15 @@
+${PODS_ROOT}/Target Support Files/Pods-Baro_user_ios/Pods-Baro_user_ios-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AlignedCollectionViewFlowLayout/AlignedCollectionViewFlowLayout.framework
+${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework
+${BUILT_PRODUCTS_DIR}/IBMSwiftCircuitBreaker/CircuitBreaker.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/KituraContracts/KituraContracts.framework
+${BUILT_PRODUCTS_DIR}/KituraKit/KituraKit.framework
+${BUILT_PRODUCTS_DIR}/LoggerAPI/LoggerAPI.framework
+${BUILT_PRODUCTS_DIR}/Logging/Logging.framework
+${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
+${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
+${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/SwiftyRequest/SwiftyRequest.framework
