@@ -42,10 +42,15 @@ extension MainPageController : UITableViewDelegate, UITableViewDataSource {
             let cell = tableViewEvent.dequeueReusableCell(withIdentifier: "MainPageEvent", for: indexPath)
             return cell
         }
-        else {
+        else if(tableView == tableViewType){
             let cell = tableViewType.dequeueReusableCell(withIdentifier: "MainPageType", for: indexPath)
             return cell
         }
+        else {
+            let cell = tableViewUltra.dequeueReusableCell(withIdentifier: "MainPageUltraStore", for: indexPath)
+            return cell
+        }
+        
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
