@@ -40,18 +40,13 @@ class CallRequest {
 
                 print(error.errorDescription)
             }
-
-
         }
-
-
     }
 
     func post(method : HTTPMethod, param: [String : Any]? = nil,url : String ,id : Int? = nil, success : @escaping(JSON) -> ()) {
         //1.Post Parameter
         AF.request(url, method: method, parameters: param,encoding:JSONEncoding.default
         ).validate().responseJSON { response in
-
             let statusCode = StatusCode(rawValue: response.response?.statusCode ?? 500)
             switch statusCode {
             case .success:
@@ -59,10 +54,7 @@ class CallRequest {
                 case .success(let value):
                     let json = JSON(value)
                     //2.클로저 = 함수자체를 매개변수로 해주겠다.
-
                     success(json)
-
-//                    print(json)
                 case .failure(let error):
 
                     print(error.errorDescription)
