@@ -11,7 +11,7 @@
 		043DACAF253DA54600C70102 /* UltraStoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACAE253DA54600C70102 /* UltraStoreListModel.swift */; };
 		043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */; };
 		043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACB6253DABFB00C70102 /* EventListModel.swift */; };
-		048D5537253B1B06009E9CE4 /* UrlMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D5536253B1B06009E9CE4 /* UrlMaker.swift */; };
+		043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACBA253DAC5600C70102 /* UrlMaker.swift */; };
 		048D55A3253C67B8009E9CE4 /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048D55A2253C67B8009E9CE4 /* MainPage.storyboard */; };
 		048D55A6253C67EC009E9CE4 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D55A5253C67EC009E9CE4 /* MainPageController.swift */; };
 		048D55B6253D2E0F009E9CE4 /* MainPageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D55B5253D2E0F009E9CE4 /* MainPageEvent.swift */; };
@@ -32,7 +32,7 @@
 		043DACAE253DA54600C70102 /* UltraStoreListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltraStoreListModel.swift; sourceTree = "<group>"; };
 		043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageUltraStoreCell.swift; sourceTree = "<group>"; };
 		043DACB6253DABFB00C70102 /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
-		048D5536253B1B06009E9CE4 /* UrlMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UrlMaker.swift; path = ../../../baro_user_ios/BARO_USER/BARO_USER/URL/UrlMaker.swift; sourceTree = "<group>"; };
+		043DACBA253DAC5600C70102 /* UrlMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlMaker.swift; sourceTree = "<group>"; };
 		048D55A2253C67B8009E9CE4 /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
 		048D55A5253C67EC009E9CE4 /* MainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageController.swift; sourceTree = "<group>"; };
 		048D55B5253D2E0F009E9CE4 /* MainPageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageEvent.swift; sourceTree = "<group>"; };
@@ -87,7 +87,6 @@
 			children = (
 				048D55B9253D575A009E9CE4 /* TypeListModel.swift */,
 				043DACAE253DA54600C70102 /* UltraStoreListModel.swift */,
-				048D5536253B1B06009E9CE4 /* UrlMaker.swift */,
 				04B86799253B0ECD00336175 /* AppDelegate.swift */,
 				04B8679B253B0ECD00336175 /* SceneDelegate.swift */,
 				04B8679D253B0ECD00336175 /* ViewController.swift */,
@@ -103,6 +102,7 @@
 				043DACAB253DA51500C70102 /* MainPageUltraStore.swift */,
 				043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */,
 				043DACB6253DABFB00C70102 /* EventListModel.swift */,
+				043DACBA253DAC5600C70102 /* UrlMaker.swift */,
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -242,13 +242,13 @@
 				043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */,
 				04B8679E253B0ECD00336175 /* ViewController.swift in Sources */,
 				04B8679A253B0ECD00336175 /* AppDelegate.swift in Sources */,
+				043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */,
 				043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */,
 				048D55A6253C67EC009E9CE4 /* MainPageController.swift in Sources */,
 				048D55B6253D2E0F009E9CE4 /* MainPageEvent.swift in Sources */,
 				043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */,
 				04B8679C253B0ECD00336175 /* SceneDelegate.swift in Sources */,
 				048D55E3253D83AD009E9CE4 /* MainPageTypeCell.swift in Sources */,
-				048D5537253B1B06009E9CE4 /* UrlMaker.swift in Sources */,
 				048D55BA253D575A009E9CE4 /* TypeListModel.swift in Sources */,
 				048D55E7253D91C6009E9CE4 /* MainPageEventCell.swift in Sources */,
 				043DACAF253DA54600C70102 /* UltraStoreListModel.swift in Sources */,
