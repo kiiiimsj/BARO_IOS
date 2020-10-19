@@ -22,9 +22,14 @@ class MainPageUltraStore : UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        networkModel.post(method: .post, url: networkURL.ultraList) { json in
+        let jsonObject : [String : Any ] = [
+        "latitude" : "10.11",
+        "longitude" : "10.22"
+        ]
+        
+        networkModel.post(method: .post, param: jsonObject, url: networkURL.ultraList) { (json) in
             var ultraModel = UltraStoreListModel()
-            for item in json["ultra"].array! {
+            for item in json["store"].array! {
                 ultraModel.store_name = item["store_name"].stringValue
                 ultraModel.store_info = item["store_info"].stringValue
                 ultraModel.store_image = item["store_image"].stringValue
@@ -45,7 +50,10 @@ extension MainPageUltraStore : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ultra = ultraList[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageUltraStoreCell", for: indexPath) as! MainPageUltraStoreCell
-        //cell에 추가해주기
+        cell.ultraName.text = ultra.store_name
+        print("qqq",ultra.store_name)
+        cell.ultraInfo.text = ultra.store_info
+        cell.ultraImage.kf.setImage(with: URL(string: "http://15.165.22.64:8080/ImageStore.do?image_name="+ultra.store_image))
         return cell
     }
     
