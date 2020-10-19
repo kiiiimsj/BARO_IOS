@@ -15,12 +15,15 @@ class MainPageController: UIViewController {
     
     @IBOutlet weak var tableViewEvent: UITableView!
     
+    @IBOutlet weak var tableViewUltra: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableViewEvent.separatorStyle = .none
         tableViewType.separatorStyle = .none
+        tableViewUltra.separatorStyle = .none
         
         
     }

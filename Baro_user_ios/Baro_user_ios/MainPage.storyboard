@@ -73,6 +73,10 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="iuh-IZ-CHh" id="Khb-Z3-hCr"/>
+                                                        <outlet property="delegate" destination="iuh-IZ-CHh" id="OA4-Tv-C1a"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -241,9 +245,16 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="iuh-IZ-CHh" id="qJo-0P-JJB"/>
+                                                        <outlet property="delegate" destination="iuh-IZ-CHh" id="noI-aE-oSX"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="MlF-ZH-1cc" id="6ov-ES-kxX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -265,6 +276,7 @@
                     <connections>
                         <outlet property="tableViewEvent" destination="xBS-do-MhL" id="B7e-65-3kP"/>
                         <outlet property="tableViewType" destination="Voh-dG-vVs" id="7FE-Ac-hIS"/>
+                        <outlet property="tableViewUltra" destination="J5D-qu-ZX7" id="nLe-uH-QIA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUD-l0-HIA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
