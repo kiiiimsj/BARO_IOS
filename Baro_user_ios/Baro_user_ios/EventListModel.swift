@@ -10,7 +10,6 @@ import Foundation
 import Foundation
 
 struct EventListModel {
-    print("lee_seoung")
     var event_id = "이벤트아이디"
     var event_image = "이벤트이미지"
 }
