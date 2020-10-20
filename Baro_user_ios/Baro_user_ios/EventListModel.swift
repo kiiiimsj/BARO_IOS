@@ -4,9 +4,6 @@
 //
 //  Created by 김성재 on 2020/10/19.
 //
-
-import Foundation
-
 import Foundation
 
 struct EventListModel {

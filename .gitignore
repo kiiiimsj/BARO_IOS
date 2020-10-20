@@ -5,6 +5,10 @@
 ### macOS ###\
 # General\
 .DS_Store\
+.DS_Store
+*.DS_Store
+*.DS_Store\
+**/.DS_Store
 .AppleDouble\
 .LSOverride\
 \
@@ -135,3 +139,4 @@ Baro_user_ios/Baro_user_ios.xcworkspace/xcuserdata/kimseongjae.xcuserdatad/UserI
 \
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,macos\
 }
+Baro_user_ios/Baro_user_ios.xcworkspace/xcuserdata/a..xcuserdatad/UserInterfaceState.xcuserstate
