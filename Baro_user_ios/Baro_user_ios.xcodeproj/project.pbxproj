@@ -31,6 +31,7 @@
 		E33D8542253DC89400E50BAC /* StoreMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8541253DC89400E50BAC /* StoreMenuModel.swift */; };
 		E33D8546253DC8C800E50BAC /* ASFirstStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8545253DC8C800E50BAC /* ASFirstStoreCell.swift */; };
 		E33D855B253ECB5000E50BAC /* AboutStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33D855A253ECB5000E50BAC /* AboutStore.storyboard */; };
+		E33D8560253EF24A00E50BAC /* ASCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D855F253EF24900E50BAC /* ASCategoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		E33D8541253DC89400E50BAC /* StoreMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenuModel.swift; sourceTree = "<group>"; };
 		E33D8545253DC8C800E50BAC /* ASFirstStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASFirstStoreCell.swift; sourceTree = "<group>"; };
 		E33D855A253ECB5000E50BAC /* AboutStore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutStore.storyboard; sourceTree = "<group>"; };
+		E33D855F253EF24900E50BAC /* ASCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASCategoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				E33D853D253DC86A00E50BAC /* StoreMenuController.swift */,
 				E33D8541253DC89400E50BAC /* StoreMenuModel.swift */,
 				E33D855A253ECB5000E50BAC /* AboutStore.storyboard */,
+				E33D855F253EF24900E50BAC /* ASCategoryCell.swift */,
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				04B8679C253B0ECD00336175 /* SceneDelegate.swift in Sources */,
 				E33D8546253DC8C800E50BAC /* ASFirstStoreCell.swift in Sources */,
 				E33D853B253DC69700E50BAC /* StoreInfoController.swift in Sources */,
+				E33D8560253EF24A00E50BAC /* ASCategoryCell.swift in Sources */,
 				048D55E3253D83AD009E9CE4 /* MainPageTypeCell.swift in Sources */,
 				048D55BA253D575A009E9CE4 /* TypeListModel.swift in Sources */,
 				048D55E7253D91C6009E9CE4 /* MainPageEventCell.swift in Sources */,
