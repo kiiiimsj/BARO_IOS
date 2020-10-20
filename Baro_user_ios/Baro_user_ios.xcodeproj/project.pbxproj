@@ -25,12 +25,12 @@
 		04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B867A2253B0ECF00336175 /* Assets.xcassets */; };
 		04B867A6253B0ECF00336175 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B867A4253B0ECF00336175 /* LaunchScreen.storyboard */; };
 		5F09CCA5A7FA86F7A3D8ADA6 /* Pods_Baro_user_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868EF0B056B69E5F372574 /* Pods_Baro_user_ios.framework */; };
-		E33D8528253DBBD100E50BAC /* AboutStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33D8527253DBBD100E50BAC /* AboutStore.storyboard */; };
 		E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8536253DC63600E50BAC /* AboutStore.swift */; };
 		E33D853B253DC69700E50BAC /* StoreInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D853A253DC69700E50BAC /* StoreInfoController.swift */; };
 		E33D853E253DC86A00E50BAC /* StoreMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D853D253DC86A00E50BAC /* StoreMenuController.swift */; };
 		E33D8542253DC89400E50BAC /* StoreMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8541253DC89400E50BAC /* StoreMenuModel.swift */; };
 		E33D8546253DC8C800E50BAC /* ASFirstStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8545253DC8C800E50BAC /* ASFirstStoreCell.swift */; };
+		E33D855B253ECB5000E50BAC /* AboutStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33D855A253ECB5000E50BAC /* AboutStore.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,12 +56,12 @@
 		14573B5E084CAEEB4648A4E4 /* Pods-Baro_user_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baro_user_ios.release.xcconfig"; path = "Target Support Files/Pods-Baro_user_ios/Pods-Baro_user_ios.release.xcconfig"; sourceTree = "<group>"; };
 		6FE1B18B198B2DAE07AD0D8A /* Pods-Baro_user_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baro_user_ios.debug.xcconfig"; path = "Target Support Files/Pods-Baro_user_ios/Pods-Baro_user_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		B9868EF0B056B69E5F372574 /* Pods_Baro_user_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Baro_user_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E33D8527253DBBD100E50BAC /* AboutStore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AboutStore.storyboard; path = ../../../BARO_USERR_IOS/Baro_user_ios/Baro_user_ios/AboutStore.storyboard; sourceTree = "<group>"; };
 		E33D8536253DC63600E50BAC /* AboutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutStore.swift; sourceTree = "<group>"; };
 		E33D853A253DC69700E50BAC /* StoreInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoController.swift; sourceTree = "<group>"; };
 		E33D853D253DC86A00E50BAC /* StoreMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenuController.swift; sourceTree = "<group>"; };
 		E33D8541253DC89400E50BAC /* StoreMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenuModel.swift; sourceTree = "<group>"; };
 		E33D8545253DC8C800E50BAC /* ASFirstStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASFirstStoreCell.swift; sourceTree = "<group>"; };
+		E33D855A253ECB5000E50BAC /* AboutStore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutStore.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,6 @@
 		04B86798253B0ECD00336175 /* Baro_user_ios */ = {
 			isa = PBXGroup;
 			children = (
-				E33D8527253DBBD100E50BAC /* AboutStore.storyboard */,
 				E33D8545253DC8C800E50BAC /* ASFirstStoreCell.swift */,
 				048D55B9253D575A009E9CE4 /* TypeListModel.swift */,
 				043DACAE253DA54600C70102 /* UltraStoreListModel.swift */,
@@ -121,6 +120,7 @@
 				E33D853A253DC69700E50BAC /* StoreInfoController.swift */,
 				E33D853D253DC86A00E50BAC /* StoreMenuController.swift */,
 				E33D8541253DC89400E50BAC /* StoreMenuModel.swift */,
+				E33D855A253ECB5000E50BAC /* AboutStore.storyboard */,
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -201,10 +201,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E33D8528253DBBD100E50BAC /* AboutStore.storyboard in Resources */,
 				048D55A3253C67B8009E9CE4 /* MainPage.storyboard in Resources */,
 				04B867A6253B0ECF00336175 /* LaunchScreen.storyboard in Resources */,
 				04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */,
+				E33D855B253ECB5000E50BAC /* AboutStore.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
