@@ -37,6 +37,7 @@ class MainPageType : UITableViewCell {
             self.collectionView.reloadData()
         }
     }
+    
 }
 
 extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -51,11 +52,32 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageTypeCell", for: indexPath) as! MainPageTypeCell
         cell.typeName.text = type.type_name
         cell.typeImage.kf.setImage(with: URL(string: "http://15.165.22.64:8080/ImageType.do?image_name=" + type.type_image))
+        
+        //클릭시
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
+         
         return cell
+    }
+    
+    
+    //type클릭시 이벤트
+    @objc func tap(_ sender: UITapGestureRecognizer) {
+        let location = sender.location(in: self.collectionView)
+        let indexPath = self.collectionView.indexPathForItem(at: location)
+        let typeCode = typeList[indexPath!.row].type_code
+        if let index = indexPath {
+            print("tap!! index : \(typeCode)")
+            
+            
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          return CGSize(width: 100, height: 90)
     }
+    
+    
+    
+    
 
 }

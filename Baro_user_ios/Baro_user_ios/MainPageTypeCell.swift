@@ -16,5 +16,7 @@ class MainPageTypeCell : UICollectionViewCell {
     
     override func prepareForReuse() {
         typeImage.image = nil
+        
     }
+    
 }

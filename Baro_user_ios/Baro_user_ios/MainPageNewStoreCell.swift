@@ -16,6 +16,6 @@ class MainPageNewStoreCell : UICollectionViewCell {
     @IBOutlet weak var newStoreInfo: UILabel!
     
     override func prepareForReuse() {
-        //newStoreImage.image = nil
+        newStoreImage.image = nil
     }
 }
