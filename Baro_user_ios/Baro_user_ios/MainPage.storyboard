@@ -203,7 +203,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="197"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <subviews>
-                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nGM-7I-Z9k">
+                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nGM-7I-Z9k">
                                                                                         <rect key="frame" x="6" y="3" width="346" height="133"/>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테스트카페입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhS-TX-njO">
@@ -394,6 +394,9 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-LU-sua">
                                 <rect key="frame" x="355" y="48" width="23" height="22"/>
                                 <state key="normal" title="Button" image="off"/>
+                                <connections>
+                                    <action selector="alertClick:" destination="901-Ku-IQw" eventType="touchUpInside" id="djK-tr-DCX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOH-RC-Xk3">
                                 <rect key="frame" x="317" y="48" width="26" height="22"/>
@@ -426,6 +429,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="1300"/>
                     <connections>
+                        <outlet property="alertButton" destination="Laq-LU-sua" id="YOH-f9-Vnf"/>
                         <outlet property="blurView" destination="nX4-Ny-36C" id="8xO-A0-g56"/>
                         <outlet property="searchPopupView" destination="LWy-Tg-9VK" id="uiP-gy-zDX"/>
                         <outlet property="tableViewEvent" destination="I9T-aL-jQB" id="e74-C5-tun"/>

@@ -10,6 +10,7 @@ import UIKit
 class MainPageController: UIViewController {
     
     
+    //table list
     @IBOutlet weak var tableViewEvent: UITableView!
     
     @IBOutlet weak var tableViewType: UITableView!
@@ -22,26 +23,34 @@ class MainPageController: UIViewController {
     //blur view
     @IBOutlet var blurView: UIVisualEffectView!
     
+    //alert이미지 - 아래에서 off/on체크해주기
+    @IBOutlet weak var alertButton: UIButton!
     
-    //search 버튼
+    //alert 클릭시
+    @IBAction func alertClick(_ sender: Any) {
+        //alert페이지로 넘기기
+    }
     
+    
+    //search 버튼 클릭시
     @IBAction func searchButton(_ sender: Any) {
         animateIn(desiredView: blurView)
         animateIn(desiredView: searchPopupView)
     }
     
-    
-    
     @IBAction func searchCompleteButton(_ sender: Any) {
+        //검색한 가게리스트로 넘어가기
     }
     
+    //취소버튼도 하나 만들기
+    
+    
+    //search팝업뷰
     @IBOutlet var searchPopupView: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
         
         tableViewEvent.separatorStyle = .none
         tableViewType.separatorStyle = .none
@@ -84,6 +93,7 @@ extension MainPageController : UITableViewDelegate, UITableViewDataSource {
         }
         else if(tableView == tableViewType){
             let cell = tableViewType.dequeueReusableCell(withIdentifier: "MainPageType", for: indexPath)
+            
             return cell
         }
         else if(tableView == tableViewUltra){
@@ -96,9 +106,13 @@ extension MainPageController : UITableViewDelegate, UITableViewDataSource {
         }
         
     }
+    
+   
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height
     }
+    
+    
 
 }
