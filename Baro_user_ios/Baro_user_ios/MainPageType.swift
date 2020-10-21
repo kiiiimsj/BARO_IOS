@@ -16,8 +16,6 @@ class MainPageType : UITableViewCell {
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
-    
-   
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
