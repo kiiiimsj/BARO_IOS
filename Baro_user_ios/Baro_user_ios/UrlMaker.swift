@@ -128,5 +128,7 @@ class NetWorkURL {
     let eventList = "http://15.165.22.64:8080/EventFindAll.do"
 
     let ultraList = "http://15.165.22.64:8080/StoreFindByUltra.do"
+    
+    let newStoreList = "http://15.165.22.64:8080/StoreFindByNew.do"
 }
 
