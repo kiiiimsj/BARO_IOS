@@ -9,13 +9,18 @@ import UIKit
 import Kingfisher
 
 
+protocol CellDelegate: class {
+    func tapClick(tag: String)
+}
 class MainPageType : UITableViewCell {
     
-    
+    var delegate: CellDelegate?
+
     var typeList = [TypeListModel]()
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
+   
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -24,7 +29,10 @@ class MainPageType : UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        
+        configure()
+    }
+    
+    func configure(){
         networkModel.post(method: .get, url: networkURL.typeListURL) { json in
             var typeModel = TypeListModel()
             for item in json["type"].array! {
@@ -52,7 +60,7 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageTypeCell", for: indexPath) as! MainPageTypeCell
         cell.typeName.text = type.type_name
         cell.typeImage.kf.setImage(with: URL(string: "http://15.165.22.64:8080/ImageType.do?image_name=" + type.type_image))
-        
+      
         //클릭시
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
          
@@ -62,13 +70,14 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
     
     //type클릭시 이벤트
     @objc func tap(_ sender: UITapGestureRecognizer) {
+        
+     
         let location = sender.location(in: self.collectionView)
         let indexPath = self.collectionView.indexPathForItem(at: location)
         let typeCode = typeList[indexPath!.row].type_code
         if let index = indexPath {
             print("tap!! index : \(typeCode)")
-            
-            
+            delegate?.tapClick(tag: typeCode)
         }
     }
     
@@ -76,8 +85,6 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
          return CGSize(width: 100, height: 90)
     }
     
-    
-    
-    
 
+    
 }
