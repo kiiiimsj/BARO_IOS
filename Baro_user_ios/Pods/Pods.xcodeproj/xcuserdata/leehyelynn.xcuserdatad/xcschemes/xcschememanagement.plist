@@ -4,15 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
 		<key>Alamofire.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>4</integer>
 		</dict>
 		<key>AlignedCollectionViewFlowLayout.xcscheme</key>
 		<dict>
@@ -21,8 +18,10 @@
 		</dict>
 		<key>AlignedCollectionViewFlowLayout.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>5</integer>
 		</dict>
 		<key>CryptoSwift.xcscheme</key>
 		<dict>
@@ -31,8 +30,10 @@
 		</dict>
 		<key>CryptoSwift.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>6</integer>
 		</dict>
 		<key>IBMSwiftCircuitBreaker.xcscheme</key>
 		<dict>
@@ -41,8 +42,10 @@
 		</dict>
 		<key>IBMSwiftCircuitBreaker.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>7</integer>
 		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
@@ -51,18 +54,17 @@
 		</dict>
 		<key>Kingfisher.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>9</integer>
-		</dict>
-		<key>KituraContracts.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>8</integer>
 		</dict>
 		<key>KituraContracts.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>9</integer>
 		</dict>
 		<key>KituraKit.xcscheme</key>
 		<dict>
@@ -71,8 +73,10 @@
 		</dict>
 		<key>KituraKit.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>10</integer>
 		</dict>
 		<key>LoggerAPI.xcscheme</key>
 		<dict>
@@ -81,8 +85,10 @@
 		</dict>
 		<key>LoggerAPI.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>11</integer>
 		</dict>
 		<key>Logging.xcscheme</key>
 		<dict>
@@ -91,8 +97,10 @@
 		</dict>
 		<key>Logging.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>12</integer>
 		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
@@ -101,8 +109,10 @@
 		</dict>
 		<key>ObjectMapper.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>13</integer>
 		</dict>
 		<key>Pods-Baro_user_ios.xcscheme</key>
 		<dict>
@@ -111,8 +121,10 @@
 		</dict>
 		<key>Pods-Baro_user_ios.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>14</integer>
 		</dict>
 		<key>Realm.xcscheme</key>
 		<dict>
@@ -121,8 +133,10 @@
 		</dict>
 		<key>Realm.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>15</integer>
 		</dict>
 		<key>RealmSwift.xcscheme</key>
 		<dict>
@@ -131,8 +145,10 @@
 		</dict>
 		<key>RealmSwift.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>0</integer>
 		</dict>
 		<key>SwiftyBootpay.xcscheme</key>
 		<dict>
@@ -141,8 +157,10 @@
 		</dict>
 		<key>SwiftyBootpay.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>2</integer>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
@@ -151,8 +169,10 @@
 		</dict>
 		<key>SwiftyJSON.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>1</integer>
 		</dict>
 		<key>SwiftyRequest.xcscheme</key>
 		<dict>
@@ -161,9 +181,13 @@
 		</dict>
 		<key>SwiftyRequest.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>3</integer>
 		</dict>
 	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict/>
 </dict>
 </plist>

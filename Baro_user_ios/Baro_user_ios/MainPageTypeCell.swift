@@ -9,7 +9,14 @@ import UIKit
 
 class MainPageTypeCell : UICollectionViewCell {
     
+    
     @IBOutlet weak var typeImage: UIImageView!
+    
     @IBOutlet weak var typeName: UILabel!
+    
+    override func prepareForReuse() {
+        typeImage.image = nil
+        
+    }
     
 }
