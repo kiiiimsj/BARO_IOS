@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aty-7L-irg">
-                                <rect key="frame" x="141" y="97" width="80" height="42"/>
+                                <rect key="frame" x="141" y="97" width="78" height="42"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNL-Zd-SjN" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="1" y="163" width="360" height="477"/>
+                                <rect key="frame" x="0.0" y="163" width="360" height="477"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tA0-kB-NEk">
                                         <rect key="frame" x="20" y="78" width="88" height="21"/>
@@ -155,9 +155,9 @@
                             <constraint firstItem="qom-zU-dWl" firstAttribute="trailing" secondItem="aty-7L-irg" secondAttribute="trailing" constant="141" id="0nX-mz-j37"/>
                             <constraint firstItem="aty-7L-irg" firstAttribute="leading" secondItem="qom-zU-dWl" secondAttribute="leading" constant="141" id="6Bf-sd-f5Q"/>
                             <constraint firstItem="xNL-Zd-SjN" firstAttribute="bottom" secondItem="qom-zU-dWl" secondAttribute="bottom" id="FTp-sH-gv1"/>
-                            <constraint firstItem="qom-zU-dWl" firstAttribute="trailing" secondItem="xNL-Zd-SjN" secondAttribute="trailing" constant="1" id="T7b-eY-Nch"/>
+                            <constraint firstItem="qom-zU-dWl" firstAttribute="trailing" secondItem="xNL-Zd-SjN" secondAttribute="trailing" id="T7b-eY-Nch"/>
                             <constraint firstItem="xNL-Zd-SjN" firstAttribute="top" secondItem="aty-7L-irg" secondAttribute="bottom" constant="24" id="cre-Vd-2Ua"/>
-                            <constraint firstItem="xNL-Zd-SjN" firstAttribute="leading" secondItem="qom-zU-dWl" secondAttribute="leading" constant="1" id="kT0-Xu-bWm"/>
+                            <constraint firstItem="xNL-Zd-SjN" firstAttribute="leading" secondItem="qom-zU-dWl" secondAttribute="leading" id="kT0-Xu-bWm"/>
                             <constraint firstItem="aty-7L-irg" firstAttribute="top" secondItem="qom-zU-dWl" secondAttribute="top" constant="97" id="yT0-d8-1JW"/>
                         </constraints>
                     </view>
