@@ -20,6 +20,10 @@ class MainPageType : UITableViewCell {
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
+<<<<<<< HEAD
+=======
+    
+>>>>>>> parent of 90138ff... Merge branch 'master' into hty
    
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -45,7 +49,6 @@ class MainPageType : UITableViewCell {
             self.collectionView.reloadData()
         }
     }
-    
 }
 
 extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -60,6 +63,7 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageTypeCell", for: indexPath) as! MainPageTypeCell
         cell.typeName.text = type.type_name
         cell.typeImage.kf.setImage(with: URL(string: "http://15.165.22.64:8080/ImageType.do?image_name=" + type.type_image))
+<<<<<<< HEAD
       
         //클릭시
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
@@ -85,6 +89,14 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
          return CGSize(width: 100, height: 90)
     }
     
+=======
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+         return CGSize(width: 100, height: 90)
+    }
+>>>>>>> parent of 90138ff... Merge branch 'master' into hty
 
     
 }

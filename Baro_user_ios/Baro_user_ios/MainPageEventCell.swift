@@ -9,9 +9,7 @@ import UIKit
 
 class MainPageEventCell : UICollectionViewCell {
     
-    @IBOutlet weak var eventImage: UIImageView!
     
-    override func prepareForReuse() {
-        eventImage.image = nil
-    }
+    @IBOutlet weak var eventImage: UIImageView!
+
 }

@@ -9,11 +9,10 @@ import UIKit
 
 class MainPageTypeCell : UICollectionViewCell {
     
-    
     @IBOutlet weak var typeImage: UIImageView!
-    
     @IBOutlet weak var typeName: UILabel!
     
+<<<<<<< HEAD
     override func prepareForReuse() {
         typeImage.image = nil
         
@@ -21,4 +20,6 @@ class MainPageTypeCell : UICollectionViewCell {
     
     
     
+=======
+>>>>>>> parent of 90138ff... Merge branch 'master' into hty
 }
