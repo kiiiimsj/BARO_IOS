@@ -9,6 +9,9 @@ import UIKit
 
 class MainPageController: UIViewController {
     
+    let typeList = TypeListModel()
+    
+    
     
     //table list
     @IBOutlet weak var tableViewEvent: UITableView!
@@ -88,31 +91,44 @@ extension MainPageController : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView == tableViewEvent){
-            let cell = tableViewEvent.dequeueReusableCell(withIdentifier: "MainPageEvent", for: indexPath)
+            let cell = tableViewEvent.dequeueReusableCell(withIdentifier: "MainPageEvent", for: indexPath) as! MainPageEvent
             return cell
         }
         else if(tableView == tableViewType){
-            let cell = tableViewType.dequeueReusableCell(withIdentifier: "MainPageType", for: indexPath)
-            
+            let cell = tableViewType.dequeueReusableCell(withIdentifier: "MainPageType", for: indexPath) as! MainPageType
+            cell.delegate = self
+            cell.tag = indexPath.row
             return cell
         }
         else if(tableView == tableViewUltra){
-            let cell = tableViewUltra.dequeueReusableCell(withIdentifier: "MainPageUltraStore", for: indexPath)
+            let cell = tableViewUltra.dequeueReusableCell(withIdentifier: "MainPageUltraStore", for: indexPath) as! MainPageUltraStore
             return cell
         }
         else {
-            let cell = tableViewNewStore.dequeueReusableCell(withIdentifier: "MainPageNewStore", for: indexPath)
+            let cell = tableViewNewStore.dequeueReusableCell(withIdentifier: "MainPageNewStore", for: indexPath) as! MainPageNewStore
             return cell
         }
         
     }
-    
    
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if(tableView == tableViewType) {
+            self.performSegue(withIdentifier: "MainPageType", sender: nil)
+            print("oooo")
+        }
+    }
+}
 
+extension MainPageController : CellDelegate {
+    func tapClick(tag: String) {
+        print(tag)
+    }
+    
+    
 }

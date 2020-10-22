@@ -19,4 +19,6 @@ class MainPageTypeCell : UICollectionViewCell {
         
     }
     
+    
+    
 }
