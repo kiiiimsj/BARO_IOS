@@ -304,7 +304,7 @@
                     <view key="view" contentMode="scaleToFill" id="U4J-Sb-Vg4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="690"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Q3K-jD-3XC"/>
+                        <viewLayoutGuide key="safeArea" id="GOe-2y-jGO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
