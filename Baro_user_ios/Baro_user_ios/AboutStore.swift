@@ -102,7 +102,6 @@ class AboutStore : UIViewController {
         switch index {
         case 0:
             (VC as! StoreMenuController).categories = self.categories
-            (VC as! StoreMenuController).menus = self.union
             break
         case 1:
             (VC as! StoreInfoController).StoreInfo = self.StoreInfo
