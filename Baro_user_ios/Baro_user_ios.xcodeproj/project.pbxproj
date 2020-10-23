@@ -46,6 +46,8 @@
 		E33D8546253DC8C800E50BAC /* ASFirstStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8545253DC8C800E50BAC /* ASFirstStoreCell.swift */; };
 		E33D855B253ECB5000E50BAC /* AboutStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33D855A253ECB5000E50BAC /* AboutStore.storyboard */; };
 		E33D8560253EF24A00E50BAC /* ASCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D855F253EF24900E50BAC /* ASCategoryCell.swift */; };
+		E33D8563253F163000E50BAC /* StoreMenu2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8562253F163000E50BAC /* StoreMenu2Controller.swift */; };
+		E33D8566253F20E200E50BAC /* ASMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8565253F20E200E50BAC /* ASMenuCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		E33D8545253DC8C800E50BAC /* ASFirstStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASFirstStoreCell.swift; sourceTree = "<group>"; };
 		E33D855A253ECB5000E50BAC /* AboutStore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutStore.storyboard; sourceTree = "<group>"; };
 		E33D855F253EF24900E50BAC /* ASCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASCategoryCell.swift; sourceTree = "<group>"; };
+		E33D8562253F163000E50BAC /* StoreMenu2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenu2Controller.swift; sourceTree = "<group>"; };
+		E33D8565253F20E200E50BAC /* ASMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASMenuCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,8 @@
 				E33D855F253EF24900E50BAC /* ASCategoryCell.swift */,
 				048A0BE12541ACBE007D4FD3 /* testController.storyboard */,
 				048A0BE42541AD71007D4FD3 /* testController.swift */,
+				E33D8562253F163000E50BAC /* StoreMenu2Controller.swift */,
+				E33D8565253F20E200E50BAC /* ASMenuCell.swift */,
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E33D8566253F20E200E50BAC /* ASMenuCell.swift in Sources */,
 				048D55E0253D838E009E9CE4 /* MainPageType.swift in Sources */,
 				043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */,
 				04B8679E253B0ECD00336175 /* ViewController.swift in Sources */,
@@ -326,6 +333,7 @@
 				3F4C5AB7253ED5D000C0E7B6 /* uiViewSettingAttribute.swift in Sources */,
 				E33D853E253DC86A00E50BAC /* StoreMenuController.swift in Sources */,
 				048D55A6253C67EC009E9CE4 /* MainPageController.swift in Sources */,
+				E33D8563253F163000E50BAC /* StoreMenu2Controller.swift in Sources */,
 				048D55B6253D2E0F009E9CE4 /* MainPageEvent.swift in Sources */,
 				043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */,
 				3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */,
