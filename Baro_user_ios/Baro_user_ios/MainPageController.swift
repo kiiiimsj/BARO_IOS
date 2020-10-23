@@ -138,7 +138,7 @@ extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegate
     
     func tapClickType(tag: String) {
         print(tag)
-        navigationController?.pushViewController(testController(), animated: false)
+        navigationController?.pushViewController(StoreListPageController(), animated: false)
         performSegue(withIdentifier: "mainToStore", sender: tag)
     }
     
@@ -155,13 +155,13 @@ extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegate
         
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let nextViewController = segue.destination as? testController else {
+        
+        guard let nextViewController = segue.destination as? StoreListPageController else {
             return
         }
         let labell = sender as! String
-        nextViewController.labelString = labell
+        nextViewController.typeCode = labell
     }
 }
 
