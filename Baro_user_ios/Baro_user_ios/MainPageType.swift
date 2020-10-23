@@ -9,13 +9,13 @@ import UIKit
 import Kingfisher
 
 
-protocol CellDelegate: class {
-    func tapClick(tag: String)
+protocol CellDelegateType: class {
+    func tapClickType(tag: String)
 }
 
 class MainPageType : UITableViewCell {
     
-    var delegate: CellDelegate?
+    var delegateType: CellDelegateType?
 
     var typeList = [TypeListModel]()
     let networkModel = CallRequest()
@@ -78,7 +78,7 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
         let typeCode = typeList[indexPath!.row].type_code
         if let index = indexPath {
             print("tap!! index : \(typeCode)")
-            delegate?.tapClick(tag: typeCode)
+            delegateType?.tapClickType(tag: typeCode)
         }
     }
     
