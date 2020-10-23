@@ -11,6 +11,9 @@ class ASMenuCell : UICollectionViewCell {
     
     @IBOutlet weak var menu_picture: UIImageView!
     @IBOutlet weak var menu_name: UILabel!
+    @IBOutlet weak var menu_description: UILabel!
+    @IBOutlet weak var menu_price: UILabel!
+    @IBOutlet weak var menu_state: UILabel!
     override func prepareForReuse() {
         super.prepareForReuse()
     }

@@ -17,16 +17,13 @@ class StoreMenuController : UIViewController{
     public var categories : Dictionary<Int,String>!
     public var array = [String]()
     public var menus = [String : [Menu]]()
-    public var menuManager : StoreMenu2Controller = {
-        let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "StoreMenu2Controller")
-        return controller as! StoreMenu2Controller
-    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .purple
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: view.frame.width / 3, height: 60)
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: view.frame.width, height: 60)
         array = Array(categories.values)
         collectionView.collectionViewLayout = layout
         collectionView.delegate = self
@@ -60,12 +57,12 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width / 5, height: 40)
+        return CGSize(width: view.frame.width / 4, height: 40)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(array[indexPath.item])
         print(categories.someKey(forValue: array[indexPath.item])!)
-        let ind : Int = categories.someKey(forValue: array[indexPath.item])!
+        let _ : Int = categories.someKey(forValue: array[indexPath.item])!
         let data : [Menu] = self.menus[array[indexPath.item]]!
         actionToSelectedCell(indexPath: indexPath,menus: data)
     }
