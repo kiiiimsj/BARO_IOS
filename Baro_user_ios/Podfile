@@ -9,7 +9,6 @@ target 'Baro_user_ios' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SwiftyBootpay', '~> 3.2.7'
   pod 'Kingfisher', '~>4.7'
-  pod 'RealmSwift'
   pod "AlignedCollectionViewFlowLayout"
   pod 'KituraKit'
   pod 'Alamofire', '~> 5.1.0' 
