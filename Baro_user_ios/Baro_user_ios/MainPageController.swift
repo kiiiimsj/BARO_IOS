@@ -9,9 +9,6 @@ import UIKit
 
 class MainPageController: UIViewController {
     
-    let typeList = TypeListModel()
-    
-    
     
     //table list
     @IBOutlet weak var tableViewEvent: UITableView!
@@ -79,7 +76,6 @@ class MainPageController: UIViewController {
             desiredView.alpha = 1
         })
         
-        
     }
     
 }
@@ -97,7 +93,6 @@ extension MainPageController : UITableViewDelegate, UITableViewDataSource {
         else if(tableView == tableViewType){
             let cell = tableViewType.dequeueReusableCell(withIdentifier: "MainPageType", for: indexPath) as! MainPageType
             cell.delegate = self
-            cell.tag = indexPath.row
             return cell
         }
         else if(tableView == tableViewUltra){
@@ -117,18 +112,27 @@ extension MainPageController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if(tableView == tableViewType) {
-            self.performSegue(withIdentifier: "MainPageType", sender: nil)
-            print("oooo")
-        }
+        print("kkkkkk")
+        let vc = LoginPageController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension MainPageController : CellDelegate {
     func tapClick(tag: String) {
         print(tag)
+        navigationController?.pushViewController(testController(), animated: false)
+        print("yyy")
+        
+        performSegue(withIdentifier: "mainToStore", sender: tag)
+        
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextViewController = segue.destination as? testController else {
+            return
+        }
+        let labell = sender as! String
+        nextViewController.labelString = labell
+    }
 }
