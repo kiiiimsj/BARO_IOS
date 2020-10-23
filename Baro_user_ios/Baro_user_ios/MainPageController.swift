@@ -20,8 +20,9 @@ class MainPageController: UIViewController {
     @IBOutlet weak var tableViewNewStore: UITableView!
     
     
+    @IBOutlet var mainView: UIView!
     //blur view
-    @IBOutlet var blurView: UIVisualEffectView!
+    //@IBOutlet var blurView: UIVisualEffectView!
     
     //alert이미지 - 아래에서 off/on체크해주기
     @IBOutlet weak var alertButton: UIButton!
@@ -34,7 +35,7 @@ class MainPageController: UIViewController {
     
     //search 버튼 클릭시
     @IBAction func searchButton(_ sender: Any) {
-        animateIn(desiredView: blurView)
+        
         animateIn(desiredView: searchPopupView)
     }
     
@@ -57,14 +58,17 @@ class MainPageController: UIViewController {
         tableViewUltra.separatorStyle = .none
         tableViewNewStore.separatorStyle = .none
         
-        blurView.bounds = self.view.bounds
+        //blurView.bounds = self.view.bounds
         searchPopupView.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.4)
         
     }
     
     //search바 클릭했을때 배경 애니메이션
     func animateIn(desiredView: UIView) {
-        let backgroundView = self.view!
+//        let backgroundView = self.view!
+        let backgroundView = mainView!
+        mainView.backgroundColor = .gray
+        
         backgroundView.addSubview(desiredView)
         
         desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
@@ -88,20 +92,24 @@ extension MainPageController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView == tableViewEvent){
             let cell = tableViewEvent.dequeueReusableCell(withIdentifier: "MainPageEvent", for: indexPath) as! MainPageEvent
+            cell.delegateEvent = self
             return cell
         }
         else if(tableView == tableViewType){
             let cell = tableViewType.dequeueReusableCell(withIdentifier: "MainPageType", for: indexPath) as! MainPageType
-            cell.delegate = self
+            cell.delegateType = self
             return cell
         }
         else if(tableView == tableViewUltra){
             let cell = tableViewUltra.dequeueReusableCell(withIdentifier: "MainPageUltraStore", for: indexPath) as! MainPageUltraStore
+            cell.delegateUltra = self
             return cell
         }
         else {
             let cell = tableViewNewStore.dequeueReusableCell(withIdentifier: "MainPageNewStore", for: indexPath) as! MainPageNewStore
+            cell.delegateNewStore = self
             return cell
+            
         }
         
     }
@@ -118,21 +126,42 @@ extension MainPageController : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension MainPageController : CellDelegate {
-    func tapClick(tag: String) {
+//클릭에 해당하는 extension들
+
+extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegateUltra, CellDelegateNewStore {
+   
+    func tapClickEvent(tag: String) {
         print(tag)
         navigationController?.pushViewController(testController(), animated: false)
-        print("yyy")
-        
+        performSegue(withIdentifier: "mainToStore", sender: tag)
+    }
+    
+    func tapClickType(tag: String) {
+        print(tag)
+        navigationController?.pushViewController(StoreListPageController(), animated: false)
+        performSegue(withIdentifier: "mainToStore", sender: tag)
+    }
+    
+    func tapClickUltra(tag: String) {
+        print(tag)
+        navigationController?.pushViewController(testController(), animated: false)
+        performSegue(withIdentifier: "mainToStore", sender: tag)
+    }
+    
+    func tapClickNewStore(tag: String) {
+        print(tag)
+        navigationController?.pushViewController(testController(), animated: false)
         performSegue(withIdentifier: "mainToStore", sender: tag)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let nextViewController = segue.destination as? testController else {
+        
+        guard let nextViewController = segue.destination as? StoreListPageController else {
             return
         }
         let labell = sender as! String
-        nextViewController.labelString = labell
+        nextViewController.typeCode = labell
     }
 }
+

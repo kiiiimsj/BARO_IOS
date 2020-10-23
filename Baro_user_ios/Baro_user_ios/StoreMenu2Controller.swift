@@ -25,7 +25,16 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! ASMenuCell
-        cell.menu_name.text  = menus[indexPath.item].menu_name
+        let data : Menu = menus[indexPath.item]
+        cell.menu_name.text  = data.menu_name
+        cell.menu_description.text  = data.menu_info
+        cell.menu_price.text  = String(data.menu_defaultprice)+"원"
+        cell.menu_state.text = "품절"
+        if data.is_soldout == "N"{
+            cell.menu_state.isHidden = true
+            
+        }
+        
         return cell
     }
     

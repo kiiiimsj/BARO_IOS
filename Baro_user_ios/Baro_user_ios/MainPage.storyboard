@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -144,7 +144,7 @@
                                                                             <connections>
                                                                                 <outlet property="typeImage" destination="UCS-fd-cFx" id="Krl-xo-UKp"/>
                                                                                 <outlet property="typeName" destination="xTQ-a1-hcl" id="CbA-zf-Q2t"/>
-                                                                                <segue destination="9Fg-Ex-Zc5" kind="show" identifier="mainToStore" id="y8y-rq-9lg"/>
+                                                                                <segue destination="FlP-hh-bmj" kind="show" identifier="mainToStore" id="acz-YI-ymg"/>
                                                                             </connections>
                                                                         </collectionViewCell>
                                                                     </cells>
@@ -431,7 +431,7 @@
                     <size key="freeformSize" width="414" height="1300"/>
                     <connections>
                         <outlet property="alertButton" destination="Laq-LU-sua" id="YOH-f9-Vnf"/>
-                        <outlet property="blurView" destination="nX4-Ny-36C" id="8xO-A0-g56"/>
+                        <outlet property="mainView" destination="CvG-KU-mmZ" id="LPm-a6-5OF"/>
                         <outlet property="searchPopupView" destination="LWy-Tg-9VK" id="uiP-gy-zDX"/>
                         <outlet property="tableViewEvent" destination="I9T-aL-jQB" id="e74-C5-tun"/>
                         <outlet property="tableViewNewStore" destination="4yG-sb-UT7" id="1de-Vv-Pig"/>
@@ -480,38 +480,18 @@
                         <constraint firstAttribute="trailing" secondItem="Czv-nQ-BZn" secondAttribute="trailing" id="oeP-nx-Rlk"/>
                     </constraints>
                 </view>
-                <visualEffectView opaque="NO" contentMode="scaleToFill" id="nX4-Ny-36C">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <view key="contentView" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fnc-Df-7Zp">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SgL-rd-4am">
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yfN-Ej-PYc">
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <vibrancyEffect>
-                                    <blurEffect style="regular"/>
-                                </vibrancyEffect>
-                            </visualEffectView>
-                        </subviews>
-                    </view>
-                    <blurEffect style="regular"/>
-                </visualEffectView>
             </objects>
             <point key="canvasLocation" x="559.4202898550725" y="164.73214285714286"/>
         </scene>
-        <!--testController-->
-        <scene sceneID="VCj-0h-EnU">
+        <!--StoreListPageController-->
+        <scene sceneID="xkY-0k-ySh">
             <objects>
-                <viewControllerPlaceholder storyboardName="testController" referencedIdentifier="testController" id="9Fg-Ex-Zc5" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Z3O-0O-Wfk"/>
+                <viewControllerPlaceholder storyboardIdentifier="StoreListPage" storyboardName="StoreListPage" referencedIdentifier="StoreListPageController" id="FlP-hh-bmj" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="d2N-4i-APz"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VHd-P5-3Ss" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUW-3l-U9n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511" y="108"/>
+            <point key="canvasLocation" x="1634" y="91"/>
         </scene>
     </scenes>
     <resources>
