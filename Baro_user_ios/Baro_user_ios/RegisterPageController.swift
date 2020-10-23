@@ -40,7 +40,6 @@ class RegisterPageController: UIViewController {
         view.addSubview(controllerTitle)
         view.addSubview(phoneInputTitle)
         view.addSubview(sendAhtuMessage)
-        
     }
     
     @objc private func handleSendAuthMessage(_ sender:UIButton) {

@@ -14,9 +14,12 @@ class LoginPageController: UIViewController {
     @IBOutlet weak var phoneInput : UITextField!
     @IBOutlet weak var passwordInput:
     UITextField!
+    @IBOutlet weak var loginButton : UIButton!
     
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
+    
+    let SPREF = UserDefaults()
     
     let registerButton: UIButton = {
         let registerBtn = UIButton()
@@ -42,7 +45,9 @@ class LoginPageController: UIViewController {
 
         passwordInput.placeholder = "비밀번호를 입력하세요"
         passwordInput.borderStyle = .none
-
+        passwordInput.isSecureTextEntry = true
+        loginButton.addTarget(self, action: #selector(handleLogin(_:)), for: .touchUpInside)
+        print("log")
     }
     
     @objc private func handleRegister(_ sender: UIButton) {
@@ -50,20 +55,27 @@ class LoginPageController: UIViewController {
         self.present(controller, animated: true)
     }
     @objc private func handleLogin(_ sender: UIButton) {
-//        guard let phone = userPhoneInputField.text else {return}
-//        guard let password = userPasswordInputField.text else { return}
-//        let param = ["phone":"\(phone)","pass":"\(password)"]
-//
-//        networkModel.post(method: .post, param: param, url: networkURL.logInURL) { (json) in
-//            print(json)
-//            if json["result"].boolValue {
-//                self.sucessLogin()
-//            }
-//        }
+        guard let phone = phoneInput.text else {return}
+        guard let password = passwordInput.text else { return}
+        let param = ["phone":"\(phone)","pass":"\(password)"]
+        networkModel.post(method: .post, param: param, url: networkURL.logInURL) { (json) in
+            print(json)
+            if json["result"].boolValue {
+                UserDefaults.standard.set(json["email"].stringValue, forKey: "user_email")
+                UserDefaults.standard.set(json["nick"].stringValue, forKey: "user_name")
+                UserDefaults.standard.set(json["phone"].stringValue, forKey: "user_phone")
+                //self.sucessLogin()
+                self.performSegue(withIdentifier: "LoginToMyPage", sender: nil)
+            }
+        }
     }
-    @objc func sucessLogin() {
-        //let controller = MainPageController()
-        //self.present(controller, animated: true)
+    func sucessLogin() {
+//        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "MyPageController")
+//        vcName?.modalTransitionStyle = .coverVertical
+//        self.present(vcName!, animated: true, completion: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let myPageViewController = segue.destination as? MyPageController else {return}
     }
     
 }
