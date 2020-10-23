@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e5m-c8-bea">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -20,10 +20,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Login Page Controller-->
+        <!--LoginPageController-->
         <scene sceneID="dId-xT-Hox">
             <objects>
-                <viewController id="e5m-c8-bea" customClass="LoginPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="LoginPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e5m-c8-bea" customClass="LoginPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="thL-f2-4Bv">
                         <rect key="frame" x="0.0" y="0.0" width="360" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,14 +164,26 @@
                     <size key="freeformSize" width="360" height="640"/>
                     <connections>
                         <outlet property="bottomArea" destination="xNL-Zd-SjN" id="cVd-Le-3Dq"/>
+                        <outlet property="loginButton" destination="Acn-H4-2Bh" id="p6L-QS-3wW"/>
                         <outlet property="logoImage" destination="2vc-Px-LDB" id="Rq6-XK-hBV"/>
                         <outlet property="passwordInput" destination="uZA-Yz-PZr" id="G6s-nw-ZkY"/>
                         <outlet property="phoneInput" destination="8rn-GP-ACR" id="VCq-N0-hcK"/>
+                        <segue destination="iai-03-fDS" kind="show" identifier="LoginToMyPage" id="Xjc-iT-Zpm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kp-KJ-LYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-172.46376811594203" y="-286.95652173913044"/>
+        </scene>
+        <!--MyPageController-->
+        <scene sceneID="vom-Pp-K1U">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="MyPageController" id="iai-03-fDS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="JUW-Gb-j61"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbb-vz-Lfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="425" y="-438"/>
         </scene>
     </scenes>
     <resources>

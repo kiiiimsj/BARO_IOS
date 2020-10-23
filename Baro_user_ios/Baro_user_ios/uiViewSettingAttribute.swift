@@ -15,6 +15,9 @@ class uiViewSetting: UIView {
             }
             set {
                 layer.cornerRadius = newValue
+                if self.restorationIdentifier == "MyPageSquare" {
+                    return
+                }
                 layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
             }
         }
