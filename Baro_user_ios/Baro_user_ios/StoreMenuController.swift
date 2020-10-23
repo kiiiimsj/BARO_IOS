@@ -54,6 +54,7 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryIdentifier, for: indexPath) as! ASCategoryCell
         cell.category.setTitle(array[indexPath.item], for: .normal)
         cell.backgroundColor = .darkGray
+        cell.category.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -64,9 +65,19 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
         print(categories.someKey(forValue: array[indexPath.item])!)
         let _ : Int = categories.someKey(forValue: array[indexPath.item])!
         let data : [Menu] = self.menus[array[indexPath.item]]!
+        print(array[indexPath.item])
         actionToSelectedCell(indexPath: indexPath,menus: data)
     }
-    
+    @objc func tap(_ sender: UITapGestureRecognizer) {
+        
+     
+        let location = sender.location(in: self.collectionView)
+        let indexPath = self.collectionView.indexPathForItem(at: location)
+        if let index = indexPath {
+            let data : [Menu] = self.menus[array[index.item]]!
+            actionToSelectedCell(indexPath: index,menus: data)
+        }
+    }
 }
 
 extension Dictionary where Value: Equatable {
