@@ -138,7 +138,7 @@ extension AboutStore : UICollectionViewDelegate,UICollectionViewDataSource{
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.width / CGFloat(first.count)*0.97),height: frame.height)
+        return CGSize(width: (view.frame.width / CGFloat(first.count)*0.97),height: view.frame.height)
     }
 }
 
