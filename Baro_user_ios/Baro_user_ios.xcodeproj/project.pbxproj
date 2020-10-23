@@ -168,7 +168,6 @@
 				048A0BE42541AD71007D4FD3 /* testController.swift */,
 				E33D8562253F163000E50BAC /* StoreMenu2Controller.swift */,
 				E33D8565253F20E200E50BAC /* ASMenuCell.swift */,
-
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
