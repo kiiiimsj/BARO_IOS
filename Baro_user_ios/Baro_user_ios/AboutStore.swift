@@ -125,11 +125,20 @@ extension AboutStore : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = FirstBar.dequeueReusableCell(withReuseIdentifier: FirstBarIdentifier,for: indexPath) as! ASFirstStoreCell
         cell.state.setTitle(first[indexPath.row], for: .normal)
+        cell.state.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         return cell
     }
-    
+    @objc func tap(_ sender: UITapGestureRecognizer) {
+        
+     
+        let location = sender.location(in: self.FirstBar)
+        let indexPath = self.FirstBar.indexPathForItem(at: location)
+        if let index = indexPath {
+            actionToSelectedCell(indexPath: index)
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.width / CGFloat(first.count)*0.97),height: FirstBar.frame.height)
+        return CGSize(width: (view.frame.width / CGFloat(first.count)*0.97),height: frame.height)
     }
 }
 
