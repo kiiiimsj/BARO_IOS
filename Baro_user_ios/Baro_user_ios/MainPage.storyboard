@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -13,7 +13,7 @@
         <!--MainPageController-->
         <scene sceneID="D5o-Fe-Ks9">
             <objects>
-                <viewController storyboardIdentifier="MainPageController" title="MainPageController" id="901-Ku-IQw" customClass="MainPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainPageController" title="MainPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="901-Ku-IQw" customClass="MainPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CvG-KU-mmZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,6 +144,7 @@
                                                                             <connections>
                                                                                 <outlet property="typeImage" destination="UCS-fd-cFx" id="Krl-xo-UKp"/>
                                                                                 <outlet property="typeName" destination="xTQ-a1-hcl" id="CbA-zf-Q2t"/>
+                                                                                <segue destination="9Fg-Ex-Zc5" kind="show" identifier="mainToStore" id="y8y-rq-9lg"/>
                                                                             </connections>
                                                                         </collectionViewCell>
                                                                     </cells>
@@ -501,6 +502,16 @@
                 </visualEffectView>
             </objects>
             <point key="canvasLocation" x="559.4202898550725" y="164.73214285714286"/>
+        </scene>
+        <!--testController-->
+        <scene sceneID="VCj-0h-EnU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="testController" referencedIdentifier="testController" id="9Fg-Ex-Zc5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Z3O-0O-Wfk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VHd-P5-3Ss" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1511" y="108"/>
         </scene>
     </scenes>
     <resources>
