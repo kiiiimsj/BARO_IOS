@@ -37,6 +37,7 @@
 		3F4C5AA2253ECAD700C0E7B6 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9D253ECAD700C0E7B6 /* NotoSansKR-Thin.otf */; };
 		3F4C5AA3253ECAD700C0E7B6 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9E253ECAD700C0E7B6 /* NotoSansKR-Light.otf */; };
 		3F4C5AB7253ED5D000C0E7B6 /* uiViewSettingAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */; };
+		3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4FC822542898E00EF2894 /* MyPageButtons.swift */; };
 		3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF35096253E7E72007B7B29 /* LoginPageController.swift */; };
 		3FF3509A253E7F3B007B7B29 /* RegisterPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */; };
 		5F09CCA5A7FA86F7A3D8ADA6 /* Pods_Baro_user_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868EF0B056B69E5F372574 /* Pods_Baro_user_ios.framework */; };
@@ -83,6 +84,7 @@
 		3F4C5A9D253ECAD700C0E7B6 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
 		3F4C5A9E253ECAD700C0E7B6 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiViewSettingAttribute.swift; sourceTree = "<group>"; };
+		3FA4FC822542898E00EF2894 /* MyPageButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageButtons.swift; sourceTree = "<group>"; };
 		3FF35096253E7E72007B7B29 /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
 		3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageController.swift; sourceTree = "<group>"; };
 		6FE1B18B198B2DAE07AD0D8A /* Pods-Baro_user_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baro_user_ios.debug.xcconfig"; path = "Target Support Files/Pods-Baro_user_ios/Pods-Baro_user_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				3F05C563254116AC0066DAAD /* MyPageController.swift */,
 				3F05C566254116C70066DAAD /* MyPage.storyboard */,
 				3F05C56925412AF20066DAAD /* MyPageView.swift */,
+				3FA4FC822542898E00EF2894 /* MyPageButtons.swift */,
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				3F05C564254116AC0066DAAD /* MyPageController.swift in Sources */,
 				048D55B6253D2E0F009E9CE4 /* MainPageEvent.swift in Sources */,
 				043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */,
+				3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */,
 				3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */,
 				04B8679C253B0ECD00336175 /* SceneDelegate.swift in Sources */,
 				E33D8546253DC8C800E50BAC /* ASFirstStoreCell.swift in Sources */,
