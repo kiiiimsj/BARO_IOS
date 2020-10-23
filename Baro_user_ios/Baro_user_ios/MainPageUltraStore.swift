@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol CellDelegateUltra: class {
+    func tapClickUltra(tag: String)
+}
+
 class MainPageUltraStore : UITableViewCell {
+    
+    var delegateUltra : CellDelegateUltra?
     
     var ultraList = [UltraStoreListModel]()
     let networkModel = CallRequest()
@@ -33,6 +39,7 @@ class MainPageUltraStore : UITableViewCell {
                 ultraModel.store_name = item["store_name"].stringValue
                 ultraModel.store_info = item["store_info"].stringValue
                 ultraModel.store_image = item["store_image"].stringValue
+                ultraModel.store_id = item["store_id"].stringValue
                 
                 self.ultraList.append(ultraModel)
             }
@@ -54,7 +61,20 @@ extension MainPageUltraStore : UICollectionViewDelegate, UICollectionViewDataSou
         print("qqq",ultra.store_name)
         cell.ultraInfo.text = ultra.store_info
         cell.ultraImage.kf.setImage(with: URL(string: "http://15.165.22.64:8080/ImageStore.do?image_name="+ultra.store_image))
+        
+        //cell 클릭시
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         return cell
+    }
+    
+    @objc func tap(_ sender: UITapGestureRecognizer) {
+        let location = sender.location(in: self.collectionView)
+        let indexPath = self.collectionView.indexPathForItem(at: location)
+        if let index = indexPath {
+            let storeId = ultraList[indexPath!.row].store_id
+            print("ultra tap!! index : \(storeId)")
+            delegateUltra?.tapClickUltra(tag: storeId)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
