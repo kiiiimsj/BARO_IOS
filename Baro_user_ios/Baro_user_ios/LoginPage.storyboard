@@ -38,8 +38,8 @@
                                 <rect key="frame" x="132" y="43" width="97" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNL-Zd-SjN" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="163" width="360" height="477"/>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="xNL-Zd-SjN" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="163" width="360" height="482"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tA0-kB-NEk">
                                         <rect key="frame" x="20" y="78" width="88" height="21"/>
@@ -154,7 +154,7 @@
                         <constraints>
                             <constraint firstItem="qom-zU-dWl" firstAttribute="trailing" secondItem="aty-7L-irg" secondAttribute="trailing" constant="141" id="0nX-mz-j37"/>
                             <constraint firstItem="aty-7L-irg" firstAttribute="leading" secondItem="qom-zU-dWl" secondAttribute="leading" constant="141" id="6Bf-sd-f5Q"/>
-                            <constraint firstItem="xNL-Zd-SjN" firstAttribute="bottom" secondItem="qom-zU-dWl" secondAttribute="bottom" id="FTp-sH-gv1"/>
+                            <constraint firstItem="xNL-Zd-SjN" firstAttribute="bottom" secondItem="qom-zU-dWl" secondAttribute="bottom" constant="5" id="FTp-sH-gv1"/>
                             <constraint firstItem="qom-zU-dWl" firstAttribute="trailing" secondItem="xNL-Zd-SjN" secondAttribute="trailing" id="T7b-eY-Nch"/>
                             <constraint firstItem="xNL-Zd-SjN" firstAttribute="top" secondItem="aty-7L-irg" secondAttribute="bottom" constant="24" id="cre-Vd-2Ua"/>
                             <constraint firstItem="xNL-Zd-SjN" firstAttribute="leading" secondItem="qom-zU-dWl" secondAttribute="leading" id="kT0-Xu-bWm"/>
@@ -168,7 +168,7 @@
                         <outlet property="logoImage" destination="2vc-Px-LDB" id="Rq6-XK-hBV"/>
                         <outlet property="passwordInput" destination="uZA-Yz-PZr" id="G6s-nw-ZkY"/>
                         <outlet property="phoneInput" destination="8rn-GP-ACR" id="VCq-N0-hcK"/>
-                        <segue destination="iai-03-fDS" kind="show" identifier="LoginToMyPage" id="Xjc-iT-Zpm"/>
+                        <segue destination="iai-03-fDS" kind="presentation" identifier="LoginToMyPage" modalPresentationStyle="fullScreen" id="Xjc-iT-Zpm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kp-KJ-LYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
