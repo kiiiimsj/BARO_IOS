@@ -76,7 +76,6 @@ class MainPageController: UIViewController {
             desiredView.alpha = 1
         })
         
-        
     }
     
 }
@@ -88,31 +87,52 @@ extension MainPageController : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView == tableViewEvent){
-            let cell = tableViewEvent.dequeueReusableCell(withIdentifier: "MainPageEvent", for: indexPath)
+            let cell = tableViewEvent.dequeueReusableCell(withIdentifier: "MainPageEvent", for: indexPath) as! MainPageEvent
             return cell
         }
         else if(tableView == tableViewType){
-            let cell = tableViewType.dequeueReusableCell(withIdentifier: "MainPageType", for: indexPath)
-            
+            let cell = tableViewType.dequeueReusableCell(withIdentifier: "MainPageType", for: indexPath) as! MainPageType
+            cell.delegate = self
             return cell
         }
         else if(tableView == tableViewUltra){
-            let cell = tableViewUltra.dequeueReusableCell(withIdentifier: "MainPageUltraStore", for: indexPath)
+            let cell = tableViewUltra.dequeueReusableCell(withIdentifier: "MainPageUltraStore", for: indexPath) as! MainPageUltraStore
             return cell
         }
         else {
-            let cell = tableViewNewStore.dequeueReusableCell(withIdentifier: "MainPageNewStore", for: indexPath)
+            let cell = tableViewNewStore.dequeueReusableCell(withIdentifier: "MainPageNewStore", for: indexPath) as! MainPageNewStore
             return cell
         }
         
     }
-    
    
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("kkkkkk")
+        let vc = LoginPageController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
 
+extension MainPageController : CellDelegate {
+    func tapClick(tag: String) {
+        print(tag)
+        navigationController?.pushViewController(testController(), animated: false)
+        print("yyy")
+        
+        performSegue(withIdentifier: "mainToStore", sender: tag)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextViewController = segue.destination as? testController else {
+            return
+        }
+        let labell = sender as! String
+        nextViewController.labelString = labell
+    }
 }
