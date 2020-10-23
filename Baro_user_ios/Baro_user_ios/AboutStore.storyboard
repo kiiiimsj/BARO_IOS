@@ -13,7 +13,7 @@
         <!--About Store-->
         <scene sceneID="znx-37-STw">
             <objects>
-                <viewController id="n3R-Xf-dIg" customClass="AboutStore" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutStore" id="n3R-Xf-dIg" customClass="AboutStore" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LgM-xG-BLO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
