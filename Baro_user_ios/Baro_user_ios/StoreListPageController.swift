@@ -7,17 +7,20 @@
 
 import UIKit
 private let StorelistCellIdentifier = "StoreListCell"
-private let ListStorePageIdentifier = "ListStoreController"
-class ListStoreController : UIViewController{
+private let ListStorePageIdentifier = "StoreListPageController"
+class StoreListPageController : UIViewController{
     @IBOutlet weak var storeListView: UICollectionView!
     var storeList = [StoreList]()
     let network = CallRequest()
     let urlCaller = NetWorkURL()
+    
+    var typeCode = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         let jsonObject : [String : Any ] = [
-            "type_code" : "CAFE",
+            "type_code" : typeCode,
             "latitude" : "37.499",
             "longitude" : "126.956"
         ]
@@ -49,7 +52,7 @@ class ListStoreController : UIViewController{
     
 }
 
-extension ListStoreController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return storeList.count
     }

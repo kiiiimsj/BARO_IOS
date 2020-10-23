@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="901-Ku-IQw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -144,7 +144,7 @@
                                                                             <connections>
                                                                                 <outlet property="typeImage" destination="UCS-fd-cFx" id="Krl-xo-UKp"/>
                                                                                 <outlet property="typeName" destination="xTQ-a1-hcl" id="CbA-zf-Q2t"/>
-                                                                                <segue destination="9Fg-Ex-Zc5" kind="show" identifier="mainToStore" id="y8y-rq-9lg"/>
+                                                                                <segue destination="FlP-hh-bmj" kind="show" identifier="mainToStore" id="acz-YI-ymg"/>
                                                                             </connections>
                                                                         </collectionViewCell>
                                                                     </cells>
@@ -483,15 +483,15 @@
             </objects>
             <point key="canvasLocation" x="559.4202898550725" y="164.73214285714286"/>
         </scene>
-        <!--testController-->
-        <scene sceneID="VCj-0h-EnU">
+        <!--StoreListPageController-->
+        <scene sceneID="xkY-0k-ySh">
             <objects>
-                <viewControllerPlaceholder storyboardName="testController" referencedIdentifier="testController" id="9Fg-Ex-Zc5" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Z3O-0O-Wfk"/>
+                <viewControllerPlaceholder storyboardIdentifier="StoreListPage" storyboardName="StoreListPage" referencedIdentifier="StoreListPageController" id="FlP-hh-bmj" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="d2N-4i-APz"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VHd-P5-3Ss" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUW-3l-U9n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511" y="108"/>
+            <point key="canvasLocation" x="1634" y="91"/>
         </scene>
     </scenes>
     <resources>
