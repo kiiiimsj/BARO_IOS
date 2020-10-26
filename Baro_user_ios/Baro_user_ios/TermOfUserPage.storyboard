@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Term Of User-->
+        <scene sceneID="n7B-Iw-Xox">
+            <objects>
+                <viewController storyboardIdentifier="TermOfUser" id="RbE-QQ-MHE" customClass="TermOfUser" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KaE-HF-Q5p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdU-DV-XUA">
+                                <rect key="frame" x="170" y="44" width="74" height="30"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nZ-DB-5N5">
+                                <rect key="frame" x="0.0" y="107" width="414" height="789"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RL9-Us-x8X">
+                                <rect key="frame" x="34" y="44" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="backbutton:" destination="RbE-QQ-MHE" eventType="touchUpInside" id="msk-Ct-tlp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RzN-dE-ReY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5nZ-DB-5N5" firstAttribute="trailing" secondItem="RzN-dE-ReY" secondAttribute="trailing" id="FGk-oU-VDS"/>
+                            <constraint firstItem="RzN-dE-ReY" firstAttribute="trailing" secondItem="qdU-DV-XUA" secondAttribute="trailing" constant="170" id="LYs-UA-Mjn"/>
+                            <constraint firstItem="5nZ-DB-5N5" firstAttribute="leading" secondItem="RzN-dE-ReY" secondAttribute="leading" id="LnO-b5-au0"/>
+                            <constraint firstItem="5nZ-DB-5N5" firstAttribute="top" secondItem="qdU-DV-XUA" secondAttribute="bottom" constant="33" id="is0-1u-F7U"/>
+                            <constraint firstItem="qdU-DV-XUA" firstAttribute="top" secondItem="RzN-dE-ReY" secondAttribute="top" id="tFk-86-Rbr"/>
+                            <constraint firstAttribute="bottom" secondItem="5nZ-DB-5N5" secondAttribute="bottom" id="xPi-Ai-XaS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backBtn" destination="RL9-Us-x8X" id="M3h-1Q-S3w"/>
+                        <outlet property="webView" destination="5nZ-DB-5N5" id="qQe-4g-QMq"/>
+                        <segue destination="jhB-Oy-qbe" kind="presentation" identifier="MyPageController" modalPresentationStyle="fullScreen" id="7KP-oV-S2A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXR-JA-65t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="42.028985507246382" y="33.482142857142854"/>
+        </scene>
+        <!--MyPageController-->
+        <scene sceneID="4bz-zO-szY">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MyPageController" storyboardName="MyPage" referencedIdentifier="MyPageController" id="jhB-Oy-qbe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ET4-LZ-ov6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="824" y="-96"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
