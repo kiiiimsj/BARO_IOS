@@ -20,7 +20,7 @@ class MainPageType : UITableViewCell {
     var typeList = [TypeListModel]()
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
-    
+    	
    
     @IBOutlet weak var collectionView: UICollectionView!
     
