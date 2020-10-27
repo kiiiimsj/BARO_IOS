@@ -15,7 +15,7 @@ class testController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("hhh",labelString)
         label.text = labelString
     }
 }
