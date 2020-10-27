@@ -403,7 +403,7 @@
                                 <rect key="frame" x="317" y="48" width="26" height="22"/>
                                 <state key="normal" title="Button" image="search"/>
                                 <connections>
-                                    <segue destination="kpU-U4-PbF" kind="presentation" id="bDd-Zc-ILg"/>
+                                    <segue destination="kpU-U4-PbF" kind="show" animates="NO" id="bDd-Zc-ILg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -506,6 +506,7 @@
                             <constraint firstItem="7v5-4c-E4S" firstAttribute="top" secondItem="Rz9-62-BcR" secondAttribute="top" constant="319" id="kIE-5o-5pk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Asy-M9-ZxP"/>
                     <connections>
                         <outlet property="searchBar" destination="Y9J-qm-oXD" id="s6w-wm-7Hn"/>
                     </connections>
