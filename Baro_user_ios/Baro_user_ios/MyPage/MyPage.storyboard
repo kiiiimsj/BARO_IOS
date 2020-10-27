@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DyC-ns-QMr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -29,10 +29,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yA4-4M-m8K">
-                                <rect key="frame" x="0.0" y="44" width="360" height="922"/>
+                                <rect key="frame" x="0.0" y="44" width="360" height="873"/>
                                 <subviews>
                                     <view contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bSk-Rn-OP4">
-                                        <rect key="frame" x="0.0" y="0.0" width="360" height="922"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="873"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이페이지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLW-fT-waJ">
                                                 <rect key="frame" x="148" y="35" width="64.5" height="21"/>
@@ -247,6 +247,15 @@
                             <constraint firstItem="yA4-4M-m8K" firstAttribute="bottom" secondItem="jQl-Zr-BBb" secondAttribute="bottom" id="kDs-aG-USc"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="myPage_tabBar" selectedImage="myPage_tabBar" springLoaded="YES" id="aco-bq-nGG">
+                        <color key="badgeColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="360" height="1000"/>
                     <connections>
                         <outlet property="buttonList" destination="jKl-nM-dFZ" id="wEg-e5-A5f"/>
@@ -263,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4k-M1-TvX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153.6231884057972" y="140.625"/>
+            <point key="canvasLocation" x="2063.768115942029" y="140.625"/>
         </scene>
         <!--ChangeEmail-->
         <scene sceneID="XyJ-wQ-ktp">
@@ -271,7 +280,7 @@
                 <viewControllerPlaceholder storyboardName="ChangeEmail" referencedIdentifier="ChangeEmail" id="u2z-Pm-Txk" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biS-s6-zBz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750" y="-192"/>
+            <point key="canvasLocation" x="2660.144927536232" y="-192.1875"/>
         </scene>
         <!--ChangePass-->
         <scene sceneID="T6A-lR-fmR">
@@ -279,7 +288,7 @@
                 <viewControllerPlaceholder storyboardName="ChangePass" referencedIdentifier="ChangePass" id="a3H-Ja-UYp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jjd-6Z-Z6B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1789" y="-126"/>
+            <point key="canvasLocation" x="2697.826086956522" y="-126.5625"/>
         </scene>
         <!--TermOfUser-->
         <scene sceneID="3n6-YI-DWb">
@@ -287,7 +296,7 @@
                 <viewControllerPlaceholder storyboardName="TermOfUserPage" referencedIdentifier="TermOfUser" id="IiX-9A-5X0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJn-8F-3o7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832" y="-50"/>
+            <point key="canvasLocation" x="2742.0289855072465" y="-50.223214285714285"/>
         </scene>
         <!--NoticePageController-->
         <scene sceneID="0no-iT-6zQ">
@@ -295,7 +304,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="NoticePageController" storyboardName="NoticePage" referencedIdentifier="NoticePageController" id="sBN-9A-IUw" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6Z-m6-ipC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1829" y="44"/>
+            <point key="canvasLocation" x="2738.4057971014495" y="43.526785714285715"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>

@@ -5,10 +5,7 @@
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
-		<dict>
-			<key>file://.*</key>
-			<string>YES</string>
-		</dict>
+		<dict/>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 		<key>NSAllowsLocalNetworking</key>
@@ -62,7 +59,7 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
-	<string>LoginPage</string>
+	<string>BottomTabBar</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LoginPage</string>
 	<key>UIRequiredDeviceCapabilities</key>
