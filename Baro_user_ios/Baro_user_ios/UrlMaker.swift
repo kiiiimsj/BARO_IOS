@@ -83,6 +83,7 @@ class NetWorkURL {
     let noticeURL = "http://15.165.22.64:8080/NoticeFindAll.do"
     let phoneNumberCheckURL = "http://15.165.22.64:8080/MemberPhoneCheck.do"
     let passwordUpdateURL = "http://15.165.22.64:8080/MemberPassUpdate.do"
+    let emailUpdateURL = "http://15.165.22.64:8080/MemberEmailUpdate.do"
     let categoryURL = "http://15.165.22.64:8080/CategoryFindByStoreId.do"
     let menuURL = "http://15.165.22.64:8080/MenuFindByStoreId.do"
     let menuByCate = "http://15.165.22.64:8080/MenuFindByStoreAndCategoryId.do"
