@@ -82,5 +82,17 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
         return UIEdgeInsets(top: 10, left:0, bottom: 10, right:0)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let nextViewController = segue.destination as? AboutStore else {
+            return
+        }
+        let labell = sender as! String
+        nextViewController.store_id = labell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let id = String(storeList[indexPath.item].store_id)
+        navigationController?.pushViewController(AboutStore(), animated: false)
+        performSegue(withIdentifier: "toAboutStore", sender: id)
+    }
 }

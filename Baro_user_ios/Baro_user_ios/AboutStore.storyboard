@@ -397,11 +397,22 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="p1g-h8-b3T" id="cFE-eA-b11"/>
+                        <segue destination="ALg-b7-AKR" kind="show" identifier="toDetails" id="4e3-v5-GcC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXl-pg-fBq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1993" y="-42"/>
+        </scene>
+        <!--OrderDetailsController-->
+        <scene sceneID="ieO-BG-OVn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OrderDetails" referencedIdentifier="OrderDetailsController" id="ALg-b7-AKR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ohi-XX-cse"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mqd-5s-qPP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2633" y="-138"/>
         </scene>
     </scenes>
     <resources>

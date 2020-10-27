@@ -97,7 +97,7 @@
                     </view>
                     <connections>
                         <outlet property="storeListView" destination="MRP-nP-rMX" id="TxU-fh-RQp"/>
-                        <segue destination="O6c-Wz-ejK" kind="show" id="1TB-V5-kc2"/>
+                        <segue destination="O6c-Wz-ejK" kind="show" identifier="toAboutStore" id="1TB-V5-kc2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2St-vS-sEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -107,7 +107,7 @@
         <!--AboutStore-->
         <scene sceneID="kNS-FO-ZEh">
             <objects>
-                <viewControllerPlaceholder storyboardName="AboutStore" referencedIdentifier="AboutStore" id="O6c-Wz-ejK" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="toAboutStore" storyboardName="AboutStore" referencedIdentifier="AboutStore" id="O6c-Wz-ejK" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="nsk-e4-Csv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tob-L6-Eeb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
