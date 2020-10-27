@@ -58,6 +58,14 @@
 		E31D3FD52542AC3E00B63F77 /* StoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FD42542AC3E00B63F77 /* StoreListModel.swift */; };
 		E31D3FD82542ACAC00B63F77 /* StoreListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FD72542ACAC00B63F77 /* StoreListCell.swift */; };
 		E31D3FDB2542AD7300B63F77 /* StoreListPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E31D3FDA2542AD7300B63F77 /* StoreListPage.storyboard */; };
+		E31D3FE22545DF7D00B63F77 /* OrderDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E31D3FE12545DF7D00B63F77 /* OrderDetails.storyboard */; };
+		E31D3FE62545DFA000B63F77 /* OrderDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FE52545DFA000B63F77 /* OrderDetailsController.swift */; };
+		E31D3FE9254653C700B63F77 /* ExtraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FE8254653C700B63F77 /* ExtraModel.swift */; };
+		E31D3FEC25465F0200B63F77 /* EssentialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FEB25465F0200B63F77 /* EssentialCell.swift */; };
+		E31D3FEF25465F6000B63F77 /* NonEssentialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FEE25465F6000B63F77 /* NonEssentialCell.swift */; };
+		E31D3FF32546887F00B63F77 /* OptionsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FF22546887F00B63F77 /* OptionsHeader.swift */; };
+		E31D3FF6254692A200B63F77 /* OptionCategoryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FF5254692A200B63F77 /* OptionCategoryHeader.swift */; };
+		E31D3FF925469DCE00B63F77 /* EssentialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FF825469DCE00B63F77 /* EssentialButton.swift */; };
 		E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8536253DC63600E50BAC /* AboutStore.swift */; };
 		E33D853B253DC69700E50BAC /* StoreInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D853A253DC69700E50BAC /* StoreInfoController.swift */; };
 		E33D853E253DC86A00E50BAC /* StoreMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D853D253DC86A00E50BAC /* StoreMenuController.swift */; };
@@ -125,6 +133,14 @@
 		E31D3FD42542AC3E00B63F77 /* StoreListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListModel.swift; sourceTree = "<group>"; };
 		E31D3FD72542ACAC00B63F77 /* StoreListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListCell.swift; sourceTree = "<group>"; };
 		E31D3FDA2542AD7300B63F77 /* StoreListPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreListPage.storyboard; sourceTree = "<group>"; };
+		E31D3FE12545DF7D00B63F77 /* OrderDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderDetails.storyboard; sourceTree = "<group>"; };
+		E31D3FE52545DFA000B63F77 /* OrderDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsController.swift; sourceTree = "<group>"; };
+		E31D3FE8254653C700B63F77 /* ExtraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraModel.swift; sourceTree = "<group>"; };
+		E31D3FEB25465F0200B63F77 /* EssentialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialCell.swift; sourceTree = "<group>"; };
+		E31D3FEE25465F6000B63F77 /* NonEssentialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonEssentialCell.swift; sourceTree = "<group>"; };
+		E31D3FF22546887F00B63F77 /* OptionsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsHeader.swift; sourceTree = "<group>"; };
+		E31D3FF5254692A200B63F77 /* OptionCategoryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCategoryHeader.swift; sourceTree = "<group>"; };
+		E31D3FF825469DCE00B63F77 /* EssentialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialButton.swift; sourceTree = "<group>"; };
 		E33D8536253DC63600E50BAC /* AboutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutStore.swift; sourceTree = "<group>"; };
 		E33D853A253DC69700E50BAC /* StoreInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoController.swift; sourceTree = "<group>"; };
 		E33D853D253DC86A00E50BAC /* StoreMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenuController.swift; sourceTree = "<group>"; };
@@ -215,6 +231,14 @@
 				E31D3FD42542AC3E00B63F77 /* StoreListModel.swift */,
 				E31D3FD72542ACAC00B63F77 /* StoreListCell.swift */,
 				E31D3FDA2542AD7300B63F77 /* StoreListPage.storyboard */,
+				E31D3FE12545DF7D00B63F77 /* OrderDetails.storyboard */,
+				E31D3FE52545DFA000B63F77 /* OrderDetailsController.swift */,
+				E31D3FE8254653C700B63F77 /* ExtraModel.swift */,
+				E31D3FEB25465F0200B63F77 /* EssentialCell.swift */,
+				E31D3FEE25465F6000B63F77 /* NonEssentialCell.swift */,
+				E31D3FF22546887F00B63F77 /* OptionsHeader.swift */,
+				E31D3FF5254692A200B63F77 /* OptionCategoryHeader.swift */,
+				E31D3FF825469DCE00B63F77 /* EssentialButton.swift */,
 				3F4F8DAE254572220015BACE /* NoticePageController.swift */,
 				3FDE5E372546968000C05514 /* NoticePage.storyboard */,
 				3FDE5E5D2546A16C00C05514 /* TermOfUser.swift */,
@@ -224,7 +248,7 @@
 				3FC20E5C2546EEE600EEE783 /* ChangePass.swift */,
 				3FC20E5F2546EF0500EEE783 /* ChangePass.storyboard */,
 				3FC20E622546EFD400EEE783 /* ChangeEmail.swift */,
-				3FC20E652546EFF700EEE783 /* ChangeEmail.storyboard */,
+				3FC20E652546EFF700EEE783 /* ChangeEmail.storyboard */
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -332,6 +356,7 @@
 				3FC20E602546EF0500EEE783 /* ChangePass.storyboard in Resources */,
 				048D55A3253C67B8009E9CE4 /* MainPage.storyboard in Resources */,
 				3F4C5AA1253ECAD700C0E7B6 /* NotoSansKR-Bold.otf in Resources */,
+				E31D3FE22545DF7D00B63F77 /* OrderDetails.storyboard in Resources */,
 				3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */,
 				3FDE5E652546B70C00C05514 /* privacyPolicy.html in Resources */,
 				3FDE5E382546968000C05514 /* NoticePage.storyboard in Resources */,
@@ -409,7 +434,10 @@
 				3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */,
 				E31D3FD82542ACAC00B63F77 /* StoreListCell.swift in Sources */,
 				043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */,
+				E31D3FF925469DCE00B63F77 /* EssentialButton.swift in Sources */,
+				E31D3FE9254653C700B63F77 /* ExtraModel.swift in Sources */,
 				3F4C5AB7253ED5D000C0E7B6 /* uiViewSettingAttribute.swift in Sources */,
+				E31D3FEC25465F0200B63F77 /* EssentialCell.swift in Sources */,
 				3FDE5E5E2546A16C00C05514 /* TermOfUser.swift in Sources */,
 				E33D853E253DC86A00E50BAC /* StoreMenuController.swift in Sources */,
 				048D55A6253C67EC009E9CE4 /* MainPageController.swift in Sources */,
@@ -417,7 +445,10 @@
 				E33D8563253F163000E50BAC /* StoreMenu2Controller.swift in Sources */,
 				048D55B6253D2E0F009E9CE4 /* MainPageEvent.swift in Sources */,
 				043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */,
+				E31D3FEF25465F6000B63F77 /* NonEssentialCell.swift in Sources */,
 				3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */,
+				E31D3FF6254692A200B63F77 /* OptionCategoryHeader.swift in Sources */,
+				E31D3FF32546887F00B63F77 /* OptionsHeader.swift in Sources */,
 				3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */,
 				3FC20E5A2546E62400EEE783 /* NoticeCell.swift in Sources */,
 				04B8679C253B0ECD00336175 /* SceneDelegate.swift in Sources */,
@@ -429,6 +460,7 @@
 				E33D8560253EF24A00E50BAC /* ASCategoryCell.swift in Sources */,
 				048D55E3253D83AD009E9CE4 /* MainPageTypeCell.swift in Sources */,
 				E31D3FD22542ABEF00B63F77 /* StoreListPageController.swift in Sources */,
+				E31D3FE62545DFA000B63F77 /* OrderDetailsController.swift in Sources */,
 				048D55BA253D575A009E9CE4 /* TypeListModel.swift in Sources */,
 				048A0BDB25401194007D4FD3 /* MainPageNewStoreCell.swift in Sources */,
 				048A0BD82540117B007D4FD3 /* MainPageNewStore.swift in Sources */,

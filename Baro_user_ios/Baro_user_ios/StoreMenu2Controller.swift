@@ -37,6 +37,20 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
         
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let menu_id = String(menus[indexPath.item].menu_id)
+        navigationController?.pushViewController(OrderDetailsController(), animated: false)
+        performSegue(withIdentifier: "toDetails", sender: menu_id)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let nextViewController = segue.destination as? OrderDetailsController else {
+            return
+        }
+        let labell = sender as! String
+        nextViewController.menu_id = labell
+    }
+    
     
     
 }

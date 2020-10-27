@@ -12,7 +12,7 @@ class AboutStore : UIViewController {
 
     @IBOutlet weak var FirstPage: UICollectionView!
     @IBOutlet weak var FirstBar: UICollectionView!
-    private var store_id  = 0
+    public var store_id  = ""
     private let netWork = CallRequest()
     private let urlMaker = NetWorkURL()
     private var menus = [Menu]()
@@ -25,17 +25,14 @@ class AboutStore : UIViewController {
     private var contollers = [UIViewController]()
     public override func viewDidLoad() {
         super.viewDidLoad()
-        storeInfoManager.netWork = netWork
-        storeInfoManager.urlMaker = urlMaker
-        contollers.append(storeMenuManager)
-        contollers.append(storeInfoManager)
-        netWork.get(method: .get, url: urlMaker.categoryURL + "?store_id=1") { (json) in
+        print(store_id)
+        netWork.get(method: .get, url: urlMaker.categoryURL + "?store_id="+store_id) { (json) in
             if json["result"].boolValue{
                 for item in json["category"].array!{
                     self.categories[item["category_id"].intValue] = item["category_name"].stringValue
                     self.union[item["category_name"].stringValue] = [Menu]();
                 }
-                self.netWork.get(method: .get, url: self.urlMaker.menuURL + "?store_id=1") { (json) in
+                self.netWork.get(method: .get, url: self.urlMaker.menuURL + "?store_id="+self.store_id) { (json) in
                     let boolValue = json["result"].boolValue
                     if boolValue {
                         var tempMenu = Menu()
