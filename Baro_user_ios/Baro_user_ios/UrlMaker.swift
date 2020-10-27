@@ -83,6 +83,7 @@ class NetWorkURL {
     let noticeURL = "http://15.165.22.64:8080/NoticeFindAll.do"
     let phoneNumberCheckURL = "http://15.165.22.64:8080/MemberPhoneCheck.do"
     let passwordUpdateURL = "http://15.165.22.64:8080/MemberPassUpdate.do"
+    let emailUpdateURL = "http://15.165.22.64:8080/MemberEmailUpdate.do"
     let categoryURL = "http://15.165.22.64:8080/CategoryFindByStoreId.do"
     let menuURL = "http://15.165.22.64:8080/MenuFindByStoreId.do"
     let menuByCate = "http://15.165.22.64:8080/MenuFindByStoreAndCategoryId.do"
@@ -97,6 +98,7 @@ class NetWorkURL {
     //coupon 상세
 
     let couponList = "http://15.165.22.64:8080/CouponFindByPhone.do"
+    let couponCount = "http://15.165.22.64:8080/CouponCountByPhone.do?phone="
 
 
     //문의 상세
@@ -108,12 +110,14 @@ class NetWorkURL {
     //주문내역
 
     let orderList = "http://15.165.22.64:8080/OrderListFindByPhone.do"
+    let orderCount = "http://15.165.22.64:8080/OrderTotalCountByPhone.do?phone="
 
 
     //나의매장 (즐겨찾기)
 
     let myStoreList = "http://15.165.22.64:8080/FavoriteList.do"
-
+    //공지 및 이벤트
+    let noticeAll = "http://15.165.22.64:8080/NoticeFindAll.do"
 
     //검색
 

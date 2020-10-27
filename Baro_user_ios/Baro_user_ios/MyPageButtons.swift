@@ -5,4 +5,8 @@
 //  Created by yUsiL on 2020/10/23.
 //
 
-import Foundation
+import UIKit
+
+class MyPageButtons : UITableViewCell {
+    @IBOutlet weak var lists: UILabel!
+}

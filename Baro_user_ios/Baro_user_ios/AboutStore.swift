@@ -12,7 +12,7 @@ class AboutStore : UIViewController {
 
     @IBOutlet weak var FirstPage: UICollectionView!
     @IBOutlet weak var FirstBar: UICollectionView!
-    
+    private var store_id  = 0
     private let netWork = CallRequest()
     private let urlMaker = NetWorkURL()
     private var menus = [Menu]()
