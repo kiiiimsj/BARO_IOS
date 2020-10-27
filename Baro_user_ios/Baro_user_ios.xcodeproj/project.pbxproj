@@ -29,6 +29,16 @@
 		04B8679E253B0ECD00336175 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8679D253B0ECD00336175 /* ViewController.swift */; };
 		04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B867A2253B0ECF00336175 /* Assets.xcassets */; };
 		04B867A6253B0ECF00336175 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B867A4253B0ECF00336175 /* LaunchScreen.storyboard */; };
+		04D11F3B2543D2F100ADB210 /* OrderHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11F3A2543D2F100ADB210 /* OrderHistoryController.swift */; };
+		04D11F422543D31900ADB210 /* OrderHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D11F412543D31900ADB210 /* OrderHistory.storyboard */; };
+		04D11F452543D41D00ADB210 /* OrderHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11F442543D41D00ADB210 /* OrderHistoryModel.swift */; };
+		04D11F482543ECB800ADB210 /* OrderHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11F472543ECB800ADB210 /* OrderHistoryCell.swift */; };
+		04D11F4B2544010800ADB210 /* MainPageSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11F4A2544010800ADB210 /* MainPageSearchController.swift */; };
+		04D11F4F25441CC000ADB210 /* OrderHistoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11F4E25441CC000ADB210 /* OrderHistoryDetailController.swift */; };
+		04D11F5225443F1100ADB210 /* OrderHistoryDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11F5125443F1100ADB210 /* OrderHistoryDetailModel.swift */; };
+		04D11F552544406900ADB210 /* OrderHistoryDetailExtraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11F542544406900ADB210 /* OrderHistoryDetailExtraModel.swift */; };
+		04D11F59254676AE00ADB210 /* OrderHistoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11F58254676AE00ADB210 /* OrderHistoryDetail.swift */; };
+		04D11F5D2546781A00ADB210 /* OrderHistoryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11F5C2546781A00ADB210 /* OrderHistoryDetailCell.swift */; };
 		3F05C564254116AC0066DAAD /* MyPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05C563254116AC0066DAAD /* MyPageController.swift */; };
 		3F05C567254116C70066DAAD /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F05C566254116C70066DAAD /* MyPage.storyboard */; settings = {ASSET_TAGS = (MyPageController, ); }; };
 		3F05C56A25412AF20066DAAD /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05C56925412AF20066DAAD /* MyPageView.swift */; };
@@ -83,6 +93,16 @@
 		04B867A2253B0ECF00336175 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B867A5253B0ECF00336175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B867A7253B0ECF00336175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04D11F3A2543D2F100ADB210 /* OrderHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryController.swift; sourceTree = "<group>"; };
+		04D11F412543D31900ADB210 /* OrderHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderHistory.storyboard; sourceTree = "<group>"; };
+		04D11F442543D41D00ADB210 /* OrderHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryModel.swift; sourceTree = "<group>"; };
+		04D11F472543ECB800ADB210 /* OrderHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryCell.swift; sourceTree = "<group>"; };
+		04D11F4A2544010800ADB210 /* MainPageSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageSearchController.swift; sourceTree = "<group>"; };
+		04D11F4E25441CC000ADB210 /* OrderHistoryDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetailController.swift; sourceTree = "<group>"; };
+		04D11F5125443F1100ADB210 /* OrderHistoryDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetailModel.swift; sourceTree = "<group>"; };
+		04D11F542544406900ADB210 /* OrderHistoryDetailExtraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetailExtraModel.swift; sourceTree = "<group>"; };
+		04D11F58254676AE00ADB210 /* OrderHistoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetail.swift; sourceTree = "<group>"; };
+		04D11F5C2546781A00ADB210 /* OrderHistoryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetailCell.swift; sourceTree = "<group>"; };
 		14573B5E084CAEEB4648A4E4 /* Pods-Baro_user_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baro_user_ios.release.xcconfig"; path = "Target Support Files/Pods-Baro_user_ios/Pods-Baro_user_ios.release.xcconfig"; sourceTree = "<group>"; };
 		3F05C563254116AC0066DAAD /* MyPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageController.swift; sourceTree = "<group>"; };
 		3F05C566254116C70066DAAD /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
@@ -168,6 +188,7 @@
 				043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */,
 				048A0BD72540117B007D4FD3 /* MainPageNewStore.swift */,
 				048A0BDA25401194007D4FD3 /* MainPageNewStoreCell.swift */,
+				04D11F4A2544010800ADB210 /* MainPageSearchController.swift */,
 				043DACB6253DABFB00C70102 /* EventListModel.swift */,
 				043DACBA253DAC5600C70102 /* UrlMaker.swift */,
 				E33D8536253DC63600E50BAC /* AboutStore.swift */,
@@ -192,6 +213,15 @@
 				E31D3FD42542AC3E00B63F77 /* StoreListModel.swift */,
 				E31D3FD72542ACAC00B63F77 /* StoreListCell.swift */,
 				E31D3FDA2542AD7300B63F77 /* StoreListPage.storyboard */,
+				04D11F412543D31900ADB210 /* OrderHistory.storyboard */,
+				04D11F3A2543D2F100ADB210 /* OrderHistoryController.swift */,
+				04D11F472543ECB800ADB210 /* OrderHistoryCell.swift */,
+				04D11F4E25441CC000ADB210 /* OrderHistoryDetailController.swift */,
+				04D11F58254676AE00ADB210 /* OrderHistoryDetail.swift */,
+				04D11F5C2546781A00ADB210 /* OrderHistoryDetailCell.swift */,
+				04D11F442543D41D00ADB210 /* OrderHistoryModel.swift */,
+				04D11F5125443F1100ADB210 /* OrderHistoryDetailModel.swift */,
+				04D11F542544406900ADB210 /* OrderHistoryDetailExtraModel.swift */,
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -300,6 +330,7 @@
 				3F4C5AA0253ECAD700C0E7B6 /* NotoSansKR-Regular.otf in Resources */,
 				04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */,
 				E33D855B253ECB5000E50BAC /* AboutStore.storyboard in Resources */,
+				04D11F422543D31900ADB210 /* OrderHistory.storyboard in Resources */,
 				048A0BE22541ACBE007D4FD3 /* testController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D11F5225443F1100ADB210 /* OrderHistoryDetailModel.swift in Sources */,
 				E33D8566253F20E200E50BAC /* ASMenuCell.swift in Sources */,
 				048D55E0253D838E009E9CE4 /* MainPageType.swift in Sources */,
 				043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */,
@@ -363,14 +395,21 @@
 				043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */,
 				3F4C5AB7253ED5D000C0E7B6 /* uiViewSettingAttribute.swift in Sources */,
 				E33D853E253DC86A00E50BAC /* StoreMenuController.swift in Sources */,
+				04D11F4F25441CC000ADB210 /* OrderHistoryDetailController.swift in Sources */,
 				048D55A6253C67EC009E9CE4 /* MainPageController.swift in Sources */,
+				04D11F4B2544010800ADB210 /* MainPageSearchController.swift in Sources */,
 				3F05C564254116AC0066DAAD /* MyPageController.swift in Sources */,
+				04D11F59254676AE00ADB210 /* OrderHistoryDetail.swift in Sources */,
+				04D11F5D2546781A00ADB210 /* OrderHistoryDetailCell.swift in Sources */,
+				04D11F552544406900ADB210 /* OrderHistoryDetailExtraModel.swift in Sources */,
 				E33D8563253F163000E50BAC /* StoreMenu2Controller.swift in Sources */,
+				04D11F3B2543D2F100ADB210 /* OrderHistoryController.swift in Sources */,
 				048D55B6253D2E0F009E9CE4 /* MainPageEvent.swift in Sources */,
 				043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */,
 				3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */,
 				3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */,
 				04B8679C253B0ECD00336175 /* SceneDelegate.swift in Sources */,
+				04D11F482543ECB800ADB210 /* OrderHistoryCell.swift in Sources */,
 				E31D3FD52542AC3E00B63F77 /* StoreListModel.swift in Sources */,
 				E33D8546253DC8C800E50BAC /* ASFirstStoreCell.swift in Sources */,
 				E33D853B253DC69700E50BAC /* StoreInfoController.swift in Sources */,
@@ -386,6 +425,7 @@
 				E33D8542253DC89400E50BAC /* StoreMenuModel.swift in Sources */,
 				048A0BDE2540120A007D4FD3 /* NewStoreListModel.swift in Sources */,
 				E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */,
+				04D11F452543D41D00ADB210 /* OrderHistoryModel.swift in Sources */,
 				3FF3509A253E7F3B007B7B29 /* RegisterPageController.swift in Sources */,
 				043DACAF253DA54600C70102 /* UltraStoreListModel.swift in Sources */,
 			);

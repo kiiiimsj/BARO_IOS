@@ -403,7 +403,7 @@
                                 <rect key="frame" x="317" y="48" width="26" height="22"/>
                                 <state key="normal" title="Button" image="search"/>
                                 <connections>
-                                    <action selector="searchButton:" destination="901-Ku-IQw" eventType="touchUpInside" id="SjQ-mj-BZI"/>
+                                    <segue destination="kpU-U4-PbF" kind="presentation" id="bDd-Zc-ILg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -432,7 +432,6 @@
                     <connections>
                         <outlet property="alertButton" destination="Laq-LU-sua" id="YOH-f9-Vnf"/>
                         <outlet property="mainView" destination="CvG-KU-mmZ" id="LPm-a6-5OF"/>
-                        <outlet property="searchPopupView" destination="LWy-Tg-9VK" id="uiP-gy-zDX"/>
                         <outlet property="tableViewEvent" destination="I9T-aL-jQB" id="e74-C5-tun"/>
                         <outlet property="tableViewNewStore" destination="4yG-sb-UT7" id="1de-Vv-Pig"/>
                         <outlet property="tableViewType" destination="hed-7t-UXx" id="WcY-fK-JAb"/>
@@ -440,48 +439,85 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjD-af-REA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="LWy-Tg-9VK">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 검색" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7J0-Xo-gi4">
-                            <rect key="frame" x="30" y="15" width="180" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <searchBar contentMode="redraw" placeholder="가게를 검색해 주세요" translatesAutoresizingMaskIntoConstraints="NO" id="Czv-nQ-BZn">
-                            <rect key="frame" x="0.0" y="36" width="240" height="64"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JQ-vo-sb8">
-                            <rect key="frame" x="20" y="100" width="200" height="23"/>
-                            <state key="normal" title="검색하기"/>
-                            <connections>
-                                <action selector="searchCompleteButton:" destination="901-Ku-IQw" eventType="touchUpInside" id="J2h-zB-1UC"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <viewLayoutGuide key="safeArea" id="Y8D-ij-qkA"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstItem="5JQ-vo-sb8" firstAttribute="top" secondItem="Czv-nQ-BZn" secondAttribute="bottom" id="0XI-vB-wLT"/>
-                        <constraint firstItem="5JQ-vo-sb8" firstAttribute="leading" secondItem="LWy-Tg-9VK" secondAttribute="leading" constant="20" id="3ER-Nz-RcV"/>
-                        <constraint firstItem="Czv-nQ-BZn" firstAttribute="leading" secondItem="LWy-Tg-9VK" secondAttribute="leading" id="4Fz-No-WKK"/>
-                        <constraint firstItem="Czv-nQ-BZn" firstAttribute="leading" secondItem="Y8D-ij-qkA" secondAttribute="leading" id="4Ym-A6-dgx"/>
-                        <constraint firstItem="Czv-nQ-BZn" firstAttribute="top" secondItem="7J0-Xo-gi4" secondAttribute="bottom" symbolic="YES" id="4eF-9t-Bfd"/>
-                        <constraint firstItem="7J0-Xo-gi4" firstAttribute="leading" secondItem="LWy-Tg-9VK" secondAttribute="leading" constant="30" id="9A5-rv-Zmv"/>
-                        <constraint firstAttribute="trailing" secondItem="7J0-Xo-gi4" secondAttribute="trailing" constant="30" id="NtH-ug-x0Q"/>
-                        <constraint firstAttribute="bottom" secondItem="5JQ-vo-sb8" secondAttribute="bottom" constant="5" id="TR7-Ml-p6U"/>
-                        <constraint firstItem="Czv-nQ-BZn" firstAttribute="trailing" secondItem="Y8D-ij-qkA" secondAttribute="trailing" id="VK4-BZ-9dx"/>
-                        <constraint firstItem="7J0-Xo-gi4" firstAttribute="top" secondItem="LWy-Tg-9VK" secondAttribute="top" constant="15" id="cbq-dm-xTH"/>
-                        <constraint firstAttribute="bottom" secondItem="Czv-nQ-BZn" secondAttribute="bottom" constant="28" id="iAb-q5-I1D"/>
-                        <constraint firstAttribute="trailing" secondItem="5JQ-vo-sb8" secondAttribute="trailing" constant="20" id="iyk-wS-V21"/>
-                        <constraint firstAttribute="trailing" secondItem="Czv-nQ-BZn" secondAttribute="trailing" id="oeP-nx-Rlk"/>
-                    </constraints>
-                </view>
             </objects>
             <point key="canvasLocation" x="559.4202898550725" y="164.73214285714286"/>
+        </scene>
+        <!--MainPageSearchController-->
+        <scene sceneID="Kxt-fj-TIh">
+            <objects>
+                <viewController storyboardIdentifier="MainPageSearchController" title="MainPageSearchController" modalPresentationStyle="overCurrentContext" id="kpU-U4-PbF" customClass="MainPageSearchController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QXj-kz-H5P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7v5-4c-E4S">
+                                <rect key="frame" x="49" y="363" width="317" height="268"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 검색" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-1o-PrE">
+                                        <rect key="frame" x="0.0" y="0.0" width="317" height="20.5"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Y9J-qm-oXD">
+                                        <rect key="frame" x="0.0" y="31" width="317" height="66"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQV-Fz-hgf">
+                                        <rect key="frame" x="132" y="171.5" width="52" height="30"/>
+                                        <state key="normal" title="검색하기"/>
+                                        <connections>
+                                            <action selector="button:" destination="kpU-U4-PbF" eventType="touchUpInside" id="g1q-HH-AeB"/>
+                                            <segue destination="9UF-7z-E4i" kind="show" identifier="searchToStore" id="ILq-2l-g8L"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Y9J-qm-oXD" firstAttribute="top" secondItem="wcn-1o-PrE" secondAttribute="bottom" constant="10" id="4v1-ya-u9m"/>
+                                    <constraint firstItem="Y9J-qm-oXD" firstAttribute="top" secondItem="wcn-1o-PrE" secondAttribute="bottom" constant="10" id="AdN-iu-7Wo"/>
+                                    <constraint firstItem="wcn-1o-PrE" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="FqG-nY-YmK"/>
+                                    <constraint firstAttribute="trailing" secondItem="QQV-Fz-hgf" secondAttribute="trailing" constant="133" id="GaE-gU-igZ"/>
+                                    <constraint firstItem="QQV-Fz-hgf" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" constant="132" id="MfO-2P-FSa"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y9J-qm-oXD" secondAttribute="trailing" id="Nh0-X1-rt5"/>
+                                    <constraint firstAttribute="bottom" secondItem="QQV-Fz-hgf" secondAttribute="bottom" constant="66.5" id="TZM-ta-P9D"/>
+                                    <constraint firstItem="wcn-1o-PrE" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="iqM-jf-YNP"/>
+                                    <constraint firstAttribute="trailing" secondItem="wcn-1o-PrE" secondAttribute="trailing" id="lHI-YY-E8z"/>
+                                    <constraint firstAttribute="trailing" secondItem="wcn-1o-PrE" secondAttribute="trailing" id="mim-yt-jN2"/>
+                                    <constraint firstItem="wcn-1o-PrE" firstAttribute="top" secondItem="7v5-4c-E4S" secondAttribute="top" id="oNv-uA-z4d"/>
+                                    <constraint firstItem="wcn-1o-PrE" firstAttribute="top" secondItem="7v5-4c-E4S" secondAttribute="top" id="wiw-a3-TgX"/>
+                                    <constraint firstItem="QQV-Fz-hgf" firstAttribute="top" secondItem="Y9J-qm-oXD" secondAttribute="bottom" constant="75" id="yDV-Sz-MgN"/>
+                                    <constraint firstItem="Y9J-qm-oXD" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="yP2-fc-dUQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rz9-62-BcR"/>
+                        <color key="backgroundColor" red="0.703125" green="0.703125" blue="0.703125" alpha="0.58605530240265125" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="7v5-4c-E4S" firstAttribute="leading" secondItem="Rz9-62-BcR" secondAttribute="leading" constant="49" id="8Bd-hH-xSJ"/>
+                            <constraint firstItem="Rz9-62-BcR" firstAttribute="bottom" secondItem="7v5-4c-E4S" secondAttribute="bottom" constant="231" id="IH9-fK-LIK"/>
+                            <constraint firstItem="Rz9-62-BcR" firstAttribute="trailing" secondItem="7v5-4c-E4S" secondAttribute="trailing" constant="48" id="ZWK-Wj-ukz"/>
+                            <constraint firstItem="7v5-4c-E4S" firstAttribute="top" secondItem="Rz9-62-BcR" secondAttribute="top" constant="319" id="kIE-5o-5pk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="Y9J-qm-oXD" id="s6w-wm-7Hn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ehe-qy-05L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508.6956521739132" y="-105.80357142857143"/>
+        </scene>
+        <!--testController-->
+        <scene sceneID="VJg-2V-tck">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="testController" storyboardName="testController" referencedIdentifier="testController" id="9UF-7z-E4i" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="B4A-2R-FgU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H2j-CQ-9rl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2414" y="-96"/>
         </scene>
         <!--StoreListPageController-->
         <scene sceneID="xkY-0k-ySh">
@@ -491,7 +527,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUW-3l-U9n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="91"/>
+            <point key="canvasLocation" x="1381" y="340"/>
         </scene>
     </scenes>
     <resources>
@@ -500,6 +536,9 @@
         <image name="search" width="16.5" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

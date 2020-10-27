@@ -130,5 +130,11 @@ class NetWorkURL {
     let ultraList = "http://15.165.22.64:8080/StoreFindByUltra.do"
     
     let newStoreList = "http://15.165.22.64:8080/StoreFindByNew.do"
+    
+    
+    //주문내역 리스트 뽑기
+    let orderHistoryList = "http://15.165.22.64:8080/OrderListFindByPhone.do"
+    //상세 주문내역 뽑기
+    let orderHistoryDetail = "http://15.165.22.64:8080/OrderFindByReceiptId.do"
 }
 
