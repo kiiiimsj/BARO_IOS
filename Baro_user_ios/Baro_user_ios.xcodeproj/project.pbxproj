@@ -205,80 +205,25 @@
 		04B86798253B0ECD00336175 /* Baro_user_ios */ = {
 			isa = PBXGroup;
 			children = (
+				E31D3FFD2547B8EA00B63F77 /* LoginPage */,
+				E31D3FFE2547B95F00B63F77 /* MainPage */,
+				E31D40002547B9ED00B63F77 /* ListStore */,
+				E31D40022547BA7300B63F77 /* AboutStore */,
+				E31D40012547BA2800B63F77 /* OrderDetails */,
+				E31D40032547BAD300B63F77 /* OrderHistory */,
+				E31D40042547BAFE00B63F77 /* MyPage */,
+				E31D40062547BB7E00B63F77 /* Model */,
+				E31D40052547BB4100B63F77 /* ETC */,
 				3FDE5E632546B6EF00C05514 /* policy */,
 				3F499082253EC11B00372F83 /* Font */,
-				E33D8545253DC8C800E50BAC /* ASFirstStoreCell.swift */,
-				048D55B9253D575A009E9CE4 /* TypeListModel.swift */,
-				048A0BDD2540120A007D4FD3 /* NewStoreListModel.swift */,
-				043DACAE253DA54600C70102 /* UltraStoreListModel.swift */,
 				04B86799253B0ECD00336175 /* AppDelegate.swift */,
 				04B8679B253B0ECD00336175 /* SceneDelegate.swift */,
 				04B8679D253B0ECD00336175 /* ViewController.swift */,
 				04B867A2253B0ECF00336175 /* Assets.xcassets */,
 				04B867A4253B0ECF00336175 /* LaunchScreen.storyboard */,
 				04B867A7253B0ECF00336175 /* Info.plist */,
-				048D55A2253C67B8009E9CE4 /* MainPage.storyboard */,
-				048D55A5253C67EC009E9CE4 /* MainPageController.swift */,
-				048D55DF253D838E009E9CE4 /* MainPageType.swift */,
-				048D55E2253D83AD009E9CE4 /* MainPageTypeCell.swift */,
-				048D55B5253D2E0F009E9CE4 /* MainPageEvent.swift */,
-				048D55E6253D91C6009E9CE4 /* MainPageEventCell.swift */,
-				043DACAB253DA51500C70102 /* MainPageUltraStore.swift */,
-				043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */,
-				048A0BD72540117B007D4FD3 /* MainPageNewStore.swift */,
-				048A0BDA25401194007D4FD3 /* MainPageNewStoreCell.swift */,
-				04D11F4A2544010800ADB210 /* MainPageSearchController.swift */,
-				043DACB6253DABFB00C70102 /* EventListModel.swift */,
-				043DACBA253DAC5600C70102 /* UrlMaker.swift */,
-				E33D8536253DC63600E50BAC /* AboutStore.swift */,
-				E33D853A253DC69700E50BAC /* StoreInfoController.swift */,
-				E33D853D253DC86A00E50BAC /* StoreMenuController.swift */,
-				E33D8541253DC89400E50BAC /* StoreMenuModel.swift */,
-				3FF35096253E7E72007B7B29 /* LoginPageController.swift */,
-				3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */,
-				3F49907F253EB18B00372F83 /* LoginPage.storyboard */,
-				3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */,
-				E33D855A253ECB5000E50BAC /* AboutStore.storyboard */,
-				E33D855F253EF24900E50BAC /* ASCategoryCell.swift */,
-				3F05C563254116AC0066DAAD /* MyPageController.swift */,
-				3F05C566254116C70066DAAD /* MyPage.storyboard */,
-				3F05C56925412AF20066DAAD /* MyPageView.swift */,
-				3FA4FC822542898E00EF2894 /* MyPageButtons.swift */,
 				048A0BE12541ACBE007D4FD3 /* testController.storyboard */,
 				048A0BE42541AD71007D4FD3 /* testController.swift */,
-				E33D8562253F163000E50BAC /* StoreMenu2Controller.swift */,
-				E33D8565253F20E200E50BAC /* ASMenuCell.swift */,
-				E31D3FD12542ABEF00B63F77 /* StoreListPageController.swift */,
-				E31D3FD42542AC3E00B63F77 /* StoreListModel.swift */,
-				E31D3FD72542ACAC00B63F77 /* StoreListCell.swift */,
-				E31D3FDA2542AD7300B63F77 /* StoreListPage.storyboard */,
-				04D11F412543D31900ADB210 /* OrderHistory.storyboard */,
-				04D11F3A2543D2F100ADB210 /* OrderHistoryController.swift */,
-				04D11F472543ECB800ADB210 /* OrderHistoryCell.swift */,
-				04D11F4E25441CC000ADB210 /* OrderHistoryDetailController.swift */,
-				04D11F58254676AE00ADB210 /* OrderHistoryDetail.swift */,
-				04D11F5C2546781A00ADB210 /* OrderHistoryDetailCell.swift */,
-				04D11F442543D41D00ADB210 /* OrderHistoryModel.swift */,
-				04D11F5125443F1100ADB210 /* OrderHistoryDetailModel.swift */,
-				04D11F542544406900ADB210 /* OrderHistoryDetailExtraModel.swift */,
-				E31D3FE12545DF7D00B63F77 /* OrderDetails.storyboard */,
-				E31D3FE52545DFA000B63F77 /* OrderDetailsController.swift */,
-				E31D3FE8254653C700B63F77 /* ExtraModel.swift */,
-				E31D3FEB25465F0200B63F77 /* EssentialCell.swift */,
-				E31D3FEE25465F6000B63F77 /* NonEssentialCell.swift */,
-				E31D3FF22546887F00B63F77 /* OptionsHeader.swift */,
-				E31D3FF5254692A200B63F77 /* OptionCategoryHeader.swift */,
-				E31D3FF825469DCE00B63F77 /* EssentialButton.swift */,
-				3F4F8DAE254572220015BACE /* NoticePageController.swift */,
-				3FDE5E372546968000C05514 /* NoticePage.storyboard */,
-				3FDE5E5D2546A16C00C05514 /* TermOfUser.swift */,
-				3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */,
-				3FDE5E672546E37A00C05514 /* NoticeListModel.swift */,
-				3FC20E592546E62400EEE783 /* NoticeCell.swift */,
-				3FC20E5C2546EEE600EEE783 /* ChangePass.swift */,
-				3FC20E5F2546EF0500EEE783 /* ChangePass.storyboard */,
-				3FC20E622546EFD400EEE783 /* ChangeEmail.swift */,
-				3FC20E652546EFF700EEE783 /* ChangeEmail.storyboard */
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -309,6 +254,133 @@
 				3FDE5E642546B70C00C05514 /* privacyPolicy.html */,
 			);
 			path = policy;
+			sourceTree = "<group>";
+		};
+		E31D3FFD2547B8EA00B63F77 /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */,
+				3FF35096253E7E72007B7B29 /* LoginPageController.swift */,
+				3F49907F253EB18B00372F83 /* LoginPage.storyboard */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		E31D3FFE2547B95F00B63F77 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				048D55A2253C67B8009E9CE4 /* MainPage.storyboard */,
+				048D55A5253C67EC009E9CE4 /* MainPageController.swift */,
+				048D55DF253D838E009E9CE4 /* MainPageType.swift */,
+				048D55E2253D83AD009E9CE4 /* MainPageTypeCell.swift */,
+				048D55B5253D2E0F009E9CE4 /* MainPageEvent.swift */,
+				048D55E6253D91C6009E9CE4 /* MainPageEventCell.swift */,
+				043DACAB253DA51500C70102 /* MainPageUltraStore.swift */,
+				043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */,
+				048A0BD72540117B007D4FD3 /* MainPageNewStore.swift */,
+				048A0BDA25401194007D4FD3 /* MainPageNewStoreCell.swift */,
+				04D11F4A2544010800ADB210 /* MainPageSearchController.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		E31D40002547B9ED00B63F77 /* ListStore */ = {
+			isa = PBXGroup;
+			children = (
+				E31D3FD12542ABEF00B63F77 /* StoreListPageController.swift */,
+				E31D3FD42542AC3E00B63F77 /* StoreListModel.swift */,
+				E31D3FD72542ACAC00B63F77 /* StoreListCell.swift */,
+				E31D3FDA2542AD7300B63F77 /* StoreListPage.storyboard */,
+			);
+			path = ListStore;
+			sourceTree = "<group>";
+		};
+		E31D40012547BA2800B63F77 /* OrderDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E31D3FE12545DF7D00B63F77 /* OrderDetails.storyboard */,
+				E31D3FE52545DFA000B63F77 /* OrderDetailsController.swift */,
+				E31D3FEB25465F0200B63F77 /* EssentialCell.swift */,
+				E31D3FEE25465F6000B63F77 /* NonEssentialCell.swift */,
+				E31D3FF22546887F00B63F77 /* OptionsHeader.swift */,
+				E31D3FF5254692A200B63F77 /* OptionCategoryHeader.swift */,
+				E31D3FF825469DCE00B63F77 /* EssentialButton.swift */,
+			);
+			path = OrderDetails;
+			sourceTree = "<group>";
+		};
+		E31D40022547BA7300B63F77 /* AboutStore */ = {
+			isa = PBXGroup;
+			children = (
+				E33D8545253DC8C800E50BAC /* ASFirstStoreCell.swift */,
+				E33D8562253F163000E50BAC /* StoreMenu2Controller.swift */,
+				E33D8536253DC63600E50BAC /* AboutStore.swift */,
+				E33D853A253DC69700E50BAC /* StoreInfoController.swift */,
+				E33D853D253DC86A00E50BAC /* StoreMenuController.swift */,
+				E33D855A253ECB5000E50BAC /* AboutStore.storyboard */,
+				E33D855F253EF24900E50BAC /* ASCategoryCell.swift */,
+				E33D8565253F20E200E50BAC /* ASMenuCell.swift */,
+			);
+			path = AboutStore;
+			sourceTree = "<group>";
+		};
+		E31D40032547BAD300B63F77 /* OrderHistory */ = {
+			isa = PBXGroup;
+			children = (
+				04D11F412543D31900ADB210 /* OrderHistory.storyboard */,
+				04D11F3A2543D2F100ADB210 /* OrderHistoryController.swift */,
+				04D11F472543ECB800ADB210 /* OrderHistoryCell.swift */,
+				04D11F4E25441CC000ADB210 /* OrderHistoryDetailController.swift */,
+				04D11F58254676AE00ADB210 /* OrderHistoryDetail.swift */,
+				04D11F5C2546781A00ADB210 /* OrderHistoryDetailCell.swift */,
+			);
+			path = OrderHistory;
+			sourceTree = "<group>";
+		};
+		E31D40042547BAFE00B63F77 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				3F05C563254116AC0066DAAD /* MyPageController.swift */,
+				3F05C566254116C70066DAAD /* MyPage.storyboard */,
+				3F05C56925412AF20066DAAD /* MyPageView.swift */,
+				3FA4FC822542898E00EF2894 /* MyPageButtons.swift */,
+				3F4F8DAE254572220015BACE /* NoticePageController.swift */,
+				3FDE5E372546968000C05514 /* NoticePage.storyboard */,
+				3FDE5E5D2546A16C00C05514 /* TermOfUser.swift */,
+				3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */,
+				3FC20E592546E62400EEE783 /* NoticeCell.swift */,
+				3FC20E5C2546EEE600EEE783 /* ChangePass.swift */,
+				3FC20E5F2546EF0500EEE783 /* ChangePass.storyboard */,
+				3FC20E622546EFD400EEE783 /* ChangeEmail.swift */,
+				3FC20E652546EFF700EEE783 /* ChangeEmail.storyboard */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		E31D40052547BB4100B63F77 /* ETC */ = {
+			isa = PBXGroup;
+			children = (
+				043DACBA253DAC5600C70102 /* UrlMaker.swift */,
+				3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */,
+			);
+			path = ETC;
+			sourceTree = "<group>";
+		};
+		E31D40062547BB7E00B63F77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				048D55B9253D575A009E9CE4 /* TypeListModel.swift */,
+				048A0BDD2540120A007D4FD3 /* NewStoreListModel.swift */,
+				043DACAE253DA54600C70102 /* UltraStoreListModel.swift */,
+				043DACB6253DABFB00C70102 /* EventListModel.swift */,
+				E33D8541253DC89400E50BAC /* StoreMenuModel.swift */,
+				04D11F442543D41D00ADB210 /* OrderHistoryModel.swift */,
+				04D11F5125443F1100ADB210 /* OrderHistoryDetailModel.swift */,
+				04D11F542544406900ADB210 /* OrderHistoryDetailExtraModel.swift */,
+				E31D3FE8254653C700B63F77 /* ExtraModel.swift */,
+				3FDE5E672546E37A00C05514 /* NoticeListModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E997DD1537C720F796AAE31D /* Pods */ = {
