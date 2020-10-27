@@ -23,7 +23,7 @@
         <!--LoginPageController-->
         <scene sceneID="dId-xT-Hox">
             <objects>
-                <viewController storyboardIdentifier="LoginPageController" title="LoginPageController" id="e5m-c8-bea" customClass="LoginPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPageController" title="LoginPageController" hidesBottomBarWhenPushed="YES" id="e5m-c8-bea" customClass="LoginPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="thL-f2-4Bv">
                         <rect key="frame" x="0.0" y="0.0" width="360" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,22 +168,22 @@
                         <outlet property="logoImage" destination="2vc-Px-LDB" id="Rq6-XK-hBV"/>
                         <outlet property="passwordInput" destination="uZA-Yz-PZr" id="G6s-nw-ZkY"/>
                         <outlet property="phoneInput" destination="8rn-GP-ACR" id="VCq-N0-hcK"/>
-                        <segue destination="iai-03-fDS" kind="presentation" identifier="LoginToMyPage" modalPresentationStyle="fullScreen" id="Xjc-iT-Zpm"/>
+                        <segue destination="Ibe-2Z-WFL" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" id="UPu-sm-1VS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kp-KJ-LYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-172.46376811594203" y="-286.95652173913044"/>
         </scene>
-        <!--MyPageController-->
-        <scene sceneID="vom-Pp-K1U">
+        <!--BottomTabBarController-->
+        <scene sceneID="xxl-LD-H3f">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="MyPageController" id="iai-03-fDS" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="JUW-Gb-j61"/>
+                <viewControllerPlaceholder storyboardIdentifier="BottomTabBarController" storyboardName="BottomTabBar" referencedIdentifier="BottomTabBarController" id="Ibe-2Z-WFL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="cUI-W1-6uz"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fbb-vz-Lfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V2U-cR-dMv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="425" y="-438"/>
+            <point key="canvasLocation" x="539" y="-444"/>
         </scene>
     </scenes>
     <resources>

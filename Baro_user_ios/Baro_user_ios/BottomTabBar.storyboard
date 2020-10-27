@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tZM-HP-mrE">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bottom Tab Bar Controller-->
+        <scene sceneID="abn-t3-ku5">
+            <objects>
+                <tabBarController storyboardIdentifier="BottomTabBarController" id="tZM-HP-mrE" customClass="BottomTabBarController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PH8-AR-6ld">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="DK8-7c-Q2M" kind="relationship" relationship="viewControllers" id="dl1-uP-Nyu"/>
+                        <segue destination="xh1-RU-U3f" kind="relationship" relationship="viewControllers" id="PXr-Rz-j8K"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cat-7m-Ooi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2114" y="-272"/>
+        </scene>
+        <!--MainPageController-->
+        <scene sceneID="6fd-JD-6e6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainPage" referencedIdentifier="MainPageController" id="DK8-7c-Q2M" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" enabled="NO" title="홈" id="XVA-dF-gdZ">
+                        <color key="badgeColor" systemColor="systemPinkColor"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ejw-HQ-cCO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1243" y="-538"/>
+        </scene>
+        <!--MyPageController-->
+        <scene sceneID="IyV-wP-d5I">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="MyPageController" id="xh1-RU-U3f" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" enabled="NO" title="마이페이지" id="5zA-jc-MoT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zT5-j5-dCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1251" y="-360"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
