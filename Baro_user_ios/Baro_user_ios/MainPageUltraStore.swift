@@ -24,7 +24,7 @@ class MainPageUltraStore : UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+    
         collectionView.delegate = self
         collectionView.dataSource = self
         

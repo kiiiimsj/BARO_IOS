@@ -22,8 +22,7 @@ class MainPageController: UIViewController {
     
     @IBOutlet var mainView: UIView!
     //blur view
-    //@IBOutlet var blurView: UIVisualEffectView!
-    
+   
     //alert이미지 - 아래에서 off/on체크해주기
     @IBOutlet weak var alertButton: UIButton!
     
@@ -31,24 +30,6 @@ class MainPageController: UIViewController {
     @IBAction func alertClick(_ sender: Any) {
         //alert페이지로 넘기기
     }
-    
-    
-    //search 버튼 클릭시
-    @IBAction func searchButton(_ sender: Any) {
-        
-        animateIn(desiredView: searchPopupView)
-    }
-    
-    @IBAction func searchCompleteButton(_ sender: Any) {
-        //검색한 가게리스트로 넘어가기
-    }
-    
-    //취소버튼도 하나 만들기
-    
-    
-    //search팝업뷰
-    @IBOutlet var searchPopupView: UIView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,29 +39,9 @@ class MainPageController: UIViewController {
         tableViewUltra.separatorStyle = .none
         tableViewNewStore.separatorStyle = .none
         
-        //blurView.bounds = self.view.bounds
-        searchPopupView.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.4)
-        
     }
     
-    //search바 클릭했을때 배경 애니메이션
-    func animateIn(desiredView: UIView) {
-//        let backgroundView = self.view!
-        let backgroundView = mainView!
-        mainView.backgroundColor = .gray
-        
-        backgroundView.addSubview(desiredView)
-        
-        desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        desiredView.alpha = 0
-        desiredView.center = backgroundView.center
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            desiredView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-            desiredView.alpha = 1
-        })
-        
-    }
+
     
 }
 
