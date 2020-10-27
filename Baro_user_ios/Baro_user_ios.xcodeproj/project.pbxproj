@@ -51,6 +51,7 @@
 		3F4C5AA3253ECAD700C0E7B6 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9E253ECAD700C0E7B6 /* NotoSansKR-Light.otf */; };
 		3F4C5AB7253ED5D000C0E7B6 /* uiViewSettingAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */; };
 		3F4F8DAF254572220015BACE /* NoticePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F8DAE254572220015BACE /* NoticePageController.swift */; };
+		3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */; };
 		3FA196F52547E34E007CD182 /* BottomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA196F42547E34E007CD182 /* BottomTabBarController.swift */; };
 		3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4FC822542898E00EF2894 /* MyPageButtons.swift */; };
 		3FC20E5A2546E62400EEE783 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20E592546E62400EEE783 /* NoticeCell.swift */; };
@@ -137,6 +138,7 @@
 		3F4C5A9E253ECAD700C0E7B6 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiViewSettingAttribute.swift; sourceTree = "<group>"; };
 		3F4F8DAE254572220015BACE /* NoticePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePageController.swift; sourceTree = "<group>"; };
+		3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiLabelAnimation.swift; sourceTree = "<group>"; };
 		3FA196F42547E34E007CD182 /* BottomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarController.swift; sourceTree = "<group>"; };
 		3FA4FC822542898E00EF2894 /* MyPageButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageButtons.swift; sourceTree = "<group>"; };
 		3FC20E592546E62400EEE783 /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
@@ -229,7 +231,6 @@
 				04B867A7253B0ECF00336175 /* Info.plist */,
 				048A0BE12541ACBE007D4FD3 /* testController.storyboard */,
 				048A0BE42541AD71007D4FD3 /* testController.swift */,
-				3F418FCE254808E100D89665 /* BottomTabBar.storyboard */,
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -257,7 +258,9 @@
 		3FA196EE2547C311007CD182 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				3F418FCE254808E100D89665 /* BottomTabBar.storyboard */,
 				3FA196F42547E34E007CD182 /* BottomTabBarController.swift */,
+				3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				048D55E7253D91C6009E9CE4 /* MainPageEventCell.swift in Sources */,
 				E33D8542253DC89400E50BAC /* StoreMenuModel.swift in Sources */,
 				048A0BDE2540120A007D4FD3 /* NewStoreListModel.swift in Sources */,
+				3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */,
 				E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */,
 				04D11F452543D41D00ADB210 /* OrderHistoryModel.swift in Sources */,
 				3FF3509A253E7F3B007B7B29 /* RegisterPageController.swift in Sources */,
