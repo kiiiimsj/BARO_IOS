@@ -106,3 +106,11 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
         return 2
     }
 }
+
+extension OrderDetailsController : CellDelegateExtra{
+    func click(extra_name: String, extraPrice: Int) {
+        print("qqqq",String(extraPrice)+"ddddDDd" + extra_name)
+    }
+    
+    
+}

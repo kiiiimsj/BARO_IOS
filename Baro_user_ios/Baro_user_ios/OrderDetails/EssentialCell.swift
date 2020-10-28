@@ -7,12 +7,16 @@
 
 import UIKit
 
+protocol CellDelegateExtra: class {
+    func click(extra_name : String ,extraPrice: Int)
+}
+
 class EssentialCell : UICollectionViewCell{
     @IBOutlet weak var collection: UICollectionView!
+    var clickListener : CellDelegateExtra?
     public var extras = [Extra]()
     override func prepareForReuse() {
         super.prepareForReuse()
-        
     }
     
     override func awakeFromNib() {
@@ -37,19 +41,23 @@ extension EssentialCell : UICollectionViewDelegate,UICollectionViewDataSource,UI
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collection.frame.width/CGFloat(extras.count), height:100)
+        return CGSize(width: collection.frame.width/CGFloat(extras.count+1), height:100)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
         let headerview = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "OptionCategoryHeader", for: indexPath) as! OptionCategoryHeader
         if extras.count != 0 {
-            headerview.OptionCategory.text = extras[0].extra_group
+            headerview.optionCategory.text = extras[0].extra_group
         }
         return headerview
       }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let data = extras[indexPath.item]
+        clickListener?.click(extra_name: data.extra_name, extraPrice: data.extra_price)
+    }
     
 }

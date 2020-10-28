@@ -91,6 +91,7 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U17-Oc-gTa">
                                                                         <rect key="frame" x="35" y="11" width="46" height="30"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <color key="backgroundColor" red="0.47109787269999998" green="0.211157332" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <state key="normal" title="Button"/>
                                                                     </button>
                                                                 </subviews>
@@ -114,7 +115,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="옵션 카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gca-5k-mXN" customClass="OptionCate">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="옵션 카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gca-5k-mXN">
                                                                 <rect key="frame" x="5" y="0.0" width="171" height="50"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -133,6 +134,7 @@
                                                         <connections>
                                                             <outlet property="OptionCategory" destination="Gca-5k-mXN" id="KNF-jP-dZD"/>
                                                             <outlet property="SelectedPrice" destination="n2N-k8-akX" id="oJU-VJ-v39"/>
+                                                            <outlet property="optionCategory" destination="Gca-5k-mXN" id="LKL-9F-U17"/>
                                                         </connections>
                                                     </collectionReusableView>
                                                 </collectionView>
