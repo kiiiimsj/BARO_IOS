@@ -9,7 +9,8 @@ import UIKit
 
 class OptionCategoryHeader : UICollectionReusableView{
     
-    @IBOutlet weak var OptionCategory: UILabel!
+  
     
+    @IBOutlet weak var optionCategory: UILabel!
     @IBOutlet weak var SelectedPrice: UILabel!
 }
