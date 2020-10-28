@@ -22,7 +22,13 @@ class MyPageController : UIViewController {
     @IBOutlet weak var buttonList: UITableView?
     
     var buttons = [ [" ", "공지사항", "입점요청", "1:1 문의"], [" ","비밀번호 변경", "이메일 변경"], [" ","이용약관", "개인정보 처리방침"] ]
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        reloadInputViews()
+        setUserName()
+        setMyCountInfo()
+        self.tabBarController?.tabBar.isTranslucent = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setUserName()
@@ -72,7 +78,6 @@ extension MyPageController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageButtons", for: indexPath) as! MyPageButtons
         cell.lists?.text = buttons[indexPath.section][indexPath.row + 1]
-        //cell.arrow.kf.setImage()
         return cell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

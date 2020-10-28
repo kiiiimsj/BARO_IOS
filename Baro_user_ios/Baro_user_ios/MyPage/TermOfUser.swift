@@ -18,8 +18,12 @@ class TermOfUser : UIViewController{
         loadUrl()
     }
     
-    @IBAction func backbutton(_ sender : Any) {
-        self.performSegue(withIdentifier: "MyPageController", sender: nil)
+    @IBAction func backbutton() {
+        self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tabBar = segue.destination as? BottomTabBarController else { return }
+        tabBar.indexValue = 1
     }
     func loadUrl() {
         //let url = URL(fileURLWithPath: "/policy")
@@ -30,9 +34,6 @@ class TermOfUser : UIViewController{
         webView.load(request)
         
         backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let mypage = segue.destination as? MyPageController else {return}
     }
     
 }

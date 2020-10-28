@@ -18,6 +18,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selected_index">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="DK8-7c-Q2M" kind="relationship" relationship="viewControllers" id="dl1-uP-Nyu"/>
                         <segue destination="xh1-RU-U3f" kind="relationship" relationship="viewControllers" id="PXr-Rz-j8K"/>
@@ -43,7 +48,7 @@
         <scene sceneID="IyV-wP-d5I">
             <objects>
                 <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="MyPageController" id="xh1-RU-U3f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" enabled="NO" title="마이페이지" id="5zA-jc-MoT"/>
+                    <tabBarItem key="tabBarItem" tag="1" enabled="NO" title="마이페이지" id="5zA-jc-MoT"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zT5-j5-dCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
