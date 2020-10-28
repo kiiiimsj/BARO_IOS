@@ -41,6 +41,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
+                                    <action selector="backbutton" destination="RbE-QQ-MHE" eventType="touchUpInside" id="Bem-O4-dcq"/>
                                     <action selector="backbutton:" destination="RbE-QQ-MHE" eventType="touchUpInside" id="msk-Ct-tlp"/>
                                 </connections>
                             </button>

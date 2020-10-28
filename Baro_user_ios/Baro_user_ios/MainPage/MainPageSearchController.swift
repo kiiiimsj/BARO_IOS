@@ -11,8 +11,6 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-   
-    
     @IBAction func button(_ sender: Any) {
         if let text = searchBar.searchTextField.text {
             print(text)
