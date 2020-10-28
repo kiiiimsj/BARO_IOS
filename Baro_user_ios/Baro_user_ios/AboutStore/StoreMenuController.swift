@@ -53,7 +53,6 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryIdentifier, for: indexPath) as! ASCategoryCell
         cell.category.setTitle(array[indexPath.item], for: .normal)
-        cell.backgroundColor = .darkGray
         cell.category.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         return cell
     }
@@ -61,11 +60,8 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
         return CGSize(width: view.frame.width / 4, height: 40)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(array[indexPath.item])
-        print(categories.someKey(forValue: array[indexPath.item])!)
         let _ : Int = categories.someKey(forValue: array[indexPath.item])!
         let data : [Menu] = self.menus[array[indexPath.item]]!
-        print(array[indexPath.item])
         actionToSelectedCell(indexPath: indexPath,menus: data)
     }
     @objc func tap(_ sender: UITapGestureRecognizer) {

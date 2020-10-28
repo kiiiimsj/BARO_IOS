@@ -19,67 +19,62 @@ class AboutStore : UIViewController {
     private var StoreInfo = StoreInfoModel()
     private var categories = Dictionary<Int,String>()
     public var union = [String : [Menu]]()
-    public var first = ["메뉴 정보","가게 정보"]
+    public var first = ["메뉴","가게 정보"]
     private var storeInfoManager = StoreInfoController()
     private var storeMenuManager = StoreMenuController()
     private var contollers = [UIViewController]()
     public override func viewDidLoad() {
         super.viewDidLoad()
-        print(store_id)
         netWork.get(method: .get, url: urlMaker.categoryURL + "?store_id="+store_id) { (json) in
             if json["result"].boolValue{
                 for item in json["category"].array!{
                     self.categories[item["category_id"].intValue] = item["category_name"].stringValue
                     self.union[item["category_name"].stringValue] = [Menu]();
-                }
-                self.netWork.get(method: .get, url: self.urlMaker.menuURL + "?store_id="+self.store_id) { (json) in
-                    let boolValue = json["result"].boolValue
-                    if boolValue {
-                        var tempMenu = Menu()
-                        let jsonObject = json["menu"].array!
-                        for item in jsonObject {
-                            tempMenu.menu_defaultprice = item["menu_defaultprice"].intValue
-                            tempMenu.menu_id = item["menu_id"].intValue
-                            tempMenu.category_id = item["category_id"].intValue
-                            tempMenu.menu_image = item["menu_image"].stringValue
-                            tempMenu.store_id = item["store_id"].intValue
-                            tempMenu.menu_name = item["menu_name"].stringValue
-                            tempMenu.menu_info = item["menu_info"].stringValue
-                            tempMenu.is_soldout = item["is_soldout"].stringValue
-                            self.menus.append(tempMenu)
-                            self.union[self.categories[tempMenu.category_id]!]?.append(tempMenu)
+                    self.FirstBar.delegate = self
+                    self.FirstBar.dataSource = self
+                    self.FirstBar.reloadData()
+                    self.netWork.get(method: .get, url: self.urlMaker.menuURL + "?store_id="+self.store_id) { (json) in
+                            let boolValue = json["result"].boolValue
+                            if boolValue {
+                                var tempMenu = Menu()
+                                let jsonObject = json["menu"].array!
+                                for item in jsonObject {
+                                    tempMenu.menu_defaultprice = item["menu_defaultprice"].intValue
+                                    tempMenu.menu_id = item["menu_id"].intValue
+                                    tempMenu.category_id = item["category_id"].intValue
+                                    tempMenu.menu_image = item["menu_image"].stringValue
+                                    tempMenu.store_id = item["store_id"].intValue
+                                    tempMenu.menu_name = item["menu_name"].stringValue
+                                    tempMenu.menu_info = item["menu_info"].stringValue
+                                    tempMenu.is_soldout = item["is_soldout"].stringValue
+                                    self.menus.append(tempMenu)
+                                    self.union[self.categories[tempMenu.category_id]!]?.append(tempMenu)
+                                    self.netWork.get(method: .get, url: "http://3.35.180.57:8080/StoreFindById.do?store_id="+self.store_id) {
+                                        (json) in
+                                        self.StoreInfo.store_id = json["store_id"].intValue
+                                        self.StoreInfo.store_opentime = json["store_opentime"].stringValue
+                                        self.StoreInfo.store_latitude = json["store_latitude"].doubleValue
+                                        self.StoreInfo.store_closetime = json["store_closetime"].stringValue
+                                        self.StoreInfo.store_daysoff = json["store_daysoff"].stringValue
+                                        self.StoreInfo.message = json["message"].stringValue
+                                        self.StoreInfo.result = json["result"].boolValue
+                                        self.StoreInfo.store_phone = json["store_phone"].stringValue
+                                        self.StoreInfo.store_longitude = json["store_longitude"].doubleValue
+                                        self.StoreInfo.store_name = json["store_name"].stringValue
+                                        self.StoreInfo.store_location = json["store_location"].stringValue
+                                        self.StoreInfo.type_code = json["type_code"].stringValue
+                                        self.StoreInfo.store_image = json["store_image"].stringValue
+                                        self.StoreInfo.is_open = json["is_open"].stringValue
+                                        self.StoreInfo.store_info = json["store_info"].stringValue
+                                    }
+                                }
+                            }
                         }
-                        self.FirstBar.delegate = self
-                        self.FirstBar.dataSource = self
-                        self.FirstBar.reloadData()
-                        self.netWork.get(method: .get, url: "http://15.165.22.64:8080/StoreFindById.do?store_id=1") {(json) in
-                            self.StoreInfo.store_id = json["store_id"].intValue
-                            self.StoreInfo.store_opentime = json["store_opentime"].stringValue
-                            self.StoreInfo.store_latitude = json["store_latitude"].doubleValue
-                            self.StoreInfo.store_closetime = json["store_closetime"].stringValue
-                            self.StoreInfo.store_daysoff = json["store_daysoff"].stringValue
-                            self.StoreInfo.message = json["message"].stringValue
-                            self.StoreInfo.result = json["result"].boolValue
-                            self.StoreInfo.store_phone = json["store_phone"].stringValue
-                            self.StoreInfo.store_longitude = json["store_longitude"].doubleValue
-                            self.StoreInfo.store_name = json["store_name"].stringValue
-                            self.StoreInfo.store_location = json["store_location"].stringValue
-                            self.StoreInfo.type_code = json["type_code"].stringValue
-                            self.StoreInfo.store_image = json["store_image"].stringValue
-                            self.StoreInfo.is_open = json["is_open"].stringValue
-                            self.StoreInfo.store_info = json["store_info"].stringValue
-                             
-                        }
-                    }else{
-                        
-                        
                     }
                 }
             }
-        }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("\(index)")
         actionToSelectedCell(indexPath: indexPath)
     }
     func actionToSelectedCell(indexPath : IndexPath){
@@ -89,13 +84,13 @@ class AboutStore : UIViewController {
                 case 1:
                     setContainerViewController(storyboard: "AboutStore", viewControllerID: "StoreInfoController",index: indexPath.row)
                 default:
-                    print("-touchUP\(indexPath.row)-")
+                    print("1")
+                    //print("-touchUP\(indexPath.row)-")
                 }
         }
     func setContainerViewController(storyboard: String, viewControllerID: String,index : Int){
         let storyboard = UIStoryboard(name: storyboard, bundle: nil)
         let VC = storyboard.instantiateViewController(withIdentifier: viewControllerID)
-//        let VC = contollers[index]
         switch index {
         case 0:
             (VC as! StoreMenuController).categories = self.categories
@@ -114,7 +109,7 @@ class AboutStore : UIViewController {
         }
 }
 
-extension AboutStore : UICollectionViewDelegate,UICollectionViewDataSource{
+extension AboutStore : UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return first.count
     }
@@ -125,17 +120,16 @@ extension AboutStore : UICollectionViewDelegate,UICollectionViewDataSource{
         cell.state.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let collectionViewSize = collectionView.frame.size.width
+        return CGSize(width: collectionViewSize / 2, height: view.frame.height)
+    }
     @objc func tap(_ sender: UITapGestureRecognizer) {
-        
-     
         let location = sender.location(in: self.FirstBar)
         let indexPath = self.FirstBar.indexPathForItem(at: location)
         if let index = indexPath {
             actionToSelectedCell(indexPath: index)
         }
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.width / CGFloat(first.count)*0.97),height: view.frame.height)
     }
 }
 

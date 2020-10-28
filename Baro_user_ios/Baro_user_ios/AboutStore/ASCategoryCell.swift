@@ -32,7 +32,6 @@ class ASCategoryCell : UICollectionViewCell{
     override func prepareForReuse() {
         super.prepareForReuse()
         // 초기화 할 코드 예시
-        category.backgroundColor = .blue
         category.titleLabel?.text = nil
     }
 }

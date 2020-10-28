@@ -12,14 +12,5 @@ class ASFirstStoreCell : UICollectionViewCell{
     
    
     @IBOutlet weak var state: UIButton!
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        state.backgroundColor = .gray
-    }
-    required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-    }
-    
-
 }
 
