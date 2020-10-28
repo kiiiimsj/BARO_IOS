@@ -78,69 +78,70 @@ class CallRequest {
 
 class NetWorkURL {
 
-    let logInURL = "http://3.35.180.57:8080/MemberLogin.do"
-    let signUpURL = "http://3.35.180.57:8080/MemberRegister.do"
-    let noticeURL = "http://3.35.180.57:8080/NoticeFindAll.do"
-    let phoneNumberCheckURL = "http://3.35.180.57:8080/MemberPhoneCheck.do"
-    let passwordUpdateURL = "http://3.35.180.57:8080/MemberPassUpdate.do"
-    let emailUpdateURL = "http://3.35.180.57:8080/MemberEmailUpdate.do"
-    let categoryURL = "http://3.35.180.57:8080/CategoryFindByStoreId.do"
-    let menuURL = "http://3.35.180.57:8080/MenuFindByStoreId.do"
-    let menuByCate = "http://3.35.180.57:8080/MenuFindByStoreAndCategoryId.do"
+    let logInURL = "http://15.165.22.64:8080/MemberLogin.do"
+    let signUpURL = "http://15.165.22.64:8080/MemberRegister.do"
+    let noticeURL = "http://15.165.22.64:8080/NoticeFindAll.do"
+    let phoneNumberCheckURL = "http://15.165.22.64:8080/MemberPhoneCheck.do"
+    let passwordUpdateURL = "http://15.165.22.64:8080/MemberPassUpdate.do"
+    let emailUpdateURL = "http://15.165.22.64:8080/MemberEmailUpdate.do"
+    let categoryURL = "http://15.165.22.64:8080/CategoryFindByStoreId.do"
+    let menuURL = "http://15.165.22.64:8080/MenuFindByStoreId.do"
+    let menuByCate = "http://15.165.22.64:8080/MenuFindByStoreAndCategoryId.do"
 
 
     //store 상세
-    let typeListURL = "http://3.35.180.57:8080/TypeFindAll.do"
-    let storeDetailListURL = "http://3.35.180.57:8080/StoreInfoFindByType.do"
-    let storeIntroductionURL = "http://3.35.180.57.44:8080/StoreFindById.do"
-    let extra = "http://3.35.180.57:8080/ExtraFindByMenuId.do"
+    let typeListURL = "http://15.165.22.64:8080/TypeFindAll.do"
+    let storeDetailListURL = "http://15.165.22.64:8080/StoreInfoFindByType.do"
+    let storeIntroductionURL = "http://15.165.22.64.44:8080/StoreFindById.do"
+    let extra = "http://15.165.22.64:8080/ExtraFindByMenuId.do"
 
     //coupon 상세
 
-    let couponList = "http://3.35.180.57:8080/CouponFindByPhone.do"
-    let couponCount = "http://3.35.180.57:8080/CouponCountByPhone.do?phone="
+    let couponList = "http://15.165.22.64:8080/CouponFindByPhone.do"
+    let couponCount = "http://15.165.22.64:8080/CouponCountByPhone.do?phone="
 
 
     //문의 상세
-    let requestList = "http://3.35.180.57:8080/InquiryListFindByEmail.do"
-    let requestDetail = "http://3.35.180.57:8080/InquiryFindById.do"
-    let requestRegist = "http://3.35.180.57:8080/InquirySave.do"
+    let requestList = "http://15.165.22.64:8080/InquiryListFindByEmail.do"
+    let requestDetail = "http://15.165.22.64:8080/InquiryFindById.do"
+    let requestRegist = "http://15.165.22.64:8080/InquirySave.do"
 
 
     //주문내역
 
-    let orderList = "http://3.35.180.57:8080/OrderListFindByPhone.do"
-    let orderCount = "http://3.35.180.57:8080/OrderTotalCountByPhone.do?phone="
+    let orderList = "http://15.165.22.64:8080/OrderListFindByPhone.do"
+    let orderCount = "http://15.165.22.64:8080/OrderTotalCountByPhone.do?phone="
 
 
     //나의매장 (즐겨찾기)
 
-    let myStoreList = "http://3.35.180.57:8080/FavoriteList.do"
+    let myStoreList = "http://15.165.22.64:8080/FavoriteList.do"
     //공지 및 이벤트
-    let noticeAll = "http://3.35.180.57:8080/NoticeFindAll.do"
+    let noticeAll = "http://15.165.22.64:8080/NoticeFindAll.do"
 
     //검색
 
-    let searchList = "http://3.35.180.57:8080/StoreSearch.do"
+    let searchList = "http://15.165.22.64:8080/StoreSearch.do"
 
     // 이미지
 
-    let eventImage = "http://3.35.180.57:8080/ImageEvent.do"
-    let storeImage = "http://3.35.180.57:8080/ImageStore.do"
-    let storeTypeImage = "http://3.35.180.57:8080/ImageType.do"
+    let eventImage = "http://15.165.22.64:8080/ImageEvent.do"
+    let storeImage = "http://15.165.22.64:8080/ImageStore.do"
+    let storeTypeImage = "http://15.165.22.64:8080/ImageType.do"
 
-    let eventList = "http://3.35.180.57:8080/EventFindAll.do"
+    let eventList = "http://15.165.22.64:8080/EventFindAll.do"
 
-    let ultraList = "http://3.35.180.57:8080/StoreFindByUltra.do"
+    let ultraList = "http://15.165.22.64:8080/StoreFindByUltra.do"
     
-    let newStoreList = "http://3.35.180.57:8080/StoreFindByNew.do"
+    let newStoreList = "http://15.165.22.64:8080/StoreFindByNew.do"
     
     
     //주문내역 리스트 뽑기
-    let orderHistoryList = "http://3.35.180.57:8080/OrderListFindByPhone.do"
+    let orderHistoryList = "http://15.165.22.64:8080/OrderListFindByPhone.do"
     //상세 주문내역 뽑기(기본적인것)
     let orderHistoryDetail = "http://3.35.180.57:8080/OrderFindByReceiptIdDefault.do"
     //상세 주문내역 뽑기(extra)
     let orderHistoryDetailExtra = "http://3.35.180.57:8080/OrderFindByOrderIdExtra.do"
+
 }
 

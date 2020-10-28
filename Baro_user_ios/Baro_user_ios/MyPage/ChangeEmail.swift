@@ -14,6 +14,9 @@ class ChangeEmail : UIViewController, CAAnimationDelegate {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var changeEmailBtn: UIButton!
     @IBOutlet weak var errorAlarmText: UILabel!
+    
+    let regex = try? NSRegularExpression(pattern: "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$", options: .caseInsensitive)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         errorAlarmText.isHidden = true
@@ -22,19 +25,35 @@ class ChangeEmail : UIViewController, CAAnimationDelegate {
     }
     @IBAction func changeEmailBtnPush() {
         let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
-        let email = inputNewEmail.text
+        guard let email = inputNewEmail.text else {return}
+        checkRegexEmail()
         let param = ["phone":"\(phone)","email":"\(email)"]
         networkModel.post(method: .put, param: param, url: networkURL.emailUpdateURL) {
             json in
+            print(json)
             if json["result"].boolValue {
                 
             }
             else {
-                
+                self.errorAlarmText.isHidden = false
+                self.inputNewEmail.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: .editingChanged)
             }
         }
     }
+    @objc func textFieldDidChange(textField: UITextField){
+        errorAlarmText.isHidden = true
+    }
+    func checkRegexEmail() {
+        let text = inputNewEmail.text
+        let textNSString = text! as NSString
+        let checkRegexResult = regex?.matches(in: text!, options: [], range: NSRange(location: 0, length: textNSString.length))
+        print(checkRegexResult)
+    }
     @IBAction func backbutton() {
-        self.performSegue(withIdentifier: "MyPageController", sender: nil)
+        self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tabBar = segue.destination as? BottomTabBarController else { return }
+        tabBar.indexValue = 1
     }
 }
