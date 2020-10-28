@@ -144,7 +144,7 @@
                                                                             <connections>
                                                                                 <outlet property="typeImage" destination="UCS-fd-cFx" id="Krl-xo-UKp"/>
                                                                                 <outlet property="typeName" destination="xTQ-a1-hcl" id="CbA-zf-Q2t"/>
-                                                                                <segue destination="FlP-hh-bmj" kind="show" identifier="mainToStore" id="acz-YI-ymg"/>
+                                                                                <segue destination="FlP-hh-bmj" kind="presentation" identifier="mainToStore" modalPresentationStyle="fullScreen" id="acz-YI-ymg"/>
                                                                             </connections>
                                                                         </collectionViewCell>
                                                                     </cells>

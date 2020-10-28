@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -397,7 +397,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="p1g-h8-b3T" id="cFE-eA-b11"/>
-                        <segue destination="ALg-b7-AKR" kind="show" identifier="toDetails" id="4e3-v5-GcC"/>
+                        <segue destination="ALg-b7-AKR" kind="presentation" identifier="toDetails" modalPresentationStyle="fullScreen" id="4e3-v5-GcC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXl-pg-fBq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
