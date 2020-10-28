@@ -40,6 +40,7 @@ class LoginPageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         phoneInput.placeholder = "01012345678"
         phoneInput.borderStyle = .none
 
@@ -64,18 +65,8 @@ class LoginPageController: UIViewController {
                 UserDefaults.standard.set(json["email"].stringValue, forKey: "user_email")
                 UserDefaults.standard.set(json["nick"].stringValue, forKey: "user_name")
                 UserDefaults.standard.set(json["phone"].stringValue, forKey: "user_phone")
-                //self.sucessLogin()
-                self.performSegue(withIdentifier: "LoginToMyPage", sender: nil)
+                self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
             }
         }
     }
-    func sucessLogin() {
-//        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "MyPageController")
-//        vcName?.modalTransitionStyle = .coverVertical
-//        self.present(vcName!, animated: true, completion: nil)
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let myPageViewController = segue.destination as? MyPageController else {return}
-    }
-    
 }

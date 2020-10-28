@@ -6,15 +6,18 @@
 //
 
 import UIKit
-class ChangeEmail : UIViewController {
+class ChangeEmail : UIViewController, CAAnimationDelegate {
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
     @IBOutlet weak var inputNewEmail: UITextField!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var changeEmailBtn: UIButton!
+    @IBOutlet weak var errorAlarmText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        errorAlarmText.isHidden = true
+        inputNewEmail.placeholder = "ex)baro@baro.com"
         backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
     }
     @IBAction func changeEmailBtnPush() {

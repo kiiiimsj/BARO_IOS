@@ -11,13 +11,13 @@ class MainPageController: UIViewController {
     
     
     //table list
-    @IBOutlet weak var tableViewEvent: UITableView!
+    @IBOutlet weak var tableViewEvent: UITableView?
     
-    @IBOutlet weak var tableViewType: UITableView!
+    @IBOutlet weak var tableViewType: UITableView?
     
-    @IBOutlet weak var tableViewUltra: UITableView!
+    @IBOutlet weak var tableViewUltra: UITableView?
     
-    @IBOutlet weak var tableViewNewStore: UITableView!
+    @IBOutlet weak var tableViewNewStore: UITableView?
     
     
     @IBOutlet var mainView: UIView!
@@ -25,7 +25,6 @@ class MainPageController: UIViewController {
    
     //alert이미지 - 아래에서 off/on체크해주기
     @IBOutlet weak var alertButton: UIButton!
-    
     //alert 클릭시
     @IBAction func alertClick(_ sender: Any) {
         //alert페이지로 넘기기
@@ -33,12 +32,13 @@ class MainPageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.definesPresentationContext = true
         
-        tableViewEvent.separatorStyle = .none
-        tableViewType.separatorStyle = .none
-        tableViewUltra.separatorStyle = .none
-        tableViewNewStore.separatorStyle = .none
-        
+        tableViewEvent?.separatorStyle = .none
+        tableViewType?.separatorStyle = .none
+        tableViewUltra?.separatorStyle = .none
+        tableViewNewStore?.separatorStyle = .none
+        print("main's viewDidLoad")
     }
     
 
@@ -52,22 +52,22 @@ extension MainPageController : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView == tableViewEvent){
-            let cell = tableViewEvent.dequeueReusableCell(withIdentifier: "MainPageEvent", for: indexPath) as! MainPageEvent
+            let cell = tableViewEvent?.dequeueReusableCell(withIdentifier: "MainPageEvent", for: indexPath) as! MainPageEvent
             cell.delegateEvent = self
             return cell
         }
         else if(tableView == tableViewType){
-            let cell = tableViewType.dequeueReusableCell(withIdentifier: "MainPageType", for: indexPath) as! MainPageType
+            let cell = tableViewType?.dequeueReusableCell(withIdentifier: "MainPageType", for: indexPath) as! MainPageType
             cell.delegateType = self
             return cell
         }
         else if(tableView == tableViewUltra){
-            let cell = tableViewUltra.dequeueReusableCell(withIdentifier: "MainPageUltraStore", for: indexPath) as! MainPageUltraStore
+            let cell = tableViewUltra?.dequeueReusableCell(withIdentifier: "MainPageUltraStore", for: indexPath) as! MainPageUltraStore
             cell.delegateUltra = self
             return cell
         }
         else {
-            let cell = tableViewNewStore.dequeueReusableCell(withIdentifier: "MainPageNewStore", for: indexPath) as! MainPageNewStore
+            let cell = tableViewNewStore?.dequeueReusableCell(withIdentifier: "MainPageNewStore", for: indexPath) as! MainPageNewStore
             cell.delegateNewStore = self
             return cell
             

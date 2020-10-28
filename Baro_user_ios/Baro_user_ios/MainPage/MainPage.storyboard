@@ -403,7 +403,7 @@
                                 <rect key="frame" x="317" y="48" width="26" height="22"/>
                                 <state key="normal" title="Button" image="search"/>
                                 <connections>
-                                    <segue destination="kpU-U4-PbF" kind="presentation" id="bDd-Zc-ILg"/>
+                                    <segue destination="kpU-U4-PbF" kind="show" animates="NO" id="bDd-Zc-ILg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -428,6 +428,11 @@
                             <constraint firstItem="nOH-RC-Xk3" firstAttribute="top" secondItem="0Yi-ZZ-DQP" secondAttribute="top" constant="4" id="sQm-4J-1LQ"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="홈" image="home_tabBar" selectedImage="home_tabBar" id="z9a-Mh-aJe">
+                        <color key="badgeColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="vUk-kb-yeq"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="414" height="1300"/>
                     <connections>
                         <outlet property="alertButton" destination="Laq-LU-sua" id="YOH-f9-Vnf"/>
@@ -440,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjD-af-REA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="559.4202898550725" y="164.73214285714286"/>
+            <point key="canvasLocation" x="3289.8550724637685" y="164.73214285714286"/>
         </scene>
         <!--MainPageSearchController-->
         <scene sceneID="Kxt-fj-TIh">
@@ -461,7 +466,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Y9J-qm-oXD">
-                                        <rect key="frame" x="0.0" y="31" width="317" height="66"/>
+                                        <rect key="frame" x="0.0" y="30.5" width="317" height="66"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQV-Fz-hgf">
@@ -501,13 +506,14 @@
                             <constraint firstItem="7v5-4c-E4S" firstAttribute="top" secondItem="Rz9-62-BcR" secondAttribute="top" constant="319" id="kIE-5o-5pk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Asy-M9-ZxP"/>
                     <connections>
                         <outlet property="searchBar" destination="Y9J-qm-oXD" id="s6w-wm-7Hn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehe-qy-05L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508.6956521739132" y="-105.80357142857143"/>
+            <point key="canvasLocation" x="4239.130434782609" y="-105.80357142857143"/>
         </scene>
         <!--testController-->
         <scene sceneID="VJg-2V-tck">
@@ -517,7 +523,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2j-CQ-9rl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="-96"/>
+            <point key="canvasLocation" x="5144.202898550725" y="-96.428571428571431"/>
         </scene>
         <!--StoreListPageController-->
         <scene sceneID="xkY-0k-ySh">
@@ -527,13 +533,18 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUW-3l-U9n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1381" y="340"/>
+            <point key="canvasLocation" x="4110.144927536232" y="339.50892857142856"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="labelColor"/>
     <resources>
         <image name="BARO_logo" width="50" height="13"/>
+        <image name="home_tabBar" width="18" height="18"/>
         <image name="off" width="13.5" height="16.5"/>
         <image name="search" width="16.5" height="16"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

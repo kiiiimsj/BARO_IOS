@@ -12,14 +12,14 @@ import WebKit
 class MyPageController : UIViewController {
     var networkModel = CallRequest()
     var networkURL = NetWorkURL()
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userEmail: UILabel!
+    @IBOutlet weak var userName: UILabel?
+    @IBOutlet weak var userEmail: UILabel?
     
-    @IBOutlet weak var myOrderCount: UILabel!
-    @IBOutlet weak var myCouponCount: UILabel!
-    @IBOutlet weak var myBasketCount: UILabel!
+    @IBOutlet weak var myOrderCount: UILabel?
+    @IBOutlet weak var myCouponCount: UILabel?
+    @IBOutlet weak var myBasketCount: UILabel?
     
-    @IBOutlet weak var buttonList: UITableView!
+    @IBOutlet weak var buttonList: UITableView?
     
     var buttons = [ [" ", "공지사항", "입점요청", "1:1 문의"], [" ","비밀번호 변경", "이메일 변경"], [" ","이용약관", "개인정보 처리방침"] ]
     
@@ -27,25 +27,25 @@ class MyPageController : UIViewController {
         super.viewDidLoad()
         setUserName()
         setMyCountInfo()
-        buttonList.dataSource = self
-        buttonList.delegate = self
+        buttonList?.dataSource = self
+        buttonList?.delegate = self
     }
     func setMyCountInfo() {
         let userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
         networkModel.post(method: .get, param: nil, url: networkURL.orderCount+"\(userPhone)") { (json) in
             if json["result"].boolValue {
-                self.myOrderCount.text = "\(json["total_orders"].intValue) 건"
+                self.myOrderCount?.text = "\(json["total_orders"].intValue) 건"
             }
             else {
-                self.myOrderCount.text = "0 건"
+                self.myOrderCount?.text = "0 건"
             }
         }
         networkModel.post(method: .get, param: nil, url: networkURL.couponCount+"\(userPhone)") { (json) in
             if json["result"].boolValue {
-                self.myCouponCount.text = "\(json["coupon_count"].intValue) 건"
+                self.myCouponCount?.text = "\(json["coupon_count"].intValue) 건"
             }
             else {
-                self.myCouponCount.text = "0 건"
+                self.myCouponCount?.text = "0 건"
             }
         }
         // 장바구니는 저장된 UserDefault에서 꺼내오기
@@ -53,11 +53,11 @@ class MyPageController : UIViewController {
     func setUserName() {
         let user_name = "\(UserDefaults.standard.value(forKey: "user_name") as! String)"
         if user_name != "" {
-            userName.text = "\(user_name)"
+            userName?.text = "\(user_name)"
         }
         let user_email = "\(UserDefaults.standard.value(forKey: "user_email") as! String)"
         if user_email != "" {
-            userEmail.text = "\(user_email)"
+            userEmail?.text = "\(user_email)"
         }
     }
 }
