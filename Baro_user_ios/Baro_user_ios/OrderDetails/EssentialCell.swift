@@ -38,6 +38,7 @@ extension EssentialCell : UICollectionViewDelegate,UICollectionViewDataSource,UI
         print("abc",extras[indexPath.item].extra_name)
         cell.menu.setTitle(extras[indexPath.item].extra_name, for: .normal)
         cell.backgroundColor = .yellow
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -56,8 +57,17 @@ extension EssentialCell : UICollectionViewDelegate,UICollectionViewDataSource,UI
         return headerview
       }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let data = extras[indexPath.item]
-        clickListener?.click(extra_name: data.extra_name, extraPrice: data.extra_price)
+        
     }
-    
+    @objc func tap(_ sender: UITapGestureRecognizer) {
+        let location = sender.location(in: self.collection)
+        let indexPath = self.collection.indexPathForItem(at: location)
+        print("ppp")
+        if let index = indexPath {
+            print("lll")
+            let data = extras[index.item]
+            print("tap!! index : " + data.extra_name)
+            clickListener?.click(extra_name: data.extra_name, extraPrice: data.extra_price)
+        }
+    }
 }
