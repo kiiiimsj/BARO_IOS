@@ -23,8 +23,12 @@ class NoticePageController : UIViewController {
         noticeListTableView.delegate = self
         noticeListTableView.dataSource = self
     }
-    @IBAction func backbutton(_ sender : Any) {
-        self.performSegue(withIdentifier: "MyPageController", sender: nil)
+    @IBAction func backbutton() {
+        self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tabBar = segue.destination as? BottomTabBarController else { return }
+        tabBar.indexValue = 1
     }
     
     func loadNoticePageTitle() {

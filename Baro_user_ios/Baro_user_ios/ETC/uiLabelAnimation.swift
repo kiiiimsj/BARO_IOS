@@ -15,21 +15,21 @@ class uiLabelAnimation : UILabel {
             self.duration = duration
             self.animate()
     }
+    
     private func animate() {
         let animation = CATransition()
         animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         animation.duration = duration
         animation.type = .push
         animation.subtype = .fromTop
-        animation.delegate = self
-        
+        //animation.delegate = self
         self.layer.add(animation, forKey: CATransitionType.push.rawValue)
     }
 }
 
 extension uiLabelAnimation : CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if duration.isZero {
+        if flag == true {
                self.layer.removeAllAnimations()
                return
        }

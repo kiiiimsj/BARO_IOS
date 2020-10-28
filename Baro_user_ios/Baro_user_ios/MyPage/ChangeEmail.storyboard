@@ -39,6 +39,9 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeEmailBtnPush" destination="adc-70-pEw" eventType="touchUpInside" id="RKa-5L-sOB"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jxn-9J-Oj6">
                                         <rect key="frame" x="20" y="158" width="320" height="34"/>
@@ -51,8 +54,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호가 틀립니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75k-pS-IoY">
-                                        <rect key="frame" x="20" y="199.5" width="118" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 사용중인 이메일 입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75k-pS-IoY">
+                                        <rect key="frame" x="20" y="199.5" width="125" height="15"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
@@ -68,7 +71,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="75k-pS-IoY" firstAttribute="firstBaseline" secondItem="egq-sa-M11" secondAttribute="baseline" constant="19" symbolType="layoutAnchor" id="0jO-VG-DCR"/>
-                                    <constraint firstAttribute="trailing" secondItem="75k-pS-IoY" secondAttribute="trailing" constant="222" id="45B-le-UdO"/>
+                                    <constraint firstAttribute="trailing" secondItem="75k-pS-IoY" secondAttribute="trailing" constant="215" id="45B-le-UdO"/>
                                     <constraint firstItem="23t-wI-U6P" firstAttribute="leading" secondItem="6xm-Gg-L5H" secondAttribute="leading" constant="20" id="8Ae-VD-3O0"/>
                                     <constraint firstItem="uDJ-63-RXP" firstAttribute="top" secondItem="75k-pS-IoY" secondAttribute="bottom" constant="8.5" id="8Oh-6d-cxf"/>
                                     <constraint firstItem="egq-sa-M11" firstAttribute="leading" secondItem="6xm-Gg-L5H" secondAttribute="leading" constant="20" id="Jr4-WM-QqL"/>
@@ -131,17 +134,17 @@
                         <outlet property="changeEmailBtn" destination="uDJ-63-RXP" id="Bce-kK-30a"/>
                         <outlet property="errorAlarmText" destination="75k-pS-IoY" id="m42-ko-yFC"/>
                         <outlet property="inputNewEmail" destination="Jxn-9J-Oj6" id="SGs-if-7gD"/>
-                        <segue destination="NzB-Me-pvG" kind="presentation" identifier="MyPageController" modalPresentationStyle="fullScreen" id="QH0-h7-XJj"/>
+                        <segue destination="NzB-Me-pvG" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" id="QH0-h7-XJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwf-Zg-vC9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="71.014492753623188" y="44.866071428571423"/>
         </scene>
-        <!--MyPageController-->
+        <!--BottomTabBarController-->
         <scene sceneID="M33-e6-sA3">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MyPageController" storyboardName="MyPage" referencedIdentifier="MyPageController" id="NzB-Me-pvG" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="BottomTabBarController" storyboardName="BottomTabBar" referencedIdentifier="BottomTabBarController" id="NzB-Me-pvG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3y0-Pc-vPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="616" y="-190"/>

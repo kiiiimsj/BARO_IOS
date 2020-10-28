@@ -8,12 +8,39 @@
 import UIKit
 class ChangePass : UIViewController {
     @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var errorAlarmText: UILabel!
+    @IBOutlet weak var enterCurrentPass: UIButton!
+    @IBOutlet weak var inputNewPass: UITextField!
     
+    let networkModel = CallRequest()
+    let networkURL = NetWorkURL()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.errorAlarmText.isHidden = true
         backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
     }
-    @IBAction func backbutton(_ sender : Any) {
-        self.performSegue(withIdentifier: "MyPageController", sender: nil)
+    @IBAction func gotoEnterNewPassword() {
+        let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
+        guard let password = inputNewPass.text else {return}
+        let param = ["phone":"\(phone)","pass":"\(password)"]
+        networkModel.post(method: .post, param: param, url: networkURL.logInURL) { (json) in
+            if json["result"].boolValue {
+                self.performSegue(withIdentifier: "ChangePass2", sender: nil)
+            }
+            else {
+                self.errorAlarmText.isHidden = false
+                self.inputNewPass.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: .editingChanged)
+            }
+        }
+    }
+    @objc func textFieldDidChange(textField: UITextField){
+        errorAlarmText.isHidden = true
+    }
+    @IBAction func backbutton() {
+        self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tabBar = segue.destination as? BottomTabBarController else { return }
+        tabBar.indexValue = 1
     }
 }
