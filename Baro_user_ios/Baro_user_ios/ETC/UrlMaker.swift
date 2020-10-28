@@ -142,6 +142,5 @@ class NetWorkURL {
     let orderHistoryDetail = "http://3.35.180.57:8080/OrderFindByReceiptIdDefault.do"
     //상세 주문내역 뽑기(extra)
     let orderHistoryDetailExtra = "http://3.35.180.57:8080/OrderFindByOrderIdExtra.do"
-
 }
 
