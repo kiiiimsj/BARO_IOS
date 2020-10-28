@@ -19,6 +19,5 @@ class OrderHistoryCell : UICollectionViewCell {
     @IBOutlet weak var orderTotalPriceLabel: UILabel!
     
     var receipt_id = ""
-    
-    //receipt_id도 추가
+  
 }
