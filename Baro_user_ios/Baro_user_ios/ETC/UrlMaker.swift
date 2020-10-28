@@ -139,8 +139,9 @@ class NetWorkURL {
     //주문내역 리스트 뽑기
     let orderHistoryList = "http://3.35.180.57:8080/OrderListFindByPhone.do"
     //상세 주문내역 뽑기(기본적인것)
-    let orderHistoryDetail = "http://3.35.180.57:8080/OrderDefaultFindByReceiptId.do"
+    let orderHistoryDetail = "http://3.35.180.57:8080/OrderFindByReceiptIdDefault.do"
     //상세 주문내역 뽑기(extra)
-    let orderHistoryDetailExtra = "http://3.35.180.57:8080/OrderExtraFindByOrderId.do"
+    let orderHistoryDetailExtra = "http://3.35.180.57:8080/OrderFindByOrderIdExtra.do"
+
 }
 
