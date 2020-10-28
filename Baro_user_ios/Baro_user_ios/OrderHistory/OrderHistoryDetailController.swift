@@ -42,6 +42,7 @@ class OrderHistoryDetailController : UIViewController {
     
     func configure() {
         
+        
         networkModel.post(method: .get, url: networkURL.orderHistoryDetail + "?receipt_id=" + receipt_id) {
             json in
             var orderHistoryDetailModel = OrderHistoryDetailList()
