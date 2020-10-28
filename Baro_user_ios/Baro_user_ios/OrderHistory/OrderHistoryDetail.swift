@@ -13,23 +13,21 @@ class OrderHistoryDetail : UITableViewCell {
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
-    var receipt_id = "5f43699f878a560047f9fea0"
+    var order_id = 0
+    //값 넘겨주기
+    
+   
     
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var menu_name: UILabel!
-    
     @IBOutlet weak var menu_default_price: UILabel!
-    
     @IBOutlet weak var menu_one_total_price: UILabel!
-    
     @IBOutlet weak var menu_count: UILabel!
-    
     @IBOutlet weak var menu_total_price: UILabel!
     
     
-    var orderHistoryDetailList = [OrderHistoryDetailList]()
+    var orderHistoryDetailList = [OrderHistoryDetailExtraList]()
     var extraList = [OrderHistoryDetailExtraList]()
     
     override func awakeFromNib() {
@@ -40,35 +38,26 @@ class OrderHistoryDetail : UITableViewCell {
         
         configure()
         
+        print("ttt",order_id)
+        
         //아메리카노 1500원 넣어주기
         //1500 x 1    1500원 넣어주기
         
     }
     
     func configure() {
-        
-        networkModel.post(method: .get, url: networkURL.orderHistoryDetail + "?receipt_id=" + receipt_id) {
-            json in
-            var orderHistoryDetailModel = OrderHistoryDetailList()
-            var orderHistoryDetailExtraModel = OrderHistoryDetailExtraList()
-            for item in json["orders"].array! {
-                orderHistoryDetailModel.order_id = item["order_id"].intValue
-                orderHistoryDetailModel.order_state = item["order_state"].stringValue
-                orderHistoryDetailModel.order_count = item["order_count"].intValue
-                orderHistoryDetailModel.menu_name = item["menu_name"].stringValue
-                orderHistoryDetailModel.menu_defaultprice = item["menu_defaultprice"].intValue
-//                for item2 in json["extras"].array! {
-//                    orderHistoryDetailExtraModel.extra_count = item2["extra_count"].intValue
-//                    orderHistoryDetailExtraModel.extra_name = item2["extra_name"].stringValue
-//                    orderHistoryDetailExtraModel.extra_price = item2["extra_price"].intValue
-//                    self.extraList.append(orderHistoryDetailExtraModel)
-//                }
-                self.orderHistoryDetailList.append(orderHistoryDetailModel)
+        networkModel.post(method: .get, url: networkURL.orderHistoryDetailExtra + "?order_id=" + String(order_id)) {
+                json in
+                var orderHistoryDetailExtraModel = OrderHistoryDetailExtraList()
+                for item in json["extras"].array! {
+                    orderHistoryDetailExtraModel.extra_name = item["extra_name"].stringValue
+                    orderHistoryDetailExtraModel.extra_price = item["extra_price"].intValue
+                    orderHistoryDetailExtraModel.extra_count = item["extra_count"].intValue
+                }
+                self.orderHistoryDetailList.append(orderHistoryDetailExtraModel)
             }
             self.collectionView.reloadData()
             
-        }
-        
     }
 }
 

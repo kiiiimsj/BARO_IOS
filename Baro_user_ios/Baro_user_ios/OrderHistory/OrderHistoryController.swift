@@ -53,7 +53,6 @@ class OrderHistoryController : UIViewController {
 
 extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("aaaaa",orderHistoryList.count)
         return orderHistoryList.count
         
     }
@@ -91,15 +90,4 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
         vc.total_price = orderHistory.total_price
         present(vc, animated: true, completion: nil)
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let nextController = segue.destination as? OrderHistoryDetailController else {
-//            return
-//        }
-//        if let labelll = sender as? String {
-//            print("ii",nextController)
-//            print("zzz", labelll)
-//            nextController.aaa = labelll
-//        }
-//    }
 }

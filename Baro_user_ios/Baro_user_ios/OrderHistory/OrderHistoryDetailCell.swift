@@ -9,9 +9,7 @@ import UIKit
 
 class OrderHistoryDetailCell : UICollectionViewCell {
     
-    
     @IBOutlet weak var extraName: UILabel!
-    
     @IBOutlet weak var extraPrice: UILabel!
     
 }
