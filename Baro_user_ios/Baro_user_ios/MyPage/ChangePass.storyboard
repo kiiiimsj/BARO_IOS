@@ -22,17 +22,17 @@
             <objects>
                 <viewController storyboardIdentifier="ChangePass" title="ChangePass" id="ZfL-xJ-JU8" customClass="ChangePass" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lUi-Dq-0GO">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="586"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8u-Xw-6zA">
-                                <rect key="frame" x="131" y="36" width="98" height="65"/>
+                                <rect key="frame" x="131" y="80" width="98" height="21"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="PCZ-Me-p43" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="155" width="360" height="431"/>
+                                <rect key="frame" x="0.0" y="155" width="360" height="485"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKD-EE-Zm5">
                                         <rect key="frame" x="20" y="223" width="320" height="50"/>
@@ -159,6 +159,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="backbutton" destination="aON-YC-HVj" eventType="touchUpInside" id="m7H-Go-iih"/>
+                                    <segue destination="ZfL-xJ-JU8" kind="presentation" identifier="ChangePass" modalPresentationStyle="fullScreen" id="ILB-be-rve"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DrG-Gf-id3">
@@ -287,21 +288,19 @@
                         <outlet property="errorAlarmText1" destination="eRo-7e-Zf8" id="KWP-W2-sYy"/>
                         <outlet property="errorAlarmText2" destination="FKu-EI-ehe" id="hgw-g0-lCa"/>
                         <outlet property="inputNewPass" destination="pa5-GZ-xR3" id="gLf-Io-nNt"/>
-                        <segue destination="mpC-x9-b1M" kind="presentation" identifier="LoginPageController" id="b74-uc-Ss1"/>
-                        <segue destination="ZfL-xJ-JU8" kind="presentation" identifier="ChangePass" id="tlC-Fj-TNi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oT-k4-uyE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1110" y="13"/>
         </scene>
-        <!--LoginPageController-->
+        <!--Storyboard Reference-->
         <scene sceneID="uHB-Pa-9xN">
             <objects>
-                <viewControllerPlaceholder storyboardName="LoginPage" referencedIdentifier="LoginPageController" id="mpC-x9-b1M" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder id="mpC-x9-b1M" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lW-bI-8vL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1798" y="-152"/>
+            <point key="canvasLocation" x="1693" y="-200"/>
         </scene>
         <!--BottomTabBarController-->
         <scene sceneID="atP-A3-mp7">
@@ -313,7 +312,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tlC-Fj-TNi"/>
+        <segue reference="ILB-be-rve"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
