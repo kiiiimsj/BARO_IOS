@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04235C742549386100BA2BB1 /* OrderStatus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04235C732549386100BA2BB1 /* OrderStatus.storyboard */; };
+		04235C7725493A7100BA2BB1 /* OrderStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04235C7625493A7100BA2BB1 /* OrderStatusController.swift */; };
+		04235C7A25493CB200BA2BB1 /* OrderStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04235C7925493CB200BA2BB1 /* OrderStatusModel.swift */; };
+		04235C7D254949D300BA2BB1 /* OrderStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04235C7C254949D300BA2BB1 /* OrderStatusCell.swift */; };
 		043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACAB253DA51500C70102 /* MainPageUltraStore.swift */; };
 		043DACAF253DA54600C70102 /* UltraStoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACAE253DA54600C70102 /* UltraStoreListModel.swift */; };
 		043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */; };
@@ -92,6 +96,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04235C732549386100BA2BB1 /* OrderStatus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderStatus.storyboard; sourceTree = "<group>"; };
+		04235C7625493A7100BA2BB1 /* OrderStatusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusController.swift; sourceTree = "<group>"; };
+		04235C7925493CB200BA2BB1 /* OrderStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusModel.swift; sourceTree = "<group>"; };
+		04235C7C254949D300BA2BB1 /* OrderStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusCell.swift; sourceTree = "<group>"; };
 		043DACAB253DA51500C70102 /* MainPageUltraStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageUltraStore.swift; sourceTree = "<group>"; };
 		043DACAE253DA54600C70102 /* UltraStoreListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltraStoreListModel.swift; sourceTree = "<group>"; };
 		043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageUltraStoreCell.swift; sourceTree = "<group>"; };
@@ -192,6 +200,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04235C722549380200BA2BB1 /* OrderStatus */ = {
+			isa = PBXGroup;
+			children = (
+				04235C732549386100BA2BB1 /* OrderStatus.storyboard */,
+				04235C7625493A7100BA2BB1 /* OrderStatusController.swift */,
+				04235C7C254949D300BA2BB1 /* OrderStatusCell.swift */,
+			);
+			path = OrderStatus;
+			sourceTree = "<group>";
+		};
 		04B8678D253B0ECD00336175 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +244,7 @@
 				3FDE5E632546B6EF00C05514 /* policy */,
 				3F499082253EC11B00372F83 /* Font */,
 				04B86799253B0ECD00336175 /* AppDelegate.swift */,
+				04235C722549380200BA2BB1 /* OrderStatus */,
 				04B8679B253B0ECD00336175 /* SceneDelegate.swift */,
 				04B8679D253B0ECD00336175 /* ViewController.swift */,
 				04B867A2253B0ECF00336175 /* Assets.xcassets */,
@@ -399,6 +418,7 @@
 				04D11F542544406900ADB210 /* OrderHistoryDetailExtraModel.swift */,
 				E31D3FE8254653C700B63F77 /* ExtraModel.swift */,
 				3FDE5E672546E37A00C05514 /* NoticeListModel.swift */,
+				04235C7925493CB200BA2BB1 /* OrderStatusModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -490,6 +510,7 @@
 				3FC20E662546EFF700EEE783 /* ChangeEmail.storyboard in Resources */,
 				3F4C5AA3253ECAD700C0E7B6 /* NotoSansKR-Light.otf in Resources */,
 				E31D3FDB2542AD7300B63F77 /* StoreListPage.storyboard in Resources */,
+				04235C742549386100BA2BB1 /* OrderStatus.storyboard in Resources */,
 				3F4C5AA0253ECAD700C0E7B6 /* NotoSansKR-Regular.otf in Resources */,
 				04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */,
 				E33D855B253ECB5000E50BAC /* AboutStore.storyboard in Resources */,
@@ -566,6 +587,7 @@
 				3FDE5E5E2546A16C00C05514 /* TermOfUser.swift in Sources */,
 				E33D853E253DC86A00E50BAC /* StoreMenuController.swift in Sources */,
 				04D11F4F25441CC000ADB210 /* OrderHistoryDetailController.swift in Sources */,
+				04235C7D254949D300BA2BB1 /* OrderStatusCell.swift in Sources */,
 				048D55A6253C67EC009E9CE4 /* MainPageController.swift in Sources */,
 				04D11F4B2544010800ADB210 /* MainPageSearchController.swift in Sources */,
 				3F05C564254116AC0066DAAD /* MyPageController.swift in Sources */,
@@ -578,6 +600,7 @@
 				043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */,
 				E31D3FEF25465F6000B63F77 /* NonEssentialCell.swift in Sources */,
 				3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */,
+				04235C7725493A7100BA2BB1 /* OrderStatusController.swift in Sources */,
 				E31D3FF6254692A200B63F77 /* OptionCategoryHeader.swift in Sources */,
 				E31D3FF32546887F00B63F77 /* OptionsHeader.swift in Sources */,
 				3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */,
@@ -585,6 +608,7 @@
 				04B8679C253B0ECD00336175 /* SceneDelegate.swift in Sources */,
 				04D11F482543ECB800ADB210 /* OrderHistoryCell.swift in Sources */,
 				E31D3FD52542AC3E00B63F77 /* StoreListModel.swift in Sources */,
+				04235C7A25493CB200BA2BB1 /* OrderStatusModel.swift in Sources */,
 				3FA196F52547E34E007CD182 /* BottomTabBarController.swift in Sources */,
 				E33D8546253DC8C800E50BAC /* ASFirstStoreCell.swift in Sources */,
 				3F9B48ED254946720012D89F /* ChangePass2.swift in Sources */,
