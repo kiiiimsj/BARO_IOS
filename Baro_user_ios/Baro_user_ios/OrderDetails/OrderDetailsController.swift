@@ -21,8 +21,13 @@ class OrderDetailsController : UIViewController {
     private var categories = [String]()
     @IBOutlet weak var EssentialArea: UICollectionView!
     public var menu_id = ""
+    public var menu_default_price = 0
+    public var menu_price_current = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        menu_price_current = menu_default_price
+        menu_count.text = "1"
+        recalcPrice()
         network.get(method: .get, url: urlMaker.extra+"?menu_id="+menu_id) {(json) in
             if json["result"].boolValue{
                 for item in json["extra"].array!{
@@ -47,6 +52,21 @@ class OrderDetailsController : UIViewController {
                 self.EssentialArea.reloadData()
             }
         }
+    }
+    @IBAction func AddCount(_ sender: Any) {
+        menu_count.text = String(Int(menu_count.text!)! + 1)
+        recalcPrice()
+    }
+    @IBAction func AbstractCount(_ sender: Any) {
+        print("minus")
+        if Int(menu_count.text!) == 1{
+            return
+        }
+        menu_count.text = String(Int(menu_count.text!)! - 1)
+        recalcPrice()
+    }
+    func recalcPrice(){
+        menu_price.text = String(Int(menu_count.text!)! * menu_price_current)+"원"
     }
 }
 
@@ -73,6 +93,14 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
             cell.extras = extras!
             cell.collection.delegate = cell.self
             cell.collection.dataSource = cell.self
+            cell.clickListener = self
+            cell.iPath = indexPath
+            cell.optionCategory.text = extras?[0].extra_group
+            if cell.extras.count > 3 {
+                cell.whichCell = EssentialCell.OVER3
+            }else{
+                cell.whichCell = EssentialCell.UNDER3
+            }
             return cell
         case 1:
             let cell = EssentialArea.dequeueReusableCell(withReuseIdentifier: "NonEssentialCell", for: indexPath) as! NonEssentialCell
@@ -83,7 +111,16 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width ,height: 200)
+        let extras = essentials[categories[indexPath.item]]
+        guard extras == nil else {
+            switch extras?.count {
+            case 0,1,2,3:
+                return CGSize(width: collectionView.frame.width ,height: 120)
+            default:
+                return CGSize(width: collectionView.frame.width, height: CGFloat(70 + extras!.count * 50))
+            }
+        }
+        return CGSize()
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
@@ -108,9 +145,27 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
 }
 
 extension OrderDetailsController : CellDelegateExtra{
-    func click(extra_name: String, extraPrice: Int) {
-        print("qqqq",String(extraPrice)+"ddddDDd" + extra_name)
+    func radioClick(extra_name: String, extraPrice: Int) {
+        menu_price_current += extraPrice
+        recalcPrice()
     }
     
+    func click(extra_name: String, extraPrice: Int, iPath : IndexPath) {
+        menu_price_current += extraPrice
+        menu_price.text = String(Int(menu_count.text!)! * menu_price_current)+"원"
+    }
     
+}
+struct Notice{
+    let date: String
+    let title: String
+    let content: String
+    var open = false
+    mutating func dateFormat() ->
+    String{ guard let s = self.date.split(separator: " ").first
+    else {
+            return "??"
+    }
+        return String(s)
+    }
 }

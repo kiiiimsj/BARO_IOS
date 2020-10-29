@@ -6,13 +6,34 @@
 //
 
 import UIKit
-
+//protocol EssentialListner : class {
+//    func change(extra_name : String ,extraPrice: Int,iPath:IndexPath)
+//}
 class EssentialButton : UICollectionViewCell{
-    private var value = Extra()
-
-    @IBOutlet weak var menu: UIButton!
+    public var data = Extra()
+    @IBOutlet weak var menu: EssentialBtn!
+    
     override func prepareForReuse() {
         super.prepareForReuse()
        
+    }
+}
+
+class EssentialBtn : UIButton{
+    override var isSelected: Bool {
+        didSet {
+            switch isSelected {
+            case true:
+                self.backgroundColor = .orange
+//                self.setTitleColor(.purple, for: .normal)
+//                menu.titleLabel?.textColor = .purple
+//            case false:
+//                menu.backgroundColor = .purple
+//                menu.titleLabel?.textColor = .orange
+            default:
+                self.backgroundColor = .purple
+//                self.setTitleColor(.orange, for: .normal)
+            }
+        }
     }
 }
