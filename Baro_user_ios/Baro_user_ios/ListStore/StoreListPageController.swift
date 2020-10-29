@@ -25,7 +25,6 @@ class StoreListPageController : UIViewController{
             "longitude" : "126.956"
         ]
         network.post(method: .post, param: jsonObject, url: urlCaller.storeDetailListURL) {(json) in
-            print(json)
             var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
             for item in json["store"].array!{
                 storeListModel.store_image = item["store_image"].stringValue

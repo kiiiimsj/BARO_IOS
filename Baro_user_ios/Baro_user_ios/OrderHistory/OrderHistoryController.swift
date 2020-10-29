@@ -84,10 +84,12 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
         let orderHistory = orderHistoryList[indexPath.item]
         
         let vc = self.storyboard?.instantiateViewController(identifier: "OrderHistoryDetailController") as! OrderHistoryDetailController
+       
         vc.receipt_id = orderHistory.receipt_id
         vc.order_count = orderHistory.total_count
         vc.store_name = orderHistory.store_name
         vc.total_price = orderHistory.total_price
+        
         present(vc, animated: true, completion: nil)
     }
 }
