@@ -9,7 +9,8 @@ import UIKit
 class ASCategoryCell : UICollectionViewCell{
     
     @IBOutlet var category: UIButton!
-//    public var title : UIButton = {
+    @IBOutlet weak var categoryIndecator: uiViewSetting!
+    //    public var title : UIButton = {
 //        let btn = UIButton()
 //        return btn
 //    }()

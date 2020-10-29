@@ -18,6 +18,9 @@ class uiViewSetting: UIView {
                 if self.restorationIdentifier == "MyPageSquare" {
                     return
                 }
+                if self.restorationIdentifier == "categoryIndecator" {
+                    return
+                }
                 layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
             }
         }

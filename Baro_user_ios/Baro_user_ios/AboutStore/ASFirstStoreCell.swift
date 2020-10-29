@@ -8,9 +8,6 @@
 import UIKit
 
 class ASFirstStoreCell : UICollectionViewCell{
-    
-    
-   
     @IBOutlet weak var state: UIButton!
 }
 

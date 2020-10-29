@@ -12,11 +12,18 @@ class StoreMenuController : UIViewController{
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var containerView: UIView!
-    public var netWork : CallRequest!
-    public var urlMaker : NetWorkURL!
-    public var categories : Dictionary<Int,String>!
-    public var array = [String]()
-    public var menus = [String : [Menu]]()
+    @IBOutlet weak var categoryHighlightText: UILabel!
+    @IBOutlet weak var categoryIndecator: uiViewSetting!
+    var netWork = CallRequest()
+    var urlMaker = NetWorkURL()
+    public var categories = [categoryModel]()
+    public var categoryNames = [String]()
+    public var menus = [Menu]()
+    public var store_id = ""
+    public var saveCellsPoint = [CGFloat]()
+    public var saveCelly = CGFloat()
+    public var saveIndecatorWidth = [CGFloat]()
+    public var saveIndecatorHeight = CGFloat()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +31,40 @@ class StoreMenuController : UIViewController{
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: view.frame.width, height: 60)
-        array = Array(categories.values)
-        collectionView.collectionViewLayout = layout
-        collectionView.delegate = self
-        collectionView.dataSource = self
-//        collectionView.register(ASCategoryCell.self, forCellWithReuseIdentifier: categoryIdentifier)
+    
+        netWork.get(method: .get, url: urlMaker.categoryURL + "?store_id="+store_id) {
+            (json) in
+            if json["result"].boolValue{
+                for item in json["category"].array!{
+                    self.categoryNames.append(item["category_name"].stringValue)
+                    var category = categoryModel()
+                    category.category_id = item["category_id"].intValue
+                    category.category_name = item["category_name"].stringValue
+                    self.categories.append(category)
+                    self.netWork.get(method: .get, url: self.urlMaker.menuURL + "?store_id="+self.store_id) { (json) in
+                        let boolValue = json["result"].boolValue
+                        if boolValue {
+                            self.collectionView.collectionViewLayout = layout
+                            self.collectionView.delegate = self
+                            self.collectionView.dataSource = self
+                            var tempMenu = Menu()
+                            let jsonObject = json["menu"].array!
+                            for item in jsonObject {
+                                tempMenu.menu_defaultprice = item["menu_defaultprice"].intValue
+                                tempMenu.menu_id = item["menu_id"].intValue
+                                tempMenu.category_id = item["category_id"].intValue
+                                tempMenu.menu_image = item["menu_image"].stringValue
+                                tempMenu.store_id = item["store_id"].intValue
+                                tempMenu.menu_name = item["menu_name"].stringValue
+                                tempMenu.menu_info = item["menu_info"].stringValue
+                                tempMenu.is_soldout = item["is_soldout"].stringValue
+                                self.menus.append(tempMenu)
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     func actionToSelectedCell(indexPath : IndexPath,menus : [Menu]){
         setContainerViewController(storyboard: "AboutStore", viewControllerID: "StoreMenu2Controller",index: indexPath.item,menus: menus)
@@ -36,7 +72,6 @@ class StoreMenuController : UIViewController{
     func setContainerViewController(storyboard: String, viewControllerID: String,index : Int,menus : [Menu]){
         let storyboard = UIStoryboard(name: storyboard, bundle: nil)
         let VC = storyboard.instantiateViewController(withIdentifier: viewControllerID)
-//        let VC = contollers[index]
         (VC as! StoreMenu2Controller).menus = menus
             self.addChild(VC)
             containerView.addSubview((VC.view)!)
@@ -47,35 +82,89 @@ class StoreMenuController : UIViewController{
 
 extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return categoryNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryIdentifier, for: indexPath) as! ASCategoryCell
-        cell.category.setTitle(array[indexPath.item], for: .normal)
+        cell.category.setTitle(categoryNames[indexPath.item], for: .normal)
         cell.category.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
+        
+        self.saveCellsPoint.append(cell.center.x - 40)
+        self.saveCelly = -44
+        self.saveIndecatorHeight = ((cell.bounds.height / 2) + 5)
+        self.saveIndecatorWidth.append(CGFloat(categoryNames[indexPath.item].count) * 20)
+        
+        if(indexPath.row == 0) {
+            setCategoryIndecatorAnimation(index: indexPath.row, duration: 0.0)
+            let categoryId : Int = categories[indexPath.item].category_id
+            var categoryIdMenu = [Menu]()
+            for item in self.menus {
+                if (item.category_id == categoryId) {
+                    categoryIdMenu.append(item)
+                }
+            }
+            actionToSelectedCell(indexPath: indexPath,menus: categoryIdMenu)
+        }
+
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width / 4, height: 40)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let _ : Int = categories.someKey(forValue: array[indexPath.item])!
-        let data : [Menu] = self.menus[array[indexPath.item]]!
-        actionToSelectedCell(indexPath: indexPath,menus: data)
+        let categoryId : Int = categories[indexPath.item].category_id
+        var categoryIdMenu = [Menu]()
+        for item in self.menus {
+            if (item.category_id == categoryId) {
+                categoryIdMenu.append(item)
+            }
+        }
+        actionToSelectedCell(indexPath: indexPath,menus: categoryIdMenu)
     }
-    @objc func tap(_ sender: UITapGestureRecognizer) {
-        
-     
-        let location = sender.location(in: self.collectionView)
+    @objc func tap(_ sender: Any) {
+        let senderG = sender as? UITapGestureRecognizer
+        guard let location = senderG?.location(in: self.collectionView) else { return }
         let indexPath = self.collectionView.indexPathForItem(at: location)
+        
         if let index = indexPath {
-            let data : [Menu] = self.menus[array[index.item]]!
-            actionToSelectedCell(indexPath: index,menus: data)
+            setCategoryIndecatorAnimation(index: index.row, duration: 0.2)
+            var categoryIdMenu = [Menu]()
+            for item in self.menus {
+                if (item.category_id == categories[index.item].category_id) {
+                    categoryIdMenu.append(item)
+                }
+            }
+            actionToSelectedCell(indexPath: index,menus: categoryIdMenu)
+            
         }
     }
+    func setCategoryIndecatorAnimation(index : Int, duration : Double) {
+        self.categoryHighlightText.isHidden = true
+        var newFrame = self.categoryIndecator.frame
+        newFrame.size.width = self.saveIndecatorWidth[index]
+        newFrame.size.height = self.saveIndecatorHeight
+        self.categoryIndecator.frame = newFrame
+        self.categoryHighlightText.frame = newFrame
+        self.categoryHighlightText.textAlignment = .center
+        self.categoryHighlightText.translatesAutoresizingMaskIntoConstraints = false
+        self.categoryHighlightText.text = self.categoryNames[index]
+        UIView.animate(withDuration: duration, animations: {
+            self.categoryHighlightText.isHidden = true
+            self.categoryIndecator.transform = CGAffineTransform(translationX: self.saveCellsPoint[index], y:  self.saveCelly )
+        }, completion: { finished in
+            self.categoryHighlightText.isHidden = false
+        })
+        self.categoryHighlightText.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        self.categoryHighlightText.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        self.categoryHighlightText.centerXAnchor.constraint(equalTo: self.categoryIndecator.centerXAnchor).isActive = true
+        self.categoryHighlightText.centerYAnchor.constraint(equalTo: self.categoryIndecator.centerYAnchor).isActive = true
+    }
 }
-
+class categoryModel {
+    var category_id = 0
+    var category_name = ""
+}
 extension Dictionary where Value: Equatable {
     func someKey(forValue val: Value) -> Key? {
         return first(where: { $1 == val })?.key
