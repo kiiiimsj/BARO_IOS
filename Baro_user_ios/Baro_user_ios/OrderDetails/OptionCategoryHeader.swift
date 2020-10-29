@@ -13,4 +13,10 @@ class OptionCategoryHeader : UICollectionReusableView{
     
     @IBOutlet weak var optionCategory: UILabel!
     @IBOutlet weak var SelectedPrice: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        SelectedPrice = nil
+        SelectedPrice.text = nil
+    }
 }

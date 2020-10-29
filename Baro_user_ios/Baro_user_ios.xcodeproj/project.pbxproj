@@ -62,6 +62,8 @@
 		3F4F8DAF254572220015BACE /* NoticePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F8DAE254572220015BACE /* NoticePageController.swift */; };
 		3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */; };
 		3F9B48ED254946720012D89F /* ChangePass2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B48EC254946720012D89F /* ChangePass2.swift */; };
+		3F9B490025498ACC0012D89F /* AboutStoreInfoTabTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B48FF25498ACC0012D89F /* AboutStoreInfoTabTest.storyboard */; };
+		3F9B490325499C730012D89F /* MyCollectionBarTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B490225499C730012D89F /* MyCollectionBarTab.swift */; };
 		3FA196F52547E34E007CD182 /* BottomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA196F42547E34E007CD182 /* BottomTabBarController.swift */; };
 		3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4FC822542898E00EF2894 /* MyPageButtons.swift */; };
 		3FC20E5A2546E62400EEE783 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20E592546E62400EEE783 /* NoticeCell.swift */; };
@@ -89,6 +91,8 @@
 		E31D3FF32546887F00B63F77 /* OptionsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FF22546887F00B63F77 /* OptionsHeader.swift */; };
 		E31D3FF6254692A200B63F77 /* OptionCategoryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FF5254692A200B63F77 /* OptionCategoryHeader.swift */; };
 		E31D3FF925469DCE00B63F77 /* EssentialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FF825469DCE00B63F77 /* EssentialButton.swift */; };
+		E31D400C254AC7DE00B63F77 /* EssentialRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D400B254AC7DD00B63F77 /* EssentialRadio.swift */; };
+		E31D400F254AE4B500B63F77 /* NonEssentialRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D400E254AE4B500B63F77 /* NonEssentialRow.swift */; };
 		E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8536253DC63600E50BAC /* AboutStore.swift */; };
 		E33D853B253DC69700E50BAC /* StoreInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D853A253DC69700E50BAC /* StoreInfoController.swift */; };
 		E33D853E253DC86A00E50BAC /* StoreMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D853D253DC86A00E50BAC /* StoreMenuController.swift */; };
@@ -159,6 +163,8 @@
 		3F4F8DAE254572220015BACE /* NoticePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePageController.swift; sourceTree = "<group>"; };
 		3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiLabelAnimation.swift; sourceTree = "<group>"; };
 		3F9B48EC254946720012D89F /* ChangePass2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePass2.swift; sourceTree = "<group>"; };
+		3F9B48FF25498ACC0012D89F /* AboutStoreInfoTabTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutStoreInfoTabTest.storyboard; sourceTree = "<group>"; };
+		3F9B490225499C730012D89F /* MyCollectionBarTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionBarTab.swift; sourceTree = "<group>"; };
 		3FA196F42547E34E007CD182 /* BottomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarController.swift; sourceTree = "<group>"; };
 		3FA4FC822542898E00EF2894 /* MyPageButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageButtons.swift; sourceTree = "<group>"; };
 		3FC20E592546E62400EEE783 /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
@@ -187,6 +193,8 @@
 		E31D3FF22546887F00B63F77 /* OptionsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsHeader.swift; sourceTree = "<group>"; };
 		E31D3FF5254692A200B63F77 /* OptionCategoryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCategoryHeader.swift; sourceTree = "<group>"; };
 		E31D3FF825469DCE00B63F77 /* EssentialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialButton.swift; sourceTree = "<group>"; };
+		E31D400B254AC7DD00B63F77 /* EssentialRadio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialRadio.swift; sourceTree = "<group>"; };
+		E31D400E254AE4B500B63F77 /* NonEssentialRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonEssentialRow.swift; sourceTree = "<group>"; };
 		E33D8536253DC63600E50BAC /* AboutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutStore.swift; sourceTree = "<group>"; };
 		E33D853A253DC69700E50BAC /* StoreInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoController.swift; sourceTree = "<group>"; };
 		E33D853D253DC86A00E50BAC /* StoreMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenuController.swift; sourceTree = "<group>"; };
@@ -355,6 +363,8 @@
 				E31D3FF22546887F00B63F77 /* OptionsHeader.swift */,
 				E31D3FF5254692A200B63F77 /* OptionCategoryHeader.swift */,
 				E31D3FF825469DCE00B63F77 /* EssentialButton.swift */,
+				E31D400B254AC7DD00B63F77 /* EssentialRadio.swift */,
+				E31D400E254AE4B500B63F77 /* NonEssentialRow.swift */,
 			);
 			path = OrderDetails;
 			sourceTree = "<group>";
@@ -370,6 +380,8 @@
 				E33D855A253ECB5000E50BAC /* AboutStore.storyboard */,
 				E33D855F253EF24900E50BAC /* ASCategoryCell.swift */,
 				E33D8565253F20E200E50BAC /* ASMenuCell.swift */,
+				3F9B48FF25498ACC0012D89F /* AboutStoreInfoTabTest.storyboard */,
+				3F9B490225499C730012D89F /* MyCollectionBarTab.swift */,
 			);
 			path = AboutStore;
 			sourceTree = "<group>";
@@ -529,6 +541,7 @@
 				3F4C5AA0253ECAD700C0E7B6 /* NotoSansKR-Regular.otf in Resources */,
 				04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */,
 				E33D855B253ECB5000E50BAC /* AboutStore.storyboard in Resources */,
+				3F9B490025498ACC0012D89F /* AboutStoreInfoTabTest.storyboard in Resources */,
 				04D11F422543D31900ADB210 /* OrderHistory.storyboard in Resources */,
 				3F418FCF254808E100D89665 /* BottomTabBar.storyboard in Resources */,
 				048A0BE22541ACBE007D4FD3 /* testController.storyboard in Resources */,
@@ -590,6 +603,7 @@
 				048D55E0253D838E009E9CE4 /* MainPageType.swift in Sources */,
 				043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */,
 				04B8679E253B0ECD00336175 /* ViewController.swift in Sources */,
+				E31D400C254AC7DE00B63F77 /* EssentialRadio.swift in Sources */,
 				04B8679A253B0ECD00336175 /* AppDelegate.swift in Sources */,
 				043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */,
 				3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */,
@@ -638,11 +652,13 @@
 				04235C87254AB05B00BA2BB1 /* OrderStatusDetailCell.swift in Sources */,
 				048D55E3253D83AD009E9CE4 /* MainPageTypeCell.swift in Sources */,
 				E31D3FD22542ABEF00B63F77 /* StoreListPageController.swift in Sources */,
+				3F9B490325499C730012D89F /* MyCollectionBarTab.swift in Sources */,
 				E31D3FE62545DFA000B63F77 /* OrderDetailsController.swift in Sources */,
 				048D55BA253D575A009E9CE4 /* TypeListModel.swift in Sources */,
 				048A0BDB25401194007D4FD3 /* MainPageNewStoreCell.swift in Sources */,
 				048A0BD82540117B007D4FD3 /* MainPageNewStore.swift in Sources */,
 				3F05C56A25412AF20066DAAD /* MyPageView.swift in Sources */,
+				E31D400F254AE4B500B63F77 /* NonEssentialRow.swift in Sources */,
 				3FDE5E682546E37A00C05514 /* NoticeListModel.swift in Sources */,
 				048D55E7253D91C6009E9CE4 /* MainPageEventCell.swift in Sources */,
 				E33D8542253DC89400E50BAC /* StoreMenuModel.swift in Sources */,

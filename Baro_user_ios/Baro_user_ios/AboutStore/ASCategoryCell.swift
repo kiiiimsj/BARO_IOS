@@ -9,7 +9,8 @@ import UIKit
 class ASCategoryCell : UICollectionViewCell{
     
     @IBOutlet var category: UIButton!
-//    public var title : UIButton = {
+    @IBOutlet weak var categoryIndecator: uiViewSetting!
+    //    public var title : UIButton = {
 //        let btn = UIButton()
 //        return btn
 //    }()
@@ -32,7 +33,6 @@ class ASCategoryCell : UICollectionViewCell{
     override func prepareForReuse() {
         super.prepareForReuse()
         // 초기화 할 코드 예시
-        category.backgroundColor = .blue
         category.titleLabel?.text = nil
     }
 }
