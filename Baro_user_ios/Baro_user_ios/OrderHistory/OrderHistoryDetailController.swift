@@ -43,16 +43,25 @@ class OrderHistoryDetailController : UIViewController {
     func configure() {
         
         
-        networkModel.post(method: .get, url: networkURL.orderHistoryDetail + "?receipt_id=" + receipt_id) {
+        networkModel.post(method: .get, url: networkURL.orderHistoryRegular + "?receipt_id=" + receipt_id) {
             json in
             var orderHistoryDetailModel = OrderHistoryDetailList()
-            var orderHistoryDetailExtraModel = OrderHistoryDetailExtraList()
+            
             for item in json["orders"].array! {
                 orderHistoryDetailModel.order_id = item["order_id"].intValue
                 orderHistoryDetailModel.order_state = item["order_state"].stringValue
                 orderHistoryDetailModel.order_count = item["order_count"].intValue
                 orderHistoryDetailModel.menu_name = item["menu_name"].stringValue
                 orderHistoryDetailModel.menu_defaultprice = item["menu_defaultprice"].intValue
+                if let extra = item["extras"].array {
+                    for item2 in extra {
+                        var orderHistoryDetailExtraModel = OrderHistoryDetailExtraList()
+                        orderHistoryDetailExtraModel.extra_count = item2["extra_count"].intValue
+                        orderHistoryDetailExtraModel.extra_name = item2["extra_name"].stringValue
+                        orderHistoryDetailExtraModel.extra_price = item2["extra_price"].intValue
+                        orderHistoryDetailModel.OrderHistoryDetailExtra.append(orderHistoryDetailExtraModel)
+                    }
+                }
                 self.orderHistoryDetailList.append(orderHistoryDetailModel)
             }
             self.tableView.reloadData()
@@ -76,14 +85,26 @@ extension OrderHistoryDetailController : UITableViewDelegate, UITableViewDataSou
     //식별자 넣어주기
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let orderList = orderHistoryDetailList[indexPath.item]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderHistoryDetail", for: indexPath) as! OrderHistoryDetail
-        print("kkk",orderList.menu_name)
+        
+        //한 메뉴에 대한 total 가격 찍기
+        var extra_total = 0
+        for item in orderList.OrderHistoryDetailExtra {
+            extra_total += (item.extra_price * item.extra_count)
+        }
+        var menu_one_total_price = (orderList.menu_defaultprice + extra_total)
+        
         cell.menu_name.text = orderList.menu_name
+        print("kkkkk", orderList.menu_name)
         cell.menu_default_price.text = String(orderList.menu_defaultprice)
+        cell.menu_one_total_price.text = String(menu_one_total_price)
         cell.menu_count.text = String(orderList.order_count)
-        cell.order_id = orderList.order_id
-        //cell.menu_one_total_price = orderList.
-        //한메뉴에 대한 총 가격 뽑는거 다시 생각해보기
+        cell.menu_total_price.text = String(menu_one_total_price * orderList.order_count)
+        cell.extraList = orderList.OrderHistoryDetailExtra
+        print("jkk", orderList.OrderHistoryDetailExtra)
+        cell.collectionView.delegate = cell.self
+        cell.collectionView.dataSource = cell.self
     
         return cell
     }
