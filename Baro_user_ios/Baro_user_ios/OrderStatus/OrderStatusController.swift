@@ -17,14 +17,13 @@ class OrderStatusController : UIViewController {
     let networkURL = NetWorkURL()
     
     var phone = "01093756927"
-    var startPoint = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureView()
         
-        network.post(method: .get, url: networkURL.orderHistoryList + "?phone=" + phone + "&startPoint=" + String(startPoint)) {
+        network.post(method: .get, url: networkURL.orderProgressList + "?phone=" + phone) {
             json in
             var orderStatusModel = OrderStatusList()
             for item in json["order"].array! {
@@ -61,10 +60,41 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderStatusCell", for: indexPath) as! OrderStatusCell
         cell.orderStoreNameLabel.text = String(orderStatus.store_name)
         
-        
-        
-        
+        if orderStatus.order_state == "PREPARING" {
+            cell.orderStatusProgress.setProgress(0.33, animated: false)
+        }
+        else if orderStatus.order_state == "ACCEPT" {
+            cell.orderStatusProgress.setProgress(0.66, animated: false)
+        }
+        cell.orderCount.text = String(orderStatus.total_count) + "개"
+        cell.orderTotalPriceLabel.text = String(orderStatus.total_price) + "원"
+        cell.receipt_id = orderStatus.receipt_id
         return cell
+    }
+    
+    //높이나 등등 처리하는 오버라이드 해주기
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.size.width, height: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width * 0.9, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let orderStatus = orderStatusList[indexPath.item]
+        
+        let vc = self.storyboard?.instantiateViewController(identifier: "OrderStatusDetailController") as! OrderStatusDetailController
+        
+        vc.receipt_id = orderStatus.receipt_id
+        vc.order_count = orderStatus.total_count
+        vc.store_name = orderStatus.store_name
+        vc.total_price = orderStatus.total_price
+        
+        present(vc, animated: true, completion: nil)
     }
     
 }
