@@ -11,6 +11,8 @@ class OrderStatusDetail : UITableViewCell {
     
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     @IBOutlet weak var menuCount: UILabel!
     @IBOutlet weak var expandableImage: UIImageView!
     @IBOutlet weak var oneMenuTotalPrice: UILabel!
@@ -21,14 +23,15 @@ class OrderStatusDetail : UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         self.collectionView.reloadData()
     }
 }
 
-extension OrderStatusDetail : UICollectionViewDelegate, UICollectionViewDataSource {
+extension OrderStatusDetail : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("counttttt", extraList.count)
         return extraList.count
@@ -47,8 +50,7 @@ extension OrderStatusDetail : UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
-    
-    
-    
-    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 500, height: 800)
+//    }
 }
