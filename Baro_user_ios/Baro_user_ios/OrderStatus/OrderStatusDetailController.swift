@@ -68,7 +68,7 @@ class OrderStatusDetailController : UIViewController {
     }
 }
 
-extension OrderStatusDetailController : UITableViewDelegate, UITableViewDataSource {
+extension OrderStatusDetailController : UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegateFlowLayout {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("yui", orderStatusDetailList.count)
         return orderStatusDetailList.count
@@ -99,6 +99,10 @@ extension OrderStatusDetailController : UITableViewDelegate, UITableViewDataSour
         cell.collectionView.dataSource = cell.self
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(tableView.frame.height)
     }
     
     
