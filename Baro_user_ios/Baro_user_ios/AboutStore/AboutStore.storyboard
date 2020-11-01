@@ -264,18 +264,12 @@
                                                         <color key="titleColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                 </button>
-                                                <view contentMode="scaleToFill" id="kGn-Go-Bwy">
-                                                    <rect key="frame" x="32" y="41" width="50" height="10"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
-                                                </view>
                                             </subviews>
                                             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="114" height="51"/>
                                         <connections>
                                             <outlet property="category" destination="vLX-GI-YWf" id="eJ5-bo-Aum"/>
-                                            <outlet property="categoryIndecator" destination="kGn-Go-Bwy" id="8Dj-kX-VS0"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -321,8 +315,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wa3-cO-qjY"/>
                     <connections>
-                        <outlet property="categoryHighlightText" destination="yBm-F3-IM3" id="xRW-oM-VcB"/>
-                        <outlet property="categoryIndecator" destination="Mqn-Os-oTh" id="LHH-Dx-ATZ"/>
+                        <outlet property="categoryHighlightText" destination="yBm-F3-IM3" id="NNf-bJ-I6V"/>
+                        <outlet property="categoryIndecator" destination="Mqn-Os-oTh" id="ZqV-vl-sNK"/>
                         <outlet property="collectionView" destination="g3o-fH-1hC" id="Q8v-wy-hoJ"/>
                         <outlet property="containerView" destination="mao-Kd-N13" id="2dG-nu-wLV"/>
                     </connections>
@@ -451,9 +445,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

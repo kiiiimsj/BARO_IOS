@@ -88,9 +88,7 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryIdentifier, for: indexPath) as! ASCategoryCell
         cell.category.setTitle(categoryNames[indexPath.item], for: .normal)
-        cell.category.isHighlighted = false
         cell.category.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
-        cell.categoryIndecator.isHidden = false
         self.saveCellsPoint.append(cell.center.x - 35)
         self.saveCelly = -44
         self.saveIndecatorHeight = ((cell.bounds.height / 2) + 5)
@@ -126,8 +124,6 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
         let senderG = sender as? UITapGestureRecognizer
         guard let location = senderG?.location(in: self.collectionView) else { return }
         let indexPath = self.collectionView.indexPathForItem(at: location)
-        let cell = sender as? ASCategoryCell
-        cell?.isHighlighted = true
         if let index = indexPath {
             setCategoryIndecatorAnimation(index: index.row, duration: 0.2)
             var categoryIdMenu = [Menu]()

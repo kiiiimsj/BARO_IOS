@@ -9,7 +9,6 @@ import UIKit
 class ASCategoryCell : UICollectionViewCell{
     
     @IBOutlet var category: UIButton!
-    @IBOutlet weak var categoryIndecator: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
