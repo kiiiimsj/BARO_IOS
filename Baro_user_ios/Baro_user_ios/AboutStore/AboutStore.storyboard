@@ -252,9 +252,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="114" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-GI-YWf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="114" height="43"/>
-                                                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-GI-YWf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="114" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button">
@@ -270,12 +270,6 @@
                                                     <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                                 </view>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="vLX-GI-YWf" secondAttribute="bottom" constant="8" id="0Qi-bH-iqR"/>
-                                                <constraint firstItem="vLX-GI-YWf" firstAttribute="top" secondItem="QO2-3a-b8H" secondAttribute="top" id="VfZ-Z7-ugZ"/>
-                                                <constraint firstItem="vLX-GI-YWf" firstAttribute="leading" secondItem="QO2-3a-b8H" secondAttribute="leading" id="ddo-r7-W0o"/>
-                                                <constraint firstAttribute="trailing" secondItem="vLX-GI-YWf" secondAttribute="trailing" id="uvl-gh-XPj"/>
-                                            </constraints>
                                             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="114" height="51"/>
