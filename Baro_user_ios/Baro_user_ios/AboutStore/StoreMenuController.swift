@@ -31,7 +31,7 @@ class StoreMenuController : UIViewController{
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: view.frame.width, height: 60)
-    
+        collectionView.addSubview(categoryIndecator)
         netWork.get(method: .get, url: urlMaker.categoryURL + "?store_id="+store_id) {
             (json) in
             if json["result"].boolValue{
@@ -89,12 +89,10 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryIdentifier, for: indexPath) as! ASCategoryCell
         cell.category.setTitle(categoryNames[indexPath.item], for: .normal)
         cell.category.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
-        
-        self.saveCellsPoint.append(cell.center.x - 40)
+        self.saveCellsPoint.append(cell.center.x - 35)
         self.saveCelly = -44
         self.saveIndecatorHeight = ((cell.bounds.height / 2) + 5)
         self.saveIndecatorWidth.append(CGFloat(categoryNames[indexPath.item].count) * 20)
-        
         if(indexPath.row == 0) {
             setCategoryIndecatorAnimation(index: indexPath.row, duration: 0.0)
             let categoryId : Int = categories[indexPath.item].category_id
@@ -126,7 +124,6 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
         let senderG = sender as? UITapGestureRecognizer
         guard let location = senderG?.location(in: self.collectionView) else { return }
         let indexPath = self.collectionView.indexPathForItem(at: location)
-        
         if let index = indexPath {
             setCategoryIndecatorAnimation(index: index.row, duration: 0.2)
             var categoryIdMenu = [Menu]()

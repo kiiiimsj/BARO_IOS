@@ -48,7 +48,7 @@
                                 <rect key="frame" x="0.0" y="137" width="206" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="menuButtonClick" destination="n3R-Xf-dIg" eventType="touchUpInside" id="8xB-oV-lMM"/>
+                                    <action selector="categoryButtonClick" destination="n3R-Xf-dIg" eventType="touchUpInside" id="8xB-oV-lMM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SV8-fY-7rp">
@@ -252,22 +252,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="114" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-GI-YWf">
-                                                    <rect key="frame" x="0.0" y="-4" width="114" height="60"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-GI-YWf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="114" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button">
                                                         <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
                                                 </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="vLX-GI-YWf" secondAttribute="trailing" id="0Xs-Zy-L7H"/>
-                                                <constraint firstAttribute="bottom" secondItem="vLX-GI-YWf" secondAttribute="bottom" id="JyJ-gX-qVO"/>
-                                                <constraint firstItem="vLX-GI-YWf" firstAttribute="top" secondItem="QO2-3a-b8H" secondAttribute="top" id="hWw-Da-mfn"/>
-                                                <constraint firstItem="vLX-GI-YWf" firstAttribute="leading" secondItem="QO2-3a-b8H" secondAttribute="leading" id="hYd-Gd-pqt"/>
-                                            </constraints>
                                             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="114" height="51"/>
@@ -318,8 +315,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wa3-cO-qjY"/>
                     <connections>
-                        <outlet property="categoryHighlightText" destination="yBm-F3-IM3" id="xRW-oM-VcB"/>
-                        <outlet property="categoryIndecator" destination="Mqn-Os-oTh" id="LHH-Dx-ATZ"/>
+                        <outlet property="categoryHighlightText" destination="yBm-F3-IM3" id="NNf-bJ-I6V"/>
+                        <outlet property="categoryIndecator" destination="Mqn-Os-oTh" id="ZqV-vl-sNK"/>
                         <outlet property="collectionView" destination="g3o-fH-1hC" id="Q8v-wy-hoJ"/>
                         <outlet property="containerView" destination="mao-Kd-N13" id="2dG-nu-wLV"/>
                     </connections>

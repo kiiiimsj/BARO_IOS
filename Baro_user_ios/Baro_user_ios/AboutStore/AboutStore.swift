@@ -23,13 +23,14 @@ class AboutStore : UIViewController {
     private var storeInfoManager = StoreInfoController()
     private var storeMenuManager = StoreMenuController()
     private var contollers = [UIViewController]()
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.setTabBarItem()
+        
         UIView.animate(withDuration: 0.0) {
             self.tabIndecator.transform = CGAffineTransform(rotationAngle: 0.0)
         }
-        print("from : ",tabIndecator.transform)
     }
     func setTabBarItem() {
         menuButton.setTitle("메뉴", for: .normal)
