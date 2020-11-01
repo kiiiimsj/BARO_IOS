@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class NonEssentialCell : UICollectionViewCell{
+    @IBOutlet weak var table: UITableView!
     override func prepareForReuse() {
         super.prepareForReuse()
     }

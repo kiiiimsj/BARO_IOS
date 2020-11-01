@@ -67,8 +67,6 @@ class OrderHistoryDetailController : UIViewController {
             self.tableView.reloadData()
             
         }
-        
-        
         storeName.text = store_name
         totalPrice.text = String(total_price)
         //요청사항도 찍어주기
