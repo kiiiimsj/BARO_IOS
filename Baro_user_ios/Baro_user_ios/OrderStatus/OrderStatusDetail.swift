@@ -7,18 +7,15 @@
 
 import UIKit
 
-class OrderStatusDetail : UITableViewCell {
-    
+class OrderStatusDetail : UICollectionViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    
-    @IBOutlet weak var menuCount: UILabel!
-    @IBOutlet weak var expandableImage: UIImageView!
-    @IBOutlet weak var oneMenuTotalPrice: UILabel!
     @IBOutlet weak var menuName: UILabel!
+    @IBOutlet weak var oneMenuTotalPrice: UILabel!
+    @IBOutlet weak var expandableImage: UIButton!
+    @IBOutlet weak var menuCount: UILabel!
     
-  
+    
     public var extraList = [OrderStatusDetailExtraList]()
     
     override func awakeFromNib() {
@@ -29,28 +26,28 @@ class OrderStatusDetail : UITableViewCell {
         
         self.collectionView.reloadData()
     }
+    
 }
 
 extension OrderStatusDetail : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("counttttt", extraList.count)
+        print("uu", extraList.count)
         return extraList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("pppppp")
         let extra = extraList[indexPath.item]
         print("hj", extra.extra_name)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderStatusDetailCell", for: indexPath) as! OrderStatusDetailCell
         cell.extraName.text = extra.extra_name
-        cell.extraPrice.text = String(extra.extra_price)
-        print("pleee", extra.extra_name)
-        print("pleee", extra.extra_price)
-        
+        cell.extraPrice.text = "+" + String(extra.extra_price) + "원"
+
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 50, height: 70)
+    }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 500, height: 800)
-//    }
 }

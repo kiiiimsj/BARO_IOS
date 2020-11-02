@@ -33,7 +33,6 @@ class MainPageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.definesPresentationContext = true
-        
         tableViewEvent?.separatorStyle = .none
         tableViewType?.separatorStyle = .none
         tableViewUltra?.separatorStyle = .none

@@ -11,9 +11,10 @@ class OrderHistoryDetailController : UIViewController {
     
     
     @IBOutlet weak var storeName: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var requests: UILabel!
     @IBOutlet weak var totalPrice: UILabel!
+    
     
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
@@ -28,14 +29,14 @@ class OrderHistoryDetailController : UIViewController {
     var order_count = 0
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        tableView.separatorStyle = .none
-        
-        tableView.delegate = self
-        tableView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        print("receipt", receipt_id)
         configure()
         
     }
@@ -45,9 +46,10 @@ class OrderHistoryDetailController : UIViewController {
         
         networkModel.post(method: .get, url: networkURL.orderHistoryRegular + "?receipt_id=" + receipt_id) {
             json in
-            var orderHistoryDetailModel = OrderHistoryDetailList()
+            print("rr",json)
             
             for item in json["orders"].array! {
+                var orderHistoryDetailModel = OrderHistoryDetailList()
                 orderHistoryDetailModel.order_id = item["order_id"].intValue
                 orderHistoryDetailModel.order_state = item["order_state"].stringValue
                 orderHistoryDetailModel.order_count = item["order_count"].intValue
@@ -64,7 +66,8 @@ class OrderHistoryDetailController : UIViewController {
                 }
                 self.orderHistoryDetailList.append(orderHistoryDetailModel)
             }
-            self.tableView.reloadData()
+            self.collectionView.reloadData()
+            print("jjj",self.orderHistoryDetailList)
             
         }
         storeName.text = store_name
@@ -73,28 +76,28 @@ class OrderHistoryDetailController : UIViewController {
     }
 }
 
-extension OrderHistoryDetailController : UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegateFlowLayout {
+extension OrderHistoryDetailController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("ppp",orderHistoryDetailList.count)
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("oo", orderHistoryDetailList.count)
         return orderHistoryDetailList.count
     }
     
-    //식별자 넣어주기
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("11111",111)
         let orderList = orderHistoryDetailList[indexPath.item]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderHistoryDetail", for: indexPath) as! OrderHistoryDetail
-        
+        print("orderrr", orderList.menu_name)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderHistoryDetail", for: indexPath) as! OrderHistoryDetail
+
         //한 메뉴에 대한 total 가격 찍기
         var extra_total = 0
         for item in orderList.OrderHistoryDetailExtra {
             extra_total += (item.extra_price * item.extra_count)
         }
         var menu_one_total_price = (orderList.menu_defaultprice + extra_total)
-        
-        cell.menu_name.text = orderList.menu_name
-        print("kkkkk", orderList.menu_name)
+
+        cell.menu_name.text = String(orderList.menu_name)
+        print("kkkkk", String(orderList.menu_name))
         cell.menu_default_price.text = String(orderList.menu_defaultprice)
         cell.menu_one_total_price.text = String(menu_one_total_price)
         cell.menu_count.text = String(orderList.order_count)
@@ -103,7 +106,13 @@ extension OrderHistoryDetailController : UITableViewDelegate, UITableViewDataSou
         print("jkk", orderList.OrderHistoryDetailExtra)
         cell.collectionView.delegate = cell.self
         cell.collectionView.dataSource = cell.self
-    
+
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let orderList = orderHistoryDetailList[indexPath.item]
+        return CGSize(width: 50, height: CGFloat(orderList.OrderHistoryDetailExtra.count) * 70 + 100)
+    }
+    
 }

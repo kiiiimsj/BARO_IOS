@@ -19,6 +19,9 @@ class ChangePass : UIViewController {
         self.errorAlarmText.isHidden = true
         backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
     @IBAction func gotoEnterNewPassword() {
         let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
         guard let password = inputNewPass.text else {return}
@@ -36,6 +39,7 @@ class ChangePass : UIViewController {
     @objc func textFieldDidChange(textField: UITextField){
         errorAlarmText.isHidden = true
     }
+    
     @IBAction func backbutton() {
         self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
     }

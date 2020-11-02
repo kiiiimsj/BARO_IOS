@@ -26,6 +26,7 @@
                     <connections>
                         <segue destination="DK8-7c-Q2M" kind="relationship" relationship="viewControllers" id="dl1-uP-Nyu"/>
                         <segue destination="xh1-RU-U3f" kind="relationship" relationship="viewControllers" id="PXr-Rz-j8K"/>
+                        <segue destination="hRo-6P-QN7" kind="relationship" relationship="viewControllers" id="QvB-vF-yKg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cat-7m-Ooi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -53,6 +54,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zT5-j5-dCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1251" y="-360"/>
+        </scene>
+        <!--StoreListPageController-->
+        <scene sceneID="8lU-pk-gxQ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="StoreListPageController" storyboardName="StoreListPage" referencedIdentifier="StoreListPageController" id="hRo-6P-QN7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="k7N-EO-Szw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WbJ-EG-MAE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1486" y="-159"/>
         </scene>
     </scenes>
     <resources>

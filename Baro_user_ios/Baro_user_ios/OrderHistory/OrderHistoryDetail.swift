@@ -7,11 +7,10 @@
 
 import UIKit
 
-class OrderHistoryDetail : UITableViewCell {
-  
+class OrderHistoryDetail : UICollectionViewCell {
     
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menu_name: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menu_default_price: UILabel!
     @IBOutlet weak var menu_one_total_price: UILabel!
     @IBOutlet weak var menu_count: UILabel!
@@ -29,7 +28,7 @@ class OrderHistoryDetail : UITableViewCell {
 
 }
 
-extension OrderHistoryDetail : UICollectionViewDelegate, UICollectionViewDataSource {
+extension OrderHistoryDetail : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return extraList.count
     }
@@ -41,4 +40,10 @@ extension OrderHistoryDetail : UICollectionViewDelegate, UICollectionViewDataSou
         cell.extraPrice.text = String(extra.extra_price)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 50, height: 70)
+    }
+    
+
 }

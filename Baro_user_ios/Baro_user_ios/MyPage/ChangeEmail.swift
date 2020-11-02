@@ -49,6 +49,10 @@ class ChangeEmail : UIViewController, CAAnimationDelegate {
         let checkRegexResult = regex?.matches(in: text!, options: [], range: NSRange(location: 0, length: textNSString.length))
         print(checkRegexResult)
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+        
+    }
     @IBAction func backbutton() {
         self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
     }
