@@ -9,6 +9,10 @@ import UIKit
 
 class OrderStatusDetailCell : UICollectionViewCell {
     
+//    @IBOutlet weak var extraName: UILabel!
+//    @IBOutlet weak var extraPrice: UILabel!
+    
     @IBOutlet weak var extraName: UILabel!
     @IBOutlet weak var extraPrice: UILabel!
+    
 }
