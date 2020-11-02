@@ -144,7 +144,7 @@
                                                                             <connections>
                                                                                 <outlet property="typeImage" destination="UCS-fd-cFx" id="Krl-xo-UKp"/>
                                                                                 <outlet property="typeName" destination="xTQ-a1-hcl" id="CbA-zf-Q2t"/>
-                                                                                <segue destination="FlP-hh-bmj" kind="presentation" identifier="mainToStore" modalPresentationStyle="fullScreen" id="acz-YI-ymg"/>
+                                                                                <segue destination="FlP-hh-bmj" kind="presentation" identifier="mainToStore" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="acz-YI-ymg"/>
                                                                             </connections>
                                                                         </collectionViewCell>
                                                                     </cells>
@@ -403,7 +403,7 @@
                                 <rect key="frame" x="317" y="48" width="26" height="22"/>
                                 <state key="normal" title="Button" image="search"/>
                                 <connections>
-                                    <segue destination="kpU-U4-PbF" kind="show" animates="NO" id="bDd-Zc-ILg"/>
+                                    <segue destination="kpU-U4-PbF" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="nD0-LY-qMJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -477,6 +477,13 @@
                                             <segue destination="9UF-7z-E4i" kind="show" identifier="searchToStore" id="ILq-2l-g8L"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1D-08-oPz">
+                                        <rect key="frame" x="299" y="0.0" width="18" height="22"/>
+                                        <state key="normal" image="xmark" catalog="system"/>
+                                        <connections>
+                                            <action selector="cancelBtn" destination="kpU-U4-PbF" eventType="touchUpInside" id="rsR-31-aIT"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -490,15 +497,17 @@
                                     <constraint firstItem="wcn-1o-PrE" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="iqM-jf-YNP"/>
                                     <constraint firstAttribute="trailing" secondItem="wcn-1o-PrE" secondAttribute="trailing" id="lHI-YY-E8z"/>
                                     <constraint firstAttribute="trailing" secondItem="wcn-1o-PrE" secondAttribute="trailing" id="mim-yt-jN2"/>
+                                    <constraint firstItem="X1D-08-oPz" firstAttribute="top" secondItem="7v5-4c-E4S" secondAttribute="top" id="mx3-Y4-Fzb"/>
                                     <constraint firstItem="wcn-1o-PrE" firstAttribute="top" secondItem="7v5-4c-E4S" secondAttribute="top" id="oNv-uA-z4d"/>
                                     <constraint firstItem="wcn-1o-PrE" firstAttribute="top" secondItem="7v5-4c-E4S" secondAttribute="top" id="wiw-a3-TgX"/>
+                                    <constraint firstAttribute="trailing" secondItem="X1D-08-oPz" secondAttribute="trailing" id="xQB-30-peG"/>
                                     <constraint firstItem="QQV-Fz-hgf" firstAttribute="top" secondItem="Y9J-qm-oXD" secondAttribute="bottom" constant="75" id="yDV-Sz-MgN"/>
                                     <constraint firstItem="Y9J-qm-oXD" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="yP2-fc-dUQ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rz9-62-BcR"/>
-                        <color key="backgroundColor" red="0.703125" green="0.703125" blue="0.703125" alpha="0.58605530240265125" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7v5-4c-E4S" firstAttribute="leading" secondItem="Rz9-62-BcR" secondAttribute="leading" constant="49" id="8Bd-hH-xSJ"/>
                             <constraint firstItem="Rz9-62-BcR" firstAttribute="bottom" secondItem="7v5-4c-E4S" secondAttribute="bottom" constant="231" id="IH9-fK-LIK"/>
@@ -508,6 +517,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Asy-M9-ZxP"/>
                     <connections>
+                        <outlet property="cancelButton" destination="X1D-08-oPz" id="4yG-eh-rYI"/>
                         <outlet property="searchBar" destination="Y9J-qm-oXD" id="s6w-wm-7Hn"/>
                     </connections>
                 </viewController>
@@ -542,6 +552,7 @@
         <image name="home_tabBar" width="18" height="18"/>
         <image name="off" width="13.5" height="16.5"/>
         <image name="search" width="16.5" height="16"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

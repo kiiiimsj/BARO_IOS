@@ -74,6 +74,7 @@
 		3FDE5E612546A1C800C05514 /* TermOfUserPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */; };
 		3FDE5E652546B70C00C05514 /* privacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE5E642546B70C00C05514 /* privacyPolicy.html */; };
 		3FDE5E682546E37A00C05514 /* NoticeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE5E672546E37A00C05514 /* NoticeListModel.swift */; };
+		3FEAF06F254FFC1100A5ABC0 /* FavoriteDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEAF06E254FFC1100A5ABC0 /* FavoriteDialog.swift */; };
 		3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF35096253E7E72007B7B29 /* LoginPageController.swift */; };
 		3FF3509A253E7F3B007B7B29 /* RegisterPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */; };
 		5F09CCA5A7FA86F7A3D8ADA6 /* Pods_Baro_user_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868EF0B056B69E5F372574 /* Pods_Baro_user_ios.framework */; };
@@ -175,6 +176,7 @@
 		3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermOfUserPage.storyboard; sourceTree = "<group>"; };
 		3FDE5E642546B70C00C05514 /* privacyPolicy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacyPolicy.html; sourceTree = "<group>"; };
 		3FDE5E672546E37A00C05514 /* NoticeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListModel.swift; sourceTree = "<group>"; };
+		3FEAF06E254FFC1100A5ABC0 /* FavoriteDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDialog.swift; sourceTree = "<group>"; };
 		3FF35096253E7E72007B7B29 /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
 		3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageController.swift; sourceTree = "<group>"; };
 		6FE1B18B198B2DAE07AD0D8A /* Pods-Baro_user_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baro_user_ios.debug.xcconfig"; path = "Target Support Files/Pods-Baro_user_ios/Pods-Baro_user_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				04B867A7253B0ECF00336175 /* Info.plist */,
 				048A0BE12541ACBE007D4FD3 /* testController.storyboard */,
 				048A0BE42541AD71007D4FD3 /* testController.swift */,
+				3FEAF06E254FFC1100A5ABC0 /* FavoriteDialog.swift */,
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				3FDE5E682546E37A00C05514 /* NoticeListModel.swift in Sources */,
 				048D55E7253D91C6009E9CE4 /* MainPageEventCell.swift in Sources */,
 				E33D8542253DC89400E50BAC /* StoreMenuModel.swift in Sources */,
+				3FEAF06F254FFC1100A5ABC0 /* FavoriteDialog.swift in Sources */,
 				048A0BDE2540120A007D4FD3 /* NewStoreListModel.swift in Sources */,
 				3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */,
 				E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */,

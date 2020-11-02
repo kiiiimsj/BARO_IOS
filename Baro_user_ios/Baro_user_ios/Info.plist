@@ -51,7 +51,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>MainPage</string>
+					<string>LoginPage</string>
 				</dict>
 			</array>
 		</dict>
@@ -59,7 +59,7 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
-	<string>BottomTabBar</string>
+	<string>LoginPage</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LoginPage</string>
 	<key>UIRequiredDeviceCapabilities</key>

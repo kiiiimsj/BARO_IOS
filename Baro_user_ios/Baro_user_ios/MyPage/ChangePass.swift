@@ -39,6 +39,7 @@ class ChangePass : UIViewController {
     @objc func textFieldDidChange(textField: UITextField){
         errorAlarmText.isHidden = true
     }
+    
     @IBAction func backbutton() {
         self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
     }

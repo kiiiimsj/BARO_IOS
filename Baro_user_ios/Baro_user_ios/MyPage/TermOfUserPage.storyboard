@@ -60,7 +60,7 @@
                     <connections>
                         <outlet property="backBtn" destination="RL9-Us-x8X" id="M3h-1Q-S3w"/>
                         <outlet property="webView" destination="5nZ-DB-5N5" id="qQe-4g-QMq"/>
-                        <segue destination="jhB-Oy-qbe" kind="presentation" identifier="MyPageController" modalPresentationStyle="fullScreen" id="7KP-oV-S2A"/>
+                        <segue destination="jhB-Oy-qbe" kind="presentation" identifier="MyPageController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7KP-oV-S2A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXR-JA-65t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
