@@ -14,6 +14,7 @@ class OrderDetailsController : UIViewController {
     @IBOutlet weak var minus: UIButton!
     @IBOutlet weak var menu_count: UILabel!
     @IBOutlet weak var plus: UIButton!
+    @IBOutlet weak var goToBasket: UIButton!
     private var network = CallRequest()
     private var urlMaker = NetWorkURL()
     private var essentials = [String : [Extra]]()
@@ -25,6 +26,7 @@ class OrderDetailsController : UIViewController {
     public var menu_price_current = 0
     public var nonEssentialOpen = false;
     public var selectedEssential = [String : Extra]()
+    public var selectedNonEssential = [String : SelectedExtra]()
     override func viewDidLoad() {
         super.viewDidLoad()
         menu_price_current = menu_default_price
@@ -66,6 +68,21 @@ class OrderDetailsController : UIViewController {
         }
         menu_count.text = String(Int(menu_count.text!)! - 1)
         recalcPrice()
+    }
+    @IBAction func nextPage(_ sender: Any) {
+        if selectedEssential.count != essentials.count{
+            return
+        }
+        let data = Order(menu: Menu(), essentials: selectedEssential, nonEssentials: selectedNonEssential)
+        print(data)
+        let can = canGoToNext()
+        if can {
+           
+            let vc = self.storyboard?.instantiateViewController(identifier: "BasketController") as! BasketController
+            vc.menu = data
+            
+            present(vc, animated: true, completion: nil)
+        }
     }
     func recalcPrice(){
         menu_price.text = String(Int(menu_count.text!)! * menu_price_current)+"원"
@@ -181,7 +198,6 @@ extension OrderDetailsController : CellDelegateExtra{
         else{
             selectedEssential.removeValue(forKey: selected.extra_group)
         }
-        print("count" , selectedEssential.count)
     }
     
     func click(type: Bool, extraPrice: Int,selected: Extra) {
@@ -193,22 +209,31 @@ extension OrderDetailsController : CellDelegateExtra{
         else{
             selectedEssential.removeValue(forKey: selected.extra_group)
         }
-        print("count" , selectedEssential.count)
     }
     
 }
 
 extension OrderDetailsController : CellDelegateNonExtra{
-    func tapNonAdd(extra_name: String, extraPrice: Int) {
+    func tapNonAdd( extraPrice: Int,selected: Extra) {
         menu_price_current += extraPrice
-        print(menu_price_current)
-        print(extraPrice)
         recalcPrice()
+        if selectedNonEssential[selected.extra_name] == nil {
+            let temp = SelectedExtra(extra: selected)
+            selectedNonEssential[selected.extra_name] = temp
+        }
+        selectedNonEssential[selected.extra_name]?.optionCount += 1
     }
     
-    func tapNonAbs(extra_name: String, extraPrice: Int) {
+    func tapNonAbs( extraPrice: Int,selected: Extra) {
         menu_price_current -= extraPrice
         recalcPrice()
+        if selectedNonEssential[selected.extra_name] == nil {
+            return
+        }
+        selectedNonEssential[selected.extra_name]?.optionCount -= 1
+        if selectedNonEssential[selected.extra_name]!.optionCount <= 0 {
+            selectedNonEssential.removeValue(forKey: selected.extra_name)
+        }
     }
 }
 
@@ -224,6 +249,11 @@ extension OrderDetailsController : ExpandDelegate {
 
 struct Order {
     var menu = Menu()
-    var Essentials = [String : [Extra]]()
-    var nonEssentials = [Extra]()
+    var Essentials = [String : Extra]()
+    var nonEssentials = [String : SelectedExtra]()
+    init(menu : Menu,essentials : [String : Extra],nonEssentials : [String : SelectedExtra] ) {
+        self.menu = menu
+        self.Essentials = essentials
+        self.nonEssentials = nonEssentials
+    }
 }
