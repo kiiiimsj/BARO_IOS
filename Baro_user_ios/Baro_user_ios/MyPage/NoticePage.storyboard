@@ -94,7 +94,7 @@
                     <connections>
                         <outlet property="backBtn" destination="mTW-jA-Bxu" id="LeW-eM-WMh"/>
                         <outlet property="noticeListTableView" destination="WZ7-yD-Jn6" id="Z1t-kH-GAP"/>
-                        <segue destination="44a-yn-JOh" kind="presentation" identifier="MyPageController" modalPresentationStyle="fullScreen" id="eHo-de-MBB"/>
+                        <segue destination="44a-yn-JOh" kind="presentation" identifier="MyPageController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="eHo-de-MBB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0O-Zv-kQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
