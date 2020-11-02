@@ -73,15 +73,18 @@ class OrderDetailsController : UIViewController {
         if selectedEssential.count != essentials.count{
             return
         }
-        let data = Order(menu: Menu(), essentials: selectedEssential, nonEssentials: selectedNonEssential)
-        print(data)
         let can = canGoToNext()
         if can {
-           
+            var data = Order(menu: Menu(), essentials: selectedEssential, nonEssentials: selectedNonEssential)
+            data.menu_count = Int(menu_count.text!)!
+            data.menu_total_price = menu_price_current
+            print(data)
             let vc = self.storyboard?.instantiateViewController(identifier: "BasketController") as! BasketController
             vc.menu = data
             
             present(vc, animated: true, completion: nil)
+        }else{
+            return
         }
     }
     func recalcPrice(){
@@ -251,6 +254,8 @@ struct Order {
     var menu = Menu()
     var Essentials = [String : Extra]()
     var nonEssentials = [String : SelectedExtra]()
+    var menu_count = 0
+    var menu_total_price = 0
     init(menu : Menu,essentials : [String : Extra],nonEssentials : [String : SelectedExtra] ) {
         self.menu = menu
         self.Essentials = essentials
