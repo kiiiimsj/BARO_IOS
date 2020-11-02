@@ -23,6 +23,8 @@ class OrderDetailsController : UIViewController {
     public var menu_id = ""
     public var menu_default_price = 0
     public var menu_price_current = 0
+    public var nonEssentialOpen = false;
+    public var selectedEssential = [String : Extra]()
     override func viewDidLoad() {
         super.viewDidLoad()
         menu_price_current = menu_default_price
@@ -68,11 +70,18 @@ class OrderDetailsController : UIViewController {
     func recalcPrice(){
         menu_price.text = String(Int(menu_count.text!)! * menu_price_current)+"원"
     }
+    func canGoToNext() -> Bool{
+        if selectedEssential.count == essentials.count{
+            return true
+        }
+        else{
+            return false
+        }
+    }
 }
 
 extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("kkkk",section)
         switch section {
         case 0:
             return essentials.count
@@ -94,7 +103,6 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
             cell.collection.delegate = cell.self
             cell.collection.dataSource = cell.self
             cell.clickListener = self
-            cell.iPath = indexPath
             cell.optionCategory.text = extras?[0].extra_group
             if cell.extras.count > 3 {
                 cell.whichCell = EssentialCell.OVER3
@@ -104,6 +112,10 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
             return cell
         case 1:
             let cell = EssentialArea.dequeueReusableCell(withReuseIdentifier: "NonEssentialCell", for: indexPath) as! NonEssentialCell
+            let extra = nonEssentials[indexPath.item]
+            cell.nonEssentialExtras = extra
+            cell.optionName.text = extra.extra_name
+            cell.clickListner = self
             return cell
 
         default:
@@ -111,14 +123,25 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let extras = essentials[categories[indexPath.item]]
-        guard extras == nil else {
-            switch extras?.count {
-            case 0,1,2,3:
-                return CGSize(width: collectionView.frame.width ,height: 120)
-            default:
-                return CGSize(width: collectionView.frame.width, height: CGFloat(70 + extras!.count * 50))
+        switch indexPath.section {
+        case 0:
+            let extras = essentials[categories[indexPath.item]]
+            guard extras == nil else {
+                switch extras?.count {
+                case 0,1,2,3:
+                    return CGSize(width: collectionView.frame.width ,height: 120)
+                default:
+                    return CGSize(width: collectionView.frame.width, height: CGFloat(70 + extras!.count * 50))
+                }
             }
+        case 1:
+            if self.nonEssentialOpen {
+                return CGSize(width: collectionView.frame.width, height: 70)
+            }else{
+                return CGSize(width: collectionView.frame.width, height: 0)
+            }
+        default:
+            return CGSize()
         }
         return CGSize()
     }
@@ -134,8 +157,12 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
             headerview.header.text = "필수 옵션"
         case 1:
             headerview.header.text = "퍼스널 옵션"
+            headerview.expandable = true
+            headerview.arrow.isHidden = false
+            headerview.clickListener = self
+            headerview.iPath = indexPath
         default:
-            return headerview
+            return UICollectionReusableView()
         }
         return headerview
       }
@@ -145,27 +172,58 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
 }
 
 extension OrderDetailsController : CellDelegateExtra{
-    func radioClick(extra_name: String, extraPrice: Int) {
+    func radioClick(type: Bool, extraPrice: Int,selected: Extra) {
         menu_price_current += extraPrice
         recalcPrice()
+        if type {
+            selectedEssential[selected.extra_group] = selected
+        }
+        else{
+            selectedEssential.removeValue(forKey: selected.extra_group)
+        }
+        print("count" , selectedEssential.count)
     }
     
-    func click(extra_name: String, extraPrice: Int, iPath : IndexPath) {
+    func click(type: Bool, extraPrice: Int,selected: Extra) {
         menu_price_current += extraPrice
         menu_price.text = String(Int(menu_count.text!)! * menu_price_current)+"원"
+        if type {
+            selectedEssential[selected.extra_group] = selected
+        }
+        else{
+            selectedEssential.removeValue(forKey: selected.extra_group)
+        }
+        print("count" , selectedEssential.count)
     }
     
 }
-struct Notice{
-    let date: String
-    let title: String
-    let content: String
-    var open = false
-    mutating func dateFormat() ->
-    String{ guard let s = self.date.split(separator: " ").first
-    else {
-            return "??"
+
+extension OrderDetailsController : CellDelegateNonExtra{
+    func tapNonAdd(extra_name: String, extraPrice: Int) {
+        menu_price_current += extraPrice
+        print(menu_price_current)
+        print(extraPrice)
+        recalcPrice()
     }
-        return String(s)
+    
+    func tapNonAbs(extra_name: String, extraPrice: Int) {
+        menu_price_current -= extraPrice
+        recalcPrice()
     }
+}
+
+extension OrderDetailsController : ExpandDelegate {
+    func clickExpand(open: Bool, iPath : IndexPath) {
+        print(open)
+        self.nonEssentialOpen = open
+        print(nonEssentialOpen)
+        let layout = EssentialArea.collectionViewLayout
+        layout.invalidateLayout()
+    }
+}
+
+struct Order {
+    var menu = Menu()
+    var Essentials = [String : [Extra]]()
+    var nonEssentials = [Extra]()
 }
