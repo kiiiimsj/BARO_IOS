@@ -94,7 +94,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EssentialButton" id="f7A-KO-BVL" customClass="EssentialButton" customModule="Baro_user_ios" customModuleProvider="target">
-                                                            <rect key="frame" x="0.5" y="62" width="349" height="52"/>
+                                                            <rect key="frame" x="0.5" y="0.0" width="349" height="52"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="12D-ha-RCr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="349" height="52"/>
@@ -120,7 +120,7 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EssentialRadio" id="AXI-Af-LWB" customClass="EssentialRadio" customModule="Baro_user_ios" customModuleProvider="target">
-                                                            <rect key="frame" x="0.5" y="0.0" width="349" height="52"/>
+                                                            <rect key="frame" x="0.5" y="62" width="349" height="52"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FUX-5K-60z">
                                                                 <rect key="frame" x="0.0" y="0.0" width="349" height="52"/>
@@ -187,32 +187,51 @@
                                             <rect key="frame" x="0.0" y="0.0" width="369" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zt7-iZ-eTq">
-                                                    <rect key="frame" x="10" y="10" width="349" height="108"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wYu-XR-G4w" customClass="NonEssentialRow" customModule="Baro_user_ios" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="28" width="349" height="43.5"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wYu-XR-G4w" id="GHk-1W-53o">
-                                                                <rect key="frame" x="0.0" y="0.0" width="349" height="43.5"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                            </tableViewCellContentView>
-                                                        </tableViewCell>
-                                                    </prototypes>
-                                                </tableView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CmK-lg-Dkg">
+                                                    <rect key="frame" x="286.5" y="53" width="21" height="22"/>
+                                                    <state key="normal" image="plus"/>
+                                                    <connections>
+                                                        <action selector="AddCount:" destination="B6w-oX-tpz" eventType="touchUpInside" id="fD4-1z-MYs"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EU9-eK-Rat">
+                                                    <rect key="frame" x="338" y="53" width="21" height="22"/>
+                                                    <state key="normal" image="minus"/>
+                                                    <connections>
+                                                        <action selector="AbstractCount:" destination="B6w-oX-tpz" eventType="touchUpInside" id="W8a-CX-U20"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSK-Sl-all">
+                                                    <rect key="frame" x="317.5" y="53.5" width="10.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="옵션 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heT-bJ-3y2">
+                                                    <rect key="frame" x="20" y="53.5" width="63.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zt7-iZ-eTq" firstAttribute="top" secondItem="19d-2h-KS9" secondAttribute="top" constant="10" id="4Sh-Rt-hwC"/>
-                                                <constraint firstAttribute="bottom" secondItem="zt7-iZ-eTq" secondAttribute="bottom" constant="10" id="Gsa-aF-8Cf"/>
-                                                <constraint firstAttribute="trailing" secondItem="zt7-iZ-eTq" secondAttribute="trailing" constant="10" id="quN-sM-UfG"/>
-                                                <constraint firstItem="zt7-iZ-eTq" firstAttribute="leading" secondItem="19d-2h-KS9" secondAttribute="leading" constant="10" id="rfo-Qg-EHR"/>
+                                                <constraint firstItem="heT-bJ-3y2" firstAttribute="centerY" secondItem="19d-2h-KS9" secondAttribute="centerY" id="LJ5-8L-qpW"/>
+                                                <constraint firstAttribute="trailing" secondItem="EU9-eK-Rat" secondAttribute="trailing" constant="10" id="OMk-Y4-RSy"/>
+                                                <constraint firstItem="EU9-eK-Rat" firstAttribute="leading" secondItem="cSK-Sl-all" secondAttribute="trailing" constant="10" id="PLg-bU-dRQ"/>
+                                                <constraint firstItem="cSK-Sl-all" firstAttribute="centerY" secondItem="19d-2h-KS9" secondAttribute="centerY" id="Rkw-do-BUa"/>
+                                                <constraint firstItem="EU9-eK-Rat" firstAttribute="centerY" secondItem="19d-2h-KS9" secondAttribute="centerY" id="V7b-KN-lIu"/>
+                                                <constraint firstItem="cSK-Sl-all" firstAttribute="leading" secondItem="CmK-lg-Dkg" secondAttribute="trailing" constant="10" id="WL9-GN-orn"/>
+                                                <constraint firstItem="heT-bJ-3y2" firstAttribute="leading" secondItem="19d-2h-KS9" secondAttribute="leading" constant="20" id="eUb-nC-xHx"/>
+                                                <constraint firstItem="CmK-lg-Dkg" firstAttribute="centerY" secondItem="19d-2h-KS9" secondAttribute="centerY" id="vtt-zy-p5f"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <size key="customSize" width="369" height="128"/>
                                         <connections>
-                                            <outlet property="table" destination="zt7-iZ-eTq" id="2cd-A0-Ecb"/>
+                                            <outlet property="minus" destination="EU9-eK-Rat" id="lIw-hX-9f5"/>
+                                            <outlet property="optionCount" destination="cSK-Sl-all" id="YPP-2H-ffC"/>
+                                            <outlet property="optionName" destination="heT-bJ-3y2" id="E2m-q2-Wjb"/>
+                                            <outlet property="plus" destination="CmK-lg-Dkg" id="uwG-3p-sPb"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -226,14 +245,26 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIe-ed-AYw">
+                                            <rect key="frame" x="334" y="14" width="12" height="22"/>
+                                            <state key="normal" image="arrow_down"/>
+                                            <state key="selected" image="heart"/>
+                                            <state key="highlighted" image="heart_fill"/>
+                                            <connections>
+                                                <action selector="expand:" destination="a8G-7L-MU8" eventType="touchUpInside" id="x8R-IR-6u3"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Tqc-mF-krw" firstAttribute="top" secondItem="a8G-7L-MU8" secondAttribute="topMargin" constant="7" id="0km-Cn-wpJ"/>
                                         <constraint firstItem="Tqc-mF-krw" firstAttribute="leading" secondItem="a8G-7L-MU8" secondAttribute="leadingMargin" id="F8H-zw-UaS"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Tqc-mF-krw" secondAttribute="bottom" constant="6" id="L43-My-qrV"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Tqc-mF-krw" secondAttribute="trailing" constant="25" id="PNh-YE-3uc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="KIe-ed-AYw" secondAttribute="trailing" constant="20" id="XNd-QL-KW1"/>
+                                        <constraint firstItem="KIe-ed-AYw" firstAttribute="centerY" secondItem="a8G-7L-MU8" secondAttribute="centerY" id="jfY-0U-wr1"/>
                                     </constraints>
                                     <connections>
+                                        <outlet property="arrow" destination="KIe-ed-AYw" id="caU-AA-lF9"/>
                                         <outlet property="header" destination="Tqc-mF-krw" id="xW4-Id-bw3"/>
                                     </connections>
                                 </collectionReusableView>
@@ -275,6 +306,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow_down" width="12" height="7"/>
+        <image name="heart" width="17" height="16"/>
+        <image name="heart_fill" width="17" height="16"/>
         <image name="minus" width="21" height="21"/>
         <image name="off-1" width="16" height="16"/>
         <image name="on-1" width="16" height="16"/>
