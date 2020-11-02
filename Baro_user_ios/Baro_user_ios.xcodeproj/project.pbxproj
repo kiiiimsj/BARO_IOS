@@ -91,6 +91,8 @@
 		E31D3FF925469DCE00B63F77 /* EssentialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D3FF825469DCE00B63F77 /* EssentialButton.swift */; };
 		E31D400C254AC7DE00B63F77 /* EssentialRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D400B254AC7DD00B63F77 /* EssentialRadio.swift */; };
 		E31D400F254AE4B500B63F77 /* NonEssentialRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D400E254AE4B500B63F77 /* NonEssentialRow.swift */; };
+		E31D4015254FC64300B63F77 /* BasketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D4014254FC64200B63F77 /* BasketController.swift */; };
+		E31D4018254FC6E800B63F77 /* Basket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E31D4017254FC6E800B63F77 /* Basket.storyboard */; };
 		E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8536253DC63600E50BAC /* AboutStore.swift */; };
 		E33D853B253DC69700E50BAC /* StoreInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D853A253DC69700E50BAC /* StoreInfoController.swift */; };
 		E33D853E253DC86A00E50BAC /* StoreMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D853D253DC86A00E50BAC /* StoreMenuController.swift */; };
@@ -191,6 +193,8 @@
 		E31D3FF825469DCE00B63F77 /* EssentialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialButton.swift; sourceTree = "<group>"; };
 		E31D400B254AC7DD00B63F77 /* EssentialRadio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialRadio.swift; sourceTree = "<group>"; };
 		E31D400E254AE4B500B63F77 /* NonEssentialRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonEssentialRow.swift; sourceTree = "<group>"; };
+		E31D4014254FC64200B63F77 /* BasketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketController.swift; sourceTree = "<group>"; };
+		E31D4017254FC6E800B63F77 /* Basket.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Basket.storyboard; sourceTree = "<group>"; };
 		E33D8536253DC63600E50BAC /* AboutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutStore.swift; sourceTree = "<group>"; };
 		E33D853A253DC69700E50BAC /* StoreInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoController.swift; sourceTree = "<group>"; };
 		E33D853D253DC86A00E50BAC /* StoreMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenuController.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 		04B86798253B0ECD00336175 /* Baro_user_ios */ = {
 			isa = PBXGroup;
 			children = (
+				E31D4012254FC62300B63F77 /* Basket */,
 				3FA196EE2547C311007CD182 /* UserInterface */,
 				E31D3FFD2547B8EA00B63F77 /* LoginPage */,
 				E31D3FFE2547B95F00B63F77 /* MainPage */,
@@ -444,6 +449,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E31D4012254FC62300B63F77 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				E31D4014254FC64200B63F77 /* BasketController.swift */,
+				E31D4017254FC6E800B63F77 /* Basket.storyboard */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
 		E997DD1537C720F796AAE31D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +532,7 @@
 			files = (
 				3FC20E602546EF0500EEE783 /* ChangePass.storyboard in Resources */,
 				048D55A3253C67B8009E9CE4 /* MainPage.storyboard in Resources */,
+				E31D4018254FC6E800B63F77 /* Basket.storyboard in Resources */,
 				3F4C5AA1253ECAD700C0E7B6 /* NotoSansKR-Bold.otf in Resources */,
 				E31D3FE22545DF7D00B63F77 /* OrderDetails.storyboard in Resources */,
 				3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */,
@@ -623,6 +638,7 @@
 				048D55B6253D2E0F009E9CE4 /* MainPageEvent.swift in Sources */,
 				043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */,
 				E31D3FEF25465F6000B63F77 /* NonEssentialCell.swift in Sources */,
+				E31D4015254FC64300B63F77 /* BasketController.swift in Sources */,
 				3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */,
 				04235C7725493A7100BA2BB1 /* OrderStatusController.swift in Sources */,
 				E31D3FF6254692A200B63F77 /* OptionCategoryHeader.swift in Sources */,

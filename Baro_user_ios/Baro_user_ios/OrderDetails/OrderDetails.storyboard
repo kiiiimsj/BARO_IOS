@@ -58,11 +58,8 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BAe-Iy-w2T">
-                                <rect key="frame" x="20" y="214" width="374" height="623"/>
+                                <rect key="frame" x="20" y="214" width="374" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="623" id="Rbm-bl-n7n"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JEB-Ax-JhU">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
@@ -269,12 +266,25 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPU-17-6gL">
+                                <rect key="frame" x="0.0" y="832" width="414" height="30"/>
+                                <color key="backgroundColor" red="0.47109787269999998" green="0.211157332" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="장바구니로">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextPage:" destination="z9o-Uw-jMZ" eventType="touchUpInside" id="wx9-8b-zFk"/>
+                                    <segue destination="lj0-AS-cQE" kind="presentation" identifier="BasketController" id="gye-PQ-8Tq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bKk-a7-FHa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bKk-a7-FHa" firstAttribute="bottom" secondItem="DPU-17-6gL" secondAttribute="bottom" id="4kC-br-WWC"/>
                             <constraint firstItem="Bwc-sr-hCg" firstAttribute="top" secondItem="Vv4-bF-IIC" secondAttribute="bottom" constant="25" id="5DY-ZN-uQp"/>
                             <constraint firstItem="bKk-a7-FHa" firstAttribute="trailing" secondItem="BAe-Iy-w2T" secondAttribute="trailing" constant="20" id="7Lf-bA-gzd"/>
+                            <constraint firstItem="bKk-a7-FHa" firstAttribute="trailing" secondItem="DPU-17-6gL" secondAttribute="trailing" id="8FJ-BK-g0o"/>
                             <constraint firstItem="ylb-sz-LbD" firstAttribute="centerY" secondItem="5w5-Mr-kh5" secondAttribute="centerY" id="CPm-fW-9g7"/>
                             <constraint firstItem="kjK-lp-ISm" firstAttribute="centerY" secondItem="5w5-Mr-kh5" secondAttribute="centerY" id="DEj-8n-1mQ"/>
                             <constraint firstItem="Vv4-bF-IIC" firstAttribute="top" secondItem="bKk-a7-FHa" secondAttribute="top" constant="30" id="Ita-U7-Czm"/>
@@ -287,11 +297,14 @@
                             <constraint firstItem="ylb-sz-LbD" firstAttribute="leading" secondItem="5w5-Mr-kh5" secondAttribute="trailing" constant="20" id="Txo-jX-wfX"/>
                             <constraint firstItem="BAe-Iy-w2T" firstAttribute="top" secondItem="qPh-pY-0se" secondAttribute="bottom" constant="20" id="ZTZ-An-4xo"/>
                             <constraint firstItem="qPh-pY-0se" firstAttribute="top" secondItem="bKk-a7-FHa" secondAttribute="top" constant="30" id="bCl-T6-OeG"/>
+                            <constraint firstItem="DPU-17-6gL" firstAttribute="leading" secondItem="bKk-a7-FHa" secondAttribute="leading" id="fbK-KT-RXX"/>
+                            <constraint firstItem="DPU-17-6gL" firstAttribute="top" secondItem="BAe-Iy-w2T" secondAttribute="bottom" id="u2H-Iy-ZWm"/>
                             <constraint firstItem="qPh-pY-0se" firstAttribute="leading" secondItem="bKk-a7-FHa" secondAttribute="leading" constant="20" id="yIr-Xs-4gU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="EssentialArea" destination="BAe-Iy-w2T" id="DId-3N-h1c"/>
+                        <outlet property="goToBasket" destination="DPU-17-6gL" id="MEd-aH-ek7"/>
                         <outlet property="menu_count" destination="ylb-sz-LbD" id="Tk8-Wd-X6X"/>
                         <outlet property="menu_image" destination="qPh-pY-0se" id="7GQ-mA-5p1"/>
                         <outlet property="menu_name" destination="Vv4-bF-IIC" id="7S3-wB-ojn"/>
@@ -303,6 +316,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rch-H7-6HB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-120.28985507246378" y="91.741071428571431"/>
+        </scene>
+        <!--BasketController-->
+        <scene sceneID="MRr-HQ-58I">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jko-E9-SHr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="BasketController" storyboardName="Basket" referencedIdentifier="BasketController" id="lj0-AS-cQE" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="447" y="96"/>
         </scene>
     </scenes>
     <resources>

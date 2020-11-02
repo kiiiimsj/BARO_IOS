@@ -25,7 +25,7 @@ class NonEssentialCell : UICollectionViewCell{
         guard number >= nonEssentialExtras.extra_maxcount else {
             number += 1
             optionCount.text = String(number)
-            clickListner?.tapNonAdd(extra_name: nonEssentialExtras.extra_name, extraPrice: nonEssentialExtras.extra_price)
+            clickListner?.tapNonAdd(extraPrice: nonEssentialExtras.extra_price,selected: nonEssentialExtras)
             return
         }
         
@@ -35,15 +35,15 @@ class NonEssentialCell : UICollectionViewCell{
         guard number == 0 else {
             number -= 1
             optionCount.text = String(number)
-            clickListner?.tapNonAbs(extra_name: nonEssentialExtras.extra_name, extraPrice: nonEssentialExtras.extra_price)
+            clickListner?.tapNonAbs(extraPrice: nonEssentialExtras.extra_price,selected : nonEssentialExtras)
             return
         }
     }
 }
 
 protocol CellDelegateNonExtra {
-    func tapNonAdd (extra_name : String ,extraPrice: Int)
-    func tapNonAbs (extra_name : String ,extraPrice: Int)
+    func tapNonAdd ( extraPrice: Int,selected: Extra)
+    func tapNonAbs ( extraPrice: Int,selected: Extra)
 }
 
 
