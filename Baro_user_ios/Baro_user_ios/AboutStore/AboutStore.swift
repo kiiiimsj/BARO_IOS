@@ -16,6 +16,9 @@ class AboutStore : UIViewController {
     @IBOutlet weak var tabIndecator: UIView!
     
     public var store_id  = ""
+    @IBOutlet weak var storeTitle: UILabel!
+    @IBOutlet weak var backBtn: UIButton!
+    
     private let netWork = CallRequest()
     private let urlMaker = NetWorkURL()
     private var menus = [Menu]()
@@ -23,13 +26,14 @@ class AboutStore : UIViewController {
     private var storeInfoManager = StoreInfoController()
     private var storeMenuManager = StoreMenuController()
     private var contollers = [UIViewController]()
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.setTabBarItem()
+        backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
         UIView.animate(withDuration: 0.0) {
             self.tabIndecator.transform = CGAffineTransform(rotationAngle: 0.0)
         }
-        print("from : ",tabIndecator.transform)
     }
     func setTabBarItem() {
         menuButton.setTitle("메뉴", for: .normal)
@@ -49,15 +53,13 @@ class AboutStore : UIViewController {
         UIView.animate(withDuration: 0.7) {
             self.tabIndecator.transform = CGAffineTransform(translationX: 0.0, y: self.tabIndecator.bounds.height - 2)
         }
+        
         let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
         guard let VC = storyboard.instantiateViewController(withIdentifier: "StoreMenuController") as? StoreMenuController else {return}
-        
         VC.store_id = self.store_id
-        
         self.addChild(VC)
         FirstPage.addSubview((VC.view)!)
         VC.view.frame = FirstPage.bounds
-        
         VC.didMove(toParent: self)
         print("menuButtonClick")
     }

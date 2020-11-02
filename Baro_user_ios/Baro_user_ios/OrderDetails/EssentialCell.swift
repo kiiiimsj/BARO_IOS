@@ -8,8 +8,8 @@
 import UIKit
 
 protocol CellDelegateExtra: class {
-    func click(extra_name : String ,extraPrice: Int,iPath:IndexPath)
-    func radioClick(extra_name : String ,extraPrice: Int)
+    func click(type : Bool ,extraPrice: Int,selected : Extra)
+    func radioClick(type : Bool ,extraPrice: Int,selected : Extra)
 }
 class EssentialCell : UICollectionViewCell{
     public static let UNDER3 = "EssentialCell"
@@ -22,7 +22,6 @@ class EssentialCell : UICollectionViewCell{
     var essentialCollector = [IndexPath]()
     var clickListener : CellDelegateExtra?
     public var extras = [Extra]()
-    public var iPath : IndexPath?
     public var n = 1
     var header :OptionCategoryHeader?
     override func prepareForReuse() {
@@ -112,10 +111,10 @@ extension EssentialCell : UICollectionViewDelegate,UICollectionViewDataSource,UI
                         
                     }
                 }
-                clickListener?.click(extra_name: data.extra_name, extraPrice: data.extra_price - exSelectedPrice,iPath: self.iPath!)
+                clickListener?.click(type: true, extraPrice: data.extra_price - exSelectedPrice,selected: data)
                 exSelectedPrice = data.extra_price
             }else{
-                clickListener?.click(extra_name: data.extra_name, extraPrice: -(data.extra_price),iPath: self.iPath!)
+                clickListener?.click(type: false, extraPrice: -(data.extra_price),selected: data)
                 exSelectedPrice = 0
                 for item in essentialCollector {
                     let otherOptions = self.collection.cellForItem(at: item) as! EssentialButton
@@ -143,10 +142,10 @@ extension EssentialCell : UICollectionViewDelegate,UICollectionViewDataSource,UI
                         
                     }
                 }
-                clickListener?.radioClick(extra_name: data.extra_name, extraPrice: data.extra_price - exSelectedPrice)
+                clickListener?.radioClick(type: true, extraPrice: data.extra_price - exSelectedPrice,selected: data)
                 exSelectedPrice = data.extra_price
             }else{
-                clickListener?.radioClick(extra_name: data.extra_name, extraPrice: -(data.extra_price))
+                clickListener?.radioClick(type: false, extraPrice: -(data.extra_price), selected: data)
                 exSelectedPrice = 0
                 for item in essentialCollector {
                     let otherOptions = self.collection.cellForItem(at: item) as! EssentialRadio
@@ -157,3 +156,5 @@ extension EssentialCell : UICollectionViewDelegate,UICollectionViewDataSource,UI
         }
     }
 }
+
+

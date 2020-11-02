@@ -30,7 +30,10 @@ class LoginPageController: UIViewController {
         registerBtn.addTarget(self, action: #selector(handleRegister(_:)), for: .touchUpInside)
         return registerBtn
     }()
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
     }

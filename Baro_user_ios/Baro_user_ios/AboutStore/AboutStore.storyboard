@@ -48,7 +48,7 @@
                                 <rect key="frame" x="0.0" y="137" width="206" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="menuButtonClick" destination="n3R-Xf-dIg" eventType="touchUpInside" id="8xB-oV-lMM"/>
+                                    <action selector="menuButtonClick" destination="n3R-Xf-dIg" eventType="touchUpInside" id="CbI-hN-jlN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SV8-fY-7rp">
@@ -67,6 +67,20 @@
                                     <constraint firstAttribute="height" constant="2" id="kOk-az-R1P"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test cafe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH9-8w-56v">
+                                <rect key="frame" x="173.5" y="44" width="67.5" height="21"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRd-Nb-UjR">
+                                <rect key="frame" x="28" y="44" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="backbutton" destination="FeV-o6-RsH" eventType="touchUpInside" id="LbP-LT-A4k"/>
+                                    <action selector="goBack" destination="FeV-o6-RsH" eventType="touchUpInside" id="Vta-RR-i7P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OxP-7X-vwk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,9 +91,12 @@
                             <constraint firstItem="SV8-fY-7rp" firstAttribute="leading" secondItem="zQZ-W6-s48" secondAttribute="trailing" id="Rof-a9-v8C"/>
                             <constraint firstItem="zQZ-W6-s48" firstAttribute="top" secondItem="w0f-SM-9LR" secondAttribute="bottom" id="UjH-Yg-4UB"/>
                             <constraint firstItem="zQZ-W6-s48" firstAttribute="top" secondItem="w0f-SM-9LR" secondAttribute="bottom" id="W06-uD-RWu"/>
+                            <constraint firstItem="w0f-SM-9LR" firstAttribute="top" secondItem="pH9-8w-56v" secondAttribute="bottom" constant="70" id="XMy-tX-9ta"/>
+                            <constraint firstItem="pH9-8w-56v" firstAttribute="top" secondItem="OxP-7X-vwk" secondAttribute="top" id="ZQ2-Nc-YfZ"/>
                             <constraint firstItem="zQZ-W6-s48" firstAttribute="top" secondItem="w0f-SM-9LR" secondAttribute="bottom" id="b1Y-ci-79G"/>
                             <constraint firstItem="zQZ-W6-s48" firstAttribute="leading" secondItem="OxP-7X-vwk" secondAttribute="leading" id="bNW-mz-U17"/>
                             <constraint firstItem="SV8-fY-7rp" firstAttribute="top" secondItem="OxP-7X-vwk" secondAttribute="top" constant="93" id="cDM-zB-Vbx"/>
+                            <constraint firstItem="pH9-8w-56v" firstAttribute="centerX" secondItem="LgM-xG-BLO" secondAttribute="centerX" id="crM-Pe-QxX"/>
                             <constraint firstItem="w0f-SM-9LR" firstAttribute="top" secondItem="OxP-7X-vwk" secondAttribute="top" constant="91" id="fti-1c-8tq"/>
                             <constraint firstItem="SV8-fY-7rp" firstAttribute="width" secondItem="zQZ-W6-s48" secondAttribute="width" multiplier="1.00971" id="glT-tV-gDK"/>
                             <constraint firstItem="7sR-oJ-Amz" firstAttribute="trailing" secondItem="OxP-7X-vwk" secondAttribute="trailing" id="idy-wR-uhO"/>
@@ -92,8 +109,10 @@
                     </view>
                     <connections>
                         <outlet property="FirstPage" destination="7sR-oJ-Amz" id="yrn-Yf-89n"/>
-                        <outlet property="menuButton" destination="zQZ-W6-s48" id="eJo-EY-umO"/>
+                        <outlet property="backBtn" destination="xRd-Nb-UjR" id="t6R-d7-HrO"/>
+                        <outlet property="menuButton" destination="zQZ-W6-s48" id="YtF-xv-Xst"/>
                         <outlet property="storeInfoButton" destination="SV8-fY-7rp" id="PIN-gJ-nhj"/>
+                        <outlet property="storeTitle" destination="pH9-8w-56v" id="76h-6G-0XE"/>
                         <outlet property="tabIndecator" destination="w0f-SM-9LR" id="LDy-S9-3t7"/>
                         <segue destination="LDZ-uN-ZP4" kind="presentation" identifier="StoreMenuController" animates="NO" id="ZPO-2S-Xaw"/>
                         <segue destination="Cpx-Th-ad8" kind="presentation" identifier="StoreInfoController" modalPresentationStyle="fullScreen" id="wHr-tf-f5t"/>
@@ -252,22 +271,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="114" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-GI-YWf">
-                                                    <rect key="frame" x="0.0" y="-4" width="114" height="60"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-GI-YWf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="114" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button">
                                                         <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
                                                 </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="vLX-GI-YWf" secondAttribute="trailing" id="0Xs-Zy-L7H"/>
-                                                <constraint firstAttribute="bottom" secondItem="vLX-GI-YWf" secondAttribute="bottom" id="JyJ-gX-qVO"/>
-                                                <constraint firstItem="vLX-GI-YWf" firstAttribute="top" secondItem="QO2-3a-b8H" secondAttribute="top" id="hWw-Da-mfn"/>
-                                                <constraint firstItem="vLX-GI-YWf" firstAttribute="leading" secondItem="QO2-3a-b8H" secondAttribute="leading" id="hYd-Gd-pqt"/>
-                                            </constraints>
                                             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="114" height="51"/>
@@ -318,8 +334,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wa3-cO-qjY"/>
                     <connections>
-                        <outlet property="categoryHighlightText" destination="yBm-F3-IM3" id="xRW-oM-VcB"/>
-                        <outlet property="categoryIndecator" destination="Mqn-Os-oTh" id="LHH-Dx-ATZ"/>
+                        <outlet property="categoryHighlightText" destination="yBm-F3-IM3" id="NNf-bJ-I6V"/>
+                        <outlet property="categoryIndecator" destination="Mqn-Os-oTh" id="ZqV-vl-sNK"/>
                         <outlet property="collectionView" destination="g3o-fH-1hC" id="Q8v-wy-hoJ"/>
                         <outlet property="containerView" destination="mao-Kd-N13" id="2dG-nu-wLV"/>
                     </connections>
