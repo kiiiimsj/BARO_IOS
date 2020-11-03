@@ -14,3 +14,11 @@ struct Extra {
     var extra_name = "ICE"
     var extra_maxcount = 3
 }
+struct SelectedExtra {
+    var Extra : Extra?
+    var optionCount : Int
+    init(extra : Extra) {
+        Extra = extra
+        optionCount = 0
+    }
+}
