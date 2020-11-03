@@ -13,7 +13,7 @@
         <!--StoreListPageController-->
         <scene sceneID="br4-tA-ogL">
             <objects>
-                <viewController storyboardIdentifier="StoreListPageController" title="StoreListPageController" id="z2d-C3-O04" customClass="StoreListPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="StoreListPageController" storyboardIdentifier="StoreListPageController" title="StoreListPageController" id="z2d-C3-O04" customClass="StoreListPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="75K-BE-Uq0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,7 @@
                             <constraint firstItem="MRP-nP-rMX" firstAttribute="top" secondItem="2Fp-Qg-L00" secondAttribute="top" constant="100" id="WGn-3U-kGE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="내 가게" image="doc_tabBar" id="OaY-ke-RFH"/>
+                    <tabBarItem key="tabBarItem" title="내 가게" image="doc_tabBar" selectedImage="doc_tabBar" springLoaded="YES" id="OaY-ke-RFH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="storeListView" destination="MRP-nP-rMX" id="TxU-fh-RQp"/>
