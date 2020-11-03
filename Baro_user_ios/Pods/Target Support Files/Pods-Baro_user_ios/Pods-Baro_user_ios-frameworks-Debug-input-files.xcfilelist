@@ -8,6 +8,7 @@ ${BUILT_PRODUCTS_DIR}/KituraContracts/KituraContracts.framework
 ${BUILT_PRODUCTS_DIR}/KituraKit/KituraKit.framework
 ${BUILT_PRODUCTS_DIR}/LoggerAPI/LoggerAPI.framework
 ${BUILT_PRODUCTS_DIR}/Logging/Logging.framework
+${PODS_ROOT}/NMapsMap/framework/NMapsMap.framework
 ${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyRequest/SwiftyRequest.framework
