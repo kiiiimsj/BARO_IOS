@@ -51,7 +51,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>LoginPage</string>
+					<string>OrderStatus</string>
 				</dict>
 			</array>
 		</dict>
