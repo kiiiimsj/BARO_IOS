@@ -13,6 +13,7 @@ PODS:
   - LoggerAPI (1.9.200):
     - Logging (~> 1.1)
   - Logging (1.4.0)
+  - NMapsMap (3.10.0)
   - ObjectMapper (4.2.0)
   - SwiftyBootpay (3.2.47):
     - Alamofire (~> 5.1.0)
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - AlignedCollectionViewFlowLayout
   - Kingfisher (~> 4.7)
   - KituraKit
+  - NMapsMap
   - SwiftyBootpay (~> 3.2.7)
   - SwiftyJSON (~> 4.0)
 
@@ -42,6 +44,7 @@ SPEC REPOS:
     - KituraKit
     - LoggerAPI
     - Logging
+    - NMapsMap
     - ObjectMapper
     - SwiftyBootpay
     - SwiftyJSON
@@ -57,11 +60,12 @@ SPEC CHECKSUMS:
   KituraKit: 6ba9557461bc3a287352f0987c7ce8340242fc2e
   LoggerAPI: ad9c4a6f1e32f518fdb43a1347ac14d765ab5e3d
   Logging: beeb016c9c80cf77042d62e83495816847ef108b
+  NMapsMap: 17caab4af9a3fc5c25b79858de18bdeab1eaff87
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   SwiftyBootpay: a0edb70454d179d5f42dc705b79c7fd9638b66cb
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   SwiftyRequest: 8e84cd4839fe2429285fe60a5812b5634a8ecb83
 
-PODFILE CHECKSUM: d5ffcdb01a9705c9e0a0e184b1c79435e4ec58ca
+PODFILE CHECKSUM: f82546a49bb233a79624a6e8884fabba1a5bc306
 
 COCOAPODS: 1.10.0.rc.1
