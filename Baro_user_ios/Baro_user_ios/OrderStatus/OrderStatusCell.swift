@@ -12,8 +12,8 @@ class OrderStatusCell : UICollectionViewCell {
     @IBOutlet weak var orderStoreNameLabel: UILabel!
     
     @IBOutlet weak var orderFirstMenuName: UILabel! //처리x
-    
-    @IBOutlet weak var orderStoreImage: UIImageView! //처리x
+
+    @IBOutlet weak var orderStoreImage: UIImageView!
     
     @IBOutlet weak var orderStatusProgress: UIProgressView!
     
