@@ -19,14 +19,15 @@ class StoreListPageController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        let jsonObject : [String : Any ] = [
+        let jsonObject : [ String : Any ] = [
             "type_code" : typeCode,
             "latitude" : "37.499",
             "longitude" : "126.956"
         ]
-        network.post(method: .post, param: jsonObject, url: urlCaller.storeDetailListURL) {(json) in
+        network.post(method: .post, param: jsonObject, url: urlCaller.storeDetailListURL) {
+            (json) in
             var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
-            for item in json["store"].array!{
+            for item in json["store"].array! {
                 storeListModel.store_image = item["store_image"].stringValue
                 storeListModel.is_open = item["is_open"].stringValue
                 storeListModel.distance = item["distance"].doubleValue
@@ -39,16 +40,13 @@ class StoreListPageController : UIViewController{
             self.storeListView.reloadData()
         }
     }
+    
     func configureView(){
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         storeListView.backgroundColor = .white
         storeListView.delegate = self
         storeListView.dataSource = self
-        
-        
     }
-    
-    
 }
 
 extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{

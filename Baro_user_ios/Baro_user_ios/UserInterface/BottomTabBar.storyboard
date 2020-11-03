@@ -59,11 +59,11 @@
         <scene sceneID="8lU-pk-gxQ">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="StoreListPageController" storyboardName="StoreListPage" referencedIdentifier="StoreListPageController" id="hRo-6P-QN7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="k7N-EO-Szw"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="내 가게" id="k7N-EO-Szw"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WbJ-EG-MAE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1486" y="-159"/>
+            <point key="canvasLocation" x="-1225" y="-208"/>
         </scene>
     </scenes>
     <resources>
