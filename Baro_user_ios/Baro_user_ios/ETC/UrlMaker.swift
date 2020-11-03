@@ -34,8 +34,6 @@ class CallRequest {
                 //2.클로저 = 함수자체를 매개변수로 해주겠다.
 
                 success(json)
-
-                print(json)
             case .failure(let error):
 
                 print(error.errorDescription)
@@ -92,8 +90,13 @@ class NetWorkURL {
     //store 상세
     let typeListURL = "http://3.35.180.57:8080/TypeFindAll.do"
     let storeDetailListURL = "http://3.35.180.57:8080/StoreInfoFindByType.do"
-    let storeIntroductionURL = "http://3.35.180.57.44:8080/StoreFindById.do"
+    let storeIntroductionURL = "http://3.35.180.57:8080/StoreFindById.do?store_id="
     let extra = "http://3.35.180.57:8080/ExtraFindByMenuId.do"
+    
+    //store 즐겨찾기
+    let isFavoriteURL = "http://3.35.180.57:8080/FavoriteExist.do"
+    let addFavoriteURL = "http://3.35.180.57:8080/FavoriteSave.do"
+    let delFavoriteURL = "http://3.35.180.57:8080/FavoriteDelete.do"
 
     //coupon 상세
 

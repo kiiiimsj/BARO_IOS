@@ -70,7 +70,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="75k-pS-IoY" firstAttribute="firstBaseline" secondItem="egq-sa-M11" secondAttribute="baseline" constant="19" symbolType="layoutAnchor" id="0jO-VG-DCR"/>
+                                    <constraint firstItem="75k-pS-IoY" firstAttribute="firstBaseline" secondItem="egq-sa-M11" secondAttribute="baseline" constant="16" symbolType="layoutAnchor" id="0jO-VG-DCR"/>
                                     <constraint firstAttribute="trailing" secondItem="75k-pS-IoY" secondAttribute="trailing" constant="215" id="45B-le-UdO"/>
                                     <constraint firstItem="23t-wI-U6P" firstAttribute="leading" secondItem="6xm-Gg-L5H" secondAttribute="leading" constant="20" id="8Ae-VD-3O0"/>
                                     <constraint firstItem="uDJ-63-RXP" firstAttribute="top" secondItem="75k-pS-IoY" secondAttribute="bottom" constant="8.5" id="8Oh-6d-cxf"/>
@@ -134,7 +134,7 @@
                         <outlet property="changeEmailBtn" destination="uDJ-63-RXP" id="Bce-kK-30a"/>
                         <outlet property="errorAlarmText" destination="75k-pS-IoY" id="m42-ko-yFC"/>
                         <outlet property="inputNewEmail" destination="Jxn-9J-Oj6" id="SGs-if-7gD"/>
-                        <segue destination="NzB-Me-pvG" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" id="QH0-h7-XJj"/>
+                        <segue destination="NzB-Me-pvG" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="QH0-h7-XJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwf-Zg-vC9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

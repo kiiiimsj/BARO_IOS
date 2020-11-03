@@ -62,8 +62,6 @@
 		3F4F8DAF254572220015BACE /* NoticePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F8DAE254572220015BACE /* NoticePageController.swift */; };
 		3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */; };
 		3F9B48ED254946720012D89F /* ChangePass2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B48EC254946720012D89F /* ChangePass2.swift */; };
-		3F9B490025498ACC0012D89F /* AboutStoreInfoTabTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B48FF25498ACC0012D89F /* AboutStoreInfoTabTest.storyboard */; };
-		3F9B490325499C730012D89F /* MyCollectionBarTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B490225499C730012D89F /* MyCollectionBarTab.swift */; };
 		3FA196F52547E34E007CD182 /* BottomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA196F42547E34E007CD182 /* BottomTabBarController.swift */; };
 		3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4FC822542898E00EF2894 /* MyPageButtons.swift */; };
 		3FC20E5A2546E62400EEE783 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20E592546E62400EEE783 /* NoticeCell.swift */; };
@@ -76,6 +74,7 @@
 		3FDE5E612546A1C800C05514 /* TermOfUserPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */; };
 		3FDE5E652546B70C00C05514 /* privacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE5E642546B70C00C05514 /* privacyPolicy.html */; };
 		3FDE5E682546E37A00C05514 /* NoticeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE5E672546E37A00C05514 /* NoticeListModel.swift */; };
+		3FEAF06F254FFC1100A5ABC0 /* FavoriteDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEAF06E254FFC1100A5ABC0 /* FavoriteDialog.swift */; };
 		3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF35096253E7E72007B7B29 /* LoginPageController.swift */; };
 		3FF3509A253E7F3B007B7B29 /* RegisterPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */; };
 		5F09CCA5A7FA86F7A3D8ADA6 /* Pods_Baro_user_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868EF0B056B69E5F372574 /* Pods_Baro_user_ios.framework */; };
@@ -169,8 +168,6 @@
 		3F4F8DAE254572220015BACE /* NoticePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePageController.swift; sourceTree = "<group>"; };
 		3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiLabelAnimation.swift; sourceTree = "<group>"; };
 		3F9B48EC254946720012D89F /* ChangePass2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePass2.swift; sourceTree = "<group>"; };
-		3F9B48FF25498ACC0012D89F /* AboutStoreInfoTabTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutStoreInfoTabTest.storyboard; sourceTree = "<group>"; };
-		3F9B490225499C730012D89F /* MyCollectionBarTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionBarTab.swift; sourceTree = "<group>"; };
 		3FA196F42547E34E007CD182 /* BottomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarController.swift; sourceTree = "<group>"; };
 		3FA4FC822542898E00EF2894 /* MyPageButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageButtons.swift; sourceTree = "<group>"; };
 		3FC20E592546E62400EEE783 /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
@@ -183,6 +180,7 @@
 		3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermOfUserPage.storyboard; sourceTree = "<group>"; };
 		3FDE5E642546B70C00C05514 /* privacyPolicy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacyPolicy.html; sourceTree = "<group>"; };
 		3FDE5E672546E37A00C05514 /* NoticeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListModel.swift; sourceTree = "<group>"; };
+		3FEAF06E254FFC1100A5ABC0 /* FavoriteDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDialog.swift; sourceTree = "<group>"; };
 		3FF35096253E7E72007B7B29 /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
 		3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageController.swift; sourceTree = "<group>"; };
 		6FE1B18B198B2DAE07AD0D8A /* Pods-Baro_user_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baro_user_ios.debug.xcconfig"; path = "Target Support Files/Pods-Baro_user_ios/Pods-Baro_user_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -286,6 +284,7 @@
 				04B867A7253B0ECF00336175 /* Info.plist */,
 				048A0BE12541ACBE007D4FD3 /* testController.storyboard */,
 				048A0BE42541AD71007D4FD3 /* testController.swift */,
+				3FEAF06E254FFC1100A5ABC0 /* FavoriteDialog.swift */,
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -393,8 +392,6 @@
 				E33D855A253ECB5000E50BAC /* AboutStore.storyboard */,
 				E33D855F253EF24900E50BAC /* ASCategoryCell.swift */,
 				E33D8565253F20E200E50BAC /* ASMenuCell.swift */,
-				3F9B48FF25498ACC0012D89F /* AboutStoreInfoTabTest.storyboard */,
-				3F9B490225499C730012D89F /* MyCollectionBarTab.swift */,
 			);
 			path = AboutStore;
 			sourceTree = "<group>";
@@ -568,7 +565,6 @@
 				3F4C5AA0253ECAD700C0E7B6 /* NotoSansKR-Regular.otf in Resources */,
 				04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */,
 				E33D855B253ECB5000E50BAC /* AboutStore.storyboard in Resources */,
-				3F9B490025498ACC0012D89F /* AboutStoreInfoTabTest.storyboard in Resources */,
 				04D11F422543D31900ADB210 /* OrderHistory.storyboard in Resources */,
 				3F418FCF254808E100D89665 /* BottomTabBar.storyboard in Resources */,
 				048A0BE22541ACBE007D4FD3 /* testController.storyboard in Resources */,
@@ -694,6 +690,7 @@
 				048D55E7253D91C6009E9CE4 /* MainPageEventCell.swift in Sources */,
 				E3006A6A25501E3000FFBAAB /* BasketNonEssentialCell.swift in Sources */,
 				E33D8542253DC89400E50BAC /* StoreMenuModel.swift in Sources */,
+				3FEAF06F254FFC1100A5ABC0 /* FavoriteDialog.swift in Sources */,
 				048A0BDE2540120A007D4FD3 /* NewStoreListModel.swift in Sources */,
 				3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */,
 				E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */,

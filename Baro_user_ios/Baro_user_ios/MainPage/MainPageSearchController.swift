@@ -11,6 +11,7 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var cancelButton: UIButton!
     @IBAction func button(_ sender: Any) {
         if let text = searchBar.searchTextField.text {
             print(text)
@@ -19,10 +20,11 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
             performSegue(withIdentifier: "searchToStore", sender: realText)
         }
     } 
-    
+    @IBAction func cancelBtn() {
+        self.dismiss(animated: false, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.searchBar.delegate = self
     }
     

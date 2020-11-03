@@ -36,7 +36,7 @@ class OrderStatusController : UIViewController {
                 orderStatusModel.total_count = item["total_count"].intValue
                 self.orderStatusList.append(orderStatusModel)
             }
-            self.collectionView.reloadData()
+            self.collectionView.reloadData() //해줘야함
         }
     }
     
@@ -96,5 +96,6 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
         
         present(vc, animated: true, completion: nil)
     }
+    
     
 }

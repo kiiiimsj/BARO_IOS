@@ -16,6 +16,11 @@ class AboutStore : UIViewController {
     @IBOutlet weak var tabIndecator: UIView!
     
     public var store_id  = ""
+    @IBOutlet weak var storeTitle: UILabel!
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var isFavoriteBtn: UIButton!
+    private var isFlag : Int = 0
+    
     private let netWork = CallRequest()
     private let urlMaker = NetWorkURL()
     private var menus = [Menu]()
@@ -23,13 +28,17 @@ class AboutStore : UIViewController {
     private var storeInfoManager = StoreInfoController()
     private var storeMenuManager = StoreMenuController()
     private var contollers = [UIViewController]()
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.setTabBarItem()
+        self.getStoreInfo()
+        self.isFavoriteStore()
+        
+        backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
         UIView.animate(withDuration: 0.0) {
             self.tabIndecator.transform = CGAffineTransform(rotationAngle: 0.0)
         }
-        print("from : ",tabIndecator.transform)
     }
     func setTabBarItem() {
         menuButton.setTitle("메뉴", for: .normal)
@@ -42,41 +51,125 @@ class AboutStore : UIViewController {
         
         menuButtonClick()
     }
-    
+    @IBAction func backbutton() {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func menuButtonClick() {
         menuButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
         storeInfoButton.tintColor = UIColor(red: 196/255.0, green: 196/255.0, blue: 196/255.0, alpha: 1)
         UIView.animate(withDuration: 0.7) {
             self.tabIndecator.transform = CGAffineTransform(translationX: 0.0, y: self.tabIndecator.bounds.height - 2)
         }
+        
         let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
         guard let VC = storyboard.instantiateViewController(withIdentifier: "StoreMenuController") as? StoreMenuController else {return}
         
         VC.store_id = self.store_id
-        
         self.addChild(VC)
         FirstPage.addSubview((VC.view)!)
         VC.view.frame = FirstPage.bounds
-        
         VC.didMove(toParent: self)
         print("menuButtonClick")
     }
     @IBAction func storeInfoButtonClick() {
         storeInfoButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
         menuButton.tintColor = UIColor(red: 196/255.0, green: 196/255.0, blue: 196/255.0, alpha: 1)
-        
         UIView.animate(withDuration: 0.7) {
             self.tabIndecator.transform = CGAffineTransform(translationX: self.storeInfoButton.bounds.width, y: self.tabIndecator.bounds.height - 2)
         }
-        
         let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
         guard let VC = storyboard.instantiateViewController(withIdentifier: "StoreInfoController") as? StoreInfoController else {return}
-        
+        VC.StoreInfo = self.StoreInfo
         self.addChild(VC)
         FirstPage.addSubview((VC.view)!)
         VC.view.frame = FirstPage.bounds
         VC.didMove(toParent: self)
         print("storeInfoButtonClick")
+    }
+    @IBAction func setFavoriteImageButton() {
+        UserDefaults.standard.set(self.isFlag, forKey: "isFlag")
+        if (self.isFlag == 1) { // 즐겨찾기가 되어있는 경우에서 삭제
+            self.performSegue(withIdentifier: "FavoriteDialog", sender: nil)
+            self.delFavorite()
+        }
+        else { // 즐겨찾기가 안되있는 경우에서 추가
+            self.performSegue(withIdentifier: "FavoriteDialog", sender: nil)
+            self.addFavorite()
+        }
+    }
+    func addFavorite() {
+        let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
+        let param = ["phone":"\(phone)", "store_id":"\(self.store_id)"]
+        netWork.post(method: .post, param: param, url: urlMaker.addFavoriteURL) {
+            json in
+            print("addFavorite: ", json)
+            if json["result"].boolValue {
+                self.isFavoriteBtn.setImage(UIImage(named: "heart_fill"), for: .normal)
+                self.isFlag = 1
+            }
+            else {
+                self.isFavoriteBtn.setImage(UIImage(named: "heart"), for: .normal)
+            }
+        }
+    }
+    func delFavorite() {
+        let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
+        let param = ["phone":"\(phone)", "store_id":"\(self.store_id)"]
+        netWork.post(method: .post, param: param, url: urlMaker.delFavoriteURL) {
+            json in
+            print("delFavorite: ", json)
+            if json["result"].boolValue {
+                self.isFavoriteBtn.setImage(UIImage(named: "heart"), for: .normal)
+                self.isFlag = 0
+            }
+            else {
+                self.isFavoriteBtn.setImage(UIImage(named: "heart_fill"), for: .normal)
+            }
+        }
+    }
+    func getStoreInfo() {
+        netWork.get(method: .get, url: urlMaker.storeIntroductionURL + self.store_id) {
+            json in
+            print("storeInfo : ",json)
+            if (json["result"].boolValue) {
+                self.StoreInfo.store_id = json["store_id"].intValue
+                self.StoreInfo.store_opentime = json["store_opentime"].stringValue
+                self.StoreInfo.store_info = json["store_info"].stringValue
+                self.StoreInfo.store_latitude = json["store_latitude"].doubleValue
+                self.StoreInfo.store_closetime = json["store_closetime"].stringValue
+                self.StoreInfo.store_daysoff = json["store_daysoff"].stringValue
+                self.StoreInfo.message = json["message"].stringValue
+                self.StoreInfo.store_phone = json["store_phone"].stringValue
+                self.StoreInfo.store_longitude = json["store_longitude"].doubleValue
+                self.StoreInfo.store_name = json["store_name"].stringValue
+                self.StoreInfo.store_location = json["store_location"].stringValue
+                self.StoreInfo.type_code = json["type_code"].stringValue
+                self.StoreInfo.store_image = json["store_image"].stringValue
+                self.StoreInfo.is_open = json["is_open"].stringValue
+                
+                self.storeTitle.text = self.StoreInfo.store_name
+            } else {
+                print("make request fail")
+            }
+        }
+    }
+    func isFavoriteStore() {
+        print("in the favoriteStore")
+        let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
+        let param = ["phone":"\(phone)", "store_id":"\(self.store_id)"]
+        print("param : " , param)
+        netWork.post(method: .post, param: param, url: urlMaker.isFavoriteURL) {
+            json in
+            print("isFavorite : ",json)
+            if json["result"].boolValue {
+                self.isFavoriteBtn.setImage(UIImage(named: "heart_fill"), for: .normal)
+                self.isFlag = 1
+            }
+            else {
+                self.isFavoriteBtn.setImage(UIImage(named: "heart"), for: .normal)
+                self.isFlag = 0
+            }
+        }
     }
 }
 

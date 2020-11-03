@@ -7,7 +7,6 @@
 
 import UIKit
 class uiViewSetting: UIView {
-
     @IBInspectable
     var cornerRadius: CGFloat {
             get {
@@ -19,6 +18,9 @@ class uiViewSetting: UIView {
                     return
                 }
                 if self.restorationIdentifier == "categoryIndecator" {
+                    return
+                }
+                if self.restorationIdentifier == "FavoriteDialog" {
                     return
                 }
                 layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]

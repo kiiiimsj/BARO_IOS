@@ -60,7 +60,7 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
         let store = storeList[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StorelistCellIdentifier, for: indexPath) as! StoreListCell
         cell.textLabel.text = String(store.store_name)
-        cell.imageView.kf.setImage(with: URL(string: "http://15.165.22.64:8080/ImageStore.do?image_name=" + String(store.store_image)))
+        cell.imageView.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + String(store.store_image)))
         if store.is_open == "Y" {
             cell.is_OpenLable.text = "영업중"
         }else{
