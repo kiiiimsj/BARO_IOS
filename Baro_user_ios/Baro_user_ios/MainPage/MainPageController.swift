@@ -20,7 +20,8 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     var whereAmI : CLLocation?
     lazy var myLocation = MyLocation()
     //table list
-    @IBOutlet weak var locationLabel: UILabel!
+    
+    @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var tableViewEvent: UITableView?
     
     @IBOutlet weak var tableViewType: UITableView?
@@ -48,29 +49,35 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         tableViewUltra?.separatorStyle = .none
         tableViewNewStore?.separatorStyle = .none
         print("main's viewDidLoad")
-        locationManager.startUpdatingLocation()
-        //        getMyLocation(latitude: "126.9596916", longitude: "37.4954847")
+//        locationManager.startUpdatingLocation()
+        getMyLocation(longitude: "126.9596916", latitude: "37.4954847")
+        whereAmI = CLLocation(latitude: 37.4954847, longitude:  126.9596916)
     }
-    func getMyLocation(latitude : String,longitude :String) {
-        myLocation.network.get(method: .get, url: "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+latitude+","+longitude+"&sourcecrs=epsg:4326&output=json&orders=roadaddr",headers: myLocation.headers) { json in
+    func getMyLocation(longitude : String,latitude :String) {
+        myLocation.network.get(method: .get, url: "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+longitude+","+latitude+"&sourcecrs=epsg:4326&output=json&orders=roadaddr",headers: myLocation.headers) { json in
             let results = json["results"]
             for item in results.array! {
                 let region = item["region"]
                 let land = item["land"]
-                self.locationLabel.text! = region["area2"]["name"].stringValue + " "
-                self.locationLabel.text! += region["area3"]["name"].stringValue + " "
-                self.locationLabel.text! += land["addition0"]["value"].stringValue
+                var temp = region["area2"]["name"].stringValue + " "
+                temp += region["area3"]["name"].stringValue + " "
+                temp += land["addition0"]["value"].stringValue
+                self.locationButton.setTitle(temp, for: .normal)
             }
         }
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let location: CLLocation = locations[locations.count - 1]
         print("dddd",location)
-            getMyLocation(latitude: String(location.coordinate.latitude), longitude: String(location.coordinate.longitude))
+            getMyLocation(longitude: String(location.coordinate.longitude),latitude: String(location.coordinate.latitude))
             
-        }
-
+    }
     
+    @IBAction func goToMap(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(identifier: "mainToMap") as! MapController
+        vc.location = whereAmI
+        present(vc, animated: false)
+    }
 }
 
 extension MainPageController : UITableViewDelegate, UITableViewDataSource {

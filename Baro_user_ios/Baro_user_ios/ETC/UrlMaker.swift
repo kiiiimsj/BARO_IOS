@@ -92,7 +92,7 @@ class NetWorkURL {
     let storeDetailListURL = "http://3.35.180.57:8080/StoreInfoFindByType.do"
     let storeIntroductionURL = "http://3.35.180.57:8080/StoreFindById.do?store_id="
     let extra = "http://3.35.180.57:8080/ExtraFindByMenuId.do"
-    
+    let storeLocation = "http://3.35.180.57:8080/StoreAllLocation.do"
     //store 즐겨찾기
     let isFavoriteURL = "http://3.35.180.57:8080/FavoriteExist.do"
     let addFavoriteURL = "http://3.35.180.57:8080/FavoriteSave.do"
