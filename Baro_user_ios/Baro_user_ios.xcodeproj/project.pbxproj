@@ -109,6 +109,9 @@
 		E33D8560253EF24A00E50BAC /* ASCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D855F253EF24900E50BAC /* ASCategoryCell.swift */; };
 		E33D8563253F163000E50BAC /* StoreMenu2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8562253F163000E50BAC /* StoreMenu2Controller.swift */; };
 		E33D8566253F20E200E50BAC /* ASMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D8565253F20E200E50BAC /* ASMenuCell.swift */; };
+		E34CAF3C255280A200BE3F53 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34CAF3B255280A200BE3F53 /* Map.storyboard */; };
+		E34CAF3F255280B200BE3F53 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF3E255280B200BE3F53 /* MapController.swift */; };
+		E34CAF422552A36F00BE3F53 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF412552A36F00BE3F53 /* LocationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -219,6 +222,9 @@
 		E33D855F253EF24900E50BAC /* ASCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASCategoryCell.swift; sourceTree = "<group>"; };
 		E33D8562253F163000E50BAC /* StoreMenu2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenu2Controller.swift; sourceTree = "<group>"; };
 		E33D8565253F20E200E50BAC /* ASMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASMenuCell.swift; sourceTree = "<group>"; };
+		E34CAF3B255280A200BE3F53 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		E34CAF3E255280B200BE3F53 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		E34CAF412552A36F00BE3F53 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +273,7 @@
 		04B86798253B0ECD00336175 /* Baro_user_ios */ = {
 			isa = PBXGroup;
 			children = (
+				E34CAF382552808E00BE3F53 /* Map */,
 				04B28D4F255247DE007D1ED6 /* Baro_user_ios.entitlements */,
 				E31D4012254FC62300B63F77 /* Basket */,
 				3FA196EE2547C311007CD182 /* UserInterface */,
@@ -464,6 +471,7 @@
 				04235C7925493CB200BA2BB1 /* OrderStatusModel.swift */,
 				04235C89254AB35D00BA2BB1 /* OrderStatusDetailModel.swift */,
 				04235C8C254AB36B00BA2BB1 /* OrderStatusDetailExtraModel.swift */,
+				E34CAF412552A36F00BE3F53 /* LocationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -479,6 +487,15 @@
 				E3006A6925501E3000FFBAAB /* BasketNonEssentialCell.swift */,
 			);
 			path = Basket;
+			sourceTree = "<group>";
+		};
+		E34CAF382552808E00BE3F53 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				E34CAF3B255280A200BE3F53 /* Map.storyboard */,
+				E34CAF3E255280B200BE3F53 /* MapController.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		E997DD1537C720F796AAE31D /* Pods */ = {
@@ -575,6 +592,7 @@
 				04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */,
 				E33D855B253ECB5000E50BAC /* AboutStore.storyboard in Resources */,
 				04D11F422543D31900ADB210 /* OrderHistory.storyboard in Resources */,
+				E34CAF3C255280A200BE3F53 /* Map.storyboard in Resources */,
 				3F418FCF254808E100D89665 /* BottomTabBar.storyboard in Resources */,
 				048A0BE22541ACBE007D4FD3 /* testController.storyboard in Resources */,
 			);
@@ -669,6 +687,8 @@
 				E31D3FF6254692A200B63F77 /* OptionCategoryHeader.swift in Sources */,
 				E31D3FF32546887F00B63F77 /* OptionsHeader.swift in Sources */,
 				3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */,
+				E34CAF3F255280B200BE3F53 /* MapController.swift in Sources */,
+				E34CAF422552A36F00BE3F53 /* LocationModel.swift in Sources */,
 				3FC20E5A2546E62400EEE783 /* NoticeCell.swift in Sources */,
 				04B8679C253B0ECD00336175 /* SceneDelegate.swift in Sources */,
 				04D11F482543ECB800ADB210 /* OrderHistoryCell.swift in Sources */,
