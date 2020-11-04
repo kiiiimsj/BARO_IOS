@@ -207,6 +207,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S83-rD-DBa" customClass="NMFMapView">
                                 <rect key="frame" x="0.0" y="74" width="414" height="236.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wAA-Ha-vom"/>
@@ -243,6 +248,7 @@
                     <connections>
                         <outlet property="holiday" destination="h28-XG-Lpd" id="LWA-Oh-0lD"/>
                         <outlet property="location" destination="DT1-aV-m8N" id="tzc-tW-dCX"/>
+                        <outlet property="map" destination="S83-rD-DBa" id="uiU-sd-Q5g"/>
                         <outlet property="openTime" destination="7qS-8H-yvQ" id="oUb-c0-Pa4"/>
                         <outlet property="phonenumber" destination="Yq9-ie-ilI" id="gD1-28-Ry0"/>
                         <outlet property="storeIntroduce" destination="trc-fV-7bc" id="9RZ-hC-b5p"/>

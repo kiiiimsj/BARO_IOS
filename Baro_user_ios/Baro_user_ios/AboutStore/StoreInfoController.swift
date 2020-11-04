@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NMapsMap
 
 class StoreInfoController : UIViewController{
     
@@ -17,6 +18,7 @@ class StoreInfoController : UIViewController{
     @IBOutlet weak var holiday: UILabel!
     @IBOutlet weak var phonenumber: UILabel!
     @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var map: NMFMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -25,5 +27,11 @@ class StoreInfoController : UIViewController{
         holiday.text = StoreInfo.store_daysoff
         phonenumber.text = StoreInfo.store_phone
         location.text = StoreInfo.store_location
+        
+        let storeMarker = NMFMarker(position: NMGLatLng(lat: StoreInfo.store_latitude, lng: StoreInfo.store_longitude), iconImage: NMFOverlayImage(name: "map") )
+        storeMarker.mapView = map
+        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: StoreInfo.store_latitude, lng: StoreInfo.store_longitude))
+        cameraUpdate.animation = .easeIn
+        map.moveCamera(cameraUpdate)
     }
 }
