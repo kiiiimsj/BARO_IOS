@@ -33,6 +33,8 @@
 		048D55E0253D838E009E9CE4 /* MainPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D55DF253D838E009E9CE4 /* MainPageType.swift */; };
 		048D55E3253D83AD009E9CE4 /* MainPageTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D55E2253D83AD009E9CE4 /* MainPageTypeCell.swift */; };
 		048D55E7253D91C6009E9CE4 /* MainPageEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D55E6253D91C6009E9CE4 /* MainPageEventCell.swift */; };
+		04B28D302552450F007D1ED6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04B28D2F2552450F007D1ED6 /* GoogleService-Info.plist */; };
+		04B28D4D255245B5007D1ED6 /* FIrebaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B28D4C255245B5007D1ED6 /* FIrebaseTest.swift */; };
 		04B8679A253B0ECD00336175 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B86799253B0ECD00336175 /* AppDelegate.swift */; };
 		04B8679C253B0ECD00336175 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8679B253B0ECD00336175 /* SceneDelegate.swift */; };
 		04B8679E253B0ECD00336175 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8679D253B0ECD00336175 /* ViewController.swift */; };
@@ -138,6 +140,9 @@
 		048D55DF253D838E009E9CE4 /* MainPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageType.swift; sourceTree = "<group>"; };
 		048D55E2253D83AD009E9CE4 /* MainPageTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTypeCell.swift; sourceTree = "<group>"; };
 		048D55E6253D91C6009E9CE4 /* MainPageEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageEventCell.swift; sourceTree = "<group>"; };
+		04B28D2F2552450F007D1ED6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04B28D4C255245B5007D1ED6 /* FIrebaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrebaseTest.swift; sourceTree = "<group>"; };
+		04B28D4F255247DE007D1ED6 /* Baro_user_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Baro_user_ios.entitlements; sourceTree = "<group>"; };
 		04B86796253B0ECD00336175 /* Baro_user_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baro_user_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B86799253B0ECD00336175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B8679B253B0ECD00336175 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -267,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				3F0F6EA925514EFA00099ACC /* BootPay */,
+				04B28D4F255247DE007D1ED6 /* Baro_user_ios.entitlements */,
 				E31D4012254FC62300B63F77 /* Basket */,
 				3FA196EE2547C311007CD182 /* UserInterface */,
 				E31D3FFD2547B8EA00B63F77 /* LoginPage */,
@@ -287,9 +293,11 @@
 				04B867A2253B0ECF00336175 /* Assets.xcassets */,
 				04B867A4253B0ECF00336175 /* LaunchScreen.storyboard */,
 				04B867A7253B0ECF00336175 /* Info.plist */,
+				04B28D2F2552450F007D1ED6 /* GoogleService-Info.plist */,
 				048A0BE12541ACBE007D4FD3 /* testController.storyboard */,
 				048A0BE42541AD71007D4FD3 /* testController.swift */,
 				3FEAF06E254FFC1100A5ABC0 /* FavoriteDialog.swift */,
+				04B28D4C255245B5007D1ED6 /* FIrebaseTest.swift */,
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -577,6 +585,7 @@
 				3F4C5AA3253ECAD700C0E7B6 /* NotoSansKR-Light.otf in Resources */,
 				E31D3FDB2542AD7300B63F77 /* StoreListPage.storyboard in Resources */,
 				04235C742549386100BA2BB1 /* OrderStatus.storyboard in Resources */,
+				04B28D302552450F007D1ED6 /* GoogleService-Info.plist in Resources */,
 				3F4C5AA0253ECAD700C0E7B6 /* NotoSansKR-Regular.otf in Resources */,
 				04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */,
 				E33D855B253ECB5000E50BAC /* AboutStore.storyboard in Resources */,
@@ -683,6 +692,7 @@
 				04235C8A254AB35D00BA2BB1 /* OrderStatusDetailModel.swift in Sources */,
 				04235C7A25493CB200BA2BB1 /* OrderStatusModel.swift in Sources */,
 				3FA196F52547E34E007CD182 /* BottomTabBarController.swift in Sources */,
+				04B28D4D255245B5007D1ED6 /* FIrebaseTest.swift in Sources */,
 				E33D8546253DC8C800E50BAC /* ASFirstStoreCell.swift in Sources */,
 				E3006A6725501D0900FFBAAB /* BasketEssentialCell.swift in Sources */,
 				3F9B48ED254946720012D89F /* ChangePass2.swift in Sources */,
@@ -851,6 +861,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = Baro_user_ios/Baro_user_ios.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J4HX7ZWJHF;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -907,6 +919,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = Baro_user_ios/Baro_user_ios.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J4HX7ZWJHF;
 				FRAMEWORK_SEARCH_PATHS = (
