@@ -6,11 +6,21 @@
 //
 
 import UIKit
-
-class MainPageController: UIViewController {
-    
-    
+import Alamofire
+import NMapsMap
+class MainPageController: UIViewController, CLLocationManagerDelegate {
+    lazy var locationManager: CLLocationManager = {
+            let manager = CLLocationManager()
+            manager.desiredAccuracy = kCLLocationAccuracyBest
+            manager.distanceFilter = kCLHeadingFilterNone
+            manager.requestWhenInUseAuthorization()
+            manager.delegate = self
+            return manager
+        }()
+    var whereAmI : CLLocation?
+    lazy var myLocation = MyLocation()
     //table list
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var tableViewEvent: UITableView?
     
     @IBOutlet weak var tableViewType: UITableView?
@@ -38,8 +48,27 @@ class MainPageController: UIViewController {
         tableViewUltra?.separatorStyle = .none
         tableViewNewStore?.separatorStyle = .none
         print("main's viewDidLoad")
+        locationManager.startUpdatingLocation()
+        //        getMyLocation(latitude: "126.9596916", longitude: "37.4954847")
     }
-    
+    func getMyLocation(latitude : String,longitude :String) {
+        myLocation.network.get(method: .get, url: "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+latitude+","+longitude+"&sourcecrs=epsg:4326&output=json&orders=roadaddr",headers: myLocation.headers) { json in
+            let results = json["results"]
+            for item in results.array! {
+                let region = item["region"]
+                let land = item["land"]
+                self.locationLabel.text! = region["area2"]["name"].stringValue + " "
+                self.locationLabel.text! += region["area3"]["name"].stringValue + " "
+                self.locationLabel.text! += land["addition0"]["value"].stringValue
+            }
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            let location: CLLocation = locations[locations.count - 1]
+        print("dddd",location)
+            getMyLocation(latitude: String(location.coordinate.latitude), longitude: String(location.coordinate.longitude))
+            
+        }
 
     
 }
