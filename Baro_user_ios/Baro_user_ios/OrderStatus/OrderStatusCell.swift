@@ -10,10 +10,8 @@ import UIKit
 class OrderStatusCell : UICollectionViewCell {
     
     @IBOutlet weak var orderStoreNameLabel: UILabel!
-    
-    @IBOutlet weak var orderFirstMenuName: UILabel! //처리x
 
-    @IBOutlet weak var orderStoreImage: UIImageView!
+   // @IBOutlet weak var orderStoreImage: UIImageView!
     
     @IBOutlet weak var orderStatusProgress: UIProgressView!
     
@@ -21,10 +19,15 @@ class OrderStatusCell : UICollectionViewCell {
     
     @IBOutlet weak var orderCount: UILabel!
     
+    @IBOutlet weak var orderStatus: UILabel!
     
     var receipt_id = ""
     
+//    override func prepareForReuse() {
+//        orderStoreImage.image = nil
+//    }
+    
     override func prepareForReuse() {
-        orderStoreImage.image = nil
+        super.prepareForReuse()
     }
 }

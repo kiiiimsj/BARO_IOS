@@ -9,12 +9,35 @@ import UIKit
 
 class OrderStatusDetail : UICollectionViewCell {
     
+ //   @IBOutlet weak var expandBtn: UIButton!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menuName: UILabel!
     @IBOutlet weak var oneMenuTotalPrice: UILabel!
-    @IBOutlet weak var expandableImage: UIButton!
+    
+//    var clickListener : ExpandableDelegate?
+//    var iPath = IndexPath()
+//    var expandable = false
+//    var open = false
+
     @IBOutlet weak var menuCount: UILabel!
     
+    
+//    @IBAction func expandableImage(_ sender: Any) {
+//        open = !open
+//        if open {
+//            let image = UIImage(named: "heart")
+//            print("heart")
+//            expandBtn.setImage(image, for: .normal)
+//        }
+//        else {
+//            let image = UIImage(named: "arrow_down")
+//            print("arrow")
+//            expandBtn.setImage(image, for: .normal)
+//        }
+//        print("hae", iPath)
+//        clickListener?.clickExpand(open: open, iPath: iPath)
+//    }
     
     public var extraList = [OrderStatusDetailExtraList]()
     
@@ -28,6 +51,10 @@ class OrderStatusDetail : UICollectionViewCell {
     }
     
 }
+
+//protocol ExpandableDelegate {
+//    func clickExpand(open : Bool, iPath : IndexPath)
+//}
 
 extension OrderStatusDetail : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -47,7 +74,7 @@ extension OrderStatusDetail : UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 50, height: 70)
+        return CGSize(width: 50, height: 30)
     }
     
 }
