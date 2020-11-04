@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HI5-FX-0F0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -190,7 +190,7 @@
                                                 </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BaN-eb-3bw">
                                                     <rect key="frame" x="16" y="43" width="382" height="162"/>
-                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ULD-rU-kfs">
                                                         <size key="itemSize" width="414" height="54"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -344,26 +344,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvi-M8-Mci">
-                                            <rect key="frame" x="381" y="14.5" width="15" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjA-zK-90z">
-                                            <rect key="frame" x="370.5" y="14.5" width="10.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="IjA-zK-90z" firstAttribute="centerY" secondItem="Etc-wc-6ln" secondAttribute="centerY" id="DN5-xh-ddX"/>
                                         <constraint firstItem="6Rf-OD-WD6" firstAttribute="centerY" secondItem="Etc-wc-6ln" secondAttribute="centerY" id="Nfe-rV-dOu"/>
-                                        <constraint firstItem="Kvi-M8-Mci" firstAttribute="centerY" secondItem="Etc-wc-6ln" secondAttribute="centerY" id="jaC-dE-ttF"/>
-                                        <constraint firstItem="Kvi-M8-Mci" firstAttribute="trailing" secondItem="Etc-wc-6ln" secondAttribute="trailingMargin" constant="-10" id="pM8-bS-22s"/>
                                         <constraint firstItem="6Rf-OD-WD6" firstAttribute="leading" secondItem="Etc-wc-6ln" secondAttribute="leadingMargin" constant="17" id="qYi-SA-utR"/>
-                                        <constraint firstItem="Kvi-M8-Mci" firstAttribute="leading" secondItem="IjA-zK-90z" secondAttribute="trailing" id="vPv-1N-EyV"/>
                                     </constraints>
                                 </collectionReusableView>
                             </collectionView>
@@ -407,9 +391,6 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

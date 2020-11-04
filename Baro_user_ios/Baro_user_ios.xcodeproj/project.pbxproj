@@ -51,6 +51,8 @@
 		3F05C564254116AC0066DAAD /* MyPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05C563254116AC0066DAAD /* MyPageController.swift */; };
 		3F05C567254116C70066DAAD /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F05C566254116C70066DAAD /* MyPage.storyboard */; settings = {ASSET_TAGS = (MyPageController, ); }; };
 		3F05C56A25412AF20066DAAD /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05C56925412AF20066DAAD /* MyPageView.swift */; };
+		3F0F6EAB25514F0B00099ACC /* MyBootPayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */; };
+		3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */; };
 		3F418FCF254808E100D89665 /* BottomTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F418FCE254808E100D89665 /* BottomTabBar.storyboard */; };
 		3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F49907F253EB18B00372F83 /* LoginPage.storyboard */; };
 		3F4C5A9F253ECAD700C0E7B6 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9A253ECAD700C0E7B6 /* NotoSansKR-Black.otf */; };
@@ -157,6 +159,8 @@
 		3F05C563254116AC0066DAAD /* MyPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageController.swift; sourceTree = "<group>"; };
 		3F05C566254116C70066DAAD /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		3F05C56925412AF20066DAAD /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBootPayController.swift; sourceTree = "<group>"; };
+		3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BootPay.storyboard; sourceTree = "<group>"; };
 		3F418FCE254808E100D89665 /* BottomTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomTabBar.storyboard; sourceTree = "<group>"; };
 		3F49907F253EB18B00372F83 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		3F4C5A9A253ECAD700C0E7B6 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 		04B86798253B0ECD00336175 /* Baro_user_ios */ = {
 			isa = PBXGroup;
 			children = (
+				3F0F6EA925514EFA00099ACC /* BootPay */,
 				E31D4012254FC62300B63F77 /* Basket */,
 				3FA196EE2547C311007CD182 /* UserInterface */,
 				E31D3FFD2547B8EA00B63F77 /* LoginPage */,
@@ -295,6 +300,15 @@
 				B9868EF0B056B69E5F372574 /* Pods_Baro_user_ios.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F0F6EA925514EFA00099ACC /* BootPay */ = {
+			isa = PBXGroup;
+			children = (
+				3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */,
+				3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */,
+			);
+			path = BootPay;
 			sourceTree = "<group>";
 		};
 		3F499082253EC11B00372F83 /* Font */ = {
@@ -552,6 +566,7 @@
 				E31D3FE22545DF7D00B63F77 /* OrderDetails.storyboard in Resources */,
 				3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */,
 				3FDE5E652546B70C00C05514 /* privacyPolicy.html in Resources */,
+				3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */,
 				3FDE5E382546968000C05514 /* NoticePage.storyboard in Resources */,
 				04B867A6253B0ECF00336175 /* LaunchScreen.storyboard in Resources */,
 				3F4C5AA2253ECAD700C0E7B6 /* NotoSansKR-Thin.otf in Resources */,
@@ -627,6 +642,7 @@
 				043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */,
 				04B8679E253B0ECD00336175 /* ViewController.swift in Sources */,
 				E31D400C254AC7DE00B63F77 /* EssentialRadio.swift in Sources */,
+				3F0F6EAB25514F0B00099ACC /* MyBootPayController.swift in Sources */,
 				04B8679A253B0ECD00336175 /* AppDelegate.swift in Sources */,
 				043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */,
 				3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */,
@@ -678,7 +694,6 @@
 				04235C87254AB05B00BA2BB1 /* OrderStatusDetailCell.swift in Sources */,
 				048D55E3253D83AD009E9CE4 /* MainPageTypeCell.swift in Sources */,
 				E31D3FD22542ABEF00B63F77 /* StoreListPageController.swift in Sources */,
-				3F9B490325499C730012D89F /* MyCollectionBarTab.swift in Sources */,
 				E31D401E255000FD00B63F77 /* BasketMenuCell.swift in Sources */,
 				E31D3FE62545DFA000B63F77 /* OrderDetailsController.swift in Sources */,
 				048D55BA253D575A009E9CE4 /* TypeListModel.swift in Sources */,

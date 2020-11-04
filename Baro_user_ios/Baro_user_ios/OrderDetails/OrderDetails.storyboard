@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BAe-Iy-w2T">
-                                <rect key="frame" x="20" y="214" width="374" height="618"/>
+                                <rect key="frame" x="20" y="214" width="374" height="608"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JEB-Ax-JhU">
                                     <size key="itemSize" width="128" height="128"/>
@@ -169,7 +169,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="cAL-FF-FuD" secondAttribute="trailing" constant="10" id="vHY-Qc-LgG"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="0.47109787269999998" green="0.211157332" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="370" height="188"/>
                                         <connections>
                                             <outlet property="collection" destination="cAL-FF-FuD" id="FyK-5t-vNo"/>
@@ -185,17 +185,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CmK-lg-Dkg">
-                                                    <rect key="frame" x="286.5" y="53" width="21" height="22"/>
+                                                    <rect key="frame" x="336" y="53" width="21" height="22"/>
                                                     <state key="normal" image="plus"/>
                                                     <connections>
                                                         <action selector="AddCount:" destination="B6w-oX-tpz" eventType="touchUpInside" id="fD4-1z-MYs"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EU9-eK-Rat">
-                                                    <rect key="frame" x="338" y="53" width="21" height="22"/>
-                                                    <state key="normal" image="minus"/>
-                                                    <connections>
-                                                        <action selector="AbstractCount:" destination="B6w-oX-tpz" eventType="touchUpInside" id="W8a-CX-U20"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSK-Sl-all">
@@ -210,19 +203,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EU9-eK-Rat">
+                                                    <rect key="frame" x="288" y="53" width="21" height="22"/>
+                                                    <state key="normal" image="minus"/>
+                                                    <connections>
+                                                        <action selector="AbstractCount:" destination="B6w-oX-tpz" eventType="touchUpInside" id="W8a-CX-U20"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="heT-bJ-3y2" firstAttribute="centerY" secondItem="19d-2h-KS9" secondAttribute="centerY" id="LJ5-8L-qpW"/>
-                                                <constraint firstAttribute="trailing" secondItem="EU9-eK-Rat" secondAttribute="trailing" constant="10" id="OMk-Y4-RSy"/>
-                                                <constraint firstItem="EU9-eK-Rat" firstAttribute="leading" secondItem="cSK-Sl-all" secondAttribute="trailing" constant="10" id="PLg-bU-dRQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="EU9-eK-Rat" secondAttribute="trailing" constant="60" id="OMk-Y4-RSy"/>
+                                                <constraint firstItem="EU9-eK-Rat" firstAttribute="leading" secondItem="cSK-Sl-all" secondAttribute="trailing" constant="-40" id="PLg-bU-dRQ"/>
                                                 <constraint firstItem="cSK-Sl-all" firstAttribute="centerY" secondItem="19d-2h-KS9" secondAttribute="centerY" id="Rkw-do-BUa"/>
                                                 <constraint firstItem="EU9-eK-Rat" firstAttribute="centerY" secondItem="19d-2h-KS9" secondAttribute="centerY" id="V7b-KN-lIu"/>
-                                                <constraint firstItem="cSK-Sl-all" firstAttribute="leading" secondItem="CmK-lg-Dkg" secondAttribute="trailing" constant="10" id="WL9-GN-orn"/>
+                                                <constraint firstItem="cSK-Sl-all" firstAttribute="leading" secondItem="CmK-lg-Dkg" secondAttribute="trailing" constant="-39.5" id="WL9-GN-orn"/>
                                                 <constraint firstItem="heT-bJ-3y2" firstAttribute="leading" secondItem="19d-2h-KS9" secondAttribute="leading" constant="20" id="eUb-nC-xHx"/>
                                                 <constraint firstItem="CmK-lg-Dkg" firstAttribute="centerY" secondItem="19d-2h-KS9" secondAttribute="centerY" id="vtt-zy-p5f"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="369" height="128"/>
                                         <connections>
                                             <outlet property="minus" destination="EU9-eK-Rat" id="lIw-hX-9f5"/>
@@ -267,14 +267,24 @@
                                 </collectionReusableView>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPU-17-6gL">
-                                <rect key="frame" x="0.0" y="832" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="822" width="414" height="40"/>
                                 <color key="backgroundColor" red="0.47109787269999998" green="0.211157332" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vFk-Ro-nn9"/>
+                                </constraints>
                                 <state key="normal" title="장바구니로">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="nextPage:" destination="z9o-Uw-jMZ" eventType="touchUpInside" id="wx9-8b-zFk"/>
-                                    <segue destination="lj0-AS-cQE" kind="presentation" identifier="BasketController" id="gye-PQ-8Tq"/>
+                                    <segue destination="lj0-AS-cQE" kind="presentation" identifier="BasketController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="gye-PQ-8Tq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0R-d1-7bz">
+                                <rect key="frame" x="20" y="44" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="backBtnPress" destination="z9o-Uw-jMZ" eventType="touchUpInside" id="mEt-pb-Dze"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -304,6 +314,7 @@
                     </view>
                     <connections>
                         <outlet property="EssentialArea" destination="BAe-Iy-w2T" id="DId-3N-h1c"/>
+                        <outlet property="backBtn" destination="I0R-d1-7bz" id="mVT-oq-Q3b"/>
                         <outlet property="goToBasket" destination="DPU-17-6gL" id="MEd-aH-ek7"/>
                         <outlet property="menu_count" destination="ylb-sz-LbD" id="Tk8-Wd-X6X"/>
                         <outlet property="menu_image" destination="qPh-pY-0se" id="7GQ-mA-5p1"/>
@@ -336,9 +347,6 @@
         <image name="plus" width="21" height="21"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

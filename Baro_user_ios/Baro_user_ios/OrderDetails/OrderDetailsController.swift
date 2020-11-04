@@ -15,22 +15,33 @@ class OrderDetailsController : UIViewController {
     @IBOutlet weak var menu_count: UILabel!
     @IBOutlet weak var plus: UIButton!
     @IBOutlet weak var goToBasket: UIButton!
+    
+    @IBOutlet weak var backBtn: UIButton!
     private var network = CallRequest()
     private var urlMaker = NetWorkURL()
     private var essentials = [String : [Extra]]()
     private var nonEssentials = [Extra]()
     private var categories = [String]()
+    
     @IBOutlet weak var EssentialArea: UICollectionView!
+    
+    public var menu = Menu()
     public var menu_id = ""
     public var menu_default_price = 0
     public var menu_price_current = 0
+    
     public var nonEssentialOpen = false;
     public var selectedEssential = [String : Extra]()
     public var selectedNonEssential = [String : SelectedExtra]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        menu_price_current = menu_default_price
+        setMenuInfo()
+        backBtn.setImage(UIImage(named: "arrow_back" ), for: .normal)
+        menu_price_current = menu.menu_defaultprice
+        
         menu_count.text = "1"
+        
         recalcPrice()
         network.get(method: .get, url: urlMaker.extra+"?menu_id="+menu_id) {(json) in
             if json["result"].boolValue{
@@ -69,20 +80,28 @@ class OrderDetailsController : UIViewController {
         menu_count.text = String(Int(menu_count.text!)! - 1)
         recalcPrice()
     }
+    @IBAction func backBtnPress() {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func nextPage(_ sender: Any) {
         if selectedEssential.count != essentials.count{
             return
         }
         let can = canGoToNext()
         if can {
-            var data = Order(menu: Menu(), essentials: selectedEssential, nonEssentials: selectedNonEssential)
+            var data = Order(menu: self.menu, essentials: selectedEssential, nonEssentials: selectedNonEssential)
             data.menu_count = Int(menu_count.text!)!
             data.menu_total_price = menu_price_current
-            print(data)
-            let vc = self.storyboard?.instantiateViewController(identifier: "BasketController") as! BasketController
-            vc.menu = data
+            print("data : ",data)
+            let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
             
-            present(vc, animated: true, completion: nil)
+            guard let pvc = self.presentingViewController else { return }
+            vc.menu = data
+            self.dismiss(animated: false) {
+                vc.modalPresentationStyle = .fullScreen
+                pvc.present(vc, animated: false, completion: nil)
+            }
         }else{
             return
         }
@@ -98,8 +117,13 @@ class OrderDetailsController : UIViewController {
             return false
         }
     }
+    func setMenuInfo() {
+        self.menu_name.text = self.menu.menu_name
+        self.menu_image.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageMenu.do?store_id=\(self.menu.store_id)&image_name=\(self.menu.menu_image)"))
+        self.menu_price.text = "\(self.menu.menu_defaultprice)"
+        self.menu_id = "\(self.menu.menu_id)"
+    }
 }
-
 extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
@@ -110,7 +134,6 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
         default:
             return 0
         }
-       
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
