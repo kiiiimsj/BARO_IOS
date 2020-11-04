@@ -13,4 +13,5 @@ target 'Baro_user_ios' do
   pod 'KituraKit'
   pod 'Alamofire', '~> 5.1.0' 
   pod 'NMapsMap'
+  pod 'Firebase/Analytics'
 end

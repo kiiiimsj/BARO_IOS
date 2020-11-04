@@ -14,6 +14,8 @@ class OrderStatusDetailController : UIViewController {
     @IBOutlet weak var totalPrice: UILabel!
     @IBOutlet weak var requests: UILabel!
     
+  //  public var extraOpen = false
+    
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
@@ -96,12 +98,31 @@ extension OrderStatusDetailController : UICollectionViewDelegate, UICollectionVi
         cell.extraList = orderList.OrderStatusDetailExtra
         cell.collectionView.delegate = cell.self
         cell.collectionView.dataSource = cell.self
+     //   cell.clickListener = self
 
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let orderList = orderStatusDetailList[indexPath.item]
-        return CGSize(width: 50, height: CGFloat(orderList.OrderStatusDetailExtra.count) * 70)
+        
+        
+    //    if self.extraOpen {
+            return CGSize(width: self.view.frame.width * 0.8, height: CGFloat(orderList.OrderStatusDetailExtra.count) * 50 + 70)
+   //     }
+//        else {
+//            return CGSize(width: self.view.frame.width * 0.8, height: 0)
+//        }
     }
+    
 }
+
+//extension OrderStatusDetailController : ExpandableDelegate {
+//    func clickExpand(open: Bool, iPath: IndexPath) {
+//        print("uuz",open)
+//        self.extraOpen = open
+//        print(extraOpen)
+//        let layout = collectionView.collectionViewLayout
+//        layout.invalidateLayout()
+//    }
+//}
