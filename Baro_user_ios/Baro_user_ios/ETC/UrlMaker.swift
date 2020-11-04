@@ -148,3 +148,25 @@ class NetWorkURL {
     let orderProgressList = "http://3.35.180.57:8080/OrderProgressing.do"
 }
 
+class MyLocation {
+    var network = CallRequest()
+    var headers : HTTPHeaders!
+    var location = "dd"
+    init() {
+        var keys = [String : String]()
+        keys["X-NCP-APIGW-API-KEY-ID"] = (Bundle.main.object(forInfoDictionaryKey: "NMFClientId") as! String)
+        keys["X-NCP-APIGW-API-KEY"] = (Bundle.main.object(forInfoDictionaryKey: "NMFClientSecret") as! String)
+        headers = HTTPHeaders(keys)
+    }
+    func getMyLocation(latitude : String,longitude : String) {
+        network.get(method: .get, url: "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+latitude+","+longitude+"&sourcecrs=epsg:4326&output=json&orders=roadaddr",headers: headers) { json in
+            let results = json["results"]
+            let region = results["region"]
+            let land = results["land"]
+            let area2 = region["area2"]["name"].stringValue
+            let area3 = region["area3"]["name"].stringValue
+            let addition = land["area2"]["addition0"]["value"].stringValue
+            self.location = area2 + " " + area3 + " " + addition
+        }
+    }
+}
