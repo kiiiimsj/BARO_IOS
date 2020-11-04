@@ -15,11 +15,10 @@ class BasketController : UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var totalPriceLabel: UILabel!
-    @IBOutlet weak var storeTitle: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    
     public var totalPrice : Int = 0
     public var basket = UserDefaults.standard
+    private var getStoreNameFromUserDefault = UserDefaults.standard.value(forKey: "currentStoreName") as! String
     override func viewDidLoad(){
         super.viewDidLoad()
         if (menu != nil) {
@@ -39,9 +38,13 @@ class BasketController : UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func clickPay(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Basket", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
         
+        guard let pvc = self.presentingViewController else { return }
         print(totalPriceLabel.text!)
     }
+    
     func saveBasket() {
         do {
             let encodedData = try NSKeyedArchiver.archivedData(withRootObject: orders, requiringSecureCoding: false)
@@ -87,6 +90,13 @@ extension BasketController : UICollectionViewDelegate , UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
         let headerview = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "BasketHeader", for: indexPath) as! BasketHeader
+        if (getStoreNameFromUserDefault != "") {
+            headerview.storeName .text = getStoreNameFromUserDefault
+        }
+        else {
+            headerview.storeName .text = "store"
+        }
+        
         return headerview
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
