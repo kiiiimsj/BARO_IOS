@@ -2,6 +2,63 @@ PODS:
   - Alamofire (5.1.0)
   - AlignedCollectionViewFlowLayout (1.1.2)
   - CryptoSwift (1.3.2)
+  - Firebase/Analytics (6.34.0):
+    - Firebase/Core
+  - Firebase/Core (6.34.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 6.9.0)
+  - Firebase/CoreOnly (6.34.0):
+    - FirebaseCore (= 6.10.4)
+  - FirebaseAnalytics (6.9.0):
+    - FirebaseCore (~> 6.10)
+    - FirebaseInstallations (~> 1.7)
+    - GoogleAppMeasurement (= 6.9.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
+    - GoogleUtilities/MethodSwizzler (~> 6.7)
+    - GoogleUtilities/Network (~> 6.7)
+    - "GoogleUtilities/NSData+zlib (~> 6.7)"
+    - nanopb (~> 1.30906.0)
+  - FirebaseCore (6.10.4):
+    - FirebaseCoreDiagnostics (~> 1.6)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Logger (~> 6.7)
+  - FirebaseCoreDiagnostics (1.7.0):
+    - GoogleDataTransport (~> 7.4)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Logger (~> 6.7)
+    - nanopb (~> 1.30906.0)
+  - FirebaseInstallations (1.7.0):
+    - FirebaseCore (~> 6.10)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/UserDefaults (~> 6.7)
+    - PromisesObjC (~> 1.2)
+  - GoogleAppMeasurement (6.9.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
+    - GoogleUtilities/MethodSwizzler (~> 6.7)
+    - GoogleUtilities/Network (~> 6.7)
+    - "GoogleUtilities/NSData+zlib (~> 6.7)"
+    - nanopb (~> 1.30906.0)
+  - GoogleDataTransport (7.5.1):
+    - nanopb (~> 1.30906.0)
+  - GoogleUtilities/AppDelegateSwizzler (6.7.2):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.7.2):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (6.7.2):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.7.2):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.7.2):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.7.2)"
+  - GoogleUtilities/Reachability (6.7.2):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (6.7.2):
+    - GoogleUtilities/Logger
   - IBMSwiftCircuitBreaker (5.0.3):
     - LoggerAPI (~> 1.7)
   - Kingfisher (4.10.1)
@@ -13,8 +70,14 @@ PODS:
   - LoggerAPI (1.9.200):
     - Logging (~> 1.1)
   - Logging (1.4.0)
+  - nanopb (1.30906.0):
+    - nanopb/decode (= 1.30906.0)
+    - nanopb/encode (= 1.30906.0)
+  - nanopb/decode (1.30906.0)
+  - nanopb/encode (1.30906.0)
   - NMapsMap (3.10.0)
   - ObjectMapper (4.2.0)
+  - PromisesObjC (1.2.11)
   - SwiftyBootpay (3.2.47):
     - Alamofire (~> 5.1.0)
     - CryptoSwift
@@ -27,6 +90,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.1.0)
   - AlignedCollectionViewFlowLayout
+  - Firebase/Analytics
   - Kingfisher (~> 4.7)
   - KituraKit
   - NMapsMap
@@ -38,14 +102,24 @@ SPEC REPOS:
     - Alamofire
     - AlignedCollectionViewFlowLayout
     - CryptoSwift
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseInstallations
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleUtilities
     - IBMSwiftCircuitBreaker
     - Kingfisher
     - KituraContracts
     - KituraKit
     - LoggerAPI
     - Logging
+    - nanopb
     - NMapsMap
     - ObjectMapper
+    - PromisesObjC
     - SwiftyBootpay
     - SwiftyJSON
     - SwiftyRequest
@@ -54,18 +128,28 @@ SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
   CryptoSwift: 093499be1a94b0cae36e6c26b70870668cb56060
+  Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
+  FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
+  FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
+  FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
+  FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
+  GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
+  GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
+  GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   IBMSwiftCircuitBreaker: 300d1d56e6cbe9f1159e4d5ce202d9bb11295272
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   KituraContracts: e845e60dc8627ad0a76fa55ef20a45451d8f830b
   KituraKit: 6ba9557461bc3a287352f0987c7ce8340242fc2e
   LoggerAPI: ad9c4a6f1e32f518fdb43a1347ac14d765ab5e3d
   Logging: beeb016c9c80cf77042d62e83495816847ef108b
+  nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   NMapsMap: 17caab4af9a3fc5c25b79858de18bdeab1eaff87
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SwiftyBootpay: a0edb70454d179d5f42dc705b79c7fd9638b66cb
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   SwiftyRequest: 8e84cd4839fe2429285fe60a5812b5634a8ecb83
 
-PODFILE CHECKSUM: f82546a49bb233a79624a6e8884fabba1a5bc306
+PODFILE CHECKSUM: 2e8bbfc697fed2067e3bbe2f827c6841761b448a
 
-COCOAPODS: 1.10.0.rc.1
+COCOAPODS: 1.9.3
