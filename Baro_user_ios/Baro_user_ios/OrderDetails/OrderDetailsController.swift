@@ -272,16 +272,3 @@ extension OrderDetailsController : ExpandDelegate {
         layout.invalidateLayout()
     }
 }
-
-struct Order {
-    var menu = Menu()
-    var Essentials = [String : Extra]()
-    var nonEssentials = [String : SelectedExtra]()
-    var menu_count = 0
-    var menu_total_price = 0
-    init(menu : Menu,essentials : [String : Extra],nonEssentials : [String : SelectedExtra] ) {
-        self.menu = menu
-        self.Essentials = essentials
-        self.nonEssentials = nonEssentials
-    }
-}

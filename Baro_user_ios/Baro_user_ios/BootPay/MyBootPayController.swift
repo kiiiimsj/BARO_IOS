@@ -11,123 +11,130 @@ import SwiftyBootpay
 class MyBootPayController : UIViewController {
     let netWork = CallRequest()
     let urlMaker = NetWorkURL()
+    
+    public var myOrders = [Order]()
+    
     private let userPhone : String = UserDefaults.standard.value(forKey: "user_phone") as! String
     private let userEmail : String = UserDefaults.standard.value(forKey: "user_email") as! String
-    private var userToken : String? = nil
-    private let UnknownValue : Int = -1
+    private let userName : String = UserDefaults.standard.value(forKey: "user_name") as! String
+    private let sendStoreName : String = UserDefaults.standard.value(forKey: "currentStoreName") as! String
+    
+    private var setPayLoadNameBuilder : String = ""
+    
+    private var payDate : String = ""
+    private var userToken : String? = nil //서버에서 받아온 userToken
+    private let UnknownValue : Int = -1 // 성별을 위한 value
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUserToken()
+        print("orders : ", myOrders)
+        getUserToken() // get user token from baro_server
     }
+    
     func getUserToken() {
         let getTokenUrl = "http://3.35.180.57:8080/BillingGetUserToken.do"
+        //UserDefault에 저장되어 있는 userPhone 여부확인
         if (self.userPhone != "") {
             let param = ["phone":"\(self.userPhone)","user_id":"\(self.userPhone)"]
             netWork.post(method: .post, param: param, url: getTokenUrl) {
                 json in
                 print("getUserToken : ", json)
-                self.userToken = json["user_token"].stringValue
-                self.goBuy()
+                //UserToken 여부 확인 1
+                if (json["user_token"].stringValue != "") {
+                    self.userToken = json["user_token"].stringValue
+                    self.payDate = json["expired_localtime"].stringValue
+                    //user 정보를 주고 user token을 받아오는데 성공한다면
+                    //결제할 아이템이 대한 정보 입력
+                    self.goBuy()
+                }
             }
         }
+        //UserDefault에 userPhone이 없다면 에러 처리
         else {
             print("get_user_token_fail")
         }
-        BootpayAnalytics.init()
-        if(self.userPhone != "" && self.userEmail != "") {
-            BootpayAnalytics.postLogin(id: self.userPhone, email: self.userEmail, gender: 1, birth: "", phone: self.userPhone, area: "")
+        //나이스페이에 저장된 카드를 불러오기 위한 값 설정
+        //userPhone과 userEmail 모두 존재해야함.
+        if(self.userPhone != "" && self.userEmail != "" && self.userName != "" && self.sendStoreName != "") {
+            //UnknownValue = -1 = 성별모름
+            //stringValue = "" 인것은 필수 입력사항이 아니고 baro_server에 저장된 사항도 아닌것.
+            BootpayAnalytics.postLogin(id: self.userPhone, email: self.userEmail, gender: UnknownValue, birth: "", phone: self.userPhone, area: "")
         }
+        //userPhone과 userEmail 둘중 하나라도 값이 없을 시 에러 처리
         else {
             print("user_default_value_empty")
         }
     }
+    
+    //결제 아이템 설정
     func goBuy() {
-        // 통계정보를 위해 사용되는 정보
-        // 주문 정보에 담길 상품정보로 배열 형태로 add가 가능함
-        let item1 = BootpayItem().params {
-            $0.item_name = "B사 마스카라" // 주문정보에 담길 상품명
-            $0.qty = 1 // 해당 상품의 주문 수량
-            $0.unique = "123" // 해당 상품의 고유 키
-            $0.price = 1000 // 상품의 가격
-        }
-        let item2 = BootpayItem().params {
-            $0.item_name = "C사 셔츠" // 주문정보에 담길 상품명
-            $0.qty = 1 // 해당 상품의 주문 수량
-            $0.unique = "1234" // 해당 상품의 고유 키
-            $0.price = 10000 // 상품의 가격
-            $0.cat1 = "패션"
-            $0.cat2 = "여성상의"
-            $0.cat3 = "블라우스"
-        }
-
-        // 커스텀 변수로, 서버에서 해당 값을 그대로 리턴 받음
-        let customParams: [String: String] = [
-            "callbackParam1": "value12",
-            "callbackParam2": "value34",
-            "callbackParam3": "value56",
-            "callbackParam4": "value78",
-            ]
-
-        // 구매자 정보
-        let userInfo: [String: String] = [
-            "username": "사용자 이름",
-            "email": "user1234@gmail.com",
-            "addr": "사용자 주소",
-            "phone": "010-1234-4567"
-        ]
-
-        // 구매자 정보
-        let bootUser = BootpayUser()
-        bootUser.params {
-           $0.username = "사용자 이름"
-           $0.email = "user1234@gmail.com"
-           $0.area = "서울" // 사용자 주소
-           $0.phone = "010-1234-4567"
-        }
-
+        //구매정보에 띄워주는 이름 설정 가게이름:메뉴1이름/메뉴2이름/메뉴3이름... 형식으로 저장된다.
+        self.setPayLoadNameBuilder = self.sendStoreName + ":"
+        var bootPayItems = [BootpayItem]()
         let payload = BootpayPayload()
+        let bootUser = BootpayUser()
+        for order in myOrders {
+            let item = BootpayItem().params {
+                $0.item_name = order.menu.menu_name
+                $0.qty = order.menu_count
+                $0.unique = "\(order.menu.menu_id)"
+                $0.price = Double((order.menu.menu_defaultprice))
+            }
+            //메뉴이름들 추가
+            self.setPayLoadNameBuilder.append(order.menu.menu_name + "/")
+            bootPayItems.append(item)
+        }
+        // 구매자 정보
+        bootUser.params {
+            $0.username = self.userName
+            $0.email = self.userEmail
+            $0.area = "" // 사용자 주소
+            $0.phone = self.userPhone
+        }
         payload.params {
-           $0.price = 1000 // 결제할 금액
-           $0.name = "블링블링's 마스카라" // 결제할 상품명
-           $0.order_id = "1234_1234_124" // 결제 고유번호
-           $0.params = customParams // 커스텀 변수
-            if (self.userToken != nil) {
-                print("getUSer?? : ", self.userToken)
-                $0.user_token = self.userToken ?? ""
+            $0.name = self.setPayLoadNameBuilder
+            $0.order_id = self.payDate + self.userName
+            print("payload_order_id : ", $0.order_id)
+            $0.price = Double((self.myOrders[0].menu_total_price))
+            //UserToken 여부 확인 2
+            if let getUserToken = self.userToken {
+                print("getUser?? : ", getUserToken)
+                $0.user_token = getUserToken
+            }
+            else {
+                print("getUserTokenError")
+                return
             }
             $0.pg = BootpayPG.NICEPAY // 결제할 PG사
             $0.method = BootpayMethod.EASY_CARD
-           $0.ux = UX.PG_DIALOG
+            $0.ux = UX.PG_DIALOG
            //            $0.account_expire_at = "2019-09-25" // 가상계좌 입금기간 제한 ( yyyy-mm-dd 포멧으로 입력해주세요. 가상계좌만 적용됩니다. 오늘 날짜보다 더 뒤(미래)여야 합니다 )
            //            $0.method = "card" // 결제수단
-           $0.show_agree_window = false
+            $0.show_agree_window = false
         }
 
         let extra = BootpayExtra()
-        extra.quotas = [0, 2, 3] // 5만원 이상일 경우 할부 허용범위 설정 가능, (예제는 일시불, 2개월 할부, 3개월 할부 허용)
-
-        var items = [BootpayItem]()
-        items.append(item1)
-        items.append(item2)
-        Bootpay.request(self, sendable: self, payload: payload, user: bootUser, items: items, extra: extra, addView: true)
+        extra.quotas = [0, 2, 3] // 5만원 이상일 경우 할부 허용범위 설정 가능, (예제는 일시불, 2개월 할부, 3개월 할부 허용
+        
+        Bootpay.request(self, sendable: self, payload: payload, user: bootUser, items: bootPayItems, extra: extra, addView: true)
+    }
+    func setPayLoadName() {
     }
 }
 extension MyBootPayController: BootpayRequestProtocol {
     // 에러가 났을때 호출되는 부분
     func onError(data: [String: Any]) {
-        print(data)
+        print("Payment processing onError : ",data)
+        //data로부터 message parsing -> Dialog에 해당 error message 띄우기
     }
 
     // 가상계좌 입금 계좌번호가 발급되면 호출되는 함수입니다.
     func onReady(data: [String: Any]) {
-        print("ready")
-        print(data)
+        print("Payment processing onReady : " , data)
     }
 
     // 결제가 진행되기 바로 직전 호출되는 함수로, 주로 재고처리 등의 로직이 수행
     func onConfirm(data: [String: Any]) {
-        print(data)
-
+        print("Payment processing onConfirm : ",data)
         var iWantPay = true
         if iWantPay == true {  // 재고가 있을 경우.
             Bootpay.transactionConfirm(data: data) // 결제 승인
@@ -138,18 +145,58 @@ extension MyBootPayController: BootpayRequestProtocol {
 
     // 결제 취소시 호출
     func onCancel(data: [String: Any]) {
-        print(data)
+        print("Payment processing onCancel : ",data)
     }
 
     // 결제완료시 호출
     // 아이템 지급 등 데이터 동기화 로직을 수행합니다
     func onDone(data: [String: Any]) {
-        print(data)
+        
+        //basketList UserDefault를 가져와서 서버에 보낸다
+        //여기서 recept_id가 생성됨
+        //data parsing을 통해 recept_id를 받아 DB로 전송
+        //http://3.35.180.57:8080/BillingVerify.do
+        // 검증 결과 올바른 결제이면
+//        {
+//            "result": true,
+//            "code": 0,
+//            "message": ""
+//        }
+        
+        //결제 성공을 알리는 Dialog 생성
+        //UserDefault에 있는 장바구니 비워주기 valueKey = "basket"
+        //OrderInsert.do 실행
+        //http://3.35.180.57:8080/OrderInsert.do
+//        {
+//            response == true
+//            websocket 통신 -> 점주용으로 알림 전송 / userPhone, store_id, server에 Insert 하는 내용 전송
+//        }
+        
+        // 검증 결과 올바르지 않은 결제이면
+//        {
+//            "result":false,
+//            "code":"0이 아닌 다른 값, bootpay에서 지정",
+//            "message":"비어있지 않은 값, bootpay에서 지정"
+//        }
+        
+        print("Payment processing onDone : ",data)
     }
 
     //결제창이 닫힐때 실행되는 부분
     func onClose() {
-        print("close")
+        print("Payment processing onClose")
         Bootpay.dismiss() // 결제창 종료
+        //결제 취소를 알리는 Dialog생성
     }
+}
+struct sendOrderInfo {
+    var phone = "" //UserDefault
+    var store_id = "" //Order
+    var receipt_id = "" //makeRequest
+    var total_price = "" // Order
+    var discount_price = "" // Coupon
+    var coupon_id = "" // Coupon
+    var order_data = "" // makeRequest
+    var orders = [Order]() // Order
+    var requests = "" //user input
 }

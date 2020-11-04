@@ -28,7 +28,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1G-Ho-CMZ">
-                                        <rect key="frame" x="20" y="14" width="7" height="22"/>
+                                        <rect key="frame" x="20" y="14" width="34" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="Xay-D5-pjA"/>
+                                        </constraints>
                                         <state key="normal" image="arrow_back"/>
                                         <connections>
                                             <action selector="clickBack:" destination="HI5-FX-0F0" eventType="touchUpInside" id="3ex-OU-ez5"/>
@@ -37,8 +40,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="m1G-Ho-CMZ" firstAttribute="centerY" secondItem="Vo9-Kv-fME" secondAttribute="centerY" id="BC6-ex-pDu"/>
-                                    <constraint firstItem="m1G-Ho-CMZ" firstAttribute="leading" secondItem="Vo9-Kv-fME" secondAttribute="leading" constant="20" id="QYT-Bm-rRB"/>
+                                    <constraint firstItem="m1G-Ho-CMZ" firstAttribute="leading" secondItem="Vo9-Kv-fME" secondAttribute="leading" constant="20" id="5N1-ND-NbZ"/>
+                                    <constraint firstItem="m1G-Ho-CMZ" firstAttribute="baseline" secondItem="vqi-mt-LwL" secondAttribute="baseline" id="OGY-hE-Bju"/>
                                     <constraint firstItem="vqi-mt-LwL" firstAttribute="centerX" secondItem="Vo9-Kv-fME" secondAttribute="centerX" id="dCp-SC-1bG"/>
                                     <constraint firstItem="vqi-mt-LwL" firstAttribute="centerY" secondItem="Vo9-Kv-fME" secondAttribute="centerY" id="oqB-hz-uZ1"/>
                                     <constraint firstAttribute="height" constant="50" id="zkF-aR-gNS"/>
@@ -387,10 +390,10 @@
             </objects>
             <point key="canvasLocation" x="276.81159420289856" y="91.741071428571431"/>
         </scene>
-        <!--BootPay-->
+        <!--BootPayPage-->
         <scene sceneID="rbd-FG-tqF">
             <objects>
-                <viewControllerPlaceholder storyboardName="BootPay" referencedIdentifier="BootPay" id="RbA-Bs-jlg" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="BootPayPage" storyboardName="BootPay" referencedIdentifier="BootPayPage" id="RbA-Bs-jlg" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDF-Mb-Fr9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1164" y="38"/>

@@ -8,9 +8,10 @@
 import UIKit
 
 class BasketController : UIViewController {
-    
     var menu : Order!
     var orders = [Order]()
+    
+    var saveOrders : Dictionary<String, [Order]> = [:]
     
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var payBtn: UIButton!
@@ -34,26 +35,44 @@ class BasketController : UIViewController {
         collectionView.dataSource = self
     }
     @IBAction func clickBack(_ sender: Any) {
-        saveBasket()
+        print("call clickBack")
         self.dismiss(animated: true, completion: nil)
+        saveBasket()
     }
     @IBAction func clickPay(_ sender: Any) {
+        saveBasket()
         let storyboard = UIStoryboard(name: "Basket", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
-        
-        guard let pvc = self.presentingViewController else { return }
+        let vc = storyboard.instantiateViewController(identifier: "BootPayPage") as! MyBootPayController
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        vc.myOrders = self.orders
+        self.present(vc, animated: true, completion: nil)
         print(totalPriceLabel.text!)
     }
     
     func saveBasket() {
-        do {
-            let encodedData = try NSKeyedArchiver.archivedData(withRootObject: orders, requiringSecureCoding: false)
-            basket.set(encodedData, forKey: "basket")
-            basket.synchronize()
-        }
-        catch {
-            print("error")
-        }
+//        do {
+//            print("saveBasket??")
+//            let encodedData = try NSKeyedArchiver.archivedData(withRootObject: orders, requiringSecureCoding: false)
+//            basket.set(encodedData, forKey: "basket")
+//            print("basketList : ", loadBasket())
+//            basket.synchronize()
+//        }
+//        catch {
+//            print("error")
+//        }
+        
+//        print("saveBasket??")
+//        basket.setValue(orders, forKey: "basket")
+//        if (basket.value(forKey: "basket") != nil) {
+//            print("basketValue : ", basket.value(forKey: "basket") as! String)
+//        }
+        self.saveOrders.updateValue(orders, forKey: "basket")
+        print("print saveOrders : ",saveOrders)
+        print("save to basket")
+        basket.set(saveOrders, forKey: "basket")
+        print("can load?")
+        print(basket.value(forKey: "basket") as! String)
     }
     func loadBasket() -> [Order] {
         let decoded  = UserDefaults.standard.object(forKey: "basket") as! Data
