@@ -22,7 +22,7 @@
                                 <rect key="frame" x="20" y="64" width="50" height="13"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Kc-nQH">
-                                <rect key="frame" x="0.0" y="122.5" width="414" height="1177.5"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="1176"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-N1-OLA">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1194.5"/>
@@ -386,12 +386,6 @@
                                     <constraint firstAttribute="bottom" secondItem="WDd-N1-OLA" secondAttribute="bottom" id="hsW-5m-xc1"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강남구" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fy-fg-f0G">
-                                <rect key="frame" x="20" y="87" width="93" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-LU-sua">
                                 <rect key="frame" x="380.5" y="64" width="13.5" height="22"/>
                                 <state key="normal" image="off"/>
@@ -408,6 +402,16 @@
                                     <segue destination="kpU-U4-PbF" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="nD0-LY-qMJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODv-sU-A77">
+                                <rect key="frame" x="20" y="87" width="75" height="22"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="대한민국" image="detailArrow_down">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToMap:" destination="901-Ku-IQw" eventType="touchUpInside" id="kfS-9j-TFB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Yi-ZZ-DQP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -415,14 +419,14 @@
                             <constraint firstItem="Trs-Kc-nQH" firstAttribute="trailing" secondItem="0Yi-ZZ-DQP" secondAttribute="trailing" id="0lC-nZ-kbC"/>
                             <constraint firstItem="7G0-F5-9z9" firstAttribute="top" secondItem="0Yi-ZZ-DQP" secondAttribute="top" constant="20" id="7NB-fT-nF5"/>
                             <constraint firstItem="Laq-LU-sua" firstAttribute="leading" secondItem="nOH-RC-Xk3" secondAttribute="trailing" constant="20" id="B1F-xA-30f"/>
+                            <constraint firstItem="ODv-sU-A77" firstAttribute="leading" secondItem="7G0-F5-9z9" secondAttribute="leading" id="Gwg-dZ-nHc"/>
                             <constraint firstItem="0Yi-ZZ-DQP" firstAttribute="trailing" secondItem="Laq-LU-sua" secondAttribute="trailing" constant="20" id="MZl-ga-gqg"/>
+                            <constraint firstItem="ODv-sU-A77" firstAttribute="top" secondItem="7G0-F5-9z9" secondAttribute="bottom" constant="10" id="N2A-0u-ALe"/>
+                            <constraint firstItem="Trs-Kc-nQH" firstAttribute="top" secondItem="ODv-sU-A77" secondAttribute="bottom" constant="15" id="NfX-ag-imH"/>
                             <constraint firstItem="Trs-Kc-nQH" firstAttribute="leading" secondItem="0Yi-ZZ-DQP" secondAttribute="leading" id="QLR-5A-ywh"/>
                             <constraint firstItem="7G0-F5-9z9" firstAttribute="leading" secondItem="0Yi-ZZ-DQP" secondAttribute="leading" constant="20" id="VTd-iU-CVp"/>
-                            <constraint firstItem="4Fy-fg-f0G" firstAttribute="top" secondItem="7G0-F5-9z9" secondAttribute="bottom" constant="10" id="dCW-tP-WlJ"/>
                             <constraint firstItem="Laq-LU-sua" firstAttribute="top" secondItem="0Yi-ZZ-DQP" secondAttribute="top" constant="20" id="lQb-qm-U96"/>
                             <constraint firstAttribute="bottom" secondItem="Trs-Kc-nQH" secondAttribute="bottom" id="mtd-KG-2gX"/>
-                            <constraint firstItem="Trs-Kc-nQH" firstAttribute="top" secondItem="4Fy-fg-f0G" secondAttribute="bottom" constant="15" id="pVV-ZK-pd0"/>
-                            <constraint firstItem="4Fy-fg-f0G" firstAttribute="leading" secondItem="7G0-F5-9z9" secondAttribute="leading" id="vzA-my-nme"/>
                             <constraint firstItem="nOH-RC-Xk3" firstAttribute="top" secondItem="0Yi-ZZ-DQP" secondAttribute="top" constant="20" id="xPV-JX-0WT"/>
                         </constraints>
                     </view>
@@ -434,17 +438,26 @@
                     <size key="freeformSize" width="414" height="1300"/>
                     <connections>
                         <outlet property="alertButton" destination="Laq-LU-sua" id="YOH-f9-Vnf"/>
-                        <outlet property="locationLabel" destination="4Fy-fg-f0G" id="DIH-y9-sYn"/>
+                        <outlet property="locationButton" destination="ODv-sU-A77" id="oIM-Pb-NMb"/>
                         <outlet property="mainView" destination="CvG-KU-mmZ" id="LPm-a6-5OF"/>
                         <outlet property="tableViewEvent" destination="I9T-aL-jQB" id="e74-C5-tun"/>
                         <outlet property="tableViewNewStore" destination="4yG-sb-UT7" id="1de-Vv-Pig"/>
                         <outlet property="tableViewType" destination="hed-7t-UXx" id="WcY-fK-JAb"/>
                         <outlet property="tableViewUltra" destination="qW3-qf-ss7" id="XMP-2J-Q2K"/>
+                        <segue destination="wUP-g1-jiW" kind="presentation" identifier="mainToMap" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="bmT-W0-8so"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjD-af-REA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3289.8550724637685" y="164.73214285714286"/>
+        </scene>
+        <!--MapController-->
+        <scene sceneID="zK0-dZ-cbH">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="mainToMap" storyboardName="Map" referencedIdentifier="MapController" id="wUP-g1-jiW" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kdh-3k-N16" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3908" y="448"/>
         </scene>
         <!--MainPageSearchController-->
         <scene sceneID="Kxt-fj-TIh">
@@ -548,6 +561,7 @@
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
         <image name="BARO_logo" width="50" height="13"/>
+        <image name="detailArrow_down" width="12" height="7"/>
         <image name="home_tabBar" width="18" height="18"/>
         <image name="off" width="13.5" height="16.5"/>
         <image name="search" width="16.5" height="16"/>
