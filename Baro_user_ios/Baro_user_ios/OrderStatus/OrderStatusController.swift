@@ -23,6 +23,8 @@ class OrderStatusController : UIViewController {
         
         configureView()
         
+        
+        
         network.post(method: .get, url: networkURL.orderProgressList + "?phone=" + phone) {
             json in
             var orderStatusModel = OrderStatusList()
@@ -62,9 +64,11 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
         
         if orderStatus.order_state == "PREPARING" {
             cell.orderStatusProgress.setProgress(0.33, animated: false)
+            cell.orderStatus.text = "준비중"
         }
         else if orderStatus.order_state == "ACCEPT" {
             cell.orderStatusProgress.setProgress(0.66, animated: false)
+            cell.orderStatus.text = "제조중"
         }
         cell.orderCount.text = String(orderStatus.total_count) + "개"
         cell.orderTotalPriceLabel.text = String(orderStatus.total_price) + "원"
