@@ -53,6 +53,8 @@
 		3F05C564254116AC0066DAAD /* MyPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05C563254116AC0066DAAD /* MyPageController.swift */; };
 		3F05C567254116C70066DAAD /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F05C566254116C70066DAAD /* MyPage.storyboard */; settings = {ASSET_TAGS = (MyPageController, ); }; };
 		3F05C56A25412AF20066DAAD /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05C56925412AF20066DAAD /* MyPageView.swift */; };
+		3F0F6EAB25514F0B00099ACC /* MyBootPayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */; };
+		3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */; };
 		3F418FCF254808E100D89665 /* BottomTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F418FCE254808E100D89665 /* BottomTabBar.storyboard */; };
 		3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F49907F253EB18B00372F83 /* LoginPage.storyboard */; };
 		3F4C5A9F253ECAD700C0E7B6 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9A253ECAD700C0E7B6 /* NotoSansKR-Black.otf */; };
@@ -66,6 +68,7 @@
 		3F9B48ED254946720012D89F /* ChangePass2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B48EC254946720012D89F /* ChangePass2.swift */; };
 		3FA196F52547E34E007CD182 /* BottomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA196F42547E34E007CD182 /* BottomTabBarController.swift */; };
 		3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4FC822542898E00EF2894 /* MyPageButtons.swift */; };
+		3FAD95A325527EC600091E3D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD95A225527EC600091E3D /* Order.swift */; };
 		3FC20E5A2546E62400EEE783 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20E592546E62400EEE783 /* NoticeCell.swift */; };
 		3FC20E5D2546EEE600EEE783 /* ChangePass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20E5C2546EEE600EEE783 /* ChangePass.swift */; };
 		3FC20E602546EF0500EEE783 /* ChangePass.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC20E5F2546EF0500EEE783 /* ChangePass.storyboard */; };
@@ -165,6 +168,8 @@
 		3F05C563254116AC0066DAAD /* MyPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageController.swift; sourceTree = "<group>"; };
 		3F05C566254116C70066DAAD /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		3F05C56925412AF20066DAAD /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBootPayController.swift; sourceTree = "<group>"; };
+		3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BootPay.storyboard; sourceTree = "<group>"; };
 		3F418FCE254808E100D89665 /* BottomTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomTabBar.storyboard; sourceTree = "<group>"; };
 		3F49907F253EB18B00372F83 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		3F4C5A9A253ECAD700C0E7B6 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
@@ -178,6 +183,7 @@
 		3F9B48EC254946720012D89F /* ChangePass2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePass2.swift; sourceTree = "<group>"; };
 		3FA196F42547E34E007CD182 /* BottomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarController.swift; sourceTree = "<group>"; };
 		3FA4FC822542898E00EF2894 /* MyPageButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageButtons.swift; sourceTree = "<group>"; };
+		3FAD95A225527EC600091E3D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		3FC20E592546E62400EEE783 /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
 		3FC20E5C2546EEE600EEE783 /* ChangePass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePass.swift; sourceTree = "<group>"; };
 		3FC20E5F2546EF0500EEE783 /* ChangePass.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePass.storyboard; sourceTree = "<group>"; };
@@ -273,6 +279,7 @@
 		04B86798253B0ECD00336175 /* Baro_user_ios */ = {
 			isa = PBXGroup;
 			children = (
+				3F0F6EA925514EFA00099ACC /* BootPay */,
 				E34CAF382552808E00BE3F53 /* Map */,
 				04B28D4F255247DE007D1ED6 /* Baro_user_ios.entitlements */,
 				E31D4012254FC62300B63F77 /* Basket */,
@@ -310,6 +317,15 @@
 				B9868EF0B056B69E5F372574 /* Pods_Baro_user_ios.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F0F6EA925514EFA00099ACC /* BootPay */ = {
+			isa = PBXGroup;
+			children = (
+				3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */,
+				3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */,
+			);
+			path = BootPay;
 			sourceTree = "<group>";
 		};
 		3F499082253EC11B00372F83 /* Font */ = {
@@ -471,6 +487,7 @@
 				04235C7925493CB200BA2BB1 /* OrderStatusModel.swift */,
 				04235C89254AB35D00BA2BB1 /* OrderStatusDetailModel.swift */,
 				04235C8C254AB36B00BA2BB1 /* OrderStatusDetailExtraModel.swift */,
+				3FAD95A225527EC600091E3D /* Order.swift */,
 				E34CAF412552A36F00BE3F53 /* LocationModel.swift */,
 			);
 			path = Model;
@@ -577,6 +594,7 @@
 				E31D3FE22545DF7D00B63F77 /* OrderDetails.storyboard in Resources */,
 				3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */,
 				3FDE5E652546B70C00C05514 /* privacyPolicy.html in Resources */,
+				3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */,
 				3FDE5E382546968000C05514 /* NoticePage.storyboard in Resources */,
 				04B867A6253B0ECF00336175 /* LaunchScreen.storyboard in Resources */,
 				3F4C5AA2253ECAD700C0E7B6 /* NotoSansKR-Thin.otf in Resources */,
@@ -654,6 +672,7 @@
 				043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */,
 				04B8679E253B0ECD00336175 /* ViewController.swift in Sources */,
 				E31D400C254AC7DE00B63F77 /* EssentialRadio.swift in Sources */,
+				3F0F6EAB25514F0B00099ACC /* MyBootPayController.swift in Sources */,
 				04B8679A253B0ECD00336175 /* AppDelegate.swift in Sources */,
 				043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */,
 				3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */,
@@ -694,6 +713,7 @@
 				04D11F482543ECB800ADB210 /* OrderHistoryCell.swift in Sources */,
 				E31D3FD52542AC3E00B63F77 /* StoreListModel.swift in Sources */,
 				04235C8A254AB35D00BA2BB1 /* OrderStatusDetailModel.swift in Sources */,
+				3FAD95A325527EC600091E3D /* Order.swift in Sources */,
 				04235C7A25493CB200BA2BB1 /* OrderStatusModel.swift in Sources */,
 				3FA196F52547E34E007CD182 /* BottomTabBarController.swift in Sources */,
 				04B28D4D255245B5007D1ED6 /* FIrebaseTest.swift in Sources */,

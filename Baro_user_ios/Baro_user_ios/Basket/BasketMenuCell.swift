@@ -54,7 +54,7 @@ extension BasketMenuCell : UICollectionViewDelegate,UICollectionViewDataSource,U
             let values = Array(eachMenu.nonEssentials)[indexPath.row].value
             cell.extra_name.text = values.Extra?.extra_name
             cell.extra_count.text = String(values.optionCount)
-            cell.extra_price.text = String(values.Extra!.extra_price)
+            cell.extra_price.text = String(values.Extra!.extra_price * values.optionCount)
             return cell
         default:
             return UICollectionViewCell()

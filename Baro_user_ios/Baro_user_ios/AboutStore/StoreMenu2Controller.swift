@@ -30,7 +30,7 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
         cell.menu_price.text  = String(data.menu_defaultprice)+"원"
         cell.menu_state.text = "품절"
         
-        cell.menu_picture.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageType.do?image_name=" + self.menus[indexPath.row].menu_image))
+        cell.menu_picture.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageMenu.do?store_id= \(self.menus[indexPath.row].store_id)&image_name=" + self.menus[indexPath.row].menu_image))
         if data.is_soldout == "N" {
             cell.menu_state.isHidden = true
         }
@@ -48,8 +48,10 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
         }
         let labell = sender as! String
         nextViewController.menu_id = labell
+        for item in self.menus {
+            if(item.menu_id == Int(labell)) {
+                nextViewController.menu = item
+            }
+        }
     }
-    
-    
-    
 }

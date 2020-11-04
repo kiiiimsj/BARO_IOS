@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HI5-FX-0F0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -28,7 +28,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1G-Ho-CMZ">
-                                        <rect key="frame" x="20" y="14" width="7" height="22"/>
+                                        <rect key="frame" x="20" y="14" width="34" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="Xay-D5-pjA"/>
+                                        </constraints>
                                         <state key="normal" image="arrow_back"/>
                                         <connections>
                                             <action selector="clickBack:" destination="HI5-FX-0F0" eventType="touchUpInside" id="3ex-OU-ez5"/>
@@ -37,8 +40,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="m1G-Ho-CMZ" firstAttribute="centerY" secondItem="Vo9-Kv-fME" secondAttribute="centerY" id="BC6-ex-pDu"/>
-                                    <constraint firstItem="m1G-Ho-CMZ" firstAttribute="leading" secondItem="Vo9-Kv-fME" secondAttribute="leading" constant="20" id="QYT-Bm-rRB"/>
+                                    <constraint firstItem="m1G-Ho-CMZ" firstAttribute="leading" secondItem="Vo9-Kv-fME" secondAttribute="leading" constant="20" id="5N1-ND-NbZ"/>
+                                    <constraint firstItem="m1G-Ho-CMZ" firstAttribute="baseline" secondItem="vqi-mt-LwL" secondAttribute="baseline" id="OGY-hE-Bju"/>
                                     <constraint firstItem="vqi-mt-LwL" firstAttribute="centerX" secondItem="Vo9-Kv-fME" secondAttribute="centerX" id="dCp-SC-1bG"/>
                                     <constraint firstItem="vqi-mt-LwL" firstAttribute="centerY" secondItem="Vo9-Kv-fME" secondAttribute="centerY" id="oqB-hz-uZ1"/>
                                     <constraint firstAttribute="height" constant="50" id="zkF-aR-gNS"/>
@@ -190,7 +193,7 @@
                                                 </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BaN-eb-3bw">
                                                     <rect key="frame" x="16" y="43" width="382" height="162"/>
-                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ULD-rU-kfs">
                                                         <size key="itemSize" width="414" height="54"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -344,27 +347,14 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvi-M8-Mci">
-                                            <rect key="frame" x="381" y="14.5" width="15" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjA-zK-90z">
-                                            <rect key="frame" x="370.5" y="14.5" width="10.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="IjA-zK-90z" firstAttribute="centerY" secondItem="Etc-wc-6ln" secondAttribute="centerY" id="DN5-xh-ddX"/>
                                         <constraint firstItem="6Rf-OD-WD6" firstAttribute="centerY" secondItem="Etc-wc-6ln" secondAttribute="centerY" id="Nfe-rV-dOu"/>
-                                        <constraint firstItem="Kvi-M8-Mci" firstAttribute="centerY" secondItem="Etc-wc-6ln" secondAttribute="centerY" id="jaC-dE-ttF"/>
-                                        <constraint firstItem="Kvi-M8-Mci" firstAttribute="trailing" secondItem="Etc-wc-6ln" secondAttribute="trailingMargin" constant="-10" id="pM8-bS-22s"/>
                                         <constraint firstItem="6Rf-OD-WD6" firstAttribute="leading" secondItem="Etc-wc-6ln" secondAttribute="leadingMargin" constant="17" id="qYi-SA-utR"/>
-                                        <constraint firstItem="Kvi-M8-Mci" firstAttribute="leading" secondItem="IjA-zK-90z" secondAttribute="trailing" id="vPv-1N-EyV"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="storeName" destination="6Rf-OD-WD6" id="a97-WF-CFR"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>
@@ -393,11 +383,20 @@
                         <outlet property="collectionView" destination="tau-Pl-sdi" id="ZH3-2h-U22"/>
                         <outlet property="payBtn" destination="eFT-Ql-mab" id="iAi-fw-9hm"/>
                         <outlet property="totalPriceLabel" destination="i4F-PM-fjO" id="8jy-0B-se0"/>
+                        <segue destination="RbA-Bs-jlg" kind="presentation" identifier="BootPay" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="2b3-mk-90q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKZ-E4-TCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="276.81159420289856" y="91.741071428571431"/>
+        </scene>
+        <!--BootPayPage-->
+        <scene sceneID="rbd-FG-tqF">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="BootPayPage" storyboardName="BootPay" referencedIdentifier="BootPayPage" id="RbA-Bs-jlg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iDF-Mb-Fr9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="38"/>
         </scene>
     </scenes>
     <resources>
@@ -407,9 +406,6 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
