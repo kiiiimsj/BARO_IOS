@@ -11,7 +11,7 @@ class BasketController : UIViewController {
     var menu : Order!
     var orders = [Order]()
     
-    var saveOrders : Dictionary<String, [Order]> = [:]
+    var saveOrders : Dictionary<String, Any> = [:]
     
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var payBtn: UIButton!
@@ -22,25 +22,25 @@ class BasketController : UIViewController {
     private var getStoreNameFromUserDefault = UserDefaults.standard.value(forKey: "currentStoreName") as! String
     override func viewDidLoad(){
         super.viewDidLoad()
-        if (menu != nil) {
-            if (basket.value(forKey: "basket") != nil) {
-                orders.append(contentsOf: loadBasket())
-                orders.append(menu)
-            }
-            else {
-                orders.append(menu)
-            }
-        }
+        saveBasket()
+        orders.append(menu)
+//        if (menu != nil) {
+//            if (basket.value(forKey: "basket") != nil) {
+//                orders.append(contentsOf: loadBasket())
+//                orders.append(menu)
+//            }
+//            else {
+//                orders.append(menu)
+//            }
+//        }
         collectionView.delegate = self
         collectionView.dataSource = self
     }
     @IBAction func clickBack(_ sender: Any) {
         print("call clickBack")
         self.dismiss(animated: true, completion: nil)
-        saveBasket()
     }
     @IBAction func clickPay(_ sender: Any) {
-        saveBasket()
         let storyboard = UIStoryboard(name: "Basket", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "BootPayPage") as! MyBootPayController
         vc.modalPresentationStyle = .fullScreen
@@ -51,28 +51,12 @@ class BasketController : UIViewController {
     }
     
     func saveBasket() {
-//        do {
-//            print("saveBasket??")
-//            let encodedData = try NSKeyedArchiver.archivedData(withRootObject: orders, requiringSecureCoding: false)
-//            basket.set(encodedData, forKey: "basket")
-//            print("basketList : ", loadBasket())
-//            basket.synchronize()
-//        }
-//        catch {
-//            print("error")
-//        }
+        let encoder = JSONEncoder()
+        let jsonSaveData = try? encoder.encode(orders)
         
-//        print("saveBasket??")
-//        basket.setValue(orders, forKey: "basket")
-//        if (basket.value(forKey: "basket") != nil) {
-//            print("basketValue : ", basket.value(forKey: "basket") as! String)
-//        }
-        self.saveOrders.updateValue(orders, forKey: "basket")
-        print("print saveOrders : ",saveOrders)
-        print("save to basket")
-        basket.set(saveOrders, forKey: "basket")
-        print("can load?")
-        print(basket.value(forKey: "basket") as! String)
+        if let jsonData = jsonSaveData, let jsonString = String(data: jsonSaveData, encoding: .utf8){
+            print("jsonData : ", jsonString)
+        }
     }
     func loadBasket() -> [Order] {
         let decoded  = UserDefaults.standard.object(forKey: "basket") as! Data
