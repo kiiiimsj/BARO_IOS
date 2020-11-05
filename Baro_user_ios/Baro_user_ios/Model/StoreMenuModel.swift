@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Menu {
+struct Menu : Codable {
     var menu_defaultprice = 1500
     var store_id = 1
     var menu_image = "4.png"

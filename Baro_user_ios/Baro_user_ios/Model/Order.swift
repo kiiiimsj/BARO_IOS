@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Order {
+struct Order : Codable {
     var menu = Menu()
     var Essentials = [String : Extra]()
     var nonEssentials = [String : SelectedExtra]()

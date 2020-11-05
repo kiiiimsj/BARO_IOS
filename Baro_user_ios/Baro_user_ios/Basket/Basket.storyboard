@@ -117,19 +117,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메뉴이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-TX-k3R">
-                                                    <rect key="frame" x="17" y="15" width="59" height="21"/>
+                                                    <rect key="frame" x="17" y="25" width="59" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQW-JM-oJ9">
-                                                    <rect key="frame" x="383" y="15" width="15" height="21"/>
+                                                    <rect key="frame" x="383" y="25" width="15" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0V-BY-kDe">
-                                                    <rect key="frame" x="372.5" y="15" width="10.5" height="21"/>
+                                                    <rect key="frame" x="372.5" y="25" width="10.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -192,7 +192,7 @@
                                                     </constraints>
                                                 </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BaN-eb-3bw">
-                                                    <rect key="frame" x="16" y="43" width="382" height="162"/>
+                                                    <rect key="frame" x="16" y="53" width="382" height="152"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ULD-rU-kfs">
                                                         <size key="itemSize" width="414" height="54"/>
@@ -309,25 +309,37 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBe-na-wDY">
+                                                    <rect key="frame" x="374" y="0.0" width="30" height="30"/>
+                                                    <state key="normal" title="X">
+                                                        <color key="titleColor" systemColor="systemRedColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteBUttonClikc:" destination="c6c-MQ-TVY" eventType="touchUpInside" id="Lm6-if-TsZ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="D0V-BY-kDe" firstAttribute="top" secondItem="Dai-tv-EmJ" secondAttribute="top" constant="25" id="3SS-9M-JoF"/>
                                                 <constraint firstItem="BaN-eb-3bw" firstAttribute="top" secondItem="AZc-TX-k3R" secondAttribute="bottom" constant="7" id="4MI-jP-iX3"/>
                                                 <constraint firstItem="BaN-eb-3bw" firstAttribute="leading" secondItem="Dai-tv-EmJ" secondAttribute="leading" constant="16" id="AAr-sN-ORb"/>
                                                 <constraint firstItem="y8p-UC-yv5" firstAttribute="leading" secondItem="Dai-tv-EmJ" secondAttribute="leading" id="H7l-J1-Vjt"/>
-                                                <constraint firstItem="oQW-JM-oJ9" firstAttribute="top" secondItem="Dai-tv-EmJ" secondAttribute="top" constant="15" id="MyG-vA-892"/>
+                                                <constraint firstAttribute="trailing" secondItem="hBe-na-wDY" secondAttribute="trailing" constant="10" id="Kgb-Wa-nc2"/>
                                                 <constraint firstAttribute="trailing" secondItem="BaN-eb-3bw" secondAttribute="trailing" constant="16" id="YBT-1z-TVp"/>
                                                 <constraint firstAttribute="trailing" secondItem="y8p-UC-yv5" secondAttribute="trailing" id="anh-Ei-BkS"/>
-                                                <constraint firstItem="D0V-BY-kDe" firstAttribute="top" secondItem="Dai-tv-EmJ" secondAttribute="top" constant="15" id="auQ-CV-7q6"/>
-                                                <constraint firstItem="AZc-TX-k3R" firstAttribute="top" secondItem="Dai-tv-EmJ" secondAttribute="top" constant="15" id="dmK-of-Tyz"/>
+                                                <constraint firstItem="oQW-JM-oJ9" firstAttribute="top" secondItem="Dai-tv-EmJ" secondAttribute="top" constant="25" id="exN-Aq-Myy"/>
+                                                <constraint firstItem="hBe-na-wDY" firstAttribute="top" secondItem="Dai-tv-EmJ" secondAttribute="top" id="nqj-JA-f7T"/>
                                                 <constraint firstAttribute="bottom" secondItem="y8p-UC-yv5" secondAttribute="bottom" id="qWB-AG-6qc"/>
                                                 <constraint firstItem="y8p-UC-yv5" firstAttribute="top" secondItem="BaN-eb-3bw" secondAttribute="bottom" id="qwc-DM-vaE"/>
                                                 <constraint firstItem="oQW-JM-oJ9" firstAttribute="leading" secondItem="D0V-BY-kDe" secondAttribute="trailing" id="urx-nB-fhN"/>
                                                 <constraint firstItem="AZc-TX-k3R" firstAttribute="leading" secondItem="Dai-tv-EmJ" secondAttribute="leading" constant="17" id="vB0-0M-CNT"/>
                                                 <constraint firstAttribute="trailing" secondItem="oQW-JM-oJ9" secondAttribute="trailing" constant="16" id="wXu-vq-8ha"/>
+                                                <constraint firstItem="AZc-TX-k3R" firstAttribute="top" secondItem="Dai-tv-EmJ" secondAttribute="top" constant="25" id="yeS-tp-fs7"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="245"/>
                                         <connections>
+                                            <outlet property="deleteButton" destination="hBe-na-wDY" id="79T-oN-Mgw"/>
                                             <outlet property="extraCollectionView" destination="BaN-eb-3bw" id="7wy-o2-Ce0"/>
                                             <outlet property="menu_count" destination="ygr-Da-fcb" id="TBG-2Q-riY"/>
                                             <outlet property="menu_defaultPrice" destination="D0V-BY-kDe" id="Jvb-nz-wjt"/>
@@ -406,6 +418,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
