@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import NMapsMap
+
 class MainPageController: UIViewController, CLLocationManagerDelegate {
     
     var latitude: Double?
@@ -75,10 +76,10 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
 //            print("loca",loca)
 //        }
         
-        getMyLocation(String(longitude!), latitude: String(latitude!))
+        getMyLocation(String(longitude!), String(latitude!))
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
     }
-    func getMyLocation(_ longitude : String,latitude :String) {
+    func getMyLocation(_ longitude : String, _ latitude :String) {
         myLocation.network.get(method: .get, url: "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+longitude+","+latitude+"&sourcecrs=epsg:4326&output=json&orders=roadaddr",headers: myLocation.headers) { json in
             let results = json["results"]
             for item in results.array! {
@@ -94,7 +95,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let location: CLLocation = locations[locations.count - 1]
         print("dddd",location)
-        getMyLocation(String(location.coordinate.longitude),latitude: String(location.coordinate.latitude))
+        getMyLocation(String(location.coordinate.longitude), String(location.coordinate.latitude))
             
     }
     
