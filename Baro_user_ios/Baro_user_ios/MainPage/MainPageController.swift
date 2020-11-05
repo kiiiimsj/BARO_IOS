@@ -76,8 +76,8 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
 //            print("loca",loca)
 //        }
         
-        getMyLocation(String(longitude!), String(latitude!))
-        whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
+        //getMyLocation(String(longitude!), String(latitude!))
+        //whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
     }
     func getMyLocation(_ longitude : String, _ latitude :String) {
         myLocation.network.get(method: .get, url: "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+longitude+","+latitude+"&sourcecrs=epsg:4326&output=json&orders=roadaddr",headers: myLocation.headers) { json in
