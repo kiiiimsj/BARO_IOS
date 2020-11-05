@@ -14,4 +14,5 @@ target 'Baro_user_ios' do
   pod 'Alamofire', '~> 5.1.0' 
   pod 'NMapsMap'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
 end
