@@ -12,6 +12,7 @@ ${BUILT_PRODUCTS_DIR}/Logging/Logging.framework
 ${PODS_ROOT}/NMapsMap/framework/NMapsMap.framework
 ${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
 ${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework
+${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyRequest/SwiftyRequest.framework
 ${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework
