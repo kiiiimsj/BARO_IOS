@@ -9,44 +9,39 @@ import UIKit
 
 class MainPageSearchController : UIViewController, UISearchBarDelegate {
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    var searchContent = ""
     
-//    @IBAction func button(_ sender: Any) {
-//        if let text = searchBar.searchTextField.text {
-//            print("kkkk",text)
-//            let realText = String(text)
-//            navigationController?.pushViewController(StoreListPageController(), animated: false)
-//            performSegue(withIdentifier: "searchToStoreList", sender: realText)
-//        }
-//    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchContent = searchText
+        print("searchh", searchContent)
+    }
     
     @IBAction func searchBtn(_ sender: Any) {
-        if let text = searchBar.searchTextField.text {
-            print("kkkkk", text)
-        }
+        navigationController?.pushViewController(StoreListPageController(), animated: false)
+        performSegue(withIdentifier: "searchToStoreList", sender: searchContent)
+        
     }
     
     
+    @IBOutlet weak var subView: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBAction func cancelBtn() {
         self.dismiss(animated: false, completion: nil)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchBar.delegate = self
-        self.searchBar.backgroundColor = .purple
+
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let nextViewController = segue.destination as? StoreListPageController else{
+        guard let nextViewController = segue.destination as? StoreListPageController else {
             return
         }
-        if let labell = sender as? String {
-            nextViewController.typeCode = labell
-        }
+        let labell = sender as! String
+        nextViewController.typeCode = labell
     }
 }
