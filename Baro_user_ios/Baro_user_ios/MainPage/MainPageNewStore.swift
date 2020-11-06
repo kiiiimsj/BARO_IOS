@@ -11,7 +11,7 @@ protocol CellDelegateNewStore: class {
     func tapClickNewStore(tag: String)
 }
 
-class MainPageNewStore : UITableViewCell {
+class MainPageNewStore : UICollectionViewCell {
     
     var delegateNewStore : CellDelegateNewStore?
     
@@ -57,7 +57,7 @@ extension MainPageNewStore : UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageNewStoreCell", for: indexPath) as! MainPageNewStoreCell
         cell.newStoreName.text = newStore.store_name
         cell.newStoreInfo.text = newStore.store_info
-        cell.newStoreImage.kf.setImage(with: URL(string: "http://15.165.22.64:8080/ImageStore.do?image_name=" + newStore.store_image))
+        cell.newStoreImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + newStore.store_image))
         
         //cell 클릭시
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
