@@ -80,9 +80,10 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         //location이라는 key로 위도경도 저장
         var location = Location(latitude: latitude, longitude: longitude)
         UserDefaults.standard.set(try? PropertyListEncoder().encode(location), forKey: "location")
-        
+
         getMyLocation(String(longitude!), String(latitude!))
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
+
     }
     func getMyLocation(_ longitude : String, _ latitude :String) {
         myLocation.network.get(method: .get, url: "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+longitude+","+latitude+"&sourcecrs=epsg:4326&output=json&orders=roadaddr",headers: myLocation.headers) { json in
