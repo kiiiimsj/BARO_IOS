@@ -13,14 +13,14 @@ protocol CellDelegateType: class {
     func tapClickType(tag: String)
 }
 
-class MainPageType : UITableViewCell {
+class MainPageType : UICollectionViewCell {
     
     var delegateType: CellDelegateType?
 
     var typeList = [TypeListModel]()
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
-    	
+
    
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -36,6 +36,7 @@ class MainPageType : UITableViewCell {
     func configure(){
         networkModel.post(method: .get, url: networkURL.typeListURL) { json in
             var typeModel = TypeListModel()
+            print("zz", json)
             for item in json["type"].array! {
                 typeModel.type_code = item["type_code"].stringValue
                 typeModel.type_name = item["type_name"].stringValue
@@ -53,6 +54,7 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("zzz", typeList.count)
         return typeList.count
     }
 
@@ -72,7 +74,6 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
     //type클릭시 이벤트
     @objc func tap(_ sender: UITapGestureRecognizer) {
         
-     
         let location = sender.location(in: self.collectionView)
         let indexPath = self.collectionView.indexPathForItem(at: location)
         let typeCode = typeList[indexPath!.row].type_code
