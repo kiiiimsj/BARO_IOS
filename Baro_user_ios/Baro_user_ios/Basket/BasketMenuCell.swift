@@ -7,6 +7,9 @@
 
 import UIKit
 
+protocol BasketMenuCellDelegate : AnyObject {
+    func btnDeleteTapped(cell : BasketMenuCell)
+}
 class BasketMenuCell: UICollectionViewCell {
     
     @IBOutlet weak var extraCollectionView: UICollectionView!
@@ -15,6 +18,14 @@ class BasketMenuCell: UICollectionViewCell {
     @IBOutlet weak var menu_extra_sum: UILabel!
     @IBOutlet weak var menu_count: UILabel!
     @IBOutlet weak var menu_totalPrice: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
+    weak var delegate : BasketMenuCellDelegate?
+    
+    
+    @IBAction func deleteBUttonClikc(_ sender : AnyObject) {
+        delegate?.btnDeleteTapped(cell: self)
+        self.reloadInputViews()
+    }
     var eachMenu : Order!
 }
 
@@ -63,7 +74,6 @@ extension BasketMenuCell : UICollectionViewDelegate,UICollectionViewDataSource,U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
         return CGSize(width: extraCollectionView.frame.width, height: 50)
     }
     

@@ -11,8 +11,6 @@ class BasketController : UIViewController {
     var menu : Order!
     var orders = [Order]()
     
-    var saveOrders : Dictionary<String, [Order]> = [:]
-    
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var totalPriceLabel: UILabel!
@@ -25,19 +23,19 @@ class BasketController : UIViewController {
         if (menu != nil) {
             if (basket.value(forKey: "basket") != nil) {
                 orders.append(contentsOf: loadBasket())
-                orders.append(menu)
+                print(orders)
             }
             else {
-                orders.append(menu)
             }
+            orders.append(menu)
         }
         collectionView.delegate = self
         collectionView.dataSource = self
     }
     @IBAction func clickBack(_ sender: Any) {
+        saveBasket()
         print("call clickBack")
         self.dismiss(animated: true, completion: nil)
-        saveBasket()
     }
     @IBAction func clickPay(_ sender: Any) {
         saveBasket()
@@ -51,39 +49,24 @@ class BasketController : UIViewController {
     }
     
     func saveBasket() {
-//        do {
-//            print("saveBasket??")
-//            let encodedData = try NSKeyedArchiver.archivedData(withRootObject: orders, requiringSecureCoding: false)
-//            basket.set(encodedData, forKey: "basket")
-//            print("basketList : ", loadBasket())
-//            basket.synchronize()
-//        }
-//        catch {
-//            print("error")
-//        }
-        
-//        print("saveBasket??")
-//        basket.setValue(orders, forKey: "basket")
-//        if (basket.value(forKey: "basket") != nil) {
-//            print("basketValue : ", basket.value(forKey: "basket") as! String)
-//        }
-        self.saveOrders.updateValue(orders, forKey: "basket")
-        print("print saveOrders : ",saveOrders)
-        print("save to basket")
-        basket.set(saveOrders, forKey: "basket")
-        print("can load?")
-        print(basket.value(forKey: "basket") as! String)
+        let encoder = JSONEncoder()
+        let jsonSaveData = try? encoder.encode(orders)
+        if let _ = jsonSaveData, let jsonString = String(data: jsonSaveData!, encoding: .utf8){
+            basket.set(jsonString, forKey: "basket")
+            basket.synchronize()
+        }
     }
-    func loadBasket() -> [Order] {
-        let decoded  = UserDefaults.standard.object(forKey: "basket") as! Data
-        let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Order]
-        
-        print("decodedTeams : ", decodedTeams)
-        
-        return decodedTeams
+    func loadBasket() -> [Order]{
+        let decoder = JSONDecoder()
+        var jsonToOrder = [Order]()
+        if let getData = basket.value(forKey: "basket") as? String {
+            let data = getData.data(using: .utf8)!
+            jsonToOrder = try! decoder.decode([Order].self, from: data)
+        }
+        return jsonToOrder
     }
 }
-extension BasketController : UICollectionViewDelegate , UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return orders.count
     }
@@ -98,6 +81,7 @@ extension BasketController : UICollectionViewDelegate , UICollectionViewDataSour
         cell.menu_totalPrice.text = String(eachMenu.menu_total_price * eachMenu.menu_count)
         cell.extraCollectionView.delegate = cell.self
         cell.extraCollectionView.dataSource = cell.self
+        cell.delegate = self
         self.totalPrice += (eachMenu.menu_total_price * eachMenu.menu_count)
         print("orderCount : ", orders.count)
         print("indexpathRow", indexPath.row)
@@ -122,6 +106,13 @@ extension BasketController : UICollectionViewDelegate , UICollectionViewDataSour
         print(orders[indexPath.item].Essentials.count + orders[indexPath.item].nonEssentials.count)
         return CGSize(width: collectionView.frame.width, height: CGFloat(70 + (orders[indexPath.item].Essentials.count + orders[indexPath.item].nonEssentials.count) * 45))
     }
-    
-    
+    func btnDeleteTapped(cell: BasketMenuCell) {
+        let indexPath = self.collectionView.indexPath(for: cell)
+        self.totalPrice -= orders[indexPath!.row].menu_total_price
+        orders.remove(at: indexPath!.row)
+        self.collectionView.deleteItems(at: [IndexPath(row: indexPath!.row, section: indexPath!.section)])
+        self.collectionView.reloadData()
+        
+        self.totalPriceLabel.text = "\(self.totalPrice)"
+    }
 }

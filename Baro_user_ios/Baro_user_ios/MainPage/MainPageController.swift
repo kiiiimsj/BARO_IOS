@@ -80,7 +80,6 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         //location이라는 key로 위도경도 저장
         var location = Location(latitude: latitude, longitude: longitude)
         UserDefaults.standard.set(try? PropertyListEncoder().encode(location), forKey: "location")
-        
         getMyLocation(String(longitude!), String(latitude!))
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
     }
