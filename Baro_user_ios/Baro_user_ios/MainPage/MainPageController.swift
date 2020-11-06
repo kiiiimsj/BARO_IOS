@@ -8,7 +8,12 @@
 import UIKit
 import Alamofire
 import NMapsMap
+
 class MainPageController: UIViewController, CLLocationManagerDelegate {
+    
+    var latitude: Double?
+    var longitude: Double?
+    
     lazy var locationManager: CLLocationManager = {
             let manager = CLLocationManager()
             manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -48,12 +53,33 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         tableViewType?.separatorStyle = .none
         tableViewUltra?.separatorStyle = .none
         tableViewNewStore?.separatorStyle = .none
+        
+        locationCheck()
+        
         print("main's viewDidLoad")
-//        locationManager.startUpdatingLocation()
-        getMyLocation(longitude: "126.9596916", latitude: "37.4954847")
-        whereAmI = CLLocation(latitude: 37.4954847, longitude:  126.9596916)
+        locationManager.startUpdatingLocation()
+        
+        let coor = locationManager.location?.coordinate
+        
+        //회원의 위도/경도
+        latitude = coor?.latitude
+        longitude = coor?.longitude
+        
+        //회원의 위도경도 model을 userdefaults에 저장 ( 제일 아래에 구조체에 저장)
+        //location이라는 key로 위도경도 저장
+        var location = Location(latitude: latitude, longitude: longitude)
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(location), forKey: "location")
+        
+        //꺼내는 방법 예시
+//        if let data = UserDefaults.standard.value(forKey: "location") as? Data {
+//            let loca = try? PropertyListDecoder().decode(Location.self, from: data)
+//            print("loca",loca)
+//        }
+        
+        //getMyLocation(String(longitude!), String(latitude!))
+        //whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
     }
-    func getMyLocation(longitude : String,latitude :String) {
+    func getMyLocation(_ longitude : String, _ latitude :String) {
         myLocation.network.get(method: .get, url: "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+longitude+","+latitude+"&sourcecrs=epsg:4326&output=json&orders=roadaddr",headers: myLocation.headers) { json in
             let results = json["results"]
             for item in results.array! {
@@ -69,14 +95,54 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let location: CLLocation = locations[locations.count - 1]
         print("dddd",location)
-            getMyLocation(longitude: String(location.coordinate.longitude),latitude: String(location.coordinate.latitude))
+        getMyLocation(String(location.coordinate.longitude), String(location.coordinate.latitude))
             
     }
+    
+    //기기의 gps 꺼져있을때
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.denied {
+            //위치권한 거부되어있을 경우
+        }
+        else if status == CLAuthorizationStatus.authorizedAlways {
+            //위치 권한 항상
+        }
+        else if status == CLAuthorizationStatus.authorizedWhenInUse {
+            //앱 실행중일시에만
+        }
+    }
+    
     
     @IBAction func goToMap(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(identifier: "mainToMap") as! MapController
         vc.location = whereAmI
         present(vc, animated: false)
+    }
+    
+    //기기의 gps (위치권한 설정) 안함 되어있을경우 alert띄워 앱의 위치권한 설정으로
+    @objc func locationCheck() {
+        let status = CLLocationManager.authorizationStatus()
+        
+        if status == CLAuthorizationStatus.denied || status == CLAuthorizationStatus.restricted {
+            let alter = UIAlertController(title: "위치권한 설정이 '안함'으로 되어있습니다.", message: "앱 설정화면으로 가시겠습니까? ", preferredStyle: UIAlertController.Style.alert)
+            let logOkAction = UIAlertAction(title: "네", style: UIAlertAction.Style.default) {
+                (action: UIAlertAction) in
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
+                }
+                else {
+                    UIApplication.shared.canOpenURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
+                }
+                
+            }
+            let logNoAction = UIAlertAction(title: "아니오", style: UIAlertAction.Style.destructive) {
+                (action: UIAlertAction) in
+                exit(0)
+            }
+            alter.addAction(logNoAction)
+            alter.addAction(logOkAction)
+            self.present(alter, animated: true, completion: nil)
+        }
     }
 }
 
@@ -161,3 +227,7 @@ extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegate
     }
 }
 
+struct Location : Codable {
+    var latitude: Double!
+    var longitude: Double!
+}

@@ -86,3 +86,4 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
          return CGSize(width: 100, height: 90)
     }
 }
+

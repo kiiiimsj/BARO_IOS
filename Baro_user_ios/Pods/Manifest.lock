@@ -9,6 +9,9 @@ PODS:
     - FirebaseAnalytics (= 6.9.0)
   - Firebase/CoreOnly (6.34.0):
     - FirebaseCore (= 6.10.4)
+  - Firebase/Messaging (6.34.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 4.7.1)
   - FirebaseAnalytics (6.9.0):
     - FirebaseCore (~> 6.10)
     - FirebaseInstallations (~> 1.7)
@@ -32,6 +35,19 @@ PODS:
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/UserDefaults (~> 6.7)
     - PromisesObjC (~> 1.2)
+  - FirebaseInstanceID (4.8.0):
+    - FirebaseCore (~> 6.10)
+    - FirebaseInstallations (~> 1.6)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/UserDefaults (~> 6.7)
+  - FirebaseMessaging (4.7.1):
+    - FirebaseCore (~> 6.10)
+    - FirebaseInstanceID (~> 4.7)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Reachability (~> 6.7)
+    - GoogleUtilities/UserDefaults (~> 6.7)
+    - Protobuf (>= 3.9.2, ~> 3.9)
   - GoogleAppMeasurement (6.9.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
@@ -78,6 +94,7 @@ PODS:
   - NMapsMap (3.10.0)
   - ObjectMapper (4.2.0)
   - PromisesObjC (1.2.11)
+  - Protobuf (3.13.0)
   - SwiftyBootpay (3.2.47):
     - Alamofire (~> 5.1.0)
     - CryptoSwift
@@ -91,6 +108,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.1.0)
   - AlignedCollectionViewFlowLayout
   - Firebase/Analytics
+  - Firebase/Messaging
   - Kingfisher (~> 4.7)
   - KituraKit
   - NMapsMap
@@ -107,6 +125,8 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseInstallations
+    - FirebaseInstanceID
+    - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -120,6 +140,7 @@ SPEC REPOS:
     - NMapsMap
     - ObjectMapper
     - PromisesObjC
+    - Protobuf
     - SwiftyBootpay
     - SwiftyJSON
     - SwiftyRequest
@@ -133,6 +154,8 @@ SPEC CHECKSUMS:
   FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
   FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
+  FirebaseInstanceID: bd3ffc24367f901a43c063b36c640b345a4a5dd1
+  FirebaseMessaging: 5eca4ef173de76253352511aafef774caa1cba2a
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
@@ -146,10 +169,11 @@ SPEC CHECKSUMS:
   NMapsMap: 17caab4af9a3fc5c25b79858de18bdeab1eaff87
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   SwiftyBootpay: a0edb70454d179d5f42dc705b79c7fd9638b66cb
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   SwiftyRequest: 8e84cd4839fe2429285fe60a5812b5634a8ecb83
 
-PODFILE CHECKSUM: 2e8bbfc697fed2067e3bbe2f827c6841761b448a
+PODFILE CHECKSUM: bf565515fed46b2f2e5f4759969937dab13f2127
 
 COCOAPODS: 1.9.3

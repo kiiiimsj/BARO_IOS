@@ -9,7 +9,6 @@
 import UIKit
 private let FirstBarIdentifier = "ASFirstBarCell"
 class AboutStore : UIViewController {
-
     @IBOutlet weak var FirstPage: UICollectionView!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var storeInfoButton: UIButton!
@@ -31,6 +30,7 @@ class AboutStore : UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.setTabBarItem()
         self.getStoreInfo()
         self.isFavoriteStore()
@@ -148,6 +148,7 @@ class AboutStore : UIViewController {
                 self.StoreInfo.is_open = json["is_open"].stringValue
                 
                 self.storeTitle.text = self.StoreInfo.store_name
+                UserDefaults.standard.set(self.StoreInfo.store_name, forKey: "currentStoreName")
             } else {
                 print("make request fail")
             }

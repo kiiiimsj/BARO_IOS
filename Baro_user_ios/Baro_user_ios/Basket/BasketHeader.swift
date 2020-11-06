@@ -8,5 +8,9 @@
 import UIKit
 
 class BasketHeader : UICollectionReusableView {
-    
+    @IBOutlet weak var storeName : UILabel!
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+    }
 }
