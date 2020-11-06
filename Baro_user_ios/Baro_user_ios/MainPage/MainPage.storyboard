@@ -487,66 +487,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7v5-4c-E4S">
-                                <rect key="frame" x="49" y="363" width="317" height="268"/>
+                                <rect key="frame" x="40" y="244" width="334" height="418"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 검색" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-1o-PrE">
-                                        <rect key="frame" x="0.0" y="0.0" width="317" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="qyM-nk-xSu"/>
+                                            <constraint firstAttribute="height" constant="50" id="AoN-zC-uo4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Y9J-qm-oXD">
-                                        <rect key="frame" x="0.0" y="60" width="317" height="58"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQV-Fz-hgf">
-                                        <rect key="frame" x="130" y="173" width="57" height="30"/>
-                                        <state key="normal" title="검색하기"/>
-                                        <connections>
-                                            <action selector="searchBtn:" destination="kpU-U4-PbF" eventType="touchUpInside" id="lFb-u9-XT9"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1D-08-oPz">
-                                        <rect key="frame" x="299" y="0.0" width="18" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1D-08-oPz">
+                                        <rect key="frame" x="311" y="5" width="18" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="xmark" catalog="system"/>
                                         <connections>
                                             <action selector="cancelBtn" destination="kpU-U4-PbF" eventType="touchUpInside" id="rsR-31-aIT"/>
                                         </connections>
                                     </button>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bgM-FD-HjK">
+                                        <rect key="frame" x="0.0" y="70" width="334" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="Soz-OW-fgc"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6i4-aN-uVn">
+                                        <rect key="frame" x="141" y="188" width="52" height="30"/>
+                                        <state key="normal" title="검색하기"/>
+                                        <connections>
+                                            <action selector="searchBtn:" destination="kpU-U4-PbF" eventType="touchUpInside" id="BH0-2R-Ul1"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="wcn-1o-PrE" secondAttribute="trailing" id="5Yg-6A-XB0"/>
-                                    <constraint firstItem="wcn-1o-PrE" firstAttribute="top" secondItem="7v5-4c-E4S" secondAttribute="top" id="76u-pR-GoM"/>
-                                    <constraint firstItem="QQV-Fz-hgf" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" constant="130" id="OmG-DW-6ui"/>
-                                    <constraint firstAttribute="trailing" secondItem="Y9J-qm-oXD" secondAttribute="trailing" id="Q0A-DX-GV4"/>
-                                    <constraint firstAttribute="trailing" secondItem="QQV-Fz-hgf" secondAttribute="trailing" constant="130" id="Sh8-LU-xk2"/>
-                                    <constraint firstAttribute="bottom" secondItem="QQV-Fz-hgf" secondAttribute="bottom" constant="65" id="Utl-LO-d89"/>
-                                    <constraint firstItem="wcn-1o-PrE" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="a9h-62-Zde"/>
-                                    <constraint firstItem="Y9J-qm-oXD" firstAttribute="top" secondItem="wcn-1o-PrE" secondAttribute="bottom" constant="10" id="h8J-NC-mhU"/>
-                                    <constraint firstItem="Y9J-qm-oXD" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="kOY-yE-1zh"/>
-                                    <constraint firstItem="QQV-Fz-hgf" firstAttribute="top" secondItem="Y9J-qm-oXD" secondAttribute="bottom" constant="55" id="lpF-XF-6al"/>
-                                    <constraint firstItem="X1D-08-oPz" firstAttribute="top" secondItem="7v5-4c-E4S" secondAttribute="top" id="mx3-Y4-Fzb"/>
-                                    <constraint firstAttribute="trailing" secondItem="X1D-08-oPz" secondAttribute="trailing" id="xQB-30-peG"/>
+                                    <constraint firstItem="bgM-FD-HjK" firstAttribute="centerX" secondItem="6i4-aN-uVn" secondAttribute="centerX" id="25Y-gh-EA5"/>
+                                    <constraint firstItem="bgM-FD-HjK" firstAttribute="trailing" secondItem="wcn-1o-PrE" secondAttribute="trailing" id="J5h-Bl-U7p"/>
+                                    <constraint firstItem="bgM-FD-HjK" firstAttribute="leading" secondItem="wcn-1o-PrE" secondAttribute="leading" id="NvE-uY-w3Z"/>
+                                    <constraint firstItem="bgM-FD-HjK" firstAttribute="top" secondItem="wcn-1o-PrE" secondAttribute="bottom" constant="20" id="aji-rR-ZQY"/>
+                                    <constraint firstItem="bgM-FD-HjK" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="c1W-Ex-IG8"/>
+                                    <constraint firstItem="6i4-aN-uVn" firstAttribute="top" secondItem="bgM-FD-HjK" secondAttribute="bottom" constant="60" id="g9v-GJ-yrr"/>
+                                    <constraint firstItem="bgM-FD-HjK" firstAttribute="top" secondItem="7v5-4c-E4S" secondAttribute="top" constant="70" id="pRu-6W-xnk"/>
+                                    <constraint firstAttribute="trailing" secondItem="bgM-FD-HjK" secondAttribute="trailing" id="yBx-1T-VdQ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rz9-62-BcR"/>
                         <color key="backgroundColor" red="0.63159812176165797" green="0.63159812176165797" blue="0.63159812176165797" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="7v5-4c-E4S" firstAttribute="leading" secondItem="Rz9-62-BcR" secondAttribute="leading" constant="49" id="8Bd-hH-xSJ"/>
-                            <constraint firstItem="Rz9-62-BcR" firstAttribute="bottom" secondItem="7v5-4c-E4S" secondAttribute="bottom" constant="231" id="IH9-fK-LIK"/>
-                            <constraint firstItem="Rz9-62-BcR" firstAttribute="trailing" secondItem="7v5-4c-E4S" secondAttribute="trailing" constant="48" id="ZWK-Wj-ukz"/>
-                            <constraint firstItem="7v5-4c-E4S" firstAttribute="top" secondItem="Rz9-62-BcR" secondAttribute="top" constant="319" id="kIE-5o-5pk"/>
+                            <constraint firstItem="7v5-4c-E4S" firstAttribute="top" secondItem="Rz9-62-BcR" secondAttribute="top" constant="200" id="9xv-Zh-x4z"/>
+                            <constraint firstItem="Rz9-62-BcR" firstAttribute="bottom" secondItem="7v5-4c-E4S" secondAttribute="bottom" constant="200" id="KRx-2e-IXp"/>
+                            <constraint firstItem="7v5-4c-E4S" firstAttribute="leading" secondItem="Rz9-62-BcR" secondAttribute="leading" constant="40" id="bxc-7e-Ic2"/>
+                            <constraint firstItem="Rz9-62-BcR" firstAttribute="trailing" secondItem="7v5-4c-E4S" secondAttribute="trailing" constant="40" id="eRP-z4-YUD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Asy-M9-ZxP"/>
                     <connections>
-                        <outlet property="searchBar" destination="Y9J-qm-oXD" id="s6w-wm-7Hn"/>
+                        <outlet property="searchBar" destination="bgM-FD-HjK" id="J7p-6G-NEh"/>
+                        <outlet property="subView" destination="7v5-4c-E4S" id="VIX-tk-sFj"/>
+                        <segue destination="9UF-7z-E4i" kind="show" identifier="searchToStoreList" id="aNd-HI-VHh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehe-qy-05L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -594,7 +595,7 @@
         <image name="home_tabBar" width="18" height="18"/>
         <image name="off" width="13.5" height="16.5"/>
         <image name="search" width="16.5" height="16"/>
-        <image name="xmark" catalog="system" width="128" height="113"/>
+        <image name="xmark" catalog="system" width="32" height="32"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

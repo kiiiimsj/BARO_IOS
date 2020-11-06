@@ -19,6 +19,9 @@ class StoreListPageController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        
+        print("typecc", self.typeCode)
+        
         let jsonObject : [ String : Any ] = [
             "type_code" : typeCode,
             "latitude" : "37.499",
