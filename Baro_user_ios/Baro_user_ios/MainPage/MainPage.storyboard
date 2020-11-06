@@ -113,24 +113,24 @@
                                                     <constraint firstAttribute="height" constant="228" id="g5U-yJ-Vin"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3zo-bu-bvn">
-                                                    <size key="itemSize" width="346" height="225"/>
+                                                    <size key="itemSize" width="419" height="225"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageUltraStore" reuseIdentifier="MainPageUltraStore" id="pIg-FW-hU6" customClass="MainPageUltraStore" customModule="Baro_user_ios" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1.5" width="346" height="225"/>
+                                                        <rect key="frame" x="0.0" y="1.5" width="419" height="225"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xlj-Oa-sZ2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="346" height="225"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="419" height="225"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y8v-by-ev3">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="346" height="225"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="419" height="225"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HTH-PQ-ULT">
-                                                                        <size key="itemSize" width="278" height="219"/>
+                                                                        <size key="itemSize" width="0.0" height="219"/>
                                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -188,10 +188,10 @@
                                                                 <constraint firstItem="Y8v-by-ev3" firstAttribute="leading" secondItem="Xlj-Oa-sZ2" secondAttribute="leading" id="0Bw-W0-Lrp"/>
                                                                 <constraint firstItem="Y8v-by-ev3" firstAttribute="top" secondItem="Xlj-Oa-sZ2" secondAttribute="top" id="2KX-kY-B2U"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Y8v-by-ev3" secondAttribute="bottom" id="DuD-ei-KT6"/>
-                                                                <constraint firstAttribute="trailing" secondItem="Y8v-by-ev3" secondAttribute="trailing" id="ukY-7q-eI3"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Y8v-by-ev3" secondAttribute="trailing" id="hQZ-2F-snO"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
-                                                        <size key="customSize" width="346" height="225"/>
+                                                        <size key="customSize" width="419" height="225"/>
                                                         <connections>
                                                             <outlet property="collectionView" destination="Y8v-by-ev3" id="cH0-qn-9Ie"/>
                                                         </connections>
@@ -222,17 +222,17 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="234"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yLa-KJ-X9N">
-                                                                        <size key="itemSize" width="290" height="204"/>
+                                                                        <size key="itemSize" width="419" height="204"/>
                                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                     </collectionViewFlowLayout>
                                                                     <cells>
                                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageNewStoreCell" reuseIdentifier="MainPageNewStoreCell" id="efz-4y-D2Z" customClass="MainPageNewStoreCell" customModule="Baro_user_ios" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="15" width="290" height="204"/>
+                                                                            <rect key="frame" x="0.0" y="15" width="419" height="204"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4na-25-Qff">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="290" height="204"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="419" height="204"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xh1-N9-gLd">
@@ -255,7 +255,7 @@
                                                                                     </label>
                                                                                 </subviews>
                                                                             </collectionViewCellContentView>
-                                                                            <size key="customSize" width="290" height="204"/>
+                                                                            <size key="customSize" width="419" height="204"/>
                                                                             <connections>
                                                                                 <outlet property="newStoreImage" destination="Xh1-N9-gLd" id="FzG-DE-t8R"/>
                                                                                 <outlet property="newStoreInfo" destination="9xW-wt-0SN" id="Lis-Di-2l5"/>
@@ -269,8 +269,8 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="f9A-6a-idb" secondAttribute="bottom" id="Gim-LJ-h8Y"/>
                                                                 <constraint firstItem="f9A-6a-idb" firstAttribute="top" secondItem="q3A-TH-kUR" secondAttribute="top" id="Gy8-TX-0Q1"/>
-                                                                <constraint firstItem="f9A-6a-idb" firstAttribute="leading" secondItem="q3A-TH-kUR" secondAttribute="leading" id="QNA-gA-jwL"/>
                                                                 <constraint firstAttribute="trailing" secondItem="f9A-6a-idb" secondAttribute="trailing" id="cQg-JQ-Ofi"/>
+                                                                <constraint firstItem="f9A-6a-idb" firstAttribute="leading" secondItem="q3A-TH-kUR" secondAttribute="leading" id="uqH-rj-oAx"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="414" height="234"/>
@@ -455,6 +455,7 @@
                         <outlet property="mainView" destination="CvG-KU-mmZ" id="LPm-a6-5OF"/>
                         <outlet property="scrollView" destination="Trs-Kc-nQH" id="eeh-2P-KaI"/>
                         <segue destination="wUP-g1-jiW" kind="presentation" identifier="mainToMap" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="bmT-W0-8so"/>
+                        <segue destination="Y53-Gw-DHx" kind="presentation" identifier="goToAlert" id="5aq-Zm-dMf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjD-af-REA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -468,6 +469,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdh-3k-N16" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4188" y="298"/>
+        </scene>
+        <!--AlertController-->
+        <scene sceneID="fUE-dF-FTb">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="goToAlert" storyboardName="Alert" referencedIdentifier="AlertController" id="Y53-Gw-DHx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3O2-R1-mN1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3399" y="-401"/>
         </scene>
         <!--MainPageSearchController-->
         <scene sceneID="Kxt-fj-TIh">

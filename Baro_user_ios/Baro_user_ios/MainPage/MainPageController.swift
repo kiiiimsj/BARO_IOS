@@ -23,6 +23,8 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             return manager
         }()
     var whereAmI : CLLocation?
+    var whatIHave = 0
+    var newestAlertNumber : Int!
     lazy var myLocation = MyLocation()
     //table list
     
@@ -45,6 +47,10 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     //alert 클릭시
     @IBAction func alertClick(_ sender: Any) {
         //alert페이지로 넘기기
+//        newestAlertNumber
+        UserDefaults.standard.setValue(newestAlertNumber, forKey: "newestAlert")
+        let vc = self.storyboard?.instantiateViewController(identifier: "goToAlert") as! AlertController
+        present(vc, animated: false)
     }
     
     override func viewDidLoad() {
@@ -73,8 +79,11 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         let coor = locationManager.location?.coordinate
         
         //회원의 위도/경도
-        latitude = coor?.latitude
-        longitude = coor?.longitude
+//        latitude = coor?.latitude
+//        longitude = coor?.longitude
+        // 에뮬테스트용 위도/경도
+        latitude = 37.4954847
+        longitude = 126.959691
         
         //회원의 위도경도 model을 userdefaults에 저장 ( 제일 아래에 구조체에 저장)
         //location이라는 key로 위도경도 저장
@@ -82,6 +91,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         UserDefaults.standard.set(try? PropertyListEncoder().encode(location), forKey: "location")
         getMyLocation(String(longitude!), String(latitude!))
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
+        whetherNewOrNot()
     }
     func getMyLocation(_ longitude : String, _ latitude :String) {
         myLocation.network.get(method: .get, url: "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+longitude+","+latitude+"&sourcecrs=epsg:4326&output=json&orders=roadaddr",headers: myLocation.headers) { json in
@@ -187,7 +197,7 @@ extension MainPageController : UICollectionViewDelegate, UICollectionViewDataSou
             return CGSize(width: self.collectionViewType.frame.width, height: self.collectionViewType.frame.height)
         }
         else{
-            return CGSize(width: self.mainView.frame.width, height: 100)
+            return CGSize(width: self.mainView.frame.width, height: 200)
         }
         
     }
@@ -239,6 +249,24 @@ extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegate
         
     }
     
+}
+extension MainPageController {
+    func whetherNewOrNot() -> () {
+        let network = CallRequest()
+        let urlMaker = NetWorkURL()
+        network.get(method: .get, url: urlMaker.getLatest) { (json) in
+            print(json)
+            self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
+            self.newestAlertNumber = json["recentlyAlertId"].intValue
+            if self.whatIHave != self.newestAlertNumber {
+                print("볼거있음")
+                self.alertButton.setImage(UIImage(named: "on"), for: .normal)
+            }else{
+                print("이미봄")
+            }
+            print(self.whatIHave)
+        }
+    }
 }
 
 //위도 경도에 해당하는 구조체

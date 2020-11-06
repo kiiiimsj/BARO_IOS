@@ -23,6 +23,7 @@ class MapController : UIViewController {
     var baroPinImage : NMFOverlayImage!
     var cameraUpdate : NMFCameraUpdate!
     var storeLocations = [LocationModel]()
+    @IBOutlet weak var returnBtn: UIButton!
     var VC : SeparateWindowController!
     @IBOutlet weak var SeparateWindow: UIView!
     
@@ -32,8 +33,9 @@ class MapController : UIViewController {
         map.touchDelegate = self
         updateMyLocation()
         initialzeData()
-        
-        
+        returnBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(returnMe(_:))))
+        map.minZoomLevel = 13
+        map.maxZoomLevel = 19
     }
     
     func updateMyLocation() -> Void {
@@ -43,9 +45,16 @@ class MapController : UIViewController {
         changeCameraShowing(latlng: myLatLng!)
     }
     func initalizeMyPin() ->Void {
-        myPin = NMFMarker(position: self.myLatLng!, iconImage: baroPinImage)
-        myPin.mapView = map
-        myPin.captionText = "내 위치"
+//        myPin = NMFMarker(position: self.myLatLng!, iconImage: baroPinImage)
+//        myPin.mapView = map
+//        myPin.captionText = "내 위치"
+        let locationOverlay = map.locationOverlay
+        locationOverlay.hidden = false
+        locationOverlay.location = myLatLng!
+        locationOverlay.icon = NMFOverlayImage(name: "selected")
+        locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+        locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+        locationOverlay.circleRadius = 50
     }
     func makeStorePin(){
         for item in storeLocations {
@@ -80,10 +89,10 @@ class MapController : UIViewController {
         cameraUpdate.animation = .easeIn
         map.moveCamera(cameraUpdate)
     }
-    func initialzeData() -> Void {
-        baroPinImage = NMFOverlayImage(name: "map")
-        initalizeMyPin()
-        infoWindow.dataSource = infoWindowDataSource
+    func initializeMapOptions(){
+        
+    }
+    func setWindowEnvironment(){
         let storyboard = UIStoryboard(name: "Map", bundle: nil)
         VC = (storyboard.instantiateViewController(withIdentifier: "SeparateWindowController") as! SeparateWindowController)
         self.addChild(VC)
@@ -92,6 +101,12 @@ class MapController : UIViewController {
         VC.didMove(toParent: self)
         VC.clickListener = self
         self.view.bringSubviewToFront(self.SeparateWindow)
+    }
+    func initialzeData() -> Void {
+        baroPinImage = NMFOverlayImage(name: "map")
+        initalizeMyPin()
+        infoWindow.dataSource = infoWindowDataSource
+        setWindowEnvironment()
         var params = Dictionary<String,String>()
         print("dooooo")
         params["latitude"] = String((location?.coordinate.latitude)!)
@@ -114,12 +129,21 @@ class MapController : UIViewController {
         self.dismiss(animated: false)
         
     }
+    @IBAction func pressReturn(_ sender: Any) {
+//        print("return")
+        changeCameraShowing(latlng: myLatLng!)
+    }
+    @objc func returnMe(_ sender: UITapGestureRecognizer) {
+        print("return")
+        changeCameraShowing(latlng: myLatLng!)
+    }
 }
 
 extension MapController : NMFMapViewTouchDelegate,NMFMapViewOptionDelegate,NMFMapViewCameraDelegate {
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
         infoWindow.close()
         SeparateWindow.isHidden = true
+        
     }
 }
 extension MapController : SWDelegate{
