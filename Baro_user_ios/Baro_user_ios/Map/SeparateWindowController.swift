@@ -23,6 +23,7 @@ class SeparateWindowController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
+       
     }
     func whenDidUpdate() -> () {
         netWork.get(method: .get, url: urlMaker.storeIntroductionURL+String(storeData.store_id)) { (json) in
