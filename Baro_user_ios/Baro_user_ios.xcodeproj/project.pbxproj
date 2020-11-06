@@ -112,6 +112,7 @@
 		E34CAF3C255280A200BE3F53 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34CAF3B255280A200BE3F53 /* Map.storyboard */; };
 		E34CAF3F255280B200BE3F53 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF3E255280B200BE3F53 /* MapController.swift */; };
 		E34CAF422552A36F00BE3F53 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF412552A36F00BE3F53 /* LocationModel.swift */; };
+		E34CAF45255523A600BE3F53 /* SeparateWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF44255523A500BE3F53 /* SeparateWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -225,6 +226,7 @@
 		E34CAF3B255280A200BE3F53 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		E34CAF3E255280B200BE3F53 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		E34CAF412552A36F00BE3F53 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		E34CAF44255523A500BE3F53 /* SeparateWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -494,6 +496,7 @@
 			children = (
 				E34CAF3B255280A200BE3F53 /* Map.storyboard */,
 				E34CAF3E255280B200BE3F53 /* MapController.swift */,
+				E34CAF44255523A500BE3F53 /* SeparateWindowController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				04B8679A253B0ECD00336175 /* AppDelegate.swift in Sources */,
 				043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */,
 				3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */,
+				E34CAF45255523A600BE3F53 /* SeparateWindowController.swift in Sources */,
 				E31D3FD82542ACAC00B63F77 /* StoreListCell.swift in Sources */,
 				043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */,
 				E31D3FF925469DCE00B63F77 /* EssentialButton.swift in Sources */,
