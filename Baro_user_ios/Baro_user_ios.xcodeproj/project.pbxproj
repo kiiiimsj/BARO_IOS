@@ -116,6 +116,10 @@
 		E34CAF3F255280B200BE3F53 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF3E255280B200BE3F53 /* MapController.swift */; };
 		E34CAF422552A36F00BE3F53 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF412552A36F00BE3F53 /* LocationModel.swift */; };
 		E34CAF45255523A600BE3F53 /* SeparateWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF44255523A500BE3F53 /* SeparateWindowController.swift */; };
+		E34CAF6625555B6600BE3F53 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF6525555B6600BE3F53 /* AlertController.swift */; };
+		E34CAF6925555B7000BE3F53 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34CAF6825555B7000BE3F53 /* Alert.storyboard */; };
+		E34CAF6C255567D400BE3F53 /* AlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF6B255567D300BE3F53 /* AlertCell.swift */; };
+		E34CAF6F25556A1D00BE3F53 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF6E25556A1D00BE3F53 /* AlertModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -233,6 +237,10 @@
 		E34CAF3E255280B200BE3F53 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		E34CAF412552A36F00BE3F53 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		E34CAF44255523A500BE3F53 /* SeparateWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateWindowController.swift; sourceTree = "<group>"; };
+		E34CAF6525555B6600BE3F53 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		E34CAF6825555B7000BE3F53 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		E34CAF6B255567D300BE3F53 /* AlertCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCell.swift; sourceTree = "<group>"; };
+		E34CAF6E25556A1D00BE3F53 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +289,7 @@
 		04B86798253B0ECD00336175 /* Baro_user_ios */ = {
 			isa = PBXGroup;
 			children = (
+				E34CAF6425555B4C00BE3F53 /* Alert */,
 				3F0F6EA925514EFA00099ACC /* BootPay */,
 				E34CAF382552808E00BE3F53 /* Map */,
 				04B28D4F255247DE007D1ED6 /* Baro_user_ios.entitlements */,
@@ -491,6 +500,7 @@
 				04235C8C254AB36B00BA2BB1 /* OrderStatusDetailExtraModel.swift */,
 				3FAD95A225527EC600091E3D /* Order.swift */,
 				E34CAF412552A36F00BE3F53 /* LocationModel.swift */,
+				E34CAF6E25556A1D00BE3F53 /* AlertModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -516,6 +526,16 @@
 				E34CAF44255523A500BE3F53 /* SeparateWindowController.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		E34CAF6425555B4C00BE3F53 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				E34CAF6525555B6600BE3F53 /* AlertController.swift */,
+				E34CAF6825555B7000BE3F53 /* Alert.storyboard */,
+				E34CAF6B255567D300BE3F53 /* AlertCell.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		E997DD1537C720F796AAE31D /* Pods */ = {
@@ -601,6 +621,7 @@
 				3FDE5E382546968000C05514 /* NoticePage.storyboard in Resources */,
 				04B867A6253B0ECF00336175 /* LaunchScreen.storyboard in Resources */,
 				3F4C5AA2253ECAD700C0E7B6 /* NotoSansKR-Thin.otf in Resources */,
+				E34CAF6925555B7000BE3F53 /* Alert.storyboard in Resources */,
 				3F4C5A9F253ECAD700C0E7B6 /* NotoSansKR-Black.otf in Resources */,
 				3FDE5E612546A1C800C05514 /* TermOfUserPage.storyboard in Resources */,
 				3F05C567254116C70066DAAD /* MyPage.storyboard in Resources */,
@@ -704,11 +725,13 @@
 				048D55B6253D2E0F009E9CE4 /* MainPageEvent.swift in Sources */,
 				043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */,
 				E31D3FEF25465F6000B63F77 /* NonEssentialCell.swift in Sources */,
+				E34CAF6625555B6600BE3F53 /* AlertController.swift in Sources */,
 				E31D4015254FC64300B63F77 /* BasketController.swift in Sources */,
 				3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */,
 				04235C7725493A7100BA2BB1 /* OrderStatusController.swift in Sources */,
 				E31D3FF6254692A200B63F77 /* OptionCategoryHeader.swift in Sources */,
 				E31D3FF32546887F00B63F77 /* OptionsHeader.swift in Sources */,
+				E34CAF6C255567D400BE3F53 /* AlertCell.swift in Sources */,
 				3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */,
 				E34CAF3F255280B200BE3F53 /* MapController.swift in Sources */,
 				E34CAF422552A36F00BE3F53 /* LocationModel.swift in Sources */,
@@ -729,6 +752,7 @@
 				04235C84254AA94E00BA2BB1 /* OrderStatusDetail.swift in Sources */,
 				048A0BE52541AD71007D4FD3 /* testController.swift in Sources */,
 				E33D8560253EF24A00E50BAC /* ASCategoryCell.swift in Sources */,
+				E34CAF6F25556A1D00BE3F53 /* AlertModel.swift in Sources */,
 				04235C87254AB05B00BA2BB1 /* OrderStatusDetailCell.swift in Sources */,
 				048D55E3253D83AD009E9CE4 /* MainPageTypeCell.swift in Sources */,
 				E31D3FD22542ABEF00B63F77 /* StoreListPageController.swift in Sources */,
