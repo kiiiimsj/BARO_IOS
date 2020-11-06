@@ -27,13 +27,14 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     //table list
     
     @IBOutlet weak var locationButton: UIButton!
-    @IBOutlet weak var tableViewEvent: UITableView?
+
+    @IBOutlet weak var collectionViewEvent: UICollectionView!
+    @IBOutlet weak var collectionViewType: UICollectionView!
+    @IBOutlet weak var collectionViewUltra: UICollectionView!
+    @IBOutlet weak var collectionViewNewStore: UICollectionView!
     
-    @IBOutlet weak var tableViewType: UITableView?
     
-    @IBOutlet weak var tableViewUltra: UITableView?
-    
-    @IBOutlet weak var tableViewNewStore: UITableView?
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     @IBOutlet var mainView: UIView!
@@ -49,10 +50,20 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.definesPresentationContext = true
-        tableViewEvent?.separatorStyle = .none
-        tableViewType?.separatorStyle = .none
-        tableViewUltra?.separatorStyle = .none
-        tableViewNewStore?.separatorStyle = .none
+        
+        mainView.backgroundColor = .white
+        scrollView.backgroundColor = .white
+        
+        collectionViewEvent.dataSource = self
+        collectionViewType.dataSource = self
+        collectionViewUltra.dataSource = self
+        collectionViewNewStore.dataSource = self
+        
+        collectionViewEvent.delegate = self
+        collectionViewType.delegate = self
+        collectionViewUltra.delegate = self
+        collectionViewNewStore.delegate = self
+        
         
         locationCheck()
         
@@ -69,12 +80,6 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         //location이라는 key로 위도경도 저장
         var location = Location(latitude: latitude, longitude: longitude)
         UserDefaults.standard.set(try? PropertyListEncoder().encode(location), forKey: "location")
-        
-        //꺼내는 방법 예시
-//        if let data = UserDefaults.standard.value(forKey: "location") as? Data {
-//            let loca = try? PropertyListDecoder().decode(Location.self, from: data)
-//            print("loca",loca)
-//        }
         
         getMyLocation(String(longitude!), String(latitude!))
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
@@ -146,62 +151,64 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     }
 }
 
-extension MainPageController : UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension MainPageController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if(tableView == tableViewEvent){
-            let cell = tableViewEvent?.dequeueReusableCell(withIdentifier: "MainPageEvent", for: indexPath) as! MainPageEvent
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if(collectionView == collectionViewEvent) {
+            let cell = collectionViewEvent?.dequeueReusableCell(withReuseIdentifier: "MainPageEvent", for: indexPath) as! MainPageEvent
             cell.delegateEvent = self
             return cell
         }
-        else if(tableView == tableViewType){
-            let cell = tableViewType?.dequeueReusableCell(withIdentifier: "MainPageType", for: indexPath) as! MainPageType
+        else if(collectionView == collectionViewType) {
+            let cell = collectionViewType?.dequeueReusableCell(withReuseIdentifier: "MainPageType", for: indexPath) as! MainPageType
             cell.delegateType = self
             return cell
         }
-        else if(tableView == tableViewUltra){
-            let cell = tableViewUltra?.dequeueReusableCell(withIdentifier: "MainPageUltraStore", for: indexPath) as! MainPageUltraStore
+        else if(collectionView == collectionViewUltra) {
+            let cell = collectionViewUltra?.dequeueReusableCell(withReuseIdentifier: "MainPageUltraStore", for: indexPath) as! MainPageUltraStore
             cell.delegateUltra = self
             return cell
         }
         else {
-            let cell = tableViewNewStore?.dequeueReusableCell(withIdentifier: "MainPageNewStore", for: indexPath) as! MainPageNewStore
+            let cell = collectionViewNewStore?.dequeueReusableCell(withReuseIdentifier: "MainPageNewStore", for: indexPath) as! MainPageNewStore
             cell.delegateNewStore = self
             return cell
-            
         }
         
     }
-   
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.height
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == collectionViewEvent {
+            return  CGSize(width: self.collectionViewEvent.frame.width, height: self.collectionViewEvent.frame.height)
+        }
+        else if collectionView == collectionViewType {
+            return CGSize(width: self.collectionViewType.frame.width, height: self.collectionViewType.frame.height)
+        }
+        else{
+            return CGSize(width: self.mainView.frame.width, height: 100)
+        }
+        
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("kkkkkk")
-        let vc = LoginPageController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
-//클릭에 해당하는 extension들
 
+//클릭에 해당하는 extension들
 extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegateUltra, CellDelegateNewStore {
    
     func tapClickEvent(tag: String) {
         print(tag)
         navigationController?.pushViewController(testController(), animated: false)
-        performSegue(withIdentifier: "mainToStore", sender: tag)
+        performSegue(withIdentifier: "mainToStoreList", sender: tag)
     }
     
     func tapClickType(tag: String) {
         print(tag)
         navigationController?.pushViewController(StoreListPageController(), animated: false)
-        performSegue(withIdentifier: "mainToStore", sender: tag)
+        performSegue(withIdentifier: "mainToStoreList", sender: tag)
     }
     
     func tapClickUltra(tag: String) {
@@ -218,16 +225,26 @@ extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let nextViewController = segue.destination as? StoreListPageController else {
+
+        if let nextViewController = segue.destination as? StoreListPageController {
+                let labell = sender as! String
+                nextViewController.typeCode = labell
+        }
+        else if let nextViewController = segue.destination as? StoreMenuController {
+            let labell = sender as! String
+            nextViewController.store_id = labell
+        }
+        else { //이벤트 페이지 만들어지면 전달한 event_id 를 그 페이지로 넘겨주기
             return
         }
-        let labell = sender as! String
-        nextViewController.typeCode = labell
+        
     }
+    
 }
 
+//위도 경도에 해당하는 구조체
 struct Location : Codable {
     var latitude: Double!
     var longitude: Double!
 }
+
