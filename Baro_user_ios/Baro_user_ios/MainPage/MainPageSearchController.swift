@@ -42,6 +42,7 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
             return
         }
         let labell = sender as! String
-        nextViewController.typeCode = labell
+        nextViewController.searchWord = labell
+        nextViewController.kind = 3
     }
 }

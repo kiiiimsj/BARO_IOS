@@ -236,8 +236,9 @@ extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegate
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if let nextViewController = segue.destination as? StoreListPageController {
-                let labell = sender as! String
-                nextViewController.typeCode = labell
+            let labell = sender as! String
+            nextViewController.typeCode = labell
+            nextViewController.kind = 1
         }
         else if let nextViewController = segue.destination as? StoreMenuController {
             let labell = sender as! String

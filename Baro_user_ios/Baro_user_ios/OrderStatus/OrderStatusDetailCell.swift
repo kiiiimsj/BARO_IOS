@@ -11,6 +11,7 @@ class OrderStatusDetailCell : UICollectionViewCell {
     
     @IBOutlet weak var extraName: UILabel!
     @IBOutlet weak var extraPrice: UILabel!
+    @IBOutlet weak var extraCount: UILabel!
     
     override func prepareForReuse() {
         super.prepareForReuse()
