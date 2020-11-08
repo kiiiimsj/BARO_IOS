@@ -39,11 +39,17 @@ class BasketController : UIViewController {
     }
     @IBAction func clickPay(_ sender: Any) {
         saveBasket()
+//        let storyboard = UIStoryboard(name: "Basket", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "BootPayPage") as! MyBootPayController
+//        vc.modalPresentationStyle = .fullScreen
+//        vc.modalTransitionStyle = .crossDissolve
+//        vc.myOrders = self.orders
+//        self.present(vc, animated: true, completion: nil)
         let storyboard = UIStoryboard(name: "Basket", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "BootPayPage") as! MyBootPayController
+        let vc = storyboard.instantiateViewController(identifier: "CouponForBasket") as! CouponForBasket
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
-        vc.myOrders = self.orders
+        vc.totalPrice = self.totalPrice
         self.present(vc, animated: true, completion: nil)
         print(totalPriceLabel.text!)
     }
