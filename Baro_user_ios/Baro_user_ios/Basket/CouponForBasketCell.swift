@@ -6,6 +6,9 @@
 //
 
 import UIKit
+protocol ClickCouponBtn : AnyObject {
+    func btnClickCoupon(cell : CouponForBasketCell)
+}
 class CouponForBasketCell : UICollectionViewCell {
     @IBOutlet weak var couponTitle: UILabel!
     @IBOutlet weak var couponCanUseDate: UILabel!

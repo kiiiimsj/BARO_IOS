@@ -511,6 +511,9 @@
                                                 <state key="normal" title="결 제 하 기">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="clickPayButton" destination="NWU-jn-iaJ" eventType="touchUpInside" id="ZhT-Nc-WTb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -607,6 +610,10 @@
                     </view>
                     <connections>
                         <outlet property="couponCollectionView" destination="1TY-zv-2bf" id="ctg-5y-3iB"/>
+                        <outlet property="couponDiscountPrice" destination="MXJ-GN-3Rg" id="cpo-2U-7s4"/>
+                        <outlet property="pay" destination="PmD-Kl-kgD" id="Pca-gO-JdO"/>
+                        <outlet property="productTotalPrice" destination="xu4-oA-DaW" id="cxQ-uv-EiQ"/>
+                        <outlet property="realPayPrice" destination="InZ-NN-xRl" id="lif-Ya-hjO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Wl-Ho-kTp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
