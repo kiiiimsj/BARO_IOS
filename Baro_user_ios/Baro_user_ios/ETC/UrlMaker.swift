@@ -106,6 +106,7 @@ class NetWorkURL {
 
     let couponList = "http://3.35.180.57:8080/CouponFindByPhone.do"
     let couponCount = "http://3.35.180.57:8080/CouponCountByPhone.do?phone="
+    let couponListCanUse = "http://3.35.180.57:8080/CouponFindUsable.do?phone=" //&price=결제전총금액
 
 
     //문의 상세
