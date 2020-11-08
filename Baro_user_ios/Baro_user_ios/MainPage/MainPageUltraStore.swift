@@ -11,14 +11,13 @@ protocol CellDelegateUltra: class {
     func tapClickUltra(tag: String)
 }
 
-class MainPageUltraStore : UITableViewCell {
+class MainPageUltraStore : UICollectionViewCell {
     
     var delegateUltra : CellDelegateUltra?
     
     var ultraList = [UltraStoreListModel]()
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
-    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -60,7 +59,7 @@ extension MainPageUltraStore : UICollectionViewDelegate, UICollectionViewDataSou
         cell.ultraName.text = ultra.store_name
         print("qqq",ultra.store_name)
         cell.ultraInfo.text = ultra.store_info
-        cell.ultraImage.kf.setImage(with: URL(string: "http://15.165.22.64:8080/ImageStore.do?image_name="+ultra.store_image))
+        cell.ultraImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name="+ultra.store_image))
         
         //cell 클릭시
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))

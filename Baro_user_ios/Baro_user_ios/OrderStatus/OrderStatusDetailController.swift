@@ -12,7 +12,14 @@ class OrderStatusDetailController : UIViewController {
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var totalPrice: UILabel!
-    @IBOutlet weak var requests: UILabel!
+
+    @IBOutlet weak var mRequests: UILabel!
+    
+    
+    
+    @IBAction func successBtn(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
     
   //  public var extraOpen = false
     
@@ -43,8 +50,15 @@ class OrderStatusDetailController : UIViewController {
     func configure() {
         networkModel.post(method: .get, url: networkURL.orderHistoryRegular + "?receipt_id=" + receipt_id) {
             json in
-            
             print("rr", json)
+            let requests = json["requests"].stringValue
+            //print("req", requests)
+            if requests == "" {
+                self.mRequests.text = "요청사항 없음"
+            }
+            else {
+                self.mRequests.text = requests
+            }
             for item in json["orders"].array! {
                 var orderStatusDetailModel = OrderStatusDetailList()
                 orderStatusDetailModel.order_id = item["order_id"].intValue
@@ -63,11 +77,12 @@ class OrderStatusDetailController : UIViewController {
                 }
                 self.orderStatusDetailList.append(orderStatusDetailModel)
             }
+            
             self.collectionView.reloadData()
             print("ggg", self.orderStatusDetailList)
         }
-        storeName.text = store_name
-        totalPrice.text = String(total_price)
+        storeName.text = String(store_name)
+        totalPrice.text = String(total_price) + "원"
         //요청사항도 찍어주기
     }
 }
@@ -81,12 +96,12 @@ extension OrderStatusDetailController : UICollectionViewDelegate, UICollectionVi
         let orderList = orderStatusDetailList[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderStatusDetail", for: indexPath) as! OrderStatusDetail
         //셀에 값 넣어주기
+        //self.mRequests.text = orderList.requests
         cell.menuName.text = orderList.menu_name
         cell.menuCount.text = String(orderList.order_count) + "개"
         for item in orderList.OrderStatusDetailExtra {
             print("ll",item.extra_name)
         }
-        //cell의 이미지는 아직 처리 안함
 
         var extra_total = 0
         for item in orderList.OrderStatusDetailExtra {

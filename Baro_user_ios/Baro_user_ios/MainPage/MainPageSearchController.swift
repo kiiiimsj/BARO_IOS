@@ -9,34 +9,40 @@ import UIKit
 
 class MainPageSearchController : UIViewController, UISearchBarDelegate {
     
+    var searchContent = ""
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchContent = searchText
+        print("searchh", searchContent)
+    }
+    
+    @IBAction func searchBtn(_ sender: Any) {
+        navigationController?.pushViewController(StoreListPageController(), animated: false)
+        performSegue(withIdentifier: "searchToStoreList", sender: searchContent)
+        
+    }
+    
+    
+    @IBOutlet weak var subView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBAction func button(_ sender: Any) {
-        if let text = searchBar.searchTextField.text {
-            print(text)
-            let realText = String(text)
-            navigationController?.pushViewController(testController(), animated: false)
-            performSegue(withIdentifier: "searchToStore", sender: realText)
-        }
-    } 
     @IBAction func cancelBtn() {
         self.dismiss(animated: false, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchBar.delegate = self
+
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let nextController = segue.destination as? testController else{
+        guard let nextViewController = segue.destination as? StoreListPageController else {
             return
         }
-        
-        if let labell = sender as? String {
-            nextController.labelString = labell
-        }
+        let labell = sender as! String
+        nextViewController.searchWord = labell
+        nextViewController.kind = 3
     }
 }

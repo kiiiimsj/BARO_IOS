@@ -14,4 +14,5 @@ struct OrderStatusDetailList {
     var OrderStatusDetailExtra = [OrderStatusDetailExtraList]()
     var order_id = 0
     var order_state = ""
+    var requests = ""
 }

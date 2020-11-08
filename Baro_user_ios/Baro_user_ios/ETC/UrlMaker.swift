@@ -85,7 +85,8 @@ class NetWorkURL {
     let categoryURL = "http://3.35.180.57:8080/CategoryFindByStoreId.do"
     let menuURL = "http://3.35.180.57:8080/MenuFindByStoreId.do"
     let menuByCate = "http://3.35.180.57:8080/MenuFindByStoreAndCategoryId.do"
-
+    let getLatest = "http://3.35.180.57:8080/GetLatestAlertWhenMemberLogin.do"
+    let getAlert = "http://3.35.180.57:8080/AlertFindAll.do"
 
     //store 상세
     let typeListURL = "http://3.35.180.57:8080/TypeFindAll.do"
@@ -97,6 +98,9 @@ class NetWorkURL {
     let isFavoriteURL = "http://3.35.180.57:8080/FavoriteExist.do"
     let addFavoriteURL = "http://3.35.180.57:8080/FavoriteSave.do"
     let delFavoriteURL = "http://3.35.180.57:8080/FavoriteDelete.do"
+    
+    //store search를 통해 찾기
+    let storeSearchURL = "http://3.35.180.57:8080/StoreSearchByKeyword.do"
 
     //coupon 상세
 

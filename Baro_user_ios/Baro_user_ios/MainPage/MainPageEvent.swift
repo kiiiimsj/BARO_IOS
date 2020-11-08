@@ -11,7 +11,7 @@ protocol CellDelegateEvent: class {
     func tapClickEvent(tag: String)
 }
 
-class MainPageEvent : UITableViewCell {
+class MainPageEvent : UICollectionViewCell {
     
     var delegateEvent : CellDelegateEvent?
     
@@ -20,6 +20,7 @@ class MainPageEvent : UITableViewCell {
     let networkURL = NetWorkURL()
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,7 @@ class MainPageEvent : UITableViewCell {
 
         networkModel.post(method: .get, url: networkURL.eventList) { json in
             var eventModel = EventListModel()
+            print("jj",json)
             for item in json["event"].array! {
                 eventModel.event_id = item["event_id"].stringValue
                 eventModel.event_image = item["event_image"].stringValue
@@ -44,13 +46,14 @@ class MainPageEvent : UITableViewCell {
 
 extension MainPageEvent : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("tt",eventList.count)
         return eventList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let event = eventList[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageEventCell", for: indexPath) as! MainPageEventCell
-        cell.eventImage.kf.setImage(with: URL(string: "http://15.165.22.64:8080/ImageEvent.do?image_name=" + event.event_image))
+        cell.eventImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageEvent.do?image_name=" + event.event_image))
         
         //cell클릭시
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))

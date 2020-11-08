@@ -10,23 +10,34 @@ import Alamofire
 import NMapsMap
 
 class MapController : UIViewController {
+    
+    @IBOutlet weak var backButton: UIButton!
     var netWork = CallRequest()
     var urlMaker = NetWorkURL()
     var location : CLLocation?
     var myLatLng : NMGLatLng?
     var myPin : NMFMarker!
     var StorePins = [NMFMarker]()
+    let infoWindow = NMFInfoWindow()
+    let infoWindowDataSource = NMFInfoWindowDefaultTextSource.data()
     var baroPinImage : NMFOverlayImage!
     var cameraUpdate : NMFCameraUpdate!
     var storeLocations = [LocationModel]()
+    @IBOutlet weak var returnBtn: UIButton!
+    var VC : SeparateWindowController!
+    @IBOutlet weak var SeparateWindow: UIView!
+    
     @IBOutlet weak var map: NMFMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        map.touchDelegate = self
         updateMyLocation()
         initialzeData()
-        
-        
+        returnBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(returnMe(_:))))
+        map.minZoomLevel = 13
+        map.maxZoomLevel = 19
     }
+    
     func updateMyLocation() -> Void {
         let myLatitude = Double((location?.coordinate.latitude)!)
         let myLongitude = Double((location?.coordinate.longitude)!)
@@ -34,14 +45,43 @@ class MapController : UIViewController {
         changeCameraShowing(latlng: myLatLng!)
     }
     func initalizeMyPin() ->Void {
-        myPin = NMFMarker(position: self.myLatLng!, iconImage: baroPinImage)
-        myPin.mapView = map
+//        myPin = NMFMarker(position: self.myLatLng!, iconImage: baroPinImage)
+//        myPin.mapView = map
+//        myPin.captionText = "내 위치"
+        let locationOverlay = map.locationOverlay
+        locationOverlay.hidden = false
+        locationOverlay.location = myLatLng!
+        locationOverlay.icon = NMFOverlayImage(name: "selected")
+        locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+        locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+        locationOverlay.circleRadius = 50
     }
     func makeStorePin(){
         for item in storeLocations {
             let StorePin = NMFMarker(position: NMGLatLng(lat: item.store_latitude, lng: item.store_longitude), iconImage: baroPinImage)
             StorePin.mapView = map
+            StorePin.userInfo = ["StoreInfo" : item]
+            StorePin.touchHandler = { [weak self] (overlay) -> Bool in
+                if let marker = overlay as? NMFMarker {
+                    if marker.infoWindow == nil {
+                        // 현재 마커에 정보 창이 열려있지 않을 경우 엶
+                        let data = marker.userInfo["StoreInfo"] as! LocationModel
+                        self!.infoWindowDataSource.title = data.store_name+"점"
+                        self?.infoWindow.open(with: marker)
+                        self?.SeparateWindow.isHidden = false
+                        self!.VC.storeData = data
+                        self!.VC.whenDidUpdate()
+                    } else {
+                        // 이미 현재 마커에 정보 창이 열려있을 경우 닫음
+                        self?.infoWindow.close()
+                        self?.SeparateWindow.isHidden = true
+
+                    }
+                }
+                return true
+            };
             StorePins.append(StorePin)
+            storeLocations.removeAll()
         }
     }
     func changeCameraShowing(latlng : NMGLatLng) -> Void {
@@ -49,9 +89,24 @@ class MapController : UIViewController {
         cameraUpdate.animation = .easeIn
         map.moveCamera(cameraUpdate)
     }
+    func initializeMapOptions(){
+        
+    }
+    func setWindowEnvironment(){
+        let storyboard = UIStoryboard(name: "Map", bundle: nil)
+        VC = (storyboard.instantiateViewController(withIdentifier: "SeparateWindowController") as! SeparateWindowController)
+        self.addChild(VC)
+        SeparateWindow.addSubview((VC.view)!)
+        VC.view.frame = SeparateWindow.bounds
+        VC.didMove(toParent: self)
+        VC.clickListener = self
+        self.view.bringSubviewToFront(self.SeparateWindow)
+    }
     func initialzeData() -> Void {
         baroPinImage = NMFOverlayImage(name: "map")
         initalizeMyPin()
+        infoWindow.dataSource = infoWindowDataSource
+        setWindowEnvironment()
         var params = Dictionary<String,String>()
         print("dooooo")
         params["latitude"] = String((location?.coordinate.latitude)!)
@@ -67,6 +122,34 @@ class MapController : UIViewController {
                 self.storeLocations.append(temp)
             }
             self.makeStorePin()
+        }
+    }
+    
+    @IBAction func pressBackBtn(_ sender: Any) {
+        self.dismiss(animated: false)
+        
+    }
+    @IBAction func pressReturn(_ sender: Any) {
+//        print("return")
+        changeCameraShowing(latlng: myLatLng!)
+    }
+    @objc func returnMe(_ sender: UITapGestureRecognizer) {
+        print("return")
+        changeCameraShowing(latlng: myLatLng!)
+    }
+}
+
+extension MapController : NMFMapViewTouchDelegate,NMFMapViewOptionDelegate,NMFMapViewCameraDelegate {
+    func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
+        infoWindow.close()
+        SeparateWindow.isHidden = true
+        
+    }
+}
+extension MapController : SWDelegate{
+    func press(end: Bool) {
+        if end {
+//            self.dismiss(animated: false)
         }
     }
 }

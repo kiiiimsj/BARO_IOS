@@ -23,8 +23,6 @@ class OrderStatusController : UIViewController {
         
         configureView()
         
-        
-        
         network.post(method: .get, url: networkURL.orderProgressList + "?phone=" + phone) {
             json in
             var orderStatusModel = OrderStatusList()
@@ -36,6 +34,8 @@ class OrderStatusController : UIViewController {
                 orderStatusModel.total_price = item["total_price"].intValue
                 orderStatusModel.order_state = item["order_state"].stringValue
                 orderStatusModel.total_count = item["total_count"].intValue
+                orderStatusModel.store_image = item["store_image"].stringValue
+                
                 self.orderStatusList.append(orderStatusModel)
             }
             self.collectionView.reloadData() //해줘야함
@@ -65,20 +65,23 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
         if orderStatus.order_state == "PREPARING" {
             cell.orderStatusProgress.setProgress(0.33, animated: false)
             cell.orderStatus.text = "준비중"
+            cell.orderInfo.text = "의 상품이 접수대기중입니다."
         }
         else if orderStatus.order_state == "ACCEPT" {
             cell.orderStatusProgress.setProgress(0.66, animated: false)
             cell.orderStatus.text = "제조중"
+            cell.orderInfo.text = "의 상품이 제조중입니다."
         }
         cell.orderCount.text = String(orderStatus.total_count) + "개"
         cell.orderTotalPriceLabel.text = String(orderStatus.total_price) + "원"
+        cell.orderStoreImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + orderStatus.store_image))
         cell.receipt_id = orderStatus.receipt_id
         return cell
     }
     
     //높이나 등등 처리하는 오버라이드 해주기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 0)
+        return CGSize(width: view.frame.width, height: view.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
