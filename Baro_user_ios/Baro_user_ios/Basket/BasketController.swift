@@ -71,23 +71,20 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         return orders.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("is reload data call this function?")
         let eachMenu = orders[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BasketMenuCell", for: indexPath) as! BasketMenuCell
         cell.eachMenu = eachMenu
         cell.menu_name.text = eachMenu.menu.menu_name
         cell.menu_count.text = String(eachMenu.menu_count)
-        cell.menu_defaultPrice.text = String(eachMenu.menu.menu_defaultprice * eachMenu.menu_count)
+        cell.menu_defaultPrice.text = String(eachMenu.menu.menu_defaultprice)
         cell.menu_extra_sum.text = String(eachMenu.menu_total_price)
         cell.menu_totalPrice.text = String(eachMenu.menu_total_price * eachMenu.menu_count)
         cell.extraCollectionView.delegate = cell.self
         cell.extraCollectionView.dataSource = cell.self
         cell.delegate = self
         self.totalPrice += (eachMenu.menu_total_price * eachMenu.menu_count)
-        print("orderCount : ", orders.count)
-        print("indexpathRow", indexPath.row)
-        if (orders.count == indexPath.row + 1) {
-            self.totalPriceLabel.text = "\(self.totalPrice)"
-        }
+        self.totalPriceLabel.text = "\(self.totalPrice)"
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -108,11 +105,14 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
     }
     func btnDeleteTapped(cell: BasketMenuCell) {
         let indexPath = self.collectionView.indexPath(for: cell)
-        self.totalPrice -= orders[indexPath!.row].menu_total_price
-        orders.remove(at: indexPath!.row)
-        self.collectionView.deleteItems(at: [IndexPath(row: indexPath!.row, section: indexPath!.section)])
-        self.collectionView.reloadData()
+        //self.totalPrice -= (orders[indexPath!.item].menu_total_price * orders[indexPath!.item].menu_count)
         
-        self.totalPriceLabel.text = "\(self.totalPrice)"
+        self.totalPrice = 0
+        
+        orders.remove(at: indexPath!.item)
+        self.saveBasket()
+        self.collectionView.deleteItems(at: [IndexPath(item: indexPath!.item, section: indexPath!.section)])
+        self.collectionView.reloadData()
+        //self.collectionView.deleteItems(at: [IndexPath(row: indexPath!.row, section: indexPath!.section)])
     }
 }
