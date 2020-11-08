@@ -98,6 +98,9 @@ class NetWorkURL {
     let isFavoriteURL = "http://3.35.180.57:8080/FavoriteExist.do"
     let addFavoriteURL = "http://3.35.180.57:8080/FavoriteSave.do"
     let delFavoriteURL = "http://3.35.180.57:8080/FavoriteDelete.do"
+    
+    //store search를 통해 찾기
+    let storeSearchURL = "http://3.35.180.57:8080/StoreSearchByKeyword.do"
 
     //coupon 상세
 
