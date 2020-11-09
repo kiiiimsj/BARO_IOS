@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4qa-UT-Jc4">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4qa-UT-Jc4">
                                 <rect key="frame" x="0.0" y="134" width="414" height="668"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="giX-tu-ddE">
@@ -85,6 +85,24 @@
                                             <outlet property="orderStatusLabel" destination="mzH-Cl-rMj" id="CkW-C2-obf"/>
                                             <outlet property="orderStoreNameLabel" destination="bBW-cr-phg" id="jDa-mQ-I94"/>
                                             <outlet property="orderTotalPriceLabel" destination="sen-lk-qq1" id="1xK-L4-RlR"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="loadingCell" id="HOY-0c-znw" customClass="LoadingCellCollectionViewCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="138" width="414" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="N9v-0f-fbg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="IpW-Co-7Yl">
+                                                    <rect key="frame" x="0.0" y="-270" width="414" height="668"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="color" red="0.47109787269999998" green="0.211157332" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="loading" destination="IpW-Co-7Yl" id="yUq-qI-OK4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
