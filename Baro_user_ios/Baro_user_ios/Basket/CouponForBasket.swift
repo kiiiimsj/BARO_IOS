@@ -28,7 +28,6 @@ class CouponForBasket : UIViewController {
     var coupons = [Coupon]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("check Orders", sendOrderToBootPay)
         getCoupon()
         setFirstLabelText()
     }
@@ -47,9 +46,11 @@ class CouponForBasket : UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     func setFirstLabelText() {
+        realPriceValue = totalPrice
         productTotalPrice.text = "\(totalPrice)"
         couponDiscountPrice.text = "0"
-        realPayPrice.text = "\(totalPrice)"
+        realPayPrice.text = "\(realPriceValue)"
+        
     }
     func getCoupon() {
         print("getUserPhone : ", userPhone, "getTotalPrice", totalPrice)

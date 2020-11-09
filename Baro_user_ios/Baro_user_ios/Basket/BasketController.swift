@@ -23,11 +23,11 @@ class BasketController : UIViewController {
         if (menu != nil) {
             if (basket.value(forKey: "basket") != nil) {
                 orders.append(contentsOf: loadBasket())
-                print(orders)
-            }
-            else {
             }
             orders.append(menu)
+        }
+        else {
+            print("error")
         }
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -109,9 +109,7 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
     func btnDeleteTapped(cell: BasketMenuCell) {
         let indexPath = self.collectionView.indexPath(for: cell)
         //self.totalPrice -= (orders[indexPath!.item].menu_total_price * orders[indexPath!.item].menu_count)
-        
         self.totalPrice = 0
-        
         orders.remove(at: indexPath!.item)
         self.saveBasket()
         self.collectionView.deleteItems(at: [IndexPath(item: indexPath!.item, section: indexPath!.section)])
