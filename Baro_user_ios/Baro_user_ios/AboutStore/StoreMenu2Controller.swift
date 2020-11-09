@@ -33,10 +33,14 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
         cell.menu_picture.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageMenu.do?store_id= \(self.menus[indexPath.row].store_id)&image_name=" + self.menus[indexPath.row].menu_image))
         if data.is_soldout == "N" {
             cell.menu_state.isHidden = true
+        }else{
         }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if menus[indexPath.item].is_soldout == "Y" {
+            return
+        }
         let menu_id = String(menus[indexPath.item].menu_id)
         navigationController?.pushViewController(OrderDetailsController(), animated: false)
         performSegue(withIdentifier: "toDetails", sender: menu_id)

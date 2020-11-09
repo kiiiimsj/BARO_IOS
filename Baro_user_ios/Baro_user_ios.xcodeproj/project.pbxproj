@@ -120,6 +120,7 @@
 		E34CAF6925555B7000BE3F53 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34CAF6825555B7000BE3F53 /* Alert.storyboard */; };
 		E34CAF6C255567D400BE3F53 /* AlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF6B255567D300BE3F53 /* AlertCell.swift */; };
 		E34CAF6F25556A1D00BE3F53 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF6E25556A1D00BE3F53 /* AlertModel.swift */; };
+		E34CAF732558179600BE3F53 /* LoadingCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF712558179600BE3F53 /* LoadingCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -241,6 +242,7 @@
 		E34CAF6825555B7000BE3F53 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		E34CAF6B255567D300BE3F53 /* AlertCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCell.swift; sourceTree = "<group>"; };
 		E34CAF6E25556A1D00BE3F53 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
+		E34CAF712558179600BE3F53 /* LoadingCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +449,7 @@
 				04D11F4E25441CC000ADB210 /* OrderHistoryDetailController.swift */,
 				04D11F58254676AE00ADB210 /* OrderHistoryDetail.swift */,
 				04D11F5C2546781A00ADB210 /* OrderHistoryDetailCell.swift */,
+				E34CAF712558179600BE3F53 /* LoadingCellCollectionViewCell.swift */,
 			);
 			path = OrderHistory;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				04235C7A25493CB200BA2BB1 /* OrderStatusModel.swift in Sources */,
 				3FA196F52547E34E007CD182 /* BottomTabBarController.swift in Sources */,
 				04B28D4D255245B5007D1ED6 /* FIrebaseTest.swift in Sources */,
+				E34CAF732558179600BE3F53 /* LoadingCellCollectionViewCell.swift in Sources */,
 				E33D8546253DC8C800E50BAC /* ASFirstStoreCell.swift in Sources */,
 				E3006A6725501D0900FFBAAB /* BasketEssentialCell.swift in Sources */,
 				3F9B48ED254946720012D89F /* ChangePass2.swift in Sources */,
