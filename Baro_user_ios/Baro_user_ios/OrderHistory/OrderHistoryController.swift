@@ -175,8 +175,8 @@ extension OrderHistoryController : UIScrollViewDelegate {
                 }
                 self.collectionView.reloadData()
                 self.startPoint += 20
-                self.callMoreData = false
             }
+            self.callMoreData = false
         }
     }
 }
