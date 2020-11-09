@@ -24,7 +24,6 @@ class BasketMenuCell: UICollectionViewCell {
     
     @IBAction func deleteBUttonClikc(_ sender : AnyObject) {
         delegate?.btnDeleteTapped(cell: self)
-        self.reloadInputViews()
     }
     var eachMenu : Order!
 }

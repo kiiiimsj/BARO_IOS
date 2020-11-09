@@ -15,14 +15,14 @@
             <objects>
                 <viewController storyboardIdentifier="MainPageController" title="MainPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="901-Ku-IQw" customClass="MainPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CvG-KU-mmZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BARO_logo" translatesAutoresizingMaskIntoConstraints="NO" id="7G0-F5-9z9">
                                 <rect key="frame" x="20" y="64" width="50" height="13"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Kc-nQH">
-                                <rect key="frame" x="0.0" y="124" width="414" height="1176"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="1016"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-N1-OLA">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1194.5"/>
@@ -444,7 +444,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="vUk-kb-yeq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <size key="freeformSize" width="414" height="1300"/>
+                    <size key="freeformSize" width="414" height="1140"/>
                     <connections>
                         <outlet property="alertButton" destination="Laq-LU-sua" id="YOH-f9-Vnf"/>
                         <outlet property="collectionViewEvent" destination="K7c-2w-M7o" id="f2K-Xp-wsQ"/>
@@ -595,7 +595,7 @@
         <image name="home_tabBar" width="18" height="18"/>
         <image name="off" width="13.5" height="16.5"/>
         <image name="search" width="16.5" height="16"/>
-        <image name="xmark" catalog="system" width="32" height="32"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

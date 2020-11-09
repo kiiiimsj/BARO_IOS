@@ -149,6 +149,7 @@ class AboutStore : UIViewController {
                 
                 self.storeTitle.text = self.StoreInfo.store_name
                 UserDefaults.standard.set(self.StoreInfo.store_name, forKey: "currentStoreName")
+                UserDefaults.standard.set(self.StoreInfo.store_id, forKey: "currentStoreId")
             } else {
                 print("make request fail")
             }

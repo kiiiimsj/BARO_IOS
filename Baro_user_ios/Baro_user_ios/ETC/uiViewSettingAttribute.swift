@@ -23,6 +23,15 @@ class uiViewSetting: UIView {
                 if self.restorationIdentifier == "FavoriteDialog" {
                     return
                 }
+                if self.restorationIdentifier == "CouponBasketDialog" {
+                    return
+                }
+                if self.restorationIdentifier == "checkFinalPaymentDialog" {
+                    return
+                }
+                if self.restorationIdentifier == "BootPayDialog" {
+                    return
+                }
                 layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
             }
         }
