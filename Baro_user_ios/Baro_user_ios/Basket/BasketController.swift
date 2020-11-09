@@ -39,17 +39,12 @@ class BasketController : UIViewController {
     }
     @IBAction func clickPay(_ sender: Any) {
         saveBasket()
-//        let storyboard = UIStoryboard(name: "Basket", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "BootPayPage") as! MyBootPayController
-//        vc.modalPresentationStyle = .fullScreen
-//        vc.modalTransitionStyle = .crossDissolve
-//        vc.myOrders = self.orders
-//        self.present(vc, animated: true, completion: nil)
         let storyboard = UIStoryboard(name: "Basket", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "CouponForBasket") as! CouponForBasket
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
         vc.totalPrice = self.totalPrice
+        vc.sendOrderToBootPay = self.orders
         self.present(vc, animated: true, completion: nil)
         print(totalPriceLabel.text!)
     }
@@ -57,7 +52,9 @@ class BasketController : UIViewController {
     func saveBasket() {
         let encoder = JSONEncoder()
         let jsonSaveData = try? encoder.encode(orders)
+        print("jsonConvert : ", jsonSaveData)
         if let _ = jsonSaveData, let jsonString = String(data: jsonSaveData!, encoding: .utf8){
+            print("jsonConvertString : ", jsonString)
             basket.set(jsonString, forKey: "basket")
             basket.synchronize()
         }

@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansCJKkr-Bold</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--BootPayPage-->
         <scene sceneID="gaX-To-wt8">
@@ -23,6 +31,126 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGM-C1-7al" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-54" y="45"/>
+        </scene>
+        <!--FinalPaymentCheckDialog-->
+        <scene sceneID="MDU-oE-Hx8">
+            <objects>
+                <viewController storyboardIdentifier="FinalPaymentCheckDialog" title="FinalPaymentCheckDialog" id="Coh-Xb-9Qr" customClass="FinalPaymentCheckDialog" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7AJ-iw-EUh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" restorationIdentifier="checkFinalPaymentDialog" translatesAutoresizingMaskIntoConstraints="NO" id="w3g-m6-Rxh" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                <rect key="frame" x="20" y="309" width="374" height="279"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uze-br-O2b" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="79"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결 제 완 료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-ql-svH">
+                                                <rect key="frame" x="149.5" y="26.5" width="75" height="26"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="cgS-ql-svH" firstAttribute="centerY" secondItem="Uze-br-O2b" secondAttribute="centerY" id="IOw-2F-qpn"/>
+                                            <constraint firstItem="cgS-ql-svH" firstAttribute="centerX" secondItem="Uze-br-O2b" secondAttribute="centerX" id="w5n-Lj-W5q"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" restorationIdentifier="BootPayDialog" translatesAutoresizingMaskIntoConstraints="NO" id="yO2-tY-rb1" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="223" width="358" height="56"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4S-UV-Km2">
+                                                <rect key="frame" x="5" y="9" width="348" height="38"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                                <state key="normal" title="확 인">
+                                                    <color key="titleColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickPaymentCheckButton" destination="Coh-Xb-9Qr" eventType="touchUpInside" id="9fP-Wm-6pQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="J4S-UV-Km2" firstAttribute="leading" secondItem="yO2-tY-rb1" secondAttribute="leading" constant="5" id="WwZ-W0-5Hy"/>
+                                            <constraint firstAttribute="trailing" secondItem="J4S-UV-Km2" secondAttribute="trailing" constant="5" id="fLa-2l-bDV"/>
+                                            <constraint firstItem="J4S-UV-Km2" firstAttribute="centerY" secondItem="yO2-tY-rb1" secondAttribute="centerY" id="sQs-jb-CUN"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제가 완료 되었습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1X-YO-Hnv">
+                                        <rect key="frame" x="107" y="139" width="160.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="J1X-YO-Hnv" firstAttribute="top" secondItem="Uze-br-O2b" secondAttribute="bottom" constant="60" id="1zP-kQ-h5c"/>
+                                    <constraint firstItem="yO2-tY-rb1" firstAttribute="leading" secondItem="w3g-m6-Rxh" secondAttribute="leading" constant="8" id="6Ij-cQ-6FZ"/>
+                                    <constraint firstItem="Uze-br-O2b" firstAttribute="top" secondItem="w3g-m6-Rxh" secondAttribute="top" id="83V-QE-e7k"/>
+                                    <constraint firstAttribute="bottom" secondItem="Uze-br-O2b" secondAttribute="bottom" constant="200" id="AUP-P6-8az"/>
+                                    <constraint firstItem="J1X-YO-Hnv" firstAttribute="centerX" secondItem="w3g-m6-Rxh" secondAttribute="centerX" id="GSk-DB-1UV"/>
+                                    <constraint firstItem="Uze-br-O2b" firstAttribute="leading" secondItem="w3g-m6-Rxh" secondAttribute="leading" id="N99-1A-ves"/>
+                                    <constraint firstAttribute="bottom" secondItem="yO2-tY-rb1" secondAttribute="bottom" id="Z54-oV-O9B"/>
+                                    <constraint firstItem="yO2-tY-rb1" firstAttribute="top" secondItem="Uze-br-O2b" secondAttribute="bottom" constant="144" id="bPq-ye-dWf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uze-br-O2b" secondAttribute="trailing" id="mcM-hz-7JK"/>
+                                    <constraint firstAttribute="trailing" secondItem="yO2-tY-rb1" secondAttribute="trailing" constant="8" id="qlx-R5-yno"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Rx-sN-V4V"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="w3g-m6-Rxh" firstAttribute="top" secondItem="0Rx-sN-V4V" secondAttribute="top" constant="265" id="nvO-ud-LRd"/>
+                            <constraint firstItem="0Rx-sN-V4V" firstAttribute="bottom" secondItem="w3g-m6-Rxh" secondAttribute="bottom" constant="274" id="qRO-HZ-HGj"/>
+                            <constraint firstItem="0Rx-sN-V4V" firstAttribute="trailing" secondItem="w3g-m6-Rxh" secondAttribute="trailing" constant="20" id="rX6-tr-GL1"/>
+                            <constraint firstItem="w3g-m6-Rxh" firstAttribute="leading" secondItem="0Rx-sN-V4V" secondAttribute="leading" constant="20" id="tkc-oj-NTu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dialogButtonTitle" destination="J4S-UV-Km2" id="XoG-ld-f5a"/>
+                        <outlet property="dialogContent" destination="J1X-YO-Hnv" id="DGJ-hw-UAd"/>
+                        <outlet property="dialogTitle" destination="cgS-ql-svH" id="A6R-tv-2yq"/>
+                        <segue destination="u8C-ld-l1E" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="H8F-qg-WFA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZHw-jP-5ff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857.97101449275374" y="64.955357142857139"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="9L6-Bo-fTs">
+            <objects>
+                <viewControllerPlaceholder id="u8C-ld-l1E" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wDc-vd-ZT8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1460" y="4"/>
         </scene>
     </scenes>
     <resources>

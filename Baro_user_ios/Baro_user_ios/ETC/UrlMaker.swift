@@ -70,6 +70,26 @@ class CallRequest {
 
 
     }
+    func post2(method : HTTPMethod, param: [String : Any]? = nil,url : String ,id : Int? = nil, success : @escaping(JSON) -> ()) {
+        //1.Post Parameter
+        AF.request(url, method: method, parameters: param,encoding: JSONEncoding.default ).validate().responseJSON { response in
+            let statusCode = StatusCode(rawValue: response.response?.statusCode ?? 500)
+            switch statusCode {
+            case .success:
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    //2.클로저 = 함수자체를 매개변수로 해주겠다.
+                    success(json)
+                case .failure(let error):
+
+                    print(error.errorDescription)
+                }
+            case .fail: print("서버 에러")
+            default : print("서버 에러")
+            }
+        }
+    }
 
 }
 
@@ -107,6 +127,11 @@ class NetWorkURL {
     let couponList = "http://3.35.180.57:8080/CouponFindByPhone.do"
     let couponCount = "http://3.35.180.57:8080/CouponCountByPhone.do?phone="
     let couponListCanUse = "http://3.35.180.57:8080/CouponFindUsable.do?phone=" //&price=결제전총금액
+    
+    //BootPay관련 url
+    let getUserToken = "http://3.35.180.57:8080/BillingGetUserToken.do"
+    let checkReceptId = "http://3.35.180.57:8080/BillingVerify.do"
+    let orderInsertToServer = "http://3.35.180.57:8080/OrderInsert.do"
 
 
     //문의 상세
