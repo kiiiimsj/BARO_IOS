@@ -84,6 +84,7 @@
 		3FEAF06F254FFC1100A5ABC0 /* FavoriteDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEAF06E254FFC1100A5ABC0 /* FavoriteDialog.swift */; };
 		3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF35096253E7E72007B7B29 /* LoginPageController.swift */; };
 		3FF3509A253E7F3B007B7B29 /* RegisterPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */; };
+		3FF8137A25590C8600036A91 /* FinalPaymentCheckDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8137925590C8600036A91 /* FinalPaymentCheckDialog.swift */; };
 		5F09CCA5A7FA86F7A3D8ADA6 /* Pods_Baro_user_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868EF0B056B69E5F372574 /* Pods_Baro_user_ios.framework */; };
 		E3006A6725501D0900FFBAAB /* BasketEssentialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3006A6625501D0900FFBAAB /* BasketEssentialCell.swift */; };
 		E3006A6A25501E3000FFBAAB /* BasketNonEssentialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3006A6925501E3000FFBAAB /* BasketNonEssentialCell.swift */; };
@@ -206,6 +207,7 @@
 		3FEAF06E254FFC1100A5ABC0 /* FavoriteDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDialog.swift; sourceTree = "<group>"; };
 		3FF35096253E7E72007B7B29 /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
 		3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageController.swift; sourceTree = "<group>"; };
+		3FF8137925590C8600036A91 /* FinalPaymentCheckDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPaymentCheckDialog.swift; sourceTree = "<group>"; };
 		6FE1B18B198B2DAE07AD0D8A /* Pods-Baro_user_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baro_user_ios.debug.xcconfig"; path = "Target Support Files/Pods-Baro_user_ios/Pods-Baro_user_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		B9868EF0B056B69E5F372574 /* Pods_Baro_user_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Baro_user_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3006A6625501D0900FFBAAB /* BasketEssentialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketEssentialCell.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 			children = (
 				3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */,
 				3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */,
+				3FF8137925590C8600036A91 /* FinalPaymentCheckDialog.swift */,
 			);
 			path = BootPay;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				04D11F59254676AE00ADB210 /* OrderHistoryDetail.swift in Sources */,
 				04D11F5D2546781A00ADB210 /* OrderHistoryDetailCell.swift in Sources */,
 				04D11F552544406900ADB210 /* OrderHistoryDetailExtraModel.swift in Sources */,
+				3FF8137A25590C8600036A91 /* FinalPaymentCheckDialog.swift in Sources */,
 				04235C81254AA2F500BA2BB1 /* OrderStatusDetailController.swift in Sources */,
 				E33D8563253F163000E50BAC /* StoreMenu2Controller.swift in Sources */,
 				04D11F3B2543D2F100ADB210 /* OrderHistoryController.swift in Sources */,

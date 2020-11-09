@@ -20,7 +20,6 @@ class BasketMenuCell: UICollectionViewCell {
     @IBOutlet weak var menu_totalPrice: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
     weak var delegate : BasketMenuCellDelegate?
-    public var isDelete : Bool = false
     
     
     @IBAction func deleteBUttonClikc(_ sender : AnyObject) {
