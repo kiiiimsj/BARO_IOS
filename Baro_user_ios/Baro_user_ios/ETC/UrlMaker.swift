@@ -118,7 +118,7 @@ class NetWorkURL {
 
     //coupon 상세
 
-    let couponList = "http://3.35.180.57:8080/CouponFindByPhone.do"
+    let couponList = "http://3.35.180.57:8080/CouponFindByPhone.do?phone="
     let couponCount = "http://3.35.180.57:8080/CouponCountByPhone.do?phone="
     let couponListCanUse = "http://3.35.180.57:8080/CouponFindUsable.do?phone=" //&price=결제전총금액
     
@@ -157,7 +157,7 @@ class NetWorkURL {
     let storeTypeImage = "http://3.35.180.57:8080/ImageType.do"
 
     let eventList = "http://3.35.180.57:8080/EventFindAll.do"
-
+    let eventDetail = "http://3.35.180.57:8080/EventDetail.do?event_id="
     let ultraList = "http://3.35.180.57:8080/StoreFindByUltra.do"
     
     let newStoreList = "http://3.35.180.57:8080/StoreFindByNew.do"

@@ -260,7 +260,6 @@
                                                                                 <outlet property="newStoreImage" destination="Xh1-N9-gLd" id="FzG-DE-t8R"/>
                                                                                 <outlet property="newStoreInfo" destination="9xW-wt-0SN" id="Lis-Di-2l5"/>
                                                                                 <outlet property="newStoreName" destination="Td0-uN-5VD" id="V4J-Sh-32o"/>
-                                                                                <segue destination="PaD-Kf-Cff" kind="show" identifier="mainToStore" id="6I7-WH-JmL"/>
                                                                             </connections>
                                                                         </collectionViewCell>
                                                                     </cells>
@@ -456,6 +455,7 @@
                         <outlet property="scrollView" destination="Trs-Kc-nQH" id="eeh-2P-KaI"/>
                         <segue destination="wUP-g1-jiW" kind="presentation" identifier="mainToMap" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="bmT-W0-8so"/>
                         <segue destination="Y53-Gw-DHx" kind="presentation" identifier="goToAlert" id="5aq-Zm-dMf"/>
+                        <segue destination="o4f-hh-aSE" kind="presentation" identifier="mainToEvent" id="hTr-ik-fo7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjD-af-REA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -582,12 +582,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r4K-iE-GyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4217" y="416"/>
+            <point key="canvasLocation" x="4243" y="407"/>
+        </scene>
+        <!--EventPageController-->
+        <scene sceneID="ibo-SR-Nwv">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="EventPageController" storyboardName="Event" referencedIdentifier="EventPageController" id="o4f-hh-aSE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1wg-Vp-400" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4247" y="465"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="6I7-WH-JmL"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
         <image name="BARO_logo" width="50" height="13"/>

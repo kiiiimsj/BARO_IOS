@@ -210,8 +210,8 @@ extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegate
    
     func tapClickEvent(tag: String) {
         print(tag)
-        navigationController?.pushViewController(testController(), animated: false)
-        performSegue(withIdentifier: "mainToStoreList", sender: tag)
+        navigationController?.pushViewController(EventPageController(), animated: false)
+        performSegue(withIdentifier: "mainToEvent", sender: tag)
     }
     
     func tapClickType(tag: String) {
@@ -243,6 +243,10 @@ extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegate
         else if let nextViewController = segue.destination as? StoreMenuController {
             let labell = sender as! String
             nextViewController.store_id = labell
+        }
+        else if let nextViewController = segue.destination as? EventPageController {
+            let labell = sender as! String
+            nextViewController.eventId = labell
         }
         else { //이벤트 페이지 만들어지면 전달한 event_id 를 그 페이지로 넘겨주기
             return
