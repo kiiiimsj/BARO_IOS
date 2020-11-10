@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class BasketController : UIViewController {
     var menu : Order!
@@ -20,15 +21,40 @@ class BasketController : UIViewController {
     private var getStoreNameFromUserDefault = UserDefaults.standard.value(forKey: "currentStoreName") as! String
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        
         if (menu != nil) {
             if (basket.value(forKey: "basket") != nil) {
                 orders.append(contentsOf: loadBasket())
-                print(orders)
-            }
-            else {
             }
             orders.append(menu)
         }
+        else {
+            print("error")
+        }
+        
+        var param = Dictionary<String,AnyObject>()
+        var param2 = Dictionary<String,Any>()
+        let enco = JSONEncoder()
+        let jsonSaveData = try? enco.encode(orders)
+        if let _ = jsonSaveData, let jsonString = String(data: jsonSaveData!, encoding: .utf8){
+            let data = jsonString.data(using: .utf8)
+            do {
+                if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [Dictionary<String,AnyObject>] {
+                    print("convert end : ", jsonArray)
+                    param["orders"] = jsonArray as AnyObject
+                    print("it...can be : ", param)
+                }else {
+                    print("wow..")
+                }
+            }
+            catch let error as NSError {
+                print(error)
+            }
+        }
+        
+        
+        
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -109,9 +135,7 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
     func btnDeleteTapped(cell: BasketMenuCell) {
         let indexPath = self.collectionView.indexPath(for: cell)
         //self.totalPrice -= (orders[indexPath!.item].menu_total_price * orders[indexPath!.item].menu_count)
-        
         self.totalPrice = 0
-        
         orders.remove(at: indexPath!.item)
         self.saveBasket()
         self.collectionView.deleteItems(at: [IndexPath(item: indexPath!.item, section: indexPath!.section)])

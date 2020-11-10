@@ -70,9 +70,9 @@ class CallRequest {
 
 
     }
+    
     func post2(method : HTTPMethod, param: [String : Any]? = nil,url : String ,id : Int? = nil, success : @escaping(JSON) -> ()) {
-        //1.Post Parameter
-        AF.request(url, method: method, parameters: param,encoding: JSONEncoding.default ).validate().responseJSON { response in
+        AF.request(url, method: method, parameters: param, encoding: URLEncoding.httpBody ).validate().responseJSON { response in
             let statusCode = StatusCode(rawValue: response.response?.statusCode ?? 500)
             switch statusCode {
             case .success:
@@ -82,18 +82,14 @@ class CallRequest {
                     //2.클로저 = 함수자체를 매개변수로 해주겠다.
                     success(json)
                 case .failure(let error):
-
                     print(error.errorDescription)
                 }
-            case .fail: print("서버 에러")
+            case .fail: print("서버 에러", statusCode as! Any)
             default : print("서버 에러")
             }
         }
     }
-
 }
-
-
 class NetWorkURL {
 
     let logInURL = "http://3.35.180.57:8080/MemberLogin.do"
