@@ -12,12 +12,15 @@ import WebKit
 class MyPageController : UIViewController {
     var networkModel = CallRequest()
     var networkURL = NetWorkURL()
+    var userPhone = ""
+    @IBOutlet weak var OrderArea: UIView!
+    @IBOutlet weak var couponArea: UIView!
+    @IBOutlet weak var basketArea: UIView!
     @IBOutlet weak var userName: UILabel?
     @IBOutlet weak var userEmail: UILabel?
     
     @IBOutlet weak var myOrderCount: UILabel?
     @IBOutlet weak var myCouponCount: UILabel?
-    @IBOutlet weak var myBasketCount: UILabel?
     
     @IBOutlet weak var buttonList: UITableView?
     
@@ -25,8 +28,11 @@ class MyPageController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         reloadInputViews()
+//        userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
+        userPhone = "01031776550"
         setUserName()
         setMyCountInfo()
+        addGest()
         self.tabBarController?.tabBar.isTranslucent = false
     }
     override func viewDidLoad() {
@@ -36,8 +42,10 @@ class MyPageController : UIViewController {
         buttonList?.dataSource = self
         buttonList?.delegate = self
     }
+    func addGest() {
+        couponArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToCoupon(_:))))
+    }
     func setMyCountInfo() {
-        let userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
         networkModel.post(method: .get, param: nil, url: networkURL.orderCount+"\(userPhone)") { (json) in
             if json["result"].boolValue {
                 self.myOrderCount?.text = "\(json["total_orders"].intValue) 건"
@@ -65,6 +73,13 @@ class MyPageController : UIViewController {
         if user_email != "" {
             userEmail?.text = "\(user_email)"
         }
+    }
+    @objc func goToCoupon(_ sender : UIGestureRecognizer){
+        let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "CouponPageController") as! CouponPageController
+        vc.userPhone = userPhone
+        print("Dfadffasdf")
+        present(vc, animated: false, completion: nil)
     }
 }
 extension MyPageController : UITableViewDelegate, UITableViewDataSource {
