@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyBootpay
+import SwiftyJSON
 
 class MyBootPayController : UIViewController {
     let netWork = CallRequest()
@@ -210,34 +211,8 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             }
             else {
                 self.createDialog(titleContentString: "결 제 오 류", contentString: "비정상적인 접근입니다.\r\n 결제가 취소 되었습니다.", buttonString: "확인")
-                return
-                // 검증 결과 올바르지 않은 결제이면
-                //{
-                //   "result":false,
-                //   "code":"0이 아닌 다른 값, bootpay에서 지정",
-                //   "message":"비어있지 않은 값, bootpay에서 지정"
-                //}
             }
-            
         }
-//        self.netWork.post(method: .post, param: param2, url: self.urlMaker.orderInsertToServer) {
-//            json in
-//            if json["result"].boolValue {
-//                self.createDialog(titleContentString: "결 제 완 료", contentString: "결제가 완료 되었습니다.", buttonString: "확인")
-//                //websocket 통신 부분
-//                self.result = true
-//            }
-//            else {
-//                self.createDialog(titleContentString: "결 제 오 류", contentString: "비정상적인 접근입니다.\r\n 결제가 취소 되었습니다.", buttonString: "확인")
-//                return
-//                // 검증 결과 올바르지 않은 결제이면
-//                //{
-//                //   "result":false,
-//                //   "code":"0이 아닌 다른 값, bootpay에서 지정",
-//                //   "message":"비어있지 않은 값, bootpay에서 지정"
-//                //}
-//            }
-//        }
     }
 
     //결제창이 닫힐때 실행되는 부분
@@ -258,25 +233,9 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     }
     
     func setOrderInsertParam() -> [String : Any]{
-//        let encoder = JSONEncoder()
-//        let jsonSaveData = try? encoder.encode(self.myOrders)
-        var param : [String : Any] = [:]
-//        print("jsonConvert : ", jsonSaveData)
-//        if let _ = jsonSaveData, let jsonString = String(data: jsonSaveData!, encoding: .utf8){
-//            print("jsonConvertString : ", jsonString)
-//            param = [
-//                "phone":"\(self.userPhone)",
-//                "store_id":"\(self.storeId)",
-//                "receipt_id":"\(self.receptId)",
-//                "total_price":"\(self.totalPrice)",
-//                "discount_price":"\(self.couponDiscountValue)",
-//                "coupon_id":"\(self.couponId)",
-//                "order_date":"\(self.payDate)",
-//                "orders":jsonString,
-//                "requests":"\(self.customerRequest)"
-//            ]
-//        }
-        if let getData = UserDefaults.standard.value(forKey: "basket") as? String {
+        var param : [String : String] = [:]
+        if let getData = UserDefaults.standard.value(forKey: "basket") {
+            print("getData : ", getData)
             param = [
                 "phone":"\(self.userPhone)",
                 "store_id":"\(self.storeId)",
@@ -285,11 +244,10 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
                 "discount_price":"\(self.couponDiscountValue)",
                 "coupon_id":"\(self.couponId)",
                 "order_date":"\(self.payDate)",
-                "orders":getData,
+                "orders":"\(String(describing: getData))",
                 "requests":"\(self.customerRequest)"
             ]
         }
-        
         return param
     }
 }

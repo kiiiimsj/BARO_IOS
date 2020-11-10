@@ -17,5 +17,4 @@ struct Order : Codable {
         self.Essentials = essentials
         self.nonEssentials = nonEssentials
     }
-    
 }

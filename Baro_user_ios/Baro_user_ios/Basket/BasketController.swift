@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class BasketController : UIViewController {
     var menu : Order!
@@ -20,6 +21,8 @@ class BasketController : UIViewController {
     private var getStoreNameFromUserDefault = UserDefaults.standard.value(forKey: "currentStoreName") as! String
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        
         if (menu != nil) {
             if (basket.value(forKey: "basket") != nil) {
                 orders.append(contentsOf: loadBasket())
@@ -29,6 +32,29 @@ class BasketController : UIViewController {
         else {
             print("error")
         }
+        
+        var param = Dictionary<String,AnyObject>()
+        var param2 = Dictionary<String,Any>()
+        let enco = JSONEncoder()
+        let jsonSaveData = try? enco.encode(orders)
+        if let _ = jsonSaveData, let jsonString = String(data: jsonSaveData!, encoding: .utf8){
+            let data = jsonString.data(using: .utf8)
+            do {
+                if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [Dictionary<String,AnyObject>] {
+                    print("convert end : ", jsonArray)
+                    param["orders"] = jsonArray as AnyObject
+                    print("it...can be : ", param)
+                }else {
+                    print("wow..")
+                }
+            }
+            catch let error as NSError {
+                print(error)
+            }
+        }
+        
+        
+        
         collectionView.delegate = self
         collectionView.dataSource = self
     }
