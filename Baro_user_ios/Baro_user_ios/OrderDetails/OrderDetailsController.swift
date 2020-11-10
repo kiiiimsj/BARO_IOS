@@ -73,7 +73,6 @@ class OrderDetailsController : UIViewController {
         recalcPrice()
     }
     @IBAction func AbstractCount(_ sender: Any) {
-        print("minus")
         if Int(menu_count.text!) == 1{
             return
         }
@@ -92,7 +91,6 @@ class OrderDetailsController : UIViewController {
             var data = Order(menu: self.menu, essentials: selectedEssential, nonEssentials: selectedNonEssential)
             data.menu_count = Int(menu_count.text!)!
             data.menu_total_price = menu_price_current
-            print("data : ",data)
             let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
             
@@ -137,7 +135,6 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("kkkk",indexPath.section)
         switch indexPath.section {
         case 0:
             let extras = essentials[categories[indexPath.item]]

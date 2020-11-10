@@ -79,9 +79,9 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         let coor = locationManager.location?.coordinate
         
         //회원의 위도/경도
-//        latitude = coor?.latitude
-//        longitude = coor?.longitude
-        // 에뮬테스트용 위도/경도
+        latitude = coor?.latitude
+        longitude = coor?.longitude
+        // 에뮬테스트용 위도/경도ㅌ
         latitude = 37.4954847
         longitude = 126.959691
         

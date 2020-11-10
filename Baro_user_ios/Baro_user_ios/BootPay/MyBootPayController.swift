@@ -11,13 +11,23 @@ import SwiftyBootpay
 class MyBootPayController : UIViewController {
     let netWork = CallRequest()
     let urlMaker = NetWorkURL()
+    var result : Bool = false
     
     public var myOrders = [Order]()
+    public var couponId : Int = -1
+    var customerRequest = ""
+    public var totalPrice : Int = 0
+    public var couponDiscountValue : Int = 0
+    public var realPrice : Int = 0
+    
     
     private let userPhone : String = UserDefaults.standard.value(forKey: "user_phone") as! String
     private let userEmail : String = UserDefaults.standard.value(forKey: "user_email") as! String
     private let userName : String = UserDefaults.standard.value(forKey: "user_name") as! String
     private let sendStoreName : String = UserDefaults.standard.value(forKey: "currentStoreName") as! String
+    private let storeId : Int = UserDefaults.standard.value(forKey: "currentStoreId") as! Int
+    private var receptId = ""
+    
     
     private var setPayLoadNameBuilder : String = ""
     
@@ -31,11 +41,10 @@ class MyBootPayController : UIViewController {
     }
     
     func getUserToken() {
-        let getTokenUrl = "http://3.35.180.57:8080/BillingGetUserToken.do"
         //UserDefault에 저장되어 있는 userPhone 여부확인
         if (self.userPhone != "") {
             let param = ["phone":"\(self.userPhone)","user_id":"\(self.userPhone)"]
-            netWork.post(method: .post, param: param, url: getTokenUrl) {
+            netWork.post(method: .post, param: param, url: urlMaker.getUserToken) {
                 json in
                 print("getUserToken : ", json)
                 //UserToken 여부 확인 1
@@ -94,7 +103,7 @@ class MyBootPayController : UIViewController {
             $0.name = self.setPayLoadNameBuilder
             $0.order_id = self.payDate + self.userName
             print("payload_order_id : ", $0.order_id)
-            $0.price = Double((self.myOrders[0].menu_total_price))
+            $0.price = Double((self.realPrice))
             //UserToken 여부 확인 2
             if let getUserToken = self.userToken {
                 print("getUser?? : ", getUserToken)
@@ -120,10 +129,30 @@ class MyBootPayController : UIViewController {
     func setPayLoadName() {
     }
 }
-extension MyBootPayController: BootpayRequestProtocol {
+extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
+    func clickPaymentCheckBtn() {
+        if (self.result) {
+            let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "AboutStore") as! AboutStore
+            vc.store_id = "\(self.storeId)"
+            guard let pvc = self.presentingViewController else { return }
+            self.dismiss(animated: false) {
+                vc.modalPresentationStyle = .fullScreen
+                pvc.present(vc, animated: false, completion: nil)
+            }
+        }else {
+            
+        }
+    }
+    
     // 에러가 났을때 호출되는 부분
     func onError(data: [String: Any]) {
         print("Payment processing onError : ",data)
+        if let getError = data["msg"] as? String ?? "" {
+            let errorMessage = getError
+            self.createDialog(titleContentString: "결 제 오 류", contentString: "\(errorMessage)", buttonString: "확인")
+        }
+        self.result = false
         //data로부터 message parsing -> Dialog에 해당 error message 띄우기
     }
 
@@ -135,6 +164,22 @@ extension MyBootPayController: BootpayRequestProtocol {
     // 결제가 진행되기 바로 직전 호출되는 함수로, 주로 재고처리 등의 로직이 수행
     func onConfirm(data: [String: Any]) {
         print("Payment processing onConfirm : ",data)
+        //basketList UserDefault를 가져와서 서버에 보낸다
+        //여기서 recept_id가 생성됨
+        //data parsing을 통해 recept_id를 받아 DB로 전송
+        if let getRecept = data["receipt_id"] as? String ?? "" {
+            self.receptId = getRecept
+        }
+        let param = ["phone":"\(self.userPhone)","recept_id":"\(receptId)"]
+        netWork.post(method: .post, param: param, url: urlMaker.checkReceptId) {
+            json in
+            if json["result"].boolValue {
+                
+            }
+            else {
+                return
+            }
+        }
         var iWantPay = true
         if iWantPay == true {  // 재고가 있을 경우.
             Bootpay.transactionConfirm(data: data) // 결제 승인
@@ -146,40 +191,34 @@ extension MyBootPayController: BootpayRequestProtocol {
     // 결제 취소시 호출
     func onCancel(data: [String: Any]) {
         print("Payment processing onCancel : ",data)
+        self.result = false
     }
 
     // 결제완료시 호출
     // 아이템 지급 등 데이터 동기화 로직을 수행합니다
     func onDone(data: [String: Any]) {
-        
-        //basketList UserDefault를 가져와서 서버에 보낸다
-        //여기서 recept_id가 생성됨
-        //data parsing을 통해 recept_id를 받아 DB로 전송
-        //http://3.35.180.57:8080/BillingVerify.do
-        // 검증 결과 올바른 결제이면
-//        {
-//            "result": true,
-//            "code": 0,
-//            "message": ""
-//        }
-        
-        //결제 성공을 알리는 Dialog 생성
-        //UserDefault에 있는 장바구니 비워주기 valueKey = "basket"
-        //OrderInsert.do 실행
-        //http://3.35.180.57:8080/OrderInsert.do
-//        {
-//            response == true
-//            websocket 통신 -> 점주용으로 알림 전송 / userPhone, store_id, server에 Insert 하는 내용 전송
-//        }
-        
-        // 검증 결과 올바르지 않은 결제이면
-//        {
-//            "result":false,
-//            "code":"0이 아닌 다른 값, bootpay에서 지정",
-//            "message":"비어있지 않은 값, bootpay에서 지정"
-//        }
-        
         print("Payment processing onDone : ",data)
+        print("print recept_id : ", receptId)
+        let param2 : [String : Any] = self.setOrderInsertParam()
+        print("checkParam2 : ", param2)
+        self.netWork.post(method: .post, param: param2, url: self.urlMaker.orderInsertToServer) {
+            json in
+            if json["result"].boolValue {
+                self.createDialog(titleContentString: "결 제 완 료", contentString: "결제가 완료 되었습니다.", buttonString: "확인")
+                //websocket 통신 부분
+                self.result = true
+            }
+            else {
+                self.createDialog(titleContentString: "결 제 오 류", contentString: "비정상적인 접근입니다.\r\n 결제가 취소 되었습니다.", buttonString: "확인")
+                return
+                // 검증 결과 올바르지 않은 결제이면
+                //{
+                //   "result":false,
+                //   "code":"0이 아닌 다른 값, bootpay에서 지정",
+                //   "message":"비어있지 않은 값, bootpay에서 지정"
+                //}
+            }
+        }
     }
 
     //결제창이 닫힐때 실행되는 부분
@@ -187,6 +226,40 @@ extension MyBootPayController: BootpayRequestProtocol {
         print("Payment processing onClose")
         Bootpay.dismiss() // 결제창 종료
         //결제 취소를 알리는 Dialog생성
+    }
+    func createDialog(titleContentString: String, contentString: String, buttonString: String) {
+        let storyboard = UIStoryboard(name: "BootPay", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "FinalPaymentCheckDialog") as! FinalPaymentCheckDialog
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        vc.titleContentString = titleContentString
+        vc.dialogContentString = contentString
+        vc.buttonTitleContentString = buttonString
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func setOrderInsertParam() -> [String: Any]{
+        let encoder = JSONEncoder()
+        let jsonSaveData = try? encoder.encode(self.myOrders)
+        var param : [String : Any] = [:]
+        print("jsonConvert : ", jsonSaveData)
+        if let _ = jsonSaveData, let jsonString = String(data: jsonSaveData!, encoding: .utf8){
+            print("jsonConvertString : ", jsonString)
+            param = [
+                "phone":"\(self.userPhone)",
+                "store_id":"\(self.storeId)",
+                "receipt_id":"\(self.receptId)",
+                "total_price":"\(self.totalPrice)",
+                "discount_price":"\(self.couponDiscountValue)",
+                "coupon_id":"\(self.couponId)",
+                "order_date":"\(self.payDate)",
+                "orders":"\(jsonString)",
+                "requests":"\(self.customerRequest)"
+            ]
+        }
+        
+        
+        return param
     }
 }
 struct sendOrderInfo {
