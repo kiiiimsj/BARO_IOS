@@ -202,7 +202,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         print("print recept_id : ", receptId)
         let param2 = self.setOrderInsertParam()
         print("checkParam2 : ", param2)
-        self.netWork.post2(method: .post, param: param2, url: self.urlMaker.orderInsertToServer) {
+        self.netWork.post(method: .post, param: param2, url: self.urlMaker.orderInsertToServer) {
             json in
             if json["result"].boolValue {
                 self.createDialog(titleContentString: "결 제 완 료", contentString: "결제가 완료 되었습니다.", buttonString: "확인")
