@@ -125,6 +125,12 @@
 		E34CAF6F25556A1D00BE3F53 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF6E25556A1D00BE3F53 /* AlertModel.swift */; };
 		E34CAF732558179600BE3F53 /* LoadingCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF712558179600BE3F53 /* LoadingCellCollectionViewCell.swift */; };
 		E34CAF872559427100BE3F53 /* ListStoreLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF862559427100BE3F53 /* ListStoreLoadingCell.swift */; };
+		E34CAF8B255959C800BE3F53 /* CouponPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF8A255959C800BE3F53 /* CouponPageController.swift */; };
+		E34CAF8E255959DA00BE3F53 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34CAF8D255959DA00BE3F53 /* Coupon.storyboard */; };
+		E34CAF952559814300BE3F53 /* CouponModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF942559814300BE3F53 /* CouponModel.swift */; };
+		E34CAF99255A708700BE3F53 /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF98255A708700BE3F53 /* CouponCell.swift */; };
+		E34CAF9C255A89C300BE3F53 /* EventPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF9B255A89C200BE3F53 /* EventPageController.swift */; };
+		E34CAFA0255A89F300BE3F53 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34CAF9F255A89F300BE3F53 /* Event.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -251,6 +257,12 @@
 		E34CAF6E25556A1D00BE3F53 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		E34CAF712558179600BE3F53 /* LoadingCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		E34CAF862559427100BE3F53 /* ListStoreLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStoreLoadingCell.swift; sourceTree = "<group>"; };
+		E34CAF8A255959C800BE3F53 /* CouponPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponPageController.swift; sourceTree = "<group>"; };
+		E34CAF8D255959DA00BE3F53 /* Coupon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
+		E34CAF942559814300BE3F53 /* CouponModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponModel.swift; sourceTree = "<group>"; };
+		E34CAF98255A708700BE3F53 /* CouponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCell.swift; sourceTree = "<group>"; };
+		E34CAF9B255A89C200BE3F53 /* EventPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPageController.swift; sourceTree = "<group>"; };
+		E34CAF9F255A89F300BE3F53 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +311,8 @@
 		04B86798253B0ECD00336175 /* Baro_user_ios */ = {
 			isa = PBXGroup;
 			children = (
+				E34CAF9E255A89CC00BE3F53 /* Event */,
+				E34CAF89255959AF00BE3F53 /* CouponPage */,
 				E34CAF6425555B4C00BE3F53 /* Alert */,
 				3F0F6EA925514EFA00099ACC /* BootPay */,
 				E34CAF382552808E00BE3F53 /* Map */,
@@ -514,6 +528,7 @@
 				3FAD95A225527EC600091E3D /* Order.swift */,
 				E34CAF412552A36F00BE3F53 /* LocationModel.swift */,
 				E34CAF6E25556A1D00BE3F53 /* AlertModel.swift */,
+				E34CAF942559814300BE3F53 /* CouponModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -551,6 +566,25 @@
 				E34CAF6B255567D300BE3F53 /* AlertCell.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		E34CAF89255959AF00BE3F53 /* CouponPage */ = {
+			isa = PBXGroup;
+			children = (
+				E34CAF8A255959C800BE3F53 /* CouponPageController.swift */,
+				E34CAF8D255959DA00BE3F53 /* Coupon.storyboard */,
+				E34CAF98255A708700BE3F53 /* CouponCell.swift */,
+			);
+			path = CouponPage;
+			sourceTree = "<group>";
+		};
+		E34CAF9E255A89CC00BE3F53 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				E34CAF9B255A89C200BE3F53 /* EventPageController.swift */,
+				E34CAF9F255A89F300BE3F53 /* Event.storyboard */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		E997DD1537C720F796AAE31D /* Pods */ = {
@@ -641,6 +675,7 @@
 				3FDE5E612546A1C800C05514 /* TermOfUserPage.storyboard in Resources */,
 				3F05C567254116C70066DAAD /* MyPage.storyboard in Resources */,
 				3FC20E662546EFF700EEE783 /* ChangeEmail.storyboard in Resources */,
+				E34CAF8E255959DA00BE3F53 /* Coupon.storyboard in Resources */,
 				3F4C5AA3253ECAD700C0E7B6 /* NotoSansKR-Light.otf in Resources */,
 				E31D3FDB2542AD7300B63F77 /* StoreListPage.storyboard in Resources */,
 				04235C742549386100BA2BB1 /* OrderStatus.storyboard in Resources */,
@@ -648,6 +683,7 @@
 				3F4C5AA0253ECAD700C0E7B6 /* NotoSansKR-Regular.otf in Resources */,
 				04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */,
 				E33D855B253ECB5000E50BAC /* AboutStore.storyboard in Resources */,
+				E34CAFA0255A89F300BE3F53 /* Event.storyboard in Resources */,
 				04D11F422543D31900ADB210 /* OrderHistory.storyboard in Resources */,
 				E34CAF3C255280A200BE3F53 /* Map.storyboard in Resources */,
 				3F418FCF254808E100D89665 /* BottomTabBar.storyboard in Resources */,
@@ -722,6 +758,7 @@
 				E31D401B2550001000B63F77 /* BasketHeader.swift in Sources */,
 				E31D3FE9254653C700B63F77 /* ExtraModel.swift in Sources */,
 				3F4C5AB7253ED5D000C0E7B6 /* uiViewSettingAttribute.swift in Sources */,
+				E34CAF9C255A89C300BE3F53 /* EventPageController.swift in Sources */,
 				E31D3FEC25465F0200B63F77 /* EssentialCell.swift in Sources */,
 				3FDE5E5E2546A16C00C05514 /* TermOfUser.swift in Sources */,
 				04235C8D254AB36B00BA2BB1 /* OrderStatusDetailExtraModel.swift in Sources */,
@@ -738,6 +775,7 @@
 				04235C81254AA2F500BA2BB1 /* OrderStatusDetailController.swift in Sources */,
 				E33D8563253F163000E50BAC /* StoreMenu2Controller.swift in Sources */,
 				04D11F3B2543D2F100ADB210 /* OrderHistoryController.swift in Sources */,
+				E34CAF99255A708700BE3F53 /* CouponCell.swift in Sources */,
 				048D55B6253D2E0F009E9CE4 /* MainPageEvent.swift in Sources */,
 				043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */,
 				3FE2C29E2557E3A5002E6184 /* CouponForBasket.swift in Sources */,
@@ -773,12 +811,14 @@
 				E33D8560253EF24A00E50BAC /* ASCategoryCell.swift in Sources */,
 				E34CAF6F25556A1D00BE3F53 /* AlertModel.swift in Sources */,
 				04235C87254AB05B00BA2BB1 /* OrderStatusDetailCell.swift in Sources */,
+				E34CAF8B255959C800BE3F53 /* CouponPageController.swift in Sources */,
 				048D55E3253D83AD009E9CE4 /* MainPageTypeCell.swift in Sources */,
 				E31D3FD22542ABEF00B63F77 /* StoreListPageController.swift in Sources */,
 				E31D401E255000FD00B63F77 /* BasketMenuCell.swift in Sources */,
 				E31D3FE62545DFA000B63F77 /* OrderDetailsController.swift in Sources */,
 				E34CAF872559427100BE3F53 /* ListStoreLoadingCell.swift in Sources */,
 				048D55BA253D575A009E9CE4 /* TypeListModel.swift in Sources */,
+				E34CAF952559814300BE3F53 /* CouponModel.swift in Sources */,
 				048A0BDB25401194007D4FD3 /* MainPageNewStoreCell.swift in Sources */,
 				048A0BD82540117B007D4FD3 /* MainPageNewStore.swift in Sources */,
 				3F05C56A25412AF20066DAAD /* MyPageView.swift in Sources */,
