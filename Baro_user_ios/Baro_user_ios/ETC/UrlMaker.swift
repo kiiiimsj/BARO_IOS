@@ -70,7 +70,7 @@ class CallRequest {
     }
     
     func post2(method : HTTPMethod, param: [String : Any]? = nil,url : String ,id : Int? = nil, success : @escaping(JSON) -> ()) {
-        AF.request(url, method: method, parameters: param, encoding: JSONEncoding.default).validate().responseJSON { response in
+        AF.request(url, method: method, parameters: param, encoding: JSONEncoding.default, headers: ["Content-Type":"text/html;charset=utf-8"]).validate().responseJSON { response in
             let statusCode = StatusCode(rawValue: response.response?.statusCode ?? 500)
             switch statusCode {
             case .success:
@@ -82,7 +82,7 @@ class CallRequest {
                 case .failure(let error):
                     print(error.errorDescription)
                 }
-            case .fail: print("서버 에러", response.response)
+            case .fail: print("서버 에러", response.error)
             default : print("서버 에러")
             }
         }
