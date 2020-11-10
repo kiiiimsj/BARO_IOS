@@ -7,10 +7,10 @@
 
 import Foundation
 struct SendServerOrders : Codable {
-    var menu_id = ""
+    var menu_id = 0
     var menu_name = ""
     var menu_defaultprice = ""
-    var order_count = ""
+    var order_count = 0
     var extras = [Extras]()
 }
 struct Extras : Codable {
