@@ -6,12 +6,11 @@
 //
 
 import UIKit
-import SwiftyJSON
-
 class BasketController : UIViewController {
     var menu : Order!
     var orders = [Order]()
-    
+    let netWork = CallRequest()
+    let urlMaker = NetWorkURL()
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var totalPriceLabel: UILabel!
@@ -32,17 +31,22 @@ class BasketController : UIViewController {
         else {
             print("error")
         }
+        var sendServerOrderdata = SendServerOrders()
+        sendServerOrderdata.menu_id = "5"
+        sendServerOrderdata.menu_defaultprice = "2000"
+        sendServerOrderdata.menu_name = "카푸치노"
+        sendServerOrderdata.order_count = "1"
+        sendServerOrderdata.extras = [Extras]()
         
-        var param = Dictionary<String,AnyObject>()
-        var param2 = Dictionary<String,Any>()
+        var param = Dictionary<String,Any>()
         let enco = JSONEncoder()
-        let jsonSaveData = try? enco.encode(orders)
+        let jsonSaveData = try? enco.encode(sendServerOrderdata)
         if let _ = jsonSaveData, let jsonString = String(data: jsonSaveData!, encoding: .utf8){
             let data = jsonString.data(using: .utf8)
             do {
-                if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [Dictionary<String,AnyObject>] {
+                if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [Dictionary<String,Any>] {
                     print("convert end : ", jsonArray)
-                    param["orders"] = jsonArray as AnyObject
+                    param["orders"] = jsonArray
                     print("it...can be : ", param)
                 }else {
                     print("wow..")
@@ -51,7 +55,22 @@ class BasketController : UIViewController {
             catch let error as NSError {
                 print(error)
             }
+            param["orders"] = jsonString
         }
+        
+        param["phone"] = "01093756927"
+        param["store_id"] = "1"
+        param["receipt_id"] = "12345"
+        param["total_price"] = 2000
+        param["discount_price"] = 0
+        param["coupon_id"] = -1
+        param["request"] = "123123123"
+        print("param : ", param)
+        netWork.post2(method: .post, param: param, url: urlMaker.orderInsertToServer) {
+            json in
+            print("orderinsert : ", json)
+        }
+        
         
         
         
