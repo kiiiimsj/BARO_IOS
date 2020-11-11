@@ -58,40 +58,6 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var sendServerOrderdatas = [SendServerOrders]()
-        var sendServerOrderdata = SendServerOrders()
-        sendServerOrderdata.menu_id = 5
-        sendServerOrderdata.menu_defaultprice = "2000"
-        sendServerOrderdata.menu_name = "카푸치노"
-        sendServerOrderdata.order_count = 1
-        sendServerOrderdata.extras = [Extras]()
-        sendServerOrderdatas.append(sendServerOrderdata)
-        
-        var param2 = Param()
-        param2.coupon_id = -1
-        param2.discount_price = -1
-        param2.phone = "01093756927"
-        param2.receipt_id = "main123123"
-        param2.total_price = 20000
-        param2.requests = "qweqweqweqweqwe"
-        param2.store_id = 1
-        param2.orders = sendServerOrderdatas
-        
-//        let enco = JSONEncoder()
-//        let jsonData = try? enco.encode(param2)
-//        let jsonString = String(data: jsonData!, encoding: .utf8)!
-        var param : [String:AnyObject] = [:]
-        let enco = JSONEncoder()
-        let jsonData = try? enco.encode(param2)
-        let jsonString = String(data: jsonData!, encoding: .utf8)!
-        print("jsonString : ", jsonString)
-        
-        param = convertStringToDictionary(text: jsonString)!
-        print("param : ", param)
-        netWork.post(method: .post, param: param, url:urlMaker.orderInsertToServer) {
-            json in
-            print("orderinsert : ", json)
-        }
         self.definesPresentationContext = true
         
         mainView.backgroundColor = .white
@@ -130,17 +96,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
         whetherNewOrNot()
     }
-    func convertStringToDictionary(text: String) -> [String:AnyObject]? {
-       if let data = text.data(using: .utf8) {
-           do {
-               let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:AnyObject]
-               return json
-           } catch {
-               print("Something went wrong")
-           }
-       }
-       return nil
-   }
+    
     func getMyLocation(_ longitude : String, _ latitude :String) {
         myLocation.network.get(method: .get, url: "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+longitude+","+latitude+"&sourcecrs=epsg:4326&output=json&orders=roadaddr",headers: myLocation.headers) { json in
             let results = json["results"]

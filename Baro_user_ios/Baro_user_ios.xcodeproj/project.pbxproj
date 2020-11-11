@@ -54,7 +54,6 @@
 		3F05C567254116C70066DAAD /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F05C566254116C70066DAAD /* MyPage.storyboard */; settings = {ASSET_TAGS = (MyPageController, ); }; };
 		3F05C56A25412AF20066DAAD /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05C56925412AF20066DAAD /* MyPageView.swift */; };
 		3F0EB738255A70C400F72604 /* SendServerOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0EB737255A70C400F72604 /* SendServerOrders.swift */; };
-		3F0EB73B255A731A00F72604 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0EB73A255A731A00F72604 /* Extras.swift */; };
 		3F0F6EAB25514F0B00099ACC /* MyBootPayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */; };
 		3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */; };
 		3F418FCF254808E100D89665 /* BottomTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F418FCE254808E100D89665 /* BottomTabBar.storyboard */; };
@@ -187,7 +186,6 @@
 		3F05C566254116C70066DAAD /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		3F05C56925412AF20066DAAD /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		3F0EB737255A70C400F72604 /* SendServerOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendServerOrders.swift; sourceTree = "<group>"; };
-		3F0EB73A255A731A00F72604 /* Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
 		3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBootPayController.swift; sourceTree = "<group>"; };
 		3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BootPay.storyboard; sourceTree = "<group>"; };
 		3F418FCE254808E100D89665 /* BottomTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomTabBar.storyboard; sourceTree = "<group>"; };
@@ -533,7 +531,6 @@
 				E34CAF412552A36F00BE3F53 /* LocationModel.swift */,
 				E34CAF6E25556A1D00BE3F53 /* AlertModel.swift */,
 				3F0EB737255A70C400F72604 /* SendServerOrders.swift */,
-				3F0EB73A255A731A00F72604 /* Extras.swift */,
 				E34CAF942559814300BE3F53 /* CouponModel.swift */,
 			);
 			path = Model;
@@ -781,7 +778,6 @@
 				04235C81254AA2F500BA2BB1 /* OrderStatusDetailController.swift in Sources */,
 				E33D8563253F163000E50BAC /* StoreMenu2Controller.swift in Sources */,
 				04D11F3B2543D2F100ADB210 /* OrderHistoryController.swift in Sources */,
-				3F0EB73B255A731A00F72604 /* Extras.swift in Sources */,
 				E34CAF99255A708700BE3F53 /* CouponCell.swift in Sources */,
 				048D55B6253D2E0F009E9CE4 /* MainPageEvent.swift in Sources */,
 				043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */,

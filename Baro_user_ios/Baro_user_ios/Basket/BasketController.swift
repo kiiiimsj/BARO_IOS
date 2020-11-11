@@ -30,7 +30,6 @@ class BasketController : UIViewController {
         else {
             print("error")
         }
-        
         collectionView.delegate = self
         collectionView.dataSource = self
     }
