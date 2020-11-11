@@ -57,7 +57,7 @@
 		3F0F6EAB25514F0B00099ACC /* MyBootPayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */; };
 		3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */; };
 		3F418FCF254808E100D89665 /* BottomTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F418FCE254808E100D89665 /* BottomTabBar.storyboard */; };
-		3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F49907F253EB18B00372F83 /* LoginPage.storyboard */; };
+		3F499080253EB18B00372F83 /* RegisterPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F49907F253EB18B00372F83 /* RegisterPage.storyboard */; };
 		3F4C5A9F253ECAD700C0E7B6 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9A253ECAD700C0E7B6 /* NotoSansKR-Black.otf */; };
 		3F4C5AA0253ECAD700C0E7B6 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9B253ECAD700C0E7B6 /* NotoSansKR-Regular.otf */; };
 		3F4C5AA1253ECAD700C0E7B6 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9C253ECAD700C0E7B6 /* NotoSansKR-Bold.otf */; };
@@ -189,7 +189,7 @@
 		3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBootPayController.swift; sourceTree = "<group>"; };
 		3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BootPay.storyboard; sourceTree = "<group>"; };
 		3F418FCE254808E100D89665 /* BottomTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomTabBar.storyboard; sourceTree = "<group>"; };
-		3F49907F253EB18B00372F83 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
+		3F49907F253EB18B00372F83 /* RegisterPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterPage.storyboard; sourceTree = "<group>"; };
 		3F4C5A9A253ECAD700C0E7B6 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		3F4C5A9B253ECAD700C0E7B6 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		3F4C5A9C253ECAD700C0E7B6 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
@@ -400,7 +400,7 @@
 			children = (
 				3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */,
 				3FF35096253E7E72007B7B29 /* LoginPageController.swift */,
-				3F49907F253EB18B00372F83 /* LoginPage.storyboard */,
+				3F49907F253EB18B00372F83 /* RegisterPage.storyboard */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -667,7 +667,7 @@
 				E31D4018254FC6E800B63F77 /* Basket.storyboard in Resources */,
 				3F4C5AA1253ECAD700C0E7B6 /* NotoSansKR-Bold.otf in Resources */,
 				E31D3FE22545DF7D00B63F77 /* OrderDetails.storyboard in Resources */,
-				3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */,
+				3F499080253EB18B00372F83 /* RegisterPage.storyboard in Resources */,
 				3FDE5E652546B70C00C05514 /* privacyPolicy.html in Resources */,
 				3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */,
 				3FDE5E382546968000C05514 /* NoticePage.storyboard in Resources */,
