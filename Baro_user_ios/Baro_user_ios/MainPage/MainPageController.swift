@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 import NMapsMap
 
 class MainPageController: UIViewController, CLLocationManagerDelegate {
@@ -40,6 +41,8 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBOutlet var mainView: UIView!
+    var netWork = CallRequest()
+    var urlMaker = NetWorkURL()
     //blur view
    
     //alert이미지 - 아래에서 off/on체크해주기
@@ -93,6 +96,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
         whetherNewOrNot()
     }
+    
     func getMyLocation(_ longitude : String, _ latitude :String) {
         myLocation.network.get(method: .get, url: "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+longitude+","+latitude+"&sourcecrs=epsg:4326&output=json&orders=roadaddr",headers: myLocation.headers) { json in
             let results = json["results"]
