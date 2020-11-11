@@ -169,7 +169,6 @@
                         <outlet property="passwordInput" destination="uZA-Yz-PZr" id="G6s-nw-ZkY"/>
                         <outlet property="phoneInput" destination="8rn-GP-ACR" id="VCq-N0-hcK"/>
                         <segue destination="Ibe-2Z-WFL" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" id="UPu-sm-1VS"/>
-                        <segue destination="QMl-v0-q4D" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="jR4-Sb-1sY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kp-KJ-LYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -344,13 +343,6 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="360" height="640"/>
-                    <connections>
-                        <outlet property="bottomArea" destination="Pca-R4-Umg" id="FIJ-Tr-hby"/>
-                        <outlet property="loginButton" destination="bhD-EN-JVD" id="4BC-1J-3Ip"/>
-                        <outlet property="logoImage" destination="gCA-60-GLH" id="nMT-VG-DoU"/>
-                        <outlet property="passwordInput" destination="2iz-Xd-ACh" id="Qfh-Cx-Gim"/>
-                        <outlet property="phoneInput" destination="2aw-Zy-h02" id="AJQ-JC-xXf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIc-jx-Mgf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
