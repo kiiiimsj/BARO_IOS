@@ -80,6 +80,9 @@ extension MainPageEvent : UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let event = eventList[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageEventCell", for: indexPath) as! MainPageEventCell
+        let frame = cell.eventImage.frame
+        self.frame = CGRect(x:0,y: 0, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+        cell.eventImage.frame = frame
         cell.eventImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageEvent.do?image_name=" + event.event_image))
         cell.backgroundColor = .purple
         //cell클릭시
@@ -106,7 +109,7 @@ extension MainPageEvent : UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 400, height: 200)
+        return CGSize(width: collectionView.frame.width, height: self.collectionView.frame.height)
     }
     @objc func swipe(recognizer : UISwipeGestureRecognizer){
         switch recognizer.direction {
