@@ -233,21 +233,36 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     }
     
     func setOrderInsertParam() -> [String : Any]{
-        var param : [String : String] = [:]
-        if let getData = UserDefaults.standard.value(forKey: "basket") {
-            print("getData : ", getData)
-            param = [
-                "phone":"\(self.userPhone)",
-                "store_id":"\(self.storeId)",
-                "receipt_id":"\(self.receptId)",
-                "total_price":"\(self.totalPrice)",
-                "discount_price":"\(self.couponDiscountValue)",
-                "coupon_id":"\(self.couponId)",
-                "order_date":"\(self.payDate)",
-                "orders":"\(String(describing: getData))",
-                "requests":"\(self.customerRequest)"
-            ]
+        var sendServerOrderdatas = [SendServerOrders]()
+        for order in myOrders {
+            var sendServerOrderdata = SendServerOrders()
+            sendServerOrderdata.menu_id = order.menu.menu_id
+            sendServerOrderdata.menu_defaultprice = "\(order.menu.menu_defaultprice)"
+            sendServerOrderdata.menu_name = order.menu.menu_name
+            sendServerOrderdata.order_count = order.menu_count
+            for extra in order.Essentials {
+                var extraEssentials = Extras()
+                extraEssentials.extra_id = order
+            }
+            sendServerOrderdata.extras = [Extras]()
+            sendServerOrderdatas.append(sendServerOrderdata)
         }
+        var param2 = Param()
+        param2.coupon_id = -1
+        param2.discount_price = -1
+        param2.phone = "01093756927"
+        param2.receipt_id = "main123123"
+        param2.total_price = 20000
+        param2.requests = "qweqweqweqweqwe"
+        param2.store_id = 1
+        param2.orders = sendServerOrderdatas
+        var param : [String:AnyObject] = [:]
+        let enco = JSONEncoder()
+        let jsonData = try? enco.encode(param2)
+        let jsonString = String(data: jsonData!, encoding: .utf8)!
+        print("jsonString : ", jsonString)
+        
+        param = Param().convertStringToDictionary(text: jsonString)!
         return param
     }
 }

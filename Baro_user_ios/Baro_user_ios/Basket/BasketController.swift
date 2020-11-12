@@ -21,8 +21,6 @@ class BasketController : UIViewController {
     private var getStoreNameFromUserDefault = UserDefaults.standard.value(forKey: "currentStoreName") as! String
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-        
         if (menu != nil) {
             if (basket.value(forKey: "basket") != nil) {
                 orders.append(contentsOf: loadBasket())
@@ -32,59 +30,6 @@ class BasketController : UIViewController {
         else {
             print("error")
         }
-        var sendServerOrderdatas = [SendServerOrders]()
-        var sendServerOrderdata = SendServerOrders()
-        sendServerOrderdata.menu_id = 5
-        sendServerOrderdata.menu_defaultprice = "2000"
-        sendServerOrderdata.menu_name = "카푸치노"
-        sendServerOrderdata.order_count = 1
-        sendServerOrderdata.extras = [Extras]()
-        sendServerOrderdatas.append(sendServerOrderdata)
-        
-        let enco = JSONEncoder()
-        let jsonData = try? enco.encode(sendServerOrderdatas)
-        let jsonString = String(data: jsonData!, encoding: .utf8)!
-        print("jsonString : ", jsonString)
-        
-        var param : [String:Any] = [:]
-        
-        param["orders"] = jsonString as AnyObject
-        param["phone"] = "01093756927"
-        param["store_id"] = 1
-        param["receipt_id"] = "12345"
-        param["total_price"] = "2000"
-        param["discount_price"] = 0
-        param["coupon_id"] = -1
-        param["requests"] = "123123123"
-//        let enco = JSONEncoder()
-//        let jsonSaveData = try? enco.encode(sendServerOrderdata)
-//        if let _ = jsonSaveData, let jsonString = String(data: jsonSaveData!, encoding: .utf8){
-//            let data = jsonString.data(using: .utf8)
-//            do {
-//            if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any] {
-//                    print("convert end : ", jsonArray)
-//                    param = ["orders":jsonArray]
-//                    print("it...can be : ", param)
-//                }else {
-//                    print("wow..")
-//                }
-//            }
-//            catch let error as NSError {
-//                print(error)
-//            }
-//            param["orders"] = jsonString
-//        }
-//
-        
-        print("param : ", param)
-        netWork.post2(method: .post, param: param, url: urlMaker.orderInsertToServer) {
-            json in
-            print("orderinsert : ", json)
-        }
-        
-        
-        
-        
         collectionView.delegate = self
         collectionView.dataSource = self
     }
