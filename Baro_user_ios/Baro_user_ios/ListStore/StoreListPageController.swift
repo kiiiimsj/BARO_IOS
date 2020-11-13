@@ -10,6 +10,8 @@ private let StorelistCellIdentifier = "StoreListCell"
 private let ListStorePageIdentifier = "StoreListPageController"
 class StoreListPageController : UIViewController{
     @IBOutlet weak var storeListView: UICollectionView!
+    @IBOutlet weak var pageName: UILabel!
+    @IBOutlet weak var backBtn: UIButton!
     var storeList = [StoreList]()
     let network = CallRequest()
     let urlCaller = NetWorkURL()
@@ -31,6 +33,7 @@ class StoreListPageController : UIViewController{
         
         
         if(kind == 1) { //mainpage에서 넘어온 페이지일 경우
+            self.pageName.text = typeCode
             let jsonObject : [ String : Any ] = [
                 "type_code" : typeCode,
                 "latitude" : "37.499",
@@ -58,6 +61,7 @@ class StoreListPageController : UIViewController{
         }
         
         else {  //kind == 3   -> search에서 넘어온 페이지일 경우
+            self.pageName.text = searchWord
             let jsonObject : [String : Any ] = [
                 "keyword" : searchWord,
                 "latitude" : "37.499",
@@ -90,6 +94,9 @@ class StoreListPageController : UIViewController{
         storeListView.backgroundColor = .white
         storeListView.delegate = self
         storeListView.dataSource = self
+    }
+    @IBAction func backBtn(_ sender: Any) {
+        self.dismiss(animated: false)
     }
 }
 
@@ -130,6 +137,7 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
                 cell.is_OpenLable.text = "영업종료"
             }
             cell.distance_Label.text = String(Int(store.distance)) + "m"
+            
             return cell
         }
     }
@@ -154,6 +162,9 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
         nextViewController.store_id = labell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if storeList[indexPath.item].is_open == "N"{
+            return
+        }
         let id = String(storeList[indexPath.item].store_id)
         navigationController?.pushViewController(AboutStore(), animated: false)
         performSegue(withIdentifier: "toAboutStore", sender: id)
