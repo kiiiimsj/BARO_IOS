@@ -27,6 +27,8 @@
                         <segue destination="DK8-7c-Q2M" kind="relationship" relationship="viewControllers" id="dl1-uP-Nyu"/>
                         <segue destination="xh1-RU-U3f" kind="relationship" relationship="viewControllers" id="PXr-Rz-j8K"/>
                         <segue destination="hRo-6P-QN7" kind="relationship" relationship="viewControllers" id="QvB-vF-yKg"/>
+                        <segue destination="Afa-3f-aKF" kind="relationship" relationship="viewControllers" id="Ck2-Ks-qms"/>
+                        <segue destination="RH8-ob-wyh" kind="relationship" relationship="viewControllers" id="sxr-TH-WxQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cat-7m-Ooi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -64,6 +66,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WbJ-EG-MAE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1225" y="-208"/>
+        </scene>
+        <!--OrderStatusController-->
+        <scene sceneID="0vv-73-0Rh">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="OrderStatusPageController" storyboardName="OrderStatus" referencedIdentifier="OrderStatusController" id="Afa-3f-aKF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="l5S-vp-UeW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0eq-5o-bKK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1412" y="-105"/>
+        </scene>
+        <!--OrderHistoryController-->
+        <scene sceneID="MdE-GF-b4t">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="OrderHistoryPageController" storyboardName="OrderHistory" referencedIdentifier="OrderHistoryController" id="RH8-ob-wyh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="hqQ-D8-7zT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tAQ-ws-K3S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1451" y="-25"/>
         </scene>
     </scenes>
     <resources>
