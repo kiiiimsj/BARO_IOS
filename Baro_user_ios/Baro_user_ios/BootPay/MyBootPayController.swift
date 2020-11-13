@@ -242,7 +242,17 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             sendServerOrderdata.order_count = order.menu_count
             for extra in order.Essentials {
                 var extraEssentials = Extras()
-                extraEssentials.extra_id = order
+                extraEssentials.extra_id = extra.value.extra_id
+                extraEssentials.extra_count = extra.value.extra_maxcount
+                extraEssentials.extra_name = extra.value.extra_name
+                extraEssentials.extra_price = extra.value.extra_price
+            }
+            for extraNon in order.nonEssentials {
+                var extraNonEssentials = Extras()
+                extraNonEssentials.extra_id = extraNon.value.Extra!.extra_id
+                extraNonEssentials.extra_count = extraNon.value.Extra!.extra_maxcount
+                extraNonEssentials.extra_name = extraNon.value.Extra!.extra_name
+                extraNonEssentials.extra_price = extraNon.value.Extra!.extra_price
             }
             sendServerOrderdata.extras = [Extras]()
             sendServerOrderdatas.append(sendServerOrderdata)

@@ -93,7 +93,7 @@
                                         <rect key="frame" x="67" y="448" width="143" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                        <color key="textColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="가입하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coq-dL-K1M">
@@ -168,6 +168,8 @@
                         <outlet property="logoImage" destination="2vc-Px-LDB" id="Rq6-XK-hBV"/>
                         <outlet property="passwordInput" destination="uZA-Yz-PZr" id="G6s-nw-ZkY"/>
                         <outlet property="phoneInput" destination="8rn-GP-ACR" id="VCq-N0-hcK"/>
+                        <outlet property="registerBtn1" destination="M8Q-gc-XWZ" id="wNt-2y-6mx"/>
+                        <outlet property="registerBtn2" destination="coq-dL-K1M" id="mVx-Tq-szC"/>
                         <segue destination="Ibe-2Z-WFL" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" id="UPu-sm-1VS"/>
                     </connections>
                 </viewController>

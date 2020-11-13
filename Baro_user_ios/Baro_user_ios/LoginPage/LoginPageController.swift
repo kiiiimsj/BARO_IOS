@@ -15,7 +15,9 @@ class LoginPageController: UIViewController {
     @IBOutlet weak var passwordInput:
     UITextField!
     @IBOutlet weak var loginButton : UIButton!
+    @IBOutlet weak var registerBtn1: UILabel!
     
+    @IBOutlet weak var registerBtn2: UILabel!
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
