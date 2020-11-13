@@ -234,8 +234,10 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     
     func setOrderInsertParam() -> [String : Any]{
         var sendServerOrderdatas = [SendServerOrders]()
+        
         for order in myOrders {
             var sendServerOrderdata = SendServerOrders()
+            sendServerOrderdata.extras = [Extras]()
             sendServerOrderdata.menu_id = order.menu.menu_id
             sendServerOrderdata.menu_defaultprice = "\(order.menu.menu_defaultprice)"
             sendServerOrderdata.menu_name = order.menu.menu_name
@@ -246,6 +248,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
                 extraEssentials.extra_count = extra.value.extra_maxcount
                 extraEssentials.extra_name = extra.value.extra_name
                 extraEssentials.extra_price = extra.value.extra_price
+                sendServerOrderdata.extras.append(extraEssentials)
             }
             for extraNon in order.nonEssentials {
                 var extraNonEssentials = Extras()
@@ -253,8 +256,8 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
                 extraNonEssentials.extra_count = extraNon.value.Extra!.extra_maxcount
                 extraNonEssentials.extra_name = extraNon.value.Extra!.extra_name
                 extraNonEssentials.extra_price = extraNon.value.Extra!.extra_price
+                sendServerOrderdata.extras.append(extraNonEssentials)
             }
-            sendServerOrderdata.extras = [Extras]()
             sendServerOrderdatas.append(sendServerOrderdata)
         }
         var param2 = Param()
