@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mRt-kr-3Xg">
-                                <rect key="frame" x="0.0" y="114" width="414" height="708"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="o7Y-4N-YyQ">
                                     <size key="itemSize" width="414" height="242"/>
@@ -159,6 +159,8 @@
                             <constraint firstItem="mRt-kr-3Xg" firstAttribute="leading" secondItem="x2l-td-ViU" secondAttribute="leading" id="xdu-au-urw"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="주문현황" image="clock_tabBar" id="P7i-Cc-iJE"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="mRt-kr-3Xg" id="LdN-V8-Kuf"/>
                     </connections>
@@ -427,6 +429,7 @@
     </scenes>
     <resources>
         <image name="arrow_back" width="7" height="12"/>
+        <image name="clock_tabBar" width="17" height="17"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
