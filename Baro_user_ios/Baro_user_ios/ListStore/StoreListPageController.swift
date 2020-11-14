@@ -9,6 +9,7 @@ import UIKit
 private let StorelistCellIdentifier = "StoreListCell"
 private let ListStorePageIdentifier = "StoreListPageController"
 class StoreListPageController : UIViewController{
+    
     @IBOutlet weak var storeListView: UICollectionView!
     var storeList = [StoreList]()
     let network = CallRequest()
@@ -21,13 +22,12 @@ class StoreListPageController : UIViewController{
     //전 페이지에서 받아와야할 값
     var typeCode = ""
     var searchWord = ""
-    
-    
+    let setBottomTabBar = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         
-        print("typecc", self.typeCode)
+        setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self)
         
         
         if(kind == 1) { //mainpage에서 넘어온 페이지일 경우
@@ -84,7 +84,6 @@ class StoreListPageController : UIViewController{
         
         
     }
-    
     func configureView(){
         view.backgroundColor = .white
         storeListView.backgroundColor = .white
