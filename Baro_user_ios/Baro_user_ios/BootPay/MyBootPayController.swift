@@ -200,7 +200,9 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func onDone(data: [String: Any]) {
         print("Payment processing onDone : ",data)
         print("print recept_id : ", receptId)
+        
         let param2 = self.setOrderInsertParam()
+        
         print("checkParam2 : ", param2)
         self.netWork.post(method: .post, param: param2, url: self.urlMaker.orderInsertToServer) {
             json in
@@ -232,7 +234,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         self.present(vc, animated: true, completion: nil)
     }
     
-    func setOrderInsertParam() -> [String : Any]{
+    func setOrderInsertParam() -> [String : AnyObject]{
         var sendServerOrderdatas = [SendServerOrders]()
         
         for order in myOrders {
@@ -261,32 +263,34 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             sendServerOrderdatas.append(sendServerOrderdata)
         }
         var param2 = Param()
-        param2.coupon_id = -1
-        param2.discount_price = -1
-        param2.phone = "01093756927"
-        param2.receipt_id = "main123123"
-        param2.total_price = 20000
-        param2.requests = "qweqweqweqweqwe"
-        param2.store_id = 1
+        param2.coupon_id = self.couponId
+        param2.discount_price = self.couponDiscountValue
+        param2.phone = "\(self.userPhone)"
+        param2.receipt_id = "\(self.receptId)"
+        param2.total_price = self.totalPrice
+        param2.requests = "\(self.customerRequest)"
+        param2.store_id = self.storeId
         param2.orders = sendServerOrderdatas
+        
+        
         var param : [String:AnyObject] = [:]
         let enco = JSONEncoder()
         let jsonData = try? enco.encode(param2)
         let jsonString = String(data: jsonData!, encoding: .utf8)!
         print("jsonString : ", jsonString)
         
-        param = Param().convertStringToDictionary(text: jsonString)!
+        param = self.convertStringToDictionary(text: jsonString)!
         return param
     }
-}
-struct sendOrderInfo {
-    var phone = "" //UserDefault
-    var store_id = "" //Order
-    var receipt_id = "" //makeRequest
-    var total_price = "" // Order
-    var discount_price = "" // Coupon
-    var coupon_id = "" // Coupon
-    var order_data = "" // makeRequest
-    var orders = [Order]() // Order
-    var requests = "" //user input
+    func convertStringToDictionary(text: String) -> [String:AnyObject]? {
+       if let data = text.data(using: .utf8) {
+           do {
+               let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:AnyObject]
+               return json
+           } catch {
+               print("Something went wrong")
+           }
+       }
+       return nil
+   }
 }
