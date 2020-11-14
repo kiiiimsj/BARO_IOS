@@ -126,8 +126,7 @@ class MyBootPayController : UIViewController {
         extra.quotas = [0, 2, 3] // 5만원 이상일 경우 할부 허용범위 설정 가능, (예제는 일시불, 2개월 할부, 3개월 할부 허용
         
         Bootpay.request(self, sendable: self, payload: payload, user: bootUser, items: bootPayItems, extra: extra, addView: true)
-    }
-    func setPayLoadName() {
+        self.setOrderInsertParam()
     }
 }
 extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
@@ -200,19 +199,8 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func onDone(data: [String: Any]) {
         print("Payment processing onDone : ",data)
         print("print recept_id : ", receptId)
-        let param2 = self.setOrderInsertParam()
-        print("checkParam2 : ", param2)
-        self.netWork.post(method: .post, param: param2, url: self.urlMaker.orderInsertToServer) {
-            json in
-            if json["result"].boolValue {
-                self.createDialog(titleContentString: "결 제 완 료", contentString: "결제가 완료 되었습니다.", buttonString: "확인")
-                //websocket 통신 부분
-                self.result = true
-            }
-            else {
-                self.createDialog(titleContentString: "결 제 오 류", contentString: "비정상적인 접근입니다.\r\n 결제가 취소 되었습니다.", buttonString: "확인")
-            }
-        }
+        
+        
     }
 
     //결제창이 닫힐때 실행되는 부분
@@ -232,16 +220,11 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         self.present(vc, animated: true, completion: nil)
     }
     
-    func setOrderInsertParam() -> [String : Any]{
+    func setOrderInsertParam(){
         var sendServerOrderdatas = [SendServerOrders]()
-        
         for order in myOrders {
             var sendServerOrderdata = SendServerOrders()
-            sendServerOrderdata.extras = [Extras]()
-            sendServerOrderdata.menu_id = order.menu.menu_id
-            sendServerOrderdata.menu_defaultprice = "\(order.menu.menu_defaultprice)"
-            sendServerOrderdata.menu_name = order.menu.menu_name
-            sendServerOrderdata.order_count = order.menu_count
+
             for extra in order.Essentials {
                 var extraEssentials = Extras()
                 extraEssentials.extra_id = extra.value.extra_id
@@ -258,35 +241,57 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
                 extraNonEssentials.extra_price = extraNon.value.Extra!.extra_price
                 sendServerOrderdata.extras.append(extraNonEssentials)
             }
+            sendServerOrderdata.menu_id = order.menu.menu_id
+            sendServerOrderdata.menu_defaultprice = "\(order.menu.menu_defaultprice)"
+            sendServerOrderdata.menu_name = "\(order.menu.menu_name)"
+            sendServerOrderdata.order_count = order.menu_count
             sendServerOrderdatas.append(sendServerOrderdata)
         }
         var param2 = Param()
-        param2.coupon_id = -1
-        param2.discount_price = -1
-        param2.phone = "01093756927"
-        param2.receipt_id = "main123123"
-        param2.total_price = 20000
-        param2.requests = "qweqweqweqweqwe"
-        param2.store_id = 1
+        param2.phone = self.userPhone
+        param2.store_id = self.storeId
+        param2.receipt_id = "\(self.receptId)"
+        param2.total_price = self.totalPrice
+        param2.discount_price = self.couponDiscountValue
+        param2.coupon_id = self.couponId
+        param2.requests = "\(self.customerRequest)"
         param2.orders = sendServerOrderdatas
+        
         var param : [String:AnyObject] = [:]
         let enco = JSONEncoder()
         let jsonData = try? enco.encode(param2)
         let jsonString = String(data: jsonData!, encoding: .utf8)!
         print("jsonString : ", jsonString)
         
-        param = Param().convertStringToDictionary(text: jsonString)!
-        return param
+        param = convertStringToDictionary(text: jsonString)!
+        
+        print("param :", param)
+        
+        self.netWork.post(method: .post, param: param, url: self.urlMaker.orderInsertToServer) {
+            json in
+            if json["result"].boolValue {
+                self.createDialog(titleContentString: "결 제 완 료", contentString: "결제가 완료 되었습니다.", buttonString: "확인")
+                //websocket 통신 부분
+                self.result = true
+            }
+            else {
+                self.createDialog(titleContentString: "결 제 오 류", contentString: "비정상적인 접근입니다.\r\n 결제가 취소 되었습니다.", buttonString: "확인")
+            }
+        }
     }
-}
-struct sendOrderInfo {
-    var phone = "" //UserDefault
-    var store_id = "" //Order
-    var receipt_id = "" //makeRequest
-    var total_price = "" // Order
-    var discount_price = "" // Coupon
-    var coupon_id = "" // Coupon
-    var order_data = "" // makeRequest
-    var orders = [Order]() // Order
-    var requests = "" //user input
+    func convertStringToDictionary(text: String) -> [String:AnyObject]? {
+       if let data = text.data(using: .utf8) {
+        print("data : ", data)
+           do {
+            if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:AnyObject] {
+                print("json : ", json)
+                return json
+            }
+            
+           } catch {
+               print("Something went wrong")
+           }
+       }
+       return nil
+   }
 }
