@@ -8,7 +8,10 @@
 import UIKit
 private let StorelistCellIdentifier = "StoreListCell"
 private let ListStorePageIdentifier = "StoreListPageController"
-class StoreListPageController : UIViewController{
+class StoreListPageController : UIViewController , isClick {
+    func clickEventDelegate(item: UITabBarItem) {
+        print("pls print tag : ", item.tag)
+    }
     
     @IBOutlet weak var storeListView: UICollectionView!
     var storeList = [StoreList]()
@@ -22,15 +25,15 @@ class StoreListPageController : UIViewController{
     //전 페이지에서 받아와야할 값
     var typeCode = ""
     var searchWord = ""
-    let setBottomTabBar = BottomTabBarController()
+    var setBottomTabBar = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        
-        setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self)
-        
-        
+        settingBottomBar()
+       
         if(kind == 1) { //mainpage에서 넘어온 페이지일 경우
+            setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
+            
             let jsonObject : [ String : Any ] = [
                 "type_code" : typeCode,
                 "latitude" : "37.499",
@@ -57,7 +60,8 @@ class StoreListPageController : UIViewController{
             
         }
         
-        else {  //kind == 3   -> search에서 넘어온 페이지일 경우
+        else if kind == 3{  //kind == 3   -> search에서 넘어온 페이지일 경우
+            setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
             let jsonObject : [String : Any ] = [
                 "keyword" : searchWord,
                 "latitude" : "37.499",
@@ -81,7 +85,9 @@ class StoreListPageController : UIViewController{
             }
             self.storeListView.reloadData()
         }
-        
+        else {
+            
+        }
         
     }
     func configureView(){
@@ -89,6 +95,11 @@ class StoreListPageController : UIViewController{
         storeListView.backgroundColor = .white
         storeListView.delegate = self
         storeListView.dataSource = self
+    }
+    func settingBottomBar() {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        setBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        setBottomTabBar.eventDelegate = self
     }
 }
 
@@ -157,6 +168,7 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
         navigationController?.pushViewController(AboutStore(), animated: false)
         performSegue(withIdentifier: "toAboutStore", sender: id)
     }
+    
 }
 
 extension StoreListPageController : UIScrollViewDelegate {
@@ -202,4 +214,5 @@ extension StoreListPageController : UIScrollViewDelegate {
             self.callMoreData = false
         }
     }
+    
 }
