@@ -112,11 +112,12 @@
                             <constraint firstItem="MRP-nP-rMX" firstAttribute="top" secondItem="2Fp-Qg-L00" secondAttribute="top" constant="100" id="WGn-3U-kGE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="내 가게" image="doc_tabBar" selectedImage="doc_tabBar" springLoaded="YES" id="OaY-ke-RFH"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="내 가게" image="doc_tabBar" selectedImage="doc_tabBar" springLoaded="YES" id="OaY-ke-RFH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="storeListView" destination="MRP-nP-rMX" id="TxU-fh-RQp"/>
                         <segue destination="O6c-Wz-ejK" kind="presentation" identifier="toAboutStore" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="1TB-V5-kc2"/>
+                        <segue destination="SMb-XE-7NN" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" id="Klt-Hj-Czz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2St-vS-sEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -132,6 +133,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tob-L6-Eeb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="280" y="75"/>
+        </scene>
+        <!--BottomTabBarController-->
+        <scene sceneID="qe7-KJ-MXS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BottomTabBar" referencedIdentifier="BottomTabBarController" id="SMb-XE-7NN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJv-5e-yCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="-104"/>
         </scene>
     </scenes>
     <resources>

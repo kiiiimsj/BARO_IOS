@@ -27,10 +27,10 @@ class AboutStore : UIViewController {
     private var storeInfoManager = StoreInfoController()
     private var storeMenuManager = StoreMenuController()
     private var contollers = [UIViewController]()
-    
+    let setBottomTabBar = BottomTabBarController()
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
         self.setTabBarItem()
         self.getStoreInfo()
         self.isFavoriteStore()
