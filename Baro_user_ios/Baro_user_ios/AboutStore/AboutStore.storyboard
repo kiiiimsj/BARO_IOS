@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -124,6 +124,7 @@
                         <outlet property="tabIndecator" destination="w0f-SM-9LR" id="LDy-S9-3t7"/>
                         <segue destination="LDZ-uN-ZP4" kind="presentation" identifier="StoreMenuController" animates="NO" id="ZPO-2S-Xaw"/>
                         <segue destination="Cpx-Th-ad8" kind="presentation" identifier="StoreInfoController" modalPresentationStyle="fullScreen" id="wHr-tf-f5t"/>
+                        <segue destination="Tcx-Ra-uqe" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="auV-Jc-iOi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeV-o6-RsH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -584,6 +585,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBh-jM-6HB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-284" y="-696"/>
+        </scene>
+        <!--BottomTabBarController-->
+        <scene sceneID="DWo-V2-xZD">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="BottomTabBarController" storyboardName="BottomTabBar" referencedIdentifier="BottomTabBarController" id="Tcx-Ra-uqe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6B-w0-d7n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-317" y="428"/>
         </scene>
     </scenes>
     <resources>

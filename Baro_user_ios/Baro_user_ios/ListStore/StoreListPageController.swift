@@ -10,7 +10,20 @@ private let StorelistCellIdentifier = "StoreListCell"
 private let ListStorePageIdentifier = "StoreListPageController"
 class StoreListPageController : UIViewController , isClick {
     func clickEventDelegate(item: UITabBarItem) {
-        print("pls print tag : ", item.tag)
+        switch(item.tag) {
+        case 0:
+            self.performSegue(withIdentifier: "BottomTabBarController", sender: 0)
+        case 1:
+            self.performSegue(withIdentifier: "BottomTabBarController", sender: 1)
+        case 2:
+            self.performSegue(withIdentifier: "BottomTabBarController", sender: 2)
+        case 3:
+            self.performSegue(withIdentifier: "BottomTabBarController", sender: 3)
+        case 4:
+            self.performSegue(withIdentifier: "BottomTabBarController", sender: 4)
+        default :
+            print("none click")
+        }
     }
     
     @IBOutlet weak var storeListView: UICollectionView!
@@ -157,11 +170,15 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let nextViewController = segue.destination as? AboutStore else {
-            return
+        if let nextViewController = segue.destination as? AboutStore {
+            let labell = sender as! String
+            nextViewController.store_id = labell
         }
-        let labell = sender as! String
-        nextViewController.store_id = labell
+        
+        if let isBottomView = segue.destination as? BottomTabBarController {
+            let index = sender as! Int
+            isBottomView.indexValue = index
+        }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let id = String(storeList[indexPath.item].store_id)
@@ -214,5 +231,4 @@ extension StoreListPageController : UIScrollViewDelegate {
             self.callMoreData = false
         }
     }
-    
 }
