@@ -14,9 +14,10 @@ class BottomTabBarController: UITabBarController, UITabBarControllerDelegate {
     weak var eventDelegate : isClick?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        selectedIndex = indexValue
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
         selectedIndex = indexValue
     }
     @IBInspectable var selected_index: Int {
@@ -35,8 +36,5 @@ class BottomTabBarController: UITabBarController, UITabBarControllerDelegate {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         eventDelegate?.clickEventDelegate(item: item)
         print("tag print : ", item.tag)
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        selected_index = (sender as? Int)!
     }
 }

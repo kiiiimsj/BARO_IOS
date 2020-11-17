@@ -8,7 +8,9 @@
 
 import UIKit
 private let FirstBarIdentifier = "ASFirstBarCell"
-class AboutStore : UIViewController {
+class AboutStore : UIViewController , isClick {
+    
+    
     @IBOutlet weak var FirstPage: UICollectionView!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var storeInfoButton: UIButton!
@@ -27,10 +29,12 @@ class AboutStore : UIViewController {
     private var storeInfoManager = StoreInfoController()
     private var storeMenuManager = StoreMenuController()
     private var contollers = [UIViewController]()
-    let setBottomTabBar = BottomTabBarController()
+    var setBottomTabBar = BottomTabBarController()
     public override func viewDidLoad() {
         super.viewDidLoad()
+        settingBottomBar()
         setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
+        
         self.setTabBarItem()
         self.getStoreInfo()
         self.isFavoriteStore()
@@ -50,6 +54,32 @@ class AboutStore : UIViewController {
         storeInfoButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
         
         menuButtonClick()
+    }
+    func clickEventDelegate(item: UITabBarItem) {
+        switch(item.tag) {
+            case 0:
+                self.performSegue(withIdentifier: "BottomTabBarController", sender: 0)
+            case 1:
+                self.performSegue(withIdentifier: "BottomTabBarController", sender: 1)
+            case 2:
+                self.performSegue(withIdentifier: "BottomTabBarController", sender: 2)
+            case 3:
+                self.performSegue(withIdentifier: "BottomTabBarController", sender: 3)
+            case 4:
+                self.performSegue(withIdentifier: "BottomTabBarController", sender: 4)
+            default :
+                print("none click")
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let isBottomView = segue.destination as? BottomTabBarController else { return }
+        let index = sender as! Int
+        isBottomView.indexValue = index
+    }
+    func settingBottomBar() {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        setBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        setBottomTabBar.eventDelegate = self
     }
     @IBAction func backbutton() {
         self.dismiss(animated: true, completion: nil)
