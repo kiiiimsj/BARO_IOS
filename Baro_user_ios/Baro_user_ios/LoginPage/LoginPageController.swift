@@ -69,7 +69,6 @@ class LoginPageController: UIViewController {
             let param = ["phone":"\(phone)","pass":"\(password)"]
             remeberInfo.set(param, forKey: "rememberUser")
             remeberInfo.set(true, forKey: "checkedBox")
-            print("save user info : ", param)
         }
     }
     @objc private func handleRegister(_ sender: UIButton) {
@@ -80,9 +79,7 @@ class LoginPageController: UIViewController {
         guard let phone = phoneInput.text else {return}
         guard let password = passwordInput.text else { return}
         let param = ["phone":"\(phone)","pass":"\(password)"]
-        print("paramLogin L ", param)
         networkModel.post(method: .post, param: param, url: networkURL.logInURL) { (json) in
-            print("login :", json)
             if json["result"].boolValue {
                 UserDefaults.standard.set(json["email"].stringValue, forKey: "user_email")
                 UserDefaults.standard.set(json["nick"].stringValue, forKey: "user_name")
