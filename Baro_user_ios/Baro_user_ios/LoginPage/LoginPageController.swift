@@ -41,7 +41,7 @@ class LoginPageController: UIViewController {
         super.viewDidLoad()
         if(remeberInfo.bool(forKey: "checkedBox")) {
             memoryMyAccountCheckBox.isSelected = true
-            if let param = remeberInfo.value(forKey: "remeberUser") as? [String : Any]{
+            if let param = remeberInfo.value(forKey: "rememberUser") as? [String : Any]{
                 phoneInput.text = "\(param["phone"] as! String)"
                 passwordInput.text = "\(param["pass"] as! String)"
             }
@@ -87,11 +87,20 @@ class LoginPageController: UIViewController {
                 UserDefaults.standard.set(json["email"].stringValue, forKey: "user_email")
                 UserDefaults.standard.set(json["nick"].stringValue, forKey: "user_name")
                 UserDefaults.standard.set(json["phone"].stringValue, forKey: "user_phone")
+                if(self.memoryMyAccountCheckBox.isSelected) {
+                    self.remeberInfo.set(param, forKey: "rememberUser")
+                    self.remeberInfo.set(true, forKey: "checkedBox")
+                }
+                else {
+                    self.remeberInfo.removeObject(forKey: "checkedBox")
+                    self.remeberInfo.removeObject(forKey: "rememberUser")
+                }
                 self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
             }
             else {
                 self.makeToastMessage.showToast(message: "입력정보가 틀립니다.", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 10.0)!, targetController: self)
-                UserDefaults.resetStandardUserDefaults()
+                self.remeberInfo.removeObject(forKey: "checkedBox")
+                self.remeberInfo.removeObject(forKey: "rememberUser")
             }
         }
     }
