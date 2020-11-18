@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -141,13 +141,14 @@
                             <constraint firstItem="C4Z-Bg-eda" firstAttribute="leading" secondItem="2Fp-Qg-L00" secondAttribute="leading" id="ti0-r3-W0s"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="내 가게" image="doc_tabBar" selectedImage="doc_tabBar" springLoaded="YES" id="OaY-ke-RFH"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="내 가게" image="doc_tabBar" selectedImage="doc_tabBar" springLoaded="YES" id="OaY-ke-RFH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backBtn" destination="JWf-fA-hyM" id="xGC-44-9Xp"/>
                         <outlet property="pageName" destination="FoX-is-R5v" id="dvP-yg-hgt"/>
                         <outlet property="storeListView" destination="MRP-nP-rMX" id="TxU-fh-RQp"/>
                         <segue destination="O6c-Wz-ejK" kind="presentation" identifier="toAboutStore" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="1TB-V5-kc2"/>
+                        <segue destination="SMb-XE-7NN" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" id="Klt-Hj-Czz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2St-vS-sEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -163,6 +164,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tob-L6-Eeb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="280" y="75"/>
+        </scene>
+        <!--BottomTabBarController-->
+        <scene sceneID="qe7-KJ-MXS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BottomTabBar" referencedIdentifier="BottomTabBarController" id="SMb-XE-7NN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJv-5e-yCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="-104"/>
         </scene>
     </scenes>
     <resources>

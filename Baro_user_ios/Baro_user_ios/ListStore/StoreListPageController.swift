@@ -8,10 +8,25 @@
 import UIKit
 private let StorelistCellIdentifier = "StoreListCell"
 private let ListStorePageIdentifier = "StoreListPageController"
-class StoreListPageController : UIViewController{
+class StoreListPageController : UIViewController , isClick {
+    func clickEventDelegate(item: UITabBarItem) {
+        switch(item.tag) {
+        case 0:
+            self.performSegue(withIdentifier: "BottomTabBarController", sender: 0)
+        case 1:
+            self.performSegue(withIdentifier: "BottomTabBarController", sender: 1)
+        case 2:
+            self.performSegue(withIdentifier: "BottomTabBarController", sender: 2)
+        case 3:
+            self.performSegue(withIdentifier: "BottomTabBarController", sender: 3)
+        case 4:
+            self.performSegue(withIdentifier: "BottomTabBarController", sender: 4)
+        default :
+            print("none click")
+        }
+    }
+    
     @IBOutlet weak var storeListView: UICollectionView!
-    @IBOutlet weak var pageName: UILabel!
-    @IBOutlet weak var backBtn: UIButton!
     var storeList = [StoreList]()
     let network = CallRequest()
     let urlCaller = NetWorkURL()
@@ -23,17 +38,15 @@ class StoreListPageController : UIViewController{
     //전 페이지에서 받아와야할 값
     var typeCode = ""
     var searchWord = ""
-    
-    
+    var setBottomTabBar = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        
-        print("typecc", self.typeCode)
-        
-        
+        settingBottomBar()
+       
         if(kind == 1) { //mainpage에서 넘어온 페이지일 경우
-            self.pageName.text = typeCode
+            setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
+            
             let jsonObject : [ String : Any ] = [
                 "type_code" : typeCode,
                 "latitude" : "37.499",
@@ -60,8 +73,8 @@ class StoreListPageController : UIViewController{
             
         }
         
-        else {  //kind == 3   -> search에서 넘어온 페이지일 경우
-            self.pageName.text = searchWord
+        else if kind == 3{  //kind == 3   -> search에서 넘어온 페이지일 경우
+            setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
             let jsonObject : [String : Any ] = [
                 "keyword" : searchWord,
                 "latitude" : "37.499",
@@ -85,18 +98,21 @@ class StoreListPageController : UIViewController{
             }
             self.storeListView.reloadData()
         }
-        
+        else {
+            
+        }
         
     }
-    
     func configureView(){
         view.backgroundColor = .white
         storeListView.backgroundColor = .white
         storeListView.delegate = self
         storeListView.dataSource = self
     }
-    @IBAction func backBtn(_ sender: Any) {
-        self.dismiss(animated: false)
+    func settingBottomBar() {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        setBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        setBottomTabBar.eventDelegate = self
     }
 }
 
@@ -137,7 +153,6 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
                 cell.is_OpenLable.text = "영업종료"
             }
             cell.distance_Label.text = String(Int(store.distance)) + "m"
-            
             return cell
         }
     }
@@ -155,20 +170,22 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let nextViewController = segue.destination as? AboutStore else {
-            return
+        if let nextViewController = segue.destination as? AboutStore {
+            let labell = sender as! String
+            nextViewController.store_id = labell
         }
-        let labell = sender as! String
-        nextViewController.store_id = labell
+        
+        if let isBottomView = segue.destination as? BottomTabBarController {
+            let index = sender as! Int
+            isBottomView.indexValue = index
+        }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if storeList[indexPath.item].is_open == "N"{
-            return
-        }
         let id = String(storeList[indexPath.item].store_id)
         navigationController?.pushViewController(AboutStore(), animated: false)
         performSegue(withIdentifier: "toAboutStore", sender: id)
     }
+    
 }
 
 extension StoreListPageController : UIScrollViewDelegate {
