@@ -18,20 +18,14 @@ class LoginPageController: UIViewController {
     @IBOutlet weak var registerBtn1: UILabel!
     
     @IBOutlet weak var registerBtn2: UILabel!
+    @IBOutlet weak var memoryMyAccountCheckBox: UIButton!
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
     let SPREF = UserDefaults()
+    var remeberInfo = UserDefaults.standard
+    var makeToastMessage = ToastMessage()
     
-    let registerButton: UIButton = {
-        let registerBtn = UIButton()
-        registerBtn.backgroundColor = .white
-        registerBtn.setTitle("회원가입", for: .normal)
-        registerBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16.0)
-        registerBtn.tintColor = .purple
-        registerBtn.addTarget(self, action: #selector(handleRegister(_:)), for: .touchUpInside)
-        return registerBtn
-    }()
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
         
@@ -45,6 +39,13 @@ class LoginPageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(remeberInfo.bool(forKey: "checkedBox")) {
+            memoryMyAccountCheckBox.isSelected = true
+            if let param = remeberInfo.value(forKey: "remeberUser") as? [String : Any]{
+                phoneInput.text = "\(param["phone"] as! String)"
+                passwordInput.text = "\(param["pass"] as! String)"
+            }
+        }
         
         phoneInput.placeholder = "01012345678"
         phoneInput.borderStyle = .none
@@ -55,7 +56,22 @@ class LoginPageController: UIViewController {
         loginButton.addTarget(self, action: #selector(handleLogin(_:)), for: .touchUpInside)
         print("log")
     }
-    
+    @IBAction func rememberUserInfo() {
+        if(memoryMyAccountCheckBox.isSelected) {
+            memoryMyAccountCheckBox.isSelected = false
+            UserDefaults.resetStandardUserDefaults()
+            return
+        }
+        else {
+            memoryMyAccountCheckBox.isSelected = true
+            guard let phone = phoneInput.text else {return}
+            guard let password = passwordInput.text else { return}
+            let param = ["phone":"\(phone)","pass":"\(password)"]
+            remeberInfo.set(param, forKey: "rememberUser")
+            remeberInfo.set(true, forKey: "checkedBox")
+            print("save user info : ", param)
+        }
+    }
     @objc private func handleRegister(_ sender: UIButton) {
         let controller = RegisterPageController()
         self.present(controller, animated: true)
@@ -72,6 +88,10 @@ class LoginPageController: UIViewController {
                 UserDefaults.standard.set(json["nick"].stringValue, forKey: "user_name")
                 UserDefaults.standard.set(json["phone"].stringValue, forKey: "user_phone")
                 self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
+            }
+            else {
+                self.makeToastMessage.showToast(message: "입력정보가 틀립니다.", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 10.0)!, targetController: self)
+                UserDefaults.resetStandardUserDefaults()
             }
         }
     }

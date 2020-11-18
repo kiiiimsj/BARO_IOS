@@ -27,7 +27,8 @@ class MyPageController : UIViewController {
     
     @IBOutlet weak var leftBar: UIView!
     @IBOutlet weak var rightBar: UIView!
-    var buttons = [ [" ", "공지사항", "입점요청", "1:1 문의"], [" ","비밀번호 변경", "이메일 변경"], [" ","이용약관", "개인정보 처리방침"] ]
+    var buttons = [ [" ", "  공지사항", "  입점요청", "  1:1 문의"], [" ","  비밀번호 변경", "  이메일 변경"], [" ","  이용약관", "  개인정보 처리방침"] ]
+    var buttonsSectionHeight : CGFloat = 7.0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         reloadInputViews()
@@ -50,6 +51,8 @@ class MyPageController : UIViewController {
         setMyCountInfo()
         buttonList?.dataSource = self
         buttonList?.delegate = self
+        buttonList?.estimatedRowHeight = 50
+        buttonList?.rowHeight = UITableView.automaticDimension
     }
     func addGest() {
         couponArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToCoupon(_:))))
@@ -103,6 +106,9 @@ extension MyPageController : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageButtons", for: indexPath) as! MyPageButtons
         cell.lists?.text = buttons[indexPath.section][indexPath.row + 1]
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return buttonsSectionHeight
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return buttons[section][0]
