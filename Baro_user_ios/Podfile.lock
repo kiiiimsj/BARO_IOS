@@ -48,6 +48,7 @@ PODS:
     - GoogleUtilities/Reachability (~> 6.7)
     - GoogleUtilities/UserDefaults (~> 6.7)
     - Protobuf (>= 3.9.2, ~> 3.9)
+  - FSPagerView (0.8.3)
   - GoogleAppMeasurement (6.9.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
@@ -109,6 +110,7 @@ DEPENDENCIES:
   - AlignedCollectionViewFlowLayout
   - Firebase/Analytics
   - Firebase/Messaging
+  - FSPagerView
   - Kingfisher (~> 4.7)
   - KituraKit
   - NMapsMap
@@ -127,6 +129,7 @@ SPEC REPOS:
     - FirebaseInstallations
     - FirebaseInstanceID
     - FirebaseMessaging
+    - FSPagerView
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -156,6 +159,7 @@ SPEC CHECKSUMS:
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
   FirebaseInstanceID: bd3ffc24367f901a43c063b36c640b345a4a5dd1
   FirebaseMessaging: 5eca4ef173de76253352511aafef774caa1cba2a
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
@@ -174,6 +178,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   SwiftyRequest: 8e84cd4839fe2429285fe60a5812b5634a8ecb83
 
-PODFILE CHECKSUM: bf565515fed46b2f2e5f4759969937dab13f2127
+PODFILE CHECKSUM: 24a6594eb6fff36a34fcf26a8ffb6e9bb9e7c7e5
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

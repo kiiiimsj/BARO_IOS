@@ -15,4 +15,5 @@ target 'Baro_user_ios' do
   pod 'NMapsMap'
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
+  pod 'FSPagerView'
 end
