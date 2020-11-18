@@ -13,6 +13,7 @@ class CouponForBasket : UIViewController {
     @IBOutlet weak var couponDiscountPrice: UILabel!
     @IBOutlet weak var realPayPrice: UILabel!
     @IBOutlet weak var customerRequest: UITextField!
+    var currentSelectedCoupon : CouponForBasketCell?
     public var sendOrderToBootPay = [Order]()
     public var UseCouponId : Int = -1
     public var couponDiscountValue : Int = 0
@@ -79,6 +80,16 @@ class CouponForBasket : UIViewController {
 }
 extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollectionViewDataSource{
     func btnClickCoupon(cell: CouponForBasketCell) {
+        if currentSelectedCoupon == cell {
+            self.UseCouponId = -1
+            self.realPriceValue = self.totalPrice
+            self.couponDiscountValue = 0
+            self.realPayPrice.text =  "\(realPriceValue)"
+            self.currentSelectedCoupon = nil
+            self.couponDiscountPrice.text = "\(couponDiscountValue)"
+            cell.backgroundColor = .white
+            return
+        }
         let indexPath = self.couponCollectionView.indexPath(for: cell)
         let couponData = self.coupons[indexPath!.item]
         var changedTotalValue : Int = 0
@@ -97,6 +108,10 @@ extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollecti
         self.couponDiscountValue = couponData.coupon_discount
         self.realPayPrice.text = "\(changedTotalValue)"
         self.UseCouponId = couponData.coupon_id
+        
+        
+        self.currentSelectedCoupon = cell
+        cell.backgroundColor = .yellow
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
