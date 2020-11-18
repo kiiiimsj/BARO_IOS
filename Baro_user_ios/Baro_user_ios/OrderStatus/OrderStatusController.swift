@@ -16,7 +16,7 @@ class OrderStatusController : UIViewController {
     let network = CallRequest()
     let networkURL = NetWorkURL()
     
-    var phone = "01093756927"
+    var phone = UserDefaults.standard.value(forKey: "user_phone") as! String
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class OrderStatusController : UIViewController {
     }
     
     func configureView() {
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -80,10 +80,10 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
     }
     
     //높이나 등등 처리하는 오버라이드 해주기
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
-    }
-    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        return CGSize(width: view.frame.width, height: view.frame.height)
+//    }
+//    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width * 0.9, height: 100)
     }

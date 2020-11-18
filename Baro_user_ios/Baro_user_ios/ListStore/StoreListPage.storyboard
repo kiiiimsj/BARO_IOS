@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MRP-nP-rMX">
-                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9VV-yF-efc">
                                     <size key="itemSize" width="414" height="111"/>
@@ -102,50 +102,19 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4Z-Bg-eda">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWf-fA-hyM">
-                                        <rect key="frame" x="30" y="63" width="7" height="22"/>
-                                        <state key="normal" image="arrow_back"/>
-                                        <connections>
-                                            <action selector="backBtn:" destination="z2d-C3-O04" eventType="touchUpInside" id="8rF-sB-Mgl"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="타입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoX-is-R5v">
-                                        <rect key="frame" x="192" y="63" width="30" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="FoX-is-R5v" firstAttribute="top" secondItem="JWf-fA-hyM" secondAttribute="top" id="FOM-FC-uaz"/>
-                                    <constraint firstAttribute="height" constant="100" id="LX7-UZ-KeT"/>
-                                    <constraint firstItem="JWf-fA-hyM" firstAttribute="leading" secondItem="C4Z-Bg-eda" secondAttribute="leading" constant="30" id="W0C-gr-RXd"/>
-                                    <constraint firstItem="FoX-is-R5v" firstAttribute="centerX" secondItem="C4Z-Bg-eda" secondAttribute="centerX" id="cy2-bP-OP5"/>
-                                    <constraint firstAttribute="bottom" secondItem="JWf-fA-hyM" secondAttribute="bottom" constant="15" id="ka5-ei-2G5"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Fp-Qg-L00"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MRP-nP-rMX" firstAttribute="top" secondItem="C4Z-Bg-eda" secondAttribute="bottom" id="4XS-QN-IV8"/>
-                            <constraint firstItem="2Fp-Qg-L00" firstAttribute="trailing" secondItem="C4Z-Bg-eda" secondAttribute="trailing" id="97j-Ad-9su"/>
+                            <constraint firstItem="2Fp-Qg-L00" firstAttribute="bottom" secondItem="MRP-nP-rMX" secondAttribute="bottom" id="66E-6K-XKF"/>
                             <constraint firstItem="MRP-nP-rMX" firstAttribute="leading" secondItem="2Fp-Qg-L00" secondAttribute="leading" id="DWx-mM-C0c"/>
-                            <constraint firstItem="C4Z-Bg-eda" firstAttribute="top" secondItem="75K-BE-Uq0" secondAttribute="top" id="IoO-8n-brY"/>
-                            <constraint firstItem="2Fp-Qg-L00" firstAttribute="bottom" secondItem="MRP-nP-rMX" secondAttribute="bottom" id="KRf-lI-woR"/>
                             <constraint firstItem="MRP-nP-rMX" firstAttribute="trailing" secondItem="2Fp-Qg-L00" secondAttribute="trailing" id="LGd-ib-lso"/>
-                            <constraint firstItem="C4Z-Bg-eda" firstAttribute="leading" secondItem="2Fp-Qg-L00" secondAttribute="leading" id="ti0-r3-W0s"/>
+                            <constraint firstItem="MRP-nP-rMX" firstAttribute="top" secondItem="2Fp-Qg-L00" secondAttribute="top" id="foc-Yc-zxE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="내 가게" image="doc_tabBar" selectedImage="doc_tabBar" springLoaded="YES" id="OaY-ke-RFH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="backBtn" destination="JWf-fA-hyM" id="xGC-44-9Xp"/>
-                        <outlet property="pageName" destination="FoX-is-R5v" id="dvP-yg-hgt"/>
                         <outlet property="storeListView" destination="MRP-nP-rMX" id="TxU-fh-RQp"/>
                         <segue destination="O6c-Wz-ejK" kind="presentation" identifier="toAboutStore" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="1TB-V5-kc2"/>
                         <segue destination="SMb-XE-7NN" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" id="Klt-Hj-Czz"/>
@@ -153,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2St-vS-sEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-284.05797101449275" y="57.589285714285708"/>
+            <point key="canvasLocation" x="-284" y="58"/>
         </scene>
         <!--AboutStore-->
         <scene sceneID="kNS-FO-ZEh">
@@ -175,7 +144,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow_back" width="7" height="12"/>
         <image name="doc_tabBar" width="15.5" height="17"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4qa-UT-Jc4">
-                                <rect key="frame" x="0.0" y="134" width="414" height="619"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="giX-tu-ddE">
                                     <size key="itemSize" width="414" height="128"/>
@@ -113,8 +113,8 @@
                         <constraints>
                             <constraint firstItem="4qa-UT-Jc4" firstAttribute="trailing" secondItem="Byt-Mc-YV3" secondAttribute="trailing" id="Aks-Ur-4AA"/>
                             <constraint firstItem="4qa-UT-Jc4" firstAttribute="leading" secondItem="Byt-Mc-YV3" secondAttribute="leading" id="Ju6-Im-smy"/>
-                            <constraint firstItem="Byt-Mc-YV3" firstAttribute="bottom" secondItem="4qa-UT-Jc4" secondAttribute="bottom" constant="60" id="sOd-X7-PAv"/>
-                            <constraint firstItem="4qa-UT-Jc4" firstAttribute="top" secondItem="Byt-Mc-YV3" secondAttribute="top" constant="90" id="sd1-wc-6cr"/>
+                            <constraint firstItem="Byt-Mc-YV3" firstAttribute="bottom" secondItem="4qa-UT-Jc4" secondAttribute="bottom" id="sOd-X7-PAv"/>
+                            <constraint firstItem="4qa-UT-Jc4" firstAttribute="top" secondItem="Byt-Mc-YV3" secondAttribute="top" constant="50" id="sd1-wc-6cr"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="4" title="주문내역" image="doc_tabBar" id="ZPh-8k-xXF"/>

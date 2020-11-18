@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mRt-kr-3Xg">
-                                <rect key="frame" x="0.0" y="114" width="414" height="659"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="699"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="o7Y-4N-YyQ">
                                     <size key="itemSize" width="414" height="242"/>
@@ -43,6 +43,7 @@
                                                 </label>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tSI-jl-Rvw">
                                                     <rect key="frame" x="135" y="136.5" width="204" height="4"/>
+                                                    <color key="tintColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="9700원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onl-EI-0G8">
                                                     <rect key="frame" x="284" y="91" width="55" height="20.5"/>
@@ -150,9 +151,10 @@
                         <constraints>
                             <constraint firstItem="mRt-kr-3Xg" firstAttribute="trailing" secondItem="x2l-td-ViU" secondAttribute="trailing" id="ACo-2e-aTX"/>
                             <constraint firstItem="wZx-xI-UNL" firstAttribute="leading" secondItem="e2L-OX-rKo" secondAttribute="trailing" constant="139" id="QWC-I0-YVX"/>
-                            <constraint firstItem="x2l-td-ViU" firstAttribute="bottom" secondItem="mRt-kr-3Xg" secondAttribute="bottom" constant="40" id="UU7-oE-ce7"/>
+                            <constraint firstItem="x2l-td-ViU" firstAttribute="bottom" secondItem="mRt-kr-3Xg" secondAttribute="bottom" id="UU7-oE-ce7"/>
                             <constraint firstItem="mRt-kr-3Xg" firstAttribute="top" secondItem="e2L-OX-rKo" secondAttribute="bottom" constant="33" id="XcM-cV-Xjy"/>
                             <constraint firstItem="x2l-td-ViU" firstAttribute="trailing" secondItem="wZx-xI-UNL" secondAttribute="trailing" constant="169" id="da7-3q-zsR"/>
+                            <constraint firstItem="mRt-kr-3Xg" firstAttribute="top" secondItem="wZx-xI-UNL" secondAttribute="bottom" constant="33" id="isD-6K-gma"/>
                             <constraint firstItem="e2L-OX-rKo" firstAttribute="top" secondItem="x2l-td-ViU" secondAttribute="top" constant="15" id="ltY-5J-Qfq"/>
                             <constraint firstItem="wZx-xI-UNL" firstAttribute="top" secondItem="x2l-td-ViU" secondAttribute="top" constant="16" id="nkK-UC-riu"/>
                             <constraint firstItem="mRt-kr-3Xg" firstAttribute="top" secondItem="wZx-xI-UNL" secondAttribute="bottom" constant="33" id="o1O-Lt-rjj"/>
