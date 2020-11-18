@@ -42,7 +42,6 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="backbutton" destination="RbE-QQ-MHE" eventType="touchUpInside" id="Bem-O4-dcq"/>
-                                    <action selector="backbutton:" destination="RbE-QQ-MHE" eventType="touchUpInside" id="msk-Ct-tlp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -60,17 +59,17 @@
                     <connections>
                         <outlet property="backBtn" destination="RL9-Us-x8X" id="M3h-1Q-S3w"/>
                         <outlet property="webView" destination="5nZ-DB-5N5" id="qQe-4g-QMq"/>
-                        <segue destination="jhB-Oy-qbe" kind="presentation" identifier="MyPageController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7KP-oV-S2A"/>
+                        <segue destination="jhB-Oy-qbe" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7KP-oV-S2A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXR-JA-65t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="42.028985507246382" y="33.482142857142854"/>
         </scene>
-        <!--MyPageController-->
+        <!--BottomTabBarController-->
         <scene sceneID="4bz-zO-szY">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MyPageController" storyboardName="MyPage" referencedIdentifier="MyPageController" id="jhB-Oy-qbe" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="MyPageController" storyboardName="BottomTabBar" referencedIdentifier="BottomTabBarController" id="jhB-Oy-qbe" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ET4-LZ-ov6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="824" y="-96"/>

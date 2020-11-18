@@ -45,7 +45,7 @@ class StoreListPageController : UIViewController , isClick {
         settingBottomBar()
        
         if(kind == 1) { //mainpage에서 넘어온 페이지일 경우
-            setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
+            settingInViewBottomTabBar()
             let jsonObject : [ String : Any ] = [
                 "type_code" : typeCode,
                 "latitude" : "37.499",
@@ -73,7 +73,7 @@ class StoreListPageController : UIViewController , isClick {
         }
         
         else if kind == 3{  //kind == 3   -> search에서 넘어온 페이지일 경우
-            setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
+            settingInViewBottomTabBar()
             let jsonObject : [String : Any ] = [
                 "keyword" : searchWord,
                 "latitude" : "37.499",
@@ -101,6 +101,11 @@ class StoreListPageController : UIViewController , isClick {
             
         }
         
+    }
+    func settingInViewBottomTabBar() {
+        setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
+        storeListView.frame.size.height = (storeListView.frame.height + setBottomTabBar.view.frame.height)
+        storeListView.bottomAnchor.constraint(equalTo: setBottomTabBar.view.topAnchor).isActive = true
     }
     func configureView(){
         view.backgroundColor = .white
