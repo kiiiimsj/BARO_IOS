@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import NMapsMap
+import FSPagerView
 
 class MainPageController: UIViewController, CLLocationManagerDelegate {
     
@@ -31,7 +32,10 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var locationButton: UIButton!
 
-    @IBOutlet weak var collectionViewEvent: UICollectionView!
+    @IBOutlet weak var pagerView: FSPagerView!
+    //    @IBOutlet weak var collectionViewEvent: UICollectionView!
+    @IBOutlet weak var whatPage: UILabel!
+    @IBOutlet weak var pagerControl: FSPageControl!
     @IBOutlet weak var collectionViewType: UICollectionView!
     @IBOutlet weak var collectionViewUltra: UICollectionView!
     @IBOutlet weak var collectionViewNewStore: UICollectionView!
@@ -43,6 +47,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var mainView: UIView!
     var netWork = CallRequest()
     var urlMaker = NetWorkURL()
+    var eventList = [EventListModel]()
     //blur view
    
     //alert이미지 - 아래에서 off/on체크해주기
@@ -63,12 +68,14 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         mainView.backgroundColor = .white
         scrollView.backgroundColor = .white
         
-        collectionViewEvent.dataSource = self
+        pagerView.dataSource = self
+        pagerView.delegate = self
+//        collectionViewEvent.dataSource = self
         collectionViewType.dataSource = self
         collectionViewUltra.dataSource = self
         collectionViewNewStore.dataSource = self
         
-        collectionViewEvent.delegate = self
+//        collectionViewEvent.delegate = self
         collectionViewType.delegate = self
         collectionViewUltra.delegate = self
         collectionViewNewStore.delegate = self
@@ -95,6 +102,30 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         getMyLocation(String(longitude!), String(latitude!))
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
         whetherNewOrNot()
+        netWork.post(method: .get, url: urlMaker.eventList) { json in
+            var eventModel = EventListModel()
+            print("jj",json)
+            for item in json["event"].array! {
+                eventModel.event_id = item["event_id"].stringValue
+                eventModel.event_image = item["event_image"].stringValue
+               
+                self.eventList.append(eventModel)
+            }
+            self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+            self.pagerView.itemSize = FSPagerView.automaticSize
+            self.pagerView.isInfinite = true
+            self.pagerView.automaticSlidingInterval = 4.0
+            self.pagerControl.numberOfPages = self.eventList.count
+            self.pagerControl.contentHorizontalAlignment = .center
+            self.pagerControl.itemSpacing = 8
+            self.pagerControl.interitemSpacing = 8
+            self.pagerControl.setFillColor(.purple, for: .selected)
+            self.pagerControl.setPath(UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 8, height: 8)), for: .normal)
+            self.pagerControl.setPath(UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 8, height: 8)), for: .selected)
+            self.whatPage.text = "1 / " + String(self.eventList.count)
+            self.pagerView.reloadData()
+            
+        }
     }
     
     func getMyLocation(_ longitude : String, _ latitude :String) {
@@ -163,19 +194,50 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         }
     }
 }
-
+extension MainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return eventList.count
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let event = eventList[index]
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        cell.imageView?.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageEvent.do?image_name=" + event.event_image))
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goStore(_:))))
+        return cell
+    }
+    @objc func goStore(_ sender: UITapGestureRecognizer) {
+        let indexPath = self.pagerView.currentIndex
+        let eventId = eventList[indexPath].event_id
+        navigationController?.pushViewController(EventPageController(), animated: false)
+        performSegue(withIdentifier: "mainToEvent", sender: eventId)
+    }
+    
+    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
+        self.pagerControl.currentPage = targetIndex
+        self.whatPage.text = String(targetIndex + 1) + " / " + String(eventList.count)
+    } 
+    func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
+        self.pagerControl.currentPage = pagerView.currentIndex
+        self.whatPage.text = String(pagerView.currentIndex + 1) + " / " + String(eventList.count)
+    }
+    func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
+        return false
+    }
+}
 extension MainPageController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if(collectionView == collectionViewEvent) {
-            let cell = collectionViewEvent?.dequeueReusableCell(withReuseIdentifier: "MainPageEvent", for: indexPath) as! MainPageEvent
-            cell.delegateEvent = self
-            return cell
-        }
-        else if(collectionView == collectionViewType) {
+//        if(collectionView == ) {
+//            let cell = collectionViewEvent?.dequeueReusableCell(withReuseIdentifier: "MainPageEvent", for: indexPath) as! MainPageEvent
+//            cell.delegateEvent = self
+//            return cell
+//        }
+         if(collectionView == collectionViewType) {
             let cell = collectionViewType?.dequeueReusableCell(withReuseIdentifier: "MainPageType", for: indexPath) as! MainPageType
             cell.delegateType = self
             return cell
@@ -194,10 +256,10 @@ extension MainPageController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == collectionViewEvent {
-            return  CGSize(width: self.collectionViewEvent.frame.width, height: self.collectionViewEvent.frame.height)
-        }
-        else if collectionView == collectionViewType {
+//        if collectionView == collectionViewEvent {
+//            return  CGSize(width: self.collectionViewEvent.frame.width, height: self.collectionViewEvent.frame.height)
+//        }
+        if collectionView == collectionViewType {
             return CGSize(width: self.collectionViewType.frame.width, height: self.collectionViewType.frame.height)
         }
         else{
