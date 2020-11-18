@@ -42,7 +42,7 @@ class OrderHistoryController : UIViewController {
     }
     
     func configureView(){
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
     }

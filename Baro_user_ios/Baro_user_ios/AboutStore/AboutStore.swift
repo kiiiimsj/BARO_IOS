@@ -97,7 +97,8 @@ class AboutStore : UIViewController , isClick {
         VC.store_id = self.store_id
         self.addChild(VC)
         FirstPage.addSubview((VC.view)!)
-        VC.view.frame = FirstPage.bounds
+        VC.view.frame.size.width = FirstPage.frame.size.width
+        VC.view.frame.size.height = (FirstPage.frame.size.height - setBottomTabBar.view.frame.height)
         VC.didMove(toParent: self)
         print("menuButtonClick")
     }
@@ -112,7 +113,8 @@ class AboutStore : UIViewController , isClick {
         VC.StoreInfo = self.StoreInfo
         self.addChild(VC)
         FirstPage.addSubview((VC.view)!)
-        VC.view.frame = FirstPage.bounds
+        VC.view.frame.size.width = FirstPage.frame.size.width
+        VC.view.frame.size.height = (FirstPage.frame.size.height - setBottomTabBar.view.frame.height)
         VC.didMove(toParent: self)
         print("storeInfoButtonClick")
     }
