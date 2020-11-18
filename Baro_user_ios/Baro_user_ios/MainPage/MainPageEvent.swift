@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 protocol CellDelegateEvent: class {
     func tapClickEvent(tag: String)
 }
