@@ -22,8 +22,11 @@ class MyPageController : UIViewController {
     @IBOutlet weak var myOrderCount: UILabel?
     @IBOutlet weak var myCouponCount: UILabel?
     
+    @IBOutlet weak var topButtonArea: uiViewSetting!
     @IBOutlet weak var buttonList: UITableView?
     
+    @IBOutlet weak var leftBar: UIView!
+    @IBOutlet weak var rightBar: UIView!
     var buttons = [ [" ", "공지사항", "입점요청", "1:1 문의"], [" ","비밀번호 변경", "이메일 변경"], [" ","이용약관", "개인정보 처리방침"] ]
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -34,6 +37,12 @@ class MyPageController : UIViewController {
         setMyCountInfo()
         addGest()
         self.tabBarController?.tabBar.isTranslucent = false
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        let flexWidth = (topButtonArea.frame.size.width / 3)
+        leftBar.frame = CGRect(x: flexWidth, y: 10, width: 1, height: 40)
+        rightBar.frame = CGRect(x: flexWidth * 2, y: 10, width: 1, height: 40)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
