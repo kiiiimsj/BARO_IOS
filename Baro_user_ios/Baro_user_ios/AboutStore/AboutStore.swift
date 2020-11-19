@@ -8,7 +8,7 @@
 
 import UIKit
 private let FirstBarIdentifier = "ASFirstBarCell"
-class AboutStore : UIViewController , isClick {
+class AboutStore : UIViewController {
     
     
     @IBOutlet weak var FirstPage: UICollectionView!
@@ -29,11 +29,8 @@ class AboutStore : UIViewController , isClick {
     private var storeInfoManager = StoreInfoController()
     private var storeMenuManager = StoreMenuController()
     private var contollers = [UIViewController]()
-    var setBottomTabBar = BottomTabBarController()
     public override func viewDidLoad() {
         super.viewDidLoad()
-        settingBottomBar()
-        setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
         
         self.setTabBarItem()
         self.getStoreInfo()
@@ -55,32 +52,6 @@ class AboutStore : UIViewController , isClick {
         
         menuButtonClick()
     }
-    func clickEventDelegate(item: UITabBarItem) {
-        switch(item.tag) {
-            case 0:
-                self.performSegue(withIdentifier: "BottomTabBarController", sender: 0)
-            case 1:
-                self.performSegue(withIdentifier: "BottomTabBarController", sender: 1)
-            case 2:
-                self.performSegue(withIdentifier: "BottomTabBarController", sender: 2)
-            case 3:
-                self.performSegue(withIdentifier: "BottomTabBarController", sender: 3)
-            case 4:
-                self.performSegue(withIdentifier: "BottomTabBarController", sender: 4)
-            default :
-                print("none click")
-        }
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let isBottomView = segue.destination as? BottomTabBarController else { return }
-        let index = sender as! Int
-        isBottomView.indexValue = index
-    }
-    func settingBottomBar() {
-        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
-        setBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
-        setBottomTabBar.eventDelegate = self
-    }
     @IBAction func backbutton() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -97,8 +68,7 @@ class AboutStore : UIViewController , isClick {
         VC.store_id = self.store_id
         self.addChild(VC)
         FirstPage.addSubview((VC.view)!)
-        VC.view.frame.size.width = FirstPage.frame.size.width
-        VC.view.frame.size.height = (FirstPage.frame.size.height - setBottomTabBar.view.frame.height)
+        VC.view.frame.size = FirstPage.frame.size
         VC.didMove(toParent: self)
         print("menuButtonClick")
     }
@@ -113,8 +83,7 @@ class AboutStore : UIViewController , isClick {
         VC.StoreInfo = self.StoreInfo
         self.addChild(VC)
         FirstPage.addSubview((VC.view)!)
-        VC.view.frame.size.width = FirstPage.frame.size.width
-        VC.view.frame.size.height = (FirstPage.frame.size.height - setBottomTabBar.view.frame.height)
+        VC.view.frame.size = FirstPage.frame.size
         VC.didMove(toParent: self)
         print("storeInfoButtonClick")
     }
