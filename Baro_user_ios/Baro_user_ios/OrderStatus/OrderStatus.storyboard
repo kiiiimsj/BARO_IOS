@@ -161,7 +161,6 @@
                             <constraint firstItem="mRt-kr-3Xg" firstAttribute="leading" secondItem="x2l-td-ViU" secondAttribute="leading" id="xdu-au-urw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="주문현황" image="clock_tabBar" id="P7i-Cc-iJE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="mRt-kr-3Xg" id="LdN-V8-Kuf"/>
@@ -431,7 +430,6 @@
     </scenes>
     <resources>
         <image name="arrow_back" width="7" height="12"/>
-        <image name="clock_tabBar" width="17" height="17"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

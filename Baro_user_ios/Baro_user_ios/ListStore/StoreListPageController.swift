@@ -8,23 +8,7 @@
 import UIKit
 private let StorelistCellIdentifier = "StoreListCell"
 private let ListStorePageIdentifier = "StoreListPageController"
-class StoreListPageController : UIViewController , isClick {
-    func clickEventDelegate(item: UITabBarItem) {
-        switch(item.tag) {
-        case 0:
-            self.performSegue(withIdentifier: "BottomTabBarController", sender: 0)
-        case 1:
-            self.performSegue(withIdentifier: "BottomTabBarController", sender: 1)
-        case 2:
-            self.performSegue(withIdentifier: "BottomTabBarController", sender: 2)
-        case 3:
-            self.performSegue(withIdentifier: "BottomTabBarController", sender: 3)
-        case 4:
-            self.performSegue(withIdentifier: "BottomTabBarController", sender: 4)
-        default :
-            print("none click")
-        }
-    }
+class StoreListPageController : UIViewController {
     
     @IBOutlet weak var storeListView: UICollectionView!
     var storeList = [StoreList]()
@@ -38,14 +22,11 @@ class StoreListPageController : UIViewController , isClick {
     //전 페이지에서 받아와야할 값
     var typeCode = ""
     var searchWord = ""
-    var setBottomTabBar = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        settingBottomBar()
-        print("StoreList",kind)
+
         if(kind == 1) { //mainpage에서 넘어온 페이지일 경우
-            setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
             let jsonObject : [ String : Any ] = [
                 "type_code" : typeCode,
                 "latitude" : "37.499",
@@ -73,7 +54,6 @@ class StoreListPageController : UIViewController , isClick {
         }
         
         else if kind == 3{  //kind == 3   -> search에서 넘어온 페이지일 경우
-            setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
             let jsonObject : [String : Any ] = [
                 "keyword" : searchWord,
                 "latitude" : "37.499",
@@ -109,11 +89,6 @@ class StoreListPageController : UIViewController , isClick {
         storeListView.backgroundColor = .white
         storeListView.delegate = self
         storeListView.dataSource = self
-    }
-    func settingBottomBar() {
-        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
-        setBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
-        setBottomTabBar.eventDelegate = self
     }
 }
 
@@ -174,11 +149,6 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
         if let nextViewController = segue.destination as? AboutStore {
             let labell = sender as! String
             nextViewController.store_id = labell
-        }
-        
-        if let isBottomView = segue.destination as? BottomTabBarController {
-            let index = sender as! Int
-            isBottomView.indexValue = index
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

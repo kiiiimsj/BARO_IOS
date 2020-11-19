@@ -112,7 +112,6 @@
                             <constraint firstItem="MRP-nP-rMX" firstAttribute="top" secondItem="2Fp-Qg-L00" secondAttribute="top" id="foc-Yc-zxE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="내 가게" image="doc_tabBar" selectedImage="doc_tabBar" springLoaded="YES" id="OaY-ke-RFH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="storeListView" destination="MRP-nP-rMX" id="TxU-fh-RQp"/>
@@ -144,7 +143,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="doc_tabBar" width="15.5" height="17"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -66,6 +66,7 @@
 		3F4C5AB7253ED5D000C0E7B6 /* uiViewSettingAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */; };
 		3F4F8DAF254572220015BACE /* NoticePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F8DAE254572220015BACE /* NoticePageController.swift */; };
 		3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */; };
+		3F6D861B25653BAA00D65CAC /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D861A25653BAA00D65CAC /* ToastMessage.swift */; };
 		3F9B48ED254946720012D89F /* ChangePass2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B48EC254946720012D89F /* ChangePass2.swift */; };
 		3FA196F52547E34E007CD182 /* BottomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA196F42547E34E007CD182 /* BottomTabBarController.swift */; };
 		3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4FC822542898E00EF2894 /* MyPageButtons.swift */; };
@@ -198,6 +199,7 @@
 		3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiViewSettingAttribute.swift; sourceTree = "<group>"; };
 		3F4F8DAE254572220015BACE /* NoticePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePageController.swift; sourceTree = "<group>"; };
 		3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiLabelAnimation.swift; sourceTree = "<group>"; };
+		3F6D861A25653BAA00D65CAC /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		3F9B48EC254946720012D89F /* ChangePass2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePass2.swift; sourceTree = "<group>"; };
 		3FA196F42547E34E007CD182 /* BottomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarController.swift; sourceTree = "<group>"; };
 		3FA4FC822542898E00EF2894 /* MyPageButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageButtons.swift; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 				3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */,
 				043DACBA253DAC5600C70102 /* UrlMaker.swift */,
 				3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */,
+				3F6D861A25653BAA00D65CAC /* ToastMessage.swift */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -804,6 +807,7 @@
 				04235C7A25493CB200BA2BB1 /* OrderStatusModel.swift in Sources */,
 				3FA196F52547E34E007CD182 /* BottomTabBarController.swift in Sources */,
 				04B28D4D255245B5007D1ED6 /* FIrebaseTest.swift in Sources */,
+				3F6D861B25653BAA00D65CAC /* ToastMessage.swift in Sources */,
 				E34CAF732558179600BE3F53 /* LoadingCellCollectionViewCell.swift in Sources */,
 				E33D8546253DC8C800E50BAC /* ASFirstStoreCell.swift in Sources */,
 				E3006A6725501D0900FFBAAB /* BasketEssentialCell.swift in Sources */,

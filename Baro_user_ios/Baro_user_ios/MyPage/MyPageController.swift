@@ -22,9 +22,13 @@ class MyPageController : UIViewController {
     @IBOutlet weak var myOrderCount: UILabel?
     @IBOutlet weak var myCouponCount: UILabel?
     
+    @IBOutlet weak var topButtonArea: uiViewSetting!
     @IBOutlet weak var buttonList: UITableView?
     
-    var buttons = [ [" ", "공지사항", "입점요청", "1:1 문의"], [" ","비밀번호 변경", "이메일 변경"], [" ","이용약관", "개인정보 처리방침"] ]
+    @IBOutlet weak var leftBar: UIView!
+    @IBOutlet weak var rightBar: UIView!
+    var buttons = [ [" ", "  공지사항", "  입점요청", "  1:1 문의"], [" ","  비밀번호 변경", "  이메일 변경"], [" ","  이용약관", "  개인정보 처리방침"] ]
+    var buttonsSectionHeight : CGFloat = 7.0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         reloadInputViews()
@@ -35,6 +39,12 @@ class MyPageController : UIViewController {
         addGest()
         self.tabBarController?.tabBar.isTranslucent = false
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        let flexWidth = (topButtonArea.frame.size.width / 3)
+        leftBar.frame = CGRect(x: flexWidth, y: 10, width: 1, height: 40)
+        rightBar.frame = CGRect(x: flexWidth * 2, y: 10, width: 1, height: 40)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +54,8 @@ class MyPageController : UIViewController {
         setMyCountInfo()
         buttonList?.dataSource = self
         buttonList?.delegate = self
+        buttonList?.estimatedRowHeight = 50
+        buttonList?.rowHeight = UITableView.automaticDimension
     }
     func addGest() {
         couponArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToCoupon(_:))))
@@ -97,6 +109,9 @@ extension MyPageController : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageButtons", for: indexPath) as! MyPageButtons
         cell.lists?.text = buttons[indexPath.section][indexPath.row + 1]
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return buttonsSectionHeight
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return buttons[section][0]
