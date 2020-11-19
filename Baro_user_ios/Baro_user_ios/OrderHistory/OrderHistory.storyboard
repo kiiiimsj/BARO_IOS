@@ -117,7 +117,6 @@
                             <constraint firstItem="4qa-UT-Jc4" firstAttribute="top" secondItem="Byt-Mc-YV3" secondAttribute="top" constant="50" id="sd1-wc-6cr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="4" title="주문내역" image="doc_tabBar" id="ZPh-8k-xXF"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="4qa-UT-Jc4" id="uNW-aj-v2w"/>
@@ -346,7 +345,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="doc_tabBar" width="15.5" height="17"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
