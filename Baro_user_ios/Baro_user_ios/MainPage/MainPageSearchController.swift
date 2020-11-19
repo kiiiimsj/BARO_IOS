@@ -20,7 +20,15 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
         navigationController?.pushViewController(StoreListPageController(), animated: false)
         self.dismiss(animated: false)
         
+        let storyboard = UIStoryboard(name: "MainPage", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "StoreListPageController") as! StoreListPageController
         
+        guard let pvc = self.presentingViewController else { return }
+        self.dismiss(animated: false) {
+            vc.modalPresentationStyle = .fullScreen
+            vc.kind = 3
+            vc.searchWord = self.searchContent
+            pvc.present(vc, animated: false, completion: nil)
         
     }
     
