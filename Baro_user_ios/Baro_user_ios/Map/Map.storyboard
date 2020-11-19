@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5e-dp-7fy" customClass="NMFMapView">
-                                <rect key="frame" x="0.0" y="72" width="414" height="790"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="772"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHF-cB-Bka">
-                                        <rect key="frame" x="0.0" y="590" width="414" height="200"/>
+                                    <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHF-cB-Bka">
+                                        <rect key="frame" x="0.0" y="572" width="414" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="w0w-Re-3wA"/>
                                         </constraints>
@@ -54,7 +54,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJK-61-7JZ">
-                                <rect key="frame" x="20" y="30" width="7" height="22"/>
+                                <rect key="frame" x="20" y="50" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="sHP-LZ-Qm4"/>
+                                    <constraint firstAttribute="height" constant="20" id="urc-tP-15D"/>
+                                </constraints>
                                 <state key="normal" image="arrow_back"/>
                                 <connections>
                                     <action selector="pressBackBtn:" destination="YgK-G5-tsZ" eventType="touchUpInside" id="hWi-kL-glU"/>
@@ -66,7 +70,7 @@
                         <constraints>
                             <constraint firstItem="Qfs-rk-Ffa" firstAttribute="bottom" secondItem="K5e-dp-7fy" secondAttribute="bottom" id="GVF-xv-63w"/>
                             <constraint firstItem="Qfs-rk-Ffa" firstAttribute="trailing" secondItem="K5e-dp-7fy" secondAttribute="trailing" id="L5d-6j-a3F"/>
-                            <constraint firstItem="hJK-61-7JZ" firstAttribute="top" secondItem="QzN-Me-1C9" secondAttribute="top" constant="30" id="QSv-dJ-mUO"/>
+                            <constraint firstItem="hJK-61-7JZ" firstAttribute="top" secondItem="QzN-Me-1C9" secondAttribute="top" constant="50" id="QSv-dJ-mUO"/>
                             <constraint firstItem="K5e-dp-7fy" firstAttribute="leading" secondItem="Qfs-rk-Ffa" secondAttribute="leading" id="VtQ-Xx-Abe"/>
                             <constraint firstItem="hJK-61-7JZ" firstAttribute="leading" secondItem="Qfs-rk-Ffa" secondAttribute="leading" constant="20" id="WBh-q3-Pb1"/>
                             <constraint firstItem="K5e-dp-7fy" firstAttribute="top" secondItem="hJK-61-7JZ" secondAttribute="bottom" constant="20" id="nHa-Ls-z8M"/>

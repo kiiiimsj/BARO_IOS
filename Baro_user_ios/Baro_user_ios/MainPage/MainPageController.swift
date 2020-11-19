@@ -111,18 +111,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
                
                 self.eventList.append(eventModel)
             }
-            self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
-            self.pagerView.itemSize = FSPagerView.automaticSize
-            self.pagerView.isInfinite = true
-            self.pagerView.automaticSlidingInterval = 4.0
-            self.pagerControl.numberOfPages = self.eventList.count
-            self.pagerControl.contentHorizontalAlignment = .center
-            self.pagerControl.itemSpacing = 8
-            self.pagerControl.interitemSpacing = 8
-            self.pagerControl.setFillColor(.purple, for: .selected)
-            self.pagerControl.setPath(UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 8, height: 8)), for: .normal)
-            self.pagerControl.setPath(UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 8, height: 8)), for: .selected)
-            self.whatPage.text = "1 / " + String(self.eventList.count)
+            self.setFSPager()
             self.pagerView.reloadData()
             
         }
@@ -177,6 +166,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     @IBAction func goToMap(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(identifier: "mainToMap") as! MapController
         vc.location = whereAmI
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false)
     }
     
@@ -206,7 +196,31 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         }
     }
 }
+
+//FSPager 관련
 extension MainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
+    // FSPager속성 정하기
+    func setFSPager(){
+        self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+        self.pagerView.itemSize = FSPagerView.automaticSize
+        // 무한슬라이딩
+        self.pagerView.isInfinite = true
+        // 자동슬라이드 주기 ( 1.0 = 1초 )
+        self.pagerView.automaticSlidingInterval = 4.0
+        self.pagerControl.numberOfPages = self.eventList.count
+        // 점 위치
+        self.pagerControl.contentHorizontalAlignment = .center
+        // 간격들
+        self.pagerControl.itemSpacing = 8
+        self.pagerControl.interitemSpacing = 8
+        // 현재 슬라이드 색
+        self.pagerControl.setFillColor(.purple, for: .selected)
+        // 점 크기 정하기
+        self.pagerControl.setPath(UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 8, height: 8)), for: .normal)
+        self.pagerControl.setPath(UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 8, height: 8)), for: .selected)
+        // 현재위치 / 총 개수
+        self.whatPage.text = "1 / " + String(self.eventList.count)
+    }
     func numberOfItems(in pagerView: FSPagerView) -> Int {
         return eventList.count
     }
@@ -219,6 +233,7 @@ extension MainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goStore(_:))))
         return cell
     }
+    // 광고 클릭
     @objc func goStore(_ sender: UITapGestureRecognizer) {
         let indexPath = self.pagerView.currentIndex
         let eventId = eventList[indexPath].event_id
@@ -226,10 +241,12 @@ extension MainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
         performSegue(withIdentifier: "mainToEvent", sender: eventId)
     }
     
+    // 광고를 직접슬라이딩 했을때
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
         self.pagerControl.currentPage = targetIndex
         self.whatPage.text = String(targetIndex + 1) + " / " + String(eventList.count)
-    } 
+    }
+    // 광고 애니메이션이 끝났을때 (자동으로 넘어가는 경우도 있기 때문에 필요)
     func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
         self.pagerControl.currentPage = pagerView.currentIndex
         self.whatPage.text = String(pagerView.currentIndex + 1) + " / " + String(eventList.count)
@@ -238,6 +255,10 @@ extension MainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
         return false
     }
 }
+
+
+
+
 extension MainPageController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
@@ -262,6 +283,7 @@ extension MainPageController : UICollectionViewDelegate, UICollectionViewDataSou
         else {
             let cell = collectionViewNewStore?.dequeueReusableCell(withReuseIdentifier: "MainPageNewStore", for: indexPath) as! MainPageNewStore
             cell.delegateNewStore = self
+            self.scrollView.contentSize = CGSize(width: self.scrollView.contentSize.width, height: self.scrollView.contentSize.height)
             return cell
         }
         
@@ -334,6 +356,7 @@ extension MainPageController {
                 print("볼거있음")
                 self.alertButton.setImage(UIImage(named: "on"), for: .normal)
             }else{
+                self.alertButton.setImage(UIImage(named: "off"), for: .normal)
                 print("이미봄")
             }
             print(self.whatIHave)

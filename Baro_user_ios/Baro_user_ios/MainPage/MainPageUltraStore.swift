@@ -58,7 +58,8 @@ extension MainPageUltraStore : UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageUltraStoreCell", for: indexPath) as! MainPageUltraStoreCell
         cell.ultraName.text = ultra.store_name
         print("qqq",ultra.store_name)
-        cell.ultraInfo.text = ultra.store_info
+        cell.ultraDistance.text = "100m"
+       
         cell.ultraImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name="+ultra.store_image))
         
         //cell 클릭시
@@ -77,6 +78,6 @@ extension MainPageUltraStore : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 400, height: 200)
+        return CGSize(width: 280, height: 200)
     }
 }
