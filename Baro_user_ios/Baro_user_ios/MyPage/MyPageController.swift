@@ -37,6 +37,9 @@ class MyPageController : UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("mymymy")
+        
         setUserName()
         setMyCountInfo()
         buttonList?.dataSource = self

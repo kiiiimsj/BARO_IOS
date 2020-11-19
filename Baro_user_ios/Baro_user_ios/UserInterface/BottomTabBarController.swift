@@ -10,7 +10,7 @@ protocol isClick : AnyObject{
     func clickEventDelegate(item : UITabBarItem)
 }
 class BottomTabBarController: UITabBarController, UITabBarControllerDelegate {
-    var indexValue: Int = 0
+    var indexValue: Int = 1
     weak var eventDelegate : isClick?
     override func viewDidLoad() {
         super.viewDidLoad()

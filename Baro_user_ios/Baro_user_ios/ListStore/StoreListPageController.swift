@@ -43,7 +43,7 @@ class StoreListPageController : UIViewController , isClick {
         super.viewDidLoad()
         configureView()
         settingBottomBar()
-       
+        print("StoreList")
         if(kind == 1) { //mainpage에서 넘어온 페이지일 경우
             setBottomTabBar.setBottomViewInOtherController(view: view, targetController: self, controller: setBottomTabBar)
             let jsonObject : [ String : Any ] = [
