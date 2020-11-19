@@ -19,6 +19,7 @@ class StoreListPageController : UIViewController {
     var kind = 0
     var startPoint = 0 // search 일때만 사용하는 값
     var callMoreData = false
+    var endOfData = false
     //전 페이지에서 받아와야할 값
     var typeCode = ""
     var searchWord = ""
@@ -63,6 +64,9 @@ class StoreListPageController : UIViewController {
             network.post(method: .post, param: jsonObject, url: urlCaller.storeSearchURL ) {
                 (json) in
                 var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
+                if json["result"].count < 20 {
+                    self.endOfData = true
+                }
                 if json["result"].boolValue {
                     for item in json["store"].array! {
                         storeListModel.store_image = item["store_image"].stringValue
@@ -74,6 +78,9 @@ class StoreListPageController : UIViewController {
                         storeListModel.store_name = item["store_name"].stringValue
                         self.storeList.append(storeListModel)
                     }
+                }else{
+                    self.endOfData = true
+                    
                 }
                 self.storeListView.reloadData()
             }
@@ -94,9 +101,15 @@ class StoreListPageController : UIViewController {
 
 extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if kind == 3 {
             if section == 1 {
-                return 1
+                if endOfData {
+                    return 0
+                }
+                else{
+                    return 1
+                }
             }else{
                 return storeList.count
             }
@@ -106,14 +119,20 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
        
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if kind == 3 {
+        if endOfData {
+            return 1
+        }
+        else if kind == 3 {
             return 2
         }else{
             return 1
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 1 && kind == 3 {
+        if indexPath.section == 1 && endOfData {
+            return UICollectionViewCell()
+        }
+        if indexPath.section == 1 && kind == 3  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "loadingCell", for: indexPath) as! ListStoreLoadingCell
             cell.loading.startAnimating()
             return cell
@@ -198,6 +217,9 @@ extension StoreListPageController : UIScrollViewDelegate {
                 }
                 self.startPoint += 20
                 self.storeListView.reloadData()
+            }
+            else {
+                self.endOfData = true
             }
             self.callMoreData = false
         }
