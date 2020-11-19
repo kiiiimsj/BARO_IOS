@@ -9,7 +9,6 @@ import UIKit
 private let StorelistCellIdentifier = "StoreListCell"
 private let ListStorePageIdentifier = "StoreListPageController"
 class StoreListPageController : UIViewController {
-    
     @IBOutlet weak var storeListView: UICollectionView!
     var storeList = [StoreList]()
     let network = CallRequest()
@@ -23,6 +22,8 @@ class StoreListPageController : UIViewController {
     //전 페이지에서 받아와야할 값
     var typeCode = ""
     var searchWord = ""
+    
+    let bottomTabBarInfo = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -97,6 +98,20 @@ class StoreListPageController : UIViewController {
         storeListView.delegate = self
         storeListView.dataSource = self
     }
+    func toStoreListUseBottomBar(id : String) {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
+        ViewInBottomTabBar.controllerSender = id
+        ViewInBottomTabBar.moveFromOutSide = true
+        
+        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = .crossDissolve
+        
+        self.present(ViewInBottomTabBar, animated: true, completion: nil)
+    }
 }
 
 extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -162,18 +177,9 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left:0, bottom: 10, right:0)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let nextViewController = segue.destination as? AboutStore {
-            let labell = sender as! String
-            nextViewController.store_id = labell
-        }
-    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let id = String(storeList[indexPath.item].store_id)
-        navigationController?.pushViewController(AboutStore(), animated: false)
-        performSegue(withIdentifier: "toAboutStore", sender: id)
+        self.toStoreListUseBottomBar(id : id)
     }
     
 }

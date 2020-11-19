@@ -26,6 +26,8 @@ class LoginPageController: UIViewController {
     var remeberInfo = UserDefaults.standard
     var makeToastMessage = ToastMessage()
     
+    let bottomTabBarInfo = BottomTabBarController()
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
         
@@ -71,6 +73,19 @@ class LoginPageController: UIViewController {
             remeberInfo.set(true, forKey: "checkedBox")
         }
     }
+    
+    func toStoreListUseBottomBar(tag : String) {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.mainPageControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.mainPageStoryBoard
+        ViewInBottomTabBar.moveFromOutSide = true
+        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+        self.present(ViewInBottomTabBar, animated: true, completion: nil)
+    }
+    
     @objc private func handleRegister(_ sender: UIButton) {
         let controller = RegisterPageController()
         self.present(controller, animated: true)
@@ -92,7 +107,7 @@ class LoginPageController: UIViewController {
                     self.remeberInfo.removeObject(forKey: "checkedBox")
                     self.remeberInfo.removeObject(forKey: "rememberUser")
                 }
-                self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
+                self.toStoreListUseBottomBar(tag : "")
             }
             else {
                 self.makeToastMessage.showToast(message: "입력정보가 틀립니다.", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 10.0)!, targetController: self)
