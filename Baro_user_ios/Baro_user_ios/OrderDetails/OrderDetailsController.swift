@@ -195,12 +195,20 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
         switch indexPath.section {
         case 0:
             headerview.header.text = "필수 옵션"
+            if essentials.count == 0 {
+                headerview.isHidden = true
+            }
         case 1:
+            if nonEssentials.count == 0 {
+                headerview.isHidden = true
+            }
             headerview.header.text = "퍼스널 옵션"
             headerview.expandable = true
             headerview.arrow.isHidden = false
             headerview.clickListener = self
             headerview.iPath = indexPath
+            // 자신 탭 이벤트 추가하기
+            headerview.addGes()
         default:
             return UICollectionReusableView()
         }

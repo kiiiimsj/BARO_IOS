@@ -16,9 +16,25 @@ class OptionsHeader: UICollectionReusableView {
     var clickListener : ExpandDelegate?
     override func prepareForReuse() {
         super.prepareForReuse()
-//        if expandable {
-//            arrow.isHidden = !expandable
-//        }
+  
+       
+    }
+    func addGes() {
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapSelf(_ :))))
+    }
+    @objc func tapSelf (_ sender : UITapGestureRecognizer){
+        open = !open
+        if open {
+            let image = UIImage(named: "heart")
+            arrow.setImage(image, for: .normal)
+            
+        }else{
+            let image = UIImage(named: "arrow_down")
+            arrow.setImage(image, for: .normal)
+        }
+       
+        print("open?",open)
+        clickListener?.clickExpand(open: open,iPath: iPath)
     }
     @IBAction func expand(_ sender: Any) {
         open = !open
