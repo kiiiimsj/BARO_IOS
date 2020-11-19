@@ -21,6 +21,7 @@ class OrderHistoryController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("iii")
 //        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "HistoryLoadingCell")
         configureView()
 //        initRefresh()

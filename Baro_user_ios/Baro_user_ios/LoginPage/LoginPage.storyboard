@@ -189,6 +189,7 @@
                         <outlet property="registerBtn1" destination="M8Q-gc-XWZ" id="wNt-2y-6mx"/>
                         <outlet property="registerBtn2" destination="coq-dL-K1M" id="mVx-Tq-szC"/>
                         <segue destination="Ibe-2Z-WFL" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" id="UPu-sm-1VS"/>
+                        <segue destination="3Xd-Nv-dWu" kind="presentation" identifier="MainPageController" id="jCg-WT-Kf0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kp-KJ-LYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -377,6 +378,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2U-cR-dMv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="539" y="-444"/>
+        </scene>
+        <!--MainPageController-->
+        <scene sceneID="xWM-07-cSf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainPage" referencedIdentifier="MainPageController" id="3Xd-Nv-dWu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wrk-Ea-ftl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="-205"/>
         </scene>
     </scenes>
     <resources>

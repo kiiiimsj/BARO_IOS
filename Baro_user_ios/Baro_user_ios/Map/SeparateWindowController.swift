@@ -34,7 +34,7 @@ class SeparateWindowController : UIViewController {
             }else{
                 self.Store_distance_label.text = String(format: "%.1f",self.storeData.distance) + " m"
             }
-            self.store_image.kf.setImage(with: URL(string: "http://3.35.180.57:8080/imageStore.do?image_name=" + json["store_image"].stringValue))
+            self.store_image.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + json["store_image"].stringValue))
             self.Store_name_label.text = self.storeData.store_name
             self.goStore.setTitle(self.storeData.store_name + " 으로 가기", for: .normal)
         }

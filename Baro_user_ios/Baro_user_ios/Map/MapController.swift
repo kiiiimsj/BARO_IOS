@@ -61,6 +61,7 @@ class MapController : UIViewController {
             let StorePin = NMFMarker(position: NMGLatLng(lat: item.store_latitude, lng: item.store_longitude), iconImage: baroPinImage)
             StorePin.mapView = map
             StorePin.userInfo = ["StoreInfo" : item]
+            StorePin.captionText = item.store_name
             StorePin.touchHandler = { [weak self] (overlay) -> Bool in
                 if let marker = overlay as? NMFMarker {
                     if marker.infoWindow == nil {

@@ -11,7 +11,8 @@ class MainPageUltraStoreCell : UICollectionViewCell {
     
     @IBOutlet weak var ultraImage: UIImageView!
     @IBOutlet weak var ultraName: UILabel!
-    @IBOutlet weak var ultraInfo: UILabel!
+  
+    @IBOutlet weak var ultraDistance: UILabel!
     
     
     override func prepareForReuse() {

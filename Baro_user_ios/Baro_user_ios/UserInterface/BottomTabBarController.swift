@@ -5,7 +5,7 @@
 //  Created by yUsiL on 2020/10/27.
 //
 
-import UIKit
+import UIKit                                                                                                `
 //분기문에 사용할 실제 컨트롤러 아이덴티피어
 let mainPageControllerIdentifier = "MainPageController"
 let storeListControllerIdentifier = "StoreListPageController"
@@ -33,7 +33,6 @@ class BottomTabBarController: UIViewController {
     let orderStatusStoryBoard = UIStoryboard(name: "OrderStatus", bundle: nil)
     let orderHistoryStoryBoard = UIStoryboard(name: "OrderHistory", bundle: nil)
     let myPageStoryBoard = UIStoryboard(name: "MyPage", bundle: nil)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         bottomTabBar.delegate = self
