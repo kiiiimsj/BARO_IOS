@@ -21,11 +21,6 @@ class TermOfUser : UIViewController{
     @IBAction func backbutton() {
         self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tabBar = segue.destination as? BottomTabBarController else { return }
-        tabBar.indexValue = 1
-    }
     func loadUrl() {
         let url = Bundle.main.url(forResource: "privacyPolicy", withExtension:"html")
         let request = URLRequest(url: url!)

@@ -276,14 +276,6 @@
                             <constraint firstItem="yA4-4M-m8K" firstAttribute="bottom" secondItem="jQl-Zr-BBb" secondAttribute="bottom" id="kDs-aG-USc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="마이페이지" image="myPage_tabBar" selectedImage="myPage_tabBar" springLoaded="YES" id="aco-bq-nGG">
-                        <color key="badgeColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="360" height="1000"/>
                     <connections>
