@@ -40,16 +40,16 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var collectionViewUltra: UICollectionView!
     @IBOutlet weak var collectionViewNewStore: UICollectionView!
     
+    let bottomTabBarInfo = BottomTabBarController()
     
     @IBOutlet weak var scrollView: UIScrollView!
-    
     
     @IBOutlet var mainView: UIView!
     var netWork = CallRequest()
     var urlMaker = NetWorkURL()
     var eventList = [EventListModel]()
     //blur view
-   
+    
     //alert이미지 - 아래에서 off/on체크해주기
     @IBOutlet weak var alertButton: UIButton!
     //alert 클릭시
@@ -97,7 +97,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         
         //회원의 위도경도 model을 userdefaults에 저장 ( 제일 아래에 구조체에 저장)
         //location이라는 key로 위도경도 저장
-        var location = Location(latitude: latitude, longitude: longitude)
+        let location = Location(latitude: latitude, longitude: longitude)
         UserDefaults.standard.set(try? PropertyListEncoder().encode(location), forKey: "location")
         getMyLocation(String(longitude!), String(latitude!))
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
@@ -159,6 +159,18 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         else if status == CLAuthorizationStatus.authorizedWhenInUse {
             //앱 실행중일시에만
         }
+    }
+    func toStoreListUseBottomBar(tag : String) {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.storeListControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.storeListStoryBoard
+        ViewInBottomTabBar.controllerSender = tag
+        ViewInBottomTabBar.moveFromOutSide = true
+        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+        self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
     
     
@@ -269,21 +281,16 @@ extension MainPageController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
 }
-
-
 //클릭에 해당하는 extension들
 extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegateUltra, CellDelegateNewStore {
-   
     func tapClickEvent(tag: String) {
         print(tag)
         navigationController?.pushViewController(EventPageController(), animated: false)
         performSegue(withIdentifier: "mainToEvent", sender: tag)
     }
-    
     func tapClickType(tag: String) {
         print(tag)
-        navigationController?.pushViewController(StoreListPageController(), animated: false)
-        performSegue(withIdentifier: "mainToStoreList", sender: tag)
+        self.toStoreListUseBottomBar(tag: tag)
     }
     
     func tapClickUltra(tag: String) {
@@ -300,13 +307,7 @@ extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if let nextViewController = segue.destination as? StoreListPageController {
-            let labell = sender as! String
-            nextViewController.typeCode = labell
-            nextViewController.kind = 1
-        }
-        else if let nextViewController = segue.destination as? StoreMenuController {
+        if let nextViewController = segue.destination as? StoreMenuController {
             let labell = sender as! String
             nextViewController.store_id = labell
         }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n3R-Xf-dIg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -15,51 +15,51 @@
         </array>
     </customFonts>
     <scenes>
-        <!--About Store-->
+        <!--AboutStore-->
         <scene sceneID="znx-37-STw">
             <objects>
-                <viewController storyboardIdentifier="AboutStore" id="n3R-Xf-dIg" customClass="AboutStore" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutStore" title="AboutStore" id="n3R-Xf-dIg" customClass="AboutStore" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LgM-xG-BLO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7sR-oJ-Amz">
-                                <rect key="frame" x="0.0" y="167" width="414" height="695"/>
+                                <rect key="frame" x="0.0" y="76" width="414" height="786"/>
                                 <color key="backgroundColor" red="0.9764057993888855" green="0.97651880979537964" blue="0.97635525465011597" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nLf-19-rhL">
-                                    <size key="itemSize" width="414" height="128"/>
+                                    <size key="itemSize" width="414" height="63"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WIp-ge-IB8">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="buC-Vp-II4">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="414" height="128"/>
+                                        <size key="customSize" width="414" height="63"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQZ-W6-s48">
-                                <rect key="frame" x="0.0" y="137" width="206" height="30"/>
+                                <rect key="frame" x="0.0" y="47" width="206" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="menuButtonClick" destination="n3R-Xf-dIg" eventType="touchUpInside" id="CbI-hN-jlN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SV8-fY-7rp">
-                                <rect key="frame" x="206" y="137" width="208" height="30"/>
+                                <rect key="frame" x="206" y="46" width="208" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="storeInfoButtonClick" destination="n3R-Xf-dIg" eventType="touchUpInside" id="Blx-ke-M8J"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0f-SM-9LR">
-                                <rect key="frame" x="0.0" y="135" width="206" height="2"/>
+                                <rect key="frame" x="0.0" y="45" width="206" height="2"/>
                                 <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -67,25 +67,12 @@
                                     <constraint firstAttribute="height" constant="2" id="kOk-az-R1P"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test cafe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH9-8w-56v">
-                                <rect key="frame" x="173.5" y="44" width="67.5" height="21"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRd-Nb-UjR">
-                                <rect key="frame" x="28" y="44" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="backbutton" destination="n3R-Xf-dIg" eventType="touchUpInside" id="9ex-BF-4sL"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hR3-5W-TY5">
                                 <rect key="frame" x="356" y="44" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="setFavoriteImageButton" destination="n3R-Xf-dIg" eventType="touchUpInside" id="Xcs-n4-pjT"/>
-                                    <segue destination="erg-za-UnV" kind="presentation" identifier="FavoriteDialog" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="m5i-K1-3HA"/>
+                                    <segue destination="erg-za-UnV" kind="presentation" identifier="FavoriteDialog" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="m5i-K1-3HA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -98,29 +85,24 @@
                             <constraint firstItem="SV8-fY-7rp" firstAttribute="leading" secondItem="zQZ-W6-s48" secondAttribute="trailing" id="Rof-a9-v8C"/>
                             <constraint firstItem="zQZ-W6-s48" firstAttribute="top" secondItem="w0f-SM-9LR" secondAttribute="bottom" id="UjH-Yg-4UB"/>
                             <constraint firstItem="zQZ-W6-s48" firstAttribute="top" secondItem="w0f-SM-9LR" secondAttribute="bottom" id="W06-uD-RWu"/>
-                            <constraint firstItem="w0f-SM-9LR" firstAttribute="top" secondItem="pH9-8w-56v" secondAttribute="bottom" constant="70" id="XMy-tX-9ta"/>
-                            <constraint firstItem="pH9-8w-56v" firstAttribute="top" secondItem="OxP-7X-vwk" secondAttribute="top" id="ZQ2-Nc-YfZ"/>
                             <constraint firstItem="zQZ-W6-s48" firstAttribute="top" secondItem="w0f-SM-9LR" secondAttribute="bottom" id="b1Y-ci-79G"/>
                             <constraint firstItem="zQZ-W6-s48" firstAttribute="leading" secondItem="OxP-7X-vwk" secondAttribute="leading" id="bNW-mz-U17"/>
-                            <constraint firstItem="SV8-fY-7rp" firstAttribute="top" secondItem="OxP-7X-vwk" secondAttribute="top" constant="93" id="cDM-zB-Vbx"/>
-                            <constraint firstItem="pH9-8w-56v" firstAttribute="centerX" secondItem="LgM-xG-BLO" secondAttribute="centerX" id="crM-Pe-QxX"/>
-                            <constraint firstItem="w0f-SM-9LR" firstAttribute="top" secondItem="OxP-7X-vwk" secondAttribute="top" constant="91" id="fti-1c-8tq"/>
+                            <constraint firstItem="SV8-fY-7rp" firstAttribute="top" secondItem="OxP-7X-vwk" secondAttribute="top" constant="2" id="cDM-zB-Vbx"/>
+                            <constraint firstItem="w0f-SM-9LR" firstAttribute="top" secondItem="OxP-7X-vwk" secondAttribute="top" constant="1" id="fti-1c-8tq"/>
                             <constraint firstItem="SV8-fY-7rp" firstAttribute="width" secondItem="zQZ-W6-s48" secondAttribute="width" multiplier="1.00971" id="glT-tV-gDK"/>
                             <constraint firstItem="7sR-oJ-Amz" firstAttribute="trailing" secondItem="OxP-7X-vwk" secondAttribute="trailing" id="idy-wR-uhO"/>
                             <constraint firstItem="SV8-fY-7rp" firstAttribute="height" secondItem="zQZ-W6-s48" secondAttribute="height" id="o97-Qi-jx8"/>
                             <constraint firstItem="w0f-SM-9LR" firstAttribute="width" secondItem="zQZ-W6-s48" secondAttribute="width" id="pDK-0e-3Rw"/>
                             <constraint firstItem="7sR-oJ-Amz" firstAttribute="bottom" secondItem="OxP-7X-vwk" secondAttribute="bottom" id="qn9-rb-A5u"/>
-                            <constraint firstItem="zQZ-W6-s48" firstAttribute="top" secondItem="OxP-7X-vwk" secondAttribute="top" constant="93" id="r24-nA-mNU"/>
+                            <constraint firstItem="zQZ-W6-s48" firstAttribute="top" secondItem="OxP-7X-vwk" secondAttribute="top" constant="3" id="r24-nA-mNU"/>
                             <constraint firstItem="w0f-SM-9LR" firstAttribute="leading" secondItem="LgM-xG-BLO" secondAttribute="leading" id="w14-FW-lCh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="FirstPage" destination="7sR-oJ-Amz" id="yrn-Yf-89n"/>
-                        <outlet property="backBtn" destination="xRd-Nb-UjR" id="t6R-d7-HrO"/>
                         <outlet property="isFavoriteBtn" destination="hR3-5W-TY5" id="md0-Do-OdM"/>
                         <outlet property="menuButton" destination="zQZ-W6-s48" id="YtF-xv-Xst"/>
                         <outlet property="storeInfoButton" destination="SV8-fY-7rp" id="PIN-gJ-nhj"/>
-                        <outlet property="storeTitle" destination="pH9-8w-56v" id="76h-6G-0XE"/>
                         <outlet property="tabIndecator" destination="w0f-SM-9LR" id="LDy-S9-3t7"/>
                         <segue destination="LDZ-uN-ZP4" kind="presentation" identifier="StoreMenuController" animates="NO" id="ZPO-2S-Xaw"/>
                         <segue destination="Cpx-Th-ad8" kind="presentation" identifier="StoreInfoController" modalPresentationStyle="fullScreen" id="wHr-tf-f5t"/>
@@ -135,7 +117,7 @@
         <scene sceneID="Nza-0H-chm">
             <objects>
                 <viewController storyboardIdentifier="StoreInfoController" id="Cpx-Th-ad8" customClass="StoreInfoController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="lEn-iK-HlW">
+                    <view key="view" contentMode="scaleToFill" id="lEn-iK-HlW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
