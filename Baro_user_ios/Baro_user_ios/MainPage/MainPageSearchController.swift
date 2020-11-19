@@ -29,6 +29,7 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
             vc.kind = 3
             vc.searchWord = self.searchContent
             pvc.present(vc, animated: false, completion: nil)
+        }
         
     }
     
