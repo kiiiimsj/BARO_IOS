@@ -154,6 +154,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     @IBAction func goToMap(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(identifier: "mainToMap") as! MapController
         vc.location = whereAmI
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false)
     }
     
@@ -354,6 +355,7 @@ extension MainPageController {
                 print("볼거있음")
                 self.alertButton.setImage(UIImage(named: "on"), for: .normal)
             }else{
+                self.alertButton.setImage(UIImage(named: "off"), for: .normal)
                 print("이미봄")
             }
             print(self.whatIHave)
