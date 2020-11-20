@@ -24,7 +24,8 @@ class StoreMenuController : UIViewController{
     public var saveCelly = CGFloat()
     public var saveIndecatorWidth = [CGFloat]()
     public var saveIndecatorHeight = CGFloat()
-    
+    private var initiateComplete = false
+    private var childController : StoreMenu2Controller?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .purple
@@ -41,25 +42,25 @@ class StoreMenuController : UIViewController{
                     category.category_id = item["category_id"].intValue
                     category.category_name = item["category_name"].stringValue
                     self.categories.append(category)
-                    self.netWork.get(method: .get, url: self.urlMaker.menuURL + "?store_id="+self.store_id) { (json) in
-                        let boolValue = json["result"].boolValue
-                        if boolValue {
-                            self.collectionView.collectionViewLayout = layout
-                            self.collectionView.delegate = self
-                            self.collectionView.dataSource = self
-                            var tempMenu = Menu()
-                            let jsonObject = json["menu"].array!
-                            for item in jsonObject {
-                                tempMenu.menu_defaultprice = item["menu_defaultprice"].intValue
-                                tempMenu.menu_id = item["menu_id"].intValue
-                                tempMenu.category_id = item["category_id"].intValue
-                                tempMenu.menu_image = item["menu_image"].stringValue
-                                tempMenu.store_id = item["store_id"].intValue
-                                tempMenu.menu_name = item["menu_name"].stringValue
-                                tempMenu.menu_info = item["menu_info"].stringValue
-                                tempMenu.is_soldout = item["is_soldout"].stringValue
-                                self.menus.append(tempMenu)
-                            }
+                }
+                self.netWork.get(method: .get, url: self.urlMaker.menuURL + "?store_id="+self.store_id) { (json) in
+                    let boolValue = json["result"].boolValue
+                    if boolValue {
+                        self.collectionView.collectionViewLayout = layout
+                        self.collectionView.delegate = self
+                        self.collectionView.dataSource = self
+                        var tempMenu = Menu()
+                        let jsonObject = json["menu"].array!
+                        for item in jsonObject {
+                            tempMenu.menu_defaultprice = item["menu_defaultprice"].intValue
+                            tempMenu.menu_id = item["menu_id"].intValue
+                            tempMenu.category_id = item["category_id"].intValue
+                            tempMenu.menu_image = item["menu_image"].stringValue
+                            tempMenu.store_id = item["store_id"].intValue
+                            tempMenu.menu_name = item["menu_name"].stringValue
+                            tempMenu.menu_info = item["menu_info"].stringValue
+                            tempMenu.is_soldout = item["is_soldout"].stringValue
+                            self.menus.append(tempMenu)
                         }
                     }
                 }
@@ -70,14 +71,23 @@ class StoreMenuController : UIViewController{
         setContainerViewController(storyboard: "AboutStore", viewControllerID: "StoreMenu2Controller",index: indexPath.item,menus: menus)
     }
     func setContainerViewController(storyboard: String, viewControllerID: String,index : Int,menus : [Menu]){
-        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
-        let VC = storyboard.instantiateViewController(withIdentifier: viewControllerID)
-        (VC as! StoreMenu2Controller).menus = menus
-            self.addChild(VC)
-            containerView.addSubview((VC.view)!)
-            VC.view.frame = containerView.bounds
-            VC.didMove(toParent: self)
+        
+        if !initiateComplete {
+            let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+            childController = storyboard.instantiateViewController(withIdentifier: viewControllerID) as? StoreMenu2Controller
+            (childController!).menus = menus
+            self.addChild(childController!)
+            containerView.addSubview((childController!.view)!)
+            childController!.view.frame = containerView.bounds
+            childController!.didMove(toParent: self)
+            initiateComplete = true
+        }else{
+            childController?.menus = menus
+            print("ccccccc?",childController?.menus.count)
+            childController?.collectionView.reloadData()
         }
+        
+    }
 }
 
 extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
