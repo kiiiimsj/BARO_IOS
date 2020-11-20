@@ -202,18 +202,18 @@
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BaN-eb-3bw">
                                                     <rect key="frame" x="16" y="53" width="382" height="152"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ULD-rU-kfs">
-                                                        <size key="itemSize" width="414" height="54"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ULD-rU-kfs">
+                                                        <size key="itemSize" width="382" height="54"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BasketEssentialCell" id="u1P-os-Phz" customClass="BasketEssentialCell" customModule="Baro_user_ios" customModuleProvider="target">
-                                                            <rect key="frame" x="-16" y="0.0" width="414" height="54"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="54"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aQe-eD-Lvq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="54"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="extra이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trG-ir-DZz">
@@ -223,19 +223,19 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0q-zw-yti">
-                                                                        <rect key="frame" x="373" y="16.5" width="15" height="21"/>
+                                                                        <rect key="frame" x="341" y="16.5" width="15" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhy-9n-tah">
-                                                                        <rect key="frame" x="362.5" y="16.5" width="10.5" height="21"/>
+                                                                        <rect key="frame" x="330.5" y="16.5" width="10.5" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTa-rI-KEc">
-                                                                        <rect key="frame" x="347" y="16.5" width="10.5" height="21"/>
+                                                                        <rect key="frame" x="315" y="16.5" width="10.5" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -252,21 +252,21 @@
                                                                     <constraint firstItem="lTa-rI-KEc" firstAttribute="centerY" secondItem="aQe-eD-Lvq" secondAttribute="centerY" id="yau-wA-GMu"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
-                                                            <size key="customSize" width="414" height="54"/>
+                                                            <size key="customSize" width="382" height="54"/>
                                                             <connections>
                                                                 <outlet property="extraNames" destination="trG-ir-DZz" id="nPn-2e-V3B"/>
                                                                 <outlet property="extraPrice" destination="Qhy-9n-tah" id="WyQ-LT-v2s"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="Baro_user_ios" customModuleProvider="target">
-                                                            <rect key="frame" x="-16" y="64" width="414" height="54"/>
+                                                            <rect key="frame" x="0.0" y="54" width="382" height="54"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5eM-zE-iFh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="54"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mo-bb-TQr">
-                                                                        <rect key="frame" x="362.5" y="16.5" width="10.5" height="21"/>
+                                                                        <rect key="frame" x="330.5" y="16.5" width="10.5" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -278,7 +278,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgi-Vh-JrD">
-                                                                        <rect key="frame" x="373" y="16.5" width="15" height="21"/>
+                                                                        <rect key="frame" x="341" y="16.5" width="15" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -290,7 +290,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSA-nf-MDI">
-                                                                        <rect key="frame" x="346.5" y="16.5" width="11" height="21"/>
+                                                                        <rect key="frame" x="314.5" y="16.5" width="11" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>

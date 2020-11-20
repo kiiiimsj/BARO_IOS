@@ -29,17 +29,48 @@ class AboutStore : UIViewController {
     private var storeInfoManager = StoreInfoController()
     private var storeMenuManager = StoreMenuController()
     private var contollers = [UIViewController]()
+    private var menuController : StoreMenuController?
+    private var infoController : StoreInfoController?
     public override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setTabBarItem()
         self.getStoreInfo()
-        self.isFavoriteStore()
+//        self.isFavoriteStore()
         
         backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
         UIView.animate(withDuration: 0.0) {
             self.tabIndecator.transform = CGAffineTransform(rotationAngle: 0.0)
         }
+    }
+    func makeChildVC() {
+        let storyBoard = UIStoryboard(name: "AboutStore", bundle: nil)
+        menuController = storyBoard.instantiateViewController(identifier: "StoreMenuController")
+        infoController = storyBoard.instantiateViewController(identifier: "StoreInfoController")
+        infoController?.StoreInfo = self.StoreInfo
+        menuController?.store_id = String(self.StoreInfo.store_id)
+        self.addChild(infoController!)
+        self.addChild(menuController!)
+        contollers.append(menuController!)
+        contollers.append(infoController!)
+        changeVC(index: 0)
+    }
+    func changeVC(index : Int){
+        switch index {
+        case 0:
+            let vc = contollers[index] as! StoreMenuController
+            attachToMainView(vc: vc)
+        case 1:
+            let vc = contollers[index] as! StoreInfoController
+            attachToMainView(vc: vc)
+        default:
+            print("default")
+        }
+    }
+    func attachToMainView(vc : UIViewController){
+        FirstPage.addSubview((vc.view)!)
+        vc.view.frame.size = FirstPage.frame.size
+        vc.didMove(toParent: self)
     }
     func setTabBarItem() {
         menuButton.setTitle("메뉴", for: .normal)
@@ -50,7 +81,7 @@ class AboutStore : UIViewController {
         storeInfoButton.backgroundColor = .white
         storeInfoButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
         
-        menuButtonClick()
+//            menuButtonClick()
     }
     @IBAction func backbutton() {
         self.dismiss(animated: true, completion: nil)
@@ -61,16 +92,17 @@ class AboutStore : UIViewController {
         UIView.animate(withDuration: 0.7) {
             self.tabIndecator.transform = CGAffineTransform(translationX: 0.0, y: self.tabIndecator.bounds.height - 2)
         }
-        
-        let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
-        guard let VC = storyboard.instantiateViewController(withIdentifier: "StoreMenuController") as? StoreMenuController else {return}
-        
-        VC.store_id = self.store_id
-        self.addChild(VC)
-        FirstPage.addSubview((VC.view)!)
-        VC.view.frame.size = FirstPage.frame.size
-        VC.didMove(toParent: self)
-        print("menuButtonClick")
+        changeVC(index: 0)
+//
+//        let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
+//        guard let VC = storyboard.instantiateViewController(withIdentifier: "StoreMenuController") as? StoreMenuController else {return}
+//
+//        VC.store_id = self.store_id
+//        self.addChild(VC)
+//        FirstPage.addSubview((VC.view)!)
+//        VC.view.frame.size = FirstPage.frame.size
+//        VC.didMove(toParent: self)
+//        print("menuButtonClick")
     }
     @IBAction func storeInfoButtonClick() {
         storeInfoButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
@@ -78,14 +110,15 @@ class AboutStore : UIViewController {
         UIView.animate(withDuration: 0.7) {
             self.tabIndecator.transform = CGAffineTransform(translationX: self.storeInfoButton.bounds.width, y: self.tabIndecator.bounds.height - 2)
         }
-        let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
-        guard let VC = storyboard.instantiateViewController(withIdentifier: "StoreInfoController") as? StoreInfoController else {return}
-        VC.StoreInfo = self.StoreInfo
-        self.addChild(VC)
-        FirstPage.addSubview((VC.view)!)
-        VC.view.frame.size = FirstPage.frame.size
-        VC.didMove(toParent: self)
-        print("storeInfoButtonClick")
+        changeVC(index: 1)
+//        let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
+//        guard let VC = storyboard.instantiateViewController(withIdentifier: "StoreInfoController") as? StoreInfoController else {return}
+//        VC.StoreInfo = self.StoreInfo
+//        self.addChild(VC)
+//        FirstPage.addSubview((VC.view)!)
+//        VC.view.frame.size = FirstPage.frame.size
+//        VC.didMove(toParent: self)
+//        print("storeInfoButtonClick")
     }
     @IBAction func setFavoriteImageButton() {
         UserDefaults.standard.set(self.isFlag, forKey: "isFlag")
@@ -151,6 +184,7 @@ class AboutStore : UIViewController {
                 self.storeTitle.text = self.StoreInfo.store_name
                 UserDefaults.standard.set(self.StoreInfo.store_name, forKey: "currentStoreName")
                 UserDefaults.standard.set(self.StoreInfo.store_id, forKey: "currentStoreId")
+                self.makeChildVC()
             } else {
                 print("make request fail")
             }

@@ -26,6 +26,7 @@ class BasketController : UIViewController {
                 orders.append(contentsOf: loadBasket())
             }
             orders.append(menu)
+            print(orders)
         }
         else {
             print("error")
@@ -87,6 +88,7 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         cell.extraCollectionView.delegate = cell.self
         cell.extraCollectionView.dataSource = cell.self
         cell.delegate = self
+        cell.backgroundColor = .yellow
         self.totalPrice += (eachMenu.menu_total_price * eachMenu.menu_count)
         self.totalPriceLabel.text = "\(self.totalPrice)"
         return cell
@@ -104,8 +106,12 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         return headerview
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        print(orders[indexPath.item].Essentials.count + orders[indexPath.item].nonEssentials.count)
-        return CGSize(width: collectionView.frame.width, height: CGFloat(70 + (orders[indexPath.item].Essentials.count + orders[indexPath.item].nonEssentials.count) * 45))
+        if orders[indexPath.item].Essentials.count > 0 {
+            return CGSize(width: collectionView.frame.width, height: CGFloat(70 + (1 + orders[indexPath.item].nonEssentials.count) * 65))
+        }else{
+            return CGSize(width: collectionView.frame.width, height: CGFloat(70 + (orders[indexPath.item].nonEssentials.count) * 62))
+        }
+        
     }
     func btnDeleteTapped(cell: BasketMenuCell) {
         let indexPath = self.collectionView.indexPath(for: cell)
