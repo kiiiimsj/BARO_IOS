@@ -32,7 +32,6 @@ class BottomTabBarController: UIViewController {
     let orderHistoryControllerIdentifier = "OrderHistoryController"
     let myPageControllerIdentifier = "MyPageController"
     let aboutStoreControllerIdentifier = "AboutStore"
-    
     //접근가능 스토리보드
     let mainPageStoryBoard = UIStoryboard(name: "MainPage", bundle: nil)
     let storeListStoryBoard = UIStoryboard(name: "StoreListPage", bundle: nil)
@@ -40,32 +39,35 @@ class BottomTabBarController: UIViewController {
     let orderHistoryStoryBoard = UIStoryboard(name: "OrderHistory", bundle: nil)
     let myPageStoryBoard = UIStoryboard(name: "MyPage", bundle: nil)
     let aboutStoreStoryBoard = UIStoryboard(name: "AboutStore", bundle: nil)
-    
     //화면 이동 할때 필요한 요소.
     var controllerStoryboard = UIStoryboard()
     var controllerIdentifier : String = ""
     var controllerSender : Any = ""
     var moveFromOutSide : Bool = false
-    
     //바텀탭 로딩후 선택되어지는 탭바아이템
     var selectedTabBarItem : Int = 0
     
+    var saveTopViewSize = CGRect()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-        topBarFavoriteBtn.isHidden = true
+        //topBarFavoriteBtn.isHidden = true
         if(moveFromOutSide) {
             changeViewController(getController: controllerIdentifier, getStoryBoard: controllerStoryboard, sender: controllerSender)
+            //moveFromOutSide = false
         }
         bottomTabBar.delegate = self
     }
-    
     //내부 뷰 컨트롤러 분기문
     func changeViewController(getController : String, getStoryBoard : UIStoryboard, sender : Any?) {
-        self.viewDidLoad()
+        if(TopView.isHidden) {
+            print("adfasdfasdfasdf")
+            self.restoreTopView()
+            //removeChildViewController()
+        }
         let controller = getStoryBoard.instantiateViewController(identifier: getController)
         switch(getController) {
             case mainPageControllerIdentifier:
@@ -73,16 +75,16 @@ class BottomTabBarController: UIViewController {
                 self.deleteTopView()
             case storeListControllerIdentifier:
                 self.changeContentView(controller: controller as! StoreListPageController, sender: sender)
-                self.restoreTopView()
+                
             case orderStatusControllerIdentifier:
                 self.changeContentView(controller: controller as! OrderStatusController, sender: nil)
-                self.restoreTopView()
+                
             case orderHistoryControllerIdentifier:
                 self.changeContentView(controller: controller as! OrderHistoryController, sender: nil)
-                self.restoreTopView()
+                
             case myPageControllerIdentifier:
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
-                self.restoreTopView()
+                
             case aboutStoreControllerIdentifier:
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
                 topBarFavoriteBtn.isHidden = false
@@ -90,6 +92,14 @@ class BottomTabBarController: UIViewController {
             default :
                 print("error_delegate")
         }
+    }
+    func removeChildViewController() {
+      if self.children.count > 0{
+          let viewControllers:[UIViewController] = self.children
+             viewControllers.last?.willMove(toParent: nil)
+             viewControllers.last?.removeFromParent()
+             viewControllers.last?.view.removeFromSuperview()
+      }
     }
     //내부 뷰 추가
     func changeContentView(controller : UIViewController, sender : Any?) {
@@ -100,27 +110,34 @@ class BottomTabBarController: UIViewController {
         }
         topBarHandler(controller: getController)
         self.addChild(getController)
+        getController.view.frame = ContentView.frame
         ContentView.addSubview(getController.view)
-        getController.view.frame.size = ContentView.frame.size
         getController.didMove(toParent: self)
     }
     //탑뷰 추가
     func restoreTopView() {
-        TopView.isHidden = false
+        print("restore")
+        TopView.frame = saveTopViewSize
+        print("topbarrestorepos", TopView.frame)
         let topViewSize = TopView.frame.size
         let contentViewSize = ContentView.frame.size
         ContentView.frame.size = CGSize(width: view.frame.width, height: (contentViewSize.height - topViewSize.height))
+        ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (contentViewSize.height - topViewSize.height))
         ContentViewScrollView.topAnchor.constraint(equalTo: TopView.bottomAnchor).isActive = true
         ContentView.topAnchor.constraint(equalTo: ContentViewScrollView.topAnchor).isActive = true
     }
     //탑뷰 지우기
     func deleteTopView() {
+        print("delete")
+        saveTopViewSize = TopView.frame
         TopView.isHidden = true
+        print("topbardeletepos", TopView.frame)
         //컨텐트뷰 사이지를 다시 조정
         let topViewSize = TopView.frame.size
         let contentViewSize = ContentView.frame.size
         ContentView.frame.size = CGSize(width: view.frame.width, height: (topViewSize.height + contentViewSize.height))
-        ContentViewScrollView.topAnchor.constraint(equalTo: TopView.topAnchor).isActive = true
+        ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (topViewSize.height + contentViewSize.height))
+        ContentViewScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         ContentView.topAnchor.constraint(equalTo: ContentViewScrollView.topAnchor).isActive = true
     }
     //sender가 존재하는 컨트롤러 처리
@@ -162,11 +179,11 @@ class BottomTabBarController: UIViewController {
                         topBarViewControllerTitle.text = "한식"
                     }
                 case orderStatusControllerIdentifier:
-                    print("456")
+                    topBarViewControllerTitle.text = "주문 현황"
                 case orderHistoryControllerIdentifier:
-                    print("789")
+                    topBarViewControllerTitle.text = "주문 내역"
                 case myPageControllerIdentifier:
-                    print("112")
+                    topBarViewControllerTitle.text = "마이페이지"
                 case aboutStoreControllerIdentifier:
                     if let currentStoreName = UserDefaults.standard.value(forKey: "currentStoreName") as? String {
                         topBarViewControllerTitle.text = "\(currentStoreName)"

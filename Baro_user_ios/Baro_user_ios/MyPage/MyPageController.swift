@@ -32,8 +32,7 @@ class MyPageController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         reloadInputViews()
-//        userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
-        userPhone = "01031776550"
+        userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
         setUserName()
         setMyCountInfo()
         addGest()

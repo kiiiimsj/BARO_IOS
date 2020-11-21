@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="44" width="360" height="69"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa6-fN-GjY">
-                                        <rect key="frame" x="17" y="20" width="7" height="22"/>
+                                        <rect key="frame" x="17" y="27" width="7" height="15"/>
                                         <state key="normal" image="arrow_back"/>
                                         <connections>
                                             <action selector="clickTopBarBackBtn" destination="jWx-mQ-KDo" eventType="touchUpInside" id="wLp-2b-sa5"/>
@@ -39,7 +39,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0I-hX-Wl8">
-                                        <rect key="frame" x="326" y="20" width="17" height="22"/>
+                                        <rect key="frame" x="326" y="27" width="17" height="15"/>
                                         <state key="normal" image="heart"/>
                                         <connections>
                                             <action selector="clickFavoriteBtn" destination="jWx-mQ-KDo" eventType="touchUpInside" id="cbX-yk-FP7"/>
@@ -50,7 +50,11 @@
                                 <constraints>
                                     <constraint firstItem="HC0-eg-GES" firstAttribute="centerX" secondItem="J2M-FH-h0m" secondAttribute="centerX" id="7Uo-tH-DsO"/>
                                     <constraint firstAttribute="bottom" secondItem="R0I-hX-Wl8" secondAttribute="bottom" constant="27" id="9MT-zb-iHD"/>
+                                    <constraint firstItem="R0I-hX-Wl8" firstAttribute="leading" secondItem="HC0-eg-GES" secondAttribute="trailing" constant="49" id="DbF-fH-8O6"/>
+                                    <constraint firstItem="HC0-eg-GES" firstAttribute="leading" secondItem="Aa6-fN-GjY" secondAttribute="trailing" constant="59.5" id="I5D-Ai-e9X"/>
+                                    <constraint firstItem="R0I-hX-Wl8" firstAttribute="centerY" secondItem="J2M-FH-h0m" secondAttribute="centerY" id="Klz-mx-faF"/>
                                     <constraint firstAttribute="bottom" secondItem="Aa6-fN-GjY" secondAttribute="bottom" constant="27" id="bAh-v5-L3I"/>
+                                    <constraint firstItem="Aa6-fN-GjY" firstAttribute="centerY" secondItem="J2M-FH-h0m" secondAttribute="centerY" id="eFQ-yh-7hj"/>
                                     <constraint firstItem="HC0-eg-GES" firstAttribute="centerY" secondItem="J2M-FH-h0m" secondAttribute="centerY" id="jlR-Bv-uNT"/>
                                     <constraint firstItem="Aa6-fN-GjY" firstAttribute="leading" secondItem="J2M-FH-h0m" secondAttribute="leading" constant="17" id="lJY-rh-ph2"/>
                                     <constraint firstAttribute="trailing" secondItem="R0I-hX-Wl8" secondAttribute="trailing" constant="17" id="o2S-R2-yX9"/>
@@ -61,19 +65,17 @@
                                 <rect key="frame" x="0.0" y="113" width="360" height="700"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9u2-xw-p3A">
-                                        <rect key="frame" x="0.0" y="0.0" width="360" height="669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="700"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="669" id="Q1z-XU-uWX"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="9u2-xw-p3A" firstAttribute="leading" secondItem="ftC-Gg-3Ff" secondAttribute="leading" id="2RP-2L-XMO"/>
-                                    <constraint firstItem="9u2-xw-p3A" firstAttribute="centerX" secondItem="ftC-Gg-3Ff" secondAttribute="centerX" id="3tX-z8-j0R"/>
-                                    <constraint firstAttribute="bottom" secondItem="9u2-xw-p3A" secondAttribute="bottom" id="CPd-10-NT3"/>
-                                    <constraint firstItem="9u2-xw-p3A" firstAttribute="top" secondItem="ftC-Gg-3Ff" secondAttribute="top" id="F1T-eC-iE8"/>
-                                    <constraint firstAttribute="trailing" secondItem="9u2-xw-p3A" secondAttribute="trailing" id="Xkq-F0-LYp"/>
+                                    <constraint firstItem="9u2-xw-p3A" firstAttribute="centerX" secondItem="ftC-Gg-3Ff" secondAttribute="centerX" id="2Vm-0b-QX2"/>
+                                    <constraint firstItem="9u2-xw-p3A" firstAttribute="leading" secondItem="ftC-Gg-3Ff" secondAttribute="leading" id="5Qu-bY-MBh"/>
+                                    <constraint firstItem="9u2-xw-p3A" firstAttribute="top" secondItem="ftC-Gg-3Ff" secondAttribute="top" id="P9s-Eg-pZj"/>
+                                    <constraint firstAttribute="bottom" secondItem="9u2-xw-p3A" secondAttribute="bottom" id="XAT-Dh-2yY"/>
+                                    <constraint firstItem="9u2-xw-p3A" firstAttribute="centerY" secondItem="ftC-Gg-3Ff" secondAttribute="centerY" id="bmT-51-Z3Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="9u2-xw-p3A" secondAttribute="trailing" id="pN2-zI-HLF"/>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wx-tv-LBl">
