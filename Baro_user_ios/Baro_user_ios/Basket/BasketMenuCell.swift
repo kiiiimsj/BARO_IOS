@@ -35,9 +35,9 @@ extension BasketMenuCell : UICollectionViewDelegate,UICollectionViewDataSource,U
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 1
+            return 1 // 필수 옵션
         case 1:
-            return eachMenu.nonEssentials.count
+            return eachMenu.nonEssentials.count // 비필수
         default:
             return 0
         }
@@ -58,6 +58,7 @@ extension BasketMenuCell : UICollectionViewDelegate,UICollectionViewDataSource,U
                 let endIdx = name.index(name.startIndex, offsetBy: name.count-2)
                 cell.extraNames.text = String(name[...endIdx])
             }
+            cell.backgroundColor = .red
             return cell
         case 1:
             let cell = extraCollectionView.dequeueReusableCell(withReuseIdentifier: "BasketNonEssentialCell", for: indexPath) as! BasketNonEssentialCell
@@ -65,6 +66,7 @@ extension BasketMenuCell : UICollectionViewDelegate,UICollectionViewDataSource,U
             cell.extra_name.text = values.Extra?.extra_name
             cell.extra_count.text = String(values.optionCount)
             cell.extra_price.text = String(values.Extra!.extra_price * values.optionCount)
+            cell.backgroundColor = .blue
             return cell
         default:
             return UICollectionViewCell()
@@ -75,7 +77,9 @@ extension BasketMenuCell : UICollectionViewDelegate,UICollectionViewDataSource,U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: extraCollectionView.frame.width, height: 50)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
     
     
 }

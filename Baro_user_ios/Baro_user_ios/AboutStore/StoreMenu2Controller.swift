@@ -15,10 +15,11 @@ class StoreMenu2Controller : UIViewController{
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        print("twice?")
     }
     
 }
-extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSource{
+extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView : UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menus.count
     }
@@ -29,8 +30,7 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
         cell.menu_description.text  = data.menu_info
         cell.menu_price.text  = String(data.menu_defaultprice)+"원"
         cell.menu_state.text = "품절"
-        
-        cell.menu_picture.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageMenu.do?store_id= \(self.menus[indexPath.row].store_id)&image_name=" + self.menus[indexPath.row].menu_image))
+        cell.menu_picture.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageMenu.do?store_id="+String(data.store_id)+"&image_name="+String(data.menu_image)))
         if data.is_soldout == "N" {
             cell.menu_state.isHidden = true
         }else{
@@ -44,6 +44,10 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
         let menu_id = String(menus[indexPath.item].menu_id)
         navigationController?.pushViewController(OrderDetailsController(), animated: false)
         performSegue(withIdentifier: "toDetails", sender: menu_id)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 200)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
