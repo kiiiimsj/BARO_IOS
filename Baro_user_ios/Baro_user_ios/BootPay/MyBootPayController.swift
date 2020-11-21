@@ -199,7 +199,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func onDone(data: [String: Any]) {
         print("Payment processing onDone : ",data)
         print("print recept_id : ", receptId)
-        
+        setOrderInsertParam()
         
     }
 

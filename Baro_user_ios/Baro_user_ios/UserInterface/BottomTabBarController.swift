@@ -47,15 +47,17 @@ class BottomTabBarController: UIViewController {
     //바텀탭 로딩후 선택되어지는 탭바아이템
     var selectedTabBarItem : Int = 0
     
+    var saveTopViewSize = CGRect()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-        topBarFavoriteBtn.isHidden = true
+        //topBarFavoriteBtn.isHidden = true
         if(moveFromOutSide) {
             changeViewController(getController: controllerIdentifier, getStoryBoard: controllerStoryboard, sender: controllerSender)
+            //moveFromOutSide = false
         }
         bottomTabBar.delegate = self
     }
@@ -64,6 +66,7 @@ class BottomTabBarController: UIViewController {
         if(TopView.isHidden) {
             print("adfasdfasdfasdf")
             self.restoreTopView()
+            //removeChildViewController()
         }
         let controller = getStoryBoard.instantiateViewController(identifier: getController)
         switch(getController) {
@@ -90,6 +93,14 @@ class BottomTabBarController: UIViewController {
                 print("error_delegate")
         }
     }
+    func removeChildViewController() {
+      if self.children.count > 0{
+          let viewControllers:[UIViewController] = self.children
+             viewControllers.last?.willMove(toParent: nil)
+             viewControllers.last?.removeFromParent()
+             viewControllers.last?.view.removeFromSuperview()
+      }
+    }
     //내부 뷰 추가
     func changeContentView(controller : UIViewController, sender : Any?) {
         //sender가 있는지 확인
@@ -99,31 +110,34 @@ class BottomTabBarController: UIViewController {
         }
         topBarHandler(controller: getController)
         self.addChild(getController)
-        getController.view.frame.size = ContentView.frame.size
+        getController.view.frame = ContentView.frame
         ContentView.addSubview(getController.view)
         getController.didMove(toParent: self)
     }
     //탑뷰 추가
     func restoreTopView() {
-        TopView.isHidden = false
+        print("restore")
+        TopView.frame = saveTopViewSize
+        print("topbarrestorepos", TopView.frame)
         let topViewSize = TopView.frame.size
         let contentViewSize = ContentView.frame.size
         ContentView.frame.size = CGSize(width: view.frame.width, height: (contentViewSize.height - topViewSize.height))
         ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (contentViewSize.height - topViewSize.height))
         ContentViewScrollView.topAnchor.constraint(equalTo: TopView.bottomAnchor).isActive = true
         ContentView.topAnchor.constraint(equalTo: ContentViewScrollView.topAnchor).isActive = true
-        ContentViewScrollView.bottomAnchor.constraint(equalTo: bottomTabBar.topAnchor).isActive = true
-        ContentView.bottomAnchor.constraint(equalTo: ContentViewScrollView.bottomAnchor).isActive = true
     }
     //탑뷰 지우기
     func deleteTopView() {
+        print("delete")
+        saveTopViewSize = TopView.frame
         TopView.isHidden = true
+        print("topbardeletepos", TopView.frame)
         //컨텐트뷰 사이지를 다시 조정
         let topViewSize = TopView.frame.size
         let contentViewSize = ContentView.frame.size
         ContentView.frame.size = CGSize(width: view.frame.width, height: (topViewSize.height + contentViewSize.height))
         ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (topViewSize.height + contentViewSize.height))
-        ContentViewScrollView.topAnchor.constraint(equalTo: TopView.topAnchor).isActive = true
+        ContentViewScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         ContentView.topAnchor.constraint(equalTo: ContentViewScrollView.topAnchor).isActive = true
     }
     //sender가 존재하는 컨트롤러 처리

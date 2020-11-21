@@ -118,6 +118,9 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         //self.totalPrice -= (orders[indexPath!.item].menu_total_price * orders[indexPath!.item].menu_count)
         self.totalPrice = 0
         orders.remove(at: indexPath!.item)
+        if(orders.count == 0) {
+            self.dismiss(animated: false, completion: nil)
+        }
         self.saveBasket()
         self.collectionView.deleteItems(at: [IndexPath(item: indexPath!.item, section: indexPath!.section)])
         self.collectionView.reloadData()
