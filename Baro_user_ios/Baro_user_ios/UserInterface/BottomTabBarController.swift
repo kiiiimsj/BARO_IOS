@@ -47,32 +47,33 @@ class BottomTabBarController: UIViewController {
     //바텀탭 로딩후 선택되어지는 탭바아이템
     var selectedTabBarItem : Int = 0
     
-    var saveTopViewSize = CGRect()
+    var saveTopViewSize = CGSize()
+    var saveContentViewSize = CGSize()
     override func viewDidLoad() {
         super.viewDidLoad()
+        saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-        //topBarFavoriteBtn.isHidden = true
         if(moveFromOutSide) {
             changeViewController(getController: controllerIdentifier, getStoryBoard: controllerStoryboard, sender: controllerSender)
-            //moveFromOutSide = false
+            moveFromOutSide = false
         }
         bottomTabBar.delegate = self
     }
     //내부 뷰 컨트롤러 분기문
     func changeViewController(getController : String, getStoryBoard : UIStoryboard, sender : Any?) {
         if(TopView.isHidden) {
-            print("adfasdfasdfasdf")
-            self.restoreTopView()
-            //removeChildViewController()
+            restoreTopView()
         }
+        topBarFavoriteBtn.isHidden = true
         let controller = getStoryBoard.instantiateViewController(identifier: getController)
         switch(getController) {
             case mainPageControllerIdentifier:
-                self.changeContentView(controller: controller as! MainPageController, sender: nil)
                 self.deleteTopView()
+                self.changeContentView(controller: controller as! MainPageController, sender: nil)
+                
             case storeListControllerIdentifier:
                 self.changeContentView(controller: controller as! StoreListPageController, sender: sender)
                 
@@ -84,11 +85,9 @@ class BottomTabBarController: UIViewController {
                 
             case myPageControllerIdentifier:
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
-                
             case aboutStoreControllerIdentifier:
-                self.changeContentView(controller: controller as! AboutStore, sender: sender)
                 topBarFavoriteBtn.isHidden = false
-                //self.restoreTopView()
+                self.changeContentView(controller: controller as! AboutStore, sender: sender)
             default :
                 print("error_delegate")
         }
@@ -116,29 +115,23 @@ class BottomTabBarController: UIViewController {
     }
     //탑뷰 추가
     func restoreTopView() {
-        print("restore")
-        TopView.frame = saveTopViewSize
-        print("topbarrestorepos", TopView.frame)
-        let topViewSize = TopView.frame.size
-        let contentViewSize = ContentView.frame.size
-        ContentView.frame.size = CGSize(width: view.frame.width, height: (contentViewSize.height - topViewSize.height))
-        ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (contentViewSize.height - topViewSize.height))
-        ContentViewScrollView.topAnchor.constraint(equalTo: TopView.bottomAnchor).isActive = true
-        ContentView.topAnchor.constraint(equalTo: ContentViewScrollView.topAnchor).isActive = true
+        TopView.isHidden = false
+        TopView.frame.size = saveTopViewSize
+        ContentView.frame.size = saveContentViewSize
+        ContentViewScrollView.frame.size = saveContentViewSize
+        
+        ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 113.0)
     }
     //탑뷰 지우기
     func deleteTopView() {
-        print("delete")
-        saveTopViewSize = TopView.frame
-        TopView.isHidden = true
-        print("topbardeletepos", TopView.frame)
+        ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
         //컨텐트뷰 사이지를 다시 조정
         let topViewSize = TopView.frame.size
         let contentViewSize = ContentView.frame.size
         ContentView.frame.size = CGSize(width: view.frame.width, height: (topViewSize.height + contentViewSize.height))
         ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (topViewSize.height + contentViewSize.height))
         ContentViewScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        ContentView.topAnchor.constraint(equalTo: ContentViewScrollView.topAnchor).isActive = true
+        TopView.isHidden = true
     }
     //sender가 존재하는 컨트롤러 처리
     func senderHandler(controller : UIViewController, sender : Any) -> UIViewController{
@@ -164,6 +157,8 @@ class BottomTabBarController: UIViewController {
     func topBarHandler(controller : UIViewController) {
         if let title = controller.title {
             switch(title) {
+                case mainPageControllerIdentifier:
+                    topBarViewControllerTitle.text = "main"
                 case storeListControllerIdentifier:
                     let controllerData = controller as! StoreListPageController
                     if (controllerData.typeCode == "CAFE") {
@@ -210,15 +205,15 @@ extension BottomTabBarController : UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch(item.title) {
         case "홈":
-            self.changeViewController(getController: self.mainPageControllerIdentifier, getStoryBoard: self.mainPageStoryBoard, sender: nil)
+            changeViewController(getController: mainPageControllerIdentifier, getStoryBoard: mainPageStoryBoard, sender: nil)
         case "내 가게":
-            self.changeViewController(getController: self.storeListControllerIdentifier, getStoryBoard: self.storeListStoryBoard, sender: nil)
+            changeViewController(getController: storeListControllerIdentifier, getStoryBoard: storeListStoryBoard, sender: nil)
         case "주문 현황":
-            self.changeViewController(getController: self.orderStatusControllerIdentifier, getStoryBoard: self.orderStatusStoryBoard, sender: nil)
+            changeViewController(getController: orderStatusControllerIdentifier, getStoryBoard: orderStatusStoryBoard, sender: nil)
         case "주문 내역":
-            self.changeViewController(getController: self.orderHistoryControllerIdentifier, getStoryBoard: self.orderHistoryStoryBoard, sender: nil)
+            changeViewController(getController: orderHistoryControllerIdentifier, getStoryBoard: orderHistoryStoryBoard, sender: nil)
         case "마이페이지":
-            self.changeViewController(getController: self.myPageControllerIdentifier, getStoryBoard: self.myPageStoryBoard, sender: nil)
+            changeViewController(getController: myPageControllerIdentifier, getStoryBoard: myPageStoryBoard, sender: nil)
         default :
             print("click none")
         }

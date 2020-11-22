@@ -71,7 +71,9 @@ class BasketController : UIViewController {
         return jsonToOrder
     }
 }
-extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, BasketBtnDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return orders.count
     }
@@ -115,15 +117,25 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
     }
     func btnDeleteTapped(cell: BasketMenuCell) {
         let indexPath = self.collectionView.indexPath(for: cell)
-        //self.totalPrice -= (orders[indexPath!.item].menu_total_price * orders[indexPath!.item].menu_count)
+        let dialogController = self.storyboard?.instantiateViewController(identifier: "BasketDialog") as! BasketDialog
+        dialogController.deleteItemCount = orders.count
+        dialogController.deleteItemPos = indexPath!.item
+        dialogController.currentBasketController = self
+        self.present(dialogController, animated: true, completion: nil)
+        dialogController.delegate = self
+    }
+    func tabLeft(index : Int) {
         self.totalPrice = 0
-        orders.remove(at: indexPath!.item)
+        orders.remove(at: index)
         if(orders.count == 0) {
             self.dismiss(animated: false, completion: nil)
         }
         self.saveBasket()
-        self.collectionView.deleteItems(at: [IndexPath(item: indexPath!.item, section: indexPath!.section)])
+        self.collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
         self.collectionView.reloadData()
-        //self.collectionView.deleteItems(at: [IndexPath(row: indexPath!.row, section: indexPath!.section)])
+    }
+    
+    func tabRight(index : Int) {
+        print("123123")
     }
 }

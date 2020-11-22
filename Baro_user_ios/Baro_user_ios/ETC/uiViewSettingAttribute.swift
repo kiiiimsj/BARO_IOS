@@ -32,6 +32,12 @@ class uiViewSetting: UIView {
                 if self.restorationIdentifier == "BootPayDialog" {
                     return
                 }
+                if self.restorationIdentifier == "BasketLeft" {
+                    return
+                }
+                if self.restorationIdentifier == "BasketRight" {
+                    return
+                }
                 layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
             }
         }
