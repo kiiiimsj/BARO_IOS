@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -404,6 +404,7 @@
                         <outlet property="payBtn" destination="eFT-Ql-mab" id="iAi-fw-9hm"/>
                         <outlet property="totalPriceLabel" destination="i4F-PM-fjO" id="8jy-0B-se0"/>
                         <segue destination="NWU-jn-iaJ" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="tsg-en-oZe"/>
+                        <segue destination="m9y-bn-epS" kind="presentation" identifier="BasketDialog" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="qXo-JS-fdr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKZ-E4-TCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -708,6 +709,143 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Wl-Ho-kTp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1369.5652173913045" y="91.741071428571431"/>
+        </scene>
+        <!--Basket Dialog-->
+        <scene sceneID="mqh-gf-UNl">
+            <objects>
+                <viewController restorationIdentifier="BasketDialog" storyboardIdentifier="BasketDialog" id="m9y-bn-epS" customClass="BasketDialog" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dwa-gC-1IX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwD-t0-My3">
+                                <rect key="frame" x="20" y="298" width="374" height="300.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLm-Qj-TKl">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알 림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKy-En-4AF">
+                                                <rect key="frame" x="158" y="29" width="58" height="42"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="OKy-En-4AF" firstAttribute="centerY" secondItem="tLm-Qj-TKl" secondAttribute="centerY" id="Qwf-zV-kwv"/>
+                                            <constraint firstItem="OKy-En-4AF" firstAttribute="centerX" secondItem="tLm-Qj-TKl" secondAttribute="centerX" id="weB-ta-RCg"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" restorationIdentifier="BasketLeft" translatesAutoresizingMaskIntoConstraints="NO" id="93r-Fm-ZSP" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="241.5" width="157" height="51"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX8-RK-peT">
+                                                <rect key="frame" x="47" y="6.5" width="63" height="38"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                                <state key="normal" title="삭제하기">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickLeft" destination="m9y-bn-epS" eventType="touchUpInside" id="HhT-be-Qby"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="EX8-RK-peT" secondAttribute="trailing" constant="47" id="2bA-v8-vrR"/>
+                                            <constraint firstAttribute="bottom" secondItem="EX8-RK-peT" secondAttribute="bottom" constant="6.5" id="Mak-kR-dts"/>
+                                            <constraint firstItem="EX8-RK-peT" firstAttribute="top" secondItem="93r-Fm-ZSP" secondAttribute="top" constant="6.5" id="PUQ-go-O4Z"/>
+                                            <constraint firstItem="EX8-RK-peT" firstAttribute="leading" secondItem="93r-Fm-ZSP" secondAttribute="leading" constant="47" id="fPC-3u-DAg"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" restorationIdentifier="BasketRight" translatesAutoresizingMaskIntoConstraints="NO" id="UX2-ne-sob" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                        <rect key="frame" x="209" y="241.5" width="157" height="51"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUP-up-vNi">
+                                                <rect key="frame" x="47" y="6.5" width="63" height="38"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                                <state key="normal" title="취소하기">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickRight" destination="m9y-bn-epS" eventType="touchUpInside" id="1Vw-ER-ErQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="kUP-up-vNi" secondAttribute="bottom" constant="6.5" id="JhO-aZ-EMh"/>
+                                            <constraint firstItem="kUP-up-vNi" firstAttribute="top" secondItem="UX2-ne-sob" secondAttribute="top" constant="6.5" id="R4N-bb-Tjz"/>
+                                            <constraint firstAttribute="trailing" secondItem="kUP-up-vNi" secondAttribute="trailing" constant="47" id="Vq5-Oa-elm"/>
+                                            <constraint firstItem="kUP-up-vNi" firstAttribute="leading" secondItem="UX2-ne-sob" secondAttribute="leading" constant="47" id="lSi-BT-u6w"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니에 남은 마지막 메뉴 입니다.  삭제하시면 메뉴선택창으로 넘어갑니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5b-sN-Ufy">
+                                        <rect key="frame" x="70" y="133" width="234" height="52.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tLm-Qj-TKl" secondAttribute="trailing" id="3jW-6f-X0k"/>
+                                    <constraint firstAttribute="bottom" secondItem="UX2-ne-sob" secondAttribute="bottom" constant="8" id="7cX-V6-DfC"/>
+                                    <constraint firstAttribute="trailing" secondItem="n5b-sN-Ufy" secondAttribute="trailing" constant="70" id="AKa-Yl-LZC"/>
+                                    <constraint firstAttribute="trailing" secondItem="UX2-ne-sob" secondAttribute="trailing" constant="8" id="Ceq-GD-4ny"/>
+                                    <constraint firstAttribute="bottom" secondItem="93r-Fm-ZSP" secondAttribute="bottom" constant="8" id="Lbi-nu-FPz"/>
+                                    <constraint firstItem="n5b-sN-Ufy" firstAttribute="top" secondItem="tLm-Qj-TKl" secondAttribute="bottom" constant="33" id="NMB-pd-RsD"/>
+                                    <constraint firstItem="tLm-Qj-TKl" firstAttribute="top" secondItem="vwD-t0-My3" secondAttribute="top" id="O4j-UF-zpP"/>
+                                    <constraint firstItem="93r-Fm-ZSP" firstAttribute="top" secondItem="n5b-sN-Ufy" secondAttribute="bottom" constant="56" id="Od3-cY-MFR"/>
+                                    <constraint firstItem="n5b-sN-Ufy" firstAttribute="leading" secondItem="vwD-t0-My3" secondAttribute="leading" constant="70" id="P5k-cs-cAD"/>
+                                    <constraint firstItem="UX2-ne-sob" firstAttribute="top" secondItem="n5b-sN-Ufy" secondAttribute="bottom" constant="56" id="VN6-E4-qAs"/>
+                                    <constraint firstItem="tLm-Qj-TKl" firstAttribute="leading" secondItem="vwD-t0-My3" secondAttribute="leading" id="dMl-gf-Mcl"/>
+                                    <constraint firstItem="UX2-ne-sob" firstAttribute="leading" secondItem="93r-Fm-ZSP" secondAttribute="trailing" constant="44" id="ldU-wa-cSI"/>
+                                    <constraint firstItem="93r-Fm-ZSP" firstAttribute="leading" secondItem="vwD-t0-My3" secondAttribute="leading" constant="8" id="xL5-j1-Gbj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="csv-6L-Zk2"/>
+                        <color key="backgroundColor" red="0.50197285410000003" green="0.50195139649999998" blue="0.50196129079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="csv-6L-Zk2" firstAttribute="bottom" secondItem="vwD-t0-My3" secondAttribute="bottom" constant="263.5" id="UsY-dP-Mbf"/>
+                            <constraint firstItem="csv-6L-Zk2" firstAttribute="trailing" secondItem="vwD-t0-My3" secondAttribute="trailing" constant="20" id="a4Z-V3-Ckw"/>
+                            <constraint firstItem="vwD-t0-My3" firstAttribute="top" secondItem="csv-6L-Zk2" secondAttribute="top" constant="254" id="bth-Tc-cjT"/>
+                            <constraint firstItem="vwD-t0-My3" firstAttribute="leading" secondItem="csv-6L-Zk2" secondAttribute="leading" constant="20" id="l2a-Xq-hkv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deleteBtnView" destination="93r-Fm-ZSP" id="dHC-Cx-sqn"/>
+                        <outlet property="deleteCancelBtnView" destination="UX2-ne-sob" id="Uj9-WB-JSe"/>
+                        <outlet property="dialogContentLable" destination="n5b-sN-Ufy" id="fO2-9c-ee9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6uw-Ql-UtU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1372.4637681159422" y="758.70535714285711"/>
         </scene>
     </scenes>
     <resources>

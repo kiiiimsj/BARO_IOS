@@ -69,6 +69,7 @@
 		3F6D861B25653BAA00D65CAC /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D861A25653BAA00D65CAC /* ToastMessage.swift */; };
 		3F9B48ED254946720012D89F /* ChangePass2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B48EC254946720012D89F /* ChangePass2.swift */; };
 		3FA196F52547E34E007CD182 /* BottomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA196F42547E34E007CD182 /* BottomTabBarController.swift */; };
+		3FA3CEC0256ABB78006F857C /* BasketDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3CEBF256ABB78006F857C /* BasketDialog.swift */; };
 		3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4FC822542898E00EF2894 /* MyPageButtons.swift */; };
 		3FAD95A325527EC600091E3D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD95A225527EC600091E3D /* Order.swift */; };
 		3FC20E5A2546E62400EEE783 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20E592546E62400EEE783 /* NoticeCell.swift */; };
@@ -202,6 +203,7 @@
 		3F6D861A25653BAA00D65CAC /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		3F9B48EC254946720012D89F /* ChangePass2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePass2.swift; sourceTree = "<group>"; };
 		3FA196F42547E34E007CD182 /* BottomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarController.swift; sourceTree = "<group>"; };
+		3FA3CEBF256ABB78006F857C /* BasketDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDialog.swift; sourceTree = "<group>"; };
 		3FA4FC822542898E00EF2894 /* MyPageButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageButtons.swift; sourceTree = "<group>"; };
 		3FAD95A225527EC600091E3D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		3FC20E592546E62400EEE783 /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				048A0BE42541AD71007D4FD3 /* testController.swift */,
 				3FEAF06E254FFC1100A5ABC0 /* FavoriteDialog.swift */,
 				04B28D4C255245B5007D1ED6 /* FIrebaseTest.swift */,
+				3FA3CEBF256ABB78006F857C /* BasketDialog.swift */,
 			);
 			path = Baro_user_ios;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				E31D401B2550001000B63F77 /* BasketHeader.swift in Sources */,
 				E31D3FE9254653C700B63F77 /* ExtraModel.swift in Sources */,
 				3F4C5AB7253ED5D000C0E7B6 /* uiViewSettingAttribute.swift in Sources */,
+				3FA3CEC0256ABB78006F857C /* BasketDialog.swift in Sources */,
 				E34CAF9C255A89C300BE3F53 /* EventPageController.swift in Sources */,
 				E31D3FEC25465F0200B63F77 /* EssentialCell.swift in Sources */,
 				3FDE5E5E2546A16C00C05514 /* TermOfUser.swift in Sources */,
