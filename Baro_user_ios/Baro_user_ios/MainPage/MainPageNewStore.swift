@@ -39,7 +39,8 @@ class MainPageNewStore : UICollectionViewCell {
                 newStoreModel.store_info = item["store_info"].stringValue
                 newStoreModel.store_image = item["store_image"].stringValue
                 newStoreModel.store_id = item["store_id"].stringValue
-                
+                newStoreModel.distance = item["distance"].stringValue
+                newStoreModel.is_open = item["is_open"].stringValue
                 self.newStoreList.append(newStoreModel)
             }
             self.collectionView.reloadData()
@@ -57,7 +58,15 @@ extension MainPageNewStore : UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageNewStoreCell", for: indexPath) as! MainPageNewStoreCell
         cell.newStoreName.text = newStore.store_name
         cell.newStoreImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + newStore.store_image))
-        
+        if Double(newStore.distance)! > 1000 {
+            cell.newStoreDistance.text = String(Int(Double(newStore.distance)!)/1000) + " km"
+        }else{
+            cell.newStoreDistance.text = String(Int(newStore.distance)!) + " m"
+        }
+        if newStore.is_open == "Y" {
+            cell.newStore_isOpen.text = "영업중"
+        }
+       
         //cell 클릭시
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         return cell
