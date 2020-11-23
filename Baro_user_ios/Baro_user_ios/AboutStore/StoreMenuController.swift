@@ -84,7 +84,6 @@ class StoreMenuController : UIViewController{
             initiateComplete = true
         }else{
             childController?.menus = menus
-            print("ccccccc?",childController?.menus.count)
             childController?.collectionView.reloadData()
         }
         
