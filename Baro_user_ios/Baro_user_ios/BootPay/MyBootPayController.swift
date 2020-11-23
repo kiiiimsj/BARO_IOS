@@ -126,18 +126,18 @@ class MyBootPayController : UIViewController {
         extra.quotas = [0, 2, 3] // 5만원 이상일 경우 할부 허용범위 설정 가능, (예제는 일시불, 2개월 할부, 3개월 할부 허용
         
         Bootpay.request(self, sendable: self, payload: payload, user: bootUser, items: bootPayItems, extra: extra, addView: true)
-        self.setOrderInsertParam()
     }
 }
 extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func clickPaymentCheckBtn() {
         if (self.result) {
-            let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
+            let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "AboutStore") as! AboutStore
             vc.store_id = "\(self.storeId)"
             guard let pvc = self.presentingViewController else { return }
             self.dismiss(animated: false) {
-                vc.modalPresentationStyle = .fullScreen
+                vc.modalPresentationStyle = .overFullScreen
+                vc.modalTransitionStyle = .coverVertical
                 pvc.present(vc, animated: false, completion: nil)
             }
         }else {
@@ -192,6 +192,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func onCancel(data: [String: Any]) {
         print("Payment processing onCancel : ",data)
         self.result = false
+        self.createDialog(titleContentString: "결 제 오 류", contentString: "결제가 취소되었습니다.", buttonString: "확인")
     }
 
     // 결제완료시 호출
@@ -200,7 +201,6 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         print("Payment processing onDone : ",data)
         print("print recept_id : ", receptId)
         setOrderInsertParam()
-        
     }
 
     //결제창이 닫힐때 실행되는 부분

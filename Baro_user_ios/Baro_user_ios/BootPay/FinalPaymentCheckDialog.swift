@@ -20,6 +20,7 @@ class FinalPaymentCheckDialog : UIViewController {
     
     @IBAction func clickPaymentCheckButton() {
         delegate?.clickPaymentCheckBtn()
+        self.dismiss(animated: false, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
