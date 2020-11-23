@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -329,6 +329,86 @@
             </objects>
             <point key="canvasLocation" x="-120.28985507246378" y="91.741071428571431"/>
         </scene>
+        <!--Menu Or Basket-->
+        <scene sceneID="bRn-66-Ee9">
+            <objects>
+                <viewController storyboardIdentifier="MenuOrBasket" id="ZeL-Uk-YU3" customClass="MenuOrBasket" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4fW-bv-VOA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIi-Ei-A86">
+                                <rect key="frame" x="50" y="348" width="314" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니 담기 완료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbu-yN-Zxe">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
+                                        <color key="backgroundColor" red="0.47109787269999998" green="0.211157332" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Svw-12-SNq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilm-Wj-9ay">
+                                        <rect key="frame" x="0.0" y="170" width="157" height="30"/>
+                                        <state key="normal" title="다른메뉴 보기"/>
+                                        <connections>
+                                            <action selector="pressOrderDetail:" destination="ZeL-Uk-YU3" eventType="touchUpInside" id="KhX-Vg-81P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhn-7X-HPs">
+                                        <rect key="frame" x="157" y="170" width="157" height="30"/>
+                                        <state key="normal" title="장바구니"/>
+                                        <connections>
+                                            <action selector="pressBasket:" destination="ZeL-Uk-YU3" eventType="touchUpInside" id="apY-6d-Mev"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니에 물건이 담겼습니다 다른메뉴를 보시겠습니까?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVw-wL-t0G">
+                                        <rect key="frame" x="0.0" y="80" width="314" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="gXw-Gl-b2q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Ilm-Wj-9ay" firstAttribute="width" secondItem="vbu-yN-Zxe" secondAttribute="width" multiplier="0.5" id="24Z-ao-chm"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ilm-Wj-9ay" secondAttribute="bottom" id="4EM-Fc-sus"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jhn-7X-HPs" secondAttribute="bottom" id="64c-Dt-drf"/>
+                                    <constraint firstAttribute="trailing" secondItem="vbu-yN-Zxe" secondAttribute="trailing" id="AnL-Iu-qKw"/>
+                                    <constraint firstItem="vbu-yN-Zxe" firstAttribute="leading" secondItem="fIi-Ei-A86" secondAttribute="leading" id="Aqf-8h-d4L"/>
+                                    <constraint firstItem="Jhn-7X-HPs" firstAttribute="width" secondItem="vbu-yN-Zxe" secondAttribute="width" multiplier="0.5" id="E2F-BI-u19"/>
+                                    <constraint firstItem="vbu-yN-Zxe" firstAttribute="top" secondItem="fIi-Ei-A86" secondAttribute="top" id="Q2W-X2-o6g"/>
+                                    <constraint firstAttribute="height" constant="200" id="WZz-ii-xNG"/>
+                                    <constraint firstItem="RVw-wL-t0G" firstAttribute="top" secondItem="vbu-yN-Zxe" secondAttribute="bottom" constant="30" id="ZYg-jJ-1wz"/>
+                                    <constraint firstItem="Ilm-Wj-9ay" firstAttribute="leading" secondItem="fIi-Ei-A86" secondAttribute="leading" id="mBZ-HY-gev"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jhn-7X-HPs" secondAttribute="trailing" id="o3l-0i-zx2"/>
+                                    <constraint firstItem="RVw-wL-t0G" firstAttribute="leading" secondItem="fIi-Ei-A86" secondAttribute="leading" id="tOa-Qy-zbS"/>
+                                    <constraint firstAttribute="trailing" secondItem="RVw-wL-t0G" secondAttribute="trailing" id="tXd-q3-7CO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qSe-YM-dwB"/>
+                        <constraints>
+                            <constraint firstItem="fIi-Ei-A86" firstAttribute="leading" secondItem="qSe-YM-dwB" secondAttribute="leading" constant="50" id="eBx-vu-z6h"/>
+                            <constraint firstItem="fIi-Ei-A86" firstAttribute="centerY" secondItem="4fW-bv-VOA" secondAttribute="centerY" id="mfu-pX-iyf"/>
+                            <constraint firstItem="fIi-Ei-A86" firstAttribute="centerX" secondItem="4fW-bv-VOA" secondAttribute="centerX" id="p3b-48-Bx9"/>
+                            <constraint firstItem="qSe-YM-dwB" firstAttribute="trailing" secondItem="fIi-Ei-A86" secondAttribute="trailing" constant="50" id="pFw-LH-QDs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="BasketBtn" destination="Jhn-7X-HPs" id="qm3-bp-mdc"/>
+                        <outlet property="OrderDetailBtn" destination="Ilm-Wj-9ay" id="dUW-fT-Drs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8tc-sO-pHp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="92"/>
+        </scene>
         <!--BasketController-->
         <scene sceneID="MRr-HQ-58I">
             <objects>
@@ -336,6 +416,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jko-E9-SHr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="447" y="96"/>
+        </scene>
+        <!--Empty Basket-->
+        <scene sceneID="jpm-qp-3xx">
+            <objects>
+                <viewController storyboardIdentifier="EmptyBasket" id="Jd9-dA-SgC" customClass="EmptyBasket" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bTX-i3-Ogx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqr-a5-J5f">
+                                <rect key="frame" x="50" y="348" width="314" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니 비우기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOf-9B-Eey">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
+                                        <color key="backgroundColor" red="0.47109787269999998" green="0.211157332" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ipa-W0-des"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2a-fO-VPi">
+                                        <rect key="frame" x="0.0" y="170" width="157" height="30"/>
+                                        <state key="normal" title="비우기"/>
+                                        <connections>
+                                            <action selector="pressEmpty:" destination="Jd9-dA-SgC" eventType="touchUpInside" id="Br2-o3-vS8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bF4-zi-F1R">
+                                        <rect key="frame" x="157" y="170" width="157" height="30"/>
+                                        <state key="normal" title="취소"/>
+                                        <connections>
+                                            <action selector="pressCancel:" destination="Jd9-dA-SgC" eventType="touchUpInside" id="vaD-UP-1kg"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 다른 가게의 메뉴가 존재합니다 기존메뉴를 비우고 선택상품을 담으시겠습니까" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkE-bT-Tzq">
+                                        <rect key="frame" x="20" y="80" width="274" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="ltp-B4-C6e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="u2a-fO-VPi" secondAttribute="bottom" id="5Sd-cB-fuI"/>
+                                    <constraint firstItem="bF4-zi-F1R" firstAttribute="width" secondItem="dOf-9B-Eey" secondAttribute="width" multiplier="0.5" id="5fQ-cm-RUY"/>
+                                    <constraint firstAttribute="bottom" secondItem="bF4-zi-F1R" secondAttribute="bottom" id="CPy-mq-61h"/>
+                                    <constraint firstItem="u2a-fO-VPi" firstAttribute="leading" secondItem="iqr-a5-J5f" secondAttribute="leading" id="Can-uH-con"/>
+                                    <constraint firstAttribute="trailing" secondItem="bF4-zi-F1R" secondAttribute="trailing" id="Eax-FS-sKA"/>
+                                    <constraint firstAttribute="trailing" secondItem="dOf-9B-Eey" secondAttribute="trailing" id="ErX-WK-Fxr"/>
+                                    <constraint firstItem="qkE-bT-Tzq" firstAttribute="leading" secondItem="iqr-a5-J5f" secondAttribute="leading" constant="20" id="NF8-DX-ezw"/>
+                                    <constraint firstAttribute="trailing" secondItem="qkE-bT-Tzq" secondAttribute="trailing" constant="20" id="QZ8-Xi-l6z"/>
+                                    <constraint firstItem="dOf-9B-Eey" firstAttribute="top" secondItem="iqr-a5-J5f" secondAttribute="top" id="Zvh-Fr-mgj"/>
+                                    <constraint firstItem="dOf-9B-Eey" firstAttribute="leading" secondItem="iqr-a5-J5f" secondAttribute="leading" id="ch3-Yk-9et"/>
+                                    <constraint firstAttribute="height" constant="200" id="lmL-qy-xVn"/>
+                                    <constraint firstItem="qkE-bT-Tzq" firstAttribute="top" secondItem="dOf-9B-Eey" secondAttribute="bottom" constant="30" id="pn9-0s-RSM"/>
+                                    <constraint firstItem="u2a-fO-VPi" firstAttribute="width" secondItem="dOf-9B-Eey" secondAttribute="width" multiplier="0.5" id="tcO-X7-AVR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kaE-Bm-fE2"/>
+                        <constraints>
+                            <constraint firstItem="iqr-a5-J5f" firstAttribute="centerY" secondItem="bTX-i3-Ogx" secondAttribute="centerY" id="QsS-XL-9hZ"/>
+                            <constraint firstItem="iqr-a5-J5f" firstAttribute="centerX" secondItem="bTX-i3-Ogx" secondAttribute="centerX" id="T8P-9F-khC"/>
+                            <constraint firstItem="iqr-a5-J5f" firstAttribute="leading" secondItem="kaE-Bm-fE2" secondAttribute="leading" constant="50" id="tmm-7F-wnb"/>
+                            <constraint firstItem="kaE-Bm-fE2" firstAttribute="trailing" secondItem="iqr-a5-J5f" secondAttribute="trailing" constant="50" id="yDF-XU-yjE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancel" destination="bF4-zi-F1R" id="2Le-xe-716"/>
+                        <outlet property="emptyBtn" destination="u2a-fO-VPi" id="Gaj-ek-w2Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DuN-L3-r6S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1906" y="129"/>
         </scene>
     </scenes>
     <resources>

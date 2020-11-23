@@ -8,6 +8,8 @@
 import UIKit
 
 class OrderDetailsController : UIViewController {
+    public static let me = self
+    private static let TAG = "OrderDetailsController"
     @IBOutlet weak var menu_image: UIImageView!
     @IBOutlet weak var menu_name: UILabel!
     @IBOutlet weak var menu_price: UILabel!
@@ -33,7 +35,7 @@ class OrderDetailsController : UIViewController {
     public var nonEssentialOpen = false;
     public var selectedEssential = [String : Extra]()
     public var selectedNonEssential = [String : SelectedExtra]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setMenuInfo()
@@ -91,15 +93,44 @@ class OrderDetailsController : UIViewController {
             var data = Order(menu: self.menu, essentials: selectedEssential, nonEssentials: selectedNonEssential)
             data.menu_count = Int(menu_count.text!)!
             data.menu_total_price = menu_price_current
-            let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
-            
-            guard let pvc = self.presentingViewController else { return }
-            vc.menu = data
-            self.dismiss(animated: false) {
-                vc.modalPresentationStyle = .fullScreen
-                pvc.present(vc, animated: false, completion: nil)
+            let store_id_in_basket = UserDefaults.standard.value(forKey: "currentStoreid")
+            if store_id_in_basket == nil {
+                UserDefaults.standard.setValue(String(self.menu.store_id), forKey: "currentStoreid")
+                let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
+                vc.basketData = data
+                vc.temp = self
+                vc.OrderDetailData = String(self.menu.store_id)
+                present(vc, animated: true)
+            }else{
+                if store_id_in_basket as! String == String(menu.store_id) {
+                    let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
+                    let vc = storyboard.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
+                    vc.basketData = data
+                    vc.clickListener = self
+                    vc.temp = self
+                    vc.OrderDetailData = String(self.menu.store_id)
+                    present(vc, animated: true)
+                }else{
+                    let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
+                    let vc = storyboard.instantiateViewController(identifier: "EmptyBasket") as! EmptyBasket
+                    vc.menuData = data
+                    vc.store_id = String(self.menu.store_id)
+                    vc.temp = self
+                    present(vc, animated: true)
+                }
             }
+            
+           
+//            let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
+//            let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
+//
+//            guard let pvc = self.presentingViewController else { return }
+//            vc.menu = data
+//            self.dismiss(animated: false) {
+//                vc.modalPresentationStyle = .fullScreen
+//                pvc.present(vc, animated: false, completion: nil)
+//            }
         }else{
             return
         }
@@ -275,5 +306,37 @@ extension OrderDetailsController : ExpandDelegate {
         print(nonEssentialOpen)
         let layout = EssentialArea.collectionViewLayout
         layout.invalidateLayout()
+    }
+}
+
+extension OrderDetailsController : TurnOffOrderDetailListener {
+    func tapClick(goWhere: UIViewController,type: String) {
+        print("aaa","왜")
+        let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
+        guard let pvc = self.presentingViewController else { return }
+    
+        self.dismiss(animated: false) {
+            vc.modalPresentationStyle = .fullScreen
+            pvc.present(vc, animated: false, completion: nil)
+//            pvc.dismiss(animated: false)
+        }
+//        self.dismiss(animated: true)
+//        guard let pvc = self.presentingViewController else { return }
+//        self.dismiss(animated: false) {
+//            print("aaa","안되지")
+//            switch type {
+//            case MenuOrBasket.ABOUTSTORE:
+//                let vc = goWhere as! AboutStore
+//                vc.modalPresentationStyle = .fullScreen
+//                pvc.present(vc, animated: false, completion: nil)
+//            case MenuOrBasket.BasketController:
+//                let vc = goWhere as! BasketController
+//                vc.modalPresentationStyle = .fullScreen
+//                pvc.present(vc, animated: false, completion: nil)
+//            default:
+//                print(OrderDetailsController.TAG,"default")
+//            }
+//        }
     }
 }
