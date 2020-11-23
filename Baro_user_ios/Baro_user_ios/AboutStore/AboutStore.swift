@@ -4,8 +4,6 @@
 //
 //  Created by . on 2020/10/19.
 //
-
-
 import UIKit
 private let FirstBarIdentifier = "ASFirstBarCell"
 class AboutStore : UIViewController, TopViewElementDelegate {
@@ -31,7 +29,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     @IBOutlet weak var tabIndecator: UIView!
     
     public var store_id  = ""
-    @IBOutlet weak var isFavoriteBtn: UIButton!
     public var isFlag : Int = 0
     
     private let netWork = CallRequest()
@@ -51,13 +48,13 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         
         self.setTabBarItem()
         self.getStoreInfo()
-//        self.isFavoriteStore()
-        
         bottomTabBarInfo.topViewDelegate = self
+        
         UIView.animate(withDuration: 0.0) {
             self.tabIndecator.transform = CGAffineTransform(rotationAngle: 0.0)
         }
     }
+    
     func makeChildVC() {
         let storyBoard = UIStoryboard(name: "AboutStore", bundle: nil)
         menuController = storyBoard.instantiateViewController(identifier: "StoreMenuController")
@@ -70,6 +67,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         contollers.append(infoController!)
         changeVC(index: 0)
     }
+    
     func changeVC(index : Int){
         switch index {
         case 0:
@@ -82,11 +80,13 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             print("default")
         }
     }
+    
     func attachToMainView(vc : UIViewController){
         FirstPage.addSubview((vc.view)!)
         vc.view.frame.size = FirstPage.frame.size
         vc.didMove(toParent: self)
     }
+    
     func setTabBarItem() {
         menuButton.setTitle("메뉴", for: .normal)
         menuButton.backgroundColor = .white
@@ -95,9 +95,8 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         storeInfoButton.setTitle("가게 정보", for: .normal)
         storeInfoButton.backgroundColor = .white
         storeInfoButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
-        
-//            menuButtonClick()
     }
+    
     @IBAction func menuButtonClick() {
         menuButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
         storeInfoButton.tintColor = UIColor(red: 196/255.0, green: 196/255.0, blue: 196/255.0, alpha: 1)
@@ -105,18 +104,9 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             self.tabIndecator.transform = CGAffineTransform(translationX: 0.0, y: self.tabIndecator.bounds.height - 2)
         }
         changeVC(index: 0)
-//
-//        let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
-//        guard let VC = storyboard.instantiateViewController(withIdentifier: "StoreMenuController") as? StoreMenuController else {return}
-//
-//        VC.store_id = self.store_id
-//        self.addChild(VC)
-//        FirstPage.addSubview((VC.view)!)
-//        VC.view.frame.size = FirstPage.frame.size
-//        VC.didMove(toParent: self)
-//        print("menuButtonClick")
 
     }
+    
     @IBAction func storeInfoButtonClick() {
         storeInfoButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
         menuButton.tintColor = UIColor(red: 196/255.0, green: 196/255.0, blue: 196/255.0, alpha: 1)
@@ -124,26 +114,8 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             self.tabIndecator.transform = CGAffineTransform(translationX: self.storeInfoButton.bounds.width, y: self.tabIndecator.bounds.height - 2)
         }
         changeVC(index: 1)
-//        let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
-//        guard let VC = storyboard.instantiateViewController(withIdentifier: "StoreInfoController") as? StoreInfoController else {return}
-//        VC.StoreInfo = self.StoreInfo
-//        self.addChild(VC)
-//        FirstPage.addSubview((VC.view)!)
-//        VC.view.frame.size = FirstPage.frame.size
-//        VC.didMove(toParent: self)
-//        print("storeInfoButtonClick")
     }
-    @IBAction func setFavoriteImageButton() {
-//        UserDefaults.standard.set(self.isFlag, forKey: "isFlag")
-//        if (self.isFlag == 1) { // 즐겨찾기가 되어있는 경우에서 삭제
-//            self.performSegue(withIdentifier: "FavoriteDialog", sender: nil)
-//            self.delFavorite()
-//        }
-//        else { // 즐겨찾기가 안되있는 경우에서 추가
-//            self.performSegue(withIdentifier: "FavoriteDialog", sender: nil)
-//            self.addFavorite(controller: self)
-//        }
-    }
+    
     func addFavorite(controller : UIViewController) {
         let favoriteBtn = controller as! BottomTabBarController
         let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
@@ -195,7 +167,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
                 self.StoreInfo.type_code = json["type_code"].stringValue
                 self.StoreInfo.store_image = json["store_image"].stringValue
                 self.StoreInfo.is_open = json["is_open"].stringValue
-                
                 UserDefaults.standard.set(self.StoreInfo.store_name, forKey: "currentStoreName")
                 UserDefaults.standard.set(self.StoreInfo.store_id, forKey: "currentStoreId")
                 self.makeChildVC()

@@ -30,7 +30,6 @@ class LoginPageController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
-        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -56,7 +55,8 @@ class LoginPageController: UIViewController {
         passwordInput.borderStyle = .none
         passwordInput.isSecureTextEntry = true
         loginButton.addTarget(self, action: #selector(handleLogin(_:)), for: .touchUpInside)
-        print("log")
+        registerBtn1.isUserInteractionEnabled = true
+        registerBtn1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRegister(_:))))
     }
     @IBAction func rememberUserInfo() {
         if(memoryMyAccountCheckBox.isSelected) {
@@ -86,10 +86,10 @@ class LoginPageController: UIViewController {
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
     
-    @objc private func handleRegister(_ sender: UIButton) {
-        let controller = RegisterPageController()
-        self.present(controller, animated: true)
+    @objc func handleRegister(_ sender : UIButton) {
+        self.performSegue(withIdentifier: "PhoneCheckForRegister", sender: nil)
     }
+    
     @objc private func handleLogin(_ sender: UIButton) {
         guard let phone = phoneInput.text else {return}
         guard let password = passwordInput.text else { return}
