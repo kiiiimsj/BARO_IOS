@@ -12,7 +12,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     }
     func favoriteBtnDelegate(controller : UIViewController) {
         print("isasdf")
-        
         if (self.isFlag == 1) { // 즐겨찾기가 되어있는 경우에서 삭제
             self.performSegue(withIdentifier: "FavoriteDialog", sender: nil)
             self.delFavorite(controller : controller)
@@ -47,6 +46,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         super.viewDidLoad()
         self.setTabBarItem()
         self.getStoreInfo()
+        self.isFavoriteStore()
         bottomTabBarInfo.topViewDelegate = self
         
         UIView.animate(withDuration: 0.0) {

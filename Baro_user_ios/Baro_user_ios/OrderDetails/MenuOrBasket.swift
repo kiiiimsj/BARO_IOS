@@ -35,13 +35,11 @@ class MenuOrBasket : UIViewController {
         MyPresentedViewController = self.presentedViewController
     }
     @IBAction func pressOrderDetail(_ sender: Any) {
-        
+        self.dismiss(animated: true) {
+            self.delegate?.tapCancel(dialog: self)
+        }
     }
     @IBAction func pressBasket(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Basket", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
-        
-        vc.menu = self.basketData
         self.dismiss(animated: true) {
             self.delegate?.tapClick(dialog: self, type: "")
         }
