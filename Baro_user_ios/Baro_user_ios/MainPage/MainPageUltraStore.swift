@@ -33,13 +33,15 @@ class MainPageUltraStore : UICollectionViewCell {
         ]
         
         networkModel.post(method: .post, param: jsonObject, url: networkURL.ultraList) { (json) in
+            print("json",json)
             var ultraModel = UltraStoreListModel()
             for item in json["store"].array! {
                 ultraModel.store_name = item["store_name"].stringValue
                 ultraModel.store_info = item["store_info"].stringValue
                 ultraModel.store_image = item["store_image"].stringValue
                 ultraModel.store_id = item["store_id"].stringValue
-                
+                ultraModel.distance = item["distance"].stringValue
+                ultraModel.is_open = item["is_open"].stringValue
                 self.ultraList.append(ultraModel)
             }
             self.collectionView.reloadData()
@@ -57,11 +59,17 @@ extension MainPageUltraStore : UICollectionViewDelegate, UICollectionViewDataSou
         let ultra = ultraList[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageUltraStoreCell", for: indexPath) as! MainPageUltraStoreCell
         cell.ultraName.text = ultra.store_name
-        print("qqq",ultra.store_name)
-        cell.ultraDistance.text = "100m"
+        if Double(ultra.distance)! > 1000 {
+            cell.ultraDistance.text = String(Int(Double(ultra.distance)!)/1000) + " km"
+        }else{
+            cell.ultraDistance.text = String(Int(ultra.distance)!) + " m"
+        }
        
         cell.ultraImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name="+ultra.store_image))
-        
+        cell.ultra_isOpen.layer.cornerRadius = 8
+        if ultra.is_open == "Y" {
+            cell.ultra_isOpen.text = "영업중"
+        }
         //cell 클릭시
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         return cell
@@ -78,6 +86,6 @@ extension MainPageUltraStore : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 280, height: 200)
+        return CGSize(width: 280, height: 250)
     }
 }
