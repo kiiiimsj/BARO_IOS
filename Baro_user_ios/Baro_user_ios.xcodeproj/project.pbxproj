@@ -134,6 +134,8 @@
 		E34CAF99255A708700BE3F53 /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF98255A708700BE3F53 /* CouponCell.swift */; };
 		E34CAF9C255A89C300BE3F53 /* EventPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF9B255A89C200BE3F53 /* EventPageController.swift */; };
 		E34CAFA0255A89F300BE3F53 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34CAF9F255A89F300BE3F53 /* Event.storyboard */; };
+		E39C1581256952A000520033 /* MenuOrBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15802569529F00520033 /* MenuOrBasket.swift */; };
+		E39C15842569E70B00520033 /* EmptyBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15832569E70B00520033 /* EmptyBasket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -269,6 +271,8 @@
 		E34CAF98255A708700BE3F53 /* CouponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCell.swift; sourceTree = "<group>"; };
 		E34CAF9B255A89C200BE3F53 /* EventPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPageController.swift; sourceTree = "<group>"; };
 		E34CAF9F255A89F300BE3F53 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		E39C15802569529F00520033 /* MenuOrBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOrBasket.swift; sourceTree = "<group>"; };
+		E39C15832569E70B00520033 /* EmptyBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBasket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +456,8 @@
 				E31D3FF825469DCE00B63F77 /* EssentialButton.swift */,
 				E31D400B254AC7DD00B63F77 /* EssentialRadio.swift */,
 				E31D400E254AE4B500B63F77 /* NonEssentialRow.swift */,
+				E39C15802569529F00520033 /* MenuOrBasket.swift */,
+				E39C15832569E70B00520033 /* EmptyBasket.swift */,
 			);
 			path = OrderDetails;
 			sourceTree = "<group>";
@@ -829,6 +835,7 @@
 				E31D401E255000FD00B63F77 /* BasketMenuCell.swift in Sources */,
 				E31D3FE62545DFA000B63F77 /* OrderDetailsController.swift in Sources */,
 				E34CAF872559427100BE3F53 /* ListStoreLoadingCell.swift in Sources */,
+				E39C15842569E70B00520033 /* EmptyBasket.swift in Sources */,
 				048D55BA253D575A009E9CE4 /* TypeListModel.swift in Sources */,
 				E34CAF952559814300BE3F53 /* CouponModel.swift in Sources */,
 				048A0BDB25401194007D4FD3 /* MainPageNewStoreCell.swift in Sources */,
@@ -844,6 +851,7 @@
 				3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */,
 				E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */,
 				04D11F452543D41D00ADB210 /* OrderHistoryModel.swift in Sources */,
+				E39C1581256952A000520033 /* MenuOrBasket.swift in Sources */,
 				3FF3509A253E7F3B007B7B29 /* RegisterPageController.swift in Sources */,
 				043DACAF253DA54600C70102 /* UltraStoreListModel.swift in Sources */,
 			);
