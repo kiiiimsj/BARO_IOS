@@ -129,7 +129,7 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
                 categoryIdMenu.append(item)
             }
         }
-        actionToSelectedCell(indexPath: indexPath,menus: categoryIdMenu)
+        //actionToSelectedCell(indexPath: indexPath,menus: categoryIdMenu)
     }
     @objc func tap(_ sender: Any) {
         let senderG = sender as? UITapGestureRecognizer

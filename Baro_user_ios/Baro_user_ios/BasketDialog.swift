@@ -24,8 +24,11 @@ class BasketDialog : UIViewController {
     weak var delegate : BasketBtnDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        deleteBtnView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickLeftView)))
-        deleteCancelBtnView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickRightView)))
+        deleteBtnView.isUserInteractionEnabled = true
+        deleteCancelBtnView.isUserInteractionEnabled = true
+        
+        deleteBtnView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickLeftView(_:))))
+        deleteCancelBtnView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickRightView(_:))))
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -39,12 +42,12 @@ class BasketDialog : UIViewController {
             isLastFlag = true
         }
     }
-    @objc func clickLeftView() {
+    @objc func clickLeftView(_ sender : UIButton) {
         isClickLeft = true
         delegate?.tabLeft(index : deleteItemPos)
         self.dismiss(animated: false, completion: nil)
     }
-    @objc func clickRightView() {
+    @objc func clickRightView(_ sender : UIButton) {
         isClickRight = true
         delegate?.tabRight(index : deleteItemPos)
         self.dismiss(animated: false, completion: nil)
