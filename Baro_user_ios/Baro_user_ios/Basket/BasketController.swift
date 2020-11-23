@@ -33,6 +33,7 @@ class BasketController : UIViewController {
         }
         collectionView.delegate = self
         collectionView.dataSource = self
+        recalcPrice()
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
@@ -52,7 +53,13 @@ class BasketController : UIViewController {
         self.present(vc, animated: true, completion: nil)
         print(totalPriceLabel.text!)
     }
-    
+    func recalcPrice(){
+        for item in orders {
+            self.totalPrice += (item.menu_total_price * item.menu_count)
+           
+        }
+        self.totalPriceLabel.text = "\(self.totalPrice)"
+    }
     func saveBasket() {
         let encoder = JSONEncoder()
         let jsonSaveData = try? encoder.encode(orders)
@@ -90,8 +97,7 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         cell.extraCollectionView.dataSource = cell.self
         cell.delegate = self
         cell.backgroundColor = .yellow
-        self.totalPrice += (eachMenu.menu_total_price * eachMenu.menu_count)
-        self.totalPriceLabel.text = "\(self.totalPrice)"
+     
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
