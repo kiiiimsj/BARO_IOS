@@ -277,7 +277,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextPage:" destination="z9o-Uw-jMZ" eventType="touchUpInside" id="wx9-8b-zFk"/>
-                                    <segue destination="lj0-AS-cQE" kind="presentation" identifier="BasketController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="gye-PQ-8Tq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0R-d1-7bz">
@@ -322,6 +321,7 @@
                         <outlet property="menu_price" destination="Bwc-sr-hCg" id="eeH-zv-vIZ"/>
                         <outlet property="minus" destination="5w5-Mr-kh5" id="CvF-QS-Ljf"/>
                         <outlet property="plus" destination="kjK-lp-ISm" id="sGd-5V-NDg"/>
+                        <segue destination="lj0-AS-cQE" kind="presentation" identifier="BasketController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="PwJ-oe-RUd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rch-H7-6HB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -110,7 +110,7 @@ class LoginPageController: UIViewController {
                 self.toStoreListUseBottomBar(tag : "")
             }
             else {
-                self.makeToastMessage.showToast(message: "입력정보가 틀립니다.", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 10.0)!, targetController: self)
+                self.makeToastMessage.showToast(message: "입력정보가 틀립니다.", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
                 self.remeberInfo.removeObject(forKey: "checkedBox")
                 self.remeberInfo.removeObject(forKey: "rememberUser")
             }

@@ -27,6 +27,8 @@ class OrderDetailsController : UIViewController {
     
     @IBOutlet weak var EssentialArea: UICollectionView!
     
+    var makeToastMessage = ToastMessage()
+    
     public var menu = Menu()
     public var menu_id = ""
     public var menu_default_price = 0
@@ -35,6 +37,9 @@ class OrderDetailsController : UIViewController {
     public var nonEssentialOpen = false;
     public var selectedEssential = [String : Extra]()
     public var selectedNonEssential = [String : SelectedExtra]()
+    
+    var storeId = UserDefaults.standard.value(forKey: "currentStoreId")
+    
     var data : Order?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,16 +89,11 @@ class OrderDetailsController : UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func nextPage(_ sender: Any) {
-        if selectedEssential.count != essentials.count{
-            return
-        }
-        let can = canGoToNext()
-        if can {
+        if (canGoToNext()){
             data = Order(menu: self.menu, essentials: selectedEssential, nonEssentials: selectedNonEssential)
             data?.menu_count = Int(menu_count.text!)!
             data?.menu_total_price = menu_price_current
-            let store_id_in_basket = UserDefaults.standard.value(forKey: "currentStoreid")
-            
+            let store_id_in_basket = storeId
             if store_id_in_basket == nil {
                 UserDefaults.standard.setValue(String(self.menu.store_id), forKey: "currentStoreid")
                 let vc = self.storyboard?.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
@@ -102,7 +102,6 @@ class OrderDetailsController : UIViewController {
                 vc.modalTransitionStyle = .crossDissolve
                 self.present(vc, animated: false, completion: nil)
             }else{
-                
                 if store_id_in_basket as! String == String(menu.store_id) {
                     let vc = self.storyboard?.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
                     vc.delegate = self
@@ -115,9 +114,13 @@ class OrderDetailsController : UIViewController {
                     vc.modalPresentationStyle = .overFullScreen
                     vc.modalTransitionStyle = .crossDissolve
                     vc.delegate = self
+                    vc.store_id = String(self.menu.store_id)
                     self.present(vc, animated: false, completion: nil)
                 }
             }
+        }
+        else {
+            self.makeToastMessage.showToast(message: "필수옵션을 선택해 주세요", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
         }
     }
     func recalcPrice(){
