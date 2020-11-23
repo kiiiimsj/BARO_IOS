@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -67,14 +67,6 @@
                                     <constraint firstAttribute="height" constant="2" id="kOk-az-R1P"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hR3-5W-TY5">
-                                <rect key="frame" x="356" y="44" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="setFavoriteImageButton" destination="n3R-Xf-dIg" eventType="touchUpInside" id="Xcs-n4-pjT"/>
-                                    <segue destination="erg-za-UnV" kind="presentation" identifier="FavoriteDialog" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="m5i-K1-3HA"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OxP-7X-vwk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -100,7 +92,6 @@
                     </view>
                     <connections>
                         <outlet property="FirstPage" destination="7sR-oJ-Amz" id="yrn-Yf-89n"/>
-                        <outlet property="isFavoriteBtn" destination="hR3-5W-TY5" id="md0-Do-OdM"/>
                         <outlet property="menuButton" destination="zQZ-W6-s48" id="YtF-xv-Xst"/>
                         <outlet property="storeInfoButton" destination="SV8-fY-7rp" id="PIN-gJ-nhj"/>
                         <outlet property="tabIndecator" destination="w0f-SM-9LR" id="LDy-S9-3t7"/>
@@ -117,7 +108,7 @@
         <scene sceneID="Nza-0H-chm">
             <objects>
                 <viewController storyboardIdentifier="StoreInfoController" id="Cpx-Th-ad8" customClass="StoreInfoController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lEn-iK-HlW">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="lEn-iK-HlW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -346,7 +337,7 @@
         <!--Store Menu2 Controller-->
         <scene sceneID="rzV-RV-UBQ">
             <objects>
-                <viewController storyboardIdentifier="StoreMenu2Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="baI-M4-zw5" customClass="StoreMenu2Controller" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoreMenu2Controller" id="baI-M4-zw5" customClass="StoreMenu2Controller" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U4J-Sb-Vg4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -447,7 +438,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="p1g-h8-b3T" id="cFE-eA-b11"/>
-                        <segue destination="ALg-b7-AKR" kind="presentation" identifier="toDetails" modalPresentationStyle="fullScreen" id="4e3-v5-GcC"/>
+                        <segue destination="ALg-b7-AKR" kind="presentation" identifier="toDetails" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="4e3-v5-GcC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXl-pg-fBq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

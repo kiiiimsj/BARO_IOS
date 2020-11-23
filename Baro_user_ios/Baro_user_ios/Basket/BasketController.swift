@@ -35,9 +35,11 @@ class BasketController : UIViewController {
         collectionView.dataSource = self
         recalcPrice()
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
     @IBAction func clickBack(_ sender: Any) {
         saveBasket()
-        print("call clickBack")
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func clickPay(_ sender: Any) {
@@ -61,9 +63,7 @@ class BasketController : UIViewController {
     func saveBasket() {
         let encoder = JSONEncoder()
         let jsonSaveData = try? encoder.encode(orders)
-        print("jsonConvert : ", jsonSaveData)
         if let _ = jsonSaveData, let jsonString = String(data: jsonSaveData!, encoding: .utf8){
-            print("jsonConvertString : ", jsonString)
             basket.set(jsonString, forKey: "basket")
             basket.synchronize()
         }
@@ -85,7 +85,6 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         return orders.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("is reload data call this function?")
         let eachMenu = orders[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BasketMenuCell", for: indexPath) as! BasketMenuCell
         cell.eachMenu = eachMenu

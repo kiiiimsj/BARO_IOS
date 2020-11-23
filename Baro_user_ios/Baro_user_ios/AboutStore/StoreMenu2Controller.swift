@@ -42,7 +42,7 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
             return
         }
         let menu_id = String(menus[indexPath.item].menu_id)
-        navigationController?.pushViewController(OrderDetailsController(), animated: false)
+        //navigationController?.pushViewController(OrderDetailsController(), animated: false)
         performSegue(withIdentifier: "toDetails", sender: menu_id)
     }
     
