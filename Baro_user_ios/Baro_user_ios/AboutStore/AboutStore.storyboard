@@ -339,7 +339,7 @@
         <!--Store Menu2 Controller-->
         <scene sceneID="rzV-RV-UBQ">
             <objects>
-                <viewController storyboardIdentifier="StoreMenu2Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="baI-M4-zw5" customClass="StoreMenu2Controller" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoreMenu2Controller" id="baI-M4-zw5" customClass="StoreMenu2Controller" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U4J-Sb-Vg4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -440,7 +440,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="p1g-h8-b3T" id="cFE-eA-b11"/>
-                        <segue destination="ALg-b7-AKR" kind="presentation" identifier="toDetails" modalPresentationStyle="fullScreen" id="4e3-v5-GcC"/>
+                        <segue destination="ALg-b7-AKR" kind="presentation" identifier="toDetails" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="4e3-v5-GcC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXl-pg-fBq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -23,7 +23,6 @@ class EmptyBasket: UIViewController {
         let vc = storyboard.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
         guard let pvc = self.presentingViewController else { return }
         vc.basketData = menuData
-        vc.clickListener = temp.self
         vc.OrderDetailData = String(store_id!)
         UserDefaults.standard.setValue(String(store_id!), forKey: "currentStoreid")
         self.dismiss(animated: false) {

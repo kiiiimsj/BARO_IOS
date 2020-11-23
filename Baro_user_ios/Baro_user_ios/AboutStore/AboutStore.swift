@@ -45,7 +45,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setTabBarItem()
         self.getStoreInfo()
         bottomTabBarInfo.topViewDelegate = self
@@ -83,7 +82,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     
     func attachToMainView(vc : UIViewController){
         FirstPage.addSubview((vc.view)!)
-        vc.view.frame.size = FirstPage.frame.size
+        vc.view.frame = FirstPage.frame
         vc.didMove(toParent: self)
     }
     
@@ -104,7 +103,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             self.tabIndecator.transform = CGAffineTransform(translationX: 0.0, y: self.tabIndecator.bounds.height - 2)
         }
         changeVC(index: 0)
-
     }
     
     @IBAction func storeInfoButtonClick() {
@@ -132,6 +130,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             }
         }
     }
+    
     func delFavorite(controller : UIViewController) {
         let favoriteBtn = controller as! BottomTabBarController
         let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
