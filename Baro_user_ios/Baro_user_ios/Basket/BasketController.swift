@@ -121,6 +121,8 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         dialogController.deleteItemCount = orders.count
         dialogController.deleteItemPos = indexPath!.item
         dialogController.currentBasketController = self
+        dialogController.modalPresentationStyle = .overFullScreen
+        dialogController.modalTransitionStyle = .crossDissolve
         self.present(dialogController, animated: true, completion: nil)
         dialogController.delegate = self
     }
