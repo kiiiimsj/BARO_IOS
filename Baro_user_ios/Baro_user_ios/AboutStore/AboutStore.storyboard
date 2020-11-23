@@ -467,10 +467,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" restorationIdentifier="FavoriteDialog" translatesAutoresizingMaskIntoConstraints="NO" id="7Yw-Mj-3JP" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="20" y="363" width="374" height="268"/>
+                                <rect key="frame" x="20" y="244" width="374" height="268"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨찾기에 추가 되었습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMz-ie-Ors">
-                                        <rect key="frame" x="59" y="124" width="257" height="20.5"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨찾기에 추가 되었습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMz-ie-Ors">
+                                        <rect key="frame" x="92" y="100" width="190" height="67"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -486,10 +486,10 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPR-nL-Qna" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="72"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨찾기 추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzy-zl-0Hw">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="72"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -498,6 +498,7 @@
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="Mzy-zl-0Hw" firstAttribute="leading" secondItem="xPR-nL-Qna" secondAttribute="leading" id="52f-J7-ogW"/>
+                                            <constraint firstAttribute="height" constant="50" id="DO1-zy-Oug"/>
                                             <constraint firstAttribute="trailing" secondItem="Mzy-zl-0Hw" secondAttribute="trailing" id="bhd-cA-X2l"/>
                                             <constraint firstItem="Mzy-zl-0Hw" firstAttribute="top" secondItem="xPR-nL-Qna" secondAttribute="top" id="hM6-3t-dN0"/>
                                             <constraint firstAttribute="bottom" secondItem="Mzy-zl-0Hw" secondAttribute="bottom" id="vr9-VK-GgX"/>
@@ -512,17 +513,19 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="FavoriteDialog"/>
                                 <constraints>
-                                    <constraint firstItem="rMz-ie-Ors" firstAttribute="trailing" secondItem="Wec-v2-bwx" secondAttribute="trailing" id="EXA-aY-h2Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wec-v2-bwx" secondAttribute="bottom" constant="30" id="3jZ-20-aG3"/>
+                                    <constraint firstItem="rMz-ie-Ors" firstAttribute="centerX" secondItem="7Yw-Mj-3JP" secondAttribute="centerX" id="8No-eS-C9S"/>
                                     <constraint firstAttribute="trailing" secondItem="xPR-nL-Qna" secondAttribute="trailing" id="I8q-To-AEf"/>
+                                    <constraint firstAttribute="width" constant="374" id="LOd-en-QeF"/>
                                     <constraint firstAttribute="trailing" secondItem="Wec-v2-bwx" secondAttribute="trailing" constant="58" id="NAi-ih-A6y"/>
+                                    <constraint firstAttribute="height" constant="268" id="NYg-r7-Dfo"/>
                                     <constraint firstItem="xPR-nL-Qna" firstAttribute="leading" secondItem="7Yw-Mj-3JP" secondAttribute="leading" id="Qvz-RZ-TX6"/>
                                     <constraint firstItem="xPR-nL-Qna" firstAttribute="top" secondItem="7Yw-Mj-3JP" secondAttribute="top" id="RDi-ba-gme"/>
+                                    <constraint firstAttribute="trailing" secondItem="rMz-ie-Ors" secondAttribute="trailing" constant="92" id="Rwu-Tb-NZq"/>
                                     <constraint firstItem="Wec-v2-bwx" firstAttribute="leading" secondItem="7Yw-Mj-3JP" secondAttribute="leading" constant="59" id="TMM-03-TiP"/>
-                                    <constraint firstAttribute="bottom" secondItem="Wec-v2-bwx" secondAttribute="bottom" constant="30" id="jIP-UY-8oe"/>
-                                    <constraint firstItem="rMz-ie-Ors" firstAttribute="top" secondItem="xPR-nL-Qna" secondAttribute="bottom" constant="52" id="mA7-rG-cw2"/>
-                                    <constraint firstItem="Wec-v2-bwx" firstAttribute="top" secondItem="rMz-ie-Ors" secondAttribute="bottom" constant="55.5" id="tLt-ge-3fu"/>
-                                    <constraint firstItem="rMz-ie-Ors" firstAttribute="leading" secondItem="Wec-v2-bwx" secondAttribute="leading" id="yXG-f8-Dwy"/>
-                                    <constraint firstItem="rMz-ie-Ors" firstAttribute="centerY" secondItem="7Yw-Mj-3JP" secondAttribute="centerY" id="ziN-Eq-dZw"/>
+                                    <constraint firstItem="rMz-ie-Ors" firstAttribute="top" secondItem="xPR-nL-Qna" secondAttribute="bottom" constant="50" id="taf-1h-rV9"/>
+                                    <constraint firstItem="rMz-ie-Ors" firstAttribute="leading" secondItem="7Yw-Mj-3JP" secondAttribute="leading" constant="92" id="wVQ-7W-G95"/>
+                                    <constraint firstItem="rMz-ie-Ors" firstAttribute="centerY" secondItem="7Yw-Mj-3JP" secondAttribute="centerY" constant="-0.5" id="ziN-Eq-dZw"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -544,13 +547,12 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kJy-IT-qWY"/>
-                        <color key="backgroundColor" red="0.50197285410000003" green="0.50195139649999998" blue="0.50196129079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7Yw-Mj-3JP" firstAttribute="centerX" secondItem="2IY-GO-TaO" secondAttribute="centerX" id="7TD-pr-fdm"/>
                             <constraint firstItem="kJy-IT-qWY" firstAttribute="trailing" secondItem="7Yw-Mj-3JP" secondAttribute="trailing" constant="20" id="Imh-nd-VT0"/>
-                            <constraint firstItem="7Yw-Mj-3JP" firstAttribute="top" secondItem="kJy-IT-qWY" secondAttribute="top" constant="319" id="JAQ-l3-Y0w"/>
-                            <constraint firstItem="kJy-IT-qWY" firstAttribute="bottom" secondItem="7Yw-Mj-3JP" secondAttribute="bottom" constant="231" id="b4M-Vb-Pd1"/>
+                            <constraint firstItem="7Yw-Mj-3JP" firstAttribute="top" secondItem="kJy-IT-qWY" secondAttribute="top" constant="200" id="XrY-2u-FtA"/>
                             <constraint firstItem="7Yw-Mj-3JP" firstAttribute="leading" secondItem="kJy-IT-qWY" secondAttribute="leading" constant="20" id="u1z-YQ-CQL"/>
                         </constraints>
                     </view>
@@ -563,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBh-jM-6HB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-284" y="-696"/>
+            <point key="canvasLocation" x="-284.05797101449275" y="-696.42857142857144"/>
         </scene>
         <!--BottomTabBarController-->
         <scene sceneID="DWo-V2-xZD">

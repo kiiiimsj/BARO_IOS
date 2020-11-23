@@ -13,17 +13,9 @@ protocol TurnOffOrderDetailListener : AnyObject {
 }
 
 class MenuOrBasket : UIViewController {
-    public static let ABOUTSTORE = "AboutStore"
-    public static let BasketController = "BasketController"
-    
-    public var temp = OrderDetailsController()
-    public var basketData : Order?
-    public var OrderDetailData : String?
     
     @IBOutlet weak var OrderDetailBtn: UIButton!
     @IBOutlet weak var BasketBtn: UIButton!
-    
-    private var MyPresentedViewController: UIViewController?
     
     var delegate : TurnOffOrderDetailListener!
     override func viewDidLoad() {
@@ -32,7 +24,6 @@ class MenuOrBasket : UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        MyPresentedViewController = self.presentedViewController
     }
     @IBAction func pressOrderDetail(_ sender: Any) {
         self.dismiss(animated: true) {

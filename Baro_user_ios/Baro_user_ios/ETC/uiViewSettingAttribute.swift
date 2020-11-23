@@ -38,6 +38,9 @@ class uiViewSetting: UIView {
                 if self.restorationIdentifier == "BasketRight" {
                     return
                 }
+                if self.restorationIdentifier == "BasketDialog" {
+                    return
+                }
                 layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
             }
         }
