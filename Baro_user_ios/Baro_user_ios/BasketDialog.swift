@@ -44,23 +44,29 @@ class BasketDialog : UIViewController {
     }
     @objc func clickLeftView(_ sender : UIButton) {
         isClickLeft = true
-        delegate?.tabLeft(index : deleteItemPos)
-        self.dismiss(animated: false, completion: nil)
+        
+        self.dismiss(animated: false) {
+            self.delegate?.tabLeft(index : self.deleteItemPos)
+        }
     }
     @objc func clickRightView(_ sender : UIButton) {
         isClickRight = true
-        delegate?.tabRight(index : deleteItemPos)
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: false) {
+            self.delegate?.tabRight(index : self.deleteItemPos)
+        }
     }
     @IBAction func clickLeft() {
         isClickLeft = true
-        delegate?.tabLeft(index : deleteItemPos)
-        self.dismiss(animated: false, completion: nil)
+        
+        self.dismiss(animated: false) {
+            self.delegate?.tabLeft(index : self.deleteItemPos)
+        }
     }
     
     @IBAction func clickRight() {
         isClickRight = true
-        delegate?.tabRight(index : deleteItemPos)
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: false) {
+            self.delegate?.tabRight(index : self.deleteItemPos)
+        }
     }
 }

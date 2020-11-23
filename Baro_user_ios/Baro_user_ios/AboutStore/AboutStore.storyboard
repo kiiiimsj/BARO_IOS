@@ -98,6 +98,7 @@
                         <segue destination="LDZ-uN-ZP4" kind="presentation" identifier="StoreMenuController" animates="NO" id="ZPO-2S-Xaw"/>
                         <segue destination="Cpx-Th-ad8" kind="presentation" identifier="StoreInfoController" modalPresentationStyle="fullScreen" id="wHr-tf-f5t"/>
                         <segue destination="Tcx-Ra-uqe" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="auV-Jc-iOi"/>
+                        <segue destination="erg-za-UnV" kind="presentation" identifier="FavoriteDialog" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="a98-7c-IZj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeV-o6-RsH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -543,7 +544,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kJy-IT-qWY"/>
-                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.50197285410000003" green="0.50195139649999998" blue="0.50196129079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7Yw-Mj-3JP" firstAttribute="centerX" secondItem="2IY-GO-TaO" secondAttribute="centerX" id="7TD-pr-fdm"/>
