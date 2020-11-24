@@ -24,6 +24,7 @@ class EmptyBasket: UIViewController {
     @IBAction func pressEmpty(_ sender: Any) {
         UserDefaults.standard.setValue(String(store_id!), forKey: "currentStoreid")
         UserDefaults.standard.set(nil, forKey: "basket")
+        
         self.dismiss(animated: true) {
             self.delegate?.tapClick(dialog: self, type: "")
         }
