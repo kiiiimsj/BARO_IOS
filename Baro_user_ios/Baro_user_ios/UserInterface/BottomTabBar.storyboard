@@ -66,6 +66,13 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9u2-xw-p3A">
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="700"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3l-Wd-Sa4">
+                                                <rect key="frame" x="306" y="662" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -128,6 +135,7 @@
                         <outlet property="ContentView" destination="9u2-xw-p3A" id="vdZ-H4-SHx"/>
                         <outlet property="ContentViewScrollView" destination="ftC-Gg-3Ff" id="PKL-MZ-oxE"/>
                         <outlet property="TopView" destination="J2M-FH-h0m" id="D96-Cj-2oE"/>
+                        <outlet property="basketButton" destination="j3l-Wd-Sa4" id="SaB-NI-Yf8"/>
                         <outlet property="bottomTabBar" destination="hf3-Zm-CZA" id="EKR-xl-dRk"/>
                         <outlet property="topBarBackBtn" destination="Aa6-fN-GjY" id="ias-8Z-h5p"/>
                         <outlet property="topBarFavoriteBtn" destination="R0I-hX-Wl8" id="Fll-aA-2Z6"/>

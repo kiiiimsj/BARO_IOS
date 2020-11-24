@@ -22,6 +22,7 @@ class BottomTabBarController: UIViewController {
     //컨텐트뷰 엘리먼트
     @IBOutlet weak var ContentView: UIView!
     @IBOutlet weak var ContentViewScrollView: UIScrollView!
+    @IBOutlet weak var basketButton: UIButton!
     //바텀뷰 엘리먼트
     @IBOutlet weak var BottomView: UIView!
     @IBOutlet weak var bottomTabBar: UITabBar!
@@ -51,6 +52,7 @@ class BottomTabBarController: UIViewController {
     var saveContentViewSize = CGSize()
     override func viewDidLoad() {
         super.viewDidLoad()
+        basketButton.isHidden = true
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
     }
     
