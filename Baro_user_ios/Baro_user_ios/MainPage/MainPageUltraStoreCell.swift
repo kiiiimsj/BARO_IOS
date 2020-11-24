@@ -14,6 +14,7 @@ class MainPageUltraStoreCell : UICollectionViewCell {
   
     @IBOutlet weak var ultraDistance: UILabel!
     
+    @IBOutlet weak var ultra_isOpen: UILabel!
     
     override func prepareForReuse() {
         ultraImage.image = nil

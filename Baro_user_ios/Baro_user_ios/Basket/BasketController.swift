@@ -10,6 +10,8 @@ import SwiftyJSON
 class BasketController : UIViewController {
     var menu : Order!
     var orders = [Order]()
+    var nonEssential = [[SelectedExtra]]()
+    var essential = [[Extra]]()
     let netWork = CallRequest()
     let urlMaker = NetWorkURL()
     @IBOutlet weak var backBtn: UIButton!
@@ -27,12 +29,23 @@ class BasketController : UIViewController {
             }
             orders.append(menu)
             print(orders)
+            nonEssentialToArray()
         }
         else {
             print("error")
         }
         collectionView.delegate = self
         collectionView.dataSource = self
+        recalcPrice()
+    }
+    func nonEssentialToArray(){
+        for item in orders{
+            let v = Array(item.nonEssentials.values)
+            nonEssential.append(v)
+            let e = Array(item.Essentials.values)
+            essential.append(e)
+        }
+        print("nonon",nonEssential)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
@@ -52,7 +65,13 @@ class BasketController : UIViewController {
         self.present(vc, animated: true, completion: nil)
         print(totalPriceLabel.text!)
     }
-    
+    func recalcPrice(){
+        for item in orders {
+            self.totalPrice += (item.menu_total_price * item.menu_count)
+           
+        }
+        self.totalPriceLabel.text = "\(self.totalPrice)"
+    }
     func saveBasket() {
         let encoder = JSONEncoder()
         let jsonSaveData = try? encoder.encode(orders)
@@ -80,7 +99,11 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let eachMenu = orders[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BasketMenuCell", for: indexPath) as! BasketMenuCell
-        cell.eachMenu = eachMenu
+//        print("each",eachMenu)
+//        cell.eachMenu = eachMenu
+        cell.essential = essential[indexPath.item]
+        cell.nonEssential = nonEssential[indexPath.item]
+        cell.extraCollectionView.reloadData()
         cell.menu_name.text = eachMenu.menu.menu_name
         cell.menu_count.text = String(eachMenu.menu_count)
         cell.menu_defaultPrice.text = String(eachMenu.menu.menu_defaultprice)
@@ -89,9 +112,7 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         cell.extraCollectionView.delegate = cell.self
         cell.extraCollectionView.dataSource = cell.self
         cell.delegate = self
-        cell.backgroundColor = .yellow
-        self.totalPrice += (eachMenu.menu_total_price * eachMenu.menu_count)
-        self.totalPriceLabel.text = "\(self.totalPrice)"
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -107,10 +128,11 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         return headerview
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print("height",orders[indexPath.item].nonEssentials.count)
         if orders[indexPath.item].Essentials.count > 0 {
-            return CGSize(width: collectionView.frame.width, height: CGFloat(70 + (1 + orders[indexPath.item].nonEssentials.count) * 65))
+            return CGSize(width: collectionView.frame.width, height: CGFloat(120 + ((1 + nonEssential[indexPath.item].count) * 50)))
         }else{
-            return CGSize(width: collectionView.frame.width, height: CGFloat(70 + (orders[indexPath.item].nonEssentials.count) * 62))
+            return CGSize(width: collectionView.frame.width, height: CGFloat(120 + (nonEssential[indexPath.item].count) * 50))
         }
         
     }

@@ -12,6 +12,8 @@ class MainPageNewStoreCell : UICollectionViewCell {
     @IBOutlet weak var newStoreImage: UIImageView!
     @IBOutlet weak var newStoreName: UILabel!
     
+    @IBOutlet weak var newStoreDistance: UILabel!
+    @IBOutlet weak var newStore_isOpen: UILabel!
     
     override func prepareForReuse() {
         newStoreImage.image = nil

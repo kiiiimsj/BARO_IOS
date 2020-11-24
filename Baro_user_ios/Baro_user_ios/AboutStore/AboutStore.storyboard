@@ -286,12 +286,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mao-Kd-N13">
-                                <rect key="frame" x="0.0" y="60" width="414" height="748"/>
-                                <connections>
-                                    <segue destination="baI-M4-zw5" kind="embed" id="By4-dl-nbI"/>
-                                </connections>
-                            </containerView>
                             <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="categoryIndecator" translatesAutoresizingMaskIntoConstraints="NO" id="Mqn-Os-oTh" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
                                 <rect key="frame" x="14" y="60" width="92" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -312,16 +306,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXb-cu-OYi">
+                                <rect key="frame" x="0.0" y="60" width="414" height="748"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="27w-FF-HSH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="27w-FF-HSH" firstAttribute="bottom" secondItem="mao-Kd-N13" secondAttribute="bottom" id="3Ju-j3-lkV"/>
-                            <constraint firstItem="27w-FF-HSH" firstAttribute="trailing" secondItem="mao-Kd-N13" secondAttribute="trailing" id="56Z-ge-6dM"/>
-                            <constraint firstItem="mao-Kd-N13" firstAttribute="top" secondItem="g3o-fH-1hC" secondAttribute="bottom" id="ZwP-4a-yzt"/>
+                            <constraint firstItem="27w-FF-HSH" firstAttribute="trailing" secondItem="fXb-cu-OYi" secondAttribute="trailing" id="EKh-TD-THl"/>
+                            <constraint firstItem="fXb-cu-OYi" firstAttribute="leading" secondItem="27w-FF-HSH" secondAttribute="leading" id="SFb-dy-3dl"/>
+                            <constraint firstItem="fXb-cu-OYi" firstAttribute="top" secondItem="g3o-fH-1hC" secondAttribute="bottom" id="YN6-ET-Wle"/>
                             <constraint firstItem="g3o-fH-1hC" firstAttribute="leading" secondItem="27w-FF-HSH" secondAttribute="leading" id="aKm-L4-e1n"/>
-                            <constraint firstItem="mao-Kd-N13" firstAttribute="leading" secondItem="27w-FF-HSH" secondAttribute="leading" id="eil-mh-Qu7"/>
                             <constraint firstItem="27w-FF-HSH" firstAttribute="trailing" secondItem="g3o-fH-1hC" secondAttribute="trailing" id="nyA-dF-doA"/>
+                            <constraint firstItem="27w-FF-HSH" firstAttribute="bottom" secondItem="fXb-cu-OYi" secondAttribute="bottom" id="rts-35-bo6"/>
                             <constraint firstItem="g3o-fH-1hC" firstAttribute="top" secondItem="27w-FF-HSH" secondAttribute="top" id="zsn-xa-ZnY"/>
                         </constraints>
                     </view>
@@ -330,7 +328,7 @@
                         <outlet property="categoryHighlightText" destination="yBm-F3-IM3" id="NNf-bJ-I6V"/>
                         <outlet property="categoryIndecator" destination="Mqn-Os-oTh" id="ZqV-vl-sNK"/>
                         <outlet property="collectionView" destination="g3o-fH-1hC" id="Q8v-wy-hoJ"/>
-                        <outlet property="containerView" destination="mao-Kd-N13" id="2dG-nu-wLV"/>
+                        <outlet property="menuPage" destination="fXb-cu-OYi" id="HJ4-8R-Fwg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyN-tS-bT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -342,11 +340,11 @@
             <objects>
                 <viewController storyboardIdentifier="StoreMenu2Controller" id="baI-M4-zw5" customClass="StoreMenu2Controller" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U4J-Sb-Vg4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="748"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p1g-h8-b3T">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="748"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9QA-JD-fTR">
                                     <size key="itemSize" width="414" height="128"/>

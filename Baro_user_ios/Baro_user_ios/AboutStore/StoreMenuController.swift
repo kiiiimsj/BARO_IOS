@@ -11,7 +11,6 @@ class StoreMenuController : UIViewController{
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var categoryHighlightText: UILabel!
     @IBOutlet weak var categoryIndecator: uiViewSetting!
     var netWork = CallRequest()
@@ -25,7 +24,9 @@ class StoreMenuController : UIViewController{
     public var saveIndecatorWidth = [CGFloat]()
     public var saveIndecatorHeight = CGFloat()
     private var initiateComplete = false
-    private var childController : StoreMenu2Controller?
+    
+    @IBOutlet weak var menuPage: UIView!
+    private lazy var childController : StoreMenu2Controller? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .purple
@@ -77,13 +78,12 @@ class StoreMenuController : UIViewController{
             childController = storyboard.instantiateViewController(withIdentifier: viewControllerID) as? StoreMenu2Controller
             (childController!).menus = menus
             self.addChild(childController!)
-            containerView.addSubview((childController!.view)!)
-            childController!.view.frame = containerView.bounds
+            menuPage.addSubview((childController!.view)!)
+            childController!.view.frame = menuPage.bounds
             childController!.didMove(toParent: self)
             initiateComplete = true
         }else{
             childController?.menus = menus
-            print("ccccccc?",childController?.menus.count)
             childController?.collectionView.reloadData()
         }
         
