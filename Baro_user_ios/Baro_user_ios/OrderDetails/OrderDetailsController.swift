@@ -27,6 +27,8 @@ class OrderDetailsController : UIViewController {
     
     @IBOutlet weak var EssentialArea: UICollectionView!
     
+    var makeToastMessage = ToastMessage()
+    
     public var menu = Menu()
     public var menu_id = ""
     public var menu_default_price = 0
@@ -35,6 +37,9 @@ class OrderDetailsController : UIViewController {
     public var nonEssentialOpen = false;
     public var selectedEssential = [String : Extra]()
     public var selectedNonEssential = [String : SelectedExtra]()
+    
+    var storeId = UserDefaults.standard.value(forKey: "currentStoreId")
+    
     var data : Order?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,53 +89,37 @@ class OrderDetailsController : UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func nextPage(_ sender: Any) {
-        if selectedEssential.count != essentials.count{
-            return
-        }
-        let can = canGoToNext()
-        if can {
+        if (canGoToNext()){
             data = Order(menu: self.menu, essentials: selectedEssential, nonEssentials: selectedNonEssential)
             data?.menu_count = Int(menu_count.text!)!
             data?.menu_total_price = menu_price_current
-            let store_id_in_basket = UserDefaults.standard.value(forKey: "currentStoreid")
-            if store_id_in_basket == nil {
-                print("isNil")
+            if storeId == nil {
                 UserDefaults.standard.setValue(String(self.menu.store_id), forKey: "currentStoreid")
                 let vc = self.storyboard?.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
-                
-                vc.basketData = data
-                vc.temp = self
                 vc.delegate = self
-                vc.OrderDetailData = String(self.menu.store_id)
                 vc.modalPresentationStyle = .overFullScreen
                 vc.modalTransitionStyle = .crossDissolve
                 self.present(vc, animated: false, completion: nil)
             }else{
-                
-                if store_id_in_basket as! String == String(menu.store_id) {
-                    print("notEqual")
+                if (storeId as! Int == menu.store_id) {
                     let vc = self.storyboard?.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
-                    
-                    vc.basketData = data
-                    vc.temp = self
-                    vc.OrderDetailData = String(self.menu.store_id)
                     vc.delegate = self
                     vc.modalPresentationStyle = .overFullScreen
                     vc.modalTransitionStyle = .crossDissolve
                     self.present(vc, animated: false, completion: nil)
 
                 }else{
-                    print("isEqual")
                     let vc = self.storyboard?.instantiateViewController(identifier: "EmptyBasket") as! EmptyBasket
                     vc.modalPresentationStyle = .overFullScreen
                     vc.modalTransitionStyle = .crossDissolve
-                    vc.menuData = data
-                    vc.store_id = String(self.menu.store_id)
                     vc.delegate = self
-                    vc.temp = self
+                    vc.store_id = String(self.menu.store_id)
                     self.present(vc, animated: false, completion: nil)
                 }
             }
+        }
+        else {
+            self.makeToastMessage.showToast(message: "필수옵션을 선택해 주세요", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
         }
     }
     func recalcPrice(){
@@ -307,6 +296,17 @@ extension OrderDetailsController : ExpandDelegate {
 
 extension OrderDetailsController : TurnOffOrderDetailListener {
     func tapCancel(dialog: UIViewController) {
+        let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
+        if let title = dialog.title, title == "EmptyBakset" {
+            let basketDialog = storyboard.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
+            basketDialog.delegate = self
+            self.present(basketDialog, animated: true, completion: nil)
+
+        }                
+        let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
+        vc.orders = loadBasket()
+        vc.orders.append(data!)
+        saveBasket(orders: vc.orders)
         self.dismiss(animated: false)
     }
     func tapClick(dialog: UIViewController, type: String) {
@@ -314,11 +314,30 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
         let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
         
         guard let pvc = self.presentingViewController else { return }
-        vc.menu = data
+        vc.orders = loadBasket()
+        vc.orders.append(data!)
+        saveBasket(orders: vc.orders)
         self.dismiss(animated: false) {
             vc.modalPresentationStyle = .fullScreen
             pvc.present(vc, animated: false, completion: nil)
         }
+    }
+    func saveBasket(orders : [Order]) {
+        let encoder = JSONEncoder()
+        let jsonSaveData = try? encoder.encode(orders)
+        if let _ = jsonSaveData, let jsonString = String(data: jsonSaveData!, encoding: .utf8){
+            UserDefaults.standard.set(jsonString, forKey: "basket")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    func loadBasket() -> [Order]{
+        let decoder = JSONDecoder()
+        var jsonToOrder = [Order]()
+        if let getData = UserDefaults.standard.value(forKey: "basket") as? String {
+            let data = getData.data(using: .utf8)!
+            jsonToOrder = try! decoder.decode([Order].self, from: data)
+        }
+        return jsonToOrder
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let basket = segue.destination as? BasketController {
