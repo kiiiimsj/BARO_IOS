@@ -93,8 +93,7 @@ class OrderDetailsController : UIViewController {
             data = Order(menu: self.menu, essentials: selectedEssential, nonEssentials: selectedNonEssential)
             data?.menu_count = Int(menu_count.text!)!
             data?.menu_total_price = menu_price_current
-            let store_id_in_basket = storeId
-            if store_id_in_basket == nil {
+            if storeId == nil {
                 UserDefaults.standard.setValue(String(self.menu.store_id), forKey: "currentStoreid")
                 let vc = self.storyboard?.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
                 vc.delegate = self
@@ -102,7 +101,7 @@ class OrderDetailsController : UIViewController {
                 vc.modalTransitionStyle = .crossDissolve
                 self.present(vc, animated: false, completion: nil)
             }else{
-                if store_id_in_basket as! String == String(menu.store_id) {
+                if (storeId as! Int == menu.store_id) {
                     let vc = self.storyboard?.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
                     vc.delegate = self
                     vc.modalPresentationStyle = .overFullScreen
