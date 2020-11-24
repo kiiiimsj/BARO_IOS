@@ -41,7 +41,6 @@ class OrderDetailsController : UIViewController {
         setMenuInfo()
         backBtn.setImage(UIImage(named: "arrow_back" ), for: .normal)
         menu_price_current = menu.menu_defaultprice
-        print("viewdidload")
         menu_count.text = "1"
         
         recalcPrice()
@@ -104,6 +103,7 @@ class OrderDetailsController : UIViewController {
                 vc.delegate = self
                 vc.OrderDetailData = String(self.menu.store_id)
                 vc.modalPresentationStyle = .overFullScreen
+                vc.modalTransitionStyle = .crossDissolve
                 self.present(vc, animated: false, completion: nil)
             }else{
                 
@@ -122,9 +122,11 @@ class OrderDetailsController : UIViewController {
                 }else{
                     print("isEqual")
                     let vc = self.storyboard?.instantiateViewController(identifier: "EmptyBasket") as! EmptyBasket
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.modalTransitionStyle = .crossDissolve
                     vc.menuData = data
                     vc.store_id = String(self.menu.store_id)
-                    //vc.delegate = self
+                    vc.delegate = self
                     vc.temp = self
                     self.present(vc, animated: false, completion: nil)
                 }
@@ -305,7 +307,7 @@ extension OrderDetailsController : ExpandDelegate {
 
 extension OrderDetailsController : TurnOffOrderDetailListener {
     func tapCancel(dialog: UIViewController) {
-        print("asdf")
+        self.dismiss(animated: false)
     }
     func tapClick(dialog: UIViewController, type: String) {
         let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)

@@ -392,6 +392,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qSe-YM-dwB"/>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fIi-Ei-A86" firstAttribute="leading" secondItem="qSe-YM-dwB" secondAttribute="leading" constant="50" id="eBx-vu-z6h"/>
                             <constraint firstItem="fIi-Ei-A86" firstAttribute="centerY" secondItem="4fW-bv-VOA" secondAttribute="centerY" id="mfu-pX-iyf"/>
@@ -480,6 +481,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kaE-Bm-fE2"/>
+                        <color key="backgroundColor" red="0.50197285410000003" green="0.50195139649999998" blue="0.50196129079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="iqr-a5-J5f" firstAttribute="centerY" secondItem="bTX-i3-Ogx" secondAttribute="centerY" id="QsS-XL-9hZ"/>
                             <constraint firstItem="iqr-a5-J5f" firstAttribute="centerX" secondItem="bTX-i3-Ogx" secondAttribute="centerX" id="T8P-9F-khC"/>
