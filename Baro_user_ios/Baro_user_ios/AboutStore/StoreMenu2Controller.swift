@@ -34,6 +34,7 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
         if data.is_soldout == "N" {
             cell.menu_state.isHidden = true
         }else{
+            cell.menu_state.isHidden = false
         }
         return cell
     }

@@ -404,7 +404,7 @@
                         <outlet property="collectionView" destination="tau-Pl-sdi" id="ZH3-2h-U22"/>
                         <outlet property="payBtn" destination="eFT-Ql-mab" id="iAi-fw-9hm"/>
                         <outlet property="totalPriceLabel" destination="i4F-PM-fjO" id="8jy-0B-se0"/>
-                        <segue destination="NWU-jn-iaJ" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="tsg-en-oZe"/>
+                        <segue destination="NWU-jn-iaJ" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="tsg-en-oZe"/>
                         <segue destination="m9y-bn-epS" kind="presentation" identifier="BasketDialog" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="qXo-JS-fdr"/>
                     </connections>
                 </viewController>
@@ -440,12 +440,25 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uO-j3-egg">
+                                                <rect key="frame" x="20" y="40" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="MYw-Rm-FEn"/>
+                                                    <constraint firstAttribute="height" constant="20" id="neW-St-yB7"/>
+                                                </constraints>
+                                                <state key="normal" image="arrow_back"/>
+                                                <connections>
+                                                    <action selector="pressBackBtn:" destination="NWU-jn-iaJ" eventType="touchUpInside" id="MwG-Hq-oQ7"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="5uO-j3-egg" firstAttribute="leading" secondItem="HVT-yp-ku6" secondAttribute="leading" constant="20" id="NSl-Ox-Jro"/>
                                             <constraint firstAttribute="height" constant="100" id="Qy8-Ny-uS9"/>
                                             <constraint firstItem="FaG-hr-6TT" firstAttribute="centerY" secondItem="HVT-yp-ku6" secondAttribute="centerY" id="jYb-g6-eS3"/>
                                             <constraint firstItem="FaG-hr-6TT" firstAttribute="centerX" secondItem="HVT-yp-ku6" secondAttribute="centerX" id="nzj-PO-AZv"/>
+                                            <constraint firstItem="5uO-j3-egg" firstAttribute="centerY" secondItem="HVT-yp-ku6" secondAttribute="centerY" id="qeX-DC-nQm"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1TY-zv-2bf">
@@ -519,6 +532,15 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 사용가능한 쿠폰이 없습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5K-Zs-mLb">
+                                        <rect key="frame" x="0.0" y="100" width="374" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="939-8f-VsF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요청사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLo-wf-1sO">
                                         <rect key="frame" x="8" y="362" width="59" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -664,6 +686,8 @@
                                 <constraints>
                                     <constraint firstItem="1ne-Eb-jm4" firstAttribute="top" secondItem="bLo-wf-1sO" secondAttribute="bottom" constant="8" id="5Pu-Pg-rw4"/>
                                     <constraint firstItem="s0w-Fw-UFn" firstAttribute="leading" secondItem="pzE-be-PLS" secondAttribute="leading" constant="8" id="6Z3-4Q-EqQ"/>
+                                    <constraint firstItem="y5K-Zs-mLb" firstAttribute="top" secondItem="1TY-zv-2bf" secondAttribute="top" id="7fQ-eZ-mhf"/>
+                                    <constraint firstAttribute="trailing" secondItem="y5K-Zs-mLb" secondAttribute="trailing" id="9DS-G4-ZFF"/>
                                     <constraint firstAttribute="trailing" secondItem="L0L-fG-cc2" secondAttribute="trailing" id="CRJ-cS-yaX"/>
                                     <constraint firstAttribute="trailing" secondItem="s0w-Fw-UFn" secondAttribute="trailing" constant="8" id="DbQ-gp-bkv"/>
                                     <constraint firstItem="s0w-Fw-UFn" firstAttribute="top" secondItem="1ne-Eb-jm4" secondAttribute="bottom" constant="20" id="HLU-Zi-2fM"/>
@@ -671,6 +695,7 @@
                                     <constraint firstAttribute="trailing" secondItem="HVT-yp-ku6" secondAttribute="trailing" id="Mda-Db-GQs"/>
                                     <constraint firstItem="HVT-yp-ku6" firstAttribute="leading" secondItem="pzE-be-PLS" secondAttribute="leading" id="Oh4-XH-vQS"/>
                                     <constraint firstItem="1TY-zv-2bf" firstAttribute="top" secondItem="HVT-yp-ku6" secondAttribute="bottom" id="RZw-px-W7Z"/>
+                                    <constraint firstItem="y5K-Zs-mLb" firstAttribute="leading" secondItem="pzE-be-PLS" secondAttribute="leading" id="UjC-oc-QON"/>
                                     <constraint firstItem="bLo-wf-1sO" firstAttribute="leading" secondItem="pzE-be-PLS" secondAttribute="leading" constant="8" id="VBG-M9-dUY"/>
                                     <constraint firstAttribute="trailing" secondItem="1TY-zv-2bf" secondAttribute="trailing" id="ZNh-AB-4rk"/>
                                     <constraint firstItem="L0L-fG-cc2" firstAttribute="leading" secondItem="VN5-4H-1Fb" secondAttribute="trailing" id="aBW-Fx-Moy"/>
@@ -687,7 +712,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NMd-7o-Ssi"/>
-                        <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.60287807642487046" green="0.60287807642487046" blue="0.60287807642487046" alpha="0.55529269366197187" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NMd-7o-Ssi" firstAttribute="trailing" secondItem="pzE-be-PLS" secondAttribute="trailing" constant="20" id="0Lc-oP-dld"/>
                             <constraint firstItem="NMd-7o-Ssi" firstAttribute="bottom" secondItem="pzE-be-PLS" secondAttribute="bottom" constant="137" id="5cy-dA-rpm"/>
@@ -698,8 +723,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="5uO-j3-egg" id="OjY-Wz-0af"/>
                         <outlet property="couponCollectionView" destination="1TY-zv-2bf" id="ctg-5y-3iB"/>
                         <outlet property="couponDiscountPrice" destination="MXJ-GN-3Rg" id="cpo-2U-7s4"/>
+                        <outlet property="couponExistLabel" destination="y5K-Zs-mLb" id="Bqm-85-e2p"/>
                         <outlet property="customerRequest" destination="1ne-Eb-jm4" id="s0L-kG-fdZ"/>
                         <outlet property="pay" destination="PmD-Kl-kgD" id="Pca-gO-JdO"/>
                         <outlet property="productTotalPrice" destination="xu4-oA-DaW" id="cxQ-uv-EiQ"/>
