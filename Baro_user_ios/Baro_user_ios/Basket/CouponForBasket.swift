@@ -10,9 +10,11 @@ class CouponForBasket : UIViewController {
     let netWork = CallRequest()
     let urlMaker = NetWorkURL()
     @IBOutlet weak var productTotalPrice: UILabel!
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var couponDiscountPrice: UILabel!
     @IBOutlet weak var realPayPrice: UILabel!
     @IBOutlet weak var customerRequest: UITextField!
+    @IBOutlet weak var couponExistLabel: UILabel!
     var currentSelectedCoupon : CouponForBasketCell?
     public var sendOrderToBootPay = [Order]()
     public var UseCouponId : Int = -1
@@ -70,12 +72,21 @@ class CouponForBasket : UIViewController {
                     coupon.coupon_type = item["coupon_type"].stringValue
                     self.coupons.append(coupon)
                 }
+                if self.coupons.count == 0 {
+                    self.couponExistLabel.isHidden = false
+                }else{
+                    self.couponExistLabel.isHidden = true
+                }
                 self.couponCollectionView.delegate = self
                 self.couponCollectionView.dataSource = self
             }
             else {
+                self.couponExistLabel.isHidden = false
             }
         }
+    }
+    @IBAction func pressBackBtn(_ sender: Any) {
+        self.dismiss(animated: true)
     }
 }
 extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollectionViewDataSource{

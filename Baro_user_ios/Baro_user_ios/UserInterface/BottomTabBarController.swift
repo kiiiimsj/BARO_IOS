@@ -146,6 +146,8 @@ class BottomTabBarController: UIViewController {
                 let VCsender = controller as! StoreListPageController
                 VCsender.typeCode = sender as! String
                 VCsender.kind = 1
+////                VCsender.typeCode = sender as! String
+//                VCsender.kind = Int(sender as! String)!
                 finallController = VCsender
             default:
                 print("error")
@@ -208,6 +210,8 @@ extension BottomTabBarController : UITabBarDelegate {
             changeViewController(getController: mainPageControllerIdentifier, getStoryBoard: mainPageStoryBoard, sender: nil)
         case "내 가게":
             changeViewController(getController: storeListControllerIdentifier, getStoryBoard: storeListStoryBoard, sender: nil)
+//        case "찜한 가게":
+//            changeViewController(getController: storeListControllerIdentifier, getStoryBoard: storeListStoryBoard, sender: "2")
         case "주문 현황":
             changeViewController(getController: orderStatusControllerIdentifier, getStoryBoard: orderStatusStoryBoard, sender: nil)
         case "주문 내역":

@@ -27,7 +27,7 @@ class StoreListPageController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-
+        print("kind",kind)
         if(kind == 1) { //mainpage에서 넘어온 페이지일 경우
             let jsonObject : [ String : Any ] = [
                 "type_code" : typeCode,
@@ -52,7 +52,30 @@ class StoreListPageController : UIViewController {
             typeCode = ""
         }
         else if kind == 2 { //favorite list 에서 넘어온 페이지일 경우
-            
+            let jsonObject : [String : Any ] = [
+                "latitude" : "37.499",
+                "longitude" : "126.956",
+                "phone" : UserDefaults.standard.value(forKey: "user_phone") as! String
+            ]
+            network.post(method: .post, param: jsonObject, url: urlCaller.myStoreList) {
+                (json) in
+                var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
+                if json["result"].boolValue {
+                    for item in json["favorite"].array! {
+                        storeListModel.store_image = item["store_image"].stringValue
+                        storeListModel.is_open = item["is_open"].stringValue
+                        storeListModel.distance = item["distance"].doubleValue
+                        storeListModel.store_id = item["store_id"].intValue
+                        storeListModel.store_info = item["store_info"].stringValue
+                        storeListModel.store_location = item["store_location"].stringValue
+                        storeListModel.store_name = item["store_name"].stringValue
+                        self.storeList.append(storeListModel)
+                    }
+                }else{
+                    
+                }
+                self.storeListView.reloadData()
+            }
         }
         
         else if kind == 3{  //kind == 3   -> search에서 넘어온 페이지일 경우
@@ -162,7 +185,12 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
             }else{
                 cell.is_OpenLable.text = "영업종료"
             }
-            cell.distance_Label.text = String(Int(store.distance)) + "m"
+            if Int(store.distance) > 1000 {
+                cell.distance_Label.text = String(Double(Int(store.distance/100) / 10)) + "km"
+            }else{
+                cell.distance_Label.text = String(Int(store.distance)) + "m"
+            }
+            
             return cell
         }
     }
