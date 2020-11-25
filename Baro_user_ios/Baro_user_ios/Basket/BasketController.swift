@@ -130,6 +130,7 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         dialogController.modalTransitionStyle = .crossDissolve
         self.present(dialogController, animated: true, completion: nil)
         dialogController.delegate = self
+        self.collectionView.reloadSections(IndexSet(integer: 0))
     }
     func tabLeft(index : Int) {
         self.totalPrice = 0
