@@ -11,9 +11,4 @@ class BasketEssentialCell : UICollectionViewCell{
     
     @IBOutlet weak var extraNames: UILabel!
     @IBOutlet weak var extraPrice: UILabel!
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        extraNames.text = ""
-        extraPrice.text = ""
-    }
 }
