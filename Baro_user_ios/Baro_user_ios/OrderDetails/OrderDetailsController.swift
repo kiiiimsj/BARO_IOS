@@ -339,10 +339,4 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
         }
         return jsonToOrder
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let basket = segue.destination as? BasketController {
-            let order = sender as? Order
-            basket.menu = order
-        }
-    }
 }
