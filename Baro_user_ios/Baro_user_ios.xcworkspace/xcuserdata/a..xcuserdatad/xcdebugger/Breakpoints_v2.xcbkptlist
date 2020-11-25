@@ -71,22 +71,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FF46F69D-FB83-4853-BDE5-2721660E95F4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Baro_user_ios/Basket/BasketController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F3FA1A52-EEDD-4FE2-A24F-18D516358430"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -172,9 +156,9 @@
             filePath = "Baro_user_ios/Basket/BasketController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "clickPay(_:)"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "recalcPrice()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -310,15 +294,15 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "307D19FE-4A65-42C6-848F-13FF38955BC6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Baro_user_ios/Basket/BasketController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "clickPay(_:)"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "recalcPrice()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

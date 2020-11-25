@@ -148,10 +148,10 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     // 에러가 났을때 호출되는 부분
     func onError(data: [String: Any]) {
         print("Payment processing onError : ",data)
-        if let getError = data["msg"] as? String ?? "" {
-            let errorMessage = getError
-            self.createDialog(titleContentString: "결 제 오 류", contentString: "\(errorMessage)", buttonString: "확인")
-        }
+//        if let getError = data["msg"] as? String ?? "" {
+//            let errorMessage = getError
+//            self.createDialog(titleContentString: "결 제 오 류", contentString: "\(errorMessage)", buttonString: "확인")
+//        }
         self.result = false
         //data로부터 message parsing -> Dialog에 해당 error message 띄우기
     }
@@ -167,9 +167,9 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         //basketList UserDefault를 가져와서 서버에 보낸다
         //여기서 recept_id가 생성됨
         //data parsing을 통해 recept_id를 받아 DB로 전송
-        if let getRecept = data["receipt_id"] as? String ?? "" {
-            self.receptId = getRecept
-        }
+//        if let getRecept = data["receipt_id"] as? String ?? "" {
+//            self.receptId = getRecept
+//        }
         let param = ["phone":"\(self.userPhone)","recept_id":"\(receptId)"]
         netWork.post(method: .post, param: param, url: urlMaker.checkReceptId) {
             json in

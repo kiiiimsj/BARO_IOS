@@ -19,6 +19,9 @@ class BasketController : UIViewController {
     public var totalPrice : Int = 0
     public var basket = UserDefaults.standard
     private var getStoreNameFromUserDefault = UserDefaults.standard.value(forKey: "currentStoreName") as! String
+    
+    var nonEssential = [[SelectedExtra]]()
+        var essential = [[Extra]]()
     override func viewDidLoad(){
         super.viewDidLoad()
         print("orders : ", orders)
@@ -26,6 +29,15 @@ class BasketController : UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         recalcPrice()
+    }
+    func nonEssentialToArray(){
+            for item in orders{
+                let v = Array(item.nonEssentials.values)
+                nonEssential.append(v)
+                let e = Array(item.Essentials.values)
+                essential.append(e)
+            }
+            print("nonon",nonEssential)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
@@ -78,7 +90,9 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let eachMenu = orders[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BasketMenuCell", for: indexPath) as! BasketMenuCell
-        cell.eachMenu = eachMenu
+        cell.essential = essential[indexPath.item]
+        cell.nonEssential = nonEssential[indexPath.item]
+        cell.extraCollectionView.reloadData()
         cell.menu_name.text = eachMenu.menu.menu_name
         cell.menu_count.text = String(eachMenu.menu_count)
         cell.menu_defaultPrice.text = String(eachMenu.menu.menu_defaultprice)
@@ -87,7 +101,6 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         cell.extraCollectionView.delegate = cell.self
         cell.extraCollectionView.dataSource = cell.self
         cell.delegate = self
-        cell.backgroundColor = .yellow
      
         return cell
     }
@@ -104,10 +117,11 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         return headerview
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print("called")
         if orders[indexPath.item].Essentials.count > 0 {
-            return CGSize(width: collectionView.frame.width, height: CGFloat(70 + (1 + orders[indexPath.item].nonEssentials.count) * 65))
+            return CGSize(width: collectionView.frame.width, height: CGFloat(120 + ((1 + nonEssential[indexPath.item].count) * 50)))
         }else{
-            return CGSize(width: collectionView.frame.width, height: CGFloat(70 + (orders[indexPath.item].nonEssentials.count) * 62))
+            return CGSize(width: collectionView.frame.width, height: CGFloat(120 + (nonEssential[indexPath.item].count) * 50))
         }
     }
     func btnDeleteTapped(cell: BasketMenuCell) {
@@ -120,19 +134,24 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         dialogController.modalTransitionStyle = .crossDissolve
         self.present(dialogController, animated: true, completion: nil)
         dialogController.delegate = self
-        self.collectionView.reloadSections(IndexSet(integer: 0))
+//        self.collectionView.reloadSections(IndexSet(integer: 0))
+//        self.collectionView.reloadData()
     }
     func tabLeft(index : Int) {
         print("deleteindex : ", index)
         orders.remove(at: index)
+        essential.remove(at: index)
+        nonEssential.remove(at: index)
         if(orders.count == 0) {
             self.dismiss(animated: false, completion: nil)
         }
         self.totalPrice = 0
         self.saveBasket()
         recalcPrice()
-        self.collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
-        self.collectionView.reloadData()
+//        self.collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
+        //self.collectionView.reloadData()
+        self.collectionView.reloadSections(IndexSet(integer: 0))
+        (self.collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! BasketMenuCell).extraCollectionView.reloadData()
     }
     
     func tabRight(index : Int) {
