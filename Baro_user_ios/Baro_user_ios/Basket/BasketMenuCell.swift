@@ -19,28 +19,13 @@ class BasketMenuCell: UICollectionViewCell {
     @IBOutlet weak var menu_count: UILabel!
     @IBOutlet weak var menu_totalPrice: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
-    var essential : [Extra]?
-    var nonEssential : [SelectedExtra]?
     weak var delegate : BasketMenuCellDelegate?
     
     
     @IBAction func deleteBUttonClikc(_ sender : AnyObject) {
         delegate?.btnDeleteTapped(cell: self)
     }
-    var eachMenu : Order?
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        print("prepare")
-        nonEssential = nil
-        eachMenu = nil
-        essential = nil
-        menu_name.text = ""
-        menu_defaultPrice.text = ""
-        menu_extra_sum.text = ""
-        menu_count.text = ""
-        menu_totalPrice.text = ""
-    }
+    var eachMenu : Order!
 }
 
 extension BasketMenuCell : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
@@ -50,13 +35,9 @@ extension BasketMenuCell : UICollectionViewDelegate,UICollectionViewDataSource,U
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            if essential!.count == 0{
-                return 0
-            }else{
-                return 1 // 필수 옵션
-            }
+            return 1 // 필수 옵션
         case 1:
-            return nonEssential!.count // 비필수
+            return eachMenu.nonEssentials.count // 비필수
         default:
             return 0
         }
@@ -65,35 +46,27 @@ extension BasketMenuCell : UICollectionViewDelegate,UICollectionViewDataSource,U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            print("each2",eachMenu)
             let cell = extraCollectionView.dequeueReusableCell(withReuseIdentifier: "BasketEssentialCell", for: indexPath) as! BasketEssentialCell
             var sum = 0
             var name = ""
-            for item in essential! {
-                sum += item.extra_price
-                name += item.extra_name+"/"
+            for item in eachMenu.Essentials {
+                sum += item.value.extra_price
+                name += item.value.extra_name+"/"
             }
-            if essential!.count > 0 {
+            if eachMenu.Essentials.count > 0 {
                 cell.extraPrice.text = String(sum)
                 let endIdx = name.index(name.startIndex, offsetBy: name.count-2)
-                cell.extraNames.text =  String(name[...endIdx])
+                cell.extraNames.text = String(name[...endIdx])
             }
+            cell.backgroundColor = .red
             return cell
         case 1:
-//            extraCollectionView.reloadData()
             let cell = extraCollectionView.dequeueReusableCell(withReuseIdentifier: "BasketNonEssentialCell", for: indexPath) as! BasketNonEssentialCell
-            if nonEssential!.count > indexPath.item{
-            let values = nonEssential![indexPath.item]
-//            let values = Array(eachMenu.nonEssentials)[indexPath.item].value
-            print("vvval", values)
-                cell.extra_name.text =  values.Extra?.extra_name
+            let values = Array(eachMenu.nonEssentials)[indexPath.row].value
+            cell.extra_name.text = values.Extra?.extra_name
             cell.extra_count.text = String(values.optionCount)
             cell.extra_price.text = String(values.Extra!.extra_price * values.optionCount)
-           
-            }else{
-                print("out of")
-            }
-            
+            cell.backgroundColor = .blue
             return cell
         default:
             return UICollectionViewCell()
@@ -102,13 +75,10 @@ extension BasketMenuCell : UICollectionViewDelegate,UICollectionViewDataSource,U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: extraCollectionView.frame.width, height: 48)
+        return CGSize(width: extraCollectionView.frame.width, height: 50)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("none",nonEssential)
     }
     
     
