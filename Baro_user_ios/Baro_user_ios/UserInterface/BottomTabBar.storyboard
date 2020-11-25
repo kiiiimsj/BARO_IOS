@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -66,13 +67,6 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9u2-xw-p3A">
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="700"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3l-Wd-Sa4">
-                                                <rect key="frame" x="306" y="662" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
-                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -85,6 +79,20 @@
                                     <constraint firstAttribute="trailing" secondItem="9u2-xw-p3A" secondAttribute="trailing" id="pN2-zI-HLF"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3l-Wd-Sa4">
+                                <rect key="frame" x="300" y="753" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QLA-su-xcx"/>
+                                    <constraint firstAttribute="width" constant="40" id="gko-m2-dXK"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <imageReference key="image" image="cart" catalog="system" symbolScale="default"/>
+                                </state>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wx-tv-LBl">
                                 <rect key="frame" x="0.0" y="813" width="360" height="49"/>
                                 <subviews>
@@ -123,7 +131,9 @@
                             <constraint firstItem="J2M-FH-h0m" firstAttribute="top" secondItem="CJ7-Ga-GRx" secondAttribute="top" id="Uif-aU-9OR"/>
                             <constraint firstItem="3wx-tv-LBl" firstAttribute="top" secondItem="ftC-Gg-3Ff" secondAttribute="bottom" id="c6t-0G-GcL"/>
                             <constraint firstItem="J2M-FH-h0m" firstAttribute="trailing" secondItem="CJ7-Ga-GRx" secondAttribute="trailing" id="cFZ-Qn-Cv3"/>
+                            <constraint firstItem="3wx-tv-LBl" firstAttribute="top" secondItem="j3l-Wd-Sa4" secondAttribute="bottom" constant="20" id="cpJ-zD-uMl"/>
                             <constraint firstItem="CJ7-Ga-GRx" firstAttribute="bottom" secondItem="3wx-tv-LBl" secondAttribute="bottom" id="pBm-r8-AT3"/>
+                            <constraint firstItem="CJ7-Ga-GRx" firstAttribute="trailing" secondItem="j3l-Wd-Sa4" secondAttribute="trailing" constant="20" id="qL3-6L-E8o"/>
                             <constraint firstItem="J2M-FH-h0m" firstAttribute="centerX" secondItem="Z2Y-wm-gUk" secondAttribute="centerX" id="qww-ro-YRE"/>
                             <constraint firstItem="J2M-FH-h0m" firstAttribute="leading" secondItem="CJ7-Ga-GRx" secondAttribute="leading" id="w6K-oj-jTw"/>
                             <constraint firstItem="3wx-tv-LBl" firstAttribute="trailing" secondItem="CJ7-Ga-GRx" secondAttribute="trailing" id="yMS-ej-Lsb"/>
@@ -189,6 +199,7 @@
     </scenes>
     <resources>
         <image name="arrow_back" width="7" height="12"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="clock_tabBar" width="17" height="17"/>
         <image name="doc_tabBar" width="15.5" height="17"/>
         <image name="heart" width="17" height="16"/>
