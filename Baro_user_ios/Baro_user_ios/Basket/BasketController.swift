@@ -22,7 +22,6 @@ class BasketController : UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         print("orders : ", orders)
-        nonEssentialToArray()
         collectionView.delegate = self
         collectionView.dataSource = self
         recalcPrice()

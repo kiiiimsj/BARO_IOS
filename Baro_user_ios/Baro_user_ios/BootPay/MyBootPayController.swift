@@ -131,17 +131,11 @@ class MyBootPayController : UIViewController {
 extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func clickPaymentCheckBtn() {
         if (self.result) {
-            let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "AboutStore") as! AboutStore
-            vc.store_id = "\(self.storeId)"
-            guard let pvc = self.presentingViewController else { return }
-            self.dismiss(animated: false) {
-                vc.modalPresentationStyle = .overFullScreen
-                vc.modalTransitionStyle = .coverVertical
-                pvc.present(vc, animated: false, completion: nil)
+            self.dismiss(animated: true) {
+                self.performSegue(withIdentifier: "MainPageController", sender: nil)
             }
         }else {
-            
+            print("result erro  ")
         }
     }
     
@@ -213,11 +207,12 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func createDialog(titleContentString: String, contentString: String, buttonString: String) {
         let storyboard = UIStoryboard(name: "BootPay", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "FinalPaymentCheckDialog") as! FinalPaymentCheckDialog
-        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         vc.titleContentString = titleContentString
         vc.dialogContentString = contentString
         vc.buttonTitleContentString = buttonString
+        vc.delegate = self
         self.present(vc, animated: true, completion: nil)
     }
     

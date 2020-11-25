@@ -55,6 +55,7 @@ class BottomTabBarController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         basketButton.isHidden = true
+        topBarFavoriteBtn.isHidden = true
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
     }
     
@@ -72,6 +73,7 @@ class BottomTabBarController: UIViewController {
         }
         bottomTabBar.delegate = self
     }
+    
     func getOrders() {
         let decoder = JSONDecoder()
         var jsonToOrder = [Order]()
@@ -106,11 +108,21 @@ class BottomTabBarController: UIViewController {
     }
     //내부 뷰 컨트롤러 분기문
     func changeViewController(getController : String, getStoryBoard : UIStoryboard, sender : Any?) {
+        
         if(TopView.isHidden) {
             restoreTopView()
         }
-        topBarFavoriteBtn.isHidden = true
         let controller = getStoryBoard.instantiateViewController(identifier: getController)
+        if (ContentView.subviews.count != 0) {
+            for view in ContentView.subviews {
+                if let viewTitle = view.accessibilityIdentifier {
+                    if(viewTitle == controller.restorationIdentifier) {
+                        return
+                    }
+                }
+                view.removeFromSuperview()
+            }
+        }
         switch(getController) {
             case mainPageControllerIdentifier:
                 self.deleteTopView()
@@ -152,6 +164,8 @@ class BottomTabBarController: UIViewController {
         topBarHandler(controller: getController)
         self.addChild(getController)
         getController.view.frame = ContentView.frame
+        getController.view.accessibilityIdentifier = getController.restorationIdentifier
+        print("afterviewinput", getController.view.accessibilityIdentifier)
         ContentView.addSubview(getController.view)
         getController.didMove(toParent: self)
     }

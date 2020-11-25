@@ -13,7 +13,7 @@
         <!--OrderHistoryController-->
         <scene sceneID="TzD-rr-iDk">
             <objects>
-                <viewController storyboardIdentifier="OrderHistoryController" title="OrderHistoryController" id="ghr-He-Bh7" customClass="OrderHistoryController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="OrderHistoryController" storyboardIdentifier="OrderHistoryController" title="OrderHistoryController" id="ghr-He-Bh7" customClass="OrderHistoryController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZbN-BY-8Ig">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
