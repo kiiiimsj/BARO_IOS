@@ -13,7 +13,7 @@
         <!--OrderStatusController-->
         <scene sceneID="ld1-1R-7cF">
             <objects>
-                <viewController storyboardIdentifier="OrderStatusController" title="OrderStatusController" id="Gbj-09-OGc" customClass="OrderStatusController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderStatusController" title="OrderStatusController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gbj-09-OGc" customClass="OrderStatusController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SyC-bn-vR6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
