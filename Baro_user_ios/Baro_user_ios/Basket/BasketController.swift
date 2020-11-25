@@ -21,16 +21,8 @@ class BasketController : UIViewController {
     private var getStoreNameFromUserDefault = UserDefaults.standard.value(forKey: "currentStoreName") as! String
     override func viewDidLoad(){
         super.viewDidLoad()
-        if (menu != nil) {
-            if (basket.value(forKey: "basket") != nil) {
-                orders.append(contentsOf: loadBasket())
-            }
-            orders.append(menu)
-            print(orders)
-        }
-        else {
-            print("error")
-        }
+        print("orders : ", orders)
+        nonEssentialToArray()
         collectionView.delegate = self
         collectionView.dataSource = self
         recalcPrice()
@@ -56,7 +48,6 @@ class BasketController : UIViewController {
     func recalcPrice(){
         for item in orders {
             self.totalPrice += (item.menu_total_price * item.menu_count)
-           
         }
         self.totalPriceLabel.text = "\(self.totalPrice)"
     }
@@ -118,14 +109,13 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         }else{
             return CGSize(width: collectionView.frame.width, height: CGFloat(70 + (orders[indexPath.item].nonEssentials.count) * 62))
         }
-        
     }
     func btnDeleteTapped(cell: BasketMenuCell) {
         let indexPath = self.collectionView.indexPath(for: cell)
         let dialogController = self.storyboard?.instantiateViewController(identifier: "BasketDialog") as! BasketDialog
         dialogController.deleteItemCount = orders.count
         dialogController.deleteItemPos = indexPath!.item
-        dialogController.currentBasketController = self
+        dialogController.delegate = self
         dialogController.modalPresentationStyle = .overFullScreen
         dialogController.modalTransitionStyle = .crossDissolve
         self.present(dialogController, animated: true, completion: nil)
@@ -133,12 +123,14 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         self.collectionView.reloadSections(IndexSet(integer: 0))
     }
     func tabLeft(index : Int) {
-        self.totalPrice = 0
+        print("deleteindex : ", index)
         orders.remove(at: index)
         if(orders.count == 0) {
             self.dismiss(animated: false, completion: nil)
         }
+        self.totalPrice = 0
         self.saveBasket()
+        recalcPrice()
         self.collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
         self.collectionView.reloadData()
     }

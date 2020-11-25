@@ -47,7 +47,9 @@ class BottomTabBarController: UIViewController {
     var moveFromOutSide : Bool = false
     //바텀탭 로딩후 선택되어지는 탭바아이템
     var selectedTabBarItem : Int = 0
-    
+    //장바구니 버튼
+    var basket = UserDefaults.standard.value(forKey: "basket")
+    var basketOrders = [Order]()
     var saveTopViewSize = CGSize()
     var saveContentViewSize = CGSize()
     override func viewDidLoad() {
@@ -62,7 +64,45 @@ class BottomTabBarController: UIViewController {
             changeViewController(getController: controllerIdentifier, getStoryBoard: controllerStoryboard, sender: controllerSender)
             moveFromOutSide = false
         }
+        if(basket != nil) {
+            getOrders()
+            basketBadge()
+        } else {
+            basketButton.isHidden = true
+        }
         bottomTabBar.delegate = self
+    }
+    func getOrders() {
+        let decoder = JSONDecoder()
+        var jsonToOrder = [Order]()
+        if let getData = basket as? String {
+            let data = getData.data(using: .utf8)!
+            jsonToOrder = try! decoder.decode([Order].self, from: data)
+        }
+        basketOrders = jsonToOrder
+    }
+    func basketBadge(){
+        if(basketOrders.count == 0) {
+            basketButton.isHidden = true
+            return
+        }
+        basketButton.isHidden = false
+        basketButton.layer.borderWidth = 2
+        basketButton.layer.cornerRadius = basketButton.bounds.size.height / 2
+        basketButton.layer.borderColor = UIColor.clear.cgColor
+        
+                
+        let label = UILabel(frame: CGRect(x: 30, y: -5, width: 20, height: 20))
+        label.layer.borderColor = UIColor.clear.cgColor
+        label.layer.borderWidth = 2
+        label.layer.cornerRadius = label.bounds.size.height / 2
+        label.textAlignment = .center
+        label.layer.masksToBounds = true
+        label.font = UIFont(name: "NotoSansCJKkr-Regular", size: 13)
+        label.textColor = .white
+        label.backgroundColor = .red
+        label.text = "\(basketOrders.count)"
+        basketButton.addSubview(label)
     }
     //내부 뷰 컨트롤러 분기문
     func changeViewController(getController : String, getStoryBoard : UIStoryboard, sender : Any?) {
@@ -212,8 +252,6 @@ extension BottomTabBarController : UITabBarDelegate {
             changeViewController(getController: mainPageControllerIdentifier, getStoryBoard: mainPageStoryBoard, sender: nil)
         case "내 가게":
             changeViewController(getController: storeListControllerIdentifier, getStoryBoard: storeListStoryBoard, sender: nil)
-//        case "찜한 가게":
-//            changeViewController(getController: storeListControllerIdentifier, getStoryBoard: storeListStoryBoard, sender: "2")
         case "주문 현황":
             changeViewController(getController: orderStatusControllerIdentifier, getStoryBoard: orderStatusStoryBoard, sender: nil)
         case "주문 내역":

@@ -19,7 +19,6 @@ class BasketDialog : UIViewController {
     var isLastFlag : Bool = false
     var isClickLeft : Bool = false
     var isClickRight : Bool = false
-    var currentBasketController = UIViewController()
     
     weak var delegate : BasketBtnDelegate?
     override func viewDidLoad() {
@@ -59,6 +58,7 @@ class BasketDialog : UIViewController {
         isClickLeft = true
         
         self.dismiss(animated: false) {
+            print("deletePos", self.deleteItemPos)
             self.delegate?.tabLeft(index : self.deleteItemPos)
         }
     }
