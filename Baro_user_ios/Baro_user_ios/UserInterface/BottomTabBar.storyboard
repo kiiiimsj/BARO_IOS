@@ -51,8 +51,6 @@
                                 <constraints>
                                     <constraint firstItem="HC0-eg-GES" firstAttribute="centerX" secondItem="J2M-FH-h0m" secondAttribute="centerX" id="7Uo-tH-DsO"/>
                                     <constraint firstAttribute="bottom" secondItem="R0I-hX-Wl8" secondAttribute="bottom" constant="27" id="9MT-zb-iHD"/>
-                                    <constraint firstItem="R0I-hX-Wl8" firstAttribute="leading" secondItem="HC0-eg-GES" secondAttribute="trailing" constant="49" id="DbF-fH-8O6"/>
-                                    <constraint firstItem="HC0-eg-GES" firstAttribute="leading" secondItem="Aa6-fN-GjY" secondAttribute="trailing" constant="59.5" id="I5D-Ai-e9X"/>
                                     <constraint firstItem="R0I-hX-Wl8" firstAttribute="centerY" secondItem="J2M-FH-h0m" secondAttribute="centerY" id="Klz-mx-faF"/>
                                     <constraint firstAttribute="bottom" secondItem="Aa6-fN-GjY" secondAttribute="bottom" constant="27" id="bAh-v5-L3I"/>
                                     <constraint firstItem="Aa6-fN-GjY" firstAttribute="centerY" secondItem="J2M-FH-h0m" secondAttribute="centerY" id="eFQ-yh-7hj"/>
@@ -92,6 +90,9 @@
                                     <color key="titleColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <imageReference key="image" image="cart" catalog="system" symbolScale="default"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickBasketBtn" destination="jWx-mQ-KDo" eventType="touchUpInside" id="7aF-Uo-jUL"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wx-tv-LBl">
                                 <rect key="frame" x="0.0" y="813" width="360" height="49"/>
@@ -159,8 +160,8 @@
         <!--MyPageController-->
         <scene sceneID="NoL-Sx-m9H">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="MyPageController" id="o04-qL-zYX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KKn-Ya-yyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="MyPageController" id="o04-qL-zYX" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="-1737" y="-133"/>
         </scene>

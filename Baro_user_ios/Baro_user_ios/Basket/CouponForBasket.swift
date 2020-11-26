@@ -46,7 +46,12 @@ class CouponForBasket : UIViewController {
         vc.totalPrice = self.totalPrice
         vc.couponDiscountValue = self.couponDiscountValue
         vc.realPrice = self.realPriceValue
-        self.present(vc, animated: true, completion: nil)
+        
+        guard let pvc = self.presentingViewController else {return}
+        
+        self.dismiss(animated: true) {
+            pvc.present(vc, animated: true, completion: nil)
+        }
     }
     func setFirstLabelText() {
         realPriceValue = totalPrice

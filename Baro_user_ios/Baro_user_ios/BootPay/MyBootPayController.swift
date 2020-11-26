@@ -131,20 +131,13 @@ class MyBootPayController : UIViewController {
 extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func clickPaymentCheckBtn() {
         if (self.result) {
-            let storyboard = UIStoryboard(name: "AboutStore", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "AboutStore") as! AboutStore
-            vc.store_id = "\(self.storeId)"
-            guard let pvc = self.presentingViewController else { return }
-            self.dismiss(animated: false) {
-                vc.modalPresentationStyle = .overFullScreen
-                vc.modalTransitionStyle = .coverVertical
-                pvc.present(vc, animated: false, completion: nil)
+            self.dismiss(animated: true) {
+                self.performSegue(withIdentifier: "MainPageController", sender: nil)
             }
         }else {
-            
+            self.dismiss(animated: true, completion: nil)
         }
     }
-    
     // 에러가 났을때 호출되는 부분
     func onError(data: [String: Any]) {
         print("Payment processing onError : ",data)
@@ -155,12 +148,10 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         self.result = false
         //data로부터 message parsing -> Dialog에 해당 error message 띄우기
     }
-
     // 가상계좌 입금 계좌번호가 발급되면 호출되는 함수입니다.
     func onReady(data: [String: Any]) {
         print("Payment processing onReady : " , data)
     }
-
     // 결제가 진행되기 바로 직전 호출되는 함수로, 주로 재고처리 등의 로직이 수행
     func onConfirm(data: [String: Any]) {
         print("Payment processing onConfirm : ",data)
@@ -187,14 +178,12 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             Bootpay.dismiss() // 결제창 종료
         }
     }
-
     // 결제 취소시 호출
     func onCancel(data: [String: Any]) {
         print("Payment processing onCancel : ",data)
         self.result = false
         self.createDialog(titleContentString: "결 제 오 류", contentString: "결제가 취소되었습니다.", buttonString: "확인")
     }
-
     // 결제완료시 호출
     // 아이템 지급 등 데이터 동기화 로직을 수행합니다
     func onDone(data: [String: Any]) {
@@ -203,7 +192,6 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         setOrderInsertParam()
         
     }
-
     //결제창이 닫힐때 실행되는 부분
     func onClose() {
         print("Payment processing onClose")
@@ -213,11 +201,12 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func createDialog(titleContentString: String, contentString: String, buttonString: String) {
         let storyboard = UIStoryboard(name: "BootPay", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "FinalPaymentCheckDialog") as! FinalPaymentCheckDialog
-        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         vc.titleContentString = titleContentString
         vc.dialogContentString = contentString
         vc.buttonTitleContentString = buttonString
+        vc.delegate = self
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -265,7 +254,6 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         print("jsonString : ", jsonString)
         
         param = convertStringToDictionary(text: jsonString)!
-        
         print("param :", param)
         
         self.netWork.post(method: .post, param: param, url: self.urlMaker.orderInsertToServer) {
@@ -274,7 +262,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
                 self.createDialog(titleContentString: "결 제 완 료", contentString: "결제가 완료 되었습니다.", buttonString: "확인")
                 //websocket 통신 부분
                 self.result = true
-                UserDefaults.standard.set(nil, forKey: "basket")
+                UserDefaults.standard.removeObject(forKey: "basket")
             }
             else {
                 self.createDialog(titleContentString: "결 제 오 류", contentString: "비정상적인 접근입니다.\r\n 결제가 취소 되었습니다.", buttonString: "확인")
@@ -284,16 +272,15 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func convertStringToDictionary(text: String) -> [String:AnyObject]? {
        if let data = text.data(using: .utf8) {
         print("data : ", data)
-           do {
+        do {
             if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:AnyObject] {
                 print("json : ", json)
                 return json
             }
-            
-           } catch {
+        } catch {
                print("Something went wrong")
            }
        }
        return nil
-   }
+    }
 }

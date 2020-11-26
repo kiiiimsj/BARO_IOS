@@ -13,13 +13,13 @@
         <!--OrderHistoryController-->
         <scene sceneID="TzD-rr-iDk">
             <objects>
-                <viewController storyboardIdentifier="OrderHistoryController" title="OrderHistoryController" id="ghr-He-Bh7" customClass="OrderHistoryController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="OrderHistoryController" storyboardIdentifier="OrderHistoryController" title="OrderHistoryController" id="ghr-He-Bh7" customClass="OrderHistoryController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZbN-BY-8Ig">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4qa-UT-Jc4">
-                                <rect key="frame" x="0.0" y="94" width="414" height="719"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="giX-tu-ddE">
                                     <size key="itemSize" width="414" height="128"/>
@@ -68,14 +68,11 @@
                                                 <constraint firstItem="bBW-cr-phg" firstAttribute="leading" secondItem="wWV-3z-7GX" secondAttribute="trailing" constant="28" id="IOq-b9-Quh"/>
                                                 <constraint firstItem="bBW-cr-phg" firstAttribute="top" secondItem="NEl-xy-mhZ" secondAttribute="top" constant="50" id="L7J-q1-zLQ"/>
                                                 <constraint firstItem="wWV-3z-7GX" firstAttribute="leading" secondItem="NEl-xy-mhZ" secondAttribute="leading" constant="33" id="MWO-JT-0xo"/>
-                                                <constraint firstItem="sen-lk-qq1" firstAttribute="leading" secondItem="bBW-cr-phg" secondAttribute="trailing" constant="66" id="O1m-yf-nuz"/>
                                                 <constraint firstAttribute="bottom" secondItem="sen-lk-qq1" secondAttribute="bottom" constant="58" id="Pdi-hD-Kj5"/>
                                                 <constraint firstItem="sen-lk-qq1" firstAttribute="top" secondItem="mzH-Cl-rMj" secondAttribute="bottom" constant="12" id="TuL-TX-mKb"/>
                                                 <constraint firstItem="bBW-cr-phg" firstAttribute="leading" secondItem="wWV-3z-7GX" secondAttribute="trailing" constant="28" id="UDV-wC-Rhi"/>
-                                                <constraint firstItem="sen-lk-qq1" firstAttribute="leading" secondItem="bBW-cr-phg" secondAttribute="trailing" constant="66" id="UHS-WC-Pb1"/>
                                                 <constraint firstAttribute="bottom" secondItem="wWV-3z-7GX" secondAttribute="bottom" constant="62" id="aQO-VH-FXi"/>
                                                 <constraint firstItem="wWV-3z-7GX" firstAttribute="top" secondItem="NEl-xy-mhZ" secondAttribute="top" constant="54" id="fOX-eN-MQp"/>
-                                                <constraint firstItem="mzH-Cl-rMj" firstAttribute="leading" secondItem="NEl-xy-mhZ" secondAttribute="leading" constant="346" id="gL4-nR-y2v"/>
                                                 <constraint firstAttribute="trailing" secondItem="sen-lk-qq1" secondAttribute="trailing" constant="21" id="lvL-eW-n1C"/>
                                             </constraints>
                                         </collectionViewCellContentView>
@@ -117,7 +114,6 @@
                             <constraint firstItem="4qa-UT-Jc4" firstAttribute="top" secondItem="Byt-Mc-YV3" secondAttribute="top" constant="50" id="sd1-wc-6cr"/>
                         </constraints>
                     </view>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="4qa-UT-Jc4" id="uNW-aj-v2w"/>
                     </connections>
