@@ -25,11 +25,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="SpA-Ry-aYE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <connections>
-                        <segue destination="u8C-ld-l1E" kind="presentation" identifier="MainPageController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Mn8-jt-oTd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGM-C1-7al" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,7 +145,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Rx-sN-V4V"/>
-                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="0.49607000287794911" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="w3g-m6-Rxh" firstAttribute="centerX" secondItem="7AJ-iw-EUh" secondAttribute="centerX" id="2uw-9Q-Ocq"/>
                             <constraint firstItem="w3g-m6-Rxh" firstAttribute="top" secondItem="0Rx-sN-V4V" secondAttribute="top" constant="200" id="nvO-ud-LRd"/>
@@ -165,14 +162,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHw-jP-5ff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="857.97101449275374" y="64.955357142857139"/>
-        </scene>
-        <!--MainPageController-->
-        <scene sceneID="9L6-Bo-fTs">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MainPage" referencedIdentifier="MainPageController" id="u8C-ld-l1E" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wDc-vd-ZT8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="581" y="-354"/>
         </scene>
     </scenes>
     <resources>
