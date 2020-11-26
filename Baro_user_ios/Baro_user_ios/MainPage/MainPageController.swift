@@ -57,8 +57,22 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         //alert페이지로 넘기기
 //        newestAlertNumber
         UserDefaults.standard.setValue(newestAlertNumber, forKey: "newestAlert")
+        self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
+        if self.whatIHave != self.newestAlertNumber {
+            self.alertButton.setImage(UIImage(named: "on"), for: .normal)
+        }else{
+            self.alertButton.setImage(UIImage(named: "off"), for: .normal)
+        }
         let vc = self.storyboard?.instantiateViewController(identifier: "goToAlert") as! AlertController
         present(vc, animated: false)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
+        if self.whatIHave != self.newestAlertNumber {
+            self.alertButton.setImage(UIImage(named: "on"), for: .normal)
+        }else{
+            self.alertButton.setImage(UIImage(named: "off"), for: .normal)
+        }
     }
     
     override func viewDidLoad() {
@@ -101,6 +115,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         UserDefaults.standard.set(try? PropertyListEncoder().encode(location), forKey: "location")
         getMyLocation(String(longitude!), String(latitude!))
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
+//        UserDefaults.standard.setValue(0, forKey: "newestAlert")
         whetherNewOrNot()
         netWork.post(method: .get, url: urlMaker.eventList) { json in
             var eventModel = EventListModel()
@@ -359,7 +374,7 @@ extension MainPageController {
                 self.alertButton.setImage(UIImage(named: "off"), for: .normal)
                 print("이미봄")
             }
-            print(self.whatIHave)
+            print("what",self.whatIHave)
         }
     }
 }
