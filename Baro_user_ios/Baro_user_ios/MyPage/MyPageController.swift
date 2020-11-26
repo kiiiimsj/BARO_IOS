@@ -13,6 +13,7 @@ class MyPageController : UIViewController {
     var networkModel = CallRequest()
     var networkURL = NetWorkURL()
     var userPhone = ""
+    @IBOutlet weak var logoutBtn: UIButton!
     @IBOutlet weak var OrderArea: UIView!
     @IBOutlet weak var couponArea: UIView!
     @IBOutlet weak var basketArea: UIView!
@@ -43,6 +44,9 @@ class MyPageController : UIViewController {
         let flexWidth = (topButtonArea.frame.size.width / 3)
         leftBar.frame = CGRect(x: flexWidth, y: 10, width: 1, height: 40)
         rightBar.frame = CGRect(x: flexWidth * 2, y: 10, width: 1, height: 40)
+        logoutBtn.layer.cornerRadius = 15
+        logoutBtn.layer.borderWidth = 1
+        //logoutBtn.layer.borderColor = UIColor(
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +98,17 @@ class MyPageController : UIViewController {
         vc.userPhone = userPhone
         print("Dfadffasdf")
         present(vc, animated: false, completion: nil)
+    }
+    @IBAction func logoutBtnClick() {
+        if (UserDefaults.standard.bool(forKey: "checkedBox") ) {
+            UserDefaults.standard.set("", forKey: "basket")
+            UserDefaults.standard.set("", forKey: "currentStoreId")
+            UserDefaults.standard.set("", forKey: "currentStoreName")
+            UserDefaults.standard.set("", forKey: "currentStoreId")
+        }
+        else {
+            UserDefaults.resetStandardUserDefaults()
+        }
     }
 }
 extension MyPageController : UITableViewDelegate, UITableViewDataSource {

@@ -32,10 +32,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="873"/>
                                         <subviews>
                                             <tableView contentMode="scaleToFill" verticalHuggingPriority="750" verticalCompressionResistancePriority="250" layoutMarginsFollowReadableWidth="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKl-nM-dFZ">
-                                                <rect key="frame" x="0.0" y="122" width="360" height="260"/>
+                                                <rect key="frame" x="0.0" y="122" width="360" height="300"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" priority="250" constant="260" id="x7Y-Za-jsY"/>
+                                                    <constraint firstAttribute="height" constant="300" id="x7Y-Za-jsY"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyPageButtons" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPageButtons" id="7SJ-4P-CUw" customClass="MyPageButtons" customModule="Baro_user_ios" customModuleProvider="target">
@@ -220,8 +220,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gB9-XS-HN0">
-                                                <rect key="frame" x="8" y="390" width="344" height="30"/>
+                                                <rect key="frame" x="8" y="442" width="344" height="30"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="로그아웃"/>
+                                                <connections>
+                                                    <action selector="logoutBtnClick" destination="DyC-ns-QMr" eventType="touchUpInside" id="f0J-aL-uRD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -231,7 +235,7 @@
                                             <constraint firstItem="gB9-XS-HN0" firstAttribute="leading" secondItem="bSk-Rn-OP4" secondAttribute="leading" constant="8" id="51q-SW-mtv"/>
                                             <constraint firstItem="jKl-nM-dFZ" firstAttribute="leading" secondItem="bSk-Rn-OP4" secondAttribute="leading" id="78x-9z-qbZ"/>
                                             <constraint firstItem="gxf-eX-bQ9" firstAttribute="leading" secondItem="crw-c9-x8V" secondAttribute="trailing" constant="19" id="CJ4-Jn-jGu"/>
-                                            <constraint firstItem="gB9-XS-HN0" firstAttribute="top" secondItem="jKl-nM-dFZ" secondAttribute="bottom" constant="8" id="EDD-oU-QNE"/>
+                                            <constraint firstItem="gB9-XS-HN0" firstAttribute="top" secondItem="jKl-nM-dFZ" secondAttribute="bottom" constant="20" id="EDD-oU-QNE"/>
                                             <constraint firstItem="jKl-nM-dFZ" firstAttribute="centerX" secondItem="bSk-Rn-OP4" secondAttribute="centerX" id="LLb-eh-pQY"/>
                                             <constraint firstItem="crw-c9-x8V" firstAttribute="bottom" secondItem="ib1-x7-llZ" secondAttribute="bottom" id="RVB-D1-ALT"/>
                                             <constraint firstAttribute="trailing" secondItem="gB9-XS-HN0" secondAttribute="trailing" constant="8" id="Yhr-hY-PXI"/>
@@ -273,6 +277,7 @@
                         <outlet property="buttonList" destination="jKl-nM-dFZ" id="wEg-e5-A5f"/>
                         <outlet property="couponArea" destination="wBn-Ae-BaC" id="dyj-Lq-bE9"/>
                         <outlet property="leftBar" destination="lAD-Od-TIS" id="sII-q9-phy"/>
+                        <outlet property="logoutBtn" destination="gB9-XS-HN0" id="XvJ-4s-yzh"/>
                         <outlet property="myCouponCount" destination="pza-Dz-tzi" id="aRX-VY-Cak"/>
                         <outlet property="myOrderCount" destination="M7M-1n-uhv" id="Eft-2p-rgN"/>
                         <outlet property="rightBar" destination="O2l-CW-BwQ" id="FqT-F4-SnO"/>
