@@ -271,7 +271,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
                 self.createDialog(titleContentString: "결 제 완 료", contentString: "결제가 완료 되었습니다.", buttonString: "확인")
                 //websocket 통신 부분
                 self.result = true
-                UserDefaults.standard.set("", forKey: "basket")
+                UserDefaults.standard.removeObject(forKey: "basket")
             }
             else {
                 self.createDialog(titleContentString: "결 제 오 류", contentString: "비정상적인 접근입니다.\r\n 결제가 취소 되었습니다.", buttonString: "확인")
