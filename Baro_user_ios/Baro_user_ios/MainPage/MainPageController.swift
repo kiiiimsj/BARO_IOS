@@ -159,8 +159,6 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         ViewInBottomTabBar.moveFromOutSide = true
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
-        UserDefaults.standard.set("", forKey: "currentStoreName")
-        UserDefaults.standard.set("", forKey: "currentStoreId")
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
     

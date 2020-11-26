@@ -27,7 +27,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     @IBOutlet weak var storeInfoButton: UIButton!
     @IBOutlet weak var tabIndecator: UIView!
     
-    public var store_id  = ""
+    public var store_id  : Int = 0
     public var isFlag : Int = 0
     
     private let netWork = CallRequest()
@@ -152,7 +152,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         }
     }
     func getStoreInfo() {
-        netWork.get(method: .get, url: urlMaker.storeIntroductionURL + self.store_id) {
+        netWork.get(method: .get, url: urlMaker.storeIntroductionURL + "\(self.store_id)") {
             json in
             print("storeInfo : ",json)
             if (json["result"].boolValue) {

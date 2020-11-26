@@ -57,12 +57,13 @@ class BottomTabBarController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         basketButton.isHidden = true
+        topBarBackBtn.isHidden = true
         topBarFavoriteBtn.isHidden = true
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        basketButton.isHidden = true
         basket = UserDefaults.standard.value(forKey: "basket")
         if let storeName = UserDefaults.standard.value(forKey: "currentStoreName") as? String {
             currentStoreName = storeName
@@ -97,7 +98,6 @@ class BottomTabBarController: UIViewController {
         if(basketOrders.count == 0) {
             return
         }
-        print("basketAvaliable")
         basketButton.isHidden = false
         basketButton.layer.borderWidth = 2
         basketButton.layer.cornerRadius = basketButton.bounds.size.height / 2
@@ -138,6 +138,7 @@ class BottomTabBarController: UIViewController {
                 self.changeContentView(controller: controller as! MainPageController, sender: nil)
                 
             case storeListControllerIdentifier:
+                topBarBackBtn.isHidden = false
                 self.changeContentView(controller: controller as! StoreListPageController, sender: sender)
                 
             case orderStatusControllerIdentifier:
@@ -150,6 +151,7 @@ class BottomTabBarController: UIViewController {
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
             case aboutStoreControllerIdentifier:
                 topBarFavoriteBtn.isHidden = false
+                topBarBackBtn.isHidden = false
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
             default :
                 print("error_delegate")
@@ -201,7 +203,7 @@ class BottomTabBarController: UIViewController {
             switch(title) {
             case aboutStoreControllerIdentifier:
                 let VCsender = controller as! AboutStore
-                VCsender.store_id = sender as! String
+                VCsender.store_id = sender as! Int
                 finallController = VCsender
             case storeListControllerIdentifier:
                 let VCsender = controller as! StoreListPageController

@@ -121,7 +121,7 @@ class StoreListPageController : UIViewController {
         storeListView.delegate = self
         storeListView.dataSource = self
     }
-    func toStoreListUseBottomBar(id : String) {
+    func toStoreListUseBottomBar(id : Int) {
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
         
@@ -205,7 +205,7 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
         return UIEdgeInsets(top: 10, left:0, bottom: 10, right:0)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let id = String(storeList[indexPath.item].store_id)
+        let id = storeList[indexPath.item].store_id
         let storeName = String(storeList[indexPath.item].store_name)
         UserDefaults.standard.set(storeName, forKey: "currentStoreName")
         UserDefaults.standard.set(id, forKey: "currentStoreId")
