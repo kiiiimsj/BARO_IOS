@@ -12,7 +12,7 @@ protocol BasketMenuCellDelegate : AnyObject {
 }
 class BasketMenuCell: UICollectionViewCell {
     var essential : [Extra]?
-        var nonEssential : [SelectedExtra]?
+    var nonEssential : [SelectedExtra]?
     @IBOutlet weak var extraCollectionView: UICollectionView!
     @IBOutlet weak var menu_name: UILabel!
     @IBOutlet weak var menu_defaultPrice: UILabel!
