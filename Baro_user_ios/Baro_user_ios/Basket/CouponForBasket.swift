@@ -105,14 +105,14 @@ extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollecti
         let couponData = self.coupons[indexPath!.item]
         var changedTotalValue : Int = 0
         
-        self.couponDiscountPrice.text = "\(couponData.coupon_discount)"
-        
         if (couponData.coupon_type == "DISCOUNT") {
             changedTotalValue = (self.totalPrice - couponData.coupon_discount)
+            self.couponDiscountPrice.text = "\(couponData.coupon_discount)"
         }
         else {
-            let ifSale = (self.totalPrice * couponData.coupon_discount)
+            let ifSale = (self.totalPrice * couponData.coupon_discount / 100 )
             changedTotalValue = (self.totalPrice - ifSale)
+            self.couponDiscountPrice.text = "\(ifSale)"
         }
         
         self.realPriceValue = changedTotalValue
@@ -133,7 +133,14 @@ extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollecti
         let indexCouponData = self.coupons[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CouponForBasketCell", for: indexPath) as! CouponForBasketCell
         cell.couponTitle.text = indexCouponData.coupon_title
-        cell.couponPrice.text = "\(indexCouponData.coupon_discount) 원"
+        if indexCouponData.coupon_type == "DISCOUNT" {
+            cell.couponPrice.text = "\(indexCouponData.coupon_discount) 원"
+        }else if indexCouponData.coupon_type == "SALE" {
+            cell.couponPrice.text = "\(indexCouponData.coupon_discount) %"
+        }else{
+            
+        }
+        
         cell.couponCanUseDate.text = indexCouponData.coupon_enddate
         cell.couponDelegate = self
         return cell
