@@ -47,24 +47,33 @@ class BottomTabBarController: UIViewController {
     var moveFromOutSide : Bool = false
     //바텀탭 로딩후 선택되어지는 탭바아이템
     var selectedTabBarItem : Int = 0
-    //장바구니 버튼
-    var basket = UserDefaults.standard.value(forKey: "basket")
+    //장바구니 관련 요소
+    var basket : Any?
     var basketOrders = [Order]()
+    //aboutstore 관련 요소
+    var currentStoreName : String = ""
     var saveTopViewSize = CGSize()
     var saveContentViewSize = CGSize()
     override func viewDidLoad() {
         super.viewDidLoad()
         basketButton.isHidden = true
+        topBarBackBtn.isHidden = true
         topBarFavoriteBtn.isHidden = true
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
     }
-    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
+        super.viewWillAppear(true)
+        basketButton.isHidden = true
+        basket = UserDefaults.standard.value(forKey: "basket")
+        if let storeName = UserDefaults.standard.value(forKey: "currentStoreName") as? String {
+            currentStoreName = storeName
+        }
+        //aboutstore나 storelist 접근 시 viewload에서 controller 변경 구문
         if(moveFromOutSide) {
             changeViewController(getController: controllerIdentifier, getStoryBoard: controllerStoryboard, sender: controllerSender)
             moveFromOutSide = false
         }
+        //basket userdefault 유무 버튼 비활성화/활성화 구문
         if(basket != nil) {
             getOrders()
             basketBadge()
@@ -73,7 +82,7 @@ class BottomTabBarController: UIViewController {
         }
         bottomTabBar.delegate = self
     }
-    
+    //장바구니 아이템 갯수를 가져오기 위한 json decoder function
     func getOrders() {
         let decoder = JSONDecoder()
         var jsonToOrder = [Order]()
@@ -83,9 +92,10 @@ class BottomTabBarController: UIViewController {
         }
         basketOrders = jsonToOrder
     }
+    //장바구니 아이템 개수 표시 label 설정
     func basketBadge(){
+        //장바구니의 개수가 0이라면 return
         if(basketOrders.count == 0) {
-            basketButton.isHidden = true
             return
         }
         basketButton.isHidden = false
@@ -108,10 +118,6 @@ class BottomTabBarController: UIViewController {
     }
     //내부 뷰 컨트롤러 분기문
     func changeViewController(getController : String, getStoryBoard : UIStoryboard, sender : Any?) {
-        
-        if(TopView.isHidden) {
-            restoreTopView()
-        }
         let controller = getStoryBoard.instantiateViewController(identifier: getController)
         if (ContentView.subviews.count != 0) {
             for view in ContentView.subviews {
@@ -123,12 +129,16 @@ class BottomTabBarController: UIViewController {
                 view.removeFromSuperview()
             }
         }
+        if(TopView.isHidden) {
+            restoreTopView()
+        }
         switch(getController) {
             case mainPageControllerIdentifier:
                 self.deleteTopView()
                 self.changeContentView(controller: controller as! MainPageController, sender: nil)
                 
             case storeListControllerIdentifier:
+                topBarBackBtn.isHidden = false
                 self.changeContentView(controller: controller as! StoreListPageController, sender: sender)
                 
             case orderStatusControllerIdentifier:
@@ -141,18 +151,11 @@ class BottomTabBarController: UIViewController {
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
             case aboutStoreControllerIdentifier:
                 topBarFavoriteBtn.isHidden = false
+                topBarBackBtn.isHidden = false
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
             default :
                 print("error_delegate")
         }
-    }
-    func removeChildViewController() {
-      if self.children.count > 0{
-          let viewControllers:[UIViewController] = self.children
-             viewControllers.last?.willMove(toParent: nil)
-             viewControllers.last?.removeFromParent()
-             viewControllers.last?.view.removeFromSuperview()
-      }
     }
     //내부 뷰 추가
     func changeContentView(controller : UIViewController, sender : Any?) {
@@ -164,8 +167,11 @@ class BottomTabBarController: UIViewController {
         topBarHandler(controller: getController)
         self.addChild(getController)
         getController.view.frame = ContentView.frame
+        //같은 컨트롤러에 다시 접근하는 여부를 알기 위해 restorationidentifier를 넣어주는 구문
         getController.view.accessibilityIdentifier = getController.restorationIdentifier
-        print("afterviewinput", getController.view.accessibilityIdentifier)
+        //controlleridentifier와 동일하다.
+        //해당 구문은 tabbaritem으로 전환되는 viewcontroller에 해당된다.
+        
         ContentView.addSubview(getController.view)
         getController.didMove(toParent: self)
     }
@@ -173,6 +179,7 @@ class BottomTabBarController: UIViewController {
     func restoreTopView() {
         TopView.isHidden = false
         TopView.frame.size = saveTopViewSize
+        
         ContentView.frame.size = saveContentViewSize
         ContentViewScrollView.frame.size = saveContentViewSize
         
@@ -196,7 +203,7 @@ class BottomTabBarController: UIViewController {
             switch(title) {
             case aboutStoreControllerIdentifier:
                 let VCsender = controller as! AboutStore
-                VCsender.store_id = sender as! String
+                VCsender.store_id = sender as! Int
                 finallController = VCsender
             case storeListControllerIdentifier:
                 let VCsender = controller as! StoreListPageController
@@ -238,10 +245,7 @@ class BottomTabBarController: UIViewController {
                 case myPageControllerIdentifier:
                     topBarViewControllerTitle.text = "마이페이지"
                 case aboutStoreControllerIdentifier:
-                    if let currentStoreName = UserDefaults.standard.value(forKey: "currentStoreName") as? String {
-                        topBarViewControllerTitle.text = "\(currentStoreName)"
-                    }
-                    
+                    topBarViewControllerTitle.text = "\(currentStoreName)"
                     let controllerData = controller as! AboutStore
                     controllerData.bottomTabBarInfo = self
                 default :
@@ -256,6 +260,14 @@ class BottomTabBarController: UIViewController {
     
     @IBAction func clickFavoriteBtn() {
         topViewDelegate?.favoriteBtnDelegate(controller: self)
+    }
+    @IBAction func clickBasketBtn() {
+        let basketStoryboard = UIStoryboard(name: "Basket", bundle: nil)
+        let vc = basketStoryboard.instantiateViewController(identifier: "BasketController")
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        
+        self.present(vc, animated: true, completion: nil)
     }
 }
 extension BottomTabBarController : UITabBarDelegate {

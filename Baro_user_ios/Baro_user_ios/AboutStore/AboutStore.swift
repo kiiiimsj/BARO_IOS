@@ -27,7 +27,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     @IBOutlet weak var storeInfoButton: UIButton!
     @IBOutlet weak var tabIndecator: UIView!
     
-    public var store_id  = ""
+    public var store_id  : Int = 0
     public var isFlag : Int = 0
     
     private let netWork = CallRequest()
@@ -52,6 +52,10 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         UIView.animate(withDuration: 0.0) {
             self.tabIndecator.transform = CGAffineTransform(rotationAngle: 0.0)
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.getStoreInfo()
     }
     
     func makeChildVC() {
@@ -148,7 +152,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         }
     }
     func getStoreInfo() {
-        netWork.get(method: .get, url: urlMaker.storeIntroductionURL + self.store_id) {
+        netWork.get(method: .get, url: urlMaker.storeIntroductionURL + "\(self.store_id)") {
             json in
             print("storeInfo : ",json)
             if (json["result"].boolValue) {
@@ -166,8 +170,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
                 self.StoreInfo.type_code = json["type_code"].stringValue
                 self.StoreInfo.store_image = json["store_image"].stringValue
                 self.StoreInfo.is_open = json["is_open"].stringValue
-                UserDefaults.standard.set(self.StoreInfo.store_name, forKey: "currentStoreName")
-                UserDefaults.standard.set(self.StoreInfo.store_id, forKey: "currentStoreId")
                 self.makeChildVC()
             } else {
                 print("make request fail")

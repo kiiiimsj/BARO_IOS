@@ -74,7 +74,7 @@ class LoginPageController: UIViewController {
         }
     }
     
-    func toStoreListUseBottomBar(tag : String) {
+    func toMainPageUseBottomBar() {
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
         
@@ -99,6 +99,7 @@ class LoginPageController: UIViewController {
                 UserDefaults.standard.set(json["email"].stringValue, forKey: "user_email")
                 UserDefaults.standard.set(json["nick"].stringValue, forKey: "user_name")
                 UserDefaults.standard.set(json["phone"].stringValue, forKey: "user_phone")
+                UserDefaults.standard.removeObject(forKey: "basket")
                 if(self.memoryMyAccountCheckBox.isSelected) {
                     self.remeberInfo.set(param, forKey: "rememberUser")
                     self.remeberInfo.set(true, forKey: "checkedBox")
@@ -107,7 +108,7 @@ class LoginPageController: UIViewController {
                     self.remeberInfo.removeObject(forKey: "checkedBox")
                     self.remeberInfo.removeObject(forKey: "rememberUser")
                 }
-                self.toStoreListUseBottomBar(tag : "")
+                self.toMainPageUseBottomBar()
             }
             else {
                 self.makeToastMessage.showToast(message: "입력정보가 틀립니다.", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)

@@ -21,6 +21,9 @@ class BasketController : UIViewController {
     private var getStoreNameFromUserDefault = UserDefaults.standard.value(forKey: "currentStoreName") as! String
     override func viewDidLoad(){
         super.viewDidLoad()
+        if(orders.count == 0) {
+            orders.append(contentsOf: loadBasket())
+        }
         print("orders : ", orders)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -118,17 +121,16 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         dialogController.modalPresentationStyle = .overFullScreen
         dialogController.modalTransitionStyle = .crossDissolve
         self.present(dialogController, animated: true, completion: nil)
-        dialogController.delegate = self
-        self.collectionView.reloadSections(IndexSet(integer: 0))
+        //self.collectionView.reloadSections(IndexSet(integer: 0))
     }
     func tabLeft(index : Int) {
         print("deleteindex : ", index)
         orders.remove(at: index)
+        self.saveBasket()
         if(orders.count == 0) {
             self.dismiss(animated: false, completion: nil)
         }
         self.totalPrice = 0
-        self.saveBasket()
         recalcPrice()
         self.collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
         self.collectionView.reloadData()

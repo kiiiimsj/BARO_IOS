@@ -50,7 +50,7 @@ class SeparateWindowController : UIViewController {
     @objc func tap(_ sender: UITapGestureRecognizer) {
         print("go")
         let vc = self.storyboard?.instantiateViewController(identifier: "goToStore") as! AboutStore
-        vc.store_id = String(self.storeData.store_id)
+        vc.store_id = self.storeData.store_id
         present(vc, animated: false)
         clickListener.press(end: true)
         print("end")

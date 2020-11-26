@@ -19,9 +19,11 @@ class FinalPaymentCheckDialog : UIViewController {
     var delegate : PaymentDialogDelegate?
     
     @IBAction func clickPaymentCheckButton() {
-        delegate?.clickPaymentCheckBtn()
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: false) {
+            self.delegate?.clickPaymentCheckBtn()
+        }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dialogTitle.text = titleContentString
