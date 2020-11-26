@@ -15,6 +15,7 @@ class PhoneCheckForRegister : UIViewController {
     @IBOutlet weak var inputPin6: UITextField!
     @IBOutlet weak var inputPinView: UIView!
     @IBOutlet weak var checkPhoneAuth: UIButton!
+    var authString : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class PhoneCheckForRegister : UIViewController {
     @objc
     func pinInputfieldSet(_ textField : UITextField) {
         textField.clearsOnBeginEditing = true
+        authString = ""
         if(textField.text!.count >= 1) {
             switch(textField.tag) {
                 case 1:
@@ -42,10 +44,20 @@ class PhoneCheckForRegister : UIViewController {
                 case 5:
                     self.inputPin6.becomeFirstResponder()
                 case 6:
+                    authString.append(inputPin1.text!)
+                    authString.append(inputPin2.text!)
+                    authString.append(inputPin3.text!)
+                    authString.append(inputPin4.text!)
+                    authString.append(inputPin5.text!)
+                    authString.append(inputPin6.text!)
+                    print("authString : ", authString)
                     textField.endEditing(true)
                 default :
                     print("none")
             }
         }
+    }
+    @IBAction func sendAuthNumbers() {
+        print("sendAuth : ", authString)
     }
 }
