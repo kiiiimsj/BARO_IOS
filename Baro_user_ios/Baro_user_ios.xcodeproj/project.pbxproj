@@ -50,6 +50,7 @@
 		04D11F552544406900ADB210 /* OrderHistoryDetailExtraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11F542544406900ADB210 /* OrderHistoryDetailExtraModel.swift */; };
 		04D11F59254676AE00ADB210 /* OrderHistoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11F58254676AE00ADB210 /* OrderHistoryDetail.swift */; };
 		04D11F5D2546781A00ADB210 /* OrderHistoryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11F5C2546781A00ADB210 /* OrderHistoryDetailCell.swift */; };
+		3F041C66256FB689006A2B3B /* PhoneSendForRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F041C65256FB689006A2B3B /* PhoneSendForRegister.swift */; };
 		3F05C564254116AC0066DAAD /* MyPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05C563254116AC0066DAAD /* MyPageController.swift */; };
 		3F05C567254116C70066DAAD /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F05C566254116C70066DAAD /* MyPage.storyboard */; settings = {ASSET_TAGS = (MyPageController, ); }; };
 		3F05C56A25412AF20066DAAD /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05C56925412AF20066DAAD /* MyPageView.swift */; };
@@ -187,6 +188,7 @@
 		04D11F58254676AE00ADB210 /* OrderHistoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetail.swift; sourceTree = "<group>"; };
 		04D11F5C2546781A00ADB210 /* OrderHistoryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetailCell.swift; sourceTree = "<group>"; };
 		14573B5E084CAEEB4648A4E4 /* Pods-Baro_user_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baro_user_ios.release.xcconfig"; path = "Target Support Files/Pods-Baro_user_ios/Pods-Baro_user_ios.release.xcconfig"; sourceTree = "<group>"; };
+		3F041C65256FB689006A2B3B /* PhoneSendForRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSendForRegister.swift; sourceTree = "<group>"; };
 		3F05C563254116AC0066DAAD /* MyPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageController.swift; sourceTree = "<group>"; };
 		3F05C566254116C70066DAAD /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		3F05C56925412AF20066DAAD /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 				3FF35096253E7E72007B7B29 /* LoginPageController.swift */,
 				3F49907F253EB18B00372F83 /* LoginPage.storyboard */,
 				3FA0D066256B4CBC004E4D83 /* PhoneCheckForRegister.swift */,
+				3F041C65256FB689006A2B3B /* PhoneSendForRegister.swift */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 				E34CAF45255523A600BE3F53 /* SeparateWindowController.swift in Sources */,
 				E31D3FD82542ACAC00B63F77 /* StoreListCell.swift in Sources */,
 				043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */,
+				3F041C66256FB689006A2B3B /* PhoneSendForRegister.swift in Sources */,
 				E31D3FF925469DCE00B63F77 /* EssentialButton.swift in Sources */,
 				E31D401B2550001000B63F77 /* BasketHeader.swift in Sources */,
 				E31D3FE9254653C700B63F77 /* ExtraModel.swift in Sources */,

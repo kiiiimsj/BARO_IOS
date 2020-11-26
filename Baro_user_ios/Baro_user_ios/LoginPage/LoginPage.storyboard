@@ -29,7 +29,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="360" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aty-7L-irg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aty-7L-irg">
                                 <rect key="frame" x="141.33333333333334" y="97" width="77.333333333333343" height="41.666666666666657"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -191,7 +191,7 @@
                         <segue destination="Ibe-2Z-WFL" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" id="UPu-sm-1VS"/>
                         <segue destination="3Xd-Nv-dWu" kind="presentation" identifier="MainPageController" id="jCg-WT-Kf0"/>
                         <segue destination="QMl-v0-q4D" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mfm-oz-eVr"/>
-                        <segue destination="bO9-Fa-Uql" kind="presentation" identifier="PhoneCheckForRegister" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="4sk-AS-84j"/>
+                        <segue destination="80Z-QC-qXt" kind="presentation" identifier="PhoneSendForRegister" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="E9i-LZ-h6q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kp-KJ-LYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -403,6 +403,9 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendAuthNumbers" destination="bO9-Fa-Uql" eventType="touchUpInside" id="mD2-t6-eFH"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyS-O2-RYY">
                                         <rect key="frame" x="20" y="166.66666666666669" width="320" height="144"/>
@@ -535,7 +538,103 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFF-K4-rUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.0000000000001" y="-1077.717391304348"/>
+            <point key="canvasLocation" x="1541" y="-1079"/>
+        </scene>
+        <!--PhoneSendForRegister-->
+        <scene sceneID="ors-BY-pra">
+            <objects>
+                <viewController storyboardIdentifier="PhoneSendForRegister" title="PhoneSendForRegister" useStoryboardIdentifierAsRestorationIdentifier="YES" id="80Z-QC-qXt" customClass="PhoneSendForRegister" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YA9-qD-9yA">
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="640"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" restorationIdentifier="PhoneCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="8TE-Hy-AX6" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="163" width="360" height="477"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WK9-oq-H1Q">
+                                        <rect key="frame" x="20" y="134" width="320" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfE-TS-YQf">
+                                        <rect key="frame" x="20" y="188" width="320" height="50"/>
+                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="bg6-iN-hZa"/>
+                                        </constraints>
+                                        <state key="normal" title="입력하기">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendPhone" destination="80Z-QC-qXt" eventType="touchUpInside" id="vkU-vZ-kxh"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰 번호 입력" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjU-gs-ZoM">
+                                        <rect key="frame" x="20" y="100" width="111" height="24"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="Hos-tE-5U0">
+                                        <rect key="frame" x="20" y="168" width="320" height="1"/>
+                                        <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="23W-yw-lh7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="HfE-TS-YQf" firstAttribute="top" secondItem="WK9-oq-H1Q" secondAttribute="bottom" constant="20" id="2gX-pI-hhg"/>
+                                    <constraint firstItem="Hos-tE-5U0" firstAttribute="top" secondItem="WK9-oq-H1Q" secondAttribute="bottom" id="8wh-58-6kq"/>
+                                    <constraint firstItem="HfE-TS-YQf" firstAttribute="leading" secondItem="8TE-Hy-AX6" secondAttribute="leading" constant="20" id="E1M-pi-2Yw"/>
+                                    <constraint firstAttribute="trailing" secondItem="WK9-oq-H1Q" secondAttribute="trailing" constant="20" id="ELn-XE-u3s"/>
+                                    <constraint firstItem="WK9-oq-H1Q" firstAttribute="top" secondItem="pjU-gs-ZoM" secondAttribute="bottom" constant="10" id="ShJ-1C-Fka"/>
+                                    <constraint firstAttribute="trailing" secondItem="HfE-TS-YQf" secondAttribute="trailing" constant="20" id="TBY-y7-e7K"/>
+                                    <constraint firstItem="WK9-oq-H1Q" firstAttribute="leading" secondItem="8TE-Hy-AX6" secondAttribute="leading" constant="20" id="XqZ-Tw-AGq"/>
+                                    <constraint firstItem="pjU-gs-ZoM" firstAttribute="top" secondItem="8TE-Hy-AX6" secondAttribute="top" constant="100" id="iNI-sB-sik"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hos-tE-5U0" secondAttribute="trailing" constant="20" id="jYU-vr-ias"/>
+                                    <constraint firstItem="Hos-tE-5U0" firstAttribute="leading" secondItem="8TE-Hy-AX6" secondAttribute="leading" constant="20" id="r2y-O8-Nvi"/>
+                                    <constraint firstItem="pjU-gs-ZoM" firstAttribute="leading" secondItem="8TE-Hy-AX6" secondAttribute="leading" constant="20" id="uda-Xq-9uJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="핸드폰 인증" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8U-q2-kL0">
+                                <rect key="frame" x="112" y="97" width="136" height="42"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgo-Tr-Pla">
+                                <rect key="frame" x="132" y="23" width="97" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wfw-nH-iTm"/>
+                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8TE-Hy-AX6" firstAttribute="trailing" secondItem="wfw-nH-iTm" secondAttribute="trailing" id="1vQ-GM-BqI"/>
+                            <constraint firstItem="E8U-q2-kL0" firstAttribute="centerX" secondItem="YA9-qD-9yA" secondAttribute="centerX" id="AUJ-uZ-A2F"/>
+                            <constraint firstItem="E8U-q2-kL0" firstAttribute="top" secondItem="wfw-nH-iTm" secondAttribute="top" constant="97" id="CBN-9J-bFQ"/>
+                            <constraint firstItem="8TE-Hy-AX6" firstAttribute="leading" secondItem="wfw-nH-iTm" secondAttribute="leading" id="cQe-Pk-Ivo"/>
+                            <constraint firstItem="8TE-Hy-AX6" firstAttribute="bottom" secondItem="wfw-nH-iTm" secondAttribute="bottom" id="gC3-bJ-t4H"/>
+                            <constraint firstItem="8TE-Hy-AX6" firstAttribute="top" secondItem="E8U-q2-kL0" secondAttribute="bottom" constant="24" id="nSV-rm-Ngb"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="360" height="640"/>
+                    <connections>
+                        <outlet property="inputPhone" destination="WK9-oq-H1Q" id="0mH-9o-0OV"/>
+                        <outlet property="sendPhoneToFireBaseBtn" destination="HfE-TS-YQf" id="nI5-Ct-ps5"/>
+                        <segue destination="bO9-Fa-Uql" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RXO-tj-tSn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVP-Rg-VZq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="725" y="-1078"/>
         </scene>
         <!--BottomTabBarController-->
         <scene sceneID="xxl-LD-H3f">

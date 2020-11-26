@@ -32,33 +32,27 @@ class MyPageController : UIViewController {
     var buttonsSectionHeight : CGFloat = 7.0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        reloadInputViews()
-        userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
-        setUserName()
-        setMyCountInfo()
-        addGest()
-        self.tabBarController?.tabBar.isTranslucent = false
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
         let flexWidth = (topButtonArea.frame.size.width / 3)
         leftBar.frame = CGRect(x: flexWidth, y: 10, width: 1, height: 40)
         rightBar.frame = CGRect(x: flexWidth * 2, y: 10, width: 1, height: 40)
-        logoutBtn.layer.cornerRadius = 15
         logoutBtn.layer.borderWidth = 1
-        //logoutBtn.layer.borderColor = UIColor(
+        logoutBtn.layer.borderColor = UIColor(red: 131/255, green: 51/255, blue: 230/255, alpha: 1).cgColor
+        logoutBtn.transform = CGAffineTransform(translationX: 0, y: 20)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("mymymy")
+        userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
         
         setUserName()
         setMyCountInfo()
+        
+        addGest()
+        
         buttonList?.dataSource = self
         buttonList?.delegate = self
-        buttonList?.estimatedRowHeight = 50
-        buttonList?.rowHeight = UITableView.automaticDimension
     }
     func addGest() {
         couponArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToCoupon(_:))))
