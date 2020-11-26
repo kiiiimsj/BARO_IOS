@@ -99,6 +99,7 @@ class LoginPageController: UIViewController {
                 UserDefaults.standard.set(json["email"].stringValue, forKey: "user_email")
                 UserDefaults.standard.set(json["nick"].stringValue, forKey: "user_name")
                 UserDefaults.standard.set(json["phone"].stringValue, forKey: "user_phone")
+                UserDefaults.standard.removeObject(forKey: "basket")
                 if(self.memoryMyAccountCheckBox.isSelected) {
                     self.remeberInfo.set(param, forKey: "rememberUser")
                     self.remeberInfo.set(true, forKey: "checkedBox")

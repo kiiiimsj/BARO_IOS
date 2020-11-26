@@ -53,6 +53,10 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             self.tabIndecator.transform = CGAffineTransform(rotationAngle: 0.0)
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.getStoreInfo()
+    }
     
     func makeChildVC() {
         let storyBoard = UIStoryboard(name: "AboutStore", bundle: nil)
@@ -166,8 +170,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
                 self.StoreInfo.type_code = json["type_code"].stringValue
                 self.StoreInfo.store_image = json["store_image"].stringValue
                 self.StoreInfo.is_open = json["is_open"].stringValue
-                UserDefaults.standard.set(self.StoreInfo.store_name, forKey: "currentStoreName")
-                UserDefaults.standard.set(self.StoreInfo.store_id, forKey: "currentStoreId")
                 self.makeChildVC()
             } else {
                 print("make request fail")
