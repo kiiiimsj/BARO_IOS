@@ -35,6 +35,9 @@ class MyBootPayController : UIViewController {
     private var payDate : String = ""
     private var userToken : String? = nil //서버에서 받아온 userToken
     private let UnknownValue : Int = -1 // 성별을 위한 value
+    
+    let bottomTabBarInfo = BottomTabBarController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("orders : ", myOrders)
@@ -131,9 +134,15 @@ class MyBootPayController : UIViewController {
 extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func clickPaymentCheckBtn() {
         if (self.result) {
-            self.dismiss(animated: true) {
-                self.performSegue(withIdentifier: "MainPageController", sender: nil)
-            }
+            let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+            let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+            
+            ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.mainPageControllerIdentifier
+            ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.mainPageStoryBoard
+            ViewInBottomTabBar.moveFromOutSide = true
+            ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+            ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+            self.present(ViewInBottomTabBar, animated: true, completion: nil)
         }else {
             self.dismiss(animated: true, completion: nil)
         }
