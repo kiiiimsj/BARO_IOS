@@ -122,6 +122,10 @@ class BottomTabBarController: UIViewController {
         if (ContentView.subviews.count != 0) {
             for view in ContentView.subviews {
                 if let viewTitle = view.accessibilityIdentifier {
+                    if(viewTitle == "StoreListPageController") {
+                        view.removeFromSuperview()
+                        continue
+                    }
                     if(viewTitle == controller.restorationIdentifier) {
                         return
                     }
@@ -136,22 +140,15 @@ class BottomTabBarController: UIViewController {
             case mainPageControllerIdentifier:
                 self.deleteTopView()
                 self.changeContentView(controller: controller as! MainPageController, sender: nil)
-                
             case storeListControllerIdentifier:
-                topBarBackBtn.isHidden = false
                 self.changeContentView(controller: controller as! StoreListPageController, sender: sender)
-                
             case orderStatusControllerIdentifier:
                 self.changeContentView(controller: controller as! OrderStatusController, sender: nil)
-                
             case orderHistoryControllerIdentifier:
                 self.changeContentView(controller: controller as! OrderHistoryController, sender: nil)
-                
             case myPageControllerIdentifier:
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
             case aboutStoreControllerIdentifier:
-                topBarFavoriteBtn.isHidden = false
-                topBarBackBtn.isHidden = false
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
             default :
                 print("error_delegate")
@@ -209,8 +206,9 @@ class BottomTabBarController: UIViewController {
                 let VCsender = controller as! StoreListPageController
                 VCsender.typeCode = sender as! String
                 VCsender.kind = 1
-////                VCsender.typeCode = sender as! String
-//                VCsender.kind = Int(sender as! String)!
+                if(VCsender.typeCode == "2") {
+                    VCsender.kind = 2
+                }
                 finallController = VCsender
             default:
                 print("error")
@@ -226,6 +224,12 @@ class BottomTabBarController: UIViewController {
                     topBarViewControllerTitle.text = "main"
                 case storeListControllerIdentifier:
                     let controllerData = controller as! StoreListPageController
+                    if(controllerData.typeCode == "2") {
+                        topBarViewControllerTitle.text = "찜한 가게"
+                        topBarBackBtn.isHidden = true
+                        return
+                    }
+                    
                     if (controllerData.typeCode == "CAFE") {
                         topBarViewControllerTitle.text = "카페"
                     }
@@ -238,6 +242,7 @@ class BottomTabBarController: UIViewController {
                     if (controllerData.typeCode == "KOREAN") {
                         topBarViewControllerTitle.text = "한식"
                     }
+                    topBarBackBtn.isHidden = false
                 case orderStatusControllerIdentifier:
                     topBarViewControllerTitle.text = "주문 현황"
                 case orderHistoryControllerIdentifier:
@@ -245,6 +250,8 @@ class BottomTabBarController: UIViewController {
                 case myPageControllerIdentifier:
                     topBarViewControllerTitle.text = "마이페이지"
                 case aboutStoreControllerIdentifier:
+                    topBarFavoriteBtn.isHidden = false
+                    topBarBackBtn.isHidden = false
                     topBarViewControllerTitle.text = "\(currentStoreName)"
                     let controllerData = controller as! AboutStore
                     controllerData.bottomTabBarInfo = self
@@ -276,8 +283,8 @@ extension BottomTabBarController : UITabBarDelegate {
         switch(item.title) {
         case "홈":
             changeViewController(getController: mainPageControllerIdentifier, getStoryBoard: mainPageStoryBoard, sender: nil)
-        case "내 가게":
-            changeViewController(getController: storeListControllerIdentifier, getStoryBoard: storeListStoryBoard, sender: nil)
+        case "찜한 가게":
+            changeViewController(getController: storeListControllerIdentifier, getStoryBoard: storeListStoryBoard, sender: "2")
         case "주문 현황":
             changeViewController(getController: orderStatusControllerIdentifier, getStoryBoard: orderStatusStoryBoard, sender: nil)
         case "주문 내역":
