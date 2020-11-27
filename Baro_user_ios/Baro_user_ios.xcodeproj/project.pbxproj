@@ -87,6 +87,7 @@
 		3FE2C29E2557E3A5002E6184 /* CouponForBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE2C29D2557E3A5002E6184 /* CouponForBasket.swift */; };
 		3FE2C2A12557EFAA002E6184 /* CouponForBasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE2C2A02557EFAA002E6184 /* CouponForBasketCell.swift */; };
 		3FEAF06F254FFC1100A5ABC0 /* FavoriteDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEAF06E254FFC1100A5ABC0 /* FavoriteDialog.swift */; };
+		3FF086342571509F00D02360 /* RegisterCompletePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF086332571509F00D02360 /* RegisterCompletePage.swift */; };
 		3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF35096253E7E72007B7B29 /* LoginPageController.swift */; };
 		3FF3509A253E7F3B007B7B29 /* RegisterPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */; };
 		3FF8137A25590C8600036A91 /* FinalPaymentCheckDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8137925590C8600036A91 /* FinalPaymentCheckDialog.swift */; };
@@ -226,6 +227,7 @@
 		3FE2C29D2557E3A5002E6184 /* CouponForBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponForBasket.swift; sourceTree = "<group>"; };
 		3FE2C2A02557EFAA002E6184 /* CouponForBasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponForBasketCell.swift; sourceTree = "<group>"; };
 		3FEAF06E254FFC1100A5ABC0 /* FavoriteDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDialog.swift; sourceTree = "<group>"; };
+		3FF086332571509F00D02360 /* RegisterCompletePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCompletePage.swift; sourceTree = "<group>"; };
 		3FF35096253E7E72007B7B29 /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
 		3FF35099253E7F3B007B7B29 /* RegisterPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageController.swift; sourceTree = "<group>"; };
 		3FF8137925590C8600036A91 /* FinalPaymentCheckDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPaymentCheckDialog.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 				3F49907F253EB18B00372F83 /* LoginPage.storyboard */,
 				3FA0D066256B4CBC004E4D83 /* PhoneCheckForRegister.swift */,
 				3F041C65256FB689006A2B3B /* PhoneSendForRegister.swift */,
+				3FF086332571509F00D02360 /* RegisterCompletePage.swift */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -799,6 +802,7 @@
 				04D11F5D2546781A00ADB210 /* OrderHistoryDetailCell.swift in Sources */,
 				04D11F552544406900ADB210 /* OrderHistoryDetailExtraModel.swift in Sources */,
 				3FF8137A25590C8600036A91 /* FinalPaymentCheckDialog.swift in Sources */,
+				3FF086342571509F00D02360 /* RegisterCompletePage.swift in Sources */,
 				04235C81254AA2F500BA2BB1 /* OrderStatusDetailController.swift in Sources */,
 				E33D8563253F163000E50BAC /* StoreMenu2Controller.swift in Sources */,
 				04D11F3B2543D2F100ADB210 /* OrderHistoryController.swift in Sources */,
