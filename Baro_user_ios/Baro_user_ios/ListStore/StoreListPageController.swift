@@ -182,8 +182,13 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
             if store.is_open == "Y" {
                 cell.is_OpenLable.text = "영업중"
             }else{
-                cell.is_OpenLable.text = "영업종료"
+                cell.is_OpenLable.text = "준비중"
+                cell.is_OpenLable.backgroundColor = UIColor.init(cgColor: CGColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1))
             }
+            cell.is_OpenLable.layer.borderColor = UIColor.white.cgColor
+            cell.is_OpenLable.layer.borderWidth = 2
+            cell.is_OpenLable.layer.cornerRadius = 5
+            cell.is_OpenLable.layer.masksToBounds = true
             if Int(store.distance) > 1000 {
                 cell.distance_Label.text = String(Double(Int(store.distance/100) / 10)) + "km"
             }else{
