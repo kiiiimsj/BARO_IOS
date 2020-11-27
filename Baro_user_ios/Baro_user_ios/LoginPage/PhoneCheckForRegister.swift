@@ -16,9 +16,10 @@ class PhoneCheckForRegister : UIViewController {
     @IBOutlet weak var inputPinView: UIView!
     @IBOutlet weak var checkPhoneAuth: UIButton!
     var authString : String = ""
-    
+    var firebaseAuthString : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("authString :", firebaseAuthString)
         inputPin1.addTarget(self, action: #selector(self.pinInputfieldSet(_:)), for: .allEditingEvents)
         inputPin2.addTarget(self, action: #selector(self.pinInputfieldSet(_:)), for: .allEditingEvents)
         inputPin3.addTarget(self, action: #selector(self.pinInputfieldSet(_:)), for: .allEditingEvents)
