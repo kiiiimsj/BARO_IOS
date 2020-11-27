@@ -136,6 +136,7 @@
 		E34CAF99255A708700BE3F53 /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF98255A708700BE3F53 /* CouponCell.swift */; };
 		E34CAF9C255A89C300BE3F53 /* EventPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF9B255A89C200BE3F53 /* EventPageController.swift */; };
 		E34CAFA0255A89F300BE3F53 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34CAF9F255A89F300BE3F53 /* Event.storyboard */; };
+		E356D646256FB20300F39463 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E356D645256FB20300F39463 /* CustomLabel.swift */; };
 		E39C1581256952A000520033 /* MenuOrBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15802569529F00520033 /* MenuOrBasket.swift */; };
 		E39C15842569E70B00520033 /* EmptyBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15832569E70B00520033 /* EmptyBasket.swift */; };
 /* End PBXBuildFile section */
@@ -275,6 +276,7 @@
 		E34CAF98255A708700BE3F53 /* CouponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCell.swift; sourceTree = "<group>"; };
 		E34CAF9B255A89C200BE3F53 /* EventPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPageController.swift; sourceTree = "<group>"; };
 		E34CAF9F255A89F300BE3F53 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		E356D645256FB20300F39463 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		E39C15802569529F00520033 /* MenuOrBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOrBasket.swift; sourceTree = "<group>"; };
 		E39C15832569E70B00520033 /* EmptyBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBasket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -525,6 +527,7 @@
 				043DACBA253DAC5600C70102 /* UrlMaker.swift */,
 				3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */,
 				3F6D861A25653BAA00D65CAC /* ToastMessage.swift */,
+				E356D645256FB20300F39463 /* CustomLabel.swift */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D11F5225443F1100ADB210 /* OrderHistoryDetailModel.swift in Sources */,
+				E356D646256FB20300F39463 /* CustomLabel.swift in Sources */,
 				3FC20E5D2546EEE600EEE783 /* ChangePass.swift in Sources */,
 				E33D8566253F20E200E50BAC /* ASMenuCell.swift in Sources */,
 				048D55E0253D838E009E9CE4 /* MainPageType.swift in Sources */,

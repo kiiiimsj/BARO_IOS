@@ -24,14 +24,14 @@ class EssentialBtn : UIButton{
         didSet {
             switch isSelected {
             case true:
-                self.backgroundColor = .orange
+                self.backgroundColor = UIColor(red: 131/255, green: 51/255, blue: 230/255, alpha: 1)
 //                self.setTitleColor(.purple, for: .normal)
 //                menu.titleLabel?.textColor = .purple
 //            case false:
 //                menu.backgroundColor = .purple
 //                menu.titleLabel?.textColor = .orange
             default:
-                self.backgroundColor = .purple
+                self.backgroundColor = .white
 //                self.setTitleColor(.orange, for: .normal)
             }
         }

@@ -43,19 +43,24 @@ extension EssentialCell : UICollectionViewDelegate,UICollectionViewDataSource,UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if extras.count > indexPath.item{
+            essentialCollector.append(indexPath)
+        }
         switch whichCell {
         case EssentialCell.UNDER3:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EssentialButton", for: indexPath) as! EssentialButton
-            cell.menu.backgroundColor = .purple
+//            cell.menu.backgroundColor = .white
             cell.menu.adjustsImageWhenHighlighted = false
-            cell.menu.setTitleColor(.orange, for: .normal)
-            cell.menu.setTitleColor(.purple, for: .selected)
+//            cell.menu.setTitleColor(.orange, for: .normal)
+//            cell.menu.setTitleColor(.purple, for: .selected)
             cell.menu.setTitle(extras[indexPath.item].extra_name, for: .normal)
     //        cell.backgroundColor = .yellow
             cell.menu.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
             cell.data = extras[indexPath.item]
             cell.menu.isSelected = false
-            self.essentialCollector.append(indexPath)
+            cell.menu.layer.borderWidth = 1
+            cell.menu.layer.cornerRadius = 3
+            cell.menu.layer.borderColor = UIColor.init(cgColor: CGColor(red: 219.0/255, green: 219.0/255, blue: 219/255, alpha: 1.0)).cgColor
             return cell
         case EssentialCell.OVER3:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EssentialCell.OVER3, for: indexPath) as! EssentialRadio
@@ -70,9 +75,9 @@ extension EssentialCell : UICollectionViewDelegate,UICollectionViewDataSource,UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch whichCell {
         case EssentialCell.UNDER3:
-            return CGSize(width: collection.frame.width/CGFloat(extras.count+1), height:50)
+            return CGSize(width: collection.frame.width/CGFloat(extras.count), height:50)
         case EssentialCell.OVER3:
-            return CGSize(width: collection.frame.width, height:50)
+            return CGSize(width: collection.frame.width, height:30)
         default:
             return CGSize()
         }
