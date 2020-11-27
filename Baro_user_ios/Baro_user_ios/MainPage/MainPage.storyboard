@@ -15,17 +15,17 @@
             <objects>
                 <viewController storyboardIdentifier="MainPageController" title="MainPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="901-Ku-IQw" customClass="MainPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CvG-KU-mmZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1140"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BARO_logo" translatesAutoresizingMaskIntoConstraints="NO" id="7G0-F5-9z9">
                                 <rect key="frame" x="20" y="64" width="50" height="13"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Kc-nQH">
-                                <rect key="frame" x="0.0" y="124" width="414" height="933"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="1340"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-N1-OLA">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="945"/>
+                                        <rect key="frame" x="0.0" y="-32" width="414" height="945"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVL-S1-iAt" customClass="FSPagerView" customModule="FSPagerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -399,7 +399,7 @@
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="xiE-0U-fFK">
-                                        <rect key="frame" x="344" y="160" width="60" height="30"/>
+                                        <rect key="frame" x="344" y="128" width="60" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 / 1" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3S-l2-uDO">
                                                 <rect key="frame" x="5" y="5" width="50" height="20"/>
@@ -425,15 +425,96 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Contect Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74e-sG-MRi">
+                                        <rect key="frame" x="8" y="921" width="398" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARO 제휴 문의 혹인 서비스 이용 관련 문의가 있으신가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncV-0R-8AN">
+                                        <rect key="frame" x="8" y="950" width="398" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아래의 방법을 통해 언제든지 문의해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="454-ga-b4L">
+                                        <rect key="frame" x="8" y="973" width="398" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 : kiiiimsj@naver.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULS-Er-TJT">
+                                        <rect key="frame" x="8" y="996" width="398" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표전화 : 02) 000 0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dw9-3o-jhp">
+                                        <rect key="frame" x="8" y="1019" width="398" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(주) BARO 대표 김성재" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJE-Ej-4NX">
+                                        <rect key="frame" x="8" y="1042" width="398" height="9"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사업자등록번호 : 000 - 00 - 00000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArD-wP-npT">
+                                        <rect key="frame" x="8" y="1059" width="398" height="9"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="통신판매업신고번호 : 0000 - 서울관악 - 0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xj3-ag-Gtl">
+                                        <rect key="frame" x="8" y="1076" width="398" height="9"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소 : 서울시 동작구 숭실대학교 창신관, 103호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ate-QD-McV">
+                                        <rect key="frame" x="8" y="1093" width="398" height="9"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="WDd-N1-OLA" firstAttribute="top" secondItem="Trs-Kc-nQH" secondAttribute="top" id="2sn-pD-UNJ"/>
+                                    <constraint firstItem="ncV-0R-8AN" firstAttribute="leading" secondItem="Trs-Kc-nQH" secondAttribute="leading" constant="8" id="00J-QR-UuB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dw9-3o-jhp" secondAttribute="trailing" constant="8" id="0XH-vH-t20"/>
+                                    <constraint firstItem="Dw9-3o-jhp" firstAttribute="top" secondItem="ULS-Er-TJT" secondAttribute="bottom" constant="8" symbolic="YES" id="2U3-dj-cYu"/>
+                                    <constraint firstItem="WDd-N1-OLA" firstAttribute="top" secondItem="Trs-Kc-nQH" secondAttribute="top" constant="-32" id="2sn-pD-UNJ"/>
+                                    <constraint firstItem="74e-sG-MRi" firstAttribute="leading" secondItem="Trs-Kc-nQH" secondAttribute="leading" constant="8" id="5Ld-Nf-vnG"/>
                                     <constraint firstItem="xiE-0U-fFK" firstAttribute="bottom" secondItem="AVL-S1-iAt" secondAttribute="bottom" constant="-10" id="6Gx-Ml-RQW"/>
                                     <constraint firstAttribute="trailing" secondItem="xiE-0U-fFK" secondAttribute="trailing" constant="10" id="6jv-wH-OrP"/>
+                                    <constraint firstItem="ArD-wP-npT" firstAttribute="top" secondItem="GJE-Ej-4NX" secondAttribute="bottom" constant="8" symbolic="YES" id="7Ot-jW-ANJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ULS-Er-TJT" secondAttribute="trailing" constant="8" id="85M-Y5-xuU"/>
+                                    <constraint firstItem="ULS-Er-TJT" firstAttribute="leading" secondItem="Trs-Kc-nQH" secondAttribute="leading" constant="8" id="AnN-CU-tKC"/>
+                                    <constraint firstItem="ULS-Er-TJT" firstAttribute="top" secondItem="454-ga-b4L" secondAttribute="bottom" constant="8" symbolic="YES" id="BuZ-xZ-MQM"/>
+                                    <constraint firstAttribute="trailing" secondItem="ArD-wP-npT" secondAttribute="trailing" constant="8" id="EhH-4B-DSW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ate-QD-McV" secondAttribute="trailing" constant="8" id="HuX-CP-ZhC"/>
+                                    <constraint firstItem="ncV-0R-8AN" firstAttribute="top" secondItem="74e-sG-MRi" secondAttribute="bottom" constant="8" symbolic="YES" id="J8q-3n-JLG"/>
+                                    <constraint firstItem="GJE-Ej-4NX" firstAttribute="leading" secondItem="Trs-Kc-nQH" secondAttribute="leading" constant="8" id="Ju0-o8-J94"/>
+                                    <constraint firstItem="Dw9-3o-jhp" firstAttribute="leading" secondItem="Trs-Kc-nQH" secondAttribute="leading" constant="8" id="NPk-O1-5UU"/>
+                                    <constraint firstItem="Ate-QD-McV" firstAttribute="leading" secondItem="Trs-Kc-nQH" secondAttribute="leading" constant="8" id="TcL-OF-6a8"/>
+                                    <constraint firstItem="Xj3-ag-Gtl" firstAttribute="top" secondItem="ArD-wP-npT" secondAttribute="bottom" constant="8" symbolic="YES" id="UOb-h8-vFU"/>
                                     <constraint firstItem="WDd-N1-OLA" firstAttribute="width" secondItem="Trs-Kc-nQH" secondAttribute="width" id="V0P-af-PN1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xj3-ag-Gtl" secondAttribute="trailing" constant="8" id="WTm-Wc-SvK"/>
                                     <constraint firstAttribute="trailing" secondItem="WDd-N1-OLA" secondAttribute="trailing" id="Z6r-da-619"/>
+                                    <constraint firstItem="Xj3-ag-Gtl" firstAttribute="leading" secondItem="Trs-Kc-nQH" secondAttribute="leading" constant="8" id="cCg-tz-0cx"/>
+                                    <constraint firstAttribute="trailing" secondItem="GJE-Ej-4NX" secondAttribute="trailing" constant="8" id="dZZ-3F-gTT"/>
                                     <constraint firstItem="WDd-N1-OLA" firstAttribute="leading" secondItem="Trs-Kc-nQH" secondAttribute="leading" id="eNP-35-8Bl"/>
-                                    <constraint firstAttribute="bottom" secondItem="WDd-N1-OLA" secondAttribute="bottom" constant="20" id="hsW-5m-xc1"/>
+                                    <constraint firstItem="GJE-Ej-4NX" firstAttribute="top" secondItem="Dw9-3o-jhp" secondAttribute="bottom" constant="8" symbolic="YES" id="eiA-Aq-nmj"/>
+                                    <constraint firstAttribute="trailing" secondItem="74e-sG-MRi" secondAttribute="trailing" constant="8" id="f1f-DX-fMZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="454-ga-b4L" secondAttribute="trailing" constant="8" id="fAh-FK-DeC"/>
+                                    <constraint firstItem="ArD-wP-npT" firstAttribute="leading" secondItem="Trs-Kc-nQH" secondAttribute="leading" constant="8" id="fdy-FD-o73"/>
+                                    <constraint firstAttribute="bottom" secondItem="WDd-N1-OLA" secondAttribute="bottom" constant="427" id="hsW-5m-xc1"/>
+                                    <constraint firstItem="Ate-QD-McV" firstAttribute="top" secondItem="Xj3-ag-Gtl" secondAttribute="bottom" constant="8" symbolic="YES" id="jd3-Wp-0ES"/>
+                                    <constraint firstItem="454-ga-b4L" firstAttribute="top" secondItem="ncV-0R-8AN" secondAttribute="bottom" constant="8" symbolic="YES" id="k9e-zs-jdU"/>
+                                    <constraint firstAttribute="trailing" secondItem="ncV-0R-8AN" secondAttribute="trailing" constant="8" id="obA-eW-nZ7"/>
+                                    <constraint firstItem="74e-sG-MRi" firstAttribute="top" secondItem="WDd-N1-OLA" secondAttribute="bottom" constant="8" symbolic="YES" id="qIz-fj-mAN"/>
+                                    <constraint firstItem="454-ga-b4L" firstAttribute="leading" secondItem="Trs-Kc-nQH" secondAttribute="leading" constant="8" id="ykC-ed-ogH"/>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-LU-sua">
@@ -475,14 +556,14 @@
                             <constraint firstItem="Trs-Kc-nQH" firstAttribute="top" secondItem="ODv-sU-A77" secondAttribute="bottom" constant="15" id="NfX-ag-imH"/>
                             <constraint firstItem="Trs-Kc-nQH" firstAttribute="leading" secondItem="0Yi-ZZ-DQP" secondAttribute="leading" id="QLR-5A-ywh"/>
                             <constraint firstItem="7G0-F5-9z9" firstAttribute="leading" secondItem="0Yi-ZZ-DQP" secondAttribute="leading" constant="20" id="VTd-iU-CVp"/>
-                            <constraint firstItem="0Yi-ZZ-DQP" firstAttribute="bottom" secondItem="Trs-Kc-nQH" secondAttribute="bottom" id="ahd-Ri-ClQ"/>
+                            <constraint firstItem="0Yi-ZZ-DQP" firstAttribute="bottom" secondItem="Trs-Kc-nQH" secondAttribute="bottom" constant="-197" id="ahd-Ri-ClQ"/>
                             <constraint firstItem="Laq-LU-sua" firstAttribute="top" secondItem="0Yi-ZZ-DQP" secondAttribute="top" constant="20" id="lQb-qm-U96"/>
                             <constraint firstItem="nOH-RC-Xk3" firstAttribute="top" secondItem="0Yi-ZZ-DQP" secondAttribute="top" constant="20" id="xPV-JX-0WT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vUk-kb-yeq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <size key="freeformSize" width="414" height="1140"/>
+                    <size key="freeformSize" width="414" height="1350"/>
                     <connections>
                         <outlet property="alertButton" destination="Laq-LU-sua" id="YOH-f9-Vnf"/>
                         <outlet property="collectionViewNewStore" destination="d3i-Qf-2MZ" id="ub7-pG-4rv"/>
