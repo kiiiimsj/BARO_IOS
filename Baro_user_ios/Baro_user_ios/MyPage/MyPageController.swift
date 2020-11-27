@@ -103,6 +103,13 @@ class MyPageController : UIViewController {
         else {
             UserDefaults.resetStandardUserDefaults()
         }
+        let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "LoginPageController")
+        
+        guard let pvc = self.presentingViewController else {return}
+        self.dismiss(animated: true) {
+            pvc.present(vc, animated: true)
+        }
     }
 }
 extension MyPageController : UITableViewDelegate, UITableViewDataSource {

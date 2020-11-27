@@ -142,6 +142,7 @@ class BottomTabBarController: UIViewController {
                 self.changeContentView(controller: controller as! MainPageController, sender: nil)
             case storeListControllerIdentifier:
                 self.changeContentView(controller: controller as! StoreListPageController, sender: sender)
+                swipeRecognizer()
             case orderStatusControllerIdentifier:
                 self.changeContentView(controller: controller as! OrderStatusController, sender: nil)
             case orderHistoryControllerIdentifier:
@@ -150,6 +151,7 @@ class BottomTabBarController: UIViewController {
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
             case aboutStoreControllerIdentifier:
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
+                swipeRecognizer()
             default :
                 print("error_delegate")
         }
@@ -257,6 +259,23 @@ class BottomTabBarController: UIViewController {
                     controllerData.bottomTabBarInfo = self
                 default :
                     print("error_delegate")
+            }
+        }
+    }
+    func swipeRecognizer() {
+            let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
+            swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+            self.view.addGestureRecognizer(swipeRight)
+            
+        }
+        
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            print("gesture")
+            switch swipeGesture.direction{
+            case UISwipeGestureRecognizer.Direction.right:
+                self.dismiss(animated: true, completion: nil)
+            default: break
             }
         }
     }
