@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 class PhoneCheckForRegister : UIViewController {
     @IBOutlet weak var inputPin1: UITextField!
     @IBOutlet weak var inputPin2: UITextField!
@@ -16,10 +17,11 @@ class PhoneCheckForRegister : UIViewController {
     @IBOutlet weak var inputPinView: UIView!
     @IBOutlet weak var checkPhoneAuth: UIButton!
     var authString : String = ""
-    var firebaseAuthString : String = ""
+    var verificationID : String = ""
+    var toastMessage = ToastMessage()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("authString :", firebaseAuthString)
+        print("authString :", verificationID)
         inputPin1.addTarget(self, action: #selector(self.pinInputfieldSet(_:)), for: .allEditingEvents)
         inputPin2.addTarget(self, action: #selector(self.pinInputfieldSet(_:)), for: .allEditingEvents)
         inputPin3.addTarget(self, action: #selector(self.pinInputfieldSet(_:)), for: .allEditingEvents)
@@ -60,5 +62,14 @@ class PhoneCheckForRegister : UIViewController {
     }
     @IBAction func sendAuthNumbers() {
         print("sendAuth : ", authString)
+        let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.verificationID, verificationCode: self.authString)
+        Auth.auth().signInAndRetrieveData(with: credential) { authData, error in
+            if ((error) != nil) {
+                self.toastMessage.showToast(message: "\(error)", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
+            }
+            else {
+                self.performSegue(withIdentifier: "RegisterPageController", sender: nil)
+            }
+        }
     }
 }

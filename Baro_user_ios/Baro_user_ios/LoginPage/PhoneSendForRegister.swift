@@ -17,7 +17,6 @@ class PhoneSendForRegister : UIViewController {
         super.viewDidLoad()
         sendPhoneToFireBaseBtn.layer.cornerRadius = 15
         Auth.auth().settings!.isAppVerificationDisabledForTesting = true
-            
     }
     
     @IBAction func sendPhone() {
@@ -37,6 +36,6 @@ class PhoneSendForRegister : UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! PhoneCheckForRegister
-        vc.firebaseAuthString = sender as! String
+        vc.verificationID = sender as! String
     }
 }
