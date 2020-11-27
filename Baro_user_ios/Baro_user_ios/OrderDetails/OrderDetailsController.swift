@@ -170,7 +170,7 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
             cell.collection.delegate = cell.self
             cell.collection.dataSource = cell.self
             cell.clickListener = self
-            cell.optionCategory.text = extras?[0].extra_group
+            cell.optionCategory.text = " · " + (extras?[0].extra_group)!
             if cell.extras.count > 3 {
                 cell.whichCell = EssentialCell.OVER3
             }else{
@@ -181,7 +181,7 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
             let cell = EssentialArea.dequeueReusableCell(withReuseIdentifier: "NonEssentialCell", for: indexPath) as! NonEssentialCell
             let extra = nonEssentials[indexPath.item]
             cell.nonEssentialExtras = extra
-            cell.optionName.text = extra.extra_name
+            cell.optionName.text = " · " + extra.extra_name
             cell.clickListner = self
             return cell
 
@@ -198,12 +198,12 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
                 case 0,1,2,3:
                     return CGSize(width: collectionView.frame.width ,height: 120)
                 default:
-                    return CGSize(width: collectionView.frame.width, height: CGFloat(70 + extras!.count * 50))
+                    return CGSize(width: collectionView.frame.width, height: CGFloat(70 + extras!.count * 35))
                 }
             }
         case 1:
             if self.nonEssentialOpen {
-                return CGSize(width: collectionView.frame.width, height: 70)
+                return CGSize(width: collectionView.frame.width, height: 30)
             }else{
                 return CGSize(width: collectionView.frame.width, height: 0)
             }
