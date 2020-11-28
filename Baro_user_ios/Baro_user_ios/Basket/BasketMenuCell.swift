@@ -66,7 +66,7 @@ extension BasketMenuCell : UICollectionViewDelegate,UICollectionViewDataSource,U
         case 0:
             let cell = extraCollectionView.dequeueReusableCell(withReuseIdentifier: "BasketEssentialCell", for: indexPath) as! BasketEssentialCell
             var sum = 0
-            var name = ""
+            var name = "• "
             for item in essential! {
                 sum += item.extra_price
                 name += item.extra_name+"/"
