@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="adc-70-pEw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -134,20 +134,11 @@
                         <outlet property="changeEmailBtn" destination="uDJ-63-RXP" id="Bce-kK-30a"/>
                         <outlet property="errorAlarmText" destination="75k-pS-IoY" id="m42-ko-yFC"/>
                         <outlet property="inputNewEmail" destination="Jxn-9J-Oj6" id="SGs-if-7gD"/>
-                        <segue destination="NzB-Me-pvG" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="QH0-h7-XJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwf-Zg-vC9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="71.014492753623188" y="44.866071428571423"/>
-        </scene>
-        <!--BottomTabBarController-->
-        <scene sceneID="M33-e6-sA3">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="BottomTabBarController" storyboardName="BottomTabBar" referencedIdentifier="BottomTabBarController" id="NzB-Me-pvG" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3y0-Pc-vPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="616" y="-190"/>
         </scene>
     </scenes>
     <resources>

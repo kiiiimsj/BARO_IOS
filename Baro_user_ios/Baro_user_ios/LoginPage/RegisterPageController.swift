@@ -18,17 +18,28 @@ class RegisterPageController: UIViewController {
     @IBOutlet weak var emailInputError: UILabel!
     let network = CallRequest()
     let urlMaker = NetWorkURL()
+    var phoneNumber : String = ""
+    var toastMessage = ToastMessage()
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameInput.addTarget(self, action: #selector(checkNameInputField), for: .editingChanged)
+        passInput.addTarget(self, action: #selector(checkPassInputField), for: .editingChanged)
+        passCheckInput.addTarget(self, action: #selector(checkPassInputField), for: .editingChanged)
+        emailInput.addTarget(self, action: #selector(checkEmailInputField), for: .editingChanged)
+        swipeRecognizer()
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
+    func layoutLoad() {
+        nameInput.borderStyle = .none
+        passInput.borderStyle = .none
+        passCheckInput.borderStyle = .none
+        emailInput.borderStyle = .none
         nameInputError.isHidden = true
         passInputError.isHidden = true
         passCheckInputError.isHidden = true
         emailInputError.isHidden = true
-        
-        nameInput.addTarget(self, action: #selector(checkNameInputField), for: .editingChanged)
-        passInput.addTarget(self, action: #selector(checkPassInputField), for: .editingChanged)
-        passCheckInput.addTarget(self, action: #selector(checkPassInputField), for: .editingChanged)
-        emailInput.addTarget(self, action: #selector(checkEmailInputField), for: .editingDidEnd)
     }
     @objc
     func checkNameInputField() {
@@ -60,6 +71,26 @@ class RegisterPageController: UIViewController {
             passCheckInputError.isHidden = true
         }
     }
+    func swipeRecognizer() {
+            let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
+            swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+            self.view.addGestureRecognizer(swipeRight)
+            
+        }
+        
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            print("gesture")
+            switch swipeGesture.direction{
+            case UISwipeGestureRecognizer.Direction.right:
+                let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "PhoneSendForRegister")
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: false)
+            default: break
+            }
+        }
+    }
     @objc
     func checkEmailInputField() {
         let email = emailInput.text
@@ -78,14 +109,20 @@ class RegisterPageController: UIViewController {
         }
     }
     @IBAction func registerSend() {
-        let param : [String:Any] = [:]
-        network.post(method: .post, param: param, url: self.urlMaker.signUpURL) {
-            json in
-            if json["result"].boolValue {
-                //회원가입 완료 페이지 만들기
-            }
-            else {
-                
+        if (nameInputError.isHidden && passInputError.isHidden && passCheckInputError.isHidden && emailInputError.isHidden ) {
+            if let email = emailInput.text, let nick = nameInput.text, let pass = passInput.text {
+                print("email :", email, "nick :", nick, "pass : ", pass, "phone : ", self.phoneNumber)
+                let param = ["phone":"\(self.phoneNumber)","email":"\(email)","nick":"\(nick)","pass":"\(pass)"]
+                network.post(method: .post, param: param, url: self.urlMaker.signUpURL) {
+                    json in
+                    if json["result"].boolValue {
+                        self.performSegue(withIdentifier: "RegisterCompletePage", sender: "")
+                        
+                    }
+                    else {
+                        self.toastMessage.showToast(message: json["message"].stringValue, font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 13.0)!, targetController: self)
+                    }
+                }
             }
         }
     }
