@@ -12,11 +12,11 @@ class RegisterCompletePage : UIViewController {
         super.viewDidLoad()
         goToLoginPage.layer.cornerRadius = 15
     }
-    @IBAction func goToLogin() {
-        guard let pvc = self.presentingViewController else {return}
-        self.dismiss(animated: true) {
-            pvc.performSegue(withIdentifier: "LoginPageController", sender: nil)
-        }
-        
+    @IBAction func goLogin() {
+        let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "LoginPageController")
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
     }
 }

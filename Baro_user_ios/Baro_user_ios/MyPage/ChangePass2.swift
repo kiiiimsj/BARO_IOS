@@ -79,6 +79,6 @@ class ChangePass2 : UIViewController {
         errorAlarmText2.isHidden = true
     }
     @IBAction func backbutton() {
-        self.performSegue(withIdentifier: "ChangePass", sender: nil)
+        self.dismiss(animated: true)
     }
 }

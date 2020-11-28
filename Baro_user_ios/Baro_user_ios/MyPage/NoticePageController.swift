@@ -24,7 +24,7 @@ class NoticePageController : UIViewController {
         noticeListTableView.dataSource = self
     }
     @IBAction func backbutton() {
-        self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
+        self.dismiss(animated: true)
     }
     
     func loadNoticePageTitle() {

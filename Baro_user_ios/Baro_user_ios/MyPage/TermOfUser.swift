@@ -19,7 +19,7 @@ class TermOfUser : UIViewController{
     }
     
     @IBAction func backbutton() {
-        self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
+        self.dismiss(animated: true)
     }
     func loadUrl() {
         let url = Bundle.main.url(forResource: "privacyPolicy", withExtension:"html")

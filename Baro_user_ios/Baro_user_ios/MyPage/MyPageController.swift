@@ -105,7 +105,8 @@ class MyPageController : UIViewController {
         }
         let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "LoginPageController")
-        
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
         guard let pvc = self.presentingViewController else {return}
         self.dismiss(animated: true) {
             pvc.present(vc, animated: true)
