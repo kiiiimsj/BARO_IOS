@@ -189,13 +189,12 @@
                         <outlet property="registerBtn1" destination="M8Q-gc-XWZ" id="wNt-2y-6mx"/>
                         <outlet property="registerBtn2" destination="coq-dL-K1M" id="mVx-Tq-szC"/>
                         <segue destination="Ibe-2Z-WFL" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" id="UPu-sm-1VS"/>
-                        <segue destination="3Xd-Nv-dWu" kind="presentation" identifier="MainPageController" id="jCg-WT-Kf0"/>
                         <segue destination="80Z-QC-qXt" kind="presentation" identifier="PhoneSendForRegister" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="E9i-LZ-h6q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kp-KJ-LYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100.00000000000001" y="-314.67391304347831"/>
+            <point key="canvasLocation" x="1338" y="-1992"/>
         </scene>
         <!--RegisterPageController-->
         <scene sceneID="cca-wn-heG">
@@ -210,7 +209,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Pca-R4-Umg" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="163" width="360" height="482"/>
+                                <rect key="frame" x="0.0" y="162.66666666666666" width="360" height="482.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-zt-Opx">
                                         <rect key="frame" x="19" y="22" width="88" height="21"/>
@@ -225,13 +224,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZc-S9-cQF">
-                                        <rect key="frame" x="19.999999999999996" y="100" width="53.666666666666657" height="21"/>
+                                        <rect key="frame" x="19.999999999999996" y="100.00000000000003" width="53.666666666666657" height="21"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61w-lS-yIc">
-                                        <rect key="frame" x="20" y="178" width="80.666666666666671" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61w-lS-yIc">
+                                        <rect key="frame" x="20" y="178.00000000000003" width="80.666666666666671" height="21"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -259,7 +258,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iz-Xd-ACh">
-                                        <rect key="frame" x="20" y="129" width="320" height="34"/>
+                                        <rect key="frame" x="20" y="129.00000000000003" width="320" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="bfF-ht-bih"/>
                                         </constraints>
@@ -267,7 +266,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="kHY-Eb-ziP">
-                                        <rect key="frame" x="20" y="162" width="320" height="1"/>
+                                        <rect key="frame" x="20" y="162.00000000000003" width="320" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="cru-Ka-0Ow"/>
@@ -275,7 +274,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ofM-aF-h8W">
-                                        <rect key="frame" x="20" y="207" width="320" height="34"/>
+                                        <rect key="frame" x="20" y="207.00000000000003" width="320" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="UdJ-GJ-Ozy"/>
                                         </constraints>
@@ -291,7 +290,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="mx0-vS-i2k">
-                                        <rect key="frame" x="20" y="240" width="320" height="1"/>
+                                        <rect key="frame" x="20" y="240.00000000000003" width="320" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="HCf-LT-KwO"/>
@@ -317,6 +316,9 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerSend" destination="QMl-v0-q4D" eventType="touchUpInside" id="pHy-hp-ujQ"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="비밀번호를 4자 이상 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stU-AZ-8HG">
                                         <rect key="frame" x="19" y="167" width="145" height="12"/>
@@ -386,7 +388,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9Z-cb-Qzo">
-                                <rect key="frame" x="132" y="107" width="113" height="42"/>
+                                <rect key="frame" x="132" y="107" width="113" height="41.666666666666657"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -414,6 +416,7 @@
                         <outlet property="passCheckInputError" destination="igJ-Z6-zUx" id="lOH-OA-Vt0"/>
                         <outlet property="passInput" destination="2iz-Xd-ACh" id="fAx-1n-RUH"/>
                         <outlet property="passInputError" destination="stU-AZ-8HG" id="B5z-sE-rWN"/>
+                        <segue destination="5mQ-ol-sdO" kind="presentation" identifier="RegisterCompletePage" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="XZw-GB-h9Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIc-jx-Mgf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -423,7 +426,7 @@
         <!--RegisterCompletePage-->
         <scene sceneID="JyM-mS-7P4">
             <objects>
-                <viewController storyboardIdentifier="RegisterCompletePage" title="RegisterCompletePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5mQ-ol-sdO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterCompletePage" title="RegisterCompletePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5mQ-ol-sdO" customClass="RegisterCompletePage" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C1E-s6-njp">
                         <rect key="frame" x="0.0" y="0.0" width="360" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -450,7 +453,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
                                 <state key="normal" title="로그인창으로 이동">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="0.46000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                         </subviews>
@@ -467,6 +470,10 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="360" height="640"/>
+                    <connections>
+                        <outlet property="goToLoginPage" destination="Vkv-CP-iKg" id="KE0-8I-NOg"/>
+                        <segue destination="e5m-c8-bea" kind="presentation" identifier="LoginPageController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="But-oi-QoK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XH3-rO-Ggh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -480,8 +487,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="360" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="핸드폰 인증" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iW-tI-hSI">
-                                <rect key="frame" x="112" y="97" width="136" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="핸드폰 인증" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iW-tI-hSI">
+                                <rect key="frame" x="112.33333333333333" y="97" width="135.33333333333337" height="41.666666666666657"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -491,10 +498,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleAspectFit" restorationIdentifier="PhoneCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="hSZ-J3-zxi" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="163" width="360" height="477"/>
+                                <rect key="frame" x="0.0" y="162.66666666666666" width="360" height="477.33333333333337"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0k7-4q-58d">
-                                        <rect key="frame" x="20" y="194" width="320" height="50"/>
+                                        <rect key="frame" x="20" y="194.00000000000003" width="320" height="50"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="dUs-GX-jEK"/>
@@ -512,13 +519,13 @@
                                         <rect key="frame" x="20" y="50" width="320" height="144"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mir-iH-slk">
-                                                <rect key="frame" x="160" y="72" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="160" y="72.000000000000028" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="du4-tV-oPQ">
-                                                <rect key="frame" x="-15" y="47" width="50" height="50"/>
+                                                <rect key="frame" x="-15" y="47.000000000000028" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="bAx-IX-3RX"/>
                                                     <constraint firstAttribute="height" constant="50" id="lM1-Mg-eMg"/>
@@ -527,7 +534,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKD-DI-Tsr">
-                                                <rect key="frame" x="45" y="47" width="50" height="50"/>
+                                                <rect key="frame" x="45" y="47.000000000000028" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="D1D-vt-64M"/>
                                                     <constraint firstAttribute="height" constant="50" id="saO-Sd-ObY"/>
@@ -536,7 +543,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PGg-lu-FNQ">
-                                                <rect key="frame" x="105" y="47" width="50" height="50"/>
+                                                <rect key="frame" x="105" y="47.000000000000028" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="Elm-pD-e1m"/>
                                                     <constraint firstAttribute="height" constant="50" id="H99-bu-iYC"/>
@@ -545,7 +552,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jXu-kd-cS7">
-                                                <rect key="frame" x="165" y="47" width="50" height="50"/>
+                                                <rect key="frame" x="165" y="47.000000000000028" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="bME-r7-Qnc"/>
                                                     <constraint firstAttribute="width" constant="50" id="i2M-5u-Y1o"/>
@@ -554,7 +561,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUU-RE-o6x">
-                                                <rect key="frame" x="225" y="47" width="50" height="50"/>
+                                                <rect key="frame" x="225" y="47.000000000000028" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="LYN-Sq-SVb"/>
                                                     <constraint firstAttribute="height" constant="50" id="owA-KZ-y5h"/>
@@ -563,7 +570,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eow-3i-FzL">
-                                                <rect key="frame" x="285" y="47" width="50" height="50"/>
+                                                <rect key="frame" x="285" y="47.000000000000028" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="KRU-tJ-UrN"/>
                                                     <constraint firstAttribute="height" constant="50" id="q75-xV-h1q"/>
@@ -651,15 +658,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" restorationIdentifier="PhoneCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="8TE-Hy-AX6" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="163" width="360" height="477"/>
+                                <rect key="frame" x="0.0" y="162.66666666666666" width="360" height="477.33333333333337"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WK9-oq-H1Q">
-                                        <rect key="frame" x="20" y="134" width="320" height="34"/>
+                                        <rect key="frame" x="20" y="134.00000000000003" width="320" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfE-TS-YQf">
-                                        <rect key="frame" x="20" y="188" width="320" height="50"/>
+                                        <rect key="frame" x="20" y="188.00000000000003" width="320" height="50"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bg6-iN-hZa"/>
@@ -671,14 +678,14 @@
                                             <action selector="sendPhone" destination="80Z-QC-qXt" eventType="touchUpInside" id="vkU-vZ-kxh"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰 번호 입력" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjU-gs-ZoM">
-                                        <rect key="frame" x="20" y="100" width="111" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰 번호 입력" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjU-gs-ZoM">
+                                        <rect key="frame" x="19.999999999999993" y="100.00000000000003" width="110.33333333333331" height="24"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="Hos-tE-5U0">
-                                        <rect key="frame" x="20" y="168" width="320" height="1"/>
+                                        <rect key="frame" x="20" y="168.00000000000003" width="320" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="23W-yw-lh7"/>
@@ -706,7 +713,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="핸드폰 인증" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8U-q2-kL0">
-                                <rect key="frame" x="112" y="97" width="136" height="42"/>
+                                <rect key="frame" x="112.33333333333333" y="97" width="135.33333333333337" height="41.666666666666657"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -746,15 +753,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2U-cR-dMv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539" y="-444"/>
-        </scene>
-        <!--MainPageController-->
-        <scene sceneID="xWM-07-cSf">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MainPage" referencedIdentifier="MainPageController" id="3Xd-Nv-dWu" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wrk-Ea-ftl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="372" y="-205"/>
+            <point key="canvasLocation" x="2151" y="-1992"/>
         </scene>
     </scenes>
     <resources>
