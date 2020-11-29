@@ -116,7 +116,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         getMyLocation(String(longitude!), String(latitude!))
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
 //        UserDefaults.standard.setValue(0, forKey: "newestAlert")
-        whetherNewOrNot()
+//        whetherNewOrNot()
         netWork.post(method: .get, url: urlMaker.eventList) { json in
             var eventModel = EventListModel()
             print("jj",json)
@@ -309,7 +309,7 @@ extension MainPageController : UICollectionViewDelegate, UICollectionViewDataSou
 //            return  CGSize(width: self.collectionViewEvent.frame.width, height: self.collectionViewEvent.frame.height)
 //        }
         if collectionView == collectionViewType {
-            return CGSize(width: self.collectionViewType.frame.width, height: self.collectionViewType.frame.height)
+            return CGSize(width: self.collectionViewType.frame.width , height:  collectionView.frame.height)
         }
         else{
             return CGSize(width: self.mainView.frame.width, height: 200)

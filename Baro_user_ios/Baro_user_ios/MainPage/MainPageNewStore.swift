@@ -66,7 +66,11 @@ extension MainPageNewStore : UICollectionViewDelegate, UICollectionViewDataSourc
         if newStore.is_open == "Y" {
             cell.newStore_isOpen.text = "영업중"
         }
-       
+        // 버튼 테두리 둥글게
+        cell.newStore_isOpen.layer.cornerRadius = 10
+        cell.newStore_isOpen.layer.borderColor = UIColor.white.cgColor
+        cell.newStore_isOpen.layer.borderWidth = 2
+        cell.newStore_isOpen.layer.masksToBounds = true
         //cell 클릭시
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         return cell
