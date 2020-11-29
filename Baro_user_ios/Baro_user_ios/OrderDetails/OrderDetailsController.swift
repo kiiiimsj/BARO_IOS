@@ -43,6 +43,7 @@ class OrderDetailsController : UIViewController {
     var data : Order?
     override func viewDidLoad() {
         super.viewDidLoad()
+        swipeRecognizer()
         setMenuInfo()
         backBtn.setImage(UIImage(named: "arrow_back" ), for: .normal)
         menu_price_current = menu.menu_defaultprice
@@ -111,6 +112,23 @@ class OrderDetailsController : UIViewController {
         }
         else {
             self.makeToastMessage.showToast(message: "필수옵션을 선택해 주세요", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
+        }
+    }
+    func swipeRecognizer() {
+            let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
+            swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+            self.view.addGestureRecognizer(swipeRight)
+            
+        }
+        
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            print("gesture")
+            switch swipeGesture.direction{
+            case UISwipeGestureRecognizer.Direction.right:
+                self.dismiss(animated: true, completion: nil)
+            default: break
+            }
         }
     }
     func recalcPrice(){

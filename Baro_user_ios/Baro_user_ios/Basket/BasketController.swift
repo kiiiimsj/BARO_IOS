@@ -23,6 +23,7 @@ class BasketController : UIViewController {
     private var getStoreNameFromUserDefault = UserDefaults.standard.value(forKey: "currentStoreName") as! String
     override func viewDidLoad(){
         super.viewDidLoad()
+        swipeRecognizer()
         if(orders.count == 0) {
             orders.append(contentsOf: loadBasket())
         }
@@ -36,6 +37,23 @@ class BasketController : UIViewController {
         for item in orders {
             essential.append(Array(item.Essentials.values))
             nonEssential.append(Array(item.nonEssentials.values))
+        }
+    }
+    func swipeRecognizer() {
+            let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
+            swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+            self.view.addGestureRecognizer(swipeRight)
+            
+        }
+        
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            print("gesture")
+            switch swipeGesture.direction{
+            case UISwipeGestureRecognizer.Direction.right:
+                self.dismiss(animated: true, completion: nil)
+            default: break
+            }
         }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){

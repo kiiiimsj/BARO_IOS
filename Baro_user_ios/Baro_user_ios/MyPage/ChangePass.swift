@@ -41,6 +41,6 @@ class ChangePass : UIViewController {
     }
     
     @IBAction func backbutton() {
-        self.performSegue(withIdentifier: "BottomTabBarController", sender: nil)
+        self.dismiss(animated: true)
     }
 }

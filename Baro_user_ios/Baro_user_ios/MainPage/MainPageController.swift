@@ -80,7 +80,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         self.definesPresentationContext = true
         
         mainView.backgroundColor = .white
-        scrollView.backgroundColor = .white
+        scrollView.backgroundColor = .lightGray
         
         pagerView.dataSource = self
         pagerView.delegate = self

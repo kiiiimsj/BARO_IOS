@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZfL-xJ-JU8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -90,7 +90,7 @@
                                     <constraint firstAttribute="trailing" secondItem="aNH-Fw-KiK" secondAttribute="trailing" constant="222" id="cdt-8K-vUL"/>
                                     <constraint firstItem="aNH-Fw-KiK" firstAttribute="leading" secondItem="PCZ-Me-p43" secondAttribute="leading" constant="20" id="dWp-ej-da9"/>
                                     <constraint firstAttribute="trailing" secondItem="MKD-EE-Zm5" secondAttribute="trailing" constant="20" id="i6k-wV-o0V"/>
-                                    <constraint firstItem="coR-HG-IAf" firstAttribute="firstBaseline" secondItem="Lju-Sn-lPc" secondAttribute="baseline" constant="19" symbolType="layoutAnchor" id="kEG-Fk-q64"/>
+                                    <constraint firstItem="coR-HG-IAf" firstAttribute="firstBaseline" secondItem="Lju-Sn-lPc" secondAttribute="baseline" constant="16" symbolType="layoutAnchor" id="kEG-Fk-q64"/>
                                     <constraint firstItem="SYI-aV-BQ9" firstAttribute="top" secondItem="aNH-Fw-KiK" secondAttribute="bottom" constant="8" id="n7Q-m3-V1l"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -132,13 +132,12 @@
                         <outlet property="enterCurrentPass" destination="MKD-EE-Zm5" id="yaw-QV-eRr"/>
                         <outlet property="errorAlarmText" destination="coR-HG-IAf" id="V0d-NA-BBr"/>
                         <outlet property="inputNewPass" destination="SYI-aV-BQ9" id="PEb-7V-ry8"/>
-                        <segue destination="NIx-e6-xhU" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="i4i-yd-uBF"/>
                         <segue destination="aON-YC-HVj" kind="presentation" identifier="ChangePass2" modalPresentationStyle="fullScreen" id="LIn-2e-MfO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="liD-z7-64I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="13"/>
+            <point key="canvasLocation" x="-94" y="13"/>
         </scene>
         <!--ChangePass2-->
         <scene sceneID="mAH-yh-bjj">
@@ -302,18 +301,7 @@
             </objects>
             <point key="canvasLocation" x="1693" y="-200"/>
         </scene>
-        <!--BottomTabBarController-->
-        <scene sceneID="atP-A3-mp7">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="BottomTabBarController" storyboardName="BottomTabBar" referencedIdentifier="BottomTabBarController" id="NIx-e6-xhU" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0WY-OJ-Ani" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="595" y="-152"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="LIn-2e-MfO"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

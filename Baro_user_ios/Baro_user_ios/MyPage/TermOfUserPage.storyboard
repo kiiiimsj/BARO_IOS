@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RbE-QQ-MHE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -59,20 +59,11 @@
                     <connections>
                         <outlet property="backBtn" destination="RL9-Us-x8X" id="M3h-1Q-S3w"/>
                         <outlet property="webView" destination="5nZ-DB-5N5" id="qQe-4g-QMq"/>
-                        <segue destination="jhB-Oy-qbe" kind="presentation" identifier="BottomTabBarController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7KP-oV-S2A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXR-JA-65t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="42.028985507246382" y="33.482142857142854"/>
-        </scene>
-        <!--BottomTabBarController-->
-        <scene sceneID="4bz-zO-szY">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MyPageController" storyboardName="BottomTabBar" referencedIdentifier="BottomTabBarController" id="jhB-Oy-qbe" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ET4-LZ-ov6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="824" y="-96"/>
         </scene>
     </scenes>
     <resources>
