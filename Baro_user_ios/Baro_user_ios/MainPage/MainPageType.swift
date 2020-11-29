@@ -34,7 +34,7 @@ class MainPageType : UICollectionViewCell {
     }
     
     func configure(){
-        networkModel.post(method: .get, url: networkURL.typeListURL) { json in
+        networkModel.post(method: .get, url: networkURL.typeListURL) { [self] json in
             var typeModel = TypeListModel()
             print("zz", json)
             for item in json["type"].array! {
@@ -45,6 +45,10 @@ class MainPageType : UICollectionViewCell {
             }
 
             self.collectionView.reloadData()
+            let contentSizeHeight = CGFloat(self.typeList.count / 4 * 100 + 100)
+            let contentSize = CGSize(width: collectionView.frame.width, height: 300)
+            self.collectionView.contentSize = contentSize
+            
         }
     }
     
@@ -84,7 +88,7 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         return CGSize(width: 100, height: 90)
+        return CGSize(width: collectionView.frame.width / 4 - 1, height: 100)
     }
 }
 
