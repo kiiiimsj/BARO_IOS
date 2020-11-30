@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5e-dp-7fy" customClass="NMFMapView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5e-dp-7fy" customClass="NMFNaverMapView">
                                 <rect key="frame" x="0.0" y="90" width="414" height="772"/>
                                 <subviews>
                                     <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHF-cB-Bka">
@@ -29,21 +29,10 @@
                                             <segue destination="RU2-xD-2Q4" kind="embed" id="wZf-oL-ALD"/>
                                         </connections>
                                     </containerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-x3-FBP">
-                                        <rect key="frame" x="377" y="20" width="17" height="22"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="star_fill"/>
-                                        <connections>
-                                            <action selector="pressReturn:" destination="YgK-G5-tsZ" eventType="touchUpInside" id="2RR-TL-4hH"/>
-                                            <action selector="returnTome:" destination="5lF-1B-ymf" eventType="touchUpInside" id="H8d-Ao-Wdd"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="eHF-cB-Bka" secondAttribute="bottom" constant="10" id="JRz-x1-bEU"/>
-                                    <constraint firstAttribute="trailing" secondItem="VRb-x3-FBP" secondAttribute="trailing" constant="20" id="d3R-Me-MGH"/>
-                                    <constraint firstItem="VRb-x3-FBP" firstAttribute="top" secondItem="K5e-dp-7fy" secondAttribute="top" constant="20" id="fwu-EF-Kj5"/>
                                     <constraint firstItem="eHF-cB-Bka" firstAttribute="leading" secondItem="K5e-dp-7fy" secondAttribute="leading" constant="10" id="iDR-gM-uj7"/>
                                     <constraint firstAttribute="trailing" secondItem="eHF-cB-Bka" secondAttribute="trailing" constant="10" id="uCQ-xX-95j"/>
                                 </constraints>
@@ -79,12 +68,10 @@
                     <connections>
                         <outlet property="SeparateWindow" destination="eHF-cB-Bka" id="wXH-Qa-uUE"/>
                         <outlet property="backButton" destination="hJK-61-7JZ" id="bDU-3O-7PS"/>
-                        <outlet property="map" destination="K5e-dp-7fy" id="7sK-Ki-Mdr"/>
-                        <outlet property="returnBtn" destination="VRb-x3-FBP" id="N2P-hw-R1L"/>
+                        <outlet property="map" destination="K5e-dp-7fy" id="bsq-HK-oPW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Htx-qs-7xQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="5lF-1B-ymf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-188.40579710144928" y="37.5"/>
         </scene>
@@ -174,7 +161,6 @@
     </scenes>
     <resources>
         <image name="arrow_back" width="7" height="12"/>
-        <image name="star_fill" width="17" height="17"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
