@@ -14,4 +14,5 @@ struct OrderHistoryList {
     var total_price = 0
     var order_state = "주문상태"
     var total_count = 0
+    var store_image = ""
 }
