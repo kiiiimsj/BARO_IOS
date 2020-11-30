@@ -63,6 +63,7 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
         nextViewController.menu_id = labell
         for item in self.menus {
             if(item.menu_id == Int(labell)) {
+                nextViewController.storeId = item.store_id
                 nextViewController.menu = item
             }
         }

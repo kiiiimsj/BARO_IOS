@@ -99,7 +99,7 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryIdentifier, for: indexPath) as! ASCategoryCell
         cell.category.setTitle(categoryNames[indexPath.item], for: .normal)
         cell.category.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
-        self.saveCellsPoint.append(cell.center.x - 35)
+        self.saveCellsPoint.append(cell.center.x - 30)
         self.saveCelly = -44
         self.saveIndecatorHeight = ((cell.bounds.height / 2) + 5)
         self.saveIndecatorWidth.append(CGFloat(categoryNames[indexPath.item].count) * 20)

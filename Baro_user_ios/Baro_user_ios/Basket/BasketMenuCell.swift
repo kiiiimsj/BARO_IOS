@@ -82,7 +82,7 @@ extension BasketMenuCell : UICollectionViewDelegate,UICollectionViewDataSource,U
             if nonEssential!.count > indexPath.item{
             let values = nonEssential![indexPath.item]
             //            let values = Array(eachMenu.nonEssentials)[indexPath.item].value
-            cell.extra_name.text =  values.Extra?.extra_name
+            cell.extra_name.text =  "• " + "\(values.Extra?.extra_name as! String)"
             cell.extra_count.text = String(values.optionCount)
             cell.extra_price.text = String(values.Extra!.extra_price * values.optionCount)
             

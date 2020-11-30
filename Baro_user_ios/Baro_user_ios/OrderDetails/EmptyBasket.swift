@@ -13,7 +13,7 @@ class EmptyBasket: UIViewController {
     
     
     var menuData : Order?
-    var store_id : String?
+    var store_id : Int?
     var temp : OrderDetailsController?
     @IBOutlet weak var emptyBtn: UIButton!
     @IBOutlet weak var cancel: UIButton!
@@ -22,7 +22,7 @@ class EmptyBasket: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func pressEmpty(_ sender: Any) {
-        UserDefaults.standard.setValue(String(store_id!), forKey: "currentStoreid")
+        UserDefaults.standard.setValue(store_id, forKey: "currentStoreId")
         UserDefaults.standard.set(nil, forKey: "basket")
         
         self.dismiss(animated: true) {

@@ -16,11 +16,11 @@ class MenuOrBasket : UIViewController {
     
     @IBOutlet weak var OrderDetailBtn: UIButton!
     @IBOutlet weak var BasketBtn: UIButton!
-    
+    var store_id : Int?
     var delegate : TurnOffOrderDetailListener!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UserDefaults.standard.set(store_id, forKey: "currentStoreId")
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
