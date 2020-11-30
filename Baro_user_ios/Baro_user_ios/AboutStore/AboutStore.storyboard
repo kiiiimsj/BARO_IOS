@@ -355,7 +355,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p1g-h8-b3T">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9QA-JD-fTR">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="9QA-JD-fTR">
                                     <size key="itemSize" width="414" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -370,7 +370,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f47-12-y4Y" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                    <rect key="frame" x="115" y="10" width="20.5" height="25"/>
+                                                    <rect key="frame" x="100" y="15" width="20.5" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="rzL-EI-lVx"/>
                                                     </constraints>
@@ -384,14 +384,14 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5O9-ZI-E0L">
-                                                    <rect key="frame" x="15" y="24" width="80" height="80"/>
+                                                    <rect key="frame" x="20" y="15" width="60" height="98"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="VbE-Ri-CnR"/>
-                                                        <constraint firstAttribute="width" constant="80" id="We9-to-qsr"/>
+                                                        <constraint firstAttribute="height" constant="60" id="VbE-Ri-CnR"/>
+                                                        <constraint firstAttribute="width" constant="60" id="We9-to-qsr"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설명" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQA-k6-aku">
-                                                    <rect key="frame" x="115" y="45" width="180" height="63"/>
+                                                    <rect key="frame" x="100" y="50" width="180" height="16.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="180" id="gZF-61-Gcy"/>
                                                     </constraints>
@@ -400,7 +400,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="가격" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8E-Mk-3os" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                    <rect key="frame" x="295" y="56" width="99" height="16.5"/>
+                                                    <rect key="frame" x="373.5" y="56" width="20.5" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -411,10 +411,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상태" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcF-f4-Q10">
-                                                    <rect key="frame" x="364" y="10" width="30" height="20"/>
+                                                    <rect key="frame" x="354" y="15" width="40" height="20"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="Z16-lP-57h"/>
+                                                        <constraint firstAttribute="width" constant="40" id="Z16-lP-57h"/>
                                                         <constraint firstAttribute="height" constant="20" id="een-7J-XWy"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="9"/>
@@ -422,10 +422,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ubt-Fa-Ybe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.5"/>
                                                     <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="Gwd-pd-uWz"/>
+                                                        <constraint firstAttribute="height" constant="0.5" id="Gwd-pd-uWz"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -433,17 +433,17 @@
                                                 <constraint firstAttribute="trailing" secondItem="Ubt-Fa-Ybe" secondAttribute="trailing" id="5ve-A7-KDC"/>
                                                 <constraint firstItem="Ubt-Fa-Ybe" firstAttribute="leading" secondItem="9Jt-DO-6W1" secondAttribute="leading" id="6aU-Ls-8ho"/>
                                                 <constraint firstItem="IcF-f4-Q10" firstAttribute="trailing" secondItem="L8E-Mk-3os" secondAttribute="trailing" id="AzK-0p-4E4"/>
-                                                <constraint firstItem="L8E-Mk-3os" firstAttribute="leading" secondItem="QQA-k6-aku" secondAttribute="trailing" id="ByT-Rt-u3I"/>
                                                 <constraint firstItem="5O9-ZI-E0L" firstAttribute="centerY" secondItem="9Jt-DO-6W1" secondAttribute="centerY" id="H5a-1f-UnC"/>
                                                 <constraint firstItem="QQA-k6-aku" firstAttribute="leading" secondItem="5O9-ZI-E0L" secondAttribute="trailing" constant="20" id="NTH-ts-cwb"/>
-                                                <constraint firstItem="f47-12-y4Y" firstAttribute="top" secondItem="9Jt-DO-6W1" secondAttribute="top" constant="10" id="aUb-FY-rGm"/>
-                                                <constraint firstItem="L8E-Mk-3os" firstAttribute="centerY" secondItem="9Jt-DO-6W1" secondAttribute="centerY" id="eCL-4O-QAl"/>
-                                                <constraint firstItem="IcF-f4-Q10" firstAttribute="top" secondItem="9Jt-DO-6W1" secondAttribute="top" constant="10" id="fAO-JY-N1g"/>
+                                                <constraint firstItem="f47-12-y4Y" firstAttribute="top" secondItem="5O9-ZI-E0L" secondAttribute="top" id="Upy-6v-fSH"/>
+                                                <constraint firstAttribute="bottom" secondItem="5O9-ZI-E0L" secondAttribute="bottom" constant="15" id="f0G-eS-l8C"/>
                                                 <constraint firstItem="QQA-k6-aku" firstAttribute="top" secondItem="f47-12-y4Y" secondAttribute="bottom" constant="10" id="fsp-tf-KmV"/>
                                                 <constraint firstItem="f47-12-y4Y" firstAttribute="leading" secondItem="5O9-ZI-E0L" secondAttribute="trailing" constant="20" id="mXz-wW-jWZ"/>
-                                                <constraint firstItem="5O9-ZI-E0L" firstAttribute="leading" secondItem="9Jt-DO-6W1" secondAttribute="leading" constant="15" id="nLt-be-j3Z"/>
+                                                <constraint firstItem="5O9-ZI-E0L" firstAttribute="leading" secondItem="9Jt-DO-6W1" secondAttribute="leading" constant="20" id="nLt-be-j3Z"/>
+                                                <constraint firstItem="IcF-f4-Q10" firstAttribute="top" secondItem="5O9-ZI-E0L" secondAttribute="top" id="nma-F3-mcu"/>
+                                                <constraint firstItem="5O9-ZI-E0L" firstAttribute="top" secondItem="Ubt-Fa-Ybe" secondAttribute="bottom" constant="14.5" id="nx1-nq-UEU"/>
                                                 <constraint firstItem="Ubt-Fa-Ybe" firstAttribute="top" secondItem="9Jt-DO-6W1" secondAttribute="top" id="q5f-dl-eRG"/>
-                                                <constraint firstAttribute="bottom" secondItem="QQA-k6-aku" secondAttribute="bottom" constant="20" id="rVY-Ga-itm"/>
+                                                <constraint firstItem="L8E-Mk-3os" firstAttribute="centerY" secondItem="9Jt-DO-6W1" secondAttribute="centerY" id="wHZ-6b-KFj"/>
                                                 <constraint firstAttribute="trailing" secondItem="L8E-Mk-3os" secondAttribute="trailing" constant="20" id="yGZ-vj-7by"/>
                                             </constraints>
                                         </collectionViewCellContentView>

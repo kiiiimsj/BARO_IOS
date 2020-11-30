@@ -52,7 +52,7 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 100)
+        return CGSize(width: collectionView.frame.width, height: 85)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
