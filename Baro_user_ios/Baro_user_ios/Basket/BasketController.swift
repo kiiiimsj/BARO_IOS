@@ -135,9 +135,9 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if orders[indexPath.item].Essentials.count > 0 {
-            return CGSize(width: collectionView.frame.width, height: CGFloat(120 + ((1 + nonEssential[indexPath.item].count) * 50)))
+            return CGSize(width: collectionView.frame.width, height: CGFloat(110 + ( nonEssential[indexPath.item].count) * 15))
         }else{
-            return CGSize(width: collectionView.frame.width, height: CGFloat(120 + (nonEssential[indexPath.item].count) * 50))
+            return CGSize(width: collectionView.frame.width, height: CGFloat(110 + (nonEssential[indexPath.item].count) * 15))
         }
     }
     func btnDeleteTapped(cell: BasketMenuCell) {
