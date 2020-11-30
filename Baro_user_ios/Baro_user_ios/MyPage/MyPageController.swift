@@ -98,7 +98,6 @@ class MyPageController : UIViewController {
             UserDefaults.standard.set("", forKey: "basket")
             UserDefaults.standard.set("", forKey: "currentStoreId")
             UserDefaults.standard.set("", forKey: "currentStoreName")
-            UserDefaults.standard.set("", forKey: "currentStoreId")
         }
         else {
             UserDefaults.resetStandardUserDefaults()

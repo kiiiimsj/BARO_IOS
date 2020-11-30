@@ -38,7 +38,8 @@ class OrderDetailsController : UIViewController {
     public var selectedEssential = [String : Extra]()
     public var selectedNonEssential = [String : SelectedExtra]()
     
-    var storeId = UserDefaults.standard.value(forKey: "currentStoreId")
+    var storeId : Int = 0
+    var getSaveStoreId = UserDefaults.standard.value(forKey: "currentStoreId") as! Int
     
     var data : Order?
     override func viewDidLoad() {
@@ -94,19 +95,27 @@ class OrderDetailsController : UIViewController {
             data = Order(menu: self.menu, essentials: selectedEssential, nonEssentials: selectedNonEssential)
             data?.menu_count = Int(menu_count.text!)!
             data?.menu_total_price = menu_price_current
-            if (storeId != nil) {
+            if getSaveStoreId != nil {
+                if(storeId == getSaveStoreId) {
+                    let vc = self.storyboard?.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
+                    vc.delegate = self
+                    vc.store_id = self.storeId
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    self.present(vc, animated: false, completion: nil)
+                }else{
+                    let vc = self.storyboard?.instantiateViewController(identifier: "EmptyBasket") as! EmptyBasket
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.delegate = self
+                    vc.store_id = self.storeId
+                    self.present(vc, animated: false, completion: nil)
+                }
+            } else {
                 let vc = self.storyboard?.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
                 vc.delegate = self
                 vc.modalPresentationStyle = .overFullScreen
                 vc.modalTransitionStyle = .crossDissolve
-                self.present(vc, animated: false, completion: nil)
-
-            }else{
-                let vc = self.storyboard?.instantiateViewController(identifier: "EmptyBasket") as! EmptyBasket
-                vc.modalPresentationStyle = .overFullScreen
-                vc.modalTransitionStyle = .crossDissolve
-                vc.delegate = self
-                vc.store_id = self.storeId as? String
                 self.present(vc, animated: false, completion: nil)
             }
         }
