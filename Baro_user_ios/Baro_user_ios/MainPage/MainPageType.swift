@@ -88,6 +88,7 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print("찍",collectionView.frame.width)
         return CGSize(width: collectionView.frame.width / 4 - 1, height: 100)
     }
 }

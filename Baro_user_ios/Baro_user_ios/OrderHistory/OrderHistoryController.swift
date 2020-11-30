@@ -36,6 +36,7 @@ class OrderHistoryController : UIViewController {
                 orderHistoryModel.total_price = item["total_price"].intValue
                 orderHistoryModel.order_state = item["order_state"].stringValue
                 orderHistoryModel.total_count = item["total_count"].intValue
+                orderHistoryModel.store_image = item["store_image"].stringValue
                 self.orderHistoryList.append(orderHistoryModel)
             }
             self.collectionView.reloadData()
@@ -71,6 +72,7 @@ class OrderHistoryController : UIViewController {
                 orderHistoryModel.total_price = item["total_price"].intValue
                 orderHistoryModel.order_state = item["order_state"].stringValue
                 orderHistoryModel.total_count = item["total_count"].intValue
+                orderHistoryModel.store_image = item["store_image"].stringValue
                 self.orderHistoryList.append(orderHistoryModel)
             }
             refreshControll.endRefreshing()
@@ -99,11 +101,32 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
         if indexPath.section == 0 {
             let orderHistory = orderHistoryList[indexPath.item]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderHistoryCell", for: indexPath) as! OrderHistoryCell
+            cell.storeImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + String(orderHistory.store_image)))
             cell.orderDateLabel.text = String(orderHistory.order_date)
             cell.orderStoreNameLabel.text = String(orderHistory.store_name)
-            cell.orderStatusLabel.text = String(orderHistory.order_state)
-            cell.orderTotalPriceLabel.text = String(orderHistory.total_price)
+            if orderHistory.order_state == "CANCEL" {
+                cell.orderStatusLabel.text = "주문취소"
+            }
+            else if orderHistory.order_state == "DONE" {
+                cell.orderStatusLabel.text = "수령완료"
+            }
+            else {
+                cell.orderStatusLabel.text = "????"
+            }
+            
+            cell.orderTotalPriceLabel.text = "합계 : " + String(orderHistory.total_price) + " 원"
             cell.receipt_id = orderHistory.receipt_id
+            cell.cellData = orderHistory
+            cell.cellDelegate = self
+            cell.goToStoreBtn.layer.borderColor = UIColor.white.cgColor
+            cell.goToStoreBtn.layer.borderWidth = 2
+            cell.goToStoreBtn.layer.cornerRadius = 10
+            cell.goToStoreBtn.layer.masksToBounds = true
+            cell.showDetailsBtn.layer.borderColor = UIColor.white.cgColor
+            cell.showDetailsBtn.layer.borderWidth = 2
+            cell.showDetailsBtn.layer.cornerRadius = 10
+            cell.showDetailsBtn.layer.masksToBounds = true
+            
             return cell
         } else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "loadingCell", for: indexPath) as! LoadingCellCollectionViewCell
@@ -118,9 +141,9 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0{
-            return CGSize(width: collectionView.frame.width, height: 100)
+            return CGSize(width: collectionView.frame.width, height: 180)
         }else {
-            return CGSize(width: collectionView.frame.width, height: 100)
+            return CGSize(width: collectionView.frame.width, height: 180)
         }
     }
     
@@ -129,16 +152,16 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let orderHistory = orderHistoryList[indexPath.item]
-        
-        let vc = self.storyboard?.instantiateViewController(identifier: "OrderHistoryDetailController") as! OrderHistoryDetailController
-       
-        vc.receipt_id = orderHistory.receipt_id
-        vc.order_count = orderHistory.total_count
-        vc.store_name = orderHistory.store_name
-        vc.total_price = orderHistory.total_price
-        
-        present(vc, animated: true, completion: nil)
+//        let orderHistory = orderHistoryList[indexPath.item]
+//        
+//        let vc = self.storyboard?.instantiateViewController(identifier: "OrderHistoryDetailController") as! OrderHistoryDetailController
+//       
+//        vc.receipt_id = orderHistory.receipt_id
+//        vc.order_count = orderHistory.total_count
+//        vc.store_name = orderHistory.store_name
+//        vc.total_price = orderHistory.total_price
+//        
+//        present(vc, animated: true, completion: nil)
          
     }
 }
@@ -182,4 +205,15 @@ extension OrderHistoryController : UIScrollViewDelegate {
     }
 }
 
+extension OrderHistoryController : historyDelegate {
+    func clickGoToStore(vc: AboutStore) {
+        
+    }
+    
+    func clickShowDetails(vc: OrderHistoryDetailController) {
+        present(vc, animated: true, completion: nil)
+    }
+    
+    
+}
 

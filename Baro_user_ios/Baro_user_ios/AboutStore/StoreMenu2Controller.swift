@@ -35,6 +35,10 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
             cell.menu_state.isHidden = true
         }else{
             cell.menu_state.isHidden = false
+            cell.menu_state.layer.borderWidth = 2
+            cell.menu_state.layer.borderColor = UIColor.white.cgColor
+            cell.menu_state.layer.cornerRadius = 5
+            cell.menu_state.layer.masksToBounds = true
         }
         return cell
     }
@@ -48,7 +52,7 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 200)
+        return CGSize(width: collectionView.frame.width, height: 100)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
