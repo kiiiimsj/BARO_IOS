@@ -68,6 +68,7 @@
 		3F4F8DAF254572220015BACE /* NoticePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F8DAE254572220015BACE /* NoticePageController.swift */; };
 		3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */; };
 		3F6D861B25653BAA00D65CAC /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D861A25653BAA00D65CAC /* ToastMessage.swift */; };
+		3F90855F257525B100D13759 /* LogoutDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F90855E257525B100D13759 /* LogoutDialog.swift */; };
 		3F9B48ED254946720012D89F /* ChangePass2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B48EC254946720012D89F /* ChangePass2.swift */; };
 		3FA0D067256B4CBC004E4D83 /* PhoneCheckForRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0D066256B4CBC004E4D83 /* PhoneCheckForRegister.swift */; };
 		3FA196F52547E34E007CD182 /* BottomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA196F42547E34E007CD182 /* BottomTabBarController.swift */; };
@@ -208,6 +209,7 @@
 		3F4F8DAE254572220015BACE /* NoticePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePageController.swift; sourceTree = "<group>"; };
 		3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiLabelAnimation.swift; sourceTree = "<group>"; };
 		3F6D861A25653BAA00D65CAC /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
+		3F90855E257525B100D13759 /* LogoutDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutDialog.swift; sourceTree = "<group>"; };
 		3F9B48EC254946720012D89F /* ChangePass2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePass2.swift; sourceTree = "<group>"; };
 		3FA0D066256B4CBC004E4D83 /* PhoneCheckForRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCheckForRegister.swift; sourceTree = "<group>"; };
 		3FA196F42547E34E007CD182 /* BottomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarController.swift; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 				3FC20E622546EFD400EEE783 /* ChangeEmail.swift */,
 				3FC20E652546EFF700EEE783 /* ChangeEmail.storyboard */,
 				3F9B48EC254946720012D89F /* ChangePass2.swift */,
+				3F90855E257525B100D13759 /* LogoutDialog.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				048D55A6253C67EC009E9CE4 /* MainPageController.swift in Sources */,
 				04D11F4B2544010800ADB210 /* MainPageSearchController.swift in Sources */,
 				3F05C564254116AC0066DAAD /* MyPageController.swift in Sources */,
+				3F90855F257525B100D13759 /* LogoutDialog.swift in Sources */,
 				04D11F59254676AE00ADB210 /* OrderHistoryDetail.swift in Sources */,
 				04D11F5D2546781A00ADB210 /* OrderHistoryDetailCell.swift in Sources */,
 				04D11F552544406900ADB210 /* OrderHistoryDetailExtraModel.swift in Sources */,

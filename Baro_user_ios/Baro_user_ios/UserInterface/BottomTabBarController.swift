@@ -56,14 +56,11 @@ class BottomTabBarController: UIViewController {
     var saveContentViewSize = CGSize()
     override func viewDidLoad() {
         super.viewDidLoad()
-        basketButton.isHidden = true
-        topBarBackBtn.isHidden = true
-        topBarFavoriteBtn.isHidden = true
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        basketButton.isHidden = true
+        
         basket = UserDefaults.standard.value(forKey: "basket")
         if let storeName = UserDefaults.standard.value(forKey: "currentStoreName") as? String {
             currentStoreName = storeName
@@ -142,7 +139,6 @@ class BottomTabBarController: UIViewController {
                 self.changeContentView(controller: controller as! MainPageController, sender: nil)
             case storeListControllerIdentifier:
                 self.changeContentView(controller: controller as! StoreListPageController, sender: sender)
-                swipeRecognizer()
             case orderStatusControllerIdentifier:
                 self.changeContentView(controller: controller as! OrderStatusController, sender: nil)
             case orderHistoryControllerIdentifier:
@@ -170,7 +166,6 @@ class BottomTabBarController: UIViewController {
         getController.view.accessibilityIdentifier = getController.restorationIdentifier
         //controlleridentifier와 동일하다.
         //해당 구문은 tabbaritem으로 전환되는 viewcontroller에 해당된다.
-        
         ContentView.addSubview(getController.view)
         getController.didMove(toParent: self)
     }
@@ -178,10 +173,8 @@ class BottomTabBarController: UIViewController {
     func restoreTopView() {
         TopView.isHidden = false
         TopView.frame.size = saveTopViewSize
-        
         ContentView.frame.size = saveContentViewSize
         ContentViewScrollView.frame.size = saveContentViewSize
-        
         ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 113.0)
     }
     //탑뷰 지우기
@@ -206,10 +199,13 @@ class BottomTabBarController: UIViewController {
                 finallController = VCsender
             case storeListControllerIdentifier:
                 let VCsender = controller as! StoreListPageController
-                VCsender.typeCode = sender as! String
-                VCsender.kind = 1
                 if(VCsender.typeCode == "2") {
                     VCsender.kind = 2
+                }
+                else {
+                    VCsender.typeCode = sender as! String
+                    VCsender.kind = 1
+                    swipeRecognizer()
                 }
                 finallController = VCsender
             default:
@@ -220,6 +216,9 @@ class BottomTabBarController: UIViewController {
     }
     //탑바 타이틀 설정
     func topBarHandler(controller : UIViewController) {
+        basketButton.isHidden = true
+        topBarBackBtn.isHidden = true
+        topBarFavoriteBtn.isHidden = true
         if let title = controller.title {
             switch(title) {
                 case mainPageControllerIdentifier:
@@ -228,10 +227,10 @@ class BottomTabBarController: UIViewController {
                     let controllerData = controller as! StoreListPageController
                     if(controllerData.typeCode == "2") {
                         topBarViewControllerTitle.text = "찜한 가게"
-                        topBarBackBtn.isHidden = true
-                        return
                     }
-                    
+                    else {
+                        topBarBackBtn.isHidden = false
+                    }
                     if (controllerData.typeCode == "CAFE") {
                         topBarViewControllerTitle.text = "카페"
                     }
@@ -244,7 +243,6 @@ class BottomTabBarController: UIViewController {
                     if (controllerData.typeCode == "KOREAN") {
                         topBarViewControllerTitle.text = "한식"
                     }
-                    topBarBackBtn.isHidden = false
                 case orderStatusControllerIdentifier:
                     topBarViewControllerTitle.text = "주문 현황"
                 case orderHistoryControllerIdentifier:
@@ -266,7 +264,6 @@ class BottomTabBarController: UIViewController {
             let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
             swipeRight.direction = UISwipeGestureRecognizer.Direction.right
             self.view.addGestureRecognizer(swipeRight)
-            
         }
         
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
