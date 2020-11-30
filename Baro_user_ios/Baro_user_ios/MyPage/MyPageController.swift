@@ -95,10 +95,21 @@ class MyPageController : UIViewController {
         present(vc, animated: false, completion: nil)
     }
     @IBAction func logoutBtnClick() {
+        self.performSegue(withIdentifier: "LogoutDialog", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.destination.restorationIdentifier == "LogoutDialog") {
+            let vc = segue.destination as! LogoutDialog
+            vc.delegate = self
+        }
+    }
+}
+extension MyPageController : UITableViewDelegate, UITableViewDataSource, ClickLogoutDialogDelegate {
+    func clickYesBtnDelegate() {
         if (UserDefaults.standard.bool(forKey: "checkedBox") ) {
-            UserDefaults.standard.set("", forKey: "basket")
-            UserDefaults.standard.set("", forKey: "currentStoreId")
-            UserDefaults.standard.set("", forKey: "currentStoreName")
+            UserDefaults.standard.removeObject(forKey: "basket")
+            UserDefaults.standard.removeObject(forKey: "currentStoreId")
+            UserDefaults.standard.removeObject(forKey: "currentStoreName")
         }
         else {
             UserDefaults.resetStandardUserDefaults()
@@ -107,13 +118,10 @@ class MyPageController : UIViewController {
         let vc = storyboard.instantiateViewController(identifier: "LoginPageController")
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
-        guard let pvc = self.presentingViewController else {return}
-        self.dismiss(animated: true) {
-            pvc.present(vc, animated: true)
-        }
+        self.present(vc, animated: true)
     }
-}
-extension MyPageController : UITableViewDelegate, UITableViewDataSource {
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return buttons.count
     }
