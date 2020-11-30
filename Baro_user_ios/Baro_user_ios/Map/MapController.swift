@@ -23,19 +23,22 @@ class MapController : UIViewController {
     var baroPinImage : NMFOverlayImage!
     var cameraUpdate : NMFCameraUpdate!
     var storeLocations = [LocationModel]()
-    @IBOutlet weak var returnBtn: UIButton!
+    
     var VC : SeparateWindowController!
     @IBOutlet weak var SeparateWindow: UIView!
-    
-    @IBOutlet weak var map: NMFMapView!
+   
+    @IBOutlet weak var map: NMFNaverMapView!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        map.touchDelegate = self
+    
+        view.addSubview(map)
+   
+        initializeMapOptions()
         updateMyLocation()
         initialzeData()
-        returnBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(returnMe(_:))))
-        map.minZoomLevel = 13
-        map.maxZoomLevel = 19
+        
+        map.mapView.touchDelegate = self
     }
     
     func updateMyLocation() -> Void {
@@ -44,22 +47,23 @@ class MapController : UIViewController {
         myLatLng = NMGLatLng(lat: myLatitude, lng: myLongitude)
         changeCameraShowing(latlng: myLatLng!)
     }
-    func initalizeMyPin() ->Void {
+//    func initalizeMyPin() ->Void {
 //        myPin = NMFMarker(position: self.myLatLng!, iconImage: baroPinImage)
-//        myPin.mapView = map
+//        myPin.mapView = map.mapView
 //        myPin.captionText = "내 위치"
-        let locationOverlay = map.locationOverlay
-        locationOverlay.hidden = false
-        locationOverlay.location = myLatLng!
-        locationOverlay.icon = NMFOverlayImage(name: "selected")
-        locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
-        locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
-        locationOverlay.circleRadius = 50
-    }
+//        let locationOverlay = map.mapView.locationOverlay
+//        locationOverlay.hidden = false
+//        locationOverlay.location = myLatLng!
+//        locationOverlay.icon = NMFOverlayImage(name: "selected")
+//        locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+//        locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+//        locationOverlay.circleRadius = 50
+//    }
+    
     func makeStorePin(){
         for item in storeLocations {
             let StorePin = NMFMarker(position: NMGLatLng(lat: item.store_latitude, lng: item.store_longitude), iconImage: baroPinImage)
-            StorePin.mapView = map
+            StorePin.mapView = map.mapView
             StorePin.userInfo = ["StoreInfo" : item]
             StorePin.captionText = item.store_name
             StorePin.touchHandler = { [weak self] (overlay) -> Bool in
@@ -88,9 +92,17 @@ class MapController : UIViewController {
     func changeCameraShowing(latlng : NMGLatLng) -> Void {
         cameraUpdate = NMFCameraUpdate(scrollTo: latlng)
         cameraUpdate.animation = .easeIn
-        map.moveCamera(cameraUpdate)
+        map.mapView.moveCamera(cameraUpdate)
     }
     func initializeMapOptions(){
+       
+        map.mapView.positionMode = .direction
+        map.showZoomControls = true
+   
+        map.showCompass = false
+        map.showLocationButton = true
+        
+        
         
     }
     func setWindowEnvironment(){
@@ -105,7 +117,7 @@ class MapController : UIViewController {
     }
     func initialzeData() -> Void {
         baroPinImage = NMFOverlayImage(name: "map")
-        initalizeMyPin()
+        //initalizeMyPin()
         infoWindow.dataSource = infoWindowDataSource
         setWindowEnvironment()
         var params = Dictionary<String,String>()
@@ -131,7 +143,6 @@ class MapController : UIViewController {
         
     }
     @IBAction func pressReturn(_ sender: Any) {
-//        print("return")
         changeCameraShowing(latlng: myLatLng!)
     }
     @objc func returnMe(_ sender: UITapGestureRecognizer) {
