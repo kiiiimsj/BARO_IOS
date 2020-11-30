@@ -70,6 +70,12 @@ extension MainPageUltraStore : UICollectionViewDelegate, UICollectionViewDataSou
         if ultra.is_open == "Y" {
             cell.ultra_isOpen.text = "영업중"
         }
+        // 버튼 테두리 둥글게
+        cell.ultra_isOpen.layer.cornerRadius = 10
+        cell.ultra_isOpen.layer.borderColor = UIColor.white.cgColor
+        cell.ultra_isOpen.layer.borderWidth = 2
+        cell.ultra_isOpen.layer.masksToBounds = true
+        
         //cell 클릭시
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         return cell
