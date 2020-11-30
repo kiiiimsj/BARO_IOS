@@ -334,7 +334,11 @@
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xv9-XD-6Ir">
-                                                                                        <rect key="frame" x="16" y="16" width="64" height="83.5"/>
+                                                                                        <rect key="frame" x="21.5" y="46.5" width="53" height="53"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="width" constant="53" id="7OQ-vX-2uH"/>
+                                                                                            <constraint firstAttribute="height" constant="53" id="BU0-gd-P31"/>
+                                                                                        </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSg-nR-H2Z" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
                                                                                         <rect key="frame" x="34" y="110.5" width="28.5" height="16.5"/>
@@ -349,12 +353,10 @@
                                                                                     </label>
                                                                                 </subviews>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="trailing" secondItem="Xv9-XD-6Ir" secondAttribute="trailing" constant="16" id="C9d-n4-NCL"/>
                                                                                     <constraint firstAttribute="bottom" secondItem="nSg-nR-H2Z" secondAttribute="bottom" id="G5g-dx-unH"/>
+                                                                                    <constraint firstItem="Xv9-XD-6Ir" firstAttribute="centerX" secondItem="Xb7-jK-CtM" secondAttribute="centerX" id="GcW-MV-dO4"/>
                                                                                     <constraint firstItem="nSg-nR-H2Z" firstAttribute="centerX" secondItem="Xb7-jK-CtM" secondAttribute="centerX" id="Nvg-Ut-t1E"/>
-                                                                                    <constraint firstItem="Xv9-XD-6Ir" firstAttribute="leading" secondItem="Xb7-jK-CtM" secondAttribute="leading" constant="16" id="ScU-ya-DeS"/>
                                                                                     <constraint firstItem="nSg-nR-H2Z" firstAttribute="top" secondItem="Xv9-XD-6Ir" secondAttribute="bottom" constant="11" id="Z0K-ne-rRQ"/>
-                                                                                    <constraint firstItem="Xv9-XD-6Ir" firstAttribute="top" secondItem="Xb7-jK-CtM" secondAttribute="top" constant="16" id="vTm-rY-V1D"/>
                                                                                 </constraints>
                                                                             </collectionViewCellContentView>
                                                                             <size key="customSize" width="96" height="127"/>
@@ -442,6 +444,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="xiE-0U-fFK" firstAttribute="bottom" secondItem="AVL-S1-iAt" secondAttribute="bottom" constant="-16" id="6Gx-Ml-RQW"/>
                                     <constraint firstAttribute="trailing" secondItem="xiE-0U-fFK" secondAttribute="trailing" constant="16" id="6jv-wH-OrP"/>
