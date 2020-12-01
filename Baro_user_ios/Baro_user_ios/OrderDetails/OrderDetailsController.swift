@@ -39,7 +39,7 @@ class OrderDetailsController : UIViewController {
     public var selectedNonEssential = [String : SelectedExtra]()
     
     var storeId : Int = 0
-    var getSaveStoreId = UserDefaults.standard.value(forKey: "currentStoreId") as! Int
+    var getSaveStoreId = UserDefaults.standard.value(forKey: "currentStoreId")
     
     var data : Order?
     override func viewDidLoad() {
@@ -76,6 +76,10 @@ class OrderDetailsController : UIViewController {
             }
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getSaveStoreId = UserDefaults.standard.value(forKey: "currentStoreId")
+    }
     @IBAction func AddCount(_ sender: Any) {
         menu_count.text = String(Int(menu_count.text!)! + 1)
         recalcPrice()
@@ -95,8 +99,9 @@ class OrderDetailsController : UIViewController {
             data = Order(menu: self.menu, essentials: selectedEssential, nonEssentials: selectedNonEssential)
             data?.menu_count = Int(menu_count.text!)!
             data?.menu_total_price = menu_price_current
+            print("getSAveStoreId : ",getSaveStoreId as? Int)
             if getSaveStoreId != nil {
-                if(storeId == getSaveStoreId) {
+                if(storeId == getSaveStoreId as? Int) {
                     let vc = self.storyboard?.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
                     vc.delegate = self
                     vc.store_id = self.storeId
@@ -112,6 +117,7 @@ class OrderDetailsController : UIViewController {
                     self.present(vc, animated: false, completion: nil)
                 }
             } else {
+                UserDefaults.standard.set(storeId, forKey: "currentStoreId")
                 let vc = self.storyboard?.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
                 vc.delegate = self
                 vc.modalPresentationStyle = .overFullScreen
