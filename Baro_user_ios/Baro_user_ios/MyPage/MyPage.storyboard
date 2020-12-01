@@ -31,7 +31,7 @@
                             <view contentMode="scaleToFill" restorationIdentifier="BasketDialog" translatesAutoresizingMaskIntoConstraints="NO" id="nY6-Nx-Ku9" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
                                 <rect key="frame" x="20" y="244" width="320" height="200"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gmm-2D-nma">
+                                    <view contentMode="scaleToFill" restorationIdentifier="DialogTopView" translatesAutoresizingMaskIntoConstraints="NO" id="Gmm-2D-nma" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알 림" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHg-2i-L6Q">
@@ -47,6 +47,17 @@
                                             <constraint firstItem="uHg-2i-L6Q" firstAttribute="centerX" secondItem="Gmm-2D-nma" secondAttribute="centerX" id="po2-9f-qcZ"/>
                                             <constraint firstItem="uHg-2i-L6Q" firstAttribute="centerY" secondItem="Gmm-2D-nma" secondAttribute="centerY" id="xU0-lw-Vme"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그아웃 하시겠습니까?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnt-TL-may">
                                         <rect key="frame" x="80" y="89.5" width="160" height="21"/>
@@ -143,14 +154,14 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyPageButtons" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPageButtons" id="7SJ-4P-CUw" customClass="MyPageButtons" customModule="Baro_user_ios" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="360" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="28" width="360" height="43"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7SJ-4P-CUw" id="CrS-NB-OYo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3e-6U-2sf">
-                                                                    <rect key="frame" x="0.0" y="11" width="41.5" height="21.5"/>
+                                                                    <rect key="frame" x="0.0" y="11" width="41.5" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
