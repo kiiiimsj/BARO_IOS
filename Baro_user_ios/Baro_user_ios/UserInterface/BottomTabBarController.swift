@@ -199,11 +199,11 @@ class BottomTabBarController: UIViewController {
                 finallController = VCsender
             case storeListControllerIdentifier:
                 let VCsender = controller as! StoreListPageController
+                VCsender.typeCode = sender as! String
                 if(VCsender.typeCode == "2") {
                     VCsender.kind = 2
                 }
                 else {
-                    VCsender.typeCode = sender as! String
                     VCsender.kind = 1
                     swipeRecognizer()
                 }
