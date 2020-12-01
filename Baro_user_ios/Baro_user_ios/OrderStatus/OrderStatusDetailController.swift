@@ -16,7 +16,6 @@ class OrderStatusDetailController : UIViewController {
     @IBOutlet weak var mRequests: UILabel!
     
     
-    
     @IBAction func successBtn(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
@@ -107,10 +106,12 @@ extension OrderStatusDetailController : UICollectionViewDelegate, UICollectionVi
         for item in orderList.OrderStatusDetailExtra {
             extra_total += (item.extra_price * item.extra_count)
         }
-        var menu_one_total_price = (orderList.menu_defaultprice + extra_total)
-        cell.oneMenuTotalPrice.text = String(menu_one_total_price) + "원"
+        let menu_one_total_price = (orderList.menu_defaultprice + extra_total)
+        cell.oneMenuTotalPrice.text = "합계 : " + String(orderList.order_count * menu_one_total_price) + "원"
 
         cell.extraList = orderList.OrderStatusDetailExtra
+        cell.optionContainEachPrice.text =  String(menu_one_total_price) + "원"
+        cell.eachPrice.text = String(orderList.menu_defaultprice) + "원"
         cell.collectionView.delegate = cell.self
         cell.collectionView.dataSource = cell.self
      //   cell.clickListener = self
@@ -123,7 +124,7 @@ extension OrderStatusDetailController : UICollectionViewDelegate, UICollectionVi
         
         
     //    if self.extraOpen {
-            return CGSize(width: self.view.frame.width * 0.8, height: CGFloat(orderList.OrderStatusDetailExtra.count) * 50 + 70)
+        return CGSize(width: collectionView.frame.width, height: CGFloat(orderList.OrderStatusDetailExtra.count) * 20 + 70)
    //     }
 //        else {
 //            return CGSize(width: self.view.frame.width * 0.8, height: 0)

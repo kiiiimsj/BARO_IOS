@@ -13,11 +13,13 @@ class OrderStatusDetail : UICollectionViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menuName: UILabel!
+    
     @IBOutlet weak var oneMenuTotalPrice: UILabel!
     
-
     @IBOutlet weak var menuCount: UILabel!
     
+    @IBOutlet weak var optionContainEachPrice: CustomLabel!
+    @IBOutlet weak var eachPrice: CustomLabel!
     
     public var extraList = [OrderStatusDetailExtraList]()
     
@@ -52,7 +54,7 @@ extension OrderStatusDetail : UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 50, height: 30)
+        return CGSize(width: collectionView.frame.width, height: 20)
     }
     
 }
