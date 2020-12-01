@@ -20,7 +20,6 @@ class MenuOrBasket : UIViewController {
     var delegate : TurnOffOrderDetailListener!
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaults.standard.set(store_id, forKey: "currentStoreId")
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
