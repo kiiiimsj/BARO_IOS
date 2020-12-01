@@ -20,7 +20,6 @@ class FavoriteDialog : UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setLabelBorder()
         setDialogLabel(index: isFlag)
         print("isFlag : ", isFlag)
     }
@@ -33,11 +32,6 @@ class FavoriteDialog : UIViewController {
             self.favoriteDialogTitle.text = "즐겨찾기 삭제"
             self.dialogContent.text = "즐겨찾기에서 삭제 되었습니다."
         }
-    }
-    func setLabelBorder() {
-        checkBtn.layer.borderWidth = 1.0
-        checkBtn.layer.cornerRadius = 5.0
-        checkBtn.layer.borderColor = UIColor(red: 131/255, green: 51/255, blue: 230/255, alpha: 1).cgColor
     }
     @IBAction func okayButton() {
         self.dismiss(animated: true, completion: nil)

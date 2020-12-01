@@ -12,10 +12,10 @@ protocol BasketBtnDelegate : AnyObject{
 }
 class BasketDialog : UIViewController {
     @IBOutlet weak var dialogContentLable: UILabel!
-    @IBOutlet weak var deleteBtnView: uiViewSetting!
-    @IBOutlet weak var deleteCancelBtnView: uiViewSetting!
     var deleteItemCount : Int = 0
     var deleteItemPos : Int = 0
+    @IBOutlet weak var deleteBtn: UIButton!
+    @IBOutlet weak var deleteCancelBtn: UIButton!
     var isLastFlag : Bool = false
     var isClickLeft : Bool = false
     var isClickRight : Bool = false
@@ -23,11 +23,14 @@ class BasketDialog : UIViewController {
     weak var delegate : BasketBtnDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        deleteBtnView.isUserInteractionEnabled = true
-        deleteCancelBtnView.isUserInteractionEnabled = true
+        deleteBtn.isUserInteractionEnabled = true
+        deleteCancelBtn.isUserInteractionEnabled = true
+        deleteBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickLeftView(_:))))
+        deleteCancelBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickRightView(_:))))
         
-        deleteBtnView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickLeftView(_:))))
-        deleteCancelBtnView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickRightView(_:))))
+        let dialogButtonForm = DialogForm()
+        dialogButtonForm.setLeftButton(left: deleteCancelBtn)
+        dialogButtonForm.setRightbutton(right: deleteBtn)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)

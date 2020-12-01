@@ -14,15 +14,23 @@ protocol TurnOffOrderDetailListener : AnyObject {
 
 class MenuOrBasket : UIViewController {
     
+    
     @IBOutlet weak var OrderDetailBtn: UIButton!
     @IBOutlet weak var BasketBtn: UIButton!
+    @IBOutlet weak var DialogTop: UILabel!
     var store_id : Int?
     var delegate : TurnOffOrderDetailListener!
+    var dialogButtonForm = DialogForm()
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
+        
+        DialogTop.layer.cornerRadius = 5
+        DialogTop.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        DialogTop.layer.masksToBounds = true
+        
+        dialogButtonForm.setLeftButton(left: OrderDetailBtn)
+        dialogButtonForm.setRightbutton(right: BasketBtn)
+        
     }
     @IBAction func pressOrderDetail(_ sender: Any) {
         self.dismiss(animated: true) {

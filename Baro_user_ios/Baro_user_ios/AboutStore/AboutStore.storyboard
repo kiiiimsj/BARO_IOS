@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n3R-Xf-dIg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n3R-Xf-dIg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -118,7 +118,7 @@
         <scene sceneID="Nza-0H-chm">
             <objects>
                 <viewController storyboardIdentifier="StoreInfoController" id="Cpx-Th-ad8" customClass="StoreInfoController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="lEn-iK-HlW">
+                    <view key="view" contentMode="scaleToFill" id="lEn-iK-HlW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -370,7 +370,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f47-12-y4Y" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                    <rect key="frame" x="100" y="15" width="20.5" height="25"/>
+                                                    <rect key="frame" x="100" y="15" width="19.5" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="rzL-EI-lVx"/>
                                                     </constraints>
@@ -391,7 +391,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설명" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQA-k6-aku">
-                                                    <rect key="frame" x="100" y="50" width="180" height="16.5"/>
+                                                    <rect key="frame" x="100" y="50" width="180" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="180" id="gZF-61-Gcy"/>
                                                     </constraints>
@@ -400,7 +400,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="가격" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8E-Mk-3os" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                    <rect key="frame" x="373.5" y="56" width="20.5" height="16.5"/>
+                                                    <rect key="frame" x="374.5" y="57.5" width="19.5" height="13"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -495,46 +495,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" restorationIdentifier="FavoriteDialog" translatesAutoresizingMaskIntoConstraints="NO" id="7Yw-Mj-3JP" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="20" y="244" width="374" height="268"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yw-Mj-3JP" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                <rect key="frame" x="20" y="348" width="374" height="200"/>
                                 <subviews>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨찾기에 추가 되었습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMz-ie-Ors">
-                                        <rect key="frame" x="92" y="100" width="190" height="67"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨찾기에 추가 되었습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMz-ie-Ors">
+                                        <rect key="frame" x="122" y="91.5" width="130.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wec-v2-bwx">
-                                        <rect key="frame" x="59" y="200" width="257" height="38"/>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="160" width="374" height="40"/>
+                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                         <state key="normal" title="확 인">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="okayButton" destination="erg-za-UnV" eventType="touchUpInside" id="t5c-T2-Jjp"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPR-nL-Qna" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨찾기 추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzy-zl-0Hw">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Mzy-zl-0Hw" firstAttribute="leading" secondItem="xPR-nL-Qna" secondAttribute="leading" id="52f-J7-ogW"/>
-                                            <constraint firstAttribute="height" constant="50" id="DO1-zy-Oug"/>
                                             <constraint firstAttribute="trailing" secondItem="Mzy-zl-0Hw" secondAttribute="trailing" id="bhd-cA-X2l"/>
                                             <constraint firstItem="Mzy-zl-0Hw" firstAttribute="top" secondItem="xPR-nL-Qna" secondAttribute="top" id="hM6-3t-dN0"/>
                                             <constraint firstAttribute="bottom" secondItem="Mzy-zl-0Hw" secondAttribute="bottom" id="vr9-VK-GgX"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -542,35 +542,30 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="FavoriteDialog"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Wec-v2-bwx" secondAttribute="bottom" constant="30" id="3jZ-20-aG3"/>
+                                    <constraint firstItem="Wec-v2-bwx" firstAttribute="height" secondItem="7Yw-Mj-3JP" secondAttribute="height" multiplier="0.2" id="1yc-XF-Wpa"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wec-v2-bwx" secondAttribute="bottom" id="3jZ-20-aG3"/>
                                     <constraint firstItem="rMz-ie-Ors" firstAttribute="centerX" secondItem="7Yw-Mj-3JP" secondAttribute="centerX" id="8No-eS-C9S"/>
                                     <constraint firstAttribute="trailing" secondItem="xPR-nL-Qna" secondAttribute="trailing" id="I8q-To-AEf"/>
-                                    <constraint firstAttribute="width" constant="374" id="LOd-en-QeF"/>
-                                    <constraint firstAttribute="trailing" secondItem="Wec-v2-bwx" secondAttribute="trailing" constant="58" id="NAi-ih-A6y"/>
-                                    <constraint firstAttribute="height" constant="268" id="NYg-r7-Dfo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wec-v2-bwx" secondAttribute="trailing" id="NAi-ih-A6y"/>
+                                    <constraint firstAttribute="height" constant="200" id="NYg-r7-Dfo"/>
                                     <constraint firstItem="xPR-nL-Qna" firstAttribute="leading" secondItem="7Yw-Mj-3JP" secondAttribute="leading" id="Qvz-RZ-TX6"/>
                                     <constraint firstItem="xPR-nL-Qna" firstAttribute="top" secondItem="7Yw-Mj-3JP" secondAttribute="top" id="RDi-ba-gme"/>
-                                    <constraint firstAttribute="trailing" secondItem="rMz-ie-Ors" secondAttribute="trailing" constant="92" id="Rwu-Tb-NZq"/>
-                                    <constraint firstItem="Wec-v2-bwx" firstAttribute="leading" secondItem="7Yw-Mj-3JP" secondAttribute="leading" constant="59" id="TMM-03-TiP"/>
-                                    <constraint firstItem="rMz-ie-Ors" firstAttribute="top" secondItem="xPR-nL-Qna" secondAttribute="bottom" constant="50" id="taf-1h-rV9"/>
-                                    <constraint firstItem="rMz-ie-Ors" firstAttribute="leading" secondItem="7Yw-Mj-3JP" secondAttribute="leading" constant="92" id="wVQ-7W-G95"/>
+                                    <constraint firstItem="Wec-v2-bwx" firstAttribute="leading" secondItem="7Yw-Mj-3JP" secondAttribute="leading" id="TMM-03-TiP"/>
+                                    <constraint firstItem="xPR-nL-Qna" firstAttribute="height" secondItem="7Yw-Mj-3JP" secondAttribute="height" multiplier="0.3" id="rKM-2L-edZ"/>
                                     <constraint firstItem="rMz-ie-Ors" firstAttribute="centerY" secondItem="7Yw-Mj-3JP" secondAttribute="centerY" constant="-0.5" id="ziN-Eq-dZw"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
+                                        <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -581,7 +576,7 @@
                         <constraints>
                             <constraint firstItem="7Yw-Mj-3JP" firstAttribute="centerX" secondItem="2IY-GO-TaO" secondAttribute="centerX" id="7TD-pr-fdm"/>
                             <constraint firstItem="kJy-IT-qWY" firstAttribute="trailing" secondItem="7Yw-Mj-3JP" secondAttribute="trailing" constant="20" id="Imh-nd-VT0"/>
-                            <constraint firstItem="7Yw-Mj-3JP" firstAttribute="top" secondItem="kJy-IT-qWY" secondAttribute="top" constant="200" id="XrY-2u-FtA"/>
+                            <constraint firstItem="7Yw-Mj-3JP" firstAttribute="centerY" secondItem="2IY-GO-TaO" secondAttribute="centerY" id="e4q-gj-Kf1"/>
                             <constraint firstItem="7Yw-Mj-3JP" firstAttribute="leading" secondItem="kJy-IT-qWY" secondAttribute="leading" constant="20" id="u1z-YQ-CQL"/>
                         </constraints>
                     </view>

@@ -12,9 +12,6 @@
         <array key="NotoSansKR-Bold.otf">
             <string>NotoSansCJKkr-Bold</string>
         </array>
-        <array key="NotoSansKR-Regular.otf">
-            <string>NotoSansCJKkr-Regular</string>
-        </array>
     </customFonts>
     <scenes>
         <!--BootPayPage-->
@@ -40,54 +37,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" restorationIdentifier="checkFinalPaymentDialog" translatesAutoresizingMaskIntoConstraints="NO" id="w3g-m6-Rxh" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="20" y="244" width="374" height="279"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3g-m6-Rxh" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                <rect key="frame" x="20" y="348" width="374" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uze-br-O2b" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결 제 완 료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-ql-svH">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
-                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결 제 완 료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-ql-svH" customClass="하지만">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="cgS-ql-svH" firstAttribute="leading" secondItem="Uze-br-O2b" secondAttribute="leading" id="0UZ-GR-eAb"/>
-                                            <constraint firstAttribute="height" constant="60" id="1n5-GC-MxJ"/>
                                             <constraint firstAttribute="bottom" secondItem="cgS-ql-svH" secondAttribute="bottom" id="BDl-tD-KJ9"/>
                                             <constraint firstItem="cgS-ql-svH" firstAttribute="top" secondItem="Uze-br-O2b" secondAttribute="top" id="Uks-xf-Gsl"/>
                                             <constraint firstAttribute="trailing" secondItem="cgS-ql-svH" secondAttribute="trailing" id="n8w-FM-GTF"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="15"/>
+                                                <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" restorationIdentifier="BootPayDialog" translatesAutoresizingMaskIntoConstraints="NO" id="yO2-tY-rb1" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="231" width="354" height="38"/>
+                                    <view contentMode="scaleToFill" restorationIdentifier="BootPayDialog" translatesAutoresizingMaskIntoConstraints="NO" id="yO2-tY-rb1">
+                                        <rect key="frame" x="0.0" y="160" width="374" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4S-UV-Km2">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="38"/>
-                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                 <state key="normal" title="확 인">
-                                                    <color key="titleColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="clickPaymentCheckButton" destination="Coh-Xb-9Qr" eventType="touchUpInside" id="9fP-Wm-6pQ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="J4S-UV-Km2" secondAttribute="bottom" id="PqB-zU-Sss"/>
                                             <constraint firstItem="J4S-UV-Km2" firstAttribute="top" secondItem="yO2-tY-rb1" secondAttribute="top" id="Vfl-jG-spI"/>
@@ -107,25 +103,25 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제가 완료 되었습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1X-YO-Hnv">
-                                        <rect key="frame" x="107" y="120" width="160.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="132" y="92" width="110" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="J1X-YO-Hnv" firstAttribute="centerY" secondItem="w3g-m6-Rxh" secondAttribute="centerY" id="BIn-BP-b18"/>
                                     <constraint firstItem="Uze-br-O2b" firstAttribute="top" secondItem="w3g-m6-Rxh" secondAttribute="top" id="FXo-TJ-mYd"/>
-                                    <constraint firstItem="yO2-tY-rb1" firstAttribute="leading" secondItem="w3g-m6-Rxh" secondAttribute="leading" constant="10" id="I8e-40-cXb"/>
-                                    <constraint firstItem="yO2-tY-rb1" firstAttribute="centerX" secondItem="w3g-m6-Rxh" secondAttribute="centerX" id="LhX-Eu-1wZ"/>
+                                    <constraint firstItem="yO2-tY-rb1" firstAttribute="leading" secondItem="w3g-m6-Rxh" secondAttribute="leading" id="I8e-40-cXb"/>
                                     <constraint firstAttribute="trailing" secondItem="Uze-br-O2b" secondAttribute="trailing" id="OVz-bA-bOb"/>
-                                    <constraint firstAttribute="height" constant="279" id="Qf6-xX-7hb"/>
-                                    <constraint firstAttribute="bottom" secondItem="yO2-tY-rb1" secondAttribute="bottom" constant="10" id="Tuq-Ry-SDJ"/>
-                                    <constraint firstItem="J1X-YO-Hnv" firstAttribute="top" secondItem="Uze-br-O2b" secondAttribute="bottom" constant="60" id="Wov-7V-f7h"/>
+                                    <constraint firstAttribute="height" constant="200" id="Qf6-xX-7hb"/>
+                                    <constraint firstAttribute="bottom" secondItem="yO2-tY-rb1" secondAttribute="bottom" id="Tuq-Ry-SDJ"/>
                                     <constraint firstItem="J1X-YO-Hnv" firstAttribute="centerX" secondItem="w3g-m6-Rxh" secondAttribute="centerX" id="Y8s-G2-4oR"/>
                                     <constraint firstItem="Uze-br-O2b" firstAttribute="leading" secondItem="w3g-m6-Rxh" secondAttribute="leading" id="YLX-G7-0gd"/>
-                                    <constraint firstAttribute="trailing" secondItem="yO2-tY-rb1" secondAttribute="trailing" constant="10" id="dUj-5n-jjs"/>
-                                    <constraint firstAttribute="width" constant="374" id="qOW-1n-fwg"/>
+                                    <constraint firstItem="Uze-br-O2b" firstAttribute="height" secondItem="w3g-m6-Rxh" secondAttribute="height" multiplier="0.2" id="clu-7y-E8k"/>
+                                    <constraint firstAttribute="trailing" secondItem="yO2-tY-rb1" secondAttribute="trailing" id="dUj-5n-jjs"/>
+                                    <constraint firstItem="yO2-tY-rb1" firstAttribute="height" secondItem="w3g-m6-Rxh" secondAttribute="height" multiplier="0.2" id="iVT-2s-qsb"/>
                                     <constraint firstItem="Uze-br-O2b" firstAttribute="centerX" secondItem="w3g-m6-Rxh" secondAttribute="centerX" id="xIv-wJ-OnI"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -133,16 +129,17 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Rx-sN-V4V"/>
-                        <color key="backgroundColor" white="1" alpha="0.49607000287794911" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="w3g-m6-Rxh" firstAttribute="centerX" secondItem="7AJ-iw-EUh" secondAttribute="centerX" id="2uw-9Q-Ocq"/>
-                            <constraint firstItem="w3g-m6-Rxh" firstAttribute="top" secondItem="0Rx-sN-V4V" secondAttribute="top" constant="200" id="nvO-ud-LRd"/>
+                            <constraint firstItem="w3g-m6-Rxh" firstAttribute="centerY" secondItem="7AJ-iw-EUh" secondAttribute="centerY" id="S63-oF-ctW"/>
+                            <constraint firstItem="w3g-m6-Rxh" firstAttribute="centerX" secondItem="7AJ-iw-EUh" secondAttribute="centerX" id="hIc-lx-LhE"/>
                             <constraint firstItem="0Rx-sN-V4V" firstAttribute="trailing" secondItem="w3g-m6-Rxh" secondAttribute="trailing" constant="20" id="rX6-tr-GL1"/>
                             <constraint firstItem="w3g-m6-Rxh" firstAttribute="leading" secondItem="0Rx-sN-V4V" secondAttribute="leading" constant="20" id="tkc-oj-NTu"/>
                         </constraints>

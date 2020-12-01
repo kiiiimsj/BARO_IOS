@@ -15,13 +15,12 @@ class LogoutDialog : UIViewController {
     var delegate : ClickLogoutDialogDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        yesBtn.layer.borderWidth = 1
         yesBtn.layer.cornerRadius = 5
-        noBtn.layer.borderWidth = 1
+        yesBtn.layer.masksToBounds = true
+        yesBtn.layer.borderWidth = 1
+        yesBtn.layer.borderColor = UIColor(red: 131/255, green: 51/255, blue: 230/255, alpha: 1).cgColor
         noBtn.layer.cornerRadius = 5
-
-        yesBtn.layer.borderColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1).cgColor
-        noBtn.layer.borderColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1).cgColor
+        noBtn.layer.masksToBounds = true
     }
     @IBAction func clickNoBtn() {
         self.dismiss(animated: true)

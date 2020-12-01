@@ -14,12 +14,18 @@ class EmptyBasket: UIViewController {
     
     var menuData : Order?
     var store_id : Int?
+    @IBOutlet weak var DialogTop: UILabel!
     var temp : OrderDetailsController?
     @IBOutlet weak var emptyBtn: UIButton!
     @IBOutlet weak var cancel: UIButton!
     var delegate : TurnOffOrderDetailListener!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let dialogButtonForm = DialogForm()
+        dialogButtonForm.setTopView(top: DialogTop)
+        dialogButtonForm.setLeftButton(left: emptyBtn)
+        dialogButtonForm.setRightbutton(right: cancel)
+
     }
     @IBAction func pressEmpty(_ sender: Any) {
         UserDefaults.standard.setValue(store_id, forKey: "currentStoreId")

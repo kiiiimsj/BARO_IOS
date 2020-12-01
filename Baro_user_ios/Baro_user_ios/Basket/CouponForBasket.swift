@@ -15,6 +15,7 @@ class CouponForBasket : UIViewController {
     @IBOutlet weak var realPayPrice: UILabel!
     @IBOutlet weak var customerRequest: UITextField!
     @IBOutlet weak var couponExistLabel: UILabel!
+    @IBOutlet weak var DialogTitle: UIView!
     var currentSelectedCoupon : CouponForBasketCell?
     public var sendOrderToBootPay = [Order]()
     public var UseCouponId : Int = -1
@@ -33,6 +34,9 @@ class CouponForBasket : UIViewController {
         super.viewDidLoad()
         getCoupon()
         setFirstLabelText()
+        DialogTitle.layer.cornerRadius = 5
+        DialogTitle.layer.borderColor = UIColor(red: 131/255, green: 51/255, blue: 230/255, alpha: 1).cgColor
+        DialogTitle.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
     @IBAction func clickPayButton() {
