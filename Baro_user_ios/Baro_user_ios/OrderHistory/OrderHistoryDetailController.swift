@@ -14,6 +14,7 @@ class OrderHistoryDetailController : UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var requests: UILabel!
     @IBOutlet weak var totalPrice: UILabel!
+    @IBOutlet weak var okayBtn: UIButton!
     
     
     let networkModel = CallRequest()
@@ -41,6 +42,9 @@ class OrderHistoryDetailController : UIViewController {
         
     }
     
+    @IBAction func pressBtn(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     func configure() {
         
         
@@ -71,7 +75,7 @@ class OrderHistoryDetailController : UIViewController {
             
         }
         storeName.text = store_name
-        totalPrice.text = String(total_price)
+        totalPrice.text = "총 결제 금액 : " + String(total_price) + "원"
         //요청사항도 찍어주기
     }
 }
@@ -98,10 +102,10 @@ extension OrderHistoryDetailController : UICollectionViewDelegate, UICollectionV
 
         cell.menu_name.text = String(orderList.menu_name)
         print("kkkkk", String(orderList.menu_name))
-        cell.menu_default_price.text = String(orderList.menu_defaultprice)
-        cell.menu_one_total_price.text = String(menu_one_total_price)
+        cell.menu_default_price.text = String(orderList.menu_defaultprice) + "원"
+        cell.menu_one_total_price.text = String(menu_one_total_price) + "원"
         cell.menu_count.text = String(orderList.order_count)
-        cell.menu_total_price.text = String(menu_one_total_price * orderList.order_count)
+        cell.menu_total_price.text = String(menu_one_total_price * orderList.order_count) + "원"
         cell.extraList = orderList.OrderHistoryDetailExtra
         print("jkk", orderList.OrderHistoryDetailExtra)
         cell.collectionView.delegate = cell.self
@@ -112,7 +116,7 @@ extension OrderHistoryDetailController : UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let orderList = orderHistoryDetailList[indexPath.item]
-        return CGSize(width: 50, height: CGFloat(orderList.OrderHistoryDetailExtra.count) * 70 + 100)
+        return CGSize(width: collectionView.frame.width, height: CGFloat(orderList.OrderHistoryDetailExtra.count) * 20 + 70)
     }
     
 }

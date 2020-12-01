@@ -30,19 +30,20 @@ class OrderHistoryDetail : UICollectionViewCell {
 
 extension OrderHistoryDetail : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("Ffff",extraList.count)
         return extraList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let extra = extraList[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderHistoryDetailCell", for: indexPath) as! OrderHistoryDetailCell
-        cell.extraName.text = extra.extra_name
-        cell.extraPrice.text = String(extra.extra_price)
+        cell.extraName.text =  "· " + extra.extra_name
+        cell.extraPrice.text = "+ " + String(extra.extra_price) + "원"
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 50, height: 70)
+        return CGSize(width: collectionView.frame.width, height: 20)
     }
     
 
