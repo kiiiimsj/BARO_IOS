@@ -93,18 +93,24 @@ class MyPageController : UIViewController {
         let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "CouponPageController") as! CouponPageController
         vc.userPhone = userPhone
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
         print("Dfadffasdf")
         present(vc, animated: false, completion: nil)
     }
     @objc func goToBasket(_ sender : UIGestureRecognizer){
         let storyboard = UIStoryboard(name: "Basket", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
         print("Dfadffasdf")
         present(vc, animated: false, completion: nil)
     }
     @objc func goToOrder(_ sender : UIGestureRecognizer){
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
         vc.changeViewController(getController: "OrderHistoryController", getStoryBoard: UIStoryboard(name: "OrderHistory", bundle: nil), sender: nil)
         present(vc, animated: false, completion: nil)
     }
