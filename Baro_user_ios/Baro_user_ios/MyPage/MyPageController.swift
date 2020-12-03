@@ -57,6 +57,8 @@ class MyPageController : UIViewController {
     }
     func addGest() {
         couponArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToCoupon(_:))))
+        basketArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToBasket(_:))))
+        OrderArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToOrder(_:))))
     }
     func setMyCountInfo() {
         networkModel.post(method: .get, param: nil, url: networkURL.orderCount+"\(userPhone)") { (json) in
@@ -92,6 +94,18 @@ class MyPageController : UIViewController {
         let vc = storyboard.instantiateViewController(identifier: "CouponPageController") as! CouponPageController
         vc.userPhone = userPhone
         print("Dfadffasdf")
+        present(vc, animated: false, completion: nil)
+    }
+    @objc func goToBasket(_ sender : UIGestureRecognizer){
+        let storyboard = UIStoryboard(name: "Basket", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
+        print("Dfadffasdf")
+        present(vc, animated: false, completion: nil)
+    }
+    @objc func goToOrder(_ sender : UIGestureRecognizer){
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        vc.changeViewController(getController: "OrderHistoryController", getStoryBoard: UIStoryboard(name: "OrderHistory", bundle: nil), sender: nil)
         present(vc, animated: false, completion: nil)
     }
     @IBAction func logoutBtnClick() {
