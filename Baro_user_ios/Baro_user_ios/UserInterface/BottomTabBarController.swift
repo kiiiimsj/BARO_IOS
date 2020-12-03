@@ -203,8 +203,12 @@ class BottomTabBarController: UIViewController {
                 if(VCsender.typeCode == "2") {
                     VCsender.kind = 2
                 }
-                else {
+                if(VCsender.typeCode == "1") {
                     VCsender.kind = 1
+                    swipeRecognizer()
+                }
+                if(VCsender.typeCode == "3") {
+                    VCsender.kind = 3
                     swipeRecognizer()
                 }
                 finallController = VCsender
@@ -227,6 +231,10 @@ class BottomTabBarController: UIViewController {
                     let controllerData = controller as! StoreListPageController
                     if(controllerData.typeCode == "2") {
                         topBarViewControllerTitle.text = "찜한 가게"
+                    }
+                    if(controllerData.typeCode == "3") {
+                        topBarViewControllerTitle.text = "검색 가게"
+                        topBarBackBtn.isHidden = false
                     }
                     else {
                         topBarBackBtn.isHidden = false
