@@ -30,9 +30,6 @@ class StoreMenuController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .purple
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .horizontal
-//        layout.itemSize = CGSize(width: view.frame.width, height: 60)
         
         collectionView.addSubview(categoryIndecator)
         netWork.get(method: .get, url: urlMaker.categoryURL + "?store_id="+store_id) {
@@ -48,7 +45,6 @@ class StoreMenuController : UIViewController{
                 self.netWork.get(method: .get, url: self.urlMaker.menuURL + "?store_id="+self.store_id) { (json) in
                     let boolValue = json["result"].boolValue
                     if boolValue {
-                        //self.collectionView.collectionViewLayout = layout
                         self.collectionView.delegate = self
                         self.collectionView.dataSource = self
                         var tempMenu = Menu()
@@ -106,7 +102,6 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
         
         self.saveIndecatorHeight = ((cell.bounds.height / 2) + 5)
         self.saveIndecatorWidth.append(CGFloat(categoryNames[indexPath.item].count) * 20)
-        print("cell start equal? :", self.saveIndecatorHeight, " & ", (cell.center.x - self.saveIndecatorWidth[indexPath.item]))
         self.saveCellsPoint.append(cell.center.x - (self.saveIndecatorWidth[indexPath.item]/2))
         self.saveCelly = -self.saveIndecatorHeight - 5
                 
@@ -166,7 +161,6 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
         UIView.animate(withDuration: duration, animations: {
             self.categoryHighlightText.isHidden = true
             self.categoryIndecator.transform = CGAffineTransform(translationX: self.saveCellsPoint[index], y:  self.saveCelly )
-            print("categoryIndicator : ", self.categoryIndecator.transform)
         }, completion: { finished in
             self.categoryHighlightText.isHidden = false
         })

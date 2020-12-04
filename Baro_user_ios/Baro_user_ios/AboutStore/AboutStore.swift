@@ -20,7 +20,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             self.addFavorite(controller: controller)
         }
     }
-    @IBOutlet weak var FirstPage: UICollectionView!
+    @IBOutlet weak var FirstPage: UIView!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var storeInfoButton: UIButton!
     @IBOutlet weak var tabIndecator: UIView!
@@ -83,8 +83,9 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     }
     
     func attachToMainView(vc : UIViewController){
-        FirstPage.addSubview((vc.view)!)
-        vc.view.frame = FirstPage.frame
+        vc.view.frame.size = FirstPage.frame.size
+        print("FirstPage Size : ", FirstPage.frame, "vc view frame size : ", vc.view.frame)
+        FirstPage.addSubview(vc.view)
         vc.didMove(toParent: self)
     }
     
@@ -95,7 +96,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         
         storeInfoButton.setTitle("가게 정보", for: .normal)
         storeInfoButton.backgroundColor = .white
-        storeInfoButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
+        storeInfoButton.tintColor = UIColor(red: 196/255.0, green: 196/255.0, blue: 196/255.0, alpha: 1)
     }
     
     @IBAction func menuButtonClick() {

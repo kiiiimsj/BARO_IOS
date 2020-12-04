@@ -54,8 +54,10 @@ class BottomTabBarController: UIViewController {
     var basketOrders = [Order]()
     //aboutstore 관련 요소
     var currentStoreName : String = ""
+    //내부 뷰 사이즈 관련 요소
     var saveTopViewSize = CGSize()
     var saveContentViewSize = CGSize()
+    var saveBottomViewSize = CGSize()
     override func viewDidLoad() {
         super.viewDidLoad()
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
@@ -135,6 +137,9 @@ class BottomTabBarController: UIViewController {
         if(TopView.isHidden) {
             restoreTopView()
         }
+        if(BottomView.isHidden) {
+            restoreBottomTabBar()
+        }
         switch(getController) {
             case mainPageControllerIdentifier:
                 self.deleteTopView()
@@ -145,14 +150,15 @@ class BottomTabBarController: UIViewController {
                 self.changeContentView(controller: controller as! OrderStatusController, sender: nil)
             case orderHistoryControllerIdentifier:
                 self.changeContentView(controller: controller as! OrderHistoryController, sender: nil)
+            case orderDetailControllerIdentifier:
+                deleteBottomTabBar()
+                self.changeContentView(controller: controller as! OrderDetailsController, sender: sender)
             case myPageControllerIdentifier:
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
             case aboutStoreControllerIdentifier:
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
                 swipeRecognizer()
-//            case orderDetailControllerIdentifier:
-//                self.changeContentView(controller: controller as! OrderDetailsController, sender: sender)
-//                swipeRecognizer()
+            
             default :
                 print("error_delegate")
         }
@@ -185,13 +191,28 @@ class BottomTabBarController: UIViewController {
     //탑뷰 지우기
     func deleteTopView() {
         ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
-        //컨텐트뷰 사이지를 다시 조정
+        //컨텐트뷰 사이즈를 다시 조정
         let topViewSize = TopView.frame.size
         let contentViewSize = ContentView.frame.size
         ContentView.frame.size = CGSize(width: view.frame.width, height: (topViewSize.height + contentViewSize.height))
         ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (topViewSize.height + contentViewSize.height))
         ContentViewScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         TopView.isHidden = true
+    }
+    func restoreBottomTabBar() {
+        BottomView.isHidden = false
+        BottomView.frame.size = saveTopViewSize
+        ContentView.frame.size = saveContentViewSize
+        ContentViewScrollView.frame.size = saveContentViewSize
+        ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 113.0)
+    }
+    func deleteBottomTabBar() {
+        BottomView.frame.size = saveBottomViewSize
+        ContentView.frame.size = CGSize(width: view.frame.width, height: (saveContentViewSize.height + saveBottomViewSize.height))
+        ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (saveContentViewSize.height + saveBottomViewSize.height))
+        ContentViewScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        BottomView.isHidden = true
+        
     }
     //sender가 존재하는 컨트롤러 처리
     func senderHandler(controller : UIViewController, sender : Any) -> UIViewController{
@@ -200,27 +221,41 @@ class BottomTabBarController: UIViewController {
             switch(title) {
             case orderDetailControllerIdentifier:
                 let VCsender = controller as! OrderDetailsController
-                VCsender.menu_id = sender as! String
-                //VCsender.menu =
+                
+                let param = sender as! [String:Any]
+                VCsender.menu_id = param["menuId"] as! String
+                let decoder = JSONDecoder()
+                
+                if let getData = param["menu"] as? String {
+                    let data = getData.data(using: .utf8)!
+                    VCsender.menu  = try! decoder.decode(Menu.self, from: data)
+                    print("VCsender.menu : ", VCsender.menu)
+                }
+                VCsender.storeId = param["storeId"] as! Int
+                print("VCsender.menu : ", VCsender.storeId)
+                finallController = VCsender
             case aboutStoreControllerIdentifier:
                 let VCsender = controller as! AboutStore
                 VCsender.store_id = sender as! Int
                 finallController = VCsender
             case storeListControllerIdentifier:
                 let VCsender = controller as! StoreListPageController
-                VCsender.typeCode = sender as! String
-                if(VCsender.typeCode == "2") {
-                    VCsender.kind = 2
-                }
-                else if(VCsender.typeCode == "3") {
-                    VCsender.kind = 3
-                    swipeRecognizer()
-                }
-                else {
+                VCsender.typeCode = (sender as? String)!
+                if(VCsender.typeCode == "1"){
                     VCsender.kind = 1
                     swipeRecognizer()
                 }
+                else if(VCsender.typeCode == "2") {
+                    VCsender.kind = 2
+                }
+                else {
+                    VCsender.kind = 3
+                    print("searchContent : ", sender as! String)
+                    VCsender.searchWord = sender as! String
+                    swipeRecognizer()
+                }
                 finallController = VCsender
+                
             default:
                 print("error")
             }
@@ -232,6 +267,7 @@ class BottomTabBarController: UIViewController {
         basketButton.isHidden = true
         topBarBackBtn.isHidden = true
         topBarFavoriteBtn.isHidden = true
+        topBarViewControllerTitle.isHidden = false
         if let title = controller.title {
             switch(title) {
                 case mainPageControllerIdentifier:
@@ -248,7 +284,6 @@ class BottomTabBarController: UIViewController {
                     else {
                         topBarBackBtn.isHidden = false
                     }
-                    
                     if (controllerData.typeCode == "CAFE") {
                         topBarViewControllerTitle.text = "카페"
                     }
@@ -261,6 +296,10 @@ class BottomTabBarController: UIViewController {
                     if (controllerData.typeCode == "KOREAN") {
                         topBarViewControllerTitle.text = "한식"
                     }
+                case orderDetailControllerIdentifier:
+                    topBarViewControllerTitle.isHidden = true
+                    topBarBackBtn.isHidden = false
+                    topBarViewControllerTitle.text = "\(currentStoreName)"
                 case orderStatusControllerIdentifier:
                     topBarViewControllerTitle.text = "주문 현황"
                 case orderHistoryControllerIdentifier:

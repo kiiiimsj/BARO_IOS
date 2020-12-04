@@ -8,8 +8,9 @@
 import UIKit
 
 private let cellIdentifier = "ASMenuCell"
-class StoreMenu2Controller : UIViewController{
+class StoreMenu2Controller : UIViewController {
     public var menus = [Menu]()
+    let bottomTabBarInfo = BottomTabBarController()
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +18,19 @@ class StoreMenu2Controller : UIViewController{
         collectionView.dataSource = self
         print("twice?")
     }
-    
+    func toOrderDetial(param : [String:Any]) {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.orderDetailControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.orderDetailStoryBoard
+        ViewInBottomTabBar.controllerSender = param
+        ViewInBottomTabBar.moveFromOutSide = true
+        
+        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = .crossDissolve
+        print("moveToOrderDetail : ", ViewInBottomTabBar.moveFromOutSide)
+        self.present(ViewInBottomTabBar, animated: true, completion: nil)
+    }
 }
 extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView : UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,25 +60,18 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
             return
         }
         let menu_id = String(menus[indexPath.item].menu_id)
-        //navigationController?.pushViewController(OrderDetailsController(), animated: false)
-        performSegue(withIdentifier: "toDetails", sender: menu_id)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 85)
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let nextViewController = segue.destination as? OrderDetailsController else {
-            return
-        }
-        let labell = sender as! String
-        nextViewController.menu_id = labell
         for item in self.menus {
-            if(item.menu_id == Int(labell)) {
-                nextViewController.storeId = item.store_id
-                nextViewController.menu = item
+            if(item.menu_id == Int(menu_id)) {
+                let encoder = JSONEncoder()
+                let jsonSaveData = try? encoder.encode(item)
+                if let _ = jsonSaveData, let jsonString = String(data: jsonSaveData!, encoding: .utf8) {
+                    let param = ["storeId":item.store_id,"menu":"\(jsonString)","menuId":"\(menu_id)"] as [String : Any]
+                    toOrderDetial(param: param)
+                }
             }
         }
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 85)
     }
 }
