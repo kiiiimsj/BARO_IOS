@@ -10,6 +10,5 @@ import UIKit
 class AlertCell: UICollectionViewCell {
     
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var content: UILabel!
     @IBOutlet weak var date: UILabel!
 }
