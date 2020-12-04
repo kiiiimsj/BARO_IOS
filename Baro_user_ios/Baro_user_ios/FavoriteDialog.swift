@@ -24,13 +24,16 @@ class FavoriteDialog : UIViewController {
         print("isFlag : ", isFlag)
     }
     func setDialogLabel(index : Int) {
-        if (self.isFlag == 1) {
-            self.favoriteDialogTitle.text = "즐겨찾기 추가"
-            self.dialogContent.text = "즐겨찾기에 추가 되었습니다."
+        if (UserDefaults.standard.value(forKey: "isFlag") != nil) {
+            self.isFlag = UserDefaults.standard.value(forKey: "isFlag") as! Int
         }
-        else {
+        if (self.isFlag == 1) {
             self.favoriteDialogTitle.text = "즐겨찾기 삭제"
             self.dialogContent.text = "즐겨찾기에서 삭제 되었습니다."
+        }
+        else {
+            self.favoriteDialogTitle.text = "즐겨찾기 추가"
+            self.dialogContent.text = "즐겨찾기에 추가 되었습니다."
         }
     }
     @IBAction func okayButton() {

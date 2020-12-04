@@ -30,9 +30,7 @@ class StoreMenuController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .purple
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: view.frame.width, height: 60)
+        
         collectionView.addSubview(categoryIndecator)
         netWork.get(method: .get, url: urlMaker.categoryURL + "?store_id="+store_id) {
             (json) in
@@ -47,7 +45,6 @@ class StoreMenuController : UIViewController{
                 self.netWork.get(method: .get, url: self.urlMaker.menuURL + "?store_id="+self.store_id) { (json) in
                     let boolValue = json["result"].boolValue
                     if boolValue {
-                        self.collectionView.collectionViewLayout = layout
                         self.collectionView.delegate = self
                         self.collectionView.dataSource = self
                         var tempMenu = Menu()
@@ -97,12 +94,17 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryIdentifier, for: indexPath) as! ASCategoryCell
+        
         cell.category.setTitle(categoryNames[indexPath.item], for: .normal)
+        cell.category.titleLabel?.font = UIFont(name: "NotoSansCJKkr-Regular", size: 15.0)
+        cell.category.titleLabel?.textAlignment = .center
         cell.category.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
-        self.saveCellsPoint.append(cell.center.x - 30)
-        self.saveCelly = -44
+        
         self.saveIndecatorHeight = ((cell.bounds.height / 2) + 5)
         self.saveIndecatorWidth.append(CGFloat(categoryNames[indexPath.item].count) * 20)
+        self.saveCellsPoint.append(cell.center.x - (self.saveIndecatorWidth[indexPath.item]/2))
+        self.saveCelly = -self.saveIndecatorHeight - 5
+                
         if(indexPath.row == 0) {
             setCategoryIndecatorAnimation(index: indexPath.row, duration: 0.0)
             let categoryId : Int = categories[indexPath.item].category_id

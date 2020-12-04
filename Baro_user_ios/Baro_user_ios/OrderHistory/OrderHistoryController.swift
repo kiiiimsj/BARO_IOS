@@ -30,6 +30,10 @@ class OrderHistoryController : UIViewController {
             var orderHistoryModel = OrderHistoryList()
             for item in json["order"].array! {
                 print(json)
+                orderHistoryModel.store_id = item["store_id"].intValue
+                orderHistoryModel.store_phone = item["store_phone"].stringValue
+                orderHistoryModel.store_latitude = item["store_latitude"].doubleValue
+                orderHistoryModel.store_longitude = item["store_longitude"].doubleValue
                 orderHistoryModel.order_date = item["order_date"].stringValue
                 orderHistoryModel.receipt_id = item["receipt_id"].stringValue
                 orderHistoryModel.store_name = item["store_name"].stringValue
@@ -68,6 +72,10 @@ class OrderHistoryController : UIViewController {
             var orderHistoryModel = OrderHistoryList()
             for item in json["order"].array! {
                 print(json)
+                orderHistoryModel.store_id = item["store_id"].intValue
+                orderHistoryModel.store_phone = item["store_phone"].stringValue
+                orderHistoryModel.store_latitude = item["store_latitude"].doubleValue
+                orderHistoryModel.store_longitude = item["store_longitude"].doubleValue
                 orderHistoryModel.order_date = item["order_date"].stringValue
                 orderHistoryModel.receipt_id = item["receipt_id"].stringValue
                 orderHistoryModel.store_name = item["store_name"].stringValue
@@ -118,7 +126,7 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
             
             cell.orderTotalPriceLabel.text = "합계 : " + String(orderHistory.total_price) + " 원"
             cell.receipt_id = orderHistory.receipt_id
-            cell.cellData = orderHistory
+            cell.store_id = orderHistory.store_id
             cell.cellDelegate = self
             cell.goToStoreBtn.layer.borderColor = UIColor.init(red: 131/255, green: 51/255, blue: 230/255, alpha: 1) .cgColor
             cell.goToStoreBtn.layer.borderWidth = 2
@@ -208,8 +216,8 @@ extension OrderHistoryController : UIScrollViewDelegate {
 }
 
 extension OrderHistoryController : historyDelegate {
-    func clickGoToStore(vc: AboutStore) {
-        present(vc, animated: false, completion: nil)
+    func clickGoToStore(vc: UIViewController) {
+        present(vc, animated: true, completion: nil)
     }
     
     func clickShowDetails(vc: OrderHistoryDetailController) {

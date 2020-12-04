@@ -104,11 +104,9 @@ class StoreListPageController : UIViewController {
                     }
                 }else{
                     self.endOfData = true
-                    
                 }
                 self.storeListView.reloadData()
             }
-            self.storeListView.reloadData()
         }
         else {
             
@@ -150,16 +148,17 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
             }else{
                 return storeList.count
             }
-        }else{
+        }
+        else{
             return storeList.count
         }
-       
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         if endOfData {
             return 1
         }
-        else if kind == 3 {
+        
+        if kind == 3 && callMoreData {
             return 2
         }else{
             return 1
@@ -226,7 +225,7 @@ extension StoreListPageController : UIScrollViewDelegate {
                 loadData()
                 print("ddddd",startPoint)
             }
-            
+                
         }
     }
     func loadData() {
@@ -256,6 +255,7 @@ extension StoreListPageController : UIScrollViewDelegate {
                     self.storeList.append(storeListModel)
                 }
                 self.startPoint += 20
+                self.callMoreData = false
                 self.storeListView.reloadData()
             }
             else {

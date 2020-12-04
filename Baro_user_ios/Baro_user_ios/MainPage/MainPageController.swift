@@ -178,6 +178,18 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
+    func toAboutStoreUseBottomBar(tag : Int) {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
+        ViewInBottomTabBar.controllerSender = tag
+        ViewInBottomTabBar.moveFromOutSide = true
+        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+        self.present(ViewInBottomTabBar, animated: true, completion: nil)
+    }
     
     
     @IBAction func goToMap(_ sender: Any) {
@@ -332,17 +344,14 @@ extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegate
         self.toStoreListUseBottomBar(tag: tag)
     }
     
-    func tapClickUltra(tag: String) {
+    func tapClickUltra(tag: Int) {
         print(tag)
-        navigationController?.pushViewController(testController(), animated: false)
-        performSegue(withIdentifier: "mainToStore", sender: tag)
+        self.toAboutStoreUseBottomBar(tag: tag)
     }
     
-    func tapClickNewStore(tag: String) {
+    func tapClickNewStore(tag: Int) {
         print(tag)
-        navigationController?.pushViewController(testController(), animated: false)
-        performSegue(withIdentifier: "mainToStore", sender: tag)
-        
+        self.toAboutStoreUseBottomBar(tag: tag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
