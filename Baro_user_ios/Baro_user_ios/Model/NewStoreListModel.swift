@@ -8,7 +8,7 @@
 import Foundation
 
 struct NewStoreListModel {
-    var store_id = ""
+    var store_id = 0
     var store_info = ""
     var distance = ""
     var is_open = ""

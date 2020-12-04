@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z9o-Uw-jMZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -24,7 +24,7 @@
         <!--OrderDetailsController-->
         <scene sceneID="dDB-M3-nwo">
             <objects>
-                <viewController storyboardIdentifier="OrderDetailsController" title="OrderDetailsController" id="z9o-Uw-jMZ" customClass="OrderDetailsController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderDetailsController" title="OrderDetailsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z9o-Uw-jMZ" customClass="OrderDetailsController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7WD-If-dIG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메뉴 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vv4-bF-IIC" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="168" y="93" width="52.5" height="16.5"/>
+                                <rect key="frame" x="168" y="93" width="55" height="21"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="14"/>
                                 <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메뉴 가격" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwc-sr-hCg" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="168" y="116.5" width="52.5" height="16.5"/>
+                                <rect key="frame" x="168" y="121" width="55" height="21"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                 <color key="textColor" red="0.51372549019607838" green="0.20000000000000001" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w5-Mr-kh5">
-                                <rect key="frame" x="168" y="147" width="16" height="16"/>
+                                <rect key="frame" x="168" y="156" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="Mva-nj-56Y"/>
                                     <constraint firstAttribute="width" constant="16" id="VWO-cl-TfT"/>
@@ -70,7 +70,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylb-sz-LbD" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="196" y="147" width="8" height="16.5"/>
+                                <rect key="frame" x="196" y="153.5" width="8" height="21"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                 <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -81,7 +81,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjK-lp-ISm">
-                                <rect key="frame" x="216" y="147" width="16" height="16"/>
+                                <rect key="frame" x="216" y="156" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="EYj-JK-5yA"/>
                                     <constraint firstAttribute="height" constant="16" id="K1P-zN-S2T"/>
@@ -109,7 +109,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="옵션 카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sa-Ru-W1U" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="13" width="66" height="14"/>
+                                                    <rect key="frame" x="10" y="13" width="69" height="18"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                     <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -120,7 +120,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cAL-FF-FuD">
-                                                    <rect key="frame" x="10" y="43" width="350" height="135"/>
+                                                    <rect key="frame" x="10" y="47" width="350" height="131"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Nqm-ed-H2c">
                                                         <size key="itemSize" width="349" height="52"/>
@@ -171,7 +171,7 @@
                                                                         <state key="selected" image="on-1"/>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9A0-c3-VI3" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                                        <rect key="frame" x="47" y="5" width="24.5" height="42"/>
+                                                                        <rect key="frame" x="47" y="5" width="26" height="42"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
                                                                         <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -249,7 +249,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSK-Sl-all" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                    <rect key="frame" x="303" y="56" width="8" height="16.5"/>
+                                                    <rect key="frame" x="303" y="53.5" width="8" height="21"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                     <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -260,7 +260,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="옵션 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heT-bJ-3y2" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                    <rect key="frame" x="21" y="57" width="45" height="14"/>
+                                                    <rect key="frame" x="21" y="55" width="47" height="18"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                     <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -369,13 +369,6 @@
                                     <action selector="nextPage:" destination="z9o-Uw-jMZ" eventType="touchUpInside" id="wx9-8b-zFk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0R-d1-7bz">
-                                <rect key="frame" x="20" y="44" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="backBtnPress" destination="z9o-Uw-jMZ" eventType="touchUpInside" id="mEt-pb-Dze"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bKk-a7-FHa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -403,7 +396,6 @@
                     </view>
                     <connections>
                         <outlet property="EssentialArea" destination="BAe-Iy-w2T" id="DId-3N-h1c"/>
-                        <outlet property="backBtn" destination="I0R-d1-7bz" id="mVT-oq-Q3b"/>
                         <outlet property="goToBasket" destination="DPU-17-6gL" id="MEd-aH-ek7"/>
                         <outlet property="menu_count" destination="ylb-sz-LbD" id="Tk8-Wd-X6X"/>
                         <outlet property="menu_image" destination="qPh-pY-0se" id="7GQ-mA-5p1"/>

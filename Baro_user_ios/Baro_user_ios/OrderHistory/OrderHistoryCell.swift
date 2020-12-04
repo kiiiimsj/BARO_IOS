@@ -7,7 +7,7 @@
 
 import UIKit
 protocol historyDelegate  {
-    func clickGoToStore(vc : AboutStore)
+    func clickGoToStore(vc : UIViewController)
     func clickShowDetails(vc : OrderHistoryDetailController)
 }
 class OrderHistoryCell : UICollectionViewCell {
@@ -22,16 +22,26 @@ class OrderHistoryCell : UICollectionViewCell {
     @IBOutlet weak var orderTotalPriceLabel: UILabel!
     
     var receipt_id = ""
-  
+
+    var store_id = 0
+    
+    let bottomTabBarInfo = BottomTabBarController()
     @IBOutlet weak var goToStoreBtn: UIButton!
     
     @IBOutlet weak var showDetailsBtn: UIButton!
     @IBOutlet weak var storeImage: UIImageView!
     @IBAction func pressGoToStore(_ sender: Any) {
-        let storyBoard = UIStoryboard(name: "AboutStore", bundle: nil)
-        let vc = storyBoard.instantiateViewController(identifier: "AboutStore") as AboutStore
-        vc.store_id = cellData!.store_id
-        cellDelegate?.clickGoToStore(vc: vc)
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
+        ViewInBottomTabBar.controllerSender = store_id
+        ViewInBottomTabBar.moveFromOutSide = true
+        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+        
+        cellDelegate?.clickGoToStore(vc: ViewInBottomTabBar)
     }
     @IBAction func pressShowDetails(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "OrderHistory", bundle: nil)

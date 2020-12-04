@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CellDelegateNewStore: class {
-    func tapClickNewStore(tag: String)
+    func tapClickNewStore(tag: Int)
 }
 
 class MainPageNewStore : UICollectionViewCell {
@@ -38,7 +38,7 @@ class MainPageNewStore : UICollectionViewCell {
                 newStoreModel.store_name = item["store_name"].stringValue
                 newStoreModel.store_info = item["store_info"].stringValue
                 newStoreModel.store_image = item["store_image"].stringValue
-                newStoreModel.store_id = item["store_id"].stringValue
+                newStoreModel.store_id = item["store_id"].intValue
                 newStoreModel.distance = item["distance"].stringValue
                 newStoreModel.is_open = item["is_open"].stringValue
                 self.newStoreList.append(newStoreModel)
@@ -81,10 +81,9 @@ extension MainPageNewStore : UICollectionViewDelegate, UICollectionViewDataSourc
         let location = sender.location(in: self.collectionView)
         let indexPath = self.collectionView.indexPathForItem(at: location)
         let newStoreId = newStoreList[indexPath!.row].store_id
-        if let index = indexPath {
-            print("new store!! index : \(newStoreId)")
-            delegateNewStore?.tapClickNewStore(tag: newStoreId)
-        }
+        print("new store!! index : \(newStoreId)")
+        UserDefaults.standard.set(newStoreList[indexPath!.row].store_name, forKey: "currentStoreName")
+        delegateNewStore?.tapClickNewStore(tag: newStoreId)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

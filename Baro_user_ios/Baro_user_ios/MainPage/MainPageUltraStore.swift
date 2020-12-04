@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CellDelegateUltra: class {
-    func tapClickUltra(tag: String)
+    func tapClickUltra(tag: Int)
 }
 
 class MainPageUltraStore : UICollectionViewCell {
@@ -39,7 +39,7 @@ class MainPageUltraStore : UICollectionViewCell {
                 ultraModel.store_name = item["store_name"].stringValue
                 ultraModel.store_info = item["store_info"].stringValue
                 ultraModel.store_image = item["store_image"].stringValue
-                ultraModel.store_id = item["store_id"].stringValue
+                ultraModel.store_id = item["store_id"].intValue
                 ultraModel.distance = item["distance"].stringValue
                 ultraModel.is_open = item["is_open"].stringValue
                 self.ultraList.append(ultraModel)
@@ -85,7 +85,8 @@ extension MainPageUltraStore : UICollectionViewDelegate, UICollectionViewDataSou
         let location = sender.location(in: self.collectionView)
         let indexPath = self.collectionView.indexPathForItem(at: location)
         if let index = indexPath {
-            let storeId = ultraList[indexPath!.row].store_id
+            let storeId = ultraList[index.row].store_id
+            UserDefaults.standard.set(ultraList[index.row].store_name, forKey: "currentStoreName")
             print("ultra tap!! index : \(storeId)")
             delegateUltra?.tapClickUltra(tag: storeId)
         }

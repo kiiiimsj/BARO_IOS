@@ -9,7 +9,6 @@ import UIKit
 
 class OrderDetailsController : UIViewController {
     public static let me = self
-    private static let TAG = "OrderDetailsController"
     @IBOutlet weak var menu_image: UIImageView!
     @IBOutlet weak var menu_name: UILabel!
     @IBOutlet weak var menu_price: UILabel!
@@ -18,7 +17,6 @@ class OrderDetailsController : UIViewController {
     @IBOutlet weak var plus: UIButton!
     @IBOutlet weak var goToBasket: UIButton!
     
-    @IBOutlet weak var backBtn: UIButton!
     private var network = CallRequest()
     private var urlMaker = NetWorkURL()
     private var essentials = [String : [Extra]]()
@@ -44,9 +42,9 @@ class OrderDetailsController : UIViewController {
     var data : Order?
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("orderdetailviewLoad")
         swipeRecognizer()
         setMenuInfo()
-        backBtn.setImage(UIImage(named: "arrow_back" ), for: .normal)
         menu_price_current = menu.menu_defaultprice
         menu_count.text = "1"
         
@@ -90,9 +88,6 @@ class OrderDetailsController : UIViewController {
         }
         menu_count.text = String(Int(menu_count.text!)! - 1)
         recalcPrice()
-    }
-    @IBAction func backBtnPress() {
-        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func nextPage(_ sender: Any) {
         if (canGoToNext()){
