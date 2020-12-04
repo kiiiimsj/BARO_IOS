@@ -94,12 +94,15 @@
                                     <action selector="clickBasketBtn" destination="jWx-mQ-KDo" eventType="touchUpInside" id="7aF-Uo-jUL"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wx-tv-LBl">
-                                <rect key="frame" x="0.0" y="813" width="360" height="49"/>
+                            <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wx-tv-LBl">
+                                <rect key="frame" x="0.0" y="813" width="360" height="83"/>
                                 <subviews>
                                     <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hf3-Zm-CZA">
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="49"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="1qp-ai-Udy"/>
+                                        </constraints>
                                         <items>
                                             <tabBarItem title="홈" image="home_tabBar" id="0Ag-Wa-qVW"/>
                                             <tabBarItem tag="1" title="찜한 가게" image="heart_tabBar" id="uE3-kj-KQ9"/>
@@ -113,11 +116,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="hf3-Zm-CZA" secondAttribute="bottom" id="8Q1-og-XyL"/>
-                                    <constraint firstAttribute="height" constant="49" id="CJT-kz-tc7"/>
+                                    <constraint firstAttribute="height" constant="83" id="CJT-kz-tc7"/>
                                     <constraint firstItem="hf3-Zm-CZA" firstAttribute="top" secondItem="3wx-tv-LBl" secondAttribute="top" id="Gy5-3o-gLd"/>
                                     <constraint firstAttribute="trailing" secondItem="hf3-Zm-CZA" secondAttribute="trailing" id="JwY-oY-yif"/>
+                                    <constraint firstItem="hf3-Zm-CZA" firstAttribute="top" secondItem="3wx-tv-LBl" secondAttribute="top" id="MYY-KU-Ftu"/>
                                     <constraint firstItem="hf3-Zm-CZA" firstAttribute="leading" secondItem="3wx-tv-LBl" secondAttribute="leading" id="dAJ-x0-AAq"/>
+                                    <constraint firstItem="hf3-Zm-CZA" firstAttribute="leading" secondItem="3wx-tv-LBl" secondAttribute="leading" id="jwZ-Q8-xfk"/>
+                                    <constraint firstAttribute="trailing" secondItem="hf3-Zm-CZA" secondAttribute="trailing" id="odA-gT-c8t"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -128,12 +133,11 @@
                             <constraint firstItem="ftC-Gg-3Ff" firstAttribute="trailing" secondItem="CJ7-Ga-GRx" secondAttribute="trailing" id="5UL-GE-GKd"/>
                             <constraint firstItem="ftC-Gg-3Ff" firstAttribute="top" secondItem="J2M-FH-h0m" secondAttribute="bottom" id="CTL-TD-OaE"/>
                             <constraint firstItem="3wx-tv-LBl" firstAttribute="leading" secondItem="CJ7-Ga-GRx" secondAttribute="leading" id="Q8p-3X-8Ef"/>
-                            <constraint firstItem="3wx-tv-LBl" firstAttribute="bottom" secondItem="CJ7-Ga-GRx" secondAttribute="bottom" id="THc-KG-931"/>
+                            <constraint firstItem="3wx-tv-LBl" firstAttribute="bottom" secondItem="CJ7-Ga-GRx" secondAttribute="bottom" constant="34" id="THc-KG-931"/>
                             <constraint firstItem="J2M-FH-h0m" firstAttribute="top" secondItem="CJ7-Ga-GRx" secondAttribute="top" id="Uif-aU-9OR"/>
                             <constraint firstItem="3wx-tv-LBl" firstAttribute="top" secondItem="ftC-Gg-3Ff" secondAttribute="bottom" id="c6t-0G-GcL"/>
                             <constraint firstItem="J2M-FH-h0m" firstAttribute="trailing" secondItem="CJ7-Ga-GRx" secondAttribute="trailing" id="cFZ-Qn-Cv3"/>
                             <constraint firstItem="3wx-tv-LBl" firstAttribute="top" secondItem="j3l-Wd-Sa4" secondAttribute="bottom" constant="20" id="cpJ-zD-uMl"/>
-                            <constraint firstItem="CJ7-Ga-GRx" firstAttribute="bottom" secondItem="3wx-tv-LBl" secondAttribute="bottom" id="pBm-r8-AT3"/>
                             <constraint firstItem="CJ7-Ga-GRx" firstAttribute="trailing" secondItem="j3l-Wd-Sa4" secondAttribute="trailing" constant="20" id="qL3-6L-E8o"/>
                             <constraint firstItem="J2M-FH-h0m" firstAttribute="centerX" secondItem="Z2Y-wm-gUk" secondAttribute="centerX" id="qww-ro-YRE"/>
                             <constraint firstItem="J2M-FH-h0m" firstAttribute="leading" secondItem="CJ7-Ga-GRx" secondAttribute="leading" id="w6K-oj-jTw"/>
@@ -160,8 +164,8 @@
         <!--MyPageController-->
         <scene sceneID="NoL-Sx-m9H">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KKn-Ya-yyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="MyPageController" id="o04-qL-zYX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KKn-Ya-yyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1737" y="-133"/>
         </scene>
