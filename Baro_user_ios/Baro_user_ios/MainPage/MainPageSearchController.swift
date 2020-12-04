@@ -44,12 +44,15 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
     }
     
     @IBAction func searchBtn(_ sender: Any) {
+        if searchBar.text!.count <= 1 {
+            return
+        }
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
         
         ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.storeListControllerIdentifier
         ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.storeListStoryBoard
-        ViewInBottomTabBar.controllerSender = self.searchContent
+        ViewInBottomTabBar.controllerSender = self.searchBar.text
         ViewInBottomTabBar.moveFromOutSide = true
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve

@@ -220,6 +220,10 @@ extension OrderHistoryController : historyDelegate {
         present(vc, animated: true, completion: nil)
     }
     
+    func clickGoToStore(vc: AboutStore) {
+//        present(vc, animated: true, completion: nil)
+    }
+    
     func clickShowDetails(vc: OrderHistoryDetailController) {
         present(vc, animated: false, completion: nil)
     }
