@@ -64,6 +64,8 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             self.alertButton.setImage(UIImage(named: "off"), for: .normal)
         }
         let vc = self.storyboard?.instantiateViewController(identifier: "goToAlert") as! AlertController
+        print("ttttt",whatIHave)
+        print("ttttt",newestAlertNumber)
         present(vc, animated: false)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -116,7 +118,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         getMyLocation(String(longitude!), String(latitude!))
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
 //        UserDefaults.standard.setValue(0, forKey: "newestAlert")
-//        whetherNewOrNot()
+        whetherNewOrNot()
         netWork.post(method: .get, url: urlMaker.eventList) { json in
             var eventModel = EventListModel()
             print("jj",json)
