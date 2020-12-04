@@ -176,7 +176,6 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
             let store = storeList[indexPath.item]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StorelistCellIdentifier, for: indexPath) as! StoreListCell
             cell.textLabel.text = String(store.store_name)
-            print("stoima", store.store_image)
             cell.imageView.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + String(store.store_image)))
             if store.is_open == "Y" {
                 cell.is_OpenLable.text = "영업중"
@@ -242,7 +241,7 @@ extension StoreListPageController : UIScrollViewDelegate {
             (json) in
             var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
             if json["result"].boolValue {
-                self.storeListView.reloadSections(IndexSet(integer: 1))
+                self.storeListView.reloadData()
                 print(json)
                 for item in json["store"].array! {
                     storeListModel.store_image = item["store_image"].stringValue
