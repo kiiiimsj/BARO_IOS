@@ -200,8 +200,8 @@ class BottomTabBarController: UIViewController {
             switch(title) {
             case orderDetailControllerIdentifier:
                 let VCsender = controller as! OrderDetailsController
-                VCsender.storeId = sender as! Int
-                VCsender.menu =
+                VCsender.menu_id = sender as! String
+                //VCsender.menu =
             case aboutStoreControllerIdentifier:
                 let VCsender = controller as! AboutStore
                 VCsender.store_id = sender as! Int
