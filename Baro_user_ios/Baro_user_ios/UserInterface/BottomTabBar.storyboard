@@ -161,46 +161,6 @@
             </objects>
             <point key="canvasLocation" x="-2208.695652173913" y="-508.25892857142856"/>
         </scene>
-        <!--MyPageController-->
-        <scene sceneID="NoL-Sx-m9H">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="MyPageController" id="o04-qL-zYX" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KKn-Ya-yyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1737" y="-133"/>
-        </scene>
-        <!--StoreListPageController-->
-        <scene sceneID="cKP-JV-URf">
-            <objects>
-                <viewControllerPlaceholder storyboardName="StoreListPage" referencedIdentifier="StoreListPageController" id="onp-Nc-r9l" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="605-Ab-RES" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2593" y="-72"/>
-        </scene>
-        <!--AboutStore-->
-        <scene sceneID="kQn-UN-774">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AboutStore" referencedIdentifier="AboutStore" id="JQI-xf-RIL" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EHy-xw-v89" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2490" y="-6"/>
-        </scene>
-        <!--OrderHistoryController-->
-        <scene sceneID="wg5-qI-h6r">
-            <objects>
-                <viewControllerPlaceholder storyboardName="OrderHistory" referencedIdentifier="OrderHistoryController" id="ck6-L7-pdE" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Cv-VY-Eeq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1840" y="-72"/>
-        </scene>
-        <!--OrderStatusController-->
-        <scene sceneID="sZC-bS-Vbh">
-            <objects>
-                <viewControllerPlaceholder storyboardName="OrderStatus" referencedIdentifier="OrderStatusController" id="4RN-ua-OhF" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="58v-Wh-gmD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2208" y="-72"/>
-        </scene>
     </scenes>
     <resources>
         <image name="arrow_back" width="7" height="12"/>

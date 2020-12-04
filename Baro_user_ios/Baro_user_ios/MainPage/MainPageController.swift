@@ -63,10 +63,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         }else{
             self.alertButton.setImage(UIImage(named: "off"), for: .normal)
         }
-        let vc = self.storyboard?.instantiateViewController(identifier: "goToAlert") as! AlertController
-        print("ttttt",whatIHave)
-        print("ttttt",newestAlertNumber)
-        present(vc, animated: false)
+        toAlertUseBottomBar()
     }
     override func viewWillAppear(_ animated: Bool) {
         self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
@@ -188,6 +185,18 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         ViewInBottomTabBar.moveFromOutSide = true
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+        self.present(ViewInBottomTabBar, animated: true, completion: nil)
+    }
+    func toAlertUseBottomBar() {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.alertControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.alertStoryBoard
+        ViewInBottomTabBar.moveFromOutSide = true
+        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+        
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
     
