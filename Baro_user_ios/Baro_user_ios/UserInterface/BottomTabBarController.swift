@@ -31,6 +31,7 @@ class BottomTabBarController: UIViewController {
     let storeListControllerIdentifier = "StoreListPageController"
     let orderStatusControllerIdentifier = "OrderStatusController"
     let orderHistoryControllerIdentifier = "OrderHistoryController"
+    let orderDetailControllerIdentifier = "OrderDetailController"
     let myPageControllerIdentifier = "MyPageController"
     let aboutStoreControllerIdentifier = "AboutStore"
     //접근가능 스토리보드
@@ -38,6 +39,7 @@ class BottomTabBarController: UIViewController {
     let storeListStoryBoard = UIStoryboard(name: "StoreListPage", bundle: nil)
     let orderStatusStoryBoard = UIStoryboard(name: "OrderStatus", bundle: nil)
     let orderHistoryStoryBoard = UIStoryboard(name: "OrderHistory", bundle: nil)
+    let orderDetailStoryBoard = UIStoryboard(name: "OrderDetail", bundle: nil)
     let myPageStoryBoard = UIStoryboard(name: "MyPage", bundle: nil)
     let aboutStoreStoryBoard = UIStoryboard(name: "AboutStore", bundle: nil)
     //화면 이동 할때 필요한 요소.
@@ -148,6 +150,9 @@ class BottomTabBarController: UIViewController {
             case aboutStoreControllerIdentifier:
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
                 swipeRecognizer()
+            case orderDetailControllerIdentifier:
+                self.changeContentView(controller: controller as! OrderDetailsController, sender: sender)
+                swipeRecognizer()
             default :
                 print("error_delegate")
         }
@@ -193,6 +198,10 @@ class BottomTabBarController: UIViewController {
         var finallController = UIViewController()
         if let title = controller.title {
             switch(title) {
+            case orderDetailControllerIdentifier:
+                let VCsender = controller as! OrderDetailsController
+                VCsender.storeId = sender as! Int
+                VCsender.menu =
             case aboutStoreControllerIdentifier:
                 let VCsender = controller as! AboutStore
                 VCsender.store_id = sender as! Int
@@ -203,12 +212,12 @@ class BottomTabBarController: UIViewController {
                 if(VCsender.typeCode == "2") {
                     VCsender.kind = 2
                 }
-                if(VCsender.typeCode == "1") {
-                    VCsender.kind = 1
+                else if(VCsender.typeCode == "3") {
+                    VCsender.kind = 3
                     swipeRecognizer()
                 }
-                if(VCsender.typeCode == "3") {
-                    VCsender.kind = 3
+                else {
+                    VCsender.kind = 1
                     swipeRecognizer()
                 }
                 finallController = VCsender
@@ -232,13 +241,14 @@ class BottomTabBarController: UIViewController {
                     if(controllerData.typeCode == "2") {
                         topBarViewControllerTitle.text = "찜한 가게"
                     }
-                    if(controllerData.typeCode == "3") {
+                    else if(controllerData.typeCode == "3") {
                         topBarViewControllerTitle.text = "검색 가게"
                         topBarBackBtn.isHidden = false
                     }
                     else {
                         topBarBackBtn.isHidden = false
                     }
+                    
                     if (controllerData.typeCode == "CAFE") {
                         topBarViewControllerTitle.text = "카페"
                     }

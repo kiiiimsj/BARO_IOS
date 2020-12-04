@@ -8,10 +8,9 @@ import UIKit
 private let FirstBarIdentifier = "ASFirstBarCell"
 class AboutStore : UIViewController, TopViewElementDelegate {
     func backBtnDelegate() {
-        print("sdaf")
+        
     }
     func favoriteBtnDelegate(controller : UIViewController) {
-        print("isasdf")
         if (self.isFlag == 1) { // 즐겨찾기가 되어있는 경우에서 삭제
             self.performSegue(withIdentifier: "FavoriteDialog", sender: nil)
             self.delFavorite(controller : controller)
@@ -20,7 +19,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             self.performSegue(withIdentifier: "FavoriteDialog", sender: nil)
             self.addFavorite(controller: controller)
         }
-        UserDefaults.standard.set(self.isFlag, forKey: "isFlag")
     }
     @IBOutlet weak var FirstPage: UICollectionView!
     @IBOutlet weak var menuButton: UIButton!
@@ -132,6 +130,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             else {
                 favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "heart"), for: .normal)
             }
+            UserDefaults.standard.set(self.isFlag, forKey: "isFlag")
         }
     }
     
@@ -149,6 +148,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             else {
                 favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "heart_fill"), for: .normal)
             }
+            UserDefaults.standard.set(self.isFlag, forKey: "isFlag")
         }
     }
     func getStoreInfo() {

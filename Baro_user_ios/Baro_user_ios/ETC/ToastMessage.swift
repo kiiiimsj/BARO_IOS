@@ -17,11 +17,12 @@ class ToastMessage : UIViewController {
     
     func showToast(message : String, font: UIFont, targetController : UIViewController) {
         let toastLabel = UILabel(frame: CGRect(x: targetController.view.frame.size.width/2 - 100, y: targetController.view.frame.size.height-150, width: 200, height: 50))
-        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.backgroundColor = UIColor(red: 131/255, green: 51/255, blue: 230/255, alpha: 1)
         toastLabel.textColor = UIColor.white
         toastLabel.font = font
         toastLabel.textAlignment = .center
         toastLabel.text = message
+        toastLabel.textColor = UIColor.white
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 10;
         toastLabel.clipsToBounds = true
