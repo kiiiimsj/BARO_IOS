@@ -137,9 +137,6 @@ class BottomTabBarController: UIViewController {
         if(TopView.isHidden) {
             restoreTopView()
         }
-        if(BottomView.isHidden) {
-            restoreBottomTabBar()
-        }
         switch(getController) {
             case mainPageControllerIdentifier:
                 self.deleteTopView()
@@ -151,7 +148,7 @@ class BottomTabBarController: UIViewController {
             case orderHistoryControllerIdentifier:
                 self.changeContentView(controller: controller as! OrderHistoryController, sender: nil)
             case orderDetailControllerIdentifier:
-                deleteBottomTabBar()
+                self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! OrderDetailsController, sender: sender)
             case myPageControllerIdentifier:
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
@@ -199,14 +196,16 @@ class BottomTabBarController: UIViewController {
         ContentViewScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         TopView.isHidden = true
     }
-    func restoreBottomTabBar() {
-        BottomView.isHidden = false
-        BottomView.frame.size = saveTopViewSize
-        ContentView.frame.size = saveContentViewSize
-        ContentViewScrollView.frame.size = saveContentViewSize
-        ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 113.0)
-    }
+//    func restoreBottomTabBar() {
+//        print("callRestoreBottomTabBar")
+//        BottomView.isHidden = false
+//        BottomView.frame.size = saveBottomViewSize
+//        ContentView.frame.size = saveContentViewSize
+//        ContentViewScrollView.frame.size = saveContentViewSize
+//        ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 113.0)
+//    }
     func deleteBottomTabBar() {
+        print("callDeletBottomTabBar")
         BottomView.frame.size = saveBottomViewSize
         ContentView.frame.size = CGSize(width: view.frame.width, height: (saveContentViewSize.height + saveBottomViewSize.height))
         ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (saveContentViewSize.height + saveBottomViewSize.height))
