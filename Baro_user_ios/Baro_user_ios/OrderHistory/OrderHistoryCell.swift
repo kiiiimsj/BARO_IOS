@@ -30,8 +30,8 @@ class OrderHistoryCell : UICollectionViewCell {
     @IBAction func pressGoToStore(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "AboutStore", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "AboutStore") as AboutStore
-//        vc.store_id = cellData.
-//        cellDelegate?.clickGoToStore(vc: nil)
+        vc.store_id = cellData!.store_id
+        cellDelegate?.clickGoToStore(vc: vc)
     }
     @IBAction func pressShowDetails(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "OrderHistory", bundle: nil)

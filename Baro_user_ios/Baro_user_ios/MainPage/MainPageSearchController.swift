@@ -46,8 +46,8 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchBar.delegate = self
-        self.search.layer.borderWidth = 2
-        self.search.layer.borderColor = UIColor.purple.cgColor
+//        self.search.layer.borderWidth = 2
+//        self.search.layer.borderColor = UIColor.purple.cgColor
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,7 +69,7 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
         
         guard let pvc = self.presentingViewController else { return }
         self.dismiss(animated: false) {
-            vc.modalPresentationStyle = .fullScreen
+            vc.modalPresentationStyle = .overFullScreen
             vc.kind = 3
             vc.searchWord = self.searchContent
             pvc.present(vc, animated: false, completion: nil)

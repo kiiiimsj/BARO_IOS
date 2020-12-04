@@ -468,7 +468,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kpU-U4-PbF" kind="show" identifier="searchToStore" id="nD0-LY-qMJ"/>
+                                    <segue destination="kpU-U4-PbF" kind="presentation" identifier="searchToStore" animates="NO" modalPresentationStyle="overFullScreen" id="nD0-LY-qMJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODv-sU-A77">
@@ -552,16 +552,15 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 검색" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-1o-PrE">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="AoN-zC-uo4"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1D-08-oPz">
-                                        <rect key="frame" x="311" y="5" width="18" height="22"/>
+                                        <rect key="frame" x="306" y="14" width="18" height="22"/>
                                         <state key="normal" image="xmark" catalog="system"/>
                                         <connections>
                                             <action selector="cancelBtn" destination="kpU-U4-PbF" eventType="touchUpInside" id="rsR-31-aIT"/>
@@ -575,8 +574,12 @@
                                         <textInputTraits key="textInputTraits" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
                                     </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6i4-aN-uVn">
-                                        <rect key="frame" x="20" y="148" width="294" height="30"/>
-                                        <state key="normal" title="검색하기"/>
+                                        <rect key="frame" x="0.0" y="148" width="334" height="52"/>
+                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                        <state key="normal" title="검색하기">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="5"/>
@@ -593,17 +596,18 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="2qF-0m-7XV"/>
-                                    <constraint firstAttribute="trailing" secondItem="6i4-aN-uVn" secondAttribute="trailing" constant="20" id="4Mp-UW-me9"/>
-                                    <constraint firstItem="X1D-08-oPz" firstAttribute="trailing" secondItem="wcn-1o-PrE" secondAttribute="trailing" constant="-5" id="7gI-kE-huI"/>
+                                    <constraint firstAttribute="trailing" secondItem="6i4-aN-uVn" secondAttribute="trailing" id="4Mp-UW-me9"/>
+                                    <constraint firstAttribute="trailing" secondItem="X1D-08-oPz" secondAttribute="trailing" constant="10" id="APA-UX-TNk"/>
+                                    <constraint firstAttribute="bottom" secondItem="6i4-aN-uVn" secondAttribute="bottom" id="HAF-87-YXX"/>
                                     <constraint firstItem="bgM-FD-HjK" firstAttribute="trailing" secondItem="wcn-1o-PrE" secondAttribute="trailing" id="J5h-Bl-U7p"/>
                                     <constraint firstItem="bgM-FD-HjK" firstAttribute="leading" secondItem="wcn-1o-PrE" secondAttribute="leading" id="NvE-uY-w3Z"/>
                                     <constraint firstItem="bgM-FD-HjK" firstAttribute="top" secondItem="wcn-1o-PrE" secondAttribute="bottom" constant="20" id="aji-rR-ZQY"/>
                                     <constraint firstItem="bgM-FD-HjK" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="c1W-Ex-IG8"/>
                                     <constraint firstItem="6i4-aN-uVn" firstAttribute="centerX" secondItem="7v5-4c-E4S" secondAttribute="centerX" id="fE8-KO-Bsy"/>
                                     <constraint firstItem="6i4-aN-uVn" firstAttribute="top" secondItem="bgM-FD-HjK" secondAttribute="bottom" constant="20" id="hK3-R1-L4Y"/>
-                                    <constraint firstItem="6i4-aN-uVn" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" constant="20" id="isD-VQ-Ltw"/>
+                                    <constraint firstItem="6i4-aN-uVn" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="isD-VQ-Ltw"/>
                                     <constraint firstItem="bgM-FD-HjK" firstAttribute="top" secondItem="7v5-4c-E4S" secondAttribute="top" constant="70" id="pRu-6W-xnk"/>
-                                    <constraint firstItem="X1D-08-oPz" firstAttribute="top" secondItem="wcn-1o-PrE" secondAttribute="top" constant="5" id="xxe-lQ-w30"/>
+                                    <constraint firstItem="X1D-08-oPz" firstAttribute="centerY" secondItem="wcn-1o-PrE" secondAttribute="centerY" id="uZA-Tg-08G"/>
                                     <constraint firstAttribute="trailing" secondItem="bgM-FD-HjK" secondAttribute="trailing" id="yBx-1T-VdQ"/>
                                 </constraints>
                             </view>
@@ -685,9 +689,6 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
