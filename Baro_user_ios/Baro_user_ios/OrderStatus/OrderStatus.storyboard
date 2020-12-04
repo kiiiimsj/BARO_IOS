@@ -47,89 +47,84 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="테스트카페" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5L-A2-P8W">
-                                                    <rect key="frame" x="135" y="91" width="74" height="20.5"/>
+                                                    <rect key="frame" x="135" y="40" width="74" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tSI-jl-Rvw">
-                                                    <rect key="frame" x="135" y="136.5" width="204" height="4"/>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tSI-jl-Rvw">
+                                                    <rect key="frame" x="135" y="111.5" width="204" height="4"/>
                                                     <color key="tintColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="9700원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onl-EI-0G8">
-                                                    <rect key="frame" x="286" y="91" width="55" height="20.5"/>
+                                                    <rect key="frame" x="344.5" y="40" width="55" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_back" translatesAutoresizingMaskIntoConstraints="NO" id="osj-BT-zsF">
-                                                    <rect key="frame" x="378" y="95" width="7" height="12.5"/>
+                                                    <rect key="frame" x="378" y="85" width="7" height="12"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제조중" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lY-h6-Mek">
-                                                    <rect key="frame" x="334.5" y="30" width="44.5" height="21"/>
+                                                    <rect key="frame" x="349.5" y="20" width="44.5" height="21"/>
                                                     <color key="tintColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemPurpleColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1Q-79-H5A">
-                                                    <rect key="frame" x="222" y="160.5" width="18" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="3개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1Q-79-H5A">
+                                                    <rect key="frame" x="222" y="135.5" width="18" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고객님이 주문하신" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9R-Hw-Qtp">
-                                                    <rect key="frame" x="135" y="160.5" width="87" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="고객님이 주문하신" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9R-Hw-Qtp">
+                                                    <rect key="frame" x="135" y="135.5" width="87" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nVd-PK-rgP">
-                                                    <rect key="frame" x="15" y="70" width="100" height="107"/>
+                                                    <rect key="frame" x="15" y="20" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="hUL-kd-5oy"/>
                                                         <constraint firstAttribute="width" constant="100" id="z3y-db-XDF"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잠시만 기다려주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-N1-g47">
-                                                    <rect key="frame" x="135" y="179.5" width="101" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="잠시만 기다려주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-N1-g47">
+                                                    <rect key="frame" x="135" y="154.5" width="101" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의 상품이 접수대기중입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5i-PD-ge4">
-                                                    <rect key="frame" x="240" y="160.5" width="135" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="의 상품이 접수대기중입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5i-PD-ge4">
+                                                    <rect key="frame" x="240" y="135.5" width="135" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="nVd-PK-rgP" firstAttribute="top" secondItem="jn3-Dg-yzB" secondAttribute="top" constant="70" id="0MM-ic-11S"/>
+                                                <constraint firstItem="nVd-PK-rgP" firstAttribute="top" secondItem="jn3-Dg-yzB" secondAttribute="top" constant="20" id="0MM-ic-11S"/>
                                                 <constraint firstItem="tSI-jl-Rvw" firstAttribute="leading" secondItem="nVd-PK-rgP" secondAttribute="trailing" constant="20" id="0V8-Tu-TED"/>
+                                                <constraint firstItem="X5L-A2-P8W" firstAttribute="top" secondItem="2lY-h6-Mek" secondAttribute="top" constant="20" id="0kn-md-eif"/>
                                                 <constraint firstAttribute="trailing" secondItem="tSI-jl-Rvw" secondAttribute="trailing" constant="75" id="7zI-Su-FUg"/>
                                                 <constraint firstItem="q5i-PD-ge4" firstAttribute="leading" secondItem="D1Q-79-H5A" secondAttribute="trailing" id="8N3-rh-cfB"/>
                                                 <constraint firstItem="osj-BT-zsF" firstAttribute="top" secondItem="2lY-h6-Mek" secondAttribute="bottom" constant="44" id="9li-iJ-gBv"/>
-                                                <constraint firstItem="onl-EI-0G8" firstAttribute="centerY" secondItem="osj-BT-zsF" secondAttribute="centerY" id="BCG-mV-jjm"/>
                                                 <constraint firstItem="l9R-Hw-Qtp" firstAttribute="leading" secondItem="nVd-PK-rgP" secondAttribute="trailing" constant="20" id="Dca-jj-DK7"/>
                                                 <constraint firstItem="q5i-PD-ge4" firstAttribute="top" secondItem="tSI-jl-Rvw" secondAttribute="bottom" constant="20" id="HXF-AP-ixC"/>
                                                 <constraint firstItem="D1Q-79-H5A" firstAttribute="leading" secondItem="l9R-Hw-Qtp" secondAttribute="trailing" id="KOh-P6-dA9"/>
-                                                <constraint firstAttribute="bottom" secondItem="nVd-PK-rgP" secondAttribute="bottom" constant="65" id="LBT-HQ-Nux"/>
                                                 <constraint firstItem="D1Q-79-H5A" firstAttribute="top" secondItem="tSI-jl-Rvw" secondAttribute="bottom" constant="20" id="LSW-iu-QuV"/>
-                                                <constraint firstItem="2lY-h6-Mek" firstAttribute="top" secondItem="jn3-Dg-yzB" secondAttribute="top" constant="30" id="LoW-Mj-yFV"/>
+                                                <constraint firstItem="2lY-h6-Mek" firstAttribute="top" secondItem="jn3-Dg-yzB" secondAttribute="top" constant="20" id="LoW-Mj-yFV"/>
                                                 <constraint firstAttribute="trailing" secondItem="osj-BT-zsF" secondAttribute="trailing" constant="29" id="Psc-tI-DUX"/>
                                                 <constraint firstItem="X5L-A2-P8W" firstAttribute="leading" secondItem="nVd-PK-rgP" secondAttribute="trailing" constant="20" id="TDe-AK-itK"/>
+                                                <constraint firstItem="onl-EI-0G8" firstAttribute="centerX" secondItem="2lY-h6-Mek" secondAttribute="centerX" id="U0x-5d-FS8"/>
                                                 <constraint firstItem="iN0-N1-g47" firstAttribute="leading" secondItem="nVd-PK-rgP" secondAttribute="trailing" constant="20" id="WeB-MI-w6s"/>
                                                 <constraint firstItem="X5L-A2-P8W" firstAttribute="centerY" secondItem="onl-EI-0G8" secondAttribute="centerY" id="bqq-js-gZh"/>
-                                                <constraint firstItem="tSI-jl-Rvw" firstAttribute="top" secondItem="onl-EI-0G8" secondAttribute="bottom" constant="25" id="c1J-Fe-ad1"/>
-                                                <constraint firstItem="osj-BT-zsF" firstAttribute="leading" secondItem="onl-EI-0G8" secondAttribute="trailing" constant="37" id="f5a-Gu-9nR"/>
                                                 <constraint firstItem="iN0-N1-g47" firstAttribute="top" secondItem="D1Q-79-H5A" secondAttribute="bottom" constant="4" id="fUD-xc-rYY"/>
-                                                <constraint firstItem="onl-EI-0G8" firstAttribute="baseline" secondItem="X5L-A2-P8W" secondAttribute="firstBaseline" id="kuJ-Sc-itC"/>
                                                 <constraint firstItem="nVd-PK-rgP" firstAttribute="leading" secondItem="jn3-Dg-yzB" secondAttribute="leading" constant="15" id="m4N-wc-oRU"/>
-                                                <constraint firstAttribute="trailing" secondItem="2lY-h6-Mek" secondAttribute="trailing" constant="35" id="ns7-wL-EQW"/>
+                                                <constraint firstAttribute="trailing" secondItem="2lY-h6-Mek" secondAttribute="trailing" constant="20" id="ns7-wL-EQW"/>
                                                 <constraint firstItem="l9R-Hw-Qtp" firstAttribute="top" secondItem="tSI-jl-Rvw" secondAttribute="bottom" constant="20" id="qYv-Ay-DdG"/>
-                                                <constraint firstItem="onl-EI-0G8" firstAttribute="top" secondItem="2lY-h6-Mek" secondAttribute="bottom" constant="40" id="uZh-bX-nx7"/>
-                                                <constraint firstItem="X5L-A2-P8W" firstAttribute="top" secondItem="2lY-h6-Mek" secondAttribute="bottom" constant="40" id="y3U-oU-Esn"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="242"/>

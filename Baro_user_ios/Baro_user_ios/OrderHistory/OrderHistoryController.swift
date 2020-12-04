@@ -37,6 +37,8 @@ class OrderHistoryController : UIViewController {
                 orderHistoryModel.order_state = item["order_state"].stringValue
                 orderHistoryModel.total_count = item["total_count"].intValue
                 orderHistoryModel.store_image = item["store_image"].stringValue
+                orderHistoryModel.store_id = item["store_id"].intValue
+            
                 self.orderHistoryList.append(orderHistoryModel)
             }
             self.collectionView.reloadData()
@@ -207,13 +209,11 @@ extension OrderHistoryController : UIScrollViewDelegate {
 
 extension OrderHistoryController : historyDelegate {
     func clickGoToStore(vc: AboutStore) {
-        
+        present(vc, animated: false, completion: nil)
     }
     
     func clickShowDetails(vc: OrderHistoryDetailController) {
-        present(vc, animated: true, completion: nil)
+        present(vc, animated: false, completion: nil)
     }
-    
-    
 }
 
