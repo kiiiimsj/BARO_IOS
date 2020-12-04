@@ -10,26 +10,36 @@ import UIKit
 class MainPageSearchController : UIViewController, UISearchBarDelegate {
     
     var searchContent = ""
-    
+    let bottomTabBarInfo = BottomTabBarController()
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchContent = searchText
         print("searchh", searchContent)
     }
     
     @IBAction func searchBtn(_ sender: Any) {
-        navigationController?.pushViewController(StoreListPageController(), animated: false)
-        self.dismiss(animated: false)
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
         
-        let storyboard = UIStoryboard(name: "MainPage", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "StoreListPageController") as! StoreListPageController
-        
-        guard let pvc = self.presentingViewController else { return }
-        self.dismiss(animated: false) {
-            vc.modalPresentationStyle = .fullScreen
-            vc.kind = 3
-            vc.searchWord = self.searchContent
-            pvc.present(vc, animated: false, completion: nil)
-        }
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.storeListControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.storeListStoryBoard
+        ViewInBottomTabBar.controllerSender = "3"
+        ViewInBottomTabBar.moveFromOutSide = true
+        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+        self.present(ViewInBottomTabBar, animated: true, completion: nil)
+        //navigationController?.pushViewController(StoreListPageController(), animated: false)
+//        self.dismiss(animated: false)
+//
+//        let storyboard = UIStoryboard(name: "MainPage", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "StoreListPageController") as! StoreListPageController
+//
+//        guard let pvc = self.presentingViewController else { return }
+//        self.dismiss(animated: false) {
+//            vc.modalPresentationStyle = .fullScreen
+//            vc.kind = 3
+//            vc.searchWord = self.searchContent
+//            pvc.present(vc, animated: false, completion: nil)
+//        }
         
     }
     
