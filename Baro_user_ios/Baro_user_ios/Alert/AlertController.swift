@@ -42,11 +42,13 @@ extension AlertController : UICollectionViewDelegate,UICollectionViewDataSource,
         print("index ROw : ", Alerts.count - indexPath.item - 1)
         cell.title.text = model.alert_title
         cell.date.text = model.alert_startdate
-        var arr =  model.alert_startdate.components(separatedBy: ["년","월","일"]).map{(value) -> String in
-              return String(value)
-        }
-        print("arr : ", arr)
+//        var arr =  model.alert_startdate.components(separatedBy: ["년","월","일"]).map{(value) -> String in
+//              return String(value)
+//        }
+//        print("arr : ", arr)
         cell.layer.cornerRadius = 5
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 1).cgColor
         
         return cell
     }

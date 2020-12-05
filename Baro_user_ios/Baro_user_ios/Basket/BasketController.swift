@@ -7,12 +7,19 @@
 
 import UIKit
 import SwiftyJSON
-class BasketController : UIViewController {
+class BasketController : UIViewController, TopViewElementDelegate{
+    func backBtnDelegate() {
+        saveBasket()
+    }
+    
+    func favoriteBtnDelegate(controller: UIViewController) {
+        print("delegate")
+    }
+    
     var menu : Order!
     var orders = [Order]()
     let netWork = CallRequest()
     let urlMaker = NetWorkURL()
-    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -48,7 +55,6 @@ class BasketController : UIViewController {
         
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            print("gesture")
             switch swipeGesture.direction{
             case UISwipeGestureRecognizer.Direction.right:
                 self.dismiss(animated: true, completion: nil)
@@ -58,10 +64,6 @@ class BasketController : UIViewController {
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
-    }
-    @IBAction func clickBack(_ sender: Any) {
-        saveBasket()
-        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func clickPay(_ sender: Any) {
         saveBasket()

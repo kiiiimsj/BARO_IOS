@@ -8,6 +8,7 @@
 import UIKit
 
 protocol TopViewElementDelegate : AnyObject {
+    func backBtnDelegate()
     func favoriteBtnDelegate(controller : UIViewController)
 }
 class BottomTabBarController: UIViewController {
@@ -109,6 +110,9 @@ class BottomTabBarController: UIViewController {
     func basketBadge(){
         //장바구니의 개수가 0이라면 return
         if(basketOrders.count == 0) {
+            return
+        }
+        if(controllerIdentifier == "BasketController") {
             return
         }
         basketButton.isHidden = false
@@ -221,13 +225,6 @@ class BottomTabBarController: UIViewController {
         ContentViewScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         TopView.isHidden = true
     }
-//    func restoreBottomTabBar() {
-//        print("callRestoreBottomTabBar")
-//        BottomView.isHidden = false
-//        BottomView.frame.size = saveBottomViewSize
-//        ContentView.frame.size = saveContentViewSize
-//        ContentViewScrollView.frame.size = saveContentViewSize
-//    }
     func deleteBottomTabBar() {
         ContentView.frame.size = CGSize(width: view.frame.width, height: (saveContentViewSize.height + saveBottomViewSize.height))
         ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (saveContentViewSize.height + saveBottomViewSize.height))
@@ -282,6 +279,10 @@ class BottomTabBarController: UIViewController {
                 let VCsender = controller as! AlertContentController
                 print("alert indexPath row : ", sender)
                 VCsender.Alert = sender as! AlertModel
+                finallController = VCsender
+            case basketControllerIdentifier:
+                let VCsender = controller as! BasketController
+                VCsender.orders = sender as! [Order]
                 finallController = VCsender
             default:
                 print("error")
@@ -375,6 +376,7 @@ class BottomTabBarController: UIViewController {
     //뒤로가기 버튼
     @IBAction func clickTopBarBackBtn() {
         self.dismiss(animated: true, completion: nil)
+        topViewDelegate?.backBtnDelegate()
     }
     
     @IBAction func clickFavoriteBtn() {
