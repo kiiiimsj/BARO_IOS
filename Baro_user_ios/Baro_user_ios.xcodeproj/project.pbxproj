@@ -141,6 +141,7 @@
 		E34CAF9C255A89C300BE3F53 /* EventPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF9B255A89C200BE3F53 /* EventPageController.swift */; };
 		E34CAFA0255A89F300BE3F53 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34CAF9F255A89F300BE3F53 /* Event.storyboard */; };
 		E356D646256FB20300F39463 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E356D645256FB20300F39463 /* CustomLabel.swift */; };
+		E356D66B257A5EAA00F39463 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E356D66A257A5EA900F39463 /* Extensions.swift */; };
 		E39C1581256952A000520033 /* MenuOrBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15802569529F00520033 /* MenuOrBasket.swift */; };
 		E39C15842569E70B00520033 /* EmptyBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15832569E70B00520033 /* EmptyBasket.swift */; };
 /* End PBXBuildFile section */
@@ -285,6 +286,7 @@
 		E34CAF9B255A89C200BE3F53 /* EventPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPageController.swift; sourceTree = "<group>"; };
 		E34CAF9F255A89F300BE3F53 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		E356D645256FB20300F39463 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		E356D66A257A5EA900F39463 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E39C15802569529F00520033 /* MenuOrBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOrBasket.swift; sourceTree = "<group>"; };
 		E39C15832569E70B00520033 /* EmptyBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBasket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -539,6 +541,7 @@
 				3F6D861A25653BAA00D65CAC /* ToastMessage.swift */,
 				E356D645256FB20300F39463 /* CustomLabel.swift */,
 				3FECEDD5257658B400E0328F /* DialogForm.swift */,
+				E356D66A257A5EA900F39463 /* Extensions.swift */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -828,6 +831,7 @@
 				3F0EB738255A70C400F72604 /* SendServerOrders.swift in Sources */,
 				E31D4015254FC64300B63F77 /* BasketController.swift in Sources */,
 				3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */,
+				E356D66B257A5EAA00F39463 /* Extensions.swift in Sources */,
 				04235C7725493A7100BA2BB1 /* OrderStatusController.swift in Sources */,
 				E31D3FF6254692A200B63F77 /* OptionCategoryHeader.swift in Sources */,
 				E31D3FF32546887F00B63F77 /* OptionsHeader.swift in Sources */,

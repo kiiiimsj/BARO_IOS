@@ -19,6 +19,7 @@ class OrderHistoryController : UIViewController {
     var phone = "01093756927"
     var startPoint = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("iii")
@@ -54,21 +55,11 @@ class OrderHistoryController : UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    func initRefresh(){
-        let refresh = UIRefreshControl()
-        startPoint += 20
-        refresh.addTarget(self, action: #selector(loadData(_:)), for: .valueChanged)
-        refresh.attributedTitle = NSAttributedString(string: "새로고침")
-        if #available(iOS 10.0, *){
-            collectionView.refreshControl = refresh
-        }
-        else{
-            collectionView.addSubview(refresh)
-        }
-    }
+    
     @objc func loadData(_ refreshControll : UIRefreshControl) {
         network.post(method: .get, url: networkURL.orderHistoryList + "?phone=" + phone + "&startPoint=" + String(startPoint)) {
             json in
+            print("startPoint",self.startPoint)
             var orderHistoryModel = OrderHistoryList()
             for item in json["order"].array! {
                 print(json)
@@ -192,7 +183,7 @@ extension OrderHistoryController : UIScrollViewDelegate {
         callMoreData = true
         network.post(method: .get, url: networkURL.orderHistoryList + "?phone=" + phone + "&startPoint=" + String(startPoint)) {
             json in
-            print("받는중")
+            print("받는중",self.startPoint)
             var orderHistoryModel = OrderHistoryList()
             if json["result"].boolValue {
                 self.collectionView.reloadSections(IndexSet(integer: 1))
@@ -209,8 +200,9 @@ extension OrderHistoryController : UIScrollViewDelegate {
                 }
                 self.collectionView.reloadData()
                 self.startPoint += 20
+                self.callMoreData = false
             }
-            self.callMoreData = false
+            
         }
     }
 }
