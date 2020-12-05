@@ -40,6 +40,8 @@ class OrderDetailsController : UIViewController {
     var getSaveStoreId = UserDefaults.standard.value(forKey: "currentStoreId")
     
     var data : Order?
+    
+    let bottomTabBarInfo = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()
         print("orderdetailviewLoad")
@@ -329,6 +331,9 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
         self.dismiss(animated: false)
     }
     func tapClick(dialog: UIViewController, type: String) {
+        let storyboard2 = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let vc2 = storyboard2.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        
         let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
         
@@ -336,9 +341,16 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
         vc.orders = loadBasket()
         vc.orders.append(data!)
         saveBasket(orders: vc.orders)
+        
+        vc2.controllerIdentifier = self.bottomTabBarInfo.basketControllerIdentifier
+        vc2.controllerStoryboard = self.bottomTabBarInfo.basketStoryBoard
+        vc2.controllerSender = loadBasket()
+        vc2.moveFromOutSide = true
+        
         self.dismiss(animated: false) {
-            vc.modalPresentationStyle = .fullScreen
-            pvc.present(vc, animated: false, completion: nil)
+            vc2.modalPresentationStyle = .fullScreen
+            vc2.modalTransitionStyle = .crossDissolve
+            pvc.present(vc2, animated: false, completion: nil)
         }
     }
     func saveBasket(orders : [Order]) {

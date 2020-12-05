@@ -51,6 +51,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         current.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
         }
     }
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        print("APP_ACTIVE")
+        UserDefaults.standard.set("", forKey: "basket")
+    }
+    func applicationWillTerminate(_ application: UIApplication) {
+        print("APP_TERMINATE")
+        UserDefaults.standard.set("", forKey: "basket")
+    }
 }
 
 extension AppDelegate : UNUserNotificationCenterDelegate {

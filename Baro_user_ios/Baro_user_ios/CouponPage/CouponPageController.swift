@@ -8,7 +8,6 @@
 import UIKit
 
 class CouponPageController: UIViewController {
-    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var typeCouponNumber: UITextField!
     var userPhone = ""
@@ -19,7 +18,9 @@ class CouponPageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userPhone)
+        print("couponPageViewDidLoad")
+        userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
+        print("userPhone : ", userPhone)
         configureUI()
         collection.delegate = self
         collection.dataSource = self
@@ -45,9 +46,6 @@ class CouponPageController: UIViewController {
         registerBtn.layer.borderColor = UIColor.customLightGray.cgColor
         registerBtn.layer.borderWidth = 2
         registerBtn.layer.cornerRadius = 5
-    }
-    @IBAction func pressBack(_ sender: Any) {
-        self.dismiss(animated: false)
     }
     @IBAction func pressRegister(_ sender: Any) {
     }

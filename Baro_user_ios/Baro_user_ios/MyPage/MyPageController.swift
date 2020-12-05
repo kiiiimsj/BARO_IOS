@@ -92,12 +92,13 @@ class MyPageController : UIViewController {
         }
     }
     @objc func goToCoupon(_ sender : UIGestureRecognizer){
-        let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "CouponPageController") as! CouponPageController
-        vc.userPhone = userPhone
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        vc.moveFromOutSide = true
+        vc.controllerStoryboard = bottomTabBarInfo.couponPageStoryBoard
+        vc.controllerIdentifier = bottomTabBarInfo.couponPageControllerIdentifier
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .fullScreen
-        print("Dfadffasdf")
         present(vc, animated: false, completion: nil)
     }
     @objc func goToBasket(_ sender : UIGestureRecognizer){
@@ -109,7 +110,6 @@ class MyPageController : UIViewController {
             ToastMessage().showToast(message: "장바구니가 비어있습니다.", font: UIFont(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
             return
         }
-        print("Dfadffasdf")
         present(vc, animated: false, completion: nil)
     }
     @objc func goToOrder(_ sender : UIGestureRecognizer){
