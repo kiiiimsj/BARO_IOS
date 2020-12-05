@@ -34,6 +34,8 @@ class BottomTabBarController: UIViewController {
     let orderDetailControllerIdentifier = "OrderDetailsController"
     let myPageControllerIdentifier = "MyPageController"
     let aboutStoreControllerIdentifier = "AboutStore"
+    let alertControllerIdentifier = "AlertController"
+    let alertContentControllerIdentifier = "AlertContentController"
     //접근가능 스토리보드
     let mainPageStoryBoard = UIStoryboard(name: "MainPage", bundle: nil)
     let storeListStoryBoard = UIStoryboard(name: "StoreListPage", bundle: nil)
@@ -42,6 +44,7 @@ class BottomTabBarController: UIViewController {
     let orderDetailStoryBoard = UIStoryboard(name: "OrderDetails", bundle: nil)
     let myPageStoryBoard = UIStoryboard(name: "MyPage", bundle: nil)
     let aboutStoreStoryBoard = UIStoryboard(name: "AboutStore", bundle: nil)
+    let alertStoryBoard = UIStoryboard(name: "Alert", bundle: nil)
     //화면 이동 할때 필요한 요소.
     var controllerStoryboard = UIStoryboard()
     var controllerIdentifier : String = ""
@@ -72,6 +75,7 @@ class BottomTabBarController: UIViewController {
         //aboutstore나 storelist 접근 시 viewload에서 controller 변경 구문
         if(moveFromOutSide) {
             changeViewController(getController: controllerIdentifier, getStoryBoard: controllerStoryboard, sender: controllerSender)
+            print("controllerSender : ", controllerSender)
             moveFromOutSide = false
         }
         //basket userdefault 유무 버튼 비활성화/활성화 구문
@@ -137,9 +141,6 @@ class BottomTabBarController: UIViewController {
         if(TopView.isHidden) {
             restoreTopView()
         }
-        if(BottomView.isHidden) {
-            restoreBottomTabBar()
-        }
         switch(getController) {
             case mainPageControllerIdentifier:
                 self.deleteTopView()
@@ -150,8 +151,15 @@ class BottomTabBarController: UIViewController {
                 self.changeContentView(controller: controller as! OrderStatusController, sender: nil)
             case orderHistoryControllerIdentifier:
                 self.changeContentView(controller: controller as! OrderHistoryController, sender: nil)
+            case alertControllerIdentifier:
+                self.deleteBottomTabBar()
+                self.changeContentView(controller: controller as! AlertController, sender: nil)
+            case alertContentControllerIdentifier:
+                print("ALERTCONTENT")
+                self.deleteBottomTabBar()
+                self.changeContentView(controller: controller as! AlertContentController, sender: sender)
             case orderDetailControllerIdentifier:
-                deleteBottomTabBar()
+                self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! OrderDetailsController, sender: sender)
             case myPageControllerIdentifier:
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
@@ -199,15 +207,14 @@ class BottomTabBarController: UIViewController {
         ContentViewScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         TopView.isHidden = true
     }
-    func restoreBottomTabBar() {
-        BottomView.isHidden = false
-        BottomView.frame.size = saveTopViewSize
-        ContentView.frame.size = saveContentViewSize
-        ContentViewScrollView.frame.size = saveContentViewSize
-        ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 113.0)
-    }
+//    func restoreBottomTabBar() {
+//        print("callRestoreBottomTabBar")
+//        BottomView.isHidden = false
+//        BottomView.frame.size = saveBottomViewSize
+//        ContentView.frame.size = saveContentViewSize
+//        ContentViewScrollView.frame.size = saveContentViewSize
+//    }
     func deleteBottomTabBar() {
-        BottomView.frame.size = saveBottomViewSize
         ContentView.frame.size = CGSize(width: view.frame.width, height: (saveContentViewSize.height + saveBottomViewSize.height))
         ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (saveContentViewSize.height + saveBottomViewSize.height))
         ContentViewScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -250,12 +257,15 @@ class BottomTabBarController: UIViewController {
                 }
                 else {
                     VCsender.kind = 3
-                    print("searchContent : ", sender as! String)
                     VCsender.searchWord = sender as! String
                     swipeRecognizer()
                 }
                 finallController = VCsender
-                
+            case alertContentControllerIdentifier:
+                let VCsender = controller as! AlertContentController
+                print("alert indexPath row : ", sender)
+                VCsender.Alert = sender as! AlertModel
+                finallController = VCsender
             default:
                 print("error")
             }
@@ -306,6 +316,12 @@ class BottomTabBarController: UIViewController {
                     topBarViewControllerTitle.text = "주문 내역"
                 case myPageControllerIdentifier:
                     topBarViewControllerTitle.text = "마이페이지"
+                case alertControllerIdentifier:
+                    topBarViewControllerTitle.text = "알 림"
+                    topBarBackBtn.isHidden = false
+                case alertContentControllerIdentifier:
+                    topBarViewControllerTitle.isHidden = true
+                    topBarBackBtn.isHidden = false
                 case aboutStoreControllerIdentifier:
                     topBarFavoriteBtn.isHidden = false
                     topBarBackBtn.isHidden = false

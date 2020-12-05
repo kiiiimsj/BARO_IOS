@@ -28,6 +28,8 @@ class MyPageController : UIViewController {
     
     @IBOutlet weak var leftBar: UIView!
     @IBOutlet weak var rightBar: UIView!
+    
+    let bottomTabBarInfo = BottomTabBarController()
     var buttons = [ [" ", "  공지사항", "  입점요청", "  1:1 문의"], [" ","  비밀번호 변경", "  이메일 변경"], [" ","  이용약관", "  개인정보 처리방침"] ]
     var buttonsSectionHeight : CGFloat = 7.0
     override func viewWillAppear(_ animated: Bool) {
@@ -103,15 +105,22 @@ class MyPageController : UIViewController {
         let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .fullScreen
+        if(vc.basket.value(forKey: "basket") == nil || vc.basket.value(forKey: "basket") as! String == "") {
+            ToastMessage().showToast(message: "장바구니가 비어있습니다.", font: UIFont(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
+            return
+        }
         print("Dfadffasdf")
         present(vc, animated: false, completion: nil)
     }
     @objc func goToOrder(_ sender : UIGestureRecognizer){
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        vc.moveFromOutSide = true
+        vc.controllerIdentifier = bottomTabBarInfo.orderHistoryControllerIdentifier
+        vc.controllerStoryboard = bottomTabBarInfo.orderHistoryStoryBoard
+        
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .fullScreen
-        vc.changeViewController(getController: "OrderHistoryController", getStoryBoard: UIStoryboard(name: "OrderHistory", bundle: nil), sender: nil)
         present(vc, animated: false, completion: nil)
     }
     @IBAction func logoutBtnClick() {

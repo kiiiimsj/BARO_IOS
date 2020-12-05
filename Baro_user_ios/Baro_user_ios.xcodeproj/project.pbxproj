@@ -80,6 +80,7 @@
 		3FC20E602546EF0500EEE783 /* ChangePass.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC20E5F2546EF0500EEE783 /* ChangePass.storyboard */; };
 		3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20E622546EFD400EEE783 /* ChangeEmail.swift */; };
 		3FC20E662546EFF700EEE783 /* ChangeEmail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC20E652546EFF700EEE783 /* ChangeEmail.storyboard */; };
+		3FCC4814257A649B00BAD807 /* AlertContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC4813257A649B00BAD807 /* AlertContentController.swift */; };
 		3FDE5E382546968000C05514 /* NoticePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE5E372546968000C05514 /* NoticePage.storyboard */; };
 		3FDE5E5E2546A16C00C05514 /* TermOfUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE5E5D2546A16C00C05514 /* TermOfUser.swift */; };
 		3FDE5E612546A1C800C05514 /* TermOfUserPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */; };
@@ -223,6 +224,7 @@
 		3FC20E5F2546EF0500EEE783 /* ChangePass.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePass.storyboard; sourceTree = "<group>"; };
 		3FC20E622546EFD400EEE783 /* ChangeEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmail.swift; sourceTree = "<group>"; };
 		3FC20E652546EFF700EEE783 /* ChangeEmail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeEmail.storyboard; sourceTree = "<group>"; };
+		3FCC4813257A649B00BAD807 /* AlertContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContentController.swift; sourceTree = "<group>"; };
 		3FDE5E372546968000C05514 /* NoticePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NoticePage.storyboard; sourceTree = "<group>"; };
 		3FDE5E5D2546A16C00C05514 /* TermOfUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermOfUser.swift; sourceTree = "<group>"; };
 		3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermOfUserPage.storyboard; sourceTree = "<group>"; };
@@ -600,6 +602,7 @@
 				E34CAF6525555B6600BE3F53 /* AlertController.swift */,
 				E34CAF6825555B7000BE3F53 /* Alert.storyboard */,
 				E34CAF6B255567D300BE3F53 /* AlertCell.swift */,
+				3FCC4813257A649B00BAD807 /* AlertContentController.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				E33D8563253F163000E50BAC /* StoreMenu2Controller.swift in Sources */,
 				04D11F3B2543D2F100ADB210 /* OrderHistoryController.swift in Sources */,
 				E34CAF99255A708700BE3F53 /* CouponCell.swift in Sources */,
+				3FCC4814257A649B00BAD807 /* AlertContentController.swift in Sources */,
 				048D55B6253D2E0F009E9CE4 /* MainPageEvent.swift in Sources */,
 				043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */,
 				3FE2C29E2557E3A5002E6184 /* CouponForBasket.swift in Sources */,
