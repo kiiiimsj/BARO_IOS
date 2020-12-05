@@ -8,6 +8,8 @@
 import UIKit
 
 class CouponPageController: UIViewController {
+    @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var typeCouponNumber: UITextField!
     var userPhone = ""
     var network = CallRequest()
     var urlMaker = NetWorkURL()
@@ -19,6 +21,7 @@ class CouponPageController: UIViewController {
         print("couponPageViewDidLoad")
         userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
         print("userPhone : ", userPhone)
+        configureUI()
         collection.delegate = self
         collection.dataSource = self
         network.get(method: .get, url: urlMaker.couponList+userPhone) { (json) in
@@ -39,6 +42,13 @@ class CouponPageController: UIViewController {
             }
         }
     }
+    func configureUI(){
+        registerBtn.layer.borderColor = UIColor.customLightGray.cgColor
+        registerBtn.layer.borderWidth = 2
+        registerBtn.layer.cornerRadius = 5
+    }
+    @IBAction func pressRegister(_ sender: Any) {
+    }
 }
 
 extension CouponPageController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
@@ -54,11 +64,14 @@ extension CouponPageController : UICollectionViewDelegate,UICollectionViewDataSo
         cell.CouponContent.text = data.coupon_content
         cell.CouponEndDate.text = data.coupon_enddate+"까지"
         cell.couponCondition.text = String(data.coupon_condition)+"원 이상 구매시 적용 가능"
-        cell.backgroundColor = .purple
+        cell.layer.borderWidth = 3
+        cell.layer.borderColor = UIColor.init(red: 131/255, green: 51/255, blue: 230/255, alpha: 0.5).cgColor
+        cell.layer.cornerRadius = 10
+//        cell.backgroundColor = .purple
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+        return CGSize(width: collectionView.frame.width, height: 150)
     }
     
      
