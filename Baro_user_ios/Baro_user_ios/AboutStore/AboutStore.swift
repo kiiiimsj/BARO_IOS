@@ -7,9 +7,6 @@
 import UIKit
 private let FirstBarIdentifier = "ASFirstBarCell"
 class AboutStore : UIViewController, TopViewElementDelegate {
-    func backBtnDelegate() {
-        
-    }
     func favoriteBtnDelegate(controller : UIViewController) {
         if (self.isFlag == 1) { // 즐겨찾기가 되어있는 경우에서 삭제
             self.performSegue(withIdentifier: "FavoriteDialog", sender: nil)

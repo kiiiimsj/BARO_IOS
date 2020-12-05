@@ -1,51 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kxe-lW-kmD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Coupon Page Controller-->
+        <!--CouponPageController-->
         <scene sceneID="eqD-fj-Sm5">
             <objects>
-                <viewController storyboardIdentifier="CouponPageController" id="kxe-lW-kmD" customClass="CouponPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CouponPageController" title="CouponPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kxe-lW-kmD" customClass="CouponPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JiN-Q4-ou7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fno-J2-e1w">
-                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFm-AJ-aqE">
-                                        <rect key="frame" x="20" y="14" width="7" height="22"/>
-                                        <state key="normal" image="arrow_back"/>
-                                        <connections>
-                                            <action selector="pressBack:" destination="kxe-lW-kmD" eventType="touchUpInside" id="Ae0-pZ-Rm7"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 쿠폰 리스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5w-vw-ip6">
-                                        <rect key="frame" x="158.5" y="14.5" width="97" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="kFm-AJ-aqE" firstAttribute="centerY" secondItem="fno-J2-e1w" secondAttribute="centerY" id="BQ0-av-DIC"/>
-                                    <constraint firstItem="kFm-AJ-aqE" firstAttribute="leading" secondItem="fno-J2-e1w" secondAttribute="leading" constant="20" id="V4q-sJ-6Fz"/>
-                                    <constraint firstItem="t5w-vw-ip6" firstAttribute="centerX" secondItem="fno-J2-e1w" secondAttribute="centerX" id="bfd-FD-Reu"/>
-                                    <constraint firstAttribute="height" constant="50" id="ej2-s3-PZ5"/>
-                                    <constraint firstItem="t5w-vw-ip6" firstAttribute="centerY" secondItem="fno-J2-e1w" secondAttribute="centerY" id="t7H-fe-keV"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IuW-9j-F1n">
-                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="72g-xk-Mhe">
                                     <size key="itemSize" width="414" height="128"/>
@@ -111,17 +85,13 @@
                         <viewLayoutGuide key="safeArea" id="kdB-qP-ZlH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fno-J2-e1w" firstAttribute="top" secondItem="kdB-qP-ZlH" secondAttribute="top" id="7bf-UW-ZUS"/>
+                            <constraint firstItem="IuW-9j-F1n" firstAttribute="top" secondItem="kdB-qP-ZlH" secondAttribute="top" id="KbJ-56-ItC"/>
                             <constraint firstItem="IuW-9j-F1n" firstAttribute="leading" secondItem="kdB-qP-ZlH" secondAttribute="leading" id="M9R-iX-yPv"/>
-                            <constraint firstItem="IuW-9j-F1n" firstAttribute="top" secondItem="fno-J2-e1w" secondAttribute="bottom" id="WCQ-Ch-QEs"/>
                             <constraint firstItem="IuW-9j-F1n" firstAttribute="bottom" secondItem="kdB-qP-ZlH" secondAttribute="bottom" id="ZRI-eZ-Bby"/>
-                            <constraint firstItem="fno-J2-e1w" firstAttribute="leading" secondItem="kdB-qP-ZlH" secondAttribute="leading" id="g7h-IZ-oGP"/>
-                            <constraint firstItem="kdB-qP-ZlH" firstAttribute="trailing" secondItem="fno-J2-e1w" secondAttribute="trailing" id="kiV-yl-kiS"/>
                             <constraint firstItem="IuW-9j-F1n" firstAttribute="trailing" secondItem="kdB-qP-ZlH" secondAttribute="trailing" id="zNb-Z0-yAt"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backBtn" destination="kFm-AJ-aqE" id="YoJ-an-gL1"/>
                         <outlet property="collection" destination="IuW-9j-F1n" id="pPB-WF-Rs6"/>
                     </connections>
                 </viewController>
@@ -131,7 +101,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow_back" width="7" height="12"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

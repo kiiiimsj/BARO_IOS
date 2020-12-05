@@ -152,12 +152,12 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         //self.collectionView.reloadSections(IndexSet(integer: 0))
     }
     func tabLeft(index : Int) {
-        print("deleteindex : ", index)
         orders.remove(at: index)
         essential.remove(at: index)
         nonEssential.remove(at: index)
         self.saveBasket()
         if(orders.count == 0) {
+            UserDefaults.standard.set("", forKey: "basket")
             self.dismiss(animated: false, completion: nil)
         }
         self.totalPrice = 0
@@ -167,6 +167,6 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
     }
     
     func tabRight(index : Int) {
-        print("123123")
+        print("click Right")
     }
 }

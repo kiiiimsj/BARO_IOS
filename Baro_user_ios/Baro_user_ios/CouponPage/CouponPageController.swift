@@ -8,7 +8,6 @@
 import UIKit
 
 class CouponPageController: UIViewController {
-    @IBOutlet weak var backBtn: UIButton!
     var userPhone = ""
     var network = CallRequest()
     var urlMaker = NetWorkURL()
@@ -17,7 +16,9 @@ class CouponPageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userPhone)
+        print("couponPageViewDidLoad")
+        userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
+        print("userPhone : ", userPhone)
         collection.delegate = self
         collection.dataSource = self
         network.get(method: .get, url: urlMaker.couponList+userPhone) { (json) in
@@ -37,9 +38,6 @@ class CouponPageController: UIViewController {
                 self.collection.reloadData()
             }
         }
-    }
-    @IBAction func pressBack(_ sender: Any) {
-        self.dismiss(animated: false)
     }
 }
 

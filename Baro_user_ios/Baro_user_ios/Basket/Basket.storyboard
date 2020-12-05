@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HI5-FX-0F0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -21,7 +21,7 @@
         <!--BasketController-->
         <scene sceneID="Cw2-ic-lgS">
             <objects>
-                <viewController storyboardIdentifier="BasketController" title="BasketController" id="HI5-FX-0F0" customClass="BasketController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BasketController" title="BasketController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HI5-FX-0F0" customClass="BasketController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zdp-4w-shf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,7 +205,7 @@
                                                                 <outlet property="extraPrice" destination="Qhy-9n-tah" id="WyQ-LT-v2s"/>
                                                             </connections>
                                                         </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="Baro_user_ios" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="25" width="382" height="25"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tLr-LY-rLC">
