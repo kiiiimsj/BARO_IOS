@@ -89,6 +89,14 @@ class BottomTabBarController: UIViewController {
                 bottomTabBar.delegate = self
                 return
             }
+            if(controllerIdentifier == "BasketController") {
+                basketButton.isHidden = true
+                return
+            }
+            if(controllerIdentifier == "OrderDetailsController") {
+                basketButton.isHidden = true
+                return
+            }
             getOrders()
             basketBadge()
         } else {
@@ -110,9 +118,6 @@ class BottomTabBarController: UIViewController {
     func basketBadge(){
         //장바구니의 개수가 0이라면 return
         if(basketOrders.count == 0) {
-            return
-        }
-        if(controllerIdentifier == "BasketController") {
             return
         }
         basketButton.isHidden = false
