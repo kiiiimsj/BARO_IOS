@@ -120,11 +120,11 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
             cell.store_id = orderHistory.store_id
             cell.cellDelegate = self
             cell.goToStoreBtn.layer.borderColor = UIColor.init(red: 131/255, green: 51/255, blue: 230/255, alpha: 1) .cgColor
-            cell.goToStoreBtn.layer.borderWidth = 2
+            cell.goToStoreBtn.layer.borderWidth = 1
             cell.goToStoreBtn.layer.cornerRadius = 10
             cell.goToStoreBtn.layer.masksToBounds = true
             cell.showDetailsBtn.layer.borderColor = UIColor.init(red: 131/255, green: 51/255, blue: 230/255, alpha: 1) .cgColor
-            cell.showDetailsBtn.layer.borderWidth = 2
+            cell.showDetailsBtn.layer.borderWidth = 1
             cell.showDetailsBtn.layer.cornerRadius = 10
             cell.showDetailsBtn.layer.masksToBounds = true
             
