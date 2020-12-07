@@ -44,10 +44,6 @@ class uiViewSetting: UIView {
                 if self.restorationIdentifier == "DialogView" {
                     return
                 }
-                if self.restorationIdentifier == "BorderBottom" {
-                    layer.edgeAntialiasingMask = [.layerBottomEdge]
-                    layer.maskedCorners = [.layerMinXMinYCorner]
-                }
                 layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
             }
         }
