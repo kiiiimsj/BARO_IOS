@@ -17,6 +17,7 @@ class BottomTabBarController: UIViewController {
     @IBOutlet weak var topBarBackBtn: UIButton!
     @IBOutlet weak var topBarViewControllerTitle: UILabel!
     @IBOutlet weak var topBarFavoriteBtn: UIButton!
+    
     //내부 컨트롤러 클릭 인식용.
     weak var topViewDelegate : TopViewElementDelegate?
     //컨텐트뷰 엘리먼트
@@ -26,6 +27,8 @@ class BottomTabBarController: UIViewController {
     //바텀뷰 엘리먼트
     @IBOutlet weak var BottomView: UIView!
     @IBOutlet weak var bottomTabBar: UITabBar!
+    //바텀뷰 텝 아이템
+    @IBOutlet weak var MainPageTabBar: UITabBarItem!
     //분기문에 사용할 실제 컨트롤러 아이덴티피어
     let mainPageControllerIdentifier = "MainPageController"
     let storeListControllerIdentifier = "StoreListPageController"
@@ -160,6 +163,7 @@ class BottomTabBarController: UIViewController {
         }
         switch(getController) {
             case mainPageControllerIdentifier:
+                bottomTabBar.selectedItem = self.MainPageTabBar
                 self.deleteTopView()
                 self.changeContentView(controller: controller as! MainPageController, sender: nil)
             case storeListControllerIdentifier:
@@ -169,7 +173,6 @@ class BottomTabBarController: UIViewController {
             case orderHistoryControllerIdentifier:
                 self.changeContentView(controller: controller as! OrderHistoryController, sender: nil)
             case alertControllerIdentifier:
-                ContentView.backgroundColor = UIColor.init(red: 196/255, green: 196/255, blue: 196/255, alpha: 0.5)
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! AlertController, sender: sender)
             case alertContentControllerIdentifier:

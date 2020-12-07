@@ -15,6 +15,7 @@ class SeparateWindowController : UIViewController {
     var urlMaker = NetWorkURL()
     var storeData : LocationModel!
     var clickListener : SWDelegate!
+    let bottomTabBarInfo = BottomTabBarController()
     @IBOutlet weak var store_image: UIImageView!
     @IBOutlet weak var goStore: UIButton!
     @IBOutlet weak var Store_address_label: UILabel!
@@ -40,19 +41,20 @@ class SeparateWindowController : UIViewController {
         }
     }
     @IBAction func pressGo(_ sender: Any) {
-//        print("go")
-//        let vc = self.storyboard?.instantiateViewController(identifier: "goToStore") as! AboutStore
-//        vc.store_id = String(self.storeData.store_id)
-//        present(vc, animated: false)
-//        clickListener.press(end: true)
-//        print("end")
     }
     @objc func tap(_ sender: UITapGestureRecognizer) {
-        print("go")
-        let vc = self.storyboard?.instantiateViewController(identifier: "goToStore") as! AboutStore
-        vc.store_id = self.storeData.store_id
-        present(vc, animated: false)
-        clickListener.press(end: true)
-        print("end")
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
+        ViewInBottomTabBar.controllerSender = self.storeData.store_id
+        ViewInBottomTabBar.moveFromOutSide = true
+        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = .crossDissolve
+        guard let pvc = self.presentingViewController else {return}
+        self.dismiss(animated: false) {
+            pvc.present(ViewInBottomTabBar, animated: true, completion: nil)
+        }
     }
 }
