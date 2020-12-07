@@ -142,6 +142,7 @@
 		E34CAFA0255A89F300BE3F53 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34CAF9F255A89F300BE3F53 /* Event.storyboard */; };
 		E356D646256FB20300F39463 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E356D645256FB20300F39463 /* CustomLabel.swift */; };
 		E356D66B257A5EAA00F39463 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E356D66A257A5EA900F39463 /* Extensions.swift */; };
+		E356D66F257DD8B400F39463 /* CouponRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E356D66E257DD8B300F39463 /* CouponRegisterController.swift */; };
 		E39C1581256952A000520033 /* MenuOrBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15802569529F00520033 /* MenuOrBasket.swift */; };
 		E39C15842569E70B00520033 /* EmptyBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15832569E70B00520033 /* EmptyBasket.swift */; };
 /* End PBXBuildFile section */
@@ -287,6 +288,7 @@
 		E34CAF9F255A89F300BE3F53 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		E356D645256FB20300F39463 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		E356D66A257A5EA900F39463 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E356D66E257DD8B300F39463 /* CouponRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponRegisterController.swift; sourceTree = "<group>"; };
 		E39C15802569529F00520033 /* MenuOrBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOrBasket.swift; sourceTree = "<group>"; };
 		E39C15832569E70B00520033 /* EmptyBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBasket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -613,6 +615,7 @@
 				E34CAF8A255959C800BE3F53 /* CouponPageController.swift */,
 				E34CAF8D255959DA00BE3F53 /* Coupon.storyboard */,
 				E34CAF98255A708700BE3F53 /* CouponCell.swift */,
+				E356D66E257DD8B300F39463 /* CouponRegisterController.swift */,
 			);
 			path = CouponPage;
 			sourceTree = "<group>";
@@ -789,6 +792,7 @@
 				E31D400C254AC7DE00B63F77 /* EssentialRadio.swift in Sources */,
 				3F0F6EAB25514F0B00099ACC /* MyBootPayController.swift in Sources */,
 				04B8679A253B0ECD00336175 /* AppDelegate.swift in Sources */,
+				E356D66F257DD8B400F39463 /* CouponRegisterController.swift in Sources */,
 				043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */,
 				3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */,
 				E34CAF45255523A600BE3F53 /* SeparateWindowController.swift in Sources */,

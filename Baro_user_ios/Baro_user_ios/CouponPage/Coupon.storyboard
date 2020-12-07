@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kxe-lW-kmD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kxe-lW-kmD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -158,6 +158,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xap-0I-q4Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="115.94202898550725" y="109.82142857142857"/>
+        </scene>
+        <!--Coupon Register Controller-->
+        <scene sceneID="DSq-9m-cpL">
+            <objects>
+                <viewController storyboardIdentifier="CouponRegisterController" id="UPx-Dw-tD1" customClass="CouponRegisterController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RgY-ne-fEE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nkm-pn-dj0">
+                                <rect key="frame" x="50" y="348" width="314" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fg-Z8-EI2">
+                                        <rect key="frame" x="2" y="158" width="310" height="40"/>
+                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="16"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressOkay:" destination="UPx-Dw-tD1" eventType="touchUpInside" id="yph-fG-hsp"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쿠폰 등록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ur3-ez-eoj">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="60"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKl-Ui-Mcn">
+                                        <rect key="frame" x="0.0" y="60" width="314" height="98"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="uKl-Ui-Mcn" firstAttribute="top" secondItem="Ur3-ez-eoj" secondAttribute="bottom" id="8eI-Fr-Cos"/>
+                                    <constraint firstItem="uKl-Ui-Mcn" firstAttribute="leading" secondItem="Nkm-pn-dj0" secondAttribute="leading" id="Azd-xN-RQg"/>
+                                    <constraint firstItem="Ur3-ez-eoj" firstAttribute="height" secondItem="Nkm-pn-dj0" secondAttribute="height" multiplier="0.3" id="DSl-u1-nHP"/>
+                                    <constraint firstItem="Ur3-ez-eoj" firstAttribute="top" secondItem="Nkm-pn-dj0" secondAttribute="top" id="EaL-o3-OVc"/>
+                                    <constraint firstAttribute="trailing" secondItem="uKl-Ui-Mcn" secondAttribute="trailing" id="Nrr-Ia-M7c"/>
+                                    <constraint firstAttribute="trailing" secondItem="8fg-Z8-EI2" secondAttribute="trailing" constant="2" id="Ph2-Hv-OuN"/>
+                                    <constraint firstItem="Ur3-ez-eoj" firstAttribute="leading" secondItem="Nkm-pn-dj0" secondAttribute="leading" id="Ura-CW-tsN"/>
+                                    <constraint firstItem="8fg-Z8-EI2" firstAttribute="top" secondItem="uKl-Ui-Mcn" secondAttribute="bottom" id="ZJb-Nz-SBc"/>
+                                    <constraint firstAttribute="height" constant="200" id="g52-qV-cjG"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ur3-ez-eoj" secondAttribute="trailing" id="gNK-4u-cSf"/>
+                                    <constraint firstAttribute="bottom" secondItem="8fg-Z8-EI2" secondAttribute="bottom" constant="2" id="lHw-uA-W0o"/>
+                                    <constraint firstItem="8fg-Z8-EI2" firstAttribute="height" secondItem="Nkm-pn-dj0" secondAttribute="height" multiplier="0.2" id="rm4-4u-xeg"/>
+                                    <constraint firstItem="8fg-Z8-EI2" firstAttribute="leading" secondItem="Nkm-pn-dj0" secondAttribute="leading" constant="2" id="v18-RU-cQc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nyu-2s-M62"/>
+                        <color key="backgroundColor" red="0.53596583549222798" green="0.53596583549222798" blue="0.53596583549222798" alpha="0.59641835387323938" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nkm-pn-dj0" firstAttribute="leading" secondItem="Nyu-2s-M62" secondAttribute="leading" constant="50" id="0AP-yb-Jhl"/>
+                            <constraint firstItem="Nkm-pn-dj0" firstAttribute="centerY" secondItem="RgY-ne-fEE" secondAttribute="centerY" id="2z3-rh-Gtr"/>
+                            <constraint firstItem="Nyu-2s-M62" firstAttribute="trailing" secondItem="Nkm-pn-dj0" secondAttribute="trailing" constant="50" id="5iU-96-wAx"/>
+                            <constraint firstItem="Nkm-pn-dj0" firstAttribute="centerX" secondItem="RgY-ne-fEE" secondAttribute="centerX" id="o4l-qt-yEc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="message" destination="uKl-Ui-Mcn" id="MF0-y6-KvF"/>
+                        <outlet property="okayBtn" destination="8fg-Z8-EI2" id="zFC-VY-sVb"/>
+                        <outlet property="titleLabel" destination="Ur3-ez-eoj" id="xVS-fP-PVh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Em-Bc-ElQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966.66666666666674" y="109.82142857142857"/>
         </scene>
     </scenes>
     <resources>
