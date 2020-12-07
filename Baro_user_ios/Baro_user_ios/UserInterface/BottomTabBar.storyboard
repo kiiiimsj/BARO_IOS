@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jWx-mQ-KDo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jWx-mQ-KDo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -27,10 +27,10 @@
                                 <rect key="frame" x="0.0" y="44" width="360" height="69"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa6-fN-GjY">
-                                        <rect key="frame" x="17" y="19.5" width="30" height="30"/>
+                                        <rect key="frame" x="17" y="9.5" width="50" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="KG5-cM-Gaz"/>
-                                            <constraint firstAttribute="height" constant="30" id="gjK-A2-c2I"/>
+                                            <constraint firstAttribute="width" constant="50" id="KG5-cM-Gaz"/>
+                                            <constraint firstAttribute="height" constant="50" id="gjK-A2-c2I"/>
                                         </constraints>
                                         <state key="normal" image="arrow_back"/>
                                         <connections>
@@ -44,7 +44,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0I-hX-Wl8">
-                                        <rect key="frame" x="326" y="27" width="17" height="15"/>
+                                        <rect key="frame" x="293" y="9.5" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Alt-K8-Dwy"/>
+                                            <constraint firstAttribute="height" constant="50" id="CIT-5t-xNi"/>
+                                        </constraints>
                                         <state key="normal" image="heart"/>
                                         <connections>
                                             <action selector="clickFavoriteBtn" destination="jWx-mQ-KDo" eventType="touchUpInside" id="cbX-yk-FP7"/>
@@ -54,12 +58,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="HC0-eg-GES" firstAttribute="centerX" secondItem="J2M-FH-h0m" secondAttribute="centerX" id="7Uo-tH-DsO"/>
-                                    <constraint firstAttribute="bottom" secondItem="R0I-hX-Wl8" secondAttribute="bottom" constant="27" id="9MT-zb-iHD"/>
                                     <constraint firstItem="R0I-hX-Wl8" firstAttribute="centerY" secondItem="J2M-FH-h0m" secondAttribute="centerY" id="Klz-mx-faF"/>
                                     <constraint firstItem="Aa6-fN-GjY" firstAttribute="centerY" secondItem="J2M-FH-h0m" secondAttribute="centerY" id="eFQ-yh-7hj"/>
+                                    <constraint firstAttribute="trailing" secondItem="R0I-hX-Wl8" secondAttribute="trailing" constant="17" id="foJ-ne-z0P"/>
                                     <constraint firstItem="HC0-eg-GES" firstAttribute="centerY" secondItem="J2M-FH-h0m" secondAttribute="centerY" id="jlR-Bv-uNT"/>
                                     <constraint firstItem="Aa6-fN-GjY" firstAttribute="leading" secondItem="J2M-FH-h0m" secondAttribute="leading" constant="17" id="lJY-rh-ph2"/>
-                                    <constraint firstAttribute="trailing" secondItem="R0I-hX-Wl8" secondAttribute="trailing" constant="17" id="o2S-R2-yX9"/>
                                     <constraint firstAttribute="height" constant="69" id="wqx-hP-8yY"/>
                                 </constraints>
                             </view>
