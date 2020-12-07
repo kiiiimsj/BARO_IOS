@@ -52,11 +52,16 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
         
         ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.storeListControllerIdentifier
         ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.storeListStoryBoard
-        ViewInBottomTabBar.controllerSender = self.searchBar.text
+        let param = ["search":self.searchBar.text,"typeCode":"3"]
+        ViewInBottomTabBar.controllerSender = param
         ViewInBottomTabBar.moveFromOutSide = true
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
-        self.present(ViewInBottomTabBar, animated: true, completion: nil)
+        guard let pvc = self.presentingViewController else {return}
+
+        self.dismiss(animated: true) {
+            pvc.present(ViewInBottomTabBar, animated: true, completion: nil)
+        }
     }
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

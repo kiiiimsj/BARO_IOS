@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HI5-FX-0F0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -21,40 +21,11 @@
         <!--BasketController-->
         <scene sceneID="Cw2-ic-lgS">
             <objects>
-                <viewController storyboardIdentifier="BasketController" title="BasketController" id="HI5-FX-0F0" customClass="BasketController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BasketController" title="BasketController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HI5-FX-0F0" customClass="BasketController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zdp-4w-shf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vo9-Kv-fME">
-                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqi-mt-LwL">
-                                        <rect key="frame" x="177.5" y="14.5" width="59" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1G-Ho-CMZ">
-                                        <rect key="frame" x="20" y="14" width="34" height="22"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="34" id="Xay-D5-pjA"/>
-                                        </constraints>
-                                        <state key="normal" image="arrow_back"/>
-                                        <connections>
-                                            <action selector="clickBack:" destination="HI5-FX-0F0" eventType="touchUpInside" id="3ex-OU-ez5"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="m1G-Ho-CMZ" firstAttribute="leading" secondItem="Vo9-Kv-fME" secondAttribute="leading" constant="20" id="5N1-ND-NbZ"/>
-                                    <constraint firstItem="m1G-Ho-CMZ" firstAttribute="baseline" secondItem="vqi-mt-LwL" secondAttribute="baseline" id="OGY-hE-Bju"/>
-                                    <constraint firstItem="vqi-mt-LwL" firstAttribute="centerX" secondItem="Vo9-Kv-fME" secondAttribute="centerX" id="dCp-SC-1bG"/>
-                                    <constraint firstItem="vqi-mt-LwL" firstAttribute="centerY" secondItem="Vo9-Kv-fME" secondAttribute="centerY" id="oqB-hz-uZ1"/>
-                                    <constraint firstAttribute="height" constant="50" id="zkF-aR-gNS"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFT-Ql-mab">
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <color key="backgroundColor" red="0.47109787269999998" green="0.211157332" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -108,7 +79,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tau-Pl-sdi">
-                                <rect key="frame" x="0.0" y="101" width="414" height="602"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pxg-So-a3h">
                                     <size key="itemSize" width="414" height="112"/>
@@ -205,7 +176,7 @@
                                                                 <outlet property="extraPrice" destination="Qhy-9n-tah" id="WyQ-LT-v2s"/>
                                                             </connections>
                                                         </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="Baro_user_ios" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="25" width="382" height="25"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tLr-LY-rLC">
@@ -419,15 +390,12 @@
                         <viewLayoutGuide key="safeArea" id="2jU-gd-LZs"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="Vo9-Kv-fME" firstAttribute="leading" secondItem="2jU-gd-LZs" secondAttribute="leading" id="64u-2D-3E7"/>
                             <constraint firstItem="tau-Pl-sdi" firstAttribute="leading" secondItem="2jU-gd-LZs" secondAttribute="leading" id="9ut-ST-eXI"/>
                             <constraint firstItem="2jU-gd-LZs" firstAttribute="trailing" secondItem="tau-Pl-sdi" secondAttribute="trailing" id="Cyv-kC-t6O"/>
                             <constraint firstItem="eFT-Ql-mab" firstAttribute="bottom" secondItem="2jU-gd-LZs" secondAttribute="bottom" id="EwY-Am-1Z9"/>
-                            <constraint firstItem="Vo9-Kv-fME" firstAttribute="top" secondItem="2jU-gd-LZs" secondAttribute="top" id="Tin-N5-h8T"/>
                             <constraint firstItem="p5E-Vl-gDA" firstAttribute="top" secondItem="tau-Pl-sdi" secondAttribute="bottom" constant="7" id="V6X-2S-F9Z"/>
                             <constraint firstItem="eFT-Ql-mab" firstAttribute="leading" secondItem="2jU-gd-LZs" secondAttribute="leading" id="aRu-ON-Q2u"/>
-                            <constraint firstItem="2jU-gd-LZs" firstAttribute="trailing" secondItem="Vo9-Kv-fME" secondAttribute="trailing" id="dQD-za-SuL"/>
-                            <constraint firstItem="tau-Pl-sdi" firstAttribute="top" secondItem="Vo9-Kv-fME" secondAttribute="bottom" constant="7" id="evn-Em-7Jf"/>
+                            <constraint firstItem="tau-Pl-sdi" firstAttribute="top" secondItem="2jU-gd-LZs" secondAttribute="top" id="eEQ-cT-f26"/>
                             <constraint firstItem="SYE-SA-B43" firstAttribute="centerX" secondItem="zdp-4w-shf" secondAttribute="centerX" id="fwp-5k-fSy"/>
                             <constraint firstItem="p5E-Vl-gDA" firstAttribute="leading" secondItem="2jU-gd-LZs" secondAttribute="leading" id="lKk-mi-mqH"/>
                             <constraint firstItem="2jU-gd-LZs" firstAttribute="trailing" secondItem="p5E-Vl-gDA" secondAttribute="trailing" id="lgf-wA-yua"/>
@@ -438,7 +406,6 @@
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="backBtn" destination="m1G-Ho-CMZ" id="7tt-8n-yQr"/>
                         <outlet property="collectionView" destination="tau-Pl-sdi" id="ZH3-2h-U22"/>
                         <outlet property="payBtn" destination="eFT-Ql-mab" id="iAi-fw-9hm"/>
                         <outlet property="totalPriceLabel" destination="i4F-PM-fjO" id="8jy-0B-se0"/>
@@ -887,7 +854,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow_back" width="7" height="12"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

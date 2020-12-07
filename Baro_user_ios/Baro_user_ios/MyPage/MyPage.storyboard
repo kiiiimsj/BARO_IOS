@@ -162,14 +162,14 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyPageButtons" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPageButtons" id="7SJ-4P-CUw" customClass="MyPageButtons" customModule="Baro_user_ios" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="360" height="43"/>
+                                                        <rect key="frame" x="0.0" y="28" width="360" height="43.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7SJ-4P-CUw" id="CrS-NB-OYo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3e-6U-2sf">
-                                                                    <rect key="frame" x="0.0" y="11" width="41.5" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="11" width="41.5" height="21.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -404,7 +404,6 @@
                         <segue destination="sBN-9A-IUw" kind="presentation" identifier="NoticePageController" modalPresentationStyle="fullScreen" id="qGq-tI-Wfb"/>
                         <segue destination="a3H-Ja-UYp" kind="presentation" identifier="ChangePass" modalPresentationStyle="fullScreen" id="VsT-07-M4v"/>
                         <segue destination="u2z-Pm-Txk" kind="presentation" identifier="ChangeEmail" modalPresentationStyle="fullScreen" id="qgy-0h-yKO"/>
-                        <segue destination="sBR-bV-Xqb" kind="presentation" identifier="CouponPageController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="OiC-N3-ZpZ"/>
                         <segue destination="lTQ-rl-bfB" kind="presentation" identifier="LogoutDialog" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="rJX-gX-ee9"/>
                     </connections>
                 </viewController>
@@ -443,14 +442,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6Z-m6-ipC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2738.4057971014495" y="43.526785714285715"/>
-        </scene>
-        <!--CouponPageController-->
-        <scene sceneID="IRD-9c-tuR">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CouponPageController" storyboardName="Coupon" referencedIdentifier="CouponPageController" id="sBR-bV-Xqb" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ElO-Pr-1bf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2774" y="164"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>

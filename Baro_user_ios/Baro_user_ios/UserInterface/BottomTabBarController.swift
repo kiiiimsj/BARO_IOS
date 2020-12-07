@@ -36,6 +36,8 @@ class BottomTabBarController: UIViewController {
     let aboutStoreControllerIdentifier = "AboutStore"
     let alertControllerIdentifier = "AlertController"
     let alertContentControllerIdentifier = "AlertContentController"
+    let couponPageControllerIdentifier = "CouponPageController"
+    let basketControllerIdentifier = "BasketController"
     //접근가능 스토리보드
     let mainPageStoryBoard = UIStoryboard(name: "MainPage", bundle: nil)
     let storeListStoryBoard = UIStoryboard(name: "StoreListPage", bundle: nil)
@@ -45,10 +47,13 @@ class BottomTabBarController: UIViewController {
     let myPageStoryBoard = UIStoryboard(name: "MyPage", bundle: nil)
     let aboutStoreStoryBoard = UIStoryboard(name: "AboutStore", bundle: nil)
     let alertStoryBoard = UIStoryboard(name: "Alert", bundle: nil)
+    let couponPageStoryBoard = UIStoryboard(name: "Coupon", bundle: nil)
+    let basketStoryBoard = UIStoryboard(name: "Basket", bundle: nil)
     //화면 이동 할때 필요한 요소.
     var controllerStoryboard = UIStoryboard()
     var controllerIdentifier : String = ""
     var controllerSender : Any = ""
+    //내부이동 (바텀 탭바를 이용한 화면 이동)이 아닌경우 이 값은 true로 해주어야 이동가능.
     var moveFromOutSide : Bool = false
     //바텀탭 로딩후 선택되어지는 탭바아이템
     var selectedTabBarItem : Int = 0
@@ -75,11 +80,23 @@ class BottomTabBarController: UIViewController {
         //aboutstore나 storelist 접근 시 viewload에서 controller 변경 구문
         if(moveFromOutSide) {
             changeViewController(getController: controllerIdentifier, getStoryBoard: controllerStoryboard, sender: controllerSender)
-            print("controllerSender : ", controllerSender)
             moveFromOutSide = false
         }
         //basket userdefault 유무 버튼 비활성화/활성화 구문
         if(basket != nil) {
+            if(basket as! String == "") {
+                basketButton.isHidden = true
+                bottomTabBar.delegate = self
+                return
+            }
+            if(controllerIdentifier == "BasketController") {
+                basketButton.isHidden = true
+                return
+            }
+            if(controllerIdentifier == "OrderDetailsController") {
+                basketButton.isHidden = true
+                return
+            }
             getOrders()
             basketBadge()
         } else {
@@ -155,7 +172,6 @@ class BottomTabBarController: UIViewController {
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! AlertController, sender: nil)
             case alertContentControllerIdentifier:
-                print("ALERTCONTENT")
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! AlertContentController, sender: sender)
             case orderDetailControllerIdentifier:
@@ -166,7 +182,14 @@ class BottomTabBarController: UIViewController {
             case aboutStoreControllerIdentifier:
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
                 swipeRecognizer()
-            
+            case couponPageControllerIdentifier:
+                self.deleteBottomTabBar()
+                self.changeContentView(controller: controller as! CouponPageController, sender: nil)
+                swipeRecognizer()
+            case basketControllerIdentifier:
+                self.deleteBottomTabBar()
+                self.changeContentView(controller: controller as! BasketController, sender: sender)
+                swipeRecognizer()
             default :
                 print("error_delegate")
         }
@@ -207,13 +230,6 @@ class BottomTabBarController: UIViewController {
         ContentViewScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         TopView.isHidden = true
     }
-//    func restoreBottomTabBar() {
-//        print("callRestoreBottomTabBar")
-//        BottomView.isHidden = false
-//        BottomView.frame.size = saveBottomViewSize
-//        ContentView.frame.size = saveContentViewSize
-//        ContentViewScrollView.frame.size = saveContentViewSize
-//    }
     func deleteBottomTabBar() {
         ContentView.frame.size = CGSize(width: view.frame.width, height: (saveContentViewSize.height + saveBottomViewSize.height))
         ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (saveContentViewSize.height + saveBottomViewSize.height))
@@ -247,17 +263,20 @@ class BottomTabBarController: UIViewController {
                 finallController = VCsender
             case storeListControllerIdentifier:
                 let VCsender = controller as! StoreListPageController
-                VCsender.typeCode = (sender as? String)!
-                if(VCsender.typeCode == "1"){
-                    VCsender.kind = 1
+                if sender is [String:Any]{
+                    let param = sender as! [String : Any]
+                    VCsender.kind = 3
+                    VCsender.searchWord = param["search"] as! String
+                    finallController = VCsender
                     swipeRecognizer()
+                    return finallController
                 }
-                else if(VCsender.typeCode == "2") {
+                VCsender.typeCode = (sender as? String)!
+                if(VCsender.typeCode == "2") {
                     VCsender.kind = 2
                 }
                 else {
-                    VCsender.kind = 3
-                    VCsender.searchWord = sender as! String
+                    VCsender.kind = 1
                     swipeRecognizer()
                 }
                 finallController = VCsender
@@ -265,6 +284,10 @@ class BottomTabBarController: UIViewController {
                 let VCsender = controller as! AlertContentController
                 print("alert indexPath row : ", sender)
                 VCsender.Alert = sender as! AlertModel
+                finallController = VCsender
+            case basketControllerIdentifier:
+                let VCsender = controller as! BasketController
+                VCsender.orders = sender as! [Order]
                 finallController = VCsender
             default:
                 print("error")
@@ -287,11 +310,11 @@ class BottomTabBarController: UIViewController {
                     if(controllerData.typeCode == "2") {
                         topBarViewControllerTitle.text = "찜한 가게"
                     }
-                    else if(controllerData.typeCode == "3") {
-                        topBarViewControllerTitle.text = "검색 가게"
+                    else {
                         topBarBackBtn.isHidden = false
                     }
-                    else {
+                    if(controllerData.kind == 3) {
+                        topBarViewControllerTitle.text = "검색 가게"
                         topBarBackBtn.isHidden = false
                     }
                     if (controllerData.typeCode == "CAFE") {
@@ -307,7 +330,7 @@ class BottomTabBarController: UIViewController {
                         topBarViewControllerTitle.text = "한식"
                     }
                 case orderDetailControllerIdentifier:
-                    topBarViewControllerTitle.isHidden = true
+                    topBarViewControllerTitle.isHidden = false
                     topBarBackBtn.isHidden = false
                     topBarViewControllerTitle.text = "\(currentStoreName)"
                 case orderStatusControllerIdentifier:
@@ -328,6 +351,12 @@ class BottomTabBarController: UIViewController {
                     topBarViewControllerTitle.text = "\(currentStoreName)"
                     let controllerData = controller as! AboutStore
                     controllerData.bottomTabBarInfo = self
+                case couponPageControllerIdentifier:
+                    topBarViewControllerTitle.text = "내 쿠폰 리스트"
+                    topBarBackBtn.isHidden = false
+                case basketControllerIdentifier:
+                    topBarViewControllerTitle.text = "장바구니"
+                    topBarBackBtn.isHidden = false
                 default :
                     print("error_delegate")
             }
@@ -352,6 +381,7 @@ class BottomTabBarController: UIViewController {
     //뒤로가기 버튼
     @IBAction func clickTopBarBackBtn() {
         self.dismiss(animated: true, completion: nil)
+        topViewDelegate?.backBtnDelegate()
     }
     
     @IBAction func clickFavoriteBtn() {

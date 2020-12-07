@@ -37,9 +37,10 @@ class OrderDetailsController : UIViewController {
     public var selectedNonEssential = [String : SelectedExtra]()
     
     var storeId : Int = 0
-    var getSaveStoreId = UserDefaults.standard.value(forKey: "currentStoreId")
     
     var data : Order?
+    
+    let bottomTabBarInfo = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()
         print("orderdetailviewLoad")
@@ -76,7 +77,6 @@ class OrderDetailsController : UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        getSaveStoreId = UserDefaults.standard.value(forKey: "currentStoreId")
     }
     @IBAction func AddCount(_ sender: Any) {
         menu_count.text = String(Int(menu_count.text!)! + 1)
@@ -90,34 +90,38 @@ class OrderDetailsController : UIViewController {
         recalcPrice()
     }
     @IBAction func nextPage(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
         if (canGoToNext()){
             data = Order(menu: self.menu, essentials: selectedEssential, nonEssentials: selectedNonEssential)
             data?.menu_count = Int(menu_count.text!)!
             data?.menu_total_price = menu_price_current
-            print("getSAveStoreId : ",getSaveStoreId as? Int)
-            if getSaveStoreId != nil {
-                if(storeId == getSaveStoreId as? Int) {
-                    let vc = self.storyboard?.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
+            if let getStoreId = UserDefaults.standard.value(forKey: "currentStoreId") {
+                print("getSvaeStoreId", getStoreId)
+                if(storeId == getStoreId as? Int) {
+                    print("1")
+                    let vc = storyboard.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
                     vc.delegate = self
                     vc.store_id = self.storeId
                     vc.modalPresentationStyle = .overFullScreen
                     vc.modalTransitionStyle = .crossDissolve
                     self.present(vc, animated: false, completion: nil)
-                }else{
-                    let vc = self.storyboard?.instantiateViewController(identifier: "EmptyBasket") as! EmptyBasket
+                }else if(getStoreId as? String == ""){
+                    print("2")
+                    let vc = storyboard.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
+                    vc.delegate = self
+                    vc.store_id = self.storeId
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    self.present(vc, animated: false, completion: nil)
+                }else if(storeId != getStoreId as? Int){
+                    print("3")
+                    let vc = storyboard.instantiateViewController(identifier: "EmptyBasket") as! EmptyBasket
                     vc.modalPresentationStyle = .overFullScreen
                     vc.modalTransitionStyle = .crossDissolve
                     vc.delegate = self
                     vc.store_id = self.storeId
                     self.present(vc, animated: false, completion: nil)
                 }
-            } else {
-                UserDefaults.standard.set(storeId, forKey: "currentStoreId")
-                let vc = self.storyboard?.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
-                vc.delegate = self
-                vc.modalPresentationStyle = .overFullScreen
-                vc.modalTransitionStyle = .crossDissolve
-                self.present(vc, animated: false, completion: nil)
             }
         }
         else {
@@ -329,6 +333,9 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
         self.dismiss(animated: false)
     }
     func tapClick(dialog: UIViewController, type: String) {
+        let storyboard2 = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let vc2 = storyboard2.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        
         let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
         
@@ -336,9 +343,16 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
         vc.orders = loadBasket()
         vc.orders.append(data!)
         saveBasket(orders: vc.orders)
+        
+        vc2.controllerIdentifier = self.bottomTabBarInfo.basketControllerIdentifier
+        vc2.controllerStoryboard = self.bottomTabBarInfo.basketStoryBoard
+        vc2.controllerSender = loadBasket()
+        vc2.moveFromOutSide = true
+        
         self.dismiss(animated: false) {
-            vc.modalPresentationStyle = .fullScreen
-            pvc.present(vc, animated: false, completion: nil)
+            vc2.modalPresentationStyle = .fullScreen
+            vc2.modalTransitionStyle = .crossDissolve
+            pvc.present(vc2, animated: false, completion: nil)
         }
     }
     func saveBasket(orders : [Order]) {

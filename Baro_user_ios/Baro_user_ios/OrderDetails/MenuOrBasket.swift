@@ -23,7 +23,7 @@ class MenuOrBasket : UIViewController {
     var dialogButtonForm = DialogForm()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UserDefaults.standard.set(store_id, forKey: "currentStoreId")
         DialogTop.layer.cornerRadius = 5
         DialogTop.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         DialogTop.layer.masksToBounds = true

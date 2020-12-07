@@ -23,8 +23,8 @@ class EmptyBasket: UIViewController {
         super.viewDidLoad()
         let dialogButtonForm = DialogForm()
         dialogButtonForm.setTopView(top: DialogTop)
-        dialogButtonForm.setLeftButton(left: emptyBtn)
-        dialogButtonForm.setRightbutton(right: cancel)
+        dialogButtonForm.setLeftButton(left: cancel)
+        dialogButtonForm.setRightbutton(right: emptyBtn)
 
     }
     @IBAction func pressEmpty(_ sender: Any) {
