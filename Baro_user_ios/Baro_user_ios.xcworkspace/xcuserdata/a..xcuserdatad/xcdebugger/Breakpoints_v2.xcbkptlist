@@ -398,7 +398,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
             endingLineNumber = "60"
-            landmarkName = "initRefresh()"
+            landmarkName = "loadData(_:)"
             landmarkType = "7">
             <Locations>
                <Location

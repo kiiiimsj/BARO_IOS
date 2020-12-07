@@ -114,10 +114,8 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
             else {
                 cell.orderStatusLabel.text = "????"
             }
-            
+            cell.cellData = orderHistory
             cell.orderTotalPriceLabel.text = "합계 : " + String(orderHistory.total_price) + " 원"
-            cell.receipt_id = orderHistory.receipt_id
-            cell.store_id = orderHistory.store_id
             cell.cellDelegate = self
             cell.goToStoreBtn.layer.borderColor = UIColor.init(red: 131/255, green: 51/255, blue: 230/255, alpha: 1) .cgColor
             cell.goToStoreBtn.layer.borderWidth = 2
