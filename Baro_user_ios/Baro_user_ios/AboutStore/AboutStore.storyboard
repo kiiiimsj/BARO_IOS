@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -407,17 +407,8 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ubt-Fa-Ybe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.5"/>
-                                                    <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="0.5" id="Gwd-pd-uWz"/>
-                                                    </constraints>
-                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Ubt-Fa-Ybe" secondAttribute="trailing" id="5ve-A7-KDC"/>
-                                                <constraint firstItem="Ubt-Fa-Ybe" firstAttribute="leading" secondItem="9Jt-DO-6W1" secondAttribute="leading" id="6aU-Ls-8ho"/>
                                                 <constraint firstItem="IcF-f4-Q10" firstAttribute="trailing" secondItem="L8E-Mk-3os" secondAttribute="trailing" id="AzK-0p-4E4"/>
                                                 <constraint firstItem="5O9-ZI-E0L" firstAttribute="centerY" secondItem="9Jt-DO-6W1" secondAttribute="centerY" id="H5a-1f-UnC"/>
                                                 <constraint firstItem="QQA-k6-aku" firstAttribute="leading" secondItem="5O9-ZI-E0L" secondAttribute="trailing" constant="20" id="NTH-ts-cwb"/>
@@ -427,8 +418,6 @@
                                                 <constraint firstItem="f47-12-y4Y" firstAttribute="leading" secondItem="5O9-ZI-E0L" secondAttribute="trailing" constant="20" id="mXz-wW-jWZ"/>
                                                 <constraint firstItem="5O9-ZI-E0L" firstAttribute="leading" secondItem="9Jt-DO-6W1" secondAttribute="leading" constant="20" id="nLt-be-j3Z"/>
                                                 <constraint firstItem="IcF-f4-Q10" firstAttribute="top" secondItem="5O9-ZI-E0L" secondAttribute="top" id="nma-F3-mcu"/>
-                                                <constraint firstItem="5O9-ZI-E0L" firstAttribute="top" secondItem="Ubt-Fa-Ybe" secondAttribute="bottom" constant="14.5" id="nx1-nq-UEU"/>
-                                                <constraint firstItem="Ubt-Fa-Ybe" firstAttribute="top" secondItem="9Jt-DO-6W1" secondAttribute="top" id="q5f-dl-eRG"/>
                                                 <constraint firstItem="L8E-Mk-3os" firstAttribute="centerY" secondItem="9Jt-DO-6W1" secondAttribute="centerY" id="wHZ-6b-KFj"/>
                                                 <constraint firstAttribute="trailing" secondItem="L8E-Mk-3os" secondAttribute="trailing" constant="20" id="yGZ-vj-7by"/>
                                             </constraints>
