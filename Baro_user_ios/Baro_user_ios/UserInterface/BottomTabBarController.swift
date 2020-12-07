@@ -388,12 +388,15 @@ class BottomTabBarController: UIViewController {
         topViewDelegate?.favoriteBtnDelegate(controller: self)
     }
     @IBAction func clickBasketBtn() {
-        let basketStoryboard = UIStoryboard(name: "Basket", bundle: nil)
-        let vc = basketStoryboard.instantiateViewController(identifier: "BasketController")
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .fullScreen
-        
-        self.present(vc, animated: true, completion: nil)
+        self.getOrders()
+        let basketControllerWithTopView = self.storyboard?.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        basketControllerWithTopView.modalPresentationStyle = .fullScreen
+        basketControllerWithTopView.modalTransitionStyle = .crossDissolve
+        basketControllerWithTopView.controllerStoryboard = self.basketStoryBoard
+        basketControllerWithTopView.controllerIdentifier = self.basketControllerIdentifier
+        basketControllerWithTopView.controllerSender = self.basketOrders
+        basketControllerWithTopView.moveFromOutSide = true
+        self.present(basketControllerWithTopView, animated: true)
     }
 }
 extension BottomTabBarController : UITabBarDelegate {
