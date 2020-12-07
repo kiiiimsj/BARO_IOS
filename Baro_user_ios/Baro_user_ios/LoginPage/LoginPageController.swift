@@ -96,6 +96,8 @@ class LoginPageController: UIViewController {
         let param = ["phone":"\(phone)","pass":"\(password)"]
         networkModel.post(method: .post, param: param, url: networkURL.logInURL) { (json) in
             if json["result"].boolValue {
+                UserDefaults.standard.set("", forKey: "basket")
+                UserDefaults.standard.set("", forKey: "currentStoreId")
                 UserDefaults.standard.set(json["email"].stringValue, forKey: "user_email")
                 UserDefaults.standard.set(json["nick"].stringValue, forKey: "user_name")
                 UserDefaults.standard.set(json["phone"].stringValue, forKey: "user_phone")

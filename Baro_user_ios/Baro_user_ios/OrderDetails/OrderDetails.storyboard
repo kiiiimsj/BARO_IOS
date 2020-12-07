@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z9o-Uw-jMZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZeL-Uk-YU3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -410,10 +410,10 @@
             </objects>
             <point key="canvasLocation" x="-120.28985507246378" y="91.741071428571431"/>
         </scene>
-        <!--Menu Or Basket-->
+        <!--MenuOrBasket-->
         <scene sceneID="bRn-66-Ee9">
             <objects>
-                <viewController storyboardIdentifier="MenuOrBasket" id="ZeL-Uk-YU3" customClass="MenuOrBasket" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuOrBasket" title="MenuOrBasket" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZeL-Uk-YU3" customClass="MenuOrBasket" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4fW-bv-VOA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -528,7 +528,7 @@
         <!--Empty Basket-->
         <scene sceneID="jpm-qp-3xx">
             <objects>
-                <viewController storyboardIdentifier="DialogView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jd9-dA-SgC" customClass="EmptyBasket" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmptyBasket" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jd9-dA-SgC" customClass="EmptyBasket" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bTX-i3-Ogx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -598,7 +598,7 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
