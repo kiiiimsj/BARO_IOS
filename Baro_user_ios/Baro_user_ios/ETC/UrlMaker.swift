@@ -119,6 +119,13 @@ class NetWorkURL {
     let couponCount = "http://3.35.180.57:8080/CouponCountByPhone.do?phone="
     let couponListCanUse = "http://3.35.180.57:8080/CouponFindUsable.do?phone=" //&price=결제전총금액
     
+    // 쿠폰 등록
+    
+    let couponRegister = "http://3.35.180.57:8080/CouponInsertByNumber.do?"
+    // phone = 휴대전화 번호 & coupon_id = 쿠폰번호(고객입력)
+    
+    //
+    
     //BootPay관련 url
     let getUserToken = "http://3.35.180.57:8080/BillingGetUserToken.do"
     let checkReceptId = "http://3.35.180.57:8080/BillingVerify.do"
