@@ -50,6 +50,8 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     var eventList = [EventListModel]()
     var userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
     //blur view
+    @IBOutlet weak var aboutHereLabel: UILabel!
+    @IBOutlet weak var newStoreThisWeekLabel: UILabel!
     
     //alert이미지 - 아래에서 off/on체크해주기
     @IBOutlet weak var alertButton: UIButton!
@@ -63,17 +65,24 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        aboutHereLabel.layer.cornerRadius = 5
+        newStoreThisWeekLabel.layer.cornerRadius = 5
+        
         self.definesPresentationContext = true
         getUserNotReadAlertCount()
-        mainView.backgroundColor = .white
-        scrollView.backgroundColor = .lightGray
         
         pagerView.dataSource = self
         pagerView.delegate = self
+        pagerView.layer.cornerRadius = 5
+        pagerControl.layer.cornerRadius = 5
 //        collectionViewEvent.dataSource = self
+        
         collectionViewType.dataSource = self
+        collectionViewType.layer.cornerRadius = 5
         collectionViewUltra.dataSource = self
+        collectionViewUltra.layer.cornerRadius = 5
         collectionViewNewStore.dataSource = self
+        collectionViewNewStore.layer.cornerRadius = 5
         
 //        collectionViewEvent.delegate = self
         collectionViewType.delegate = self
@@ -249,7 +258,7 @@ extension MainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
         self.pagerControl.contentHorizontalAlignment = .center
         // 간격들
         self.pagerControl.itemSpacing = 8
-        self.pagerControl.interitemSpacing = 8
+        //self.pagerControl.interitemSpacing = 8
         // 현재 슬라이드 색
         self.pagerControl.setFillColor(.purple, for: .selected)
         // 점 크기 정하기
