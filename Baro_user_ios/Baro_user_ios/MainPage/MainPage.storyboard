@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="901-Ku-IQw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="901-Ku-IQw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -27,10 +27,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BARO_logo" translatesAutoresizingMaskIntoConstraints="NO" id="7G0-F5-9z9">
-                                <rect key="frame" x="16" y="64" width="50" height="13"/>
+                                <rect key="frame" x="16" y="64" width="75" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="RV0-6M-zRw"/>
+                                </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Kc-nQH">
-                                <rect key="frame" x="0.0" y="128" width="414" height="978"/>
+                                <rect key="frame" x="0.0" y="135" width="414" height="971"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-N1-OLA">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="905"/>
@@ -456,14 +459,14 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-LU-sua">
-                                <rect key="frame" x="381.5" y="64" width="13.5" height="22"/>
+                                <rect key="frame" x="374.5" y="64" width="20.5" height="25"/>
                                 <state key="normal" image="off"/>
                                 <connections>
                                     <action selector="alertClick:" destination="901-Ku-IQw" eventType="touchUpInside" id="djK-tr-DCX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOH-RC-Xk3">
-                                <rect key="frame" x="340" y="64" width="16.5" height="22"/>
+                                <rect key="frame" x="333" y="64" width="16.5" height="22"/>
                                 <state key="normal" image="search">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -472,7 +475,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODv-sU-A77">
-                                <rect key="frame" x="16" y="87" width="75" height="26"/>
+                                <rect key="frame" x="16" y="94" width="75" height="26"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="대한민국" image="detailArrow_down">
@@ -492,7 +495,7 @@
                             <constraint firstItem="ODv-sU-A77" firstAttribute="leading" secondItem="7G0-F5-9z9" secondAttribute="leading" id="Gwg-dZ-nHc"/>
                             <constraint firstItem="Trs-Kc-nQH" firstAttribute="top" secondItem="ODv-sU-A77" secondAttribute="bottom" constant="15" id="IZ1-Em-MIE"/>
                             <constraint firstItem="0Yi-ZZ-DQP" firstAttribute="trailing" secondItem="Laq-LU-sua" secondAttribute="trailing" constant="19" id="MZl-ga-gqg"/>
-                            <constraint firstItem="ODv-sU-A77" firstAttribute="top" secondItem="7G0-F5-9z9" secondAttribute="bottom" constant="10" id="N2A-0u-ALe"/>
+                            <constraint firstItem="ODv-sU-A77" firstAttribute="top" secondItem="7G0-F5-9z9" secondAttribute="bottom" id="N2A-0u-ALe"/>
                             <constraint firstItem="Trs-Kc-nQH" firstAttribute="leading" secondItem="0Yi-ZZ-DQP" secondAttribute="leading" id="QLR-5A-ywh"/>
                             <constraint firstItem="7G0-F5-9z9" firstAttribute="leading" secondItem="0Yi-ZZ-DQP" secondAttribute="leading" constant="16" id="VTd-iU-CVp"/>
                             <constraint firstItem="0Yi-ZZ-DQP" firstAttribute="bottom" secondItem="Trs-Kc-nQH" secondAttribute="bottom" id="ZsH-ze-m2M"/>
@@ -681,9 +684,9 @@
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
-        <image name="BARO_logo" width="50" height="13"/>
+        <image name="BARO_logo" width="75" height="20"/>
         <image name="detailArrow_down" width="12" height="7"/>
-        <image name="off" width="13.5" height="16.5"/>
+        <image name="off" width="20.5" height="25"/>
         <image name="search" width="16.5" height="16"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
