@@ -25,7 +25,7 @@ class OptionsHeader: UICollectionReusableView {
     @objc func tapSelf (_ sender : UITapGestureRecognizer){
         open = !open
         if open {
-            let image = UIImage(named: "heart")
+            let image = UIImage(named: "arrow_up")
             arrow.setImage(image, for: .normal)
             
         }else{

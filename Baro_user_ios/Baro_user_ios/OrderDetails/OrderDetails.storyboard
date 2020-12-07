@@ -166,12 +166,12 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXy-xA-z5b" customClass="EssentialRadios" customModule="Baro_user_ios" customModuleProvider="target">
-                                                                        <rect key="frame" x="20" y="5" width="16" height="42"/>
+                                                                        <rect key="frame" x="20" y="5" width="24" height="42"/>
                                                                         <state key="normal" image="off-1"/>
                                                                         <state key="selected" image="on-1"/>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9A0-c3-VI3" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                                        <rect key="frame" x="47" y="5" width="26" height="42"/>
+                                                                        <rect key="frame" x="55" y="5" width="26" height="42"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
                                                                         <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -322,9 +322,9 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIe-ed-AYw">
-                                            <rect key="frame" x="342" y="11.5" width="12" height="22"/>
+                                            <rect key="frame" x="334" y="11.5" width="20" height="22"/>
                                             <state key="normal" image="arrow_down"/>
-                                            <state key="selected" image="heart"/>
+                                            <state key="selected" image="arrow_up"/>
                                             <state key="highlighted" image="heart_fill"/>
                                             <connections>
                                                 <action selector="expand:" destination="a8G-7L-MU8" eventType="touchUpInside" id="x8R-IR-6u3"/>
@@ -623,13 +623,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow_down" width="12" height="7"/>
-        <image name="heart" width="17" height="16"/>
+        <image name="arrow_down" width="20" height="11.5"/>
+        <image name="arrow_up" width="20" height="11.5"/>
         <image name="heart_fill" width="17" height="16"/>
-        <image name="minus" width="21" height="21"/>
-        <image name="off-1" width="16" height="16"/>
-        <image name="on-1" width="16" height="16"/>
-        <image name="plus" width="21" height="21"/>
+        <image name="minus" width="24" height="24"/>
+        <image name="off-1" width="24" height="24"/>
+        <image name="on-1" width="24" height="24"/>
+        <image name="plus" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
