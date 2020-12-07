@@ -9,12 +9,4 @@ import UIKit
 class ASCategoryCell : UICollectionViewCell{
     
     @IBOutlet var category: UIButton!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        // 초기화 할 코드 예시
-        category.titleLabel?.text = nil
-    }
 }
