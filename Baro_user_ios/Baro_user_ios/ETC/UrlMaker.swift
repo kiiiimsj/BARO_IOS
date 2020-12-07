@@ -149,6 +149,7 @@ class NetWorkURL {
     let myStoreList = "http://3.35.180.57:8080/FavoriteList.do"
     //공지 및 이벤트
     let noticeAll = "http://3.35.180.57:8080/NoticeFindAll.do"
+    let getUserNotReadAlertCount = "http://3.35.180.57:8080/GetNewAlertCount.do?phone="
 
     //검색
 

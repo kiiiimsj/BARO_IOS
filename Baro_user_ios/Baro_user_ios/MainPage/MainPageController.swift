@@ -54,30 +54,16 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var alertButton: UIButton!
     //alert 클릭시
     @IBAction func alertClick(_ sender: Any) {
-        //alert페이지로 넘기기
-//        newestAlertNumber
-        UserDefaults.standard.setValue(newestAlertNumber, forKey: "newestAlert")
-        self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
-        if self.whatIHave != self.newestAlertNumber {
-            self.alertButton.setImage(UIImage(named: "on"), for: .normal)
-        }else{
-            self.alertButton.setImage(UIImage(named: "off"), for: .normal)
-        }
         toAlertUseBottomBar()
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
-        if self.whatIHave != self.newestAlertNumber {
-            self.alertButton.setImage(UIImage(named: "on"), for: .normal)
-        }else{
-            self.alertButton.setImage(UIImage(named: "off"), for: .normal)
-        }
+        getUserNotReadAlertCount()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.definesPresentationContext = true
-        
+        getUserNotReadAlertCount()
         mainView.backgroundColor = .white
         scrollView.backgroundColor = .lightGray
         
@@ -141,6 +127,17 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
                 temp += region["area3"]["name"].stringValue + " "
                 temp += land["addition0"]["value"].stringValue
                 self.locationButton.setTitle(temp, for: .normal)
+            }
+        }
+    }
+    func getUserNotReadAlertCount() {
+        netWork.get(method: .get, url: urlMaker.getUserNotReadAlertCount) {
+            json in
+            if json["result"].boolValue {
+                self.alertButton.setImage(UIImage(named: "off"), for: .normal)
+            }
+            else {
+                self.alertButton.setImage(UIImage(named: "on"), for: .normal)
             }
         }
     }
