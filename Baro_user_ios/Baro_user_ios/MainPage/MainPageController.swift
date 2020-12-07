@@ -48,6 +48,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     var netWork = CallRequest()
     var urlMaker = NetWorkURL()
     var eventList = [EventListModel]()
+    var userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
     //blur view
     
     //alert이미지 - 아래에서 off/on체크해주기
@@ -131,7 +132,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         }
     }
     func getUserNotReadAlertCount() {
-        netWork.get(method: .get, url: urlMaker.getUserNotReadAlertCount) {
+        netWork.get(method: .get, url: urlMaker.getUserNotReadAlertCount+userPhone) {
             json in
             if json["result"].boolValue {
                 self.alertButton.setImage(UIImage(named: "off"), for: .normal)
@@ -190,6 +191,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         
         ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.alertControllerIdentifier
         ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.alertStoryBoard
+        ViewInBottomTabBar.controllerSender = userPhone
         ViewInBottomTabBar.moveFromOutSide = true
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
