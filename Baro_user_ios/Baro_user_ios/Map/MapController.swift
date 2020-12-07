@@ -32,7 +32,7 @@ class MapController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        view.addSubview(map)
+//        view.addSubview(map)
    
         initializeMapOptions()
         updateMyLocation()
@@ -108,6 +108,7 @@ class MapController : UIViewController {
     func setWindowEnvironment(){
         let storyboard = UIStoryboard(name: "Map", bundle: nil)
         VC = (storyboard.instantiateViewController(withIdentifier: "SeparateWindowController") as! SeparateWindowController)
+        
         self.addChild(VC)
         SeparateWindow.addSubview((VC.view)!)
         VC.view.frame = SeparateWindow.bounds
