@@ -36,7 +36,7 @@ class OrderHistoryCell : UICollectionViewCell {
 
         ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
         ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
-        ViewInBottomTabBar.controllerSender = store_id
+        ViewInBottomTabBar.controllerSender = cellData!.store_id
         ViewInBottomTabBar.moveFromOutSide = true
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
