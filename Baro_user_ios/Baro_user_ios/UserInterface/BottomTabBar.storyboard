@@ -68,7 +68,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9u2-xw-p3A">
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="700"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="0.5" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                                 <constraints>
