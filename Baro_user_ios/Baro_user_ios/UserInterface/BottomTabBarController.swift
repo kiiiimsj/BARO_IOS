@@ -169,8 +169,9 @@ class BottomTabBarController: UIViewController {
             case orderHistoryControllerIdentifier:
                 self.changeContentView(controller: controller as! OrderHistoryController, sender: nil)
             case alertControllerIdentifier:
+                ContentView.backgroundColor = UIColor.init(red: 196/255, green: 196/255, blue: 196/255, alpha: 0.5)
                 self.deleteBottomTabBar()
-                self.changeContentView(controller: controller as! AlertController, sender: nil)
+                self.changeContentView(controller: controller as! AlertController, sender: sender)
             case alertContentControllerIdentifier:
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! AlertContentController, sender: sender)
@@ -279,6 +280,10 @@ class BottomTabBarController: UIViewController {
                     VCsender.kind = 1
                     swipeRecognizer()
                 }
+                finallController = VCsender
+            case alertControllerIdentifier:
+                let VCsender = controller as! AlertController
+                VCsender.userPhone = sender as! String
                 finallController = VCsender
             case alertContentControllerIdentifier:
                 let VCsender = controller as! AlertContentController

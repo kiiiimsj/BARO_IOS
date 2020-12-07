@@ -48,36 +48,23 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     var netWork = CallRequest()
     var urlMaker = NetWorkURL()
     var eventList = [EventListModel]()
+    var userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
     //blur view
     
     //alert이미지 - 아래에서 off/on체크해주기
     @IBOutlet weak var alertButton: UIButton!
     //alert 클릭시
     @IBAction func alertClick(_ sender: Any) {
-        //alert페이지로 넘기기
-//        newestAlertNumber
-        UserDefaults.standard.setValue(newestAlertNumber, forKey: "newestAlert")
-        self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
-        if self.whatIHave != self.newestAlertNumber {
-            self.alertButton.setImage(UIImage(named: "on"), for: .normal)
-        }else{
-            self.alertButton.setImage(UIImage(named: "off"), for: .normal)
-        }
         toAlertUseBottomBar()
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
-        if self.whatIHave != self.newestAlertNumber {
-            self.alertButton.setImage(UIImage(named: "on"), for: .normal)
-        }else{
-            self.alertButton.setImage(UIImage(named: "off"), for: .normal)
-        }
+        getUserNotReadAlertCount()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.definesPresentationContext = true
-        
+        getUserNotReadAlertCount()
         mainView.backgroundColor = .white
         scrollView.backgroundColor = .lightGray
         
@@ -144,6 +131,17 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
+    func getUserNotReadAlertCount() {
+        netWork.get(method: .get, url: urlMaker.getUserNotReadAlertCount+userPhone) {
+            json in
+            if json["result"].boolValue {
+                self.alertButton.setImage(UIImage(named: "off"), for: .normal)
+            }
+            else {
+                self.alertButton.setImage(UIImage(named: "on"), for: .normal)
+            }
+        }
+    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let location: CLLocation = locations[locations.count - 1]
         print("dddd",location)
@@ -193,6 +191,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         
         ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.alertControllerIdentifier
         ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.alertStoryBoard
+        ViewInBottomTabBar.controllerSender = userPhone
         ViewInBottomTabBar.moveFromOutSide = true
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve

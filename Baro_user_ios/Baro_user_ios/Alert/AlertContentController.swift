@@ -7,6 +7,9 @@
 
 import UIKit
 class AlertContentController : UIViewController {
+    let netWork = CallRequest()
+    let urlMaker = NetWorkURL()
+    
     var Alert = AlertModel()
     @IBOutlet weak var alertTitle: UILabel!
     @IBOutlet weak var alertDate: UILabel!
@@ -18,7 +21,7 @@ class AlertContentController : UIViewController {
         print("ALERT :! ", Alert)
         alertTitle.text = "\(Alert.alert_title)"
         alertDate.text = "\(Alert.alert_startdate)"
-        //alertContent.text = "\(Alert.alert_content)"
+        getAlertDetail()
         alertContent.text = "-학원과 스터디카페도 밤 9시 이후 운영 중단\n" +
         "-대중 교통, 오후 9시 이후 30% 감축 운영\n" +
         "-박물관 등 공공문화시설, 청소년 시설 운영 중단\n" +
@@ -40,5 +43,20 @@ class AlertContentController : UIViewController {
         "이밖에도 서울시는 시와 자치구, 시 투자출연기관이 운영하는 박물관, 미술관, 공연장, 도서관 등 공공문화시설 66개소, 청소년시설 114개소, 공공체육시설 1114개소 등 공공이용시설은 시간과 관계없이 일체의 운영을 전면 중단하기로 했다.\n"
             +
         "종교계에도 비대면으로 종교 활동을 할 것을 강력하게 권고했다. 서 권한대행은 \"이미 동참해주신 불교, 원불교, 천도교, 성균관에 감사드리며 기독교와 천주교의 비대면 온라인 예배 전환을 간곡하게 요청한다\"고 말했다."
+    }
+    func getAlertDetail() {
+        netWork.get(method: .get, url: urlMaker.getAlertDetail+"\(Alert.alert_id)") {
+            json in
+            print("json : ", json)
+            if json["result"].boolValue {
+                self.setAlertContent(content: json["content"].stringValue)
+            }
+            else {
+                print("alert_error")
+            }
+        }
+    }
+    func setAlertContent(content : String) {
+        alertContent.text = content
     }
 }
