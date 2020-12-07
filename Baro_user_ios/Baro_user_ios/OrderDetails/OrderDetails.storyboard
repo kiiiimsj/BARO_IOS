@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZeL-Uk-YU3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZeL-Uk-YU3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -59,18 +59,18 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w5-Mr-kh5">
-                                <rect key="frame" x="168" y="156" width="16" height="16"/>
+                                <rect key="frame" x="168" y="156" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="16" id="Mva-nj-56Y"/>
-                                    <constraint firstAttribute="width" constant="16" id="VWO-cl-TfT"/>
+                                    <constraint firstAttribute="height" constant="40" id="Mva-nj-56Y"/>
+                                    <constraint firstAttribute="width" constant="40" id="VWO-cl-TfT"/>
                                 </constraints>
-                                <state key="normal" image="minus" backgroundImage="minus"/>
+                                <state key="normal" image="minus"/>
                                 <connections>
                                     <action selector="AbstractCount:" destination="z9o-Uw-jMZ" eventType="touchUpInside" id="jyJ-nF-hUi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylb-sz-LbD" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="196" y="153.5" width="8" height="21"/>
+                                <rect key="frame" x="220" y="165.5" width="8" height="21"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                 <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -81,12 +81,12 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjK-lp-ISm">
-                                <rect key="frame" x="216" y="156" width="16" height="16"/>
+                                <rect key="frame" x="240" y="156" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="16" id="EYj-JK-5yA"/>
-                                    <constraint firstAttribute="height" constant="16" id="K1P-zN-S2T"/>
+                                    <constraint firstAttribute="width" constant="40" id="EYj-JK-5yA"/>
+                                    <constraint firstAttribute="height" constant="40" id="K1P-zN-S2T"/>
                                 </constraints>
-                                <state key="normal" image="plus" backgroundImage="plus"/>
+                                <state key="normal" image="plus"/>
                                 <connections>
                                     <action selector="AddCount:" destination="z9o-Uw-jMZ" eventType="touchUpInside" id="lZj-eg-pyx"/>
                                 </connections>
@@ -109,7 +109,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="옵션 카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sa-Ru-W1U" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="13" width="69" height="18"/>
+                                                    <rect key="frame" x="10" y="0.0" width="69" height="18"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                     <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -120,7 +120,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cAL-FF-FuD">
-                                                    <rect key="frame" x="10" y="47" width="350" height="131"/>
+                                                    <rect key="frame" x="10" y="18" width="350" height="160"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Nqm-ed-H2c">
                                                         <size key="itemSize" width="349" height="52"/>
@@ -211,12 +211,12 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cAL-FF-FuD" firstAttribute="top" secondItem="9Sa-Ru-W1U" secondAttribute="bottom" constant="16" id="6N0-g9-IvJ"/>
+                                                <constraint firstItem="cAL-FF-FuD" firstAttribute="top" secondItem="9Sa-Ru-W1U" secondAttribute="bottom" id="6N0-g9-IvJ"/>
                                                 <constraint firstItem="9Sa-Ru-W1U" firstAttribute="leading" secondItem="3ui-zM-0L5" secondAttribute="leading" constant="10" id="AMj-Eb-rd7"/>
                                                 <constraint firstAttribute="bottom" secondItem="cAL-FF-FuD" secondAttribute="bottom" constant="10" id="Jiu-DF-BnV"/>
                                                 <constraint firstAttribute="trailing" secondItem="t3C-eW-5id" secondAttribute="trailing" constant="18" id="XUv-u4-hxe"/>
                                                 <constraint firstItem="cAL-FF-FuD" firstAttribute="leading" secondItem="3ui-zM-0L5" secondAttribute="leading" constant="10" id="avQ-Sd-O5J"/>
-                                                <constraint firstItem="9Sa-Ru-W1U" firstAttribute="top" secondItem="3ui-zM-0L5" secondAttribute="top" constant="13" id="hrU-tY-feW"/>
+                                                <constraint firstItem="9Sa-Ru-W1U" firstAttribute="top" secondItem="3ui-zM-0L5" secondAttribute="top" id="hrU-tY-feW"/>
                                                 <constraint firstItem="t3C-eW-5id" firstAttribute="top" secondItem="3ui-zM-0L5" secondAttribute="top" constant="10" id="mUC-U3-tzS"/>
                                                 <constraint firstAttribute="trailing" secondItem="cAL-FF-FuD" secondAttribute="trailing" constant="10" id="vHY-Qc-LgG"/>
                                             </constraints>
@@ -237,10 +237,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CmK-lg-Dkg">
-                                                    <rect key="frame" x="323" y="56" width="16" height="16"/>
+                                                    <rect key="frame" x="324" y="44" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="16" id="qWP-Nr-6VS"/>
-                                                        <constraint firstAttribute="width" constant="16" id="rg9-6R-q4f"/>
+                                                        <constraint firstAttribute="height" constant="40" id="qWP-Nr-6VS"/>
+                                                        <constraint firstAttribute="width" constant="40" id="rg9-6R-q4f"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                     <state key="normal" image="plus"/>
@@ -249,7 +249,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSK-Sl-all" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                    <rect key="frame" x="303" y="53.5" width="8" height="21"/>
+                                                    <rect key="frame" x="304" y="53.5" width="8" height="21"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                     <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -271,10 +271,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EU9-eK-Rat">
-                                                    <rect key="frame" x="275" y="56" width="16" height="16"/>
+                                                    <rect key="frame" x="252" y="44" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="16" id="WGh-QZ-I43"/>
-                                                        <constraint firstAttribute="height" constant="16" id="iZ7-te-mQw"/>
+                                                        <constraint firstAttribute="width" constant="40" id="WGh-QZ-I43"/>
+                                                        <constraint firstAttribute="height" constant="40" id="iZ7-te-mQw"/>
                                                     </constraints>
                                                     <state key="normal" image="minus"/>
                                                     <connections>
@@ -283,7 +283,7 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="CmK-lg-Dkg" secondAttribute="trailing" constant="30" id="BfD-ro-Gqt"/>
+                                                <constraint firstAttribute="trailing" secondItem="CmK-lg-Dkg" secondAttribute="trailing" constant="5" id="BfD-ro-Gqt"/>
                                                 <constraint firstItem="heT-bJ-3y2" firstAttribute="centerY" secondItem="19d-2h-KS9" secondAttribute="centerY" id="LJ5-8L-qpW"/>
                                                 <constraint firstItem="CmK-lg-Dkg" firstAttribute="leading" secondItem="cSK-Sl-all" secondAttribute="trailing" constant="12" id="OAF-iH-odo"/>
                                                 <constraint firstItem="cSK-Sl-all" firstAttribute="centerY" secondItem="19d-2h-KS9" secondAttribute="centerY" id="Rkw-do-BUa"/>
@@ -308,7 +308,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqc-mF-krw" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="19" width="342" height="12"/>
+                                            <rect key="frame" x="20" y="13.5" width="342" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="WGu-R9-PGp"/>
                                             </constraints>
@@ -339,10 +339,9 @@
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Tqc-mF-krw" firstAttribute="top" secondItem="a8G-7L-MU8" secondAttribute="topMargin" constant="11" id="0km-Cn-wpJ"/>
+                                        <constraint firstItem="Tqc-mF-krw" firstAttribute="centerY" secondItem="a8G-7L-MU8" secondAttribute="centerY" id="6HF-ge-qWs"/>
                                         <constraint firstItem="vFb-dL-U0t" firstAttribute="trailing" secondItem="a8G-7L-MU8" secondAttribute="trailingMargin" id="D9R-hb-J03"/>
                                         <constraint firstItem="Tqc-mF-krw" firstAttribute="leading" secondItem="a8G-7L-MU8" secondAttribute="leadingMargin" constant="12" id="F8H-zw-UaS"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Tqc-mF-krw" secondAttribute="bottom" constant="6" id="L43-My-qrV"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Tqc-mF-krw" secondAttribute="trailing" constant="12" id="PNh-YE-3uc"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="KIe-ed-AYw" secondAttribute="trailing" constant="20" id="XNd-QL-KW1"/>
                                         <constraint firstItem="vFb-dL-U0t" firstAttribute="leading" secondItem="a8G-7L-MU8" secondAttribute="leadingMargin" id="etY-0s-lQn"/>
