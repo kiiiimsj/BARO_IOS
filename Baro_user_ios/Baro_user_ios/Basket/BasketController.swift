@@ -155,6 +155,8 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
     }
     func tabLeft(index : Int) {
         orders.remove(at: index)
+        essential.remove(at: index)
+        nonEssential.remove(at: index)
         self.saveBasket()
         if(orders.count == 0) {
             self.dismiss(animated: false, completion: nil)
