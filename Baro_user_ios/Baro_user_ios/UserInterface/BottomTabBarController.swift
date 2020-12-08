@@ -17,6 +17,7 @@ class BottomTabBarController: UIViewController {
     @IBOutlet weak var topBarBackBtn: UIButton!
     @IBOutlet weak var topBarViewControllerTitle: UILabel!
     @IBOutlet weak var topBarFavoriteBtn: UIButton!
+    
     //내부 컨트롤러 클릭 인식용.
     weak var topViewDelegate : TopViewElementDelegate?
     //컨텐트뷰 엘리먼트
@@ -26,6 +27,8 @@ class BottomTabBarController: UIViewController {
     //바텀뷰 엘리먼트
     @IBOutlet weak var BottomView: UIView!
     @IBOutlet weak var bottomTabBar: UITabBar!
+    //바텀뷰 텝 아이템
+    @IBOutlet weak var MainPageTabBar: UITabBarItem!
     //분기문에 사용할 실제 컨트롤러 아이덴티피어
     let mainPageControllerIdentifier = "MainPageController"
     let storeListControllerIdentifier = "StoreListPageController"
@@ -69,6 +72,7 @@ class BottomTabBarController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
+        saveTopViewSize = CGSize(width: view.frame.width, height: 69.0)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -160,6 +164,7 @@ class BottomTabBarController: UIViewController {
         }
         switch(getController) {
             case mainPageControllerIdentifier:
+                bottomTabBar.selectedItem = self.MainPageTabBar
                 self.deleteTopView()
                 self.changeContentView(controller: controller as! MainPageController, sender: nil)
             case storeListControllerIdentifier:
@@ -170,7 +175,7 @@ class BottomTabBarController: UIViewController {
                 self.changeContentView(controller: controller as! OrderHistoryController, sender: nil)
             case alertControllerIdentifier:
                 self.deleteBottomTabBar()
-                self.changeContentView(controller: controller as! AlertController, sender: nil)
+                self.changeContentView(controller: controller as! AlertController, sender: sender)
             case alertContentControllerIdentifier:
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! AlertContentController, sender: sender)
@@ -217,6 +222,8 @@ class BottomTabBarController: UIViewController {
         TopView.frame.size = saveTopViewSize
         ContentView.frame.size = saveContentViewSize
         ContentViewScrollView.frame.size = saveContentViewSize
+        TopView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        TopView.transform = CGAffineTransform(translationX: 0, y: 69.0)
         ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 113.0)
     }
     //탑뷰 지우기
@@ -279,6 +286,10 @@ class BottomTabBarController: UIViewController {
                     VCsender.kind = 1
                     swipeRecognizer()
                 }
+                finallController = VCsender
+            case alertControllerIdentifier:
+                let VCsender = controller as! AlertController
+                VCsender.userPhone = sender as! String
                 finallController = VCsender
             case alertContentControllerIdentifier:
                 let VCsender = controller as! AlertContentController
@@ -388,12 +399,15 @@ class BottomTabBarController: UIViewController {
         topViewDelegate?.favoriteBtnDelegate(controller: self)
     }
     @IBAction func clickBasketBtn() {
-        let basketStoryboard = UIStoryboard(name: "Basket", bundle: nil)
-        let vc = basketStoryboard.instantiateViewController(identifier: "BasketController")
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .fullScreen
-        
-        self.present(vc, animated: true, completion: nil)
+        self.getOrders()
+        let basketControllerWithTopView = self.storyboard?.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        basketControllerWithTopView.modalPresentationStyle = .fullScreen
+        basketControllerWithTopView.modalTransitionStyle = .crossDissolve
+        basketControllerWithTopView.controllerStoryboard = self.basketStoryBoard
+        basketControllerWithTopView.controllerIdentifier = self.basketControllerIdentifier
+        basketControllerWithTopView.controllerSender = self.basketOrders
+        basketControllerWithTopView.moveFromOutSide = true
+        self.present(basketControllerWithTopView, animated: true)
     }
 }
 extension BottomTabBarController : UITabBarDelegate {

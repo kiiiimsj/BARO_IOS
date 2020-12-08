@@ -75,7 +75,7 @@ extension EssentialCell : UICollectionViewDelegate,UICollectionViewDataSource,UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch whichCell {
         case EssentialCell.UNDER3:
-            return CGSize(width: collection.frame.width/CGFloat(extras.count), height:50)
+            return CGSize(width: collection.frame.width/CGFloat(extras.count), height:35)
         case EssentialCell.OVER3:
             return CGSize(width: collection.frame.width, height:30)
         default:

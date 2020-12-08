@@ -48,45 +48,41 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     var netWork = CallRequest()
     var urlMaker = NetWorkURL()
     var eventList = [EventListModel]()
+    var userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
     //blur view
+    @IBOutlet weak var aboutHereLabel: UILabel!
+    @IBOutlet weak var newStoreThisWeekLabel: UILabel!
     
     //alert이미지 - 아래에서 off/on체크해주기
     @IBOutlet weak var alertButton: UIButton!
     //alert 클릭시
     @IBAction func alertClick(_ sender: Any) {
-        //alert페이지로 넘기기
-//        newestAlertNumber
-        UserDefaults.standard.setValue(newestAlertNumber, forKey: "newestAlert")
-        self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
-        if self.whatIHave != self.newestAlertNumber {
-            self.alertButton.setImage(UIImage(named: "on"), for: .normal)
-        }else{
-            self.alertButton.setImage(UIImage(named: "off"), for: .normal)
-        }
         toAlertUseBottomBar()
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
-        if self.whatIHave != self.newestAlertNumber {
-            self.alertButton.setImage(UIImage(named: "on"), for: .normal)
-        }else{
-            self.alertButton.setImage(UIImage(named: "off"), for: .normal)
-        }
+        getUserNotReadAlertCount()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.definesPresentationContext = true
+        aboutHereLabel.layer.cornerRadius = 5
+        newStoreThisWeekLabel.layer.cornerRadius = 5
         
-        mainView.backgroundColor = .white
-        scrollView.backgroundColor = .lightGray
+        self.definesPresentationContext = true
+        getUserNotReadAlertCount()
         
         pagerView.dataSource = self
         pagerView.delegate = self
+        pagerView.layer.cornerRadius = 5
+        pagerControl.layer.cornerRadius = 5
 //        collectionViewEvent.dataSource = self
+        
         collectionViewType.dataSource = self
+        collectionViewType.layer.cornerRadius = 5
         collectionViewUltra.dataSource = self
+        collectionViewUltra.layer.cornerRadius = 5
         collectionViewNewStore.dataSource = self
+        collectionViewNewStore.layer.cornerRadius = 5
         
 //        collectionViewEvent.delegate = self
         collectionViewType.delegate = self
@@ -144,6 +140,17 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
+    func getUserNotReadAlertCount() {
+        netWork.get(method: .get, url: urlMaker.getUserNotReadAlertCount+userPhone) {
+            json in
+            if json["result"].boolValue {
+                self.alertButton.setImage(UIImage(named: "off"), for: .normal)
+            }
+            else {
+                self.alertButton.setImage(UIImage(named: "on"), for: .normal)
+            }
+        }
+    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let location: CLLocation = locations[locations.count - 1]
         print("dddd",location)
@@ -193,6 +200,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         
         ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.alertControllerIdentifier
         ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.alertStoryBoard
+        ViewInBottomTabBar.controllerSender = userPhone
         ViewInBottomTabBar.moveFromOutSide = true
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
@@ -250,7 +258,7 @@ extension MainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
         self.pagerControl.contentHorizontalAlignment = .center
         // 간격들
         self.pagerControl.itemSpacing = 8
-        self.pagerControl.interitemSpacing = 8
+        //self.pagerControl.interitemSpacing = 8
         // 현재 슬라이드 색
         self.pagerControl.setFillColor(.purple, for: .selected)
         // 점 크기 정하기

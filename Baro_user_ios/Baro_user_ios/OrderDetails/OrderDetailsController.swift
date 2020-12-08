@@ -210,14 +210,14 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
             guard extras == nil else {
                 switch extras?.count {
                 case 0,1,2,3:
-                    return CGSize(width: collectionView.frame.width ,height: 120)
+                    return CGSize(width: collectionView.frame.width ,height: 80)
                 default:
                     return CGSize(width: collectionView.frame.width, height: CGFloat(70 + extras!.count * 35))
                 }
             }
         case 1:
             if self.nonEssentialOpen {
-                return CGSize(width: collectionView.frame.width, height: 30)
+                return CGSize(width: collectionView.frame.width, height: 40)
             }else{
                 return CGSize(width: collectionView.frame.width, height: 0)
             }
@@ -227,7 +227,7 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
         return CGSize()
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 

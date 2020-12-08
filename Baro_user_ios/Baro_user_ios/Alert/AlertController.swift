@@ -11,19 +11,22 @@ class AlertController : UIViewController {
     var netWork = CallRequest()
     var urlMaker = NetWorkURL()
     var Alerts = [AlertModel]()
+    var userPhone = ""
     let bottomTabBarInfo = BottomTabBarController()
     @IBOutlet weak var collectinView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         collectinView.delegate = self
         collectinView.dataSource = self
-        netWork.get(method: .get, url: urlMaker.getAlert) { (json) in
+        netWork.get(method: .get, url: urlMaker.alertFindAll+userPhone) { (json) in
             print(json)
             for item in json["alert"].array! {
                 var temp = AlertModel()
-                temp.alert_id = item["alert_id"].intValue
+                temp.is_read = item["is_read"].stringValue
                 temp.alert_title = item["alert_title"].stringValue
                 temp.alert_startdate = item["alert_startdate"].stringValue
+                //temp.id = DB 피벗 테이블을 위한 AUTO_INCREMENT PK
+                temp.alert_id = item["alert_id"].intValue
                 self.Alerts.append(temp)
             }
             self.collectinView.reloadData()
@@ -47,20 +50,22 @@ extension AlertController : UICollectionViewDelegate,UICollectionViewDataSource,
 //        }
 //        print("arr : ", arr)
         cell.layer.cornerRadius = 5
-        cell.layer.borderWidth = 1
-        cell.layer.borderColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 1).cgColor
         
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 20, height: 200)
+        return CGSize(width: view.frame.width - 20, height: 80)
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+//    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let alert = Alerts[Alerts.count - indexPath.item - 1]
         print("alert indexPath row : ", alert)
+        
+        //alert click 시 insert 해주는 구문.
+        //
+        
         let storyboaard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let vc = storyboaard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
         

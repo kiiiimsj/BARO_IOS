@@ -55,6 +55,7 @@ class uiViewSetting: UIView {
             }
             set {
                 layer.borderWidth = newValue
+                
             }
         }
         

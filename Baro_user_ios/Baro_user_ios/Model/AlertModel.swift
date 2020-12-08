@@ -8,8 +8,9 @@
 import Foundation
 
 struct AlertModel {
-    var alert_id = 0
+    var is_read = ""
     var alert_title = ""
-    var alert_content = ""
+    var id = 0
     var alert_startdate = ""
+    var alert_id = 0
 }

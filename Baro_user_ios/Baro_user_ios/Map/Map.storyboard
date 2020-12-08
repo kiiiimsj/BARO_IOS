@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,25 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHF-cB-Bka">
+                                <rect key="frame" x="10" y="652" width="394" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="w0w-Re-3wA"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="RU2-xD-2Q4" kind="embed" id="wZf-oL-ALD"/>
+                                </connections>
+                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5e-dp-7fy" customClass="NMFNaverMapView">
                                 <rect key="frame" x="0.0" y="90" width="414" height="772"/>
-                                <subviews>
-                                    <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHF-cB-Bka">
-                                        <rect key="frame" x="10" y="562" width="394" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="w0w-Re-3wA"/>
-                                        </constraints>
-                                        <connections>
-                                            <segue destination="RU2-xD-2Q4" kind="embed" id="wZf-oL-ALD"/>
-                                        </connections>
-                                    </containerView>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="eHF-cB-Bka" secondAttribute="bottom" constant="10" id="JRz-x1-bEU"/>
-                                    <constraint firstItem="eHF-cB-Bka" firstAttribute="leading" secondItem="K5e-dp-7fy" secondAttribute="leading" constant="10" id="iDR-gM-uj7"/>
-                                    <constraint firstAttribute="trailing" secondItem="eHF-cB-Bka" secondAttribute="trailing" constant="10" id="uCQ-xX-95j"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
                                         <real key="value" value="16"/>
@@ -57,11 +50,14 @@
                         <viewLayoutGuide key="safeArea" id="Qfs-rk-Ffa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Qfs-rk-Ffa" firstAttribute="bottom" secondItem="eHF-cB-Bka" secondAttribute="bottom" constant="10" id="8bP-YA-gm8"/>
                             <constraint firstItem="Qfs-rk-Ffa" firstAttribute="bottom" secondItem="K5e-dp-7fy" secondAttribute="bottom" id="GVF-xv-63w"/>
                             <constraint firstItem="Qfs-rk-Ffa" firstAttribute="trailing" secondItem="K5e-dp-7fy" secondAttribute="trailing" id="L5d-6j-a3F"/>
                             <constraint firstItem="hJK-61-7JZ" firstAttribute="top" secondItem="QzN-Me-1C9" secondAttribute="top" constant="50" id="QSv-dJ-mUO"/>
                             <constraint firstItem="K5e-dp-7fy" firstAttribute="leading" secondItem="Qfs-rk-Ffa" secondAttribute="leading" id="VtQ-Xx-Abe"/>
+                            <constraint firstItem="Qfs-rk-Ffa" firstAttribute="trailing" secondItem="eHF-cB-Bka" secondAttribute="trailing" constant="10" id="W20-yS-nZn"/>
                             <constraint firstItem="hJK-61-7JZ" firstAttribute="leading" secondItem="Qfs-rk-Ffa" secondAttribute="leading" constant="20" id="WBh-q3-Pb1"/>
+                            <constraint firstItem="eHF-cB-Bka" firstAttribute="leading" secondItem="Qfs-rk-Ffa" secondAttribute="leading" constant="10" id="cEa-2s-tCP"/>
                             <constraint firstItem="K5e-dp-7fy" firstAttribute="top" secondItem="hJK-61-7JZ" secondAttribute="bottom" constant="20" id="nHa-Ls-z8M"/>
                         </constraints>
                     </view>
