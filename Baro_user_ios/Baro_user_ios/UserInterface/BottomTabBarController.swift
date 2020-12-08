@@ -102,6 +102,12 @@ class BottomTabBarController: UIViewController {
                 return
             }
             getOrders()
+            
+            if(basketOrders.count == 0) {
+                basketButton.isHidden = true
+                bottomTabBar.delegate = self
+                return
+            }
             basketBadge()
         } else {
             basketButton.isHidden = true
