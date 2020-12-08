@@ -24,23 +24,7 @@ class CouponPageController: UIViewController {
         configureUI()
         collection.delegate = self
         collection.dataSource = self
-        network.get(method: .get, url: urlMaker.couponList+userPhone) { (json) in
-            print(json)
-            if json["result"].boolValue {
-                for item in json["coupon"].array! {
-                    var temp = CouponModel()
-                    temp.coupon_title = item["coupon_title"].stringValue
-                    temp.coupon_condition = item["coupon_condition"].intValue
-                    temp.coupon_id = item["coupon_id"].intValue
-                    temp.coupon_content = item["coupon_content"].stringValue
-                    temp.coupon_enddate = item["coupon_enddate"].stringValue
-                    temp.coupon_discount = item["coupon_discount"].doubleValue
-                    temp.coupon_type = item["coupon_type"].stringValue
-                    self.couponData.append(temp)
-                }
-                self.collection.reloadData()
-            }
-        }
+        reloadCoupon()
     }
     func configureUI(){
         registerBtn.layer.borderColor = UIColor.customLightGray.cgColor
@@ -48,6 +32,42 @@ class CouponPageController: UIViewController {
         registerBtn.layer.cornerRadius = 5
     }
     @IBAction func pressRegister(_ sender: Any) {
+        guard typeCouponNumber != nil else { return }
+        network.get(method: .get, url: urlMaker.couponRegister+"phone="+userPhone+"&coupon_id="+typeCouponNumber.text!) { (json) in
+            let storyboard = UIStoryboard(name: "Coupon", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "CouponRegisterController") as! CouponRegisterController
+            vc.messageText = json["message"].stringValue
+            if json["result"].boolValue {
+                vc.titleText = "쿠폰 등록 성공"
+            } else{
+                vc.titleText = "쿠폰 등록 실패"
+            }
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: false, completion: {
+                self.reloadCoupon()
+            })
+//            if json["result"].boolValue {
+//
+//            }
+        }
+    }
+    func reloadCoupon(){
+        couponData = [CouponModel]()
+        network.get(method: .get, url: urlMaker.couponList+userPhone) { (json) in
+            for item in json["coupon"].array! {
+                var temp = CouponModel()
+                temp.coupon_title = item["coupon_title"].stringValue
+                temp.coupon_condition = item["coupon_condition"].intValue
+                temp.coupon_id = item["coupon_id"].intValue
+                temp.coupon_content = item["coupon_content"].stringValue
+                temp.coupon_enddate = item["coupon_enddate"].stringValue
+                temp.coupon_discount = item["coupon_discount"].doubleValue
+                temp.coupon_type = item["coupon_type"].stringValue
+                self.couponData.append(temp)
+            }
+            self.collection.reloadData()
+        }
     }
 }
 
