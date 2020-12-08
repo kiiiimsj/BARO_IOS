@@ -418,27 +418,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" restorationIdentifier="DialogView" translatesAutoresizingMaskIntoConstraints="NO" id="fIi-Ei-A86" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="20" y="348" width="374" height="200"/>
+                                <rect key="frame" x="40" y="358" width="334" height="180"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니 담기 완료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbu-yN-Zxe">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="54"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니에 물건이 담겼습니다 다른메뉴를 보시겠습니까?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVw-wL-t0G">
-                                        <rect key="frame" x="0.0" y="80" width="374" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="gXw-Gl-b2q"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                        <rect key="frame" x="30" y="54" width="274" height="76"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhn-7X-HPs">
-                                        <rect key="frame" x="192" y="150" width="172" height="40"/>
+                                        <rect key="frame" x="172" y="130" width="152" height="40"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="VZ4-qW-zxr"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                         <state key="normal" title="장바구니">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -448,8 +448,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilm-Wj-9ay">
-                                        <rect key="frame" x="10" y="150" width="172" height="40"/>
+                                        <rect key="frame" x="10" y="130" width="152" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Wpn-09-abg"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                         <state key="normal" title="다른메뉴 보기">
                                             <color key="titleColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -461,22 +464,21 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="Ilm-Wj-9ay" firstAttribute="height" secondItem="fIi-Ei-A86" secondAttribute="height" multiplier="0.2" id="4cU-CF-hxe"/>
+                                    <constraint firstItem="Jhn-7X-HPs" firstAttribute="top" secondItem="RVw-wL-t0G" secondAttribute="bottom" id="1cE-dA-sIQ"/>
                                     <constraint firstItem="vbu-yN-Zxe" firstAttribute="height" secondItem="fIi-Ei-A86" secondAttribute="height" multiplier="0.3" id="5FL-AK-53n"/>
                                     <constraint firstAttribute="trailing" secondItem="vbu-yN-Zxe" secondAttribute="trailing" id="AnL-Iu-qKw"/>
                                     <constraint firstItem="vbu-yN-Zxe" firstAttribute="leading" secondItem="fIi-Ei-A86" secondAttribute="leading" id="Aqf-8h-d4L"/>
                                     <constraint firstItem="vbu-yN-Zxe" firstAttribute="top" secondItem="fIi-Ei-A86" secondAttribute="top" id="Q2W-X2-o6g"/>
                                     <constraint firstAttribute="bottom" secondItem="Ilm-Wj-9ay" secondAttribute="bottom" constant="10" id="QTL-fw-lCf"/>
-                                    <constraint firstAttribute="height" constant="200" id="WZz-ii-xNG"/>
-                                    <constraint firstItem="Jhn-7X-HPs" firstAttribute="height" secondItem="fIi-Ei-A86" secondAttribute="height" multiplier="0.2" id="YK5-T5-POu"/>
-                                    <constraint firstItem="RVw-wL-t0G" firstAttribute="top" secondItem="vbu-yN-Zxe" secondAttribute="bottom" constant="20" id="ZYg-jJ-1wz"/>
+                                    <constraint firstAttribute="height" constant="180" id="WZz-ii-xNG"/>
+                                    <constraint firstItem="RVw-wL-t0G" firstAttribute="top" secondItem="vbu-yN-Zxe" secondAttribute="bottom" id="ZYg-jJ-1wz"/>
                                     <constraint firstItem="Ilm-Wj-9ay" firstAttribute="leading" secondItem="fIi-Ei-A86" secondAttribute="leading" constant="10" id="acq-Na-o8Q"/>
                                     <constraint firstAttribute="trailing" secondItem="Jhn-7X-HPs" secondAttribute="trailing" constant="10" id="ctA-HV-mWc"/>
                                     <constraint firstAttribute="bottom" secondItem="Jhn-7X-HPs" secondAttribute="bottom" constant="10" id="edn-e5-3qG"/>
                                     <constraint firstItem="Ilm-Wj-9ay" firstAttribute="width" secondItem="vbu-yN-Zxe" secondAttribute="width" multiplier="0.5" constant="-15" id="myt-Fj-ulf"/>
                                     <constraint firstItem="Jhn-7X-HPs" firstAttribute="width" secondItem="vbu-yN-Zxe" secondAttribute="width" multiplier="0.5" constant="-15" id="s7M-HJ-hfB"/>
-                                    <constraint firstItem="RVw-wL-t0G" firstAttribute="leading" secondItem="fIi-Ei-A86" secondAttribute="leading" id="tOa-Qy-zbS"/>
-                                    <constraint firstAttribute="trailing" secondItem="RVw-wL-t0G" secondAttribute="trailing" id="tXd-q3-7CO"/>
+                                    <constraint firstItem="RVw-wL-t0G" firstAttribute="leading" secondItem="fIi-Ei-A86" secondAttribute="leading" constant="30" id="tOa-Qy-zbS"/>
+                                    <constraint firstAttribute="trailing" secondItem="RVw-wL-t0G" secondAttribute="trailing" constant="30" id="tXd-q3-7CO"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -500,10 +502,10 @@
                         <viewLayoutGuide key="safeArea" id="qSe-YM-dwB"/>
                         <color key="backgroundColor" white="0.5" alpha="0.50130568750646731" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fIi-Ei-A86" firstAttribute="leading" secondItem="qSe-YM-dwB" secondAttribute="leading" constant="20" id="eBx-vu-z6h"/>
+                            <constraint firstItem="fIi-Ei-A86" firstAttribute="leading" secondItem="qSe-YM-dwB" secondAttribute="leading" constant="40" id="eBx-vu-z6h"/>
                             <constraint firstItem="fIi-Ei-A86" firstAttribute="centerY" secondItem="4fW-bv-VOA" secondAttribute="centerY" id="mfu-pX-iyf"/>
                             <constraint firstItem="fIi-Ei-A86" firstAttribute="centerX" secondItem="4fW-bv-VOA" secondAttribute="centerX" id="p3b-48-Bx9"/>
-                            <constraint firstItem="qSe-YM-dwB" firstAttribute="trailing" secondItem="fIi-Ei-A86" secondAttribute="trailing" constant="20" id="pFw-LH-QDs"/>
+                            <constraint firstItem="qSe-YM-dwB" firstAttribute="trailing" secondItem="fIi-Ei-A86" secondAttribute="trailing" constant="40" id="pFw-LH-QDs"/>
                         </constraints>
                     </view>
                     <connections>
@@ -533,18 +535,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" restorationIdentifier="DialogView" translatesAutoresizingMaskIntoConstraints="NO" id="iqr-a5-J5f" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="20" y="348" width="374" height="200"/>
+                                <rect key="frame" x="40" y="358" width="334" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니 비우기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOf-9B-Eey">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="54"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2a-fO-VPi">
-                                        <rect key="frame" x="192" y="150" width="172" height="40"/>
+                                        <rect key="frame" x="172" y="130" width="152" height="40"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="OIs-X3-80U"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                         <state key="normal" title="비우기">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -554,7 +559,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bF4-zi-F1R">
-                                        <rect key="frame" x="10" y="150" width="172" height="40"/>
+                                        <rect key="frame" x="10" y="130" width="152" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="8tk-uL-wze"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                         <state key="normal" title="취소">
                                             <color key="titleColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -564,11 +572,8 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 다른 가게의 메뉴가 존재합니다 기존메뉴를 비우고 선택상품을 담으시겠습니까" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkE-bT-Tzq">
-                                        <rect key="frame" x="20" y="90" width="334" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="ltp-B4-C6e"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
+                                        <rect key="frame" x="50" y="54" width="234" height="66"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -578,18 +583,17 @@
                                     <constraint firstItem="bF4-zi-F1R" firstAttribute="width" secondItem="dOf-9B-Eey" secondAttribute="width" multiplier="0.5" constant="-15" id="5fQ-cm-RUY"/>
                                     <constraint firstAttribute="trailing" secondItem="u2a-fO-VPi" secondAttribute="trailing" constant="10" id="ApY-tk-Bal"/>
                                     <constraint firstAttribute="trailing" secondItem="dOf-9B-Eey" secondAttribute="trailing" id="ErX-WK-Fxr"/>
-                                    <constraint firstItem="bF4-zi-F1R" firstAttribute="height" secondItem="iqr-a5-J5f" secondAttribute="height" multiplier="0.2" id="FMU-pI-vmo"/>
-                                    <constraint firstItem="qkE-bT-Tzq" firstAttribute="leading" secondItem="iqr-a5-J5f" secondAttribute="leading" constant="20" id="NF8-DX-ezw"/>
+                                    <constraint firstItem="qkE-bT-Tzq" firstAttribute="leading" secondItem="iqr-a5-J5f" secondAttribute="leading" constant="50" id="NF8-DX-ezw"/>
                                     <constraint firstItem="bF4-zi-F1R" firstAttribute="leading" secondItem="iqr-a5-J5f" secondAttribute="leading" constant="10" id="Odd-6s-JfY"/>
-                                    <constraint firstAttribute="trailing" secondItem="qkE-bT-Tzq" secondAttribute="trailing" constant="20" id="QZ8-Xi-l6z"/>
+                                    <constraint firstAttribute="trailing" secondItem="qkE-bT-Tzq" secondAttribute="trailing" constant="50" id="QZ8-Xi-l6z"/>
                                     <constraint firstAttribute="bottom" secondItem="u2a-fO-VPi" secondAttribute="bottom" constant="10" id="Vib-Mj-vfj"/>
                                     <constraint firstItem="dOf-9B-Eey" firstAttribute="top" secondItem="iqr-a5-J5f" secondAttribute="top" id="Zvh-Fr-mgj"/>
                                     <constraint firstItem="dOf-9B-Eey" firstAttribute="leading" secondItem="iqr-a5-J5f" secondAttribute="leading" id="ch3-Yk-9et"/>
                                     <constraint firstItem="dOf-9B-Eey" firstAttribute="height" secondItem="iqr-a5-J5f" secondAttribute="height" multiplier="0.3" id="fJM-DL-zcP"/>
                                     <constraint firstAttribute="bottom" secondItem="bF4-zi-F1R" secondAttribute="bottom" constant="10" id="g3P-d9-rH9"/>
-                                    <constraint firstItem="u2a-fO-VPi" firstAttribute="height" secondItem="iqr-a5-J5f" secondAttribute="height" multiplier="0.2" id="ge1-nv-pU4"/>
-                                    <constraint firstAttribute="height" constant="200" id="lmL-qy-xVn"/>
-                                    <constraint firstItem="qkE-bT-Tzq" firstAttribute="top" secondItem="dOf-9B-Eey" secondAttribute="bottom" constant="30" id="pn9-0s-RSM"/>
+                                    <constraint firstAttribute="height" constant="180" id="lmL-qy-xVn"/>
+                                    <constraint firstItem="qkE-bT-Tzq" firstAttribute="top" secondItem="dOf-9B-Eey" secondAttribute="bottom" id="pn9-0s-RSM"/>
+                                    <constraint firstItem="u2a-fO-VPi" firstAttribute="top" secondItem="qkE-bT-Tzq" secondAttribute="bottom" constant="10" id="pqY-Gs-0ZK"/>
                                     <constraint firstItem="u2a-fO-VPi" firstAttribute="width" secondItem="dOf-9B-Eey" secondAttribute="width" multiplier="0.5" constant="-15" id="tcO-X7-AVR"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -607,8 +611,8 @@
                         <constraints>
                             <constraint firstItem="iqr-a5-J5f" firstAttribute="centerY" secondItem="bTX-i3-Ogx" secondAttribute="centerY" id="QsS-XL-9hZ"/>
                             <constraint firstItem="iqr-a5-J5f" firstAttribute="centerX" secondItem="bTX-i3-Ogx" secondAttribute="centerX" id="T8P-9F-khC"/>
-                            <constraint firstItem="iqr-a5-J5f" firstAttribute="leading" secondItem="kaE-Bm-fE2" secondAttribute="leading" constant="20" id="tmm-7F-wnb"/>
-                            <constraint firstItem="kaE-Bm-fE2" firstAttribute="trailing" secondItem="iqr-a5-J5f" secondAttribute="trailing" constant="20" id="yDF-XU-yjE"/>
+                            <constraint firstItem="iqr-a5-J5f" firstAttribute="leading" secondItem="kaE-Bm-fE2" secondAttribute="leading" constant="40" id="tmm-7F-wnb"/>
+                            <constraint firstItem="kaE-Bm-fE2" firstAttribute="trailing" secondItem="iqr-a5-J5f" secondAttribute="trailing" constant="40" id="yDF-XU-yjE"/>
                         </constraints>
                     </view>
                     <connections>
