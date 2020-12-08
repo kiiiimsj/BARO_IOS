@@ -233,7 +233,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g3o-fH-1hC">
-                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <rect key="frame" x="10" y="44" width="404" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="RlP-Yw-mCm"/>
@@ -302,7 +302,6 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXb-cu-OYi">
                                 <rect key="frame" x="0.0" y="104" width="414" height="758"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="27w-FF-HSH"/>
@@ -311,7 +310,7 @@
                             <constraint firstItem="27w-FF-HSH" firstAttribute="trailing" secondItem="fXb-cu-OYi" secondAttribute="trailing" id="EKh-TD-THl"/>
                             <constraint firstItem="fXb-cu-OYi" firstAttribute="leading" secondItem="27w-FF-HSH" secondAttribute="leading" id="SFb-dy-3dl"/>
                             <constraint firstItem="fXb-cu-OYi" firstAttribute="top" secondItem="g3o-fH-1hC" secondAttribute="bottom" id="YN6-ET-Wle"/>
-                            <constraint firstItem="g3o-fH-1hC" firstAttribute="leading" secondItem="27w-FF-HSH" secondAttribute="leading" id="aKm-L4-e1n"/>
+                            <constraint firstItem="g3o-fH-1hC" firstAttribute="leading" secondItem="27w-FF-HSH" secondAttribute="leading" constant="10" id="aKm-L4-e1n"/>
                             <constraint firstItem="27w-FF-HSH" firstAttribute="trailing" secondItem="g3o-fH-1hC" secondAttribute="trailing" id="nyA-dF-doA"/>
                             <constraint firstItem="27w-FF-HSH" firstAttribute="bottom" secondItem="fXb-cu-OYi" secondAttribute="bottom" id="rts-35-bo6"/>
                             <constraint firstItem="g3o-fH-1hC" firstAttribute="top" secondItem="27w-FF-HSH" secondAttribute="top" id="zsn-xa-ZnY"/>

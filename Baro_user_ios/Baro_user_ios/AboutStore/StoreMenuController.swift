@@ -29,7 +29,6 @@ class StoreMenuController : UIViewController{
     private lazy var childController : StoreMenu2Controller? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .purple
         categoryIndecator.removeFromSuperview()
         collectionView.addSubview(categoryIndecator)
         
@@ -141,7 +140,7 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
         guard let location = senderG?.location(in: self.collectionView) else { return }
         let indexPath = self.collectionView.indexPathForItem(at: location)
         if let index = indexPath {
-            setCategoryIndecatorAnimation(index: index.row, duration: 0.5)
+            setCategoryIndecatorAnimation(index: index.row, duration: 0.2)
             var categoryIdMenu = [Menu]()
             for item in self.menus {
                 if (item.category_id == categories[index.item].category_id) {
