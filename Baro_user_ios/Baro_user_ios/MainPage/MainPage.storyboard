@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="901-Ku-IQw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="901-Ku-IQw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -562,17 +562,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7v5-4c-E4S" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="20" y="348" width="374" height="200"/>
+                                <rect key="frame" x="40" y="348" width="334" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 검색" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-1o-PrE">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1D-08-oPz">
-                                        <rect key="frame" x="334" y="15" width="40" height="40"/>
+                                        <rect key="frame" x="294" y="10" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="gbB-mL-Mbr"/>
                                             <constraint firstAttribute="width" constant="40" id="smr-YO-PIB"/>
@@ -585,14 +585,14 @@
                                         </connections>
                                     </button>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bgM-FD-HjK">
-                                        <rect key="frame" x="0.0" y="71" width="374" height="58"/>
+                                        <rect key="frame" x="0.0" y="71" width="334" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="Soz-OW-fgc"/>
                                         </constraints>
                                         <textInputTraits key="textInputTraits" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
                                     </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6i4-aN-uVn">
-                                        <rect key="frame" x="0.0" y="160" width="374" height="40"/>
+                                        <rect key="frame" x="5" y="155" width="324" height="40"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                         <state key="normal" title="검색하기">
@@ -615,16 +615,16 @@
                                 <constraints>
                                     <constraint firstItem="wcn-1o-PrE" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="2Ag-nD-69A"/>
                                     <constraint firstAttribute="height" constant="200" id="2qF-0m-7XV"/>
-                                    <constraint firstAttribute="trailing" secondItem="6i4-aN-uVn" secondAttribute="trailing" id="4Mp-UW-me9"/>
-                                    <constraint firstItem="X1D-08-oPz" firstAttribute="top" secondItem="7v5-4c-E4S" secondAttribute="top" constant="15" id="5NN-Xg-T1p"/>
-                                    <constraint firstAttribute="bottom" secondItem="6i4-aN-uVn" secondAttribute="bottom" id="BNj-7W-7pZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="6i4-aN-uVn" secondAttribute="trailing" constant="5" id="4Mp-UW-me9"/>
+                                    <constraint firstAttribute="bottom" secondItem="6i4-aN-uVn" secondAttribute="bottom" constant="5" id="BNj-7W-7pZ"/>
                                     <constraint firstItem="wcn-1o-PrE" firstAttribute="height" secondItem="7v5-4c-E4S" secondAttribute="height" multiplier="0.3" id="Ime-V1-pd5"/>
                                     <constraint firstItem="bgM-FD-HjK" firstAttribute="trailing" secondItem="wcn-1o-PrE" secondAttribute="trailing" id="J5h-Bl-U7p"/>
+                                    <constraint firstItem="X1D-08-oPz" firstAttribute="centerY" secondItem="wcn-1o-PrE" secondAttribute="centerY" id="MkJ-70-VjY"/>
                                     <constraint firstItem="bgM-FD-HjK" firstAttribute="leading" secondItem="wcn-1o-PrE" secondAttribute="leading" id="NvE-uY-w3Z"/>
                                     <constraint firstItem="bgM-FD-HjK" firstAttribute="centerY" secondItem="7v5-4c-E4S" secondAttribute="centerY" id="Y90-Oq-QbR"/>
                                     <constraint firstItem="wcn-1o-PrE" firstAttribute="top" secondItem="7v5-4c-E4S" secondAttribute="top" id="Ywy-PY-2Ia"/>
                                     <constraint firstItem="bgM-FD-HjK" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="c1W-Ex-IG8"/>
-                                    <constraint firstItem="6i4-aN-uVn" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" id="isD-VQ-Ltw"/>
+                                    <constraint firstItem="6i4-aN-uVn" firstAttribute="leading" secondItem="7v5-4c-E4S" secondAttribute="leading" constant="5" id="isD-VQ-Ltw"/>
                                     <constraint firstItem="bgM-FD-HjK" firstAttribute="centerX" secondItem="7v5-4c-E4S" secondAttribute="centerX" id="nDY-aG-Kit"/>
                                     <constraint firstAttribute="trailing" secondItem="X1D-08-oPz" secondAttribute="trailing" id="qZk-Ab-9cA"/>
                                     <constraint firstItem="6i4-aN-uVn" firstAttribute="height" secondItem="7v5-4c-E4S" secondAttribute="height" multiplier="0.2" id="uA4-Ii-lIZ"/>
@@ -643,8 +643,8 @@
                         <constraints>
                             <constraint firstItem="7v5-4c-E4S" firstAttribute="centerX" secondItem="QXj-kz-H5P" secondAttribute="centerX" id="5uC-IJ-XJB"/>
                             <constraint firstItem="7v5-4c-E4S" firstAttribute="centerY" secondItem="QXj-kz-H5P" secondAttribute="centerY" id="FUz-Pz-ctt"/>
-                            <constraint firstItem="7v5-4c-E4S" firstAttribute="leading" secondItem="Rz9-62-BcR" secondAttribute="leading" constant="20" id="bxc-7e-Ic2"/>
-                            <constraint firstItem="Rz9-62-BcR" firstAttribute="trailing" secondItem="7v5-4c-E4S" secondAttribute="trailing" constant="20" id="eRP-z4-YUD"/>
+                            <constraint firstItem="7v5-4c-E4S" firstAttribute="leading" secondItem="Rz9-62-BcR" secondAttribute="leading" constant="40" id="bxc-7e-Ic2"/>
+                            <constraint firstItem="Rz9-62-BcR" firstAttribute="trailing" secondItem="7v5-4c-E4S" secondAttribute="trailing" constant="40" id="eRP-z4-YUD"/>
                         </constraints>
                     </view>
                     <connections>
