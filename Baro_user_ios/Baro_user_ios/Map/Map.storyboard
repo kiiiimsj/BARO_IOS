@@ -8,6 +8,17 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Black.otf">
+            <string>NotoSansCJKkr-Black</string>
+        </array>
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansCJKkr-Bold</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Map Controller-->
         <scene sceneID="GMi-Kz-teG">
@@ -18,9 +29,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHF-cB-Bka">
-                                <rect key="frame" x="10" y="652" width="394" height="200"/>
+                                <rect key="frame" x="10" y="724" width="394" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="w0w-Re-3wA"/>
+                                    <constraint firstAttribute="height" constant="128" id="w0w-Re-3wA"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="RU2-xD-2Q4" kind="embed" id="wZf-oL-ALD"/>
@@ -76,68 +87,55 @@
             <objects>
                 <viewController storyboardIdentifier="SeparateWindowController" id="RU2-xD-2Q4" customClass="SeparateWindowController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wxv-I4-JO0">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h09-7P-gsm">
-                                <rect key="frame" x="20" y="32" width="128" height="136"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h09-7P-gsm">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="BDT-3a-aeg"/>
                                 </constraints>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUy-q7-f7y">
-                                <rect key="frame" x="178" y="138" width="181" height="30"/>
-                                <color key="backgroundColor" red="0.47109787269999998" green="0.211157332" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="가자">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="pressGo:" destination="RU2-xD-2Q4" eventType="touchUpInside" id="8Xf-hc-ZEu"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WN-cw-fUi">
-                                <rect key="frame" x="178" y="32" width="59" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게이름" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WN-cw-fUi">
+                                <rect key="frame" x="148" y="15" width="236" height="22.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="15"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tG7-c1-HMx">
-                                <rect key="frame" x="178" y="63" width="201" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="148" y="47.5" width="231" height="18"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="거리" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATM-eS-BBO">
-                                <rect key="frame" x="178" y="107.5" width="181" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="350" y="93.5" width="24" height="19.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TS0-hn-cPX"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="h09-7P-gsm" secondAttribute="bottom" constant="32" id="2xx-sL-2Su"/>
-                            <constraint firstItem="ATM-eS-BBO" firstAttribute="trailing" secondItem="ZUy-q7-f7y" secondAttribute="trailing" id="7oS-IA-ssR"/>
+                            <constraint firstItem="h09-7P-gsm" firstAttribute="centerY" secondItem="wxv-I4-JO0" secondAttribute="centerY" id="B7b-Qj-RXM"/>
                             <constraint firstItem="TS0-hn-cPX" firstAttribute="trailing" secondItem="tG7-c1-HMx" secondAttribute="trailing" constant="15" id="LIX-qn-TPt"/>
+                            <constraint firstItem="ATM-eS-BBO" firstAttribute="bottom" secondItem="h09-7P-gsm" secondAttribute="bottom" constant="-15" id="O2V-xt-ikn"/>
                             <constraint firstItem="tG7-c1-HMx" firstAttribute="top" secondItem="0WN-cw-fUi" secondAttribute="bottom" constant="10" id="RGY-tb-lT8"/>
-                            <constraint firstItem="tG7-c1-HMx" firstAttribute="leading" secondItem="ZUy-q7-f7y" secondAttribute="leading" id="VDu-BE-XbH"/>
-                            <constraint firstItem="0WN-cw-fUi" firstAttribute="top" secondItem="h09-7P-gsm" secondAttribute="top" id="VEZ-fm-tRo"/>
-                            <constraint firstItem="h09-7P-gsm" firstAttribute="leading" secondItem="wxv-I4-JO0" secondAttribute="leading" constant="20" id="bHO-RQ-8wF"/>
-                            <constraint firstItem="ZUy-q7-f7y" firstAttribute="leading" secondItem="h09-7P-gsm" secondAttribute="trailing" constant="30" id="f1v-1G-mjr"/>
-                            <constraint firstItem="ZUy-q7-f7y" firstAttribute="bottom" secondItem="h09-7P-gsm" secondAttribute="bottom" id="hrn-DF-rQ5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZUy-q7-f7y" secondAttribute="trailing" constant="15" id="j3O-i9-Shv"/>
-                            <constraint firstItem="ZUy-q7-f7y" firstAttribute="top" secondItem="ATM-eS-BBO" secondAttribute="bottom" constant="10" id="jCz-aB-jrJ"/>
-                            <constraint firstItem="0WN-cw-fUi" firstAttribute="leading" secondItem="ZUy-q7-f7y" secondAttribute="leading" id="tgx-0G-RKF"/>
-                            <constraint firstItem="h09-7P-gsm" firstAttribute="top" secondItem="wxv-I4-JO0" secondAttribute="top" constant="32" id="xA2-R4-HVn"/>
-                            <constraint firstItem="ATM-eS-BBO" firstAttribute="leading" secondItem="h09-7P-gsm" secondAttribute="trailing" constant="30" id="zOz-Np-JkF"/>
+                            <constraint firstItem="TS0-hn-cPX" firstAttribute="trailing" secondItem="ATM-eS-BBO" secondAttribute="trailing" constant="20" id="Su7-6Z-VbN"/>
+                            <constraint firstItem="0WN-cw-fUi" firstAttribute="top" secondItem="h09-7P-gsm" secondAttribute="top" constant="15" id="VEZ-fm-tRo"/>
+                            <constraint firstItem="TS0-hn-cPX" firstAttribute="bottom" secondItem="h09-7P-gsm" secondAttribute="bottom" id="Xk2-cd-dN5"/>
+                            <constraint firstItem="h09-7P-gsm" firstAttribute="top" secondItem="wxv-I4-JO0" secondAttribute="top" id="ayA-dO-7is"/>
+                            <constraint firstItem="h09-7P-gsm" firstAttribute="leading" secondItem="wxv-I4-JO0" secondAttribute="leading" id="bHO-RQ-8wF"/>
+                            <constraint firstItem="0WN-cw-fUi" firstAttribute="leading" secondItem="h09-7P-gsm" secondAttribute="trailing" constant="20" id="eBH-d0-rgq"/>
+                            <constraint firstAttribute="trailing" secondItem="0WN-cw-fUi" secondAttribute="trailing" constant="10" id="gDk-h7-hyR"/>
+                            <constraint firstItem="tG7-c1-HMx" firstAttribute="leading" secondItem="h09-7P-gsm" secondAttribute="trailing" constant="20" id="tJe-2u-H9p"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="Store_address_label" destination="tG7-c1-HMx" id="4cH-gp-wKd"/>
                         <outlet property="Store_distance_label" destination="ATM-eS-BBO" id="2XC-QQ-JJO"/>
                         <outlet property="Store_name_label" destination="0WN-cw-fUi" id="Oi1-L1-Vyw"/>
-                        <outlet property="goStore" destination="ZUy-q7-f7y" id="qpB-aM-jm7"/>
                         <outlet property="store_image" destination="h09-7P-gsm" id="0Nf-uu-WCQ"/>
                         <segue destination="xp3-Qa-krq" kind="presentation" identifier="goToStore" id="bYU-I2-5Rf"/>
                     </connections>

@@ -33,7 +33,9 @@ class MapController : UIViewController {
         super.viewDidLoad()
     
 //        view.addSubview(map)
-   
+//        SeparateWindow.layer.borderWidth = 5
+//        SeparateWindow.layer.borderColor = UIColor.baro_main_color.cgColor
+//        SeparateWindow.layer.cornerRadius = 10
         initializeMapOptions()
         updateMyLocation()
         initialzeData()
@@ -68,17 +70,17 @@ class MapController : UIViewController {
             StorePin.captionText = item.store_name
             StorePin.touchHandler = { [weak self] (overlay) -> Bool in
                 if let marker = overlay as? NMFMarker {
-                    if marker.infoWindow == nil {
+                    if self!.SeparateWindow.isHidden {
                         // 현재 마커에 정보 창이 열려있지 않을 경우 엶
                         let data = marker.userInfo["StoreInfo"] as! LocationModel
-                        self!.infoWindowDataSource.title = data.store_name+"점"
-                        self?.infoWindow.open(with: marker)
+//                        self!.infoWindowDataSource.title = data.store_name+"점"
+//                        self?.infoWindow.open(with: marker)
                         self?.SeparateWindow.isHidden = false
                         self!.VC.storeData = data
                         self!.VC.whenDidUpdate()
                     } else {
                         // 이미 현재 마커에 정보 창이 열려있을 경우 닫음
-                        self?.infoWindow.close()
+//                        self?.infoWindow.close()
                         self?.SeparateWindow.isHidden = true
 
                     }
@@ -119,7 +121,7 @@ class MapController : UIViewController {
     func initialzeData() -> Void {
         baroPinImage = NMFOverlayImage(name: "map")
         //initalizeMyPin()
-        infoWindow.dataSource = infoWindowDataSource
+//        infoWindow.dataSource = infoWindowDataSource
         setWindowEnvironment()
         var params = Dictionary<String,String>()
         print("dooooo")
