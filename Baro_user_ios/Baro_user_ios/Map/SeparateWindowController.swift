@@ -17,13 +17,17 @@ class SeparateWindowController : UIViewController {
     var clickListener : SWDelegate!
     let bottomTabBarInfo = BottomTabBarController()
     @IBOutlet weak var store_image: UIImageView!
-    @IBOutlet weak var goStore: UIButton!
+//    @IBOutlet weak var goStore: UIButton!
     @IBOutlet weak var Store_address_label: UILabel!
     @IBOutlet weak var Store_distance_label: UILabel!
     @IBOutlet weak var Store_name_label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.baro_main_color.cgColor
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
        
     }
     func whenDidUpdate() -> () {
@@ -37,7 +41,7 @@ class SeparateWindowController : UIViewController {
             }
             self.store_image.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + json["store_image"].stringValue))
             self.Store_name_label.text = self.storeData.store_name
-            self.goStore.setTitle(self.storeData.store_name + " 으로 가기", for: .normal)
+//            self.goStore.setTitle(self.storeData.store_name + " 으로 가기", for: .normal)
         }
     }
     @IBAction func pressGo(_ sender: Any) {
