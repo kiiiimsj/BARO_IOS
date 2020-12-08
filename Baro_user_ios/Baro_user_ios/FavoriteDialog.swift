@@ -14,19 +14,13 @@ class FavoriteDialog : UIViewController {
     public var isFlag = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (UserDefaults.standard.value(forKey: "isFlag") != nil) {
-            self.isFlag = UserDefaults.standard.value(forKey: "isFlag") as! Int
-        }
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         setDialogLabel(index: isFlag)
         print("isFlag : ", isFlag)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
     func setDialogLabel(index : Int) {
-        if (UserDefaults.standard.value(forKey: "isFlag") != nil) {
-            self.isFlag = UserDefaults.standard.value(forKey: "isFlag") as! Int
-        }
         if (self.isFlag == 1) {
             self.favoriteDialogTitle.text = "즐겨찾기 삭제"
             self.dialogContent.text = "즐겨찾기에서 삭제 되었습니다."
