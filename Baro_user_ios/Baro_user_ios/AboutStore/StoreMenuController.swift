@@ -164,7 +164,7 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
         self.categoryHighlightText.font = UIFont(name: "NotoSansCJKkr-Bold", size: 10.0)
         self.categoryHighlightText.textAlignment = .center
         self.categoryHighlightText.text = "\(self.categoryNames[index])"
-        self.categoryHighlightText.translatesAutoresizingMaskIntoConstraints = false
+        self.categoryHighlightText.translatesAutoresizingMaskIntoConstraints = true
         self.categoryHighlightText.topAnchor.constraint(equalTo: self.categoryIndecator.topAnchor).isActive = true
         self.categoryHighlightText.leftAnchor.constraint(equalTo: self.categoryIndecator.leftAnchor).isActive = true
         self.categoryHighlightText.rightAnchor.constraint(equalTo: self.categoryIndecator.rightAnchor).isActive = true
