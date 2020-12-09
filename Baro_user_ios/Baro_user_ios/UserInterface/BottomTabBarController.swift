@@ -82,8 +82,10 @@ class BottomTabBarController: UIViewController {
         //aboutstore나 storelist 접근 시 viewload에서 controller 변경 구문
         if(moveFromOutSide) {
             changeViewController(getController: controllerIdentifier, getStoryBoard: controllerStoryboard, sender: controllerSender)
+            moveFromOutSide = false
         }
         //basket userdefault 유무 버튼 비활성화/활성화 구문
+        isBasketExist()
         bottomTabBar.delegate = self
     }
     func isBasketExist() {
