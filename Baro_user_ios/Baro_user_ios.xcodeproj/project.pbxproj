@@ -458,7 +458,6 @@
 			children = (
 				E31D3FD12542ABEF00B63F77 /* StoreListPageController.swift */,
 				E31D3FD42542AC3E00B63F77 /* StoreListModel.swift */,
-				E31D3FD72542ACAC00B63F77 /* StoreListCell.swift */,
 				E31D3FDA2542AD7300B63F77 /* StoreListPage.storyboard */,
 				E34CAF862559427100BE3F53 /* ListStoreLoadingCell.swift */,
 			);
@@ -490,6 +489,7 @@
 				E33D8562253F163000E50BAC /* StoreMenu2Controller.swift */,
 				E33D8536253DC63600E50BAC /* AboutStore.swift */,
 				E33D853A253DC69700E50BAC /* StoreInfoController.swift */,
+				E31D3FD72542ACAC00B63F77 /* StoreListCell.swift */,
 				E33D853D253DC86A00E50BAC /* StoreMenuController.swift */,
 				E33D855A253ECB5000E50BAC /* AboutStore.storyboard */,
 				E33D855F253EF24900E50BAC /* ASCategoryCell.swift */,
