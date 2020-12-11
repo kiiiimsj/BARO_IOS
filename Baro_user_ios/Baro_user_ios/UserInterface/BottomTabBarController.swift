@@ -196,7 +196,7 @@ class BottomTabBarController: UIViewController {
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
             case aboutStoreControllerIdentifier:
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
-                swipeRecognizer()
+                //swipeRecognizer()
             case couponPageControllerIdentifier:
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! CouponPageController, sender: nil)
