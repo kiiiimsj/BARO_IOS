@@ -14,10 +14,27 @@ class AlertController : UIViewController {
     var userPhone = ""
     let bottomTabBarInfo = BottomTabBarController()
     @IBOutlet weak var collectinView: UICollectionView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        netWork.get(method: .get, url: urlMaker.alertFindAll+userPhone) { (json) in
+//            print(json)
+//            for item in json["alert"].array! {
+//                var temp = AlertModel(	)
+//                temp.is_read = item["is_read"].stringValue
+//                temp.alert_title = item["alert_title"].stringValue
+//                temp.alert_startdate = item["alert_startdate"].stringValue
+//                //temp.id = DB 피벗 테이블을 위한 AUTO_INCREMENT PK
+//                temp.alert_id = item["alert_id"].intValue
+//                self.Alerts.append(temp)
+//            }
+//            self.collectinView.reloadData()
+//        }
+//    }
+    override func viewWillAppear(_ animated: Bool) {
         collectinView.delegate = self
         collectinView.dataSource = self
+        super.viewWillAppear(true)
         netWork.get(method: .get, url: urlMaker.alertFindAll+userPhone) { (json) in
             print(json)
             for item in json["alert"].array! {
@@ -45,10 +62,13 @@ extension AlertController : UICollectionViewDelegate,UICollectionViewDataSource,
         print("index ROw : ", Alerts.count - indexPath.item - 1)
         cell.title.text = model.alert_title
         cell.date.text = model.alert_startdate
-//        var arr =  model.alert_startdate.components(separatedBy: ["년","월","일"]).map{(value) -> String in
-//              return String(value)
-//        }
-//        print("arr : ", arr)
+        cell.newLabelView.isHidden = false
+        cell.newLabelView.layer.cornerRadius = cell.newLabelView.frame.size.width / 2
+        if (model.is_read == "N") {
+            cell.newLabelView.isHidden = false
+        } else {
+            cell.newLabelView.isHidden = true
+        }
         cell.layer.cornerRadius = 5
         
         return cell

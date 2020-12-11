@@ -159,7 +159,6 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         nonEssential.remove(at: index)
         self.saveBasket()
         if(orders.count == 0) {
-            UserDefaults.standard.set("", forKey: "basket")
             self.dismiss(animated: false, completion: nil)
         }
         self.totalPrice = 0

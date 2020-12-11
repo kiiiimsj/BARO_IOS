@@ -151,7 +151,7 @@ class NetWorkURL {
     let noticeAll = "http://3.35.180.57:8080/NoticeFindAll.do"
     let getUserNotReadAlertCount = "http://3.35.180.57:8080/GetNewAlertCount.do?phone="
     let alertFindAll = "http://3.35.180.57:8080/AlertFindAll.do?phone="
-    let alertUserReaded = "http://3.35.180.57:8080"
+    let alertUserReaded = "http://3.35.180.57:8080/AlertReadCheck.do?alert_id="
     let getAlertDetail = "http://3.35.180.57:8080/GetAlertDetail.do?alert_id="
     //검색
 

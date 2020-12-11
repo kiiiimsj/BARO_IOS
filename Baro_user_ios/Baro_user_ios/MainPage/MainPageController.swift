@@ -143,11 +143,18 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     func getUserNotReadAlertCount() {
         netWork.get(method: .get, url: urlMaker.getUserNotReadAlertCount+userPhone) {
             json in
+            print("getUserNotReadaAlertCount : ", json)
             if json["result"].boolValue {
-                self.alertButton.setImage(UIImage(named: "off"), for: .normal)
+                if (json["count"].intValue > 0) {
+                    self.alertButton.setImage(UIImage(named: "on"), for: .normal)
+                }
+                else {
+                    self.alertButton.setImage(UIImage(named: "off"), for: .normal)
+                }
+                
             }
             else {
-                self.alertButton.setImage(UIImage(named: "on"), for: .normal)
+                print("getAlertCount_error")
             }
         }
     }

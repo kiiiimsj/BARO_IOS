@@ -36,6 +36,8 @@ class OrderDetailsController : UIViewController {
     public var selectedEssential = [String : Extra]()
     public var selectedNonEssential = [String : SelectedExtra]()
     
+    private var ordersForUserDefault = [Order]()
+    
     var storeId : Int = 0
     
     var data : Order?
@@ -324,25 +326,20 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
             let basketDialog = storyboard.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
             basketDialog.delegate = self
             self.present(basketDialog, animated: true, completion: nil)
-
-        }                
-        let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
-        vc.orders = loadBasket()
-        vc.orders.append(data!)
-        saveBasket(orders: vc.orders)
+        }
+        self.ordersForUserDefault = loadBasket()
+        self.ordersForUserDefault.append(data!)
+        saveBasket(orders: self.ordersForUserDefault)
         self.dismiss(animated: false)
     }
     func tapClick(dialog: UIViewController, type: String) {
         let storyboard2 = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let vc2 = storyboard2.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
         
-        let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
-        
         guard let pvc = self.presentingViewController else { return }
-        vc.orders = loadBasket()
-        vc.orders.append(data!)
-        saveBasket(orders: vc.orders)
+        self.ordersForUserDefault = loadBasket()
+        self.ordersForUserDefault.append(data!)
+        saveBasket(orders: self.ordersForUserDefault)
         
         vc2.controllerIdentifier = self.bottomTabBarInfo.basketControllerIdentifier
         vc2.controllerStoryboard = self.bottomTabBarInfo.basketStoryBoard

@@ -11,6 +11,7 @@ class AlertContentController : UIViewController {
     let urlMaker = NetWorkURL()
     
     var Alert = AlertModel()
+    let userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
     @IBOutlet weak var alertTitle: UILabel!
     @IBOutlet weak var alertDate: UILabel!
     @IBOutlet weak var alertContent: UILabel!
@@ -50,6 +51,7 @@ class AlertContentController : UIViewController {
             print("json : ", json)
             if json["result"].boolValue {
                 self.setAlertContent(content: json["content"].stringValue)
+                self.setAlertRead()
             }
             else {
                 print("alert_error")
@@ -58,5 +60,16 @@ class AlertContentController : UIViewController {
     }
     func setAlertContent(content : String) {
         alertContent.text = content
+    }
+    func setAlertRead() {
+        netWork.get(method: .get, url: urlMaker.alertUserReaded+"\(Alert.alert_id)"+"&phone="+userPhone) {
+            json in
+            if json["result"].boolValue {
+                print("read success")
+            }
+            else {
+                print("read error")
+            }
+        }
     }
 }

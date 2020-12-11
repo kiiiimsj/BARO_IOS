@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StoreList {
+struct StoreList : Codable{
     var store_image : String
     var is_open : String
     var distance : Double

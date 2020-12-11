@@ -12,12 +12,22 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     }
     func favoriteBtnDelegate(controller : UIViewController) {
         if (self.isFlag == 1) { // 즐겨찾기가 되어있는 경우에서 삭제
-            self.performSegue(withIdentifier: "FavoriteDialog", sender: nil)
+            let vc = self.storyboard?.instantiateViewController(identifier: "FavoriteDialog") as! FavoriteDialog
+            vc.isFlag = self.isFlag
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
             self.delFavorite(controller : controller)
+            self.present(vc, animated: true)
+            
         }
         else { // 즐겨찾기가 안되있는 경우에서 추가
-            self.performSegue(withIdentifier: "FavoriteDialog", sender: nil)
+            let vc = self.storyboard?.instantiateViewController(identifier: "FavoriteDialog") as! FavoriteDialog
+            vc.isFlag = self.isFlag
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
             self.addFavorite(controller: controller)
+            self.present(vc, animated: true)
+            
         }
     }
     @IBOutlet weak var FirstPage: UIView!
@@ -38,12 +48,16 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     private var menuController : StoreMenuController?
     private var infoController : StoreInfoController?
 
+    
+    private var deleteStoreFromFavoriteStoreList = [StoreList]()
+    private var getStoreInfoFromList : StoreList? = nil
+    private var deleteStoreIndex = 0
     var bottomTabBarInfo = BottomTabBarController()
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        self.setTabBarItem()
         self.getStoreInfo()
+        self.setTabBarItem()
         self.isFavoriteStore()
         bottomTabBarInfo.topViewDelegate = self
         
@@ -51,11 +65,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             self.tabIndecator.transform = CGAffineTransform(rotationAngle: 0.0)
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.getStoreInfo()
-    }
-    
     func makeChildVC() {
         let storyBoard = UIStoryboard(name: "AboutStore", bundle: nil)
         menuController = storyBoard.instantiateViewController(identifier: "StoreMenuController")
@@ -98,7 +107,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         storeInfoButton.backgroundColor = .white
         storeInfoButton.tintColor = UIColor(red: 196/255.0, green: 196/255.0, blue: 196/255.0, alpha: 1)
     }
-    
     @IBAction func menuButtonClick() {
         menuButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
         storeInfoButton.tintColor = UIColor(red: 196/255.0, green: 196/255.0, blue: 196/255.0, alpha: 1)
@@ -131,7 +139,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             else {
                 favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "heart"), for: .normal)
             }
-            UserDefaults.standard.set(self.isFlag, forKey: "isFlag")
         }
     }
     
@@ -149,7 +156,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             else {
                 favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "heart_fill"), for: .normal)
             }
-            UserDefaults.standard.set(self.isFlag, forKey: "isFlag")
         }
     }
     func getStoreInfo() {
@@ -180,7 +186,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     func isFavoriteStore() {
         print("in the favoriteStore")
         let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
-        let param = ["phone":"\(phone)", "store_id":"\(self.store_id)"]
+        let param = ["phone":"\(phone)", "store_id":self.store_id] as [String : Any]
         print("param : " , param)
         netWork.post(method: .post, param: param, url: urlMaker.isFavoriteURL) {
             json in

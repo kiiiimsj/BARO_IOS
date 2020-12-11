@@ -76,8 +76,6 @@ class BottomTabBarController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        basket = UserDefaults.standard.value(forKey: "basket")
         if let storeName = UserDefaults.standard.value(forKey: "currentStoreName") as? String {
             currentStoreName = storeName
         }
@@ -87,6 +85,11 @@ class BottomTabBarController: UIViewController {
             moveFromOutSide = false
         }
         //basket userdefault 유무 버튼 비활성화/활성화 구문
+        isBasketExist()
+        bottomTabBar.delegate = self
+    }
+    func isBasketExist() {
+        basket = UserDefaults.standard.value(forKey: "basket")
         if(basket != nil) {
             if(basket as! String == "") {
                 basketButton.isHidden = true
@@ -102,11 +105,16 @@ class BottomTabBarController: UIViewController {
                 return
             }
             getOrders()
+            
+            if(basketOrders.count == 0) {
+                basketButton.isHidden = true
+                bottomTabBar.delegate = self
+                return
+            }
             basketBadge()
         } else {
             basketButton.isHidden = true
         }
-        bottomTabBar.delegate = self
     }
     //장바구니 아이템 갯수를 가져오기 위한 json decoder function
     func getOrders() {
@@ -176,9 +184,11 @@ class BottomTabBarController: UIViewController {
             case alertControllerIdentifier:
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! AlertController, sender: sender)
+                swipeRecognizer()
             case alertContentControllerIdentifier:
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! AlertContentController, sender: sender)
+                swipeRecognizer()
             case orderDetailControllerIdentifier:
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! OrderDetailsController, sender: sender)
@@ -186,7 +196,7 @@ class BottomTabBarController: UIViewController {
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
             case aboutStoreControllerIdentifier:
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
-                swipeRecognizer()
+                //swipeRecognizer()
             case couponPageControllerIdentifier:
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! CouponPageController, sender: nil)
@@ -215,6 +225,7 @@ class BottomTabBarController: UIViewController {
         //해당 구문은 tabbaritem으로 전환되는 viewcontroller에 해당된다.
         ContentView.addSubview(getController.view)
         getController.didMove(toParent: self)
+        isBasketExist()
     }
     //탑뷰 추가
     func restoreTopView() {
@@ -412,6 +423,7 @@ class BottomTabBarController: UIViewController {
 }
 extension BottomTabBarController : UITabBarDelegate {
     //탭바아이템 클릭에 따른 분기문
+    
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch(item.title) {
         case "홈":
