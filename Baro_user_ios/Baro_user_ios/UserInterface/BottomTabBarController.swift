@@ -72,6 +72,7 @@ class BottomTabBarController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
+        saveTopViewSize = CGSize(width: view.frame.width, height: 69.0)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -221,6 +222,8 @@ class BottomTabBarController: UIViewController {
         TopView.frame.size = saveTopViewSize
         ContentView.frame.size = saveContentViewSize
         ContentViewScrollView.frame.size = saveContentViewSize
+        TopView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        TopView.transform = CGAffineTransform(translationX: 0, y: 69.0)
         ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 113.0)
     }
     //탑뷰 지우기
