@@ -30,6 +30,9 @@ class CouponForBasket : UIViewController {
     public var totalPrice : Int = 0
     
     var coupons = [Coupon]()
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         getCoupon()
