@@ -145,6 +145,7 @@
 		E356D66F257DD8B400F39463 /* CouponRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E356D66E257DD8B300F39463 /* CouponRegisterController.swift */; };
 		E39C1581256952A000520033 /* MenuOrBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15802569529F00520033 /* MenuOrBasket.swift */; };
 		E39C15842569E70B00520033 /* EmptyBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15832569E70B00520033 /* EmptyBasket.swift */; };
+		E3AA04C12583E9D80055454A /* VerticalProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04C02583E9D80055454A /* VerticalProgressbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -291,6 +292,7 @@
 		E356D66E257DD8B300F39463 /* CouponRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponRegisterController.swift; sourceTree = "<group>"; };
 		E39C15802569529F00520033 /* MenuOrBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOrBasket.swift; sourceTree = "<group>"; };
 		E39C15832569E70B00520033 /* EmptyBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBasket.swift; sourceTree = "<group>"; };
+		E3AA04C02583E9D80055454A /* VerticalProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalProgressbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -544,6 +546,7 @@
 				E356D645256FB20300F39463 /* CustomLabel.swift */,
 				3FECEDD5257658B400E0328F /* DialogForm.swift */,
 				E356D66A257A5EA900F39463 /* Extensions.swift */,
+				E3AA04C02583E9D80055454A /* VerticalProgressbar.swift */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -885,6 +888,7 @@
 				3FEAF06F254FFC1100A5ABC0 /* FavoriteDialog.swift in Sources */,
 				048A0BDE2540120A007D4FD3 /* NewStoreListModel.swift in Sources */,
 				3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */,
+				E3AA04C12583E9D80055454A /* VerticalProgressbar.swift in Sources */,
 				E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */,
 				04D11F452543D41D00ADB210 /* OrderHistoryModel.swift in Sources */,
 				E39C1581256952A000520033 /* MenuOrBasket.swift in Sources */,

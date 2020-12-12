@@ -62,20 +62,15 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderStatusCell", for: indexPath) as! OrderStatusCell
         cell.orderStoreNameLabel.text = String(orderStatus.store_name)
         
-        if orderStatus.order_state == "PREPARING" {
-            cell.orderStatusProgress.setProgress(0.33, animated: false)
-            cell.orderStatus.text = "준비중"
-            cell.orderInfo.text = "의 상품이 접수대기중입니다."
-        }
-        else if orderStatus.order_state == "ACCEPT" {
-            cell.orderStatusProgress.setProgress(0.66, animated: false)
-            cell.orderStatus.text = "제조중"
-            cell.orderInfo.text = "의 상품이 제조중입니다."
-        }
-        cell.orderCount.text = String(orderStatus.total_count) + "개"
-        cell.orderTotalPriceLabel.text = String(orderStatus.total_price) + "원"
+        cell.orderTotalPriceLabel.text = String(orderStatus.total_price)
         cell.orderStoreImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + orderStatus.store_image))
-        cell.receipt_id = orderStatus.receipt_id
+        cell.orderInfo = orderStatus
+        cell.timeLabel.text = orderStatus.order_date
+        cell.makeStatus(state: orderStatus.order_state)
+        cell.delegate = self
+//        cell.showDetailBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showDetail(_:))))
+//        cell.callStoreBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(callStore(_:))))
+//        cell.setupViews()
         return cell
     }
     
@@ -85,22 +80,38 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
 //    }
 //    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width * 0.9, height: 100)
+        return CGSize(width: collectionView.frame.width , height: 250)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let orderStatus = orderStatusList[indexPath.item]
+//        let orderStatus = orderStatusList[indexPath.item]
+//        let vc = self.storyboard?.instantiateViewController(identifier: "OrderStatusDetailController") as! OrderStatusDetailController
+//        
+//        vc.receipt_id = orderStatus.receipt_id
+//        vc.order_count = orderStatus.total_count
+//        vc.store_name = orderStatus.store_name
+//        vc.total_price = orderStatus.total_price
+//        
+//        present(vc, animated: true, completion: nil)
+    }
+    
+//    @objc func callStore(_ sender: UITapGestureRecognizer) {
+//
+//    }
+//    @objc func showDetail(_ sender: UITapGestureRecognizer) {
+//
+//    }
+}
+
+extension OrderStatusController : statusDelegate {
+    func callStore(vc: UIViewController) {
         
-        let vc = self.storyboard?.instantiateViewController(identifier: "OrderStatusDetailController") as! OrderStatusDetailController
-        
-        vc.receipt_id = orderStatus.receipt_id
-        vc.order_count = orderStatus.total_count
-        vc.store_name = orderStatus.store_name
-        vc.total_price = orderStatus.total_price
-        
+    }
+    
+    func showDetails(vc: OrderStatusDetailController) {
         present(vc, animated: true, completion: nil)
     }
     
