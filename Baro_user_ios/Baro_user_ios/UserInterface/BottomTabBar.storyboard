@@ -49,7 +49,7 @@
                                             <constraint firstAttribute="width" constant="50" id="Alt-K8-Dwy"/>
                                             <constraint firstAttribute="height" constant="50" id="CIT-5t-xNi"/>
                                         </constraints>
-                                        <state key="normal" image="favorit"/>
+                                        <state key="normal" image="favorite_empty"/>
                                         <connections>
                                             <action selector="clickFavoriteBtn" destination="jWx-mQ-KDo" eventType="touchUpInside" id="cbX-yk-FP7"/>
                                         </connections>
@@ -85,7 +85,7 @@
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3l-Wd-Sa4">
                                 <rect key="frame" x="300" y="753" width="40" height="40"/>
-                                <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QLA-su-xcx"/>
                                     <constraint firstAttribute="width" constant="40" id="gko-m2-dXK"/>
@@ -94,7 +94,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    <imageReference key="image" image="cart" catalog="system" symbolScale="default"/>
+                                    <imageReference key="image" image="basket" symbolScale="default"/>
                                 </state>
                                 <connections>
                                     <action selector="clickBasketBtn" destination="jWx-mQ-KDo" eventType="touchUpInside" id="7aF-Uo-jUL"/>
@@ -171,13 +171,13 @@
     </scenes>
     <resources>
         <image name="arrow_left" width="7.5" height="13"/>
+        <image name="basket" width="39" height="39"/>
         <image name="bottom_favorite_off" width="18.5" height="17"/>
         <image name="bottom_home_off" width="17" height="17"/>
         <image name="bottom_myPage_off" width="16" height="16"/>
         <image name="bottom_order_history_off" width="15" height="16"/>
         <image name="bottom_order_status_off" width="16" height="16"/>
-        <image name="cart" catalog="system" width="128" height="102"/>
-        <image name="favorit" width="128" height="128"/>
+        <image name="favorite_empty" width="17.5" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
