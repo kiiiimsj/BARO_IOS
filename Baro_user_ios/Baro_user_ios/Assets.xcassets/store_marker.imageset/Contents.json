@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "minus.png",
+      "filename" : "store_marker.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "minus-1.png",
+      "filename" : "store_marker-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "minus-2.png",
+      "filename" : "store_marker-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
