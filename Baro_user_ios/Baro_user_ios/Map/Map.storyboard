@@ -52,7 +52,7 @@
                                     <constraint firstAttribute="width" constant="20" id="sHP-LZ-Qm4"/>
                                     <constraint firstAttribute="height" constant="20" id="urc-tP-15D"/>
                                 </constraints>
-                                <state key="normal" image="arrow_back"/>
+                                <state key="normal" image="arrow_left"/>
                                 <connections>
                                     <action selector="pressBackBtn:" destination="YgK-G5-tsZ" eventType="touchUpInside" id="hWi-kL-glU"/>
                                 </connections>
@@ -154,7 +154,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow_back" width="7" height="12"/>
+        <image name="arrow_left" width="7.5" height="13"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
