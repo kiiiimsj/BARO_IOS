@@ -150,7 +150,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             json in
             print("delFavorite: ", json)
             if json["result"].boolValue {
-                favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "favorte_empty"), for: .normal)
+                favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "favorite_empty"), for: .normal)
                 self.isFlag = 0
             }
             else {
