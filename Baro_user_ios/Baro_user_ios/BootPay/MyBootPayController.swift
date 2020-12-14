@@ -93,7 +93,7 @@ class MyBootPayController : UIViewController {
                 $0.price = Double((order.menu.menu_defaultprice))
             }
             //메뉴이름들 추가
-            self.setPayLoadNameBuilder.append(order.menu.menu_name + "/")
+//            self.setPayLoadNameBuilder.append(order.menu.menu_name + "/")
             bootPayItems.append(item)
         }
         // 구매자 정보
