@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NMapsMap
 
 protocol TopViewElementDelegate : AnyObject {
     func backBtnDelegate()
@@ -17,7 +18,6 @@ class BottomTabBarController: UIViewController {
     @IBOutlet weak var topBarBackBtn: UIButton!
     @IBOutlet weak var topBarViewControllerTitle: UILabel!
     @IBOutlet weak var topBarFavoriteBtn: UIButton!
-    
     //내부 컨트롤러 클릭 인식용.
     weak var topViewDelegate : TopViewElementDelegate?
     //컨텐트뷰 엘리먼트
@@ -71,8 +71,10 @@ class BottomTabBarController: UIViewController {
     var saveTopViewSize = CGSize()
     var saveContentViewSize = CGSize()
     var saveBottomViewSize = CGSize()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addGestureRecognizer(UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:))))
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
         saveTopViewSize = CGSize(width: view.frame.width, height: 69.0)
     }
@@ -202,7 +204,6 @@ class BottomTabBarController: UIViewController {
             case myPageControllerIdentifier:
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
             case aboutStoreControllerIdentifier:
-                swipeRecognizer()
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
             case couponPageControllerIdentifier:
                 self.deleteBottomTabBar()
@@ -214,7 +215,7 @@ class BottomTabBarController: UIViewController {
                 swipeRecognizer()
             case mapControllerIdentifier:
                 self.deleteBottomTabBar()
-                self.changeContentView(controller: controller as! MapController, sender: nil)
+                self.changeContentView(controller: controller as! MapController, sender: sender)
                 swipeRecognizer()
             default :
                 print("error_delegate")
@@ -322,6 +323,10 @@ class BottomTabBarController: UIViewController {
                 let VCsender = controller as! BasketController
                 VCsender.orders = sender as! [Order]
                 finallController = VCsender
+            case mapControllerIdentifier:
+                let VCsender = controller as! MapController
+                VCsender.location = sender as? CLLocation
+                finallController = VCsender
             default:
                 print("error")
             }
@@ -405,12 +410,28 @@ class BottomTabBarController: UIViewController {
         }
         
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
+        var viewTranslation = CGPoint(x: 0, y: 0)
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             print("gesture")
-            switch swipeGesture.direction{
-            case UISwipeGestureRecognizer.Direction.right:
-                self.dismiss(animated: true, completion: nil)
-            default: break
+            if (swipeGesture.direction == UISwipeGestureRecognizer.Direction.right) {
+                switch swipeGesture.state{
+                case .changed:
+                    viewTranslation = swipeGesture.location(in: view)
+                    print("location : ", viewTranslation.x)
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.view.transform = CGAffineTransform(translationX: viewTranslation.x, y: 0)
+                    })
+                case .ended:
+                    if viewTranslation.x < 100 {
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.view.transform = .identity
+                        })
+                    }
+                    else if viewTranslation.x < 120 {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                default: break
+                }
             }
         }
     }
