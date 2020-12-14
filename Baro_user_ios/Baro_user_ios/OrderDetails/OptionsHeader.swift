@@ -39,7 +39,7 @@ class OptionsHeader: UICollectionReusableView {
     @IBAction func expand(_ sender: Any) {
         open = !open
         if open {
-            let image = UIImage(named: "heart")
+            let image = UIImage(named: "arrow_up")
             arrow.setImage(image, for: .normal)
             
         }else{
