@@ -166,12 +166,12 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXy-xA-z5b" customClass="EssentialRadios" customModule="Baro_user_ios" customModuleProvider="target">
-                                                                        <rect key="frame" x="20" y="5" width="24" height="42"/>
-                                                                        <state key="normal" image="off-1"/>
+                                                                        <rect key="frame" x="20" y="5" width="16" height="42"/>
+                                                                        <state key="normal" image="radio_off"/>
                                                                         <state key="selected" image="on-1"/>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9A0-c3-VI3" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                                        <rect key="frame" x="55" y="5" width="26" height="42"/>
+                                                                        <rect key="frame" x="47" y="5" width="26" height="42"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
                                                                         <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -322,10 +322,10 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIe-ed-AYw">
-                                            <rect key="frame" x="334" y="11.5" width="20" height="22"/>
+                                            <rect key="frame" x="341" y="11.5" width="13" height="22"/>
                                             <state key="normal" image="arrow_down"/>
                                             <state key="selected" image="arrow_up"/>
-                                            <state key="highlighted" image="heart_fill"/>
+                                            <state key="highlighted" image="arrow_up"/>
                                             <connections>
                                                 <action selector="expand:" destination="a8G-7L-MU8" eventType="touchUpInside" id="x8R-IR-6u3"/>
                                             </connections>
@@ -430,7 +430,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니에 물건이 담겼습니다 다른메뉴를 보시겠습니까?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVw-wL-t0G">
                                         <rect key="frame" x="30" y="54" width="274" height="76"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhn-7X-HPs">
@@ -574,7 +574,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 다른 가게의 메뉴가 존재합니다 기존메뉴를 비우고 선택상품을 담으시겠습니까" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkE-bT-Tzq">
                                         <rect key="frame" x="50" y="54" width="234" height="66"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -627,13 +627,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow_down" width="20" height="11.5"/>
-        <image name="arrow_up" width="20" height="11.5"/>
-        <image name="heart_fill" width="17" height="16"/>
-        <image name="minus" width="24" height="24"/>
-        <image name="off-1" width="24" height="24"/>
+        <image name="arrow_down" width="13" height="7.5"/>
+        <image name="arrow_up" width="13" height="7.5"/>
+        <image name="minus" width="16" height="16"/>
         <image name="on-1" width="24" height="24"/>
-        <image name="plus" width="24" height="24"/>
+        <image name="plus" width="16" height="16"/>
+        <image name="radio_off" width="16" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

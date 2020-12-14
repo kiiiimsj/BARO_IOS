@@ -21,7 +21,7 @@ class ChangeEmail : UIViewController, CAAnimationDelegate {
         super.viewDidLoad()
         errorAlarmText.isHidden = true
         inputNewEmail.placeholder = "ex)baro@baro.com"
-        backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
+        backBtn.setImage(UIImage(named: "arrow_left"), for: .normal)
     }
     @IBAction func changeEmailBtnPush() {
         let phone = UserDefaults.standard.value(forKey: "user_phone") as! String

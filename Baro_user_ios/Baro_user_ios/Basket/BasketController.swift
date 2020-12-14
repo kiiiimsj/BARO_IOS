@@ -69,7 +69,7 @@ class BasketController : UIViewController, TopViewElementDelegate{
         saveBasket()
         let storyboard = UIStoryboard(name: "Basket", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "CouponForBasket") as! CouponForBasket
-        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         vc.totalPrice = self.totalPrice
         vc.sendOrderToBootPay = self.orders
