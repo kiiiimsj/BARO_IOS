@@ -22,6 +22,7 @@ class MapController : UIViewController {
     let infoWindowDataSource = NMFInfoWindowDefaultTextSource.data()
     var baroPinImage : NMFOverlayImage!
     var cameraUpdate : NMFCameraUpdate!
+    let bottomTabBarInfo = BottomTabBarController()
     var storeLocations = [LocationModel]()
     
     var VC : SeparateWindowController!
@@ -40,7 +41,7 @@ class MapController : UIViewController {
         updateMyLocation()
         initialzeData()
         
-        map.mapView.touchDelegate = self
+        map.mapView.touchDelegate = self 
     }
     
     func updateMyLocation() -> Void {
