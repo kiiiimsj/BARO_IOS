@@ -27,7 +27,7 @@ class ChangePass2 : UIViewController {
         errorAlarmText1.isHidden = true
         errorAlarmText2.isHidden = true
         
-        backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
+        backBtn.setImage(UIImage(named: "arrow_left"), for: .normal)
     }
     @IBAction func sendNewPassToServer() {
         checkPassVaild()

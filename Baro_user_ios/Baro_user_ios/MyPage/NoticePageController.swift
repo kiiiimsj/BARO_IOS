@@ -17,7 +17,7 @@ class NoticePageController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
+        backBtn.setImage(UIImage(named: "arrow_left"), for: .normal)
         loadNoticePageTitle()
         
         noticeListTableView.delegate = self

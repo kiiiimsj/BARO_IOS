@@ -146,10 +146,10 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             print("getUserNotReadaAlertCount : ", json)
             if json["result"].boolValue {
                 if (json["count"].intValue > 0) {
-                    self.alertButton.setImage(UIImage(named: "on"), for: .normal)
+                    self.alertButton.setImage(UIImage(named: "alert_on"), for: .normal)
                 }
                 else {
-                    self.alertButton.setImage(UIImage(named: "off"), for: .normal)
+                    self.alertButton.setImage(UIImage(named: "alert_off"), for: .normal)
                 }
                 
             }
@@ -404,9 +404,9 @@ extension MainPageController {
             self.newestAlertNumber = json["recentlyAlertId"].intValue
             if self.whatIHave != self.newestAlertNumber {
                 print("볼거있음")
-                self.alertButton.setImage(UIImage(named: "on"), for: .normal)
+                self.alertButton.setImage(UIImage(named: "alert_on"), for: .normal)
             }else{
-                self.alertButton.setImage(UIImage(named: "off"), for: .normal)
+                self.alertButton.setImage(UIImage(named: "alert_off"), for: .normal)
                 print("이미봄")
             }
             print("what",self.whatIHave)
