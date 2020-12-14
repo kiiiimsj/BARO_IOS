@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DyC-ns-QMr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -23,6 +23,72 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Nothing Exist-->
+        <scene sceneID="3X5-KO-LQ0">
+            <objects>
+                <viewController storyboardIdentifier="NothingExist" id="rYl-2y-QVv" customClass="NothingExist" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bt2-i0-V0r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ie1-fy-ejB">
+                                <rect key="frame" x="40" y="358" width="334" height="180"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니가 텅 빔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wol-ZD-OsC">
+                                        <rect key="frame" x="118.5" y="10" width="97" height="21"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="14"/>
+                                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fE1-aL-LQL">
+                                        <rect key="frame" x="10" y="134" width="314" height="36"/>
+                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickOkay:" destination="rYl-2y-QVv" eventType="touchUpInside" id="WXZ-Qk-Jjj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="fE1-aL-LQL" firstAttribute="leading" secondItem="Ie1-fy-ejB" secondAttribute="leading" constant="10" id="0AG-Z0-j0K"/>
+                                    <constraint firstAttribute="height" constant="180" id="3tV-bT-SXd"/>
+                                    <constraint firstItem="wol-ZD-OsC" firstAttribute="centerX" secondItem="Ie1-fy-ejB" secondAttribute="centerX" id="H17-xH-6Gf"/>
+                                    <constraint firstAttribute="bottom" secondItem="fE1-aL-LQL" secondAttribute="bottom" constant="10" id="NkO-yy-HAh"/>
+                                    <constraint firstItem="fE1-aL-LQL" firstAttribute="height" secondItem="Ie1-fy-ejB" secondAttribute="height" multiplier="0.2" id="kyB-za-78K"/>
+                                    <constraint firstItem="wol-ZD-OsC" firstAttribute="top" secondItem="Ie1-fy-ejB" secondAttribute="top" constant="10" id="nyg-iH-ZBx"/>
+                                    <constraint firstAttribute="trailing" secondItem="fE1-aL-LQL" secondAttribute="trailing" constant="10" id="zW4-1b-E2e"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니에 아무것도 존재하지않습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-LG-Z9c">
+                                <rect key="frame" x="118.5" y="440" width="177.5" height="16.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pbU-g3-kff"/>
+                        <color key="backgroundColor" red="0.47181695298209714" green="0.47181695298209714" blue="0.47181695298209714" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dj3-LG-Z9c" firstAttribute="centerX" secondItem="bt2-i0-V0r" secondAttribute="centerX" id="4WP-e2-5fp"/>
+                            <constraint firstItem="Ie1-fy-ejB" firstAttribute="centerX" secondItem="bt2-i0-V0r" secondAttribute="centerX" id="Gxo-bj-XO8"/>
+                            <constraint firstItem="Ie1-fy-ejB" firstAttribute="leading" secondItem="pbU-g3-kff" secondAttribute="leading" constant="40" id="aZA-lY-2v8"/>
+                            <constraint firstItem="Ie1-fy-ejB" firstAttribute="centerY" secondItem="bt2-i0-V0r" secondAttribute="centerY" id="h3F-op-zfG"/>
+                            <constraint firstItem="pbU-g3-kff" firstAttribute="trailing" secondItem="Ie1-fy-ejB" secondAttribute="trailing" constant="40" id="ocH-2J-Hg9"/>
+                            <constraint firstItem="Dj3-LG-Z9c" firstAttribute="centerY" secondItem="bt2-i0-V0r" secondAttribute="centerY" id="r9l-yL-IzJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="okayBtn" destination="fE1-aL-LQL" id="9Zn-cK-F6t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Qq-Fn-jMu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855" y="-547"/>
+        </scene>
         <!--Logout Dialog-->
         <scene sceneID="cie-FB-vyt">
             <objects>
@@ -64,7 +130,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그아웃 하시겠습니까?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnt-TL-may">
                                         <rect key="frame" x="105.5" y="92" width="109.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbp-d2-ygX">
@@ -397,6 +463,7 @@
                         <outlet property="myCouponCount" destination="pza-Dz-tzi" id="aRX-VY-Cak"/>
                         <outlet property="myOrderCount" destination="M7M-1n-uhv" id="Eft-2p-rgN"/>
                         <outlet property="rightBar" destination="O2l-CW-BwQ" id="FqT-F4-SnO"/>
+                        <outlet property="scrollView" destination="yA4-4M-m8K" id="Xyu-1B-Sq8"/>
                         <outlet property="topButtonArea" destination="Lb4-ti-Fz8" id="g7i-Uv-ude"/>
                         <outlet property="userEmail" destination="ib1-x7-llZ" id="PuB-8K-dN9"/>
                         <outlet property="userName" destination="gxf-eX-bQ9" id="Kn5-Hr-S07"/>

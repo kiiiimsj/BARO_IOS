@@ -13,6 +13,8 @@ class MyPageController : UIViewController {
     var networkModel = CallRequest()
     var networkURL = NetWorkURL()
     var userPhone = ""
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var logoutBtn: UIButton!
     @IBOutlet weak var OrderArea: UIView!
     @IBOutlet weak var couponArea: UIView!
@@ -89,6 +91,7 @@ class MyPageController : UIViewController {
         let user_email = "\(UserDefaults.standard.value(forKey: "user_email") as! String)"
         if user_email != "" {
             userEmail?.text = "\(user_email)"
+            
         }
     }
     @objc func goToCoupon(_ sender : UIGestureRecognizer){
@@ -104,13 +107,19 @@ class MyPageController : UIViewController {
     @objc func goToBasket(_ sender : UIGestureRecognizer){
         let storyboard = UIStoryboard(name: "Basket", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .fullScreen
+        
         if(vc.basket.value(forKey: "basket") == nil || vc.basket.value(forKey: "basket") as! String == "") {
-            ToastMessage().showToast(message: "장바구니가 비어있습니다.", font: UIFont(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
+//            ToastMessage().showToast(message: "장바구니가 비어있습니다.", font: UIFont(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
+            let notExist = UIStoryboard(name: "MyPage", bundle: nil).instantiateViewController(identifier: "NothingExist") as! NothingExist
+            notExist.modalTransitionStyle = .crossDissolve
+            notExist.modalPresentationStyle = .overFullScreen
+            present(notExist, animated: false, completion: nil)
             return
+        }else{
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: false, completion: nil)
         }
-        present(vc, animated: false, completion: nil)
     }
     @objc func goToOrder(_ sender : UIGestureRecognizer){
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)

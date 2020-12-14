@@ -92,6 +92,7 @@ class OrderStatusCell : UICollectionViewCell {
         }
         for i in number..<3 {
             statuses[i].changeOffColor()
+            statuses[i].changeOffTextColor()
         }
         statuses[number].changeOnTextColor()
         

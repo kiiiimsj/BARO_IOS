@@ -29,5 +29,8 @@ class FinalPaymentCheckDialog : UIViewController {
         dialogTitle.text = titleContentString
         dialogContent.text = dialogContentString
         dialogButtonTitle.setTitle(buttonTitleContentString, for: .normal)
+        dialogButtonTitle.layer.cornerRadius = 5
+        dialogButtonTitle.layer.borderColor = UIColor.white.cgColor
+        dialogButtonTitle.layer.borderWidth = 2
     }
 }
