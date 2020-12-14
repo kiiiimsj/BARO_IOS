@@ -140,7 +140,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="822"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjM-de-PmA">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="717.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" restorationIdentifier="DialogView" translatesAutoresizingMaskIntoConstraints="NO" id="XbN-ey-yub" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="10" width="394" height="75"/>
@@ -169,6 +169,7 @@
                                                 <constraints>
                                                     <constraint firstItem="bAa-8X-xsk" firstAttribute="leading" secondItem="XbN-ey-yub" secondAttribute="leading" constant="20" id="3J8-Ag-mK4"/>
                                                     <constraint firstAttribute="bottom" secondItem="tDe-RV-qf1" secondAttribute="bottom" constant="5" id="58I-5H-NpX"/>
+                                                    <constraint firstAttribute="height" constant="75" id="JlC-0C-CSs"/>
                                                     <constraint firstItem="L2a-Zs-X4q" firstAttribute="leading" secondItem="XbN-ey-yub" secondAttribute="leading" constant="20" id="def-3z-As3"/>
                                                     <constraint firstAttribute="trailing" secondItem="L2a-Zs-X4q" secondAttribute="trailing" constant="20" id="gQt-VJ-geu"/>
                                                     <constraint firstItem="tDe-RV-qf1" firstAttribute="leading" secondItem="XbN-ey-yub" secondAttribute="leading" constant="20" id="wx7-wy-EUB"/>
@@ -188,9 +189,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTN-zU-ItT" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="85" width="394" height="415"/>
+                                                <rect key="frame" x="10" y="85" width="394" height="632.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dz-v7-50D">
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dz-v7-50D">
                                                         <rect key="frame" x="20" y="30" width="354" height="602.5"/>
                                                         <string key="text">-학원과 스터디카페도 밤 9시 이후 운영 중단 
 -대중 교통, 오후 9시 이후 30% 감축 운영
@@ -221,6 +222,7 @@
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="0Dz-v7-50D" firstAttribute="top" secondItem="KTN-zU-ItT" secondAttribute="top" constant="30" id="42X-OW-YR8"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0Dz-v7-50D" secondAttribute="bottom" id="5op-Im-0Cw"/>
                                                     <constraint firstItem="0Dz-v7-50D" firstAttribute="leading" secondItem="KTN-zU-ItT" secondAttribute="leading" constant="20" id="bXZ-Sa-IMB"/>
                                                     <constraint firstAttribute="trailing" secondItem="0Dz-v7-50D" secondAttribute="trailing" constant="20" id="dM5-xL-FvY"/>
                                                 </constraints>
@@ -237,10 +239,8 @@
                                             <constraint firstItem="XbN-ey-yub" firstAttribute="centerX" secondItem="KTN-zU-ItT" secondAttribute="centerX" id="8JC-pd-9MG"/>
                                             <constraint firstItem="KTN-zU-ItT" firstAttribute="leading" secondItem="xjM-de-PmA" secondAttribute="leading" constant="10" id="9l6-lj-RH5"/>
                                             <constraint firstAttribute="bottom" secondItem="KTN-zU-ItT" secondAttribute="bottom" id="C3n-do-PAm"/>
-                                            <constraint firstItem="XbN-ey-yub" firstAttribute="height" secondItem="xjM-de-PmA" secondAttribute="height" multiplier="0.15" id="H5X-MX-k4O"/>
                                             <constraint firstAttribute="trailing" secondItem="XbN-ey-yub" secondAttribute="trailing" constant="10" id="J01-j2-bO6"/>
                                             <constraint firstItem="KTN-zU-ItT" firstAttribute="top" secondItem="XbN-ey-yub" secondAttribute="bottom" id="Ske-Ip-mdV"/>
-                                            <constraint firstAttribute="height" constant="500" id="Tht-zA-WVG"/>
                                             <constraint firstAttribute="trailing" secondItem="KTN-zU-ItT" secondAttribute="trailing" constant="10" id="lpF-lk-rrU"/>
                                             <constraint firstItem="XbN-ey-yub" firstAttribute="leading" secondItem="xjM-de-PmA" secondAttribute="leading" constant="10" id="nZB-QO-eca"/>
                                         </constraints>
@@ -250,6 +250,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="xjM-de-PmA" secondAttribute="trailing" id="9tm-l5-YwQ"/>
                                     <constraint firstItem="xjM-de-PmA" firstAttribute="centerX" secondItem="C7t-tU-0Hi" secondAttribute="centerX" id="Ive-t0-JXj"/>
+                                    <constraint firstItem="xjM-de-PmA" firstAttribute="width" secondItem="C7t-tU-0Hi" secondAttribute="width" id="nfV-cK-Mai"/>
                                     <constraint firstAttribute="bottom" secondItem="xjM-de-PmA" secondAttribute="bottom" id="r4F-uY-2Mb"/>
                                     <constraint firstItem="xjM-de-PmA" firstAttribute="top" secondItem="C7t-tU-0Hi" secondAttribute="top" id="se2-Z7-QMQ"/>
                                     <constraint firstItem="xjM-de-PmA" firstAttribute="leading" secondItem="C7t-tU-0Hi" secondAttribute="leading" id="zAA-Da-jCK"/>
