@@ -129,6 +129,7 @@ class BottomTabBarController: UIViewController {
     //장바구니 아이템 개수 표시 label 설정
     func basketBadge(){
         //장바구니의 개수가 0이라면 return
+        var count = 0
         if(basketOrders.count == 0) {
             return
         }
@@ -147,7 +148,11 @@ class BottomTabBarController: UIViewController {
         label.font = UIFont(name: "NotoSansCJKkr-Regular", size: 13)
         label.textColor = .white
         label.backgroundColor = .red
-        label.text = "\(basketOrders.count)"
+        for order in basketOrders {
+            count += order.menu_count
+        }
+        label.text = "\(count)"
+        
         basketButton.addSubview(label)
     }
     //내부 뷰 컨트롤러 분기문
