@@ -39,13 +39,13 @@ class CouponForBasket : UIViewController {
         setFirstLabelText()
         DialogTitle.layer.cornerRadius = 5
         DialogTitle.layer.borderColor = UIColor(red: 131/255, green: 51/255, blue: 230/255, alpha: 1).cgColor
-        DialogTitle.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        DialogTitle.layer.masksToBounds = true
     }
     
     @IBAction func clickPayButton() {
         let storyboard = UIStoryboard(name: "Basket", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "BootPayPage") as! MyBootPayController
-        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         vc.customerRequest = self.customerRequest.text!
         vc.myOrders = self.sendOrderToBootPay
@@ -134,6 +134,7 @@ extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollecti
         
         
         self.currentSelectedCoupon = cell
+        
         cell.backgroundColor = .yellow
     }
     

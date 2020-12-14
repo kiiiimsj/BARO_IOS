@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n3R-Xf-dIg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n3R-Xf-dIg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -18,6 +18,9 @@
         </array>
         <array key="NotoSansKR-Light.otf">
             <string>NotoSansCJKkr-Light</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -102,77 +105,74 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2t-XK-D4S">
-                                <rect key="frame" x="20" y="444" width="59" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="452.5" width="55.5" height="22.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="15"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trc-fV-7bc">
-                                <rect key="frame" x="20" y="480" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="490" width="38.5" height="22.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영업정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40m-Xq-zGC">
-                                <rect key="frame" x="20" y="551" width="59" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="562.5" width="55.5" height="22.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="15"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="운영시간 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Fi-Aa-hqZ">
-                                <rect key="frame" x="20" y="582" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="595" width="55.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴무일 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skY-v9-fU8">
-                                <rect key="frame" x="20" y="613" width="53.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="624.5" width="43.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qS-8H-yvQ">
-                                <rect key="frame" x="118" y="582" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="105.5" y="595" width="33.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h28-XG-Lpd">
-                                <rect key="frame" x="103.5" y="613" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="93.5" y="624.5" width="33.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전화번호 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2t-hn-n31">
-                                <rect key="frame" x="20" y="644" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="654" width="55.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUS-SV-q7F">
-                                <rect key="frame" x="20" y="675" width="59" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게위치 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUS-SV-q7F">
+                                <rect key="frame" x="20" y="683.5" width="58" height="19.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yq9-ie-ilI">
-                                <rect key="frame" x="118" y="644" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="105.5" y="654" width="33.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DT1-aV-m8N">
-                                <rect key="frame" x="109" y="675" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DT1-aV-m8N">
+                                <rect key="frame" x="108" y="683.5" width="248.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S83-rD-DBa" customClass="NMFMapView">
-                                <rect key="frame" x="0.0" y="74" width="414" height="350"/>
+                                <rect key="frame" x="0.0" y="74" width="414" height="358.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="6z6-Rm-Nei"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
                                         <real key="value" value="16"/>
@@ -185,17 +185,18 @@
                         <constraints>
                             <constraint firstItem="trc-fV-7bc" firstAttribute="leading" secondItem="wAA-Ha-vom" secondAttribute="leading" constant="20" id="22c-kj-Jdn"/>
                             <constraint firstItem="h28-XG-Lpd" firstAttribute="leading" secondItem="skY-v9-fU8" secondAttribute="trailing" constant="30" id="EAU-WM-4Qu"/>
+                            <constraint firstItem="DT1-aV-m8N" firstAttribute="width" secondItem="lEn-iK-HlW" secondAttribute="width" multiplier="0.6" id="EY0-cB-edK"/>
                             <constraint firstItem="skY-v9-fU8" firstAttribute="leading" secondItem="wAA-Ha-vom" secondAttribute="leading" constant="20" id="Eiq-mU-KAt"/>
                             <constraint firstItem="9Fi-Aa-hqZ" firstAttribute="top" secondItem="40m-Xq-zGC" secondAttribute="bottom" constant="10" id="GWx-jH-INC"/>
                             <constraint firstItem="Yq9-ie-ilI" firstAttribute="top" secondItem="h28-XG-Lpd" secondAttribute="bottom" constant="10" id="IDp-ZI-nOY"/>
                             <constraint firstItem="9Fi-Aa-hqZ" firstAttribute="leading" secondItem="wAA-Ha-vom" secondAttribute="leading" constant="20" id="Is2-Hh-H16"/>
                             <constraint firstItem="DT1-aV-m8N" firstAttribute="top" secondItem="Yq9-ie-ilI" secondAttribute="bottom" constant="10" id="Lah-Xk-he6"/>
                             <constraint firstItem="Yq9-ie-ilI" firstAttribute="leading" secondItem="L2t-hn-n31" secondAttribute="trailing" constant="30" id="QKb-z4-4Ag"/>
-                            <constraint firstItem="40m-Xq-zGC" firstAttribute="centerY" secondItem="lEn-iK-HlW" secondAttribute="centerY" id="QOy-vu-GcT"/>
                             <constraint firstItem="wAA-Ha-vom" firstAttribute="trailing" secondItem="S83-rD-DBa" secondAttribute="trailing" id="R3h-TF-2O8"/>
                             <constraint firstItem="skY-v9-fU8" firstAttribute="top" secondItem="9Fi-Aa-hqZ" secondAttribute="bottom" constant="10" id="RCS-dR-qIe"/>
                             <constraint firstItem="DT1-aV-m8N" firstAttribute="leading" secondItem="iUS-SV-q7F" secondAttribute="trailing" constant="30" id="Ulp-iL-DPG"/>
                             <constraint firstItem="40m-Xq-zGC" firstAttribute="top" secondItem="trc-fV-7bc" secondAttribute="bottom" constant="50" id="ZFY-lL-IG9"/>
+                            <constraint firstItem="S83-rD-DBa" firstAttribute="height" secondItem="lEn-iK-HlW" secondAttribute="height" multiplier="0.4" id="bX9-iQ-OGQ"/>
                             <constraint firstItem="7qS-8H-yvQ" firstAttribute="leading" secondItem="9Fi-Aa-hqZ" secondAttribute="trailing" constant="30" id="bY0-Ik-ax0"/>
                             <constraint firstItem="Z2t-XK-D4S" firstAttribute="top" secondItem="S83-rD-DBa" secondAttribute="bottom" constant="20" id="c9P-g5-s9e"/>
                             <constraint firstItem="h28-XG-Lpd" firstAttribute="top" secondItem="7qS-8H-yvQ" secondAttribute="bottom" constant="10" id="dvm-Bk-N5Q"/>

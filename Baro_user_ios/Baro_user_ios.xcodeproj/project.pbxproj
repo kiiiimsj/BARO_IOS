@@ -146,6 +146,7 @@
 		E39C1581256952A000520033 /* MenuOrBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15802569529F00520033 /* MenuOrBasket.swift */; };
 		E39C15842569E70B00520033 /* EmptyBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15832569E70B00520033 /* EmptyBasket.swift */; };
 		E3AA04C12583E9D80055454A /* VerticalProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04C02583E9D80055454A /* VerticalProgressbar.swift */; };
+		E3AA04C825873F730055454A /* NothingExist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04C725873F730055454A /* NothingExist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -293,6 +294,7 @@
 		E39C15802569529F00520033 /* MenuOrBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOrBasket.swift; sourceTree = "<group>"; };
 		E39C15832569E70B00520033 /* EmptyBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBasket.swift; sourceTree = "<group>"; };
 		E3AA04C02583E9D80055454A /* VerticalProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalProgressbar.swift; sourceTree = "<group>"; };
+		E3AA04C725873F730055454A /* NothingExist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingExist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -532,6 +534,7 @@
 				3FC20E652546EFF700EEE783 /* ChangeEmail.storyboard */,
 				3F9B48EC254946720012D89F /* ChangePass2.swift */,
 				3F90855E257525B100D13759 /* LogoutDialog.swift */,
+				E3AA04C725873F730055454A /* NothingExist.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -802,6 +805,7 @@
 				E31D3FD82542ACAC00B63F77 /* StoreListCell.swift in Sources */,
 				043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */,
 				3F041C66256FB689006A2B3B /* PhoneSendForRegister.swift in Sources */,
+				E3AA04C825873F730055454A /* NothingExist.swift in Sources */,
 				E31D3FF925469DCE00B63F77 /* EssentialButton.swift in Sources */,
 				E31D401B2550001000B63F77 /* BasketHeader.swift in Sources */,
 				E31D3FE9254653C700B63F77 /* ExtraModel.swift in Sources */,
