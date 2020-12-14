@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "minus.png",
+      "filename" : "bottom_order_history_off.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "minus-1.png",
+      "filename" : "bottom_order_history_off-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "minus-2.png",
+      "filename" : "bottom_order_history_off-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
