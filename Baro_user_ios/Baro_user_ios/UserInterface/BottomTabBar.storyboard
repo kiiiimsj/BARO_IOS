@@ -48,6 +48,7 @@
                                             <constraint firstAttribute="width" constant="50" id="Alt-K8-Dwy"/>
                                             <constraint firstAttribute="height" constant="50" id="CIT-5t-xNi"/>
                                         </constraints>
+                                        <state key="normal" image="favorite_empty"/>
                                         <connections>
                                             <action selector="clickFavoriteBtn" destination="jWx-mQ-KDo" eventType="touchUpInside" id="cbX-yk-FP7"/>
                                         </connections>
@@ -171,6 +172,7 @@
         <image name="bottom_myPage_off" width="16" height="16"/>
         <image name="bottom_order_history_off" width="15" height="16"/>
         <image name="bottom_order_status_off" width="16" height="16"/>
+        <image name="favorite_empty" width="17.5" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
