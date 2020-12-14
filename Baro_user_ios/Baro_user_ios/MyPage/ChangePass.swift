@@ -17,7 +17,7 @@ class ChangePass : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.errorAlarmText.isHidden = true
-        backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
+        backBtn.setImage(UIImage(named: "arrow_left"), for: .normal)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)

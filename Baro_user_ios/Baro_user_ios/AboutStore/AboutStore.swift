@@ -133,11 +133,11 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             json in
             print("addFavorite: ", json)
             if json["result"].boolValue {
-                favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "heart_fill"), for: .normal)
+                favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "favorite_fill"), for: .normal)
                 self.isFlag = 1
             }
             else {
-                favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "heart"), for: .normal)
+                favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "favorite_empty"), for: .normal)
             }
         }
     }
@@ -150,11 +150,11 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             json in
             print("delFavorite: ", json)
             if json["result"].boolValue {
-                favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "heart"), for: .normal)
+                favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "favorte_empty"), for: .normal)
                 self.isFlag = 0
             }
             else {
-                favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "heart_fill"), for: .normal)
+                favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "favorite_fill"), for: .normal)
             }
         }
     }
@@ -192,11 +192,11 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             json in
             print("isFavorite : ",json)
             if json["result"].boolValue {
-                self.bottomTabBarInfo.topBarFavoriteBtn.setImage(UIImage(named: "heart_fill"), for: .normal)
+                self.bottomTabBarInfo.topBarFavoriteBtn.setImage(UIImage(named: "favorite_fill"), for: .normal)
                 self.isFlag = 1
             }
             else {
-                self.bottomTabBarInfo.topBarFavoriteBtn.setImage(UIImage(named: "heart"), for: .normal)
+                self.bottomTabBarInfo.topBarFavoriteBtn.setImage(UIImage(named: "favorite_empty"), for: .normal)
                 self.isFlag = 0
             }
         }
