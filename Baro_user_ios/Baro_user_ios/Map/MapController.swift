@@ -22,6 +22,7 @@ class MapController : UIViewController {
     let infoWindowDataSource = NMFInfoWindowDefaultTextSource.data()
     var baroPinImage : NMFOverlayImage!
     var cameraUpdate : NMFCameraUpdate!
+    let bottomTabBarInfo = BottomTabBarController()
     var storeLocations = [LocationModel]()
     
     var VC : SeparateWindowController!
@@ -41,8 +42,19 @@ class MapController : UIViewController {
         initialzeData()
         
         map.mapView.touchDelegate = self
+        setUseTopBarWithBottomTabBarController()
     }
-    
+    func setUseTopBarWithBottomTabBarController() {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        vc.controllerIdentifier = bottomTabBarInfo.mapControllerIdentifier
+        vc.controllerStoryboard = bottomTabBarInfo.mapPageStoreBoard
+        vc.moveFromOutSide = true
+        
+        vc.modalTransitionStyle = .flipHorizontal
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
     func updateMyLocation() -> Void {
         let myLatitude = Double((location?.coordinate.latitude)!)
         let myLongitude = Double((location?.coordinate.longitude)!)

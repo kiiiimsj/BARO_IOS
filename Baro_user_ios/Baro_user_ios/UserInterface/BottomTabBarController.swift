@@ -41,6 +41,7 @@ class BottomTabBarController: UIViewController {
     let alertContentControllerIdentifier = "AlertContentController"
     let couponPageControllerIdentifier = "CouponPageController"
     let basketControllerIdentifier = "BasketController"
+    let mapControllerIdentifier = "MapController"
     //접근가능 스토리보드
     let mainPageStoryBoard = UIStoryboard(name: "MainPage", bundle: nil)
     let storeListStoryBoard = UIStoryboard(name: "StoreListPage", bundle: nil)
@@ -52,6 +53,7 @@ class BottomTabBarController: UIViewController {
     let alertStoryBoard = UIStoryboard(name: "Alert", bundle: nil)
     let couponPageStoryBoard = UIStoryboard(name: "Coupon", bundle: nil)
     let basketStoryBoard = UIStoryboard(name: "Basket", bundle: nil)
+    let mapPageStoreBoard = UIStoryboard(name: "Map", bundle: nil)
     //화면 이동 할때 필요한 요소.
     var controllerStoryboard = UIStoryboard()
     var controllerIdentifier : String = ""
@@ -139,15 +141,15 @@ class BottomTabBarController: UIViewController {
         basketButton.layer.borderColor = UIColor.clear.cgColor
         
                 
-        let label = UILabel(frame: CGRect(x: 30, y: -5, width: 20, height: 20))
+        let label = UILabel(frame: CGRect(x: 21, y: 9, width: 12, height: 12))
         label.layer.borderColor = UIColor.clear.cgColor
         label.layer.borderWidth = 2
         label.layer.cornerRadius = label.bounds.size.height / 2
         label.textAlignment = .center
         label.layer.masksToBounds = true
-        label.font = UIFont(name: "NotoSansCJKkr-Regular", size: 13)
-        label.textColor = .white
-        label.backgroundColor = .red
+        label.font = UIFont(name: "NotoSansCJKkr-Regular", size: 9)
+        label.textColor = UIColor.init(red: 131/255, green: 51/255, blue: 230/255, alpha: 1)
+        label.backgroundColor = .white
         for order in basketOrders {
             count += order.menu_count
         }
@@ -200,8 +202,8 @@ class BottomTabBarController: UIViewController {
             case myPageControllerIdentifier:
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
             case aboutStoreControllerIdentifier:
+                swipeRecognizer()
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
-                //swipeRecognizer()
             case couponPageControllerIdentifier:
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! CouponPageController, sender: nil)
@@ -209,6 +211,10 @@ class BottomTabBarController: UIViewController {
             case basketControllerIdentifier:
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! BasketController, sender: sender)
+                swipeRecognizer()
+            case mapControllerIdentifier:
+                self.deleteBottomTabBar()
+                self.changeContentView(controller: controller as! MapController, sender: nil)
                 swipeRecognizer()
             default :
                 print("error_delegate")
@@ -383,6 +389,9 @@ class BottomTabBarController: UIViewController {
                     topBarBackBtn.isHidden = false
                 case basketControllerIdentifier:
                     topBarViewControllerTitle.text = "장바구니"
+                    topBarBackBtn.isHidden = false
+                case mapControllerIdentifier:
+                    topBarViewControllerTitle.text = "내 주변 가게"
                     topBarBackBtn.isHidden = false
                 default :
                     print("error_delegate")
