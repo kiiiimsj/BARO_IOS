@@ -119,7 +119,7 @@ class MapController : UIViewController {
         self.view.bringSubviewToFront(self.SeparateWindow)
     }
     func initialzeData() -> Void {
-        baroPinImage = NMFOverlayImage(name: "map")
+        baroPinImage = NMFOverlayImage(name: "store_marker")
         //initalizeMyPin()
 //        infoWindow.dataSource = infoWindowDataSource
         setWindowEnvironment()

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DyC-ns-QMr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DyC-ns-QMr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -162,19 +162,19 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyPageButtons" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPageButtons" id="7SJ-4P-CUw" customClass="MyPageButtons" customModule="Baro_user_ios" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="360" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="28" width="360" height="43"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7SJ-4P-CUw" id="CrS-NB-OYo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3e-6U-2sf">
-                                                                    <rect key="frame" x="0.0" y="11" width="41.5" height="21.5"/>
+                                                                    <rect key="frame" x="0.0" y="11" width="41.5" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detailArrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="xzP-39-YXw">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="xzP-39-YXw">
                                                                     <rect key="frame" x="332" y="11" width="10" height="7"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="10" id="OSn-8p-VmN"/>
@@ -198,7 +198,7 @@
                                                 </prototypes>
                                                 <sections/>
                                             </tableView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myPage_tabBar" highlightedImage="myPage_tabBar" translatesAutoresizingMaskIntoConstraints="NO" id="crw-c9-x8V">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myPage_profile" highlightedImage="myPage_tabBar" translatesAutoresizingMaskIntoConstraints="NO" id="crw-c9-x8V">
                                                 <rect key="frame" x="18" y="0.0" width="46" height="46"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="QXo-EH-YP4"/>
@@ -446,7 +446,8 @@
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
-        <image name="detailArrow_down" width="12" height="7"/>
+        <image name="arrow_down" width="13" height="7.5"/>
+        <image name="myPage_profile" width="46" height="46"/>
         <image name="myPage_tabBar" width="18.5" height="18.5"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

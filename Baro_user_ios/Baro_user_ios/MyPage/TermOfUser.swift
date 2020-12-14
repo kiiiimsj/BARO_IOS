@@ -26,7 +26,7 @@ class TermOfUser : UIViewController{
         let request = URLRequest(url: url!)
         webView.load(request)
         
-        backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
+        backBtn.setImage(UIImage(named: "arrow_left"), for: .normal)
     }
     
 }
