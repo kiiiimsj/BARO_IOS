@@ -55,6 +55,15 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     
     //alert이미지 - 아래에서 off/on체크해주기
     @IBOutlet weak var alertButton: UIButton!
+    
+    lazy var refreshControl: UIRefreshControl = {
+
+            let refreshControl = UIRefreshControl()
+            refreshControl.addTarget(self, action: #selector(handleRefresh(_:)),for: UIControl.Event.valueChanged)
+            refreshControl.tintColor = UIColor.baro_main_color
+            return refreshControl
+
+        }()
     //alert 클릭시
     @IBAction func alertClick(_ sender: Any) {
         toAlertUseBottomBar()
@@ -65,6 +74,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.addSubview(refreshControl)
         aboutHereLabel.layer.cornerRadius = 5
         newStoreThisWeekLabel.layer.cornerRadius = 5
         
@@ -162,7 +172,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             let location: CLLocation = locations[locations.count - 1]
         print("dddd",location)
         getMyLocation(String(location.coordinate.longitude), String(location.coordinate.latitude))
-            
+        locationManager.stopUpdatingLocation()
     }
     
     //기기의 gps 꺼져있을때
@@ -187,6 +197,13 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         ViewInBottomTabBar.moveFromOutSide = true
         ViewInBottomTabBar.isModalInPresentation = true
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        view.window?.layer.add(transition, forKey: kCATransition)
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
     func toAboutStoreUseBottomBar(tag : Int) {
@@ -212,6 +229,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
         
+    
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
     func setUseTopBarWithBottomTabBarController() {
@@ -231,7 +249,10 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     @IBAction func goToMap(_ sender: Any) {
         setUseTopBarWithBottomTabBarController()
     }
-    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        locationManager.startUpdatingLocation()
+        refreshControl.endRefreshing()
+    }
     //기기의 gps (위치권한 설정) 안함 되어있을경우 alert띄워 앱의 위치권한 설정으로
     @objc func locationCheck() {
         let status = CLLocationManager.authorizationStatus()
