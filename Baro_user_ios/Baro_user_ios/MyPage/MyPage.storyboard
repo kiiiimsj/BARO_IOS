@@ -268,6 +268,7 @@
                                                 <rect key="frame" x="18" y="0.0" width="46" height="46"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="QXo-EH-YP4"/>
+                                                    <constraint firstAttribute="width" constant="46" id="hdn-KS-TaG"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" restorationIdentifier="MyPageSquare" translatesAutoresizingMaskIntoConstraints="NO" id="Lb4-ti-Fz8" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
@@ -390,7 +391,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxf-eX-bQ9">
-                                                <rect key="frame" x="83" y="0.0" width="194" height="25.5"/>
+                                                <rect key="frame" x="83" y="0.0" width="63" height="25.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -413,7 +414,6 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="gxf-eX-bQ9" firstAttribute="centerX" secondItem="bSk-Rn-OP4" secondAttribute="centerX" id="0lO-ti-M2J"/>
                                             <constraint firstItem="gxf-eX-bQ9" firstAttribute="top" secondItem="bSk-Rn-OP4" secondAttribute="top" id="0mp-r4-0yT"/>
                                             <constraint firstItem="gB9-XS-HN0" firstAttribute="leading" secondItem="bSk-Rn-OP4" secondAttribute="leading" id="51q-SW-mtv"/>
                                             <constraint firstItem="jKl-nM-dFZ" firstAttribute="leading" secondItem="bSk-Rn-OP4" secondAttribute="leading" id="78x-9z-qbZ"/>
@@ -425,7 +425,6 @@
                                             <constraint firstItem="Lb4-ti-Fz8" firstAttribute="top" secondItem="crw-c9-x8V" secondAttribute="bottom" constant="8" id="Zdh-kn-sAU"/>
                                             <constraint firstItem="jKl-nM-dFZ" firstAttribute="top" secondItem="Lb4-ti-Fz8" secondAttribute="bottom" constant="8" symbolic="YES" id="cAH-5C-IyK"/>
                                             <constraint firstItem="crw-c9-x8V" firstAttribute="top" secondItem="bSk-Rn-OP4" secondAttribute="top" id="cf8-8Q-Esf"/>
-                                            <constraint firstAttribute="trailing" secondItem="gxf-eX-bQ9" secondAttribute="trailing" constant="83" id="hK7-Nw-XRt"/>
                                             <constraint firstItem="crw-c9-x8V" firstAttribute="leading" secondItem="bSk-Rn-OP4" secondAttribute="leading" constant="18" id="hKO-eg-MuN"/>
                                             <constraint firstItem="Lb4-ti-Fz8" firstAttribute="leading" secondItem="bSk-Rn-OP4" secondAttribute="leading" constant="15" id="srU-1K-CtN"/>
                                             <constraint firstAttribute="trailing" secondItem="Lb4-ti-Fz8" secondAttribute="trailing" constant="15" id="xFg-QN-4zs"/>

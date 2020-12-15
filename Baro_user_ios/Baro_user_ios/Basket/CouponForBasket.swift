@@ -22,7 +22,7 @@ class CouponForBasket : UIViewController {
     public var couponDiscountValue : Int = 0
     public var realPriceValue : Int = 0
     let userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
-    
+   
     @IBOutlet weak var couponCollectionView: UICollectionView!
     @IBOutlet weak var pay: UIButton!
     
@@ -62,9 +62,9 @@ class CouponForBasket : UIViewController {
     }
     func setFirstLabelText() {
         realPriceValue = totalPrice
-        productTotalPrice.text = "\(totalPrice)"
-        couponDiscountPrice.text = "0"
-        realPayPrice.text = "\(realPriceValue)"
+        productTotalPrice.text = "\(totalPrice)원"
+        couponDiscountPrice.text = "0원"
+        realPayPrice.text = "\(realPriceValue)원"
         
     }
     func getCoupon() {
@@ -101,17 +101,19 @@ class CouponForBasket : UIViewController {
         self.dismiss(animated: true)
     }
 }
-extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollectionViewDataSource{
+extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func btnClickCoupon(cell: CouponForBasketCell) {
         if currentSelectedCoupon == cell {
             self.UseCouponId = -1
             self.realPriceValue = self.totalPrice
             self.couponDiscountValue = 0
-            self.realPayPrice.text =  "\(realPriceValue)"
+            self.realPayPrice.text =  "\(realPriceValue)원"
             self.currentSelectedCoupon = nil
-            self.couponDiscountPrice.text = "\(couponDiscountValue)"
+            self.couponDiscountPrice.text = "\(couponDiscountValue)원"
             cell.backgroundColor = .white
             return
+        }else{
+            currentSelectedCoupon?.backgroundColor = .white
         }
         let indexPath = self.couponCollectionView.indexPath(for: cell)
         let couponData = self.coupons[indexPath!.item]
@@ -119,23 +121,23 @@ extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollecti
         
         if (couponData.coupon_type == "DISCOUNT") {
             changedTotalValue = (self.totalPrice - couponData.coupon_discount)
-            self.couponDiscountPrice.text = "\(couponData.coupon_discount)"
+            self.couponDiscountPrice.text = "\(couponData.coupon_discount)원"
         }
         else {
             let ifSale = (self.totalPrice * couponData.coupon_discount / 100 )
             changedTotalValue = (self.totalPrice - ifSale)
-            self.couponDiscountPrice.text = "\(ifSale)"
+            self.couponDiscountPrice.text = "\(ifSale)원"
         }
         
         self.realPriceValue = changedTotalValue
         self.couponDiscountValue = couponData.coupon_discount
-        self.realPayPrice.text = "\(changedTotalValue)"
+        self.realPayPrice.text = "\(changedTotalValue)원"
         self.UseCouponId = couponData.coupon_id
         
         
         self.currentSelectedCoupon = cell
         
-        cell.backgroundColor = .yellow
+        cell.backgroundColor = UIColor.init(red: 230/255, green: 230/255, blue: 255/255, alpha: 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -157,6 +159,9 @@ extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollecti
         cell.couponCanUseDate.text = indexCouponData.coupon_enddate
         cell.couponDelegate = self
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: couponCollectionView.frame.width, height: 100)
     }
 }
 struct Coupon {
