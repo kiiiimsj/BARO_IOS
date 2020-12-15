@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jWx-mQ-KDo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jWx-mQ-KDo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -49,7 +48,7 @@
                                             <constraint firstAttribute="width" constant="50" id="Alt-K8-Dwy"/>
                                             <constraint firstAttribute="height" constant="50" id="CIT-5t-xNi"/>
                                         </constraints>
-                                        <state key="normal" image="favorit"/>
+                                        <state key="normal" image="favorite_empty"/>
                                         <connections>
                                             <action selector="clickFavoriteBtn" destination="jWx-mQ-KDo" eventType="touchUpInside" id="cbX-yk-FP7"/>
                                         </connections>
@@ -83,19 +82,15 @@
                                     <constraint firstItem="9u2-xw-p3A" firstAttribute="leading" secondItem="ftC-Gg-3Ff" secondAttribute="leading" id="nnj-WA-6E6"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3l-Wd-Sa4">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3l-Wd-Sa4">
                                 <rect key="frame" x="300" y="753" width="40" height="40"/>
-                                <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QLA-su-xcx"/>
                                     <constraint firstAttribute="width" constant="40" id="gko-m2-dXK"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    <imageReference key="image" image="cart" catalog="system" symbolScale="default"/>
-                                </state>
+                                <state key="normal" image="basket"/>
                                 <connections>
                                     <action selector="clickBasketBtn" destination="jWx-mQ-KDo" eventType="touchUpInside" id="7aF-Uo-jUL"/>
                                 </connections>
@@ -171,13 +166,13 @@
     </scenes>
     <resources>
         <image name="arrow_left" width="7.5" height="13"/>
+        <image name="basket" width="39" height="39"/>
         <image name="bottom_favorite_off" width="18.5" height="17"/>
         <image name="bottom_home_off" width="17" height="17"/>
         <image name="bottom_myPage_off" width="16" height="16"/>
         <image name="bottom_order_history_off" width="15" height="16"/>
         <image name="bottom_order_status_off" width="16" height="16"/>
-        <image name="cart" catalog="system" width="128" height="102"/>
-        <image name="favorit" width="128" height="128"/>
+        <image name="favorite_empty" width="17.5" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

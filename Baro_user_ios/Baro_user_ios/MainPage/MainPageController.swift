@@ -195,6 +195,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.storeListStoryBoard
         ViewInBottomTabBar.controllerSender = tag
         ViewInBottomTabBar.moveFromOutSide = true
+        ViewInBottomTabBar.isModalInPresentation = true
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
         let transition = CATransition()
@@ -213,8 +214,8 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
         ViewInBottomTabBar.controllerSender = tag
         ViewInBottomTabBar.moveFromOutSide = true
-        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
-        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+        ViewInBottomTabBar.isModalInPresentation = true
+        ViewInBottomTabBar.modalPresentationStyle = .overFullScreen
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
     func toAlertUseBottomBar() {
@@ -231,13 +232,22 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
+    func setUseTopBarWithBottomTabBarController() {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        vc.controllerIdentifier = bottomTabBarInfo.mapControllerIdentifier
+        vc.controllerStoryboard = bottomTabBarInfo.mapPageStoreBoard
+        vc.controllerSender = whereAmI!
+        vc.moveFromOutSide = true
+        vc.isModalInPresentation = true
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
     
     
     @IBAction func goToMap(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(identifier: "mainToMap") as! MapController
-        vc.location = whereAmI
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: false)
+        setUseTopBarWithBottomTabBarController()
     }
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         locationManager.startUpdatingLocation()

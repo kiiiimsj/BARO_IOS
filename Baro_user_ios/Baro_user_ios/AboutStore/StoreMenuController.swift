@@ -113,6 +113,9 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
 
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: CGFloat((10 * self.categoryNames.count)))
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var width : CGFloat = 0.0
         for index in categoryNames[indexPath.item].utf16 {
@@ -137,6 +140,7 @@ extension StoreMenuController : UICollectionViewDelegate,UICollectionViewDataSou
             }
         }
     }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0
     }
