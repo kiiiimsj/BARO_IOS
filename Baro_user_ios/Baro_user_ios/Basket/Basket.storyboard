@@ -242,14 +242,15 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBe-na-wDY">
-                                                    <rect key="frame" x="374" y="0.0" width="30" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBe-na-wDY">
+                                                    <rect key="frame" x="384" y="0.0" width="30" height="30"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="K44-4H-6Fa"/>
                                                         <constraint firstAttribute="height" constant="30" id="U53-Rs-nUm"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <state key="normal" title="X">
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" image="xmark" catalog="system">
                                                         <color key="titleColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
@@ -330,7 +331,7 @@
                                                 <constraint firstItem="D0V-BY-kDe" firstAttribute="top" secondItem="Dai-tv-EmJ" secondAttribute="top" constant="25" id="3SS-9M-JoF"/>
                                                 <constraint firstItem="BaN-eb-3bw" firstAttribute="top" secondItem="AZc-TX-k3R" secondAttribute="bottom" id="4MI-jP-iX3"/>
                                                 <constraint firstItem="BaN-eb-3bw" firstAttribute="leading" secondItem="Dai-tv-EmJ" secondAttribute="leading" constant="16" id="AAr-sN-ORb"/>
-                                                <constraint firstAttribute="trailing" secondItem="hBe-na-wDY" secondAttribute="trailing" constant="10" id="Kgb-Wa-nc2"/>
+                                                <constraint firstAttribute="trailing" secondItem="hBe-na-wDY" secondAttribute="trailing" id="Kgb-Wa-nc2"/>
                                                 <constraint firstItem="sK3-Xt-dIa" firstAttribute="leading" secondItem="Dai-tv-EmJ" secondAttribute="leading" constant="16" id="T8J-9T-enU"/>
                                                 <constraint firstAttribute="trailing" secondItem="y8p-UC-yv5" secondAttribute="trailing" id="V1T-4e-4Ok"/>
                                                 <constraint firstAttribute="trailing" secondItem="BaN-eb-3bw" secondAttribute="trailing" constant="16" id="YBT-1z-TVp"/>
@@ -455,7 +456,8 @@
                                                     <constraint firstAttribute="width" constant="50" id="gQp-ms-vvk"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
-                                                <state key="normal" title="X">
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="xmark" catalog="system">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -857,6 +859,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

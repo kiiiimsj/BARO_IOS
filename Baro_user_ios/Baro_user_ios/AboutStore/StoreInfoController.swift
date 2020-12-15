@@ -28,7 +28,7 @@ class StoreInfoController : UIViewController{
         phonenumber.text = StoreInfo.store_phone
         location.text = StoreInfo.store_location
         
-        let storeMarker = NMFMarker(position: NMGLatLng(lat: StoreInfo.store_latitude, lng: StoreInfo.store_longitude), iconImage: NMFOverlayImage(name: "map") )
+        let storeMarker = NMFMarker(position: NMGLatLng(lat: StoreInfo.store_latitude, lng: StoreInfo.store_longitude), iconImage: NMFOverlayImage(name: "store_marker") )
         storeMarker.mapView = map
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: StoreInfo.store_latitude, lng: StoreInfo.store_longitude))
         cameraUpdate.animation = .easeIn

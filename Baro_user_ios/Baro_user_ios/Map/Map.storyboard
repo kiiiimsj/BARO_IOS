@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YgK-G5-tsZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,10 +20,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Map Controller-->
+        <!--MapController-->
         <scene sceneID="GMi-Kz-teG">
             <objects>
-                <viewController storyboardIdentifier="MapController" id="YgK-G5-tsZ" customClass="MapController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapController" title="MapController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YgK-G5-tsZ" customClass="MapController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QzN-Me-1C9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5e-dp-7fy" customClass="NMFNaverMapView">
-                                <rect key="frame" x="0.0" y="90" width="414" height="772"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
@@ -46,17 +46,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJK-61-7JZ">
-                                <rect key="frame" x="20" y="50" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="sHP-LZ-Qm4"/>
-                                    <constraint firstAttribute="height" constant="20" id="urc-tP-15D"/>
-                                </constraints>
-                                <state key="normal" image="arrow_back"/>
-                                <connections>
-                                    <action selector="pressBackBtn:" destination="YgK-G5-tsZ" eventType="touchUpInside" id="hWi-kL-glU"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qfs-rk-Ffa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -64,17 +53,14 @@
                             <constraint firstItem="Qfs-rk-Ffa" firstAttribute="bottom" secondItem="eHF-cB-Bka" secondAttribute="bottom" constant="10" id="8bP-YA-gm8"/>
                             <constraint firstItem="Qfs-rk-Ffa" firstAttribute="bottom" secondItem="K5e-dp-7fy" secondAttribute="bottom" id="GVF-xv-63w"/>
                             <constraint firstItem="Qfs-rk-Ffa" firstAttribute="trailing" secondItem="K5e-dp-7fy" secondAttribute="trailing" id="L5d-6j-a3F"/>
-                            <constraint firstItem="hJK-61-7JZ" firstAttribute="top" secondItem="QzN-Me-1C9" secondAttribute="top" constant="50" id="QSv-dJ-mUO"/>
                             <constraint firstItem="K5e-dp-7fy" firstAttribute="leading" secondItem="Qfs-rk-Ffa" secondAttribute="leading" id="VtQ-Xx-Abe"/>
                             <constraint firstItem="Qfs-rk-Ffa" firstAttribute="trailing" secondItem="eHF-cB-Bka" secondAttribute="trailing" constant="10" id="W20-yS-nZn"/>
-                            <constraint firstItem="hJK-61-7JZ" firstAttribute="leading" secondItem="Qfs-rk-Ffa" secondAttribute="leading" constant="20" id="WBh-q3-Pb1"/>
                             <constraint firstItem="eHF-cB-Bka" firstAttribute="leading" secondItem="Qfs-rk-Ffa" secondAttribute="leading" constant="10" id="cEa-2s-tCP"/>
-                            <constraint firstItem="K5e-dp-7fy" firstAttribute="top" secondItem="hJK-61-7JZ" secondAttribute="bottom" constant="20" id="nHa-Ls-z8M"/>
+                            <constraint firstItem="K5e-dp-7fy" firstAttribute="top" secondItem="Qfs-rk-Ffa" secondAttribute="top" id="mlb-0N-g7k"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="SeparateWindow" destination="eHF-cB-Bka" id="wXH-Qa-uUE"/>
-                        <outlet property="backButton" destination="hJK-61-7JZ" id="bDU-3O-7PS"/>
                         <outlet property="map" destination="K5e-dp-7fy" id="bsq-HK-oPW"/>
                     </connections>
                 </viewController>
@@ -154,7 +140,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow_back" width="7" height="12"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
