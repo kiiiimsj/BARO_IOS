@@ -122,7 +122,7 @@ class OrderStatusCell : UICollectionViewCell {
             text.textColor = .black
         }
         func changeOnColor() {
-            image.image = UIImage(named: "on-1")
+            image.image = UIImage(named: "radio_on")
             line.backgroundColor = .baro_main_color
             
         }
@@ -130,7 +130,7 @@ class OrderStatusCell : UICollectionViewCell {
             text.textColor = .lightGray
         }
         func changeOffColor() {
-            image.image = UIImage(named: "off-1")
+            image.image = UIImage(named: "radio_off")
             line.backgroundColor = .systemGray
         }
         
