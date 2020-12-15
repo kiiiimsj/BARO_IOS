@@ -413,26 +413,33 @@ class BottomTabBarController: UIViewController {
         var viewTranslation = CGPoint(x: 0, y: 0)
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             print("gesture")
-            if (swipeGesture.direction == UISwipeGestureRecognizer.Direction.right) {
-                switch swipeGesture.state{
-                case .changed:
-                    viewTranslation = swipeGesture.location(in: view)
-                    print("location : ", viewTranslation.x)
-                    UIView.animate(withDuration: 0.5, animations: {
-                        self.view.transform = CGAffineTransform(translationX: viewTranslation.x, y: 0)
-                    })
-                case .ended:
-                    if viewTranslation.x < 100 {
-                        UIView.animate(withDuration: 0.5, animations: {
-                            self.view.transform = .identity
-                        })
-                    }
-                    else if viewTranslation.x < 120 {
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                default: break
-                }
-            }
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.type = CATransitionType.moveIn
+            transition.subtype = CATransitionSubtype.fromLeft
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            view.window?.layer.add(transition, forKey: kCATransition)
+            self.dismiss(animated: false, completion: nil)
+//            if (swipeGesture.direction == UISwipeGestureRecognizer.Direction.right) {
+//                switch swipeGesture.state{
+//                case .changed:
+//                    viewTranslation = swipeGesture.location(in: view)
+//                    print("location : ", viewTranslation.x)
+//                    UIView.animate(withDuration: 0.5, animations: {
+//                        self.view.transform = CGAffineTransform(translationX: viewTranslation.x, y: 0)
+//                    })
+//                case .ended:
+//                    if viewTranslation.x < 100 {
+//                        UIView.animate(withDuration: 0.5, animations: {
+//                            self.view.transform = .identity
+//                        })
+//                    }
+//                    else if viewTranslation.x < 120 {
+//                        self.dismiss(animated: true, completion: nil)
+//                    }
+//                default: break
+//                }
+//            }
         }
     }
     //뒤로가기 버튼
