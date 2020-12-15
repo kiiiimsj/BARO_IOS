@@ -138,6 +138,7 @@ class StoreListPageController : UIViewController {
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         view.window?.layer.add(transition, forKey: kCATransition)
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
+//        navigationController?.pushViewController(ViewInBottomTabBar, animated: false)
     }
 }
 
