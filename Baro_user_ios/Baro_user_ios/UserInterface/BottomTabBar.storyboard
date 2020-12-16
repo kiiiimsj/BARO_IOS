@@ -109,7 +109,7 @@
                                             <tabBarItem tag="1" title="찜한 가게" image="bottom_favorite_off" id="uE3-kj-KQ9"/>
                                             <tabBarItem tag="2" title="주문 현황" image="bottom_order_status_off" id="m4F-m9-JX4"/>
                                             <tabBarItem tag="3" title="주문 내역" image="bottom_order_history_off" id="gBV-gP-Uck"/>
-                                            <tabBarItem tag="4" title="마이페이지" image="bottom_myPage_off" id="bnZ-hT-dIo"/>
+                                            <tabBarItem tag="4" title="마이페이지" image="bottom_my_page_off" id="bnZ-hT-dIo"/>
                                         </items>
                                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="selectedImageTintColor" systemColor="systemBackgroundColor"/>
@@ -169,7 +169,7 @@
         <image name="basket" width="39" height="39"/>
         <image name="bottom_favorite_off" width="18.5" height="17"/>
         <image name="bottom_home_off" width="17" height="17"/>
-        <image name="bottom_myPage_off" width="16" height="16"/>
+        <image name="bottom_my_page_off" width="16" height="16"/>
         <image name="bottom_order_history_off" width="15" height="16"/>
         <image name="bottom_order_status_off" width="16" height="16"/>
         <image name="favorite_empty" width="17.5" height="16"/>

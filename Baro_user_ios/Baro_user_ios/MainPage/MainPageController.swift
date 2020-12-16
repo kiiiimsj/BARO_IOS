@@ -2,9 +2,6 @@
 //  MainPageController.swift
 //  Baro_user_ios
 //
-//  Created by 김성재 on 2020/10/18.
-//
-
 import UIKit
 import Alamofire
 import SwiftyJSON
@@ -12,7 +9,6 @@ import NMapsMap
 import FSPagerView
 
 class MainPageController: UIViewController, CLLocationManagerDelegate {
-    
     var latitude: Double?
     var longitude: Double?
     
