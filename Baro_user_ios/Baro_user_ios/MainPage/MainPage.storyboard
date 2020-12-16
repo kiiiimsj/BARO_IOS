@@ -589,7 +589,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="Soz-OW-fgc"/>
                                         </constraints>
-                                        <textInputTraits key="textInputTraits" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="search" enablesReturnKeyAutomatically="YES" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
                                     </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6i4-aN-uVn">
                                         <rect key="frame" x="5" y="155" width="324" height="40"/>
