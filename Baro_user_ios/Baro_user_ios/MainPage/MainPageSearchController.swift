@@ -21,20 +21,29 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
     }
     
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
-//        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
-//        
-//        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.storeListControllerIdentifier
-//        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.storeListStoryBoard
-//        ViewInBottomTabBar.controllerSender = self.searchContent
-//        ViewInBottomTabBar.moveFromOutSide = true
-//        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
-//        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
-//        self.present(ViewInBottomTabBar, animated: true, completion: nil)
-//    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(searchBar.text)
+        if searchBar.text!.count <= 1 {
+            return
+        }
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.storeListControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.storeListStoryBoard
+        let param = ["search":self.searchBar.text,"typeCode":"3"]
+        ViewInBottomTabBar.controllerSender = param
+        ViewInBottomTabBar.moveFromOutSide = true
+        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+        guard let pvc = self.presentingViewController else {return}
+
+        self.dismiss(animated: true) {
+            pvc.present(ViewInBottomTabBar, animated: true, completion: nil)
+        }
+    }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchContent = searchText
