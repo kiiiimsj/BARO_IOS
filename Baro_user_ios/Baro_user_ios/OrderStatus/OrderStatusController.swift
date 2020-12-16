@@ -17,6 +17,7 @@ class OrderStatusController : UIViewController {
     let networkURL = NetWorkURL()
     
     var phone = UserDefaults.standard.value(forKey: "user_phone") as! String
+    var storePhone : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ class OrderStatusController : UIViewController {
                 orderStatusModel.order_date = item["order_date"].stringValue
                 orderStatusModel.receipt_id = item["receipt_id"].stringValue
                 orderStatusModel.store_name = item["store_name"].stringValue
+                orderStatusModel.store_phone = item["store_phone"].stringValue
                 orderStatusModel.total_price = item["total_price"].intValue
                 orderStatusModel.order_state = item["order_state"].stringValue
                 orderStatusModel.total_count = item["total_count"].intValue
@@ -61,7 +63,7 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
         let orderStatus = orderStatusList[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderStatusCell", for: indexPath) as! OrderStatusCell
         cell.orderStoreNameLabel.text = String(orderStatus.store_name)
-        
+        storePhone = orderStatus.store_phone
         cell.orderTotalPriceLabel.text = String(orderStatus.total_price)
         cell.orderStoreImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + orderStatus.store_image))
         cell.orderInfo = orderStatus
@@ -108,7 +110,13 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
 
 extension OrderStatusController : statusDelegate {
     func callStore(vc: UIViewController) {
-        
+//        let urlString = "tel://" + storePhone
+//        let numberURL = NSURL(string: urlString)
+//        UIApplication.shared.canOpenURL(numberURL! as URL)
+        guard let url = URL(string: "telprompt://\(storePhone)") else {
+            return
+        }
+        UIApplication.shared.open(url)
     }
     
     func showDetails(vc: OrderStatusDetailController) {

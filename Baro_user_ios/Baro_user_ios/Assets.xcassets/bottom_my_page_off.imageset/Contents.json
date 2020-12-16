@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "myPage_profile.png",
+      "filename" : "bottom_my_page_off.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "myPage_profile-1.png",
+      "filename" : "bottom_my_page_off-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "myPage_profile-2.png",
+      "filename" : "bottom_my_page_off-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
