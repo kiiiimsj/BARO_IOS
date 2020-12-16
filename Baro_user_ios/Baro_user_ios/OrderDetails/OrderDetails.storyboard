@@ -168,7 +168,7 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXy-xA-z5b" customClass="EssentialRadios" customModule="Baro_user_ios" customModuleProvider="target">
                                                                         <rect key="frame" x="20" y="5" width="16" height="42"/>
                                                                         <state key="normal" image="radio_off"/>
-                                                                        <state key="selected" image="on-1"/>
+                                                                        <state key="selected" image="radio_off"/>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9A0-c3-VI3" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
                                                                         <rect key="frame" x="47" y="5" width="26" height="42"/>
@@ -630,7 +630,6 @@
         <image name="arrow_down" width="13" height="7.5"/>
         <image name="arrow_up" width="13" height="7.5"/>
         <image name="minus" width="16" height="16"/>
-        <image name="on-1" width="24" height="24"/>
         <image name="plus" width="16" height="16"/>
         <image name="radio_off" width="16" height="16"/>
         <systemColor name="systemBackgroundColor">
