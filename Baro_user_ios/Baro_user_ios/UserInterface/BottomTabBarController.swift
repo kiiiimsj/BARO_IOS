@@ -74,7 +74,6 @@ class BottomTabBarController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addGestureRecognizer(UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:))))
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
         saveTopViewSize = CGSize(width: view.frame.width, height: 69.0)
     }
@@ -230,7 +229,7 @@ class BottomTabBarController: UIViewController {
         }
         topBarHandler(controller: getController)
         self.addChild(getController)
-        getController.view.frame = ContentView.frame
+        getController.view.frame.size = ContentView.frame.size
         //같은 컨트롤러에 다시 접근하는 여부를 알기 위해 restorationidentifier를 넣어주는 구문
         getController.view.accessibilityIdentifier = getController.restorationIdentifier
         //controlleridentifier와 동일하다.
