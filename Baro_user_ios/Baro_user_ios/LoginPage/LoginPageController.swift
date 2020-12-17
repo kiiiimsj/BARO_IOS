@@ -19,6 +19,7 @@ class LoginPageController: UIViewController {
     
     @IBOutlet weak var registerBtn2: UILabel!
     @IBOutlet weak var memoryMyAccountCheckBox: UIButton!
+    @IBOutlet weak var findPasswordText: UIButton!
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
@@ -118,5 +119,12 @@ class LoginPageController: UIViewController {
                 self.remeberInfo.removeObject(forKey: "rememberUser")
             }
         }
+    }
+
+    @IBAction func clickFindPassword(_ sender: Any) {
+        let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "FindPassWord") as! FindPassWord
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = . crossDissolve
+        self.present(vc, animated: true, completion: nil)
     }
 }
