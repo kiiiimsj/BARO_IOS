@@ -228,25 +228,25 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyPageButtons" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPageButtons" id="7SJ-4P-CUw" customClass="MyPageButtons" customModule="Baro_user_ios" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="360" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="28" width="360" height="43"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7SJ-4P-CUw" id="CrS-NB-OYo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3e-6U-2sf">
-                                                                    <rect key="frame" x="0.0" y="11" width="41.5" height="21.5"/>
+                                                                    <rect key="frame" x="19" y="11" width="41.5" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="xzP-39-YXw">
-                                                                    <rect key="frame" x="332.5" y="15.5" width="7.5" height="13"/>
+                                                                    <rect key="frame" x="332.5" y="15" width="7.5" height="13"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="C3e-6U-2sf" firstAttribute="top" secondItem="CrS-NB-OYo" secondAttribute="top" constant="11" id="2oE-Up-VuG"/>
-                                                                <constraint firstItem="C3e-6U-2sf" firstAttribute="leading" secondItem="CrS-NB-OYo" secondAttribute="leading" id="6Vk-g9-f8J"/>
+                                                                <constraint firstItem="C3e-6U-2sf" firstAttribute="leading" secondItem="CrS-NB-OYo" secondAttribute="leading" constant="19" id="6Vk-g9-f8J"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="xzP-39-YXw" secondAttribute="trailing" id="Jbu-2G-VE1"/>
                                                                 <constraint firstAttribute="bottom" secondItem="C3e-6U-2sf" secondAttribute="bottom" constant="11" id="hA3-cd-Lxr"/>
                                                                 <constraint firstAttribute="trailing" secondItem="xzP-39-YXw" secondAttribute="trailing" constant="20" id="mON-a7-rrX"/>
@@ -459,6 +459,7 @@
                         <outlet property="couponArea" destination="wBn-Ae-BaC" id="dyj-Lq-bE9"/>
                         <outlet property="leftBar" destination="lAD-Od-TIS" id="sII-q9-phy"/>
                         <outlet property="logoutBtn" destination="gB9-XS-HN0" id="XvJ-4s-yzh"/>
+                        <outlet property="myBasketCount" destination="ljY-KR-Axj" id="mfd-P6-MfJ"/>
                         <outlet property="myCouponCount" destination="pza-Dz-tzi" id="aRX-VY-Cak"/>
                         <outlet property="myOrderCount" destination="M7M-1n-uhv" id="Eft-2p-rgN"/>
                         <outlet property="rightBar" destination="O2l-CW-BwQ" id="FqT-F4-SnO"/>
