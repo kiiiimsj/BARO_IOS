@@ -14,27 +14,14 @@ class AlertController : UIViewController {
     var userPhone = ""
     let bottomTabBarInfo = BottomTabBarController()
     @IBOutlet weak var collectinView: UICollectionView!
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        netWork.get(method: .get, url: urlMaker.alertFindAll+userPhone) { (json) in
-//            print(json)
-//            for item in json["alert"].array! {
-//                var temp = AlertModel(	)
-//                temp.is_read = item["is_read"].stringValue
-//                temp.alert_title = item["alert_title"].stringValue
-//                temp.alert_startdate = item["alert_startdate"].stringValue
-//                //temp.id = DB 피벗 테이블을 위한 AUTO_INCREMENT PK
-//                temp.alert_id = item["alert_id"].intValue
-//                self.Alerts.append(temp)
-//            }
-//            self.collectinView.reloadData()
-//        }
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.Alerts.removeAll()
         collectinView.delegate = self
         collectinView.dataSource = self
-        super.viewWillAppear(true)
         netWork.get(method: .get, url: urlMaker.alertFindAll+userPhone) { (json) in
             print(json)
             for item in json["alert"].array! {

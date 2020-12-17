@@ -24,6 +24,7 @@ class MyPageController : UIViewController {
     
     @IBOutlet weak var myOrderCount: UILabel?
     @IBOutlet weak var myCouponCount: UILabel?
+    @IBOutlet weak var myBasketCount: UILabel!
     
     @IBOutlet weak var topButtonArea: uiViewSetting!
     @IBOutlet weak var buttonList: UITableView?
@@ -32,23 +33,10 @@ class MyPageController : UIViewController {
     @IBOutlet weak var rightBar: UIView!
     
     let bottomTabBarInfo = BottomTabBarController()
-    var buttons = [ [" ", "  공지사항", "  입점요청", "  1:1 문의"], [" ","  비밀번호 변경", "  이메일 변경"], [" ","  이용약관", "  개인정보 처리방침"] ]
-    var buttonsSectionHeight : CGFloat = 7.0
+    var buttons = [ [" ", "공지사항", "입점요청", "1:1 문의"], [" ","비밀번호 변경", "이메일 변경"], [" ","이용약관", "개인정보 처리방침"] ]
+    var buttonsSectionHeight : CGFloat = 12.0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(false)
-        let flexWidth = (topButtonArea.frame.size.width / 3)
-        leftBar.frame = CGRect(x: flexWidth, y: 10, width: 1, height: 40)
-        rightBar.frame = CGRect(x: flexWidth * 2, y: 10, width: 1, height: 40)
-        
-        logoutBtn.layer.borderWidth = 1
-        logoutBtn.layer.borderColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 1).cgColor
-        logoutBtn.transform = CGAffineTransform(translationX: 0, y: 20)
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
         userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
         
         setUserName()
@@ -58,7 +46,26 @@ class MyPageController : UIViewController {
         
         buttonList?.dataSource = self
         buttonList?.delegate = self
+        
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        let flexWidth = (topButtonArea.frame.size.width / 3)
+        leftBar.frame = CGRect(x: flexWidth, y: 10, width: 1, height: 40)
+        rightBar.frame = CGRect(x: flexWidth * 2, y: 10, width: 1, height: 40)
+        
+        logoutBtn.layer.shadowColor = UIColor.gray.cgColor
+        logoutBtn.layer.backgroundColor = UIColor.white.cgColor
+        logoutBtn.layer.shadowOpacity = 1
+        logoutBtn.layer.shadowOffset = CGSize(width: 0, height: 3)
+    
+        let yPosition = ((buttonList?.contentSize.height)! - (buttonList?.frame.height)!)
+        logoutBtn.transform = CGAffineTransform(translationX: 0, y: yPosition)
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
     func addGest() {
         couponArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToCoupon(_:))))
         basketArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToBasket(_:))))
@@ -81,7 +88,16 @@ class MyPageController : UIViewController {
                 self.myCouponCount?.text = "0 건"
             }
         }
-        // 장바구니는 저장된 UserDefault에서 꺼내오기
+        var basketCount : Int = 0
+        for basketItem in loadBasket() {
+            basketCount += basketItem.menu_count
+        }
+        if (basketCount == 0) {
+            self.myBasketCount?.text = "0 건"
+        }
+        else {
+            myBasketCount.text = "\(basketCount)"
+        }
     }
     func setUserName() {
         let user_name = "\(UserDefaults.standard.value(forKey: "user_name") as! String)"
@@ -105,17 +121,20 @@ class MyPageController : UIViewController {
         present(vc, animated: false, completion: nil)
     }
     @objc func goToBasket(_ sender : UIGestureRecognizer){
-        let storyboard = UIStoryboard(name: "Basket", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "BasketController") as! BasketController
-        
-        if(vc.basket.value(forKey: "basket") == nil || vc.basket.value(forKey: "basket") as! String == "") {
-//            ToastMessage().showToast(message: "장바구니가 비어있습니다.", font: UIFont(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        if(UserDefaults.standard.value(forKey: "basket") == nil || UserDefaults.standard.value(forKey: "basket") as! String == "") {
             let notExist = UIStoryboard(name: "MyPage", bundle: nil).instantiateViewController(identifier: "NothingExist") as! NothingExist
             notExist.modalTransitionStyle = .crossDissolve
             notExist.modalPresentationStyle = .overFullScreen
             present(notExist, animated: false, completion: nil)
             return
+            
         }else{
+            vc.controllerStoryboard = bottomTabBarInfo.basketStoryBoard
+            vc.controllerIdentifier = bottomTabBarInfo.basketControllerIdentifier
+            vc.controllerSender = loadBasket()
+            vc.moveFromOutSide = true
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: false, completion: nil)
@@ -140,6 +159,15 @@ class MyPageController : UIViewController {
             let vc = segue.destination as! LogoutDialog
             vc.delegate = self
         }
+    }
+    func loadBasket() -> [Order]{
+        let decoder = JSONDecoder()
+        var jsonToOrder = [Order]()
+        if let getData = UserDefaults.standard.value(forKey: "basket") as? String {
+            let data = getData.data(using: .utf8)!
+            jsonToOrder = try! decoder.decode([Order].self, from: data)
+        }
+        return jsonToOrder
     }
 }
 extension MyPageController : UITableViewDelegate, UITableViewDataSource, ClickLogoutDialogDelegate {
@@ -178,6 +206,12 @@ extension MyPageController : UITableViewDelegate, UITableViewDataSource, ClickLo
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return buttons[section][0]
     }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 5))
+        headerView.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1)
+        return headerView
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.section {

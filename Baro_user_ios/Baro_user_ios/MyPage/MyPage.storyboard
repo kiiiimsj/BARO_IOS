@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -211,49 +211,46 @@
             <objects>
                 <viewController storyboardIdentifier="MyPageController" title="MyPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DyC-ns-QMr" customClass="MyPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kCG-TP-cah">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yA4-4M-m8K">
-                                <rect key="frame" x="0.0" y="44" width="360" height="922"/>
+                                <rect key="frame" x="0.0" y="44" width="360" height="556"/>
                                 <subviews>
                                     <view contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bSk-Rn-OP4">
-                                        <rect key="frame" x="0.0" y="0.0" width="360" height="922"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="556"/>
                                         <subviews>
                                             <tableView contentMode="scaleToFill" verticalHuggingPriority="750" verticalCompressionResistancePriority="250" layoutMarginsFollowReadableWidth="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKl-nM-dFZ">
-                                                <rect key="frame" x="0.0" y="122" width="360" height="300"/>
+                                                <rect key="frame" x="0.0" y="130" width="360" height="300"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="x7Y-Za-jsY"/>
+                                                    <constraint firstAttribute="height" constant="300" id="xtr-XG-UsW"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyPageButtons" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPageButtons" id="7SJ-4P-CUw" customClass="MyPageButtons" customModule="Baro_user_ios" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="360" height="43"/>
                                                         <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7SJ-4P-CUw" id="CrS-NB-OYo">
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7SJ-4P-CUw" id="CrS-NB-OYo">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3e-6U-2sf">
-                                                                    <rect key="frame" x="0.0" y="11" width="41.5" height="21"/>
+                                                                    <rect key="frame" x="19" y="11" width="41.5" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="xzP-39-YXw">
-                                                                    <rect key="frame" x="332" y="11" width="10" height="7"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="10" id="OSn-8p-VmN"/>
-                                                                    </constraints>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="xzP-39-YXw">
+                                                                    <rect key="frame" x="332.5" y="15" width="7.5" height="13"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="C3e-6U-2sf" firstAttribute="top" secondItem="CrS-NB-OYo" secondAttribute="top" constant="11" id="2oE-Up-VuG"/>
-                                                                <constraint firstItem="C3e-6U-2sf" firstAttribute="leading" secondItem="CrS-NB-OYo" secondAttribute="leading" id="6Vk-g9-f8J"/>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="xzP-39-YXw" secondAttribute="trailing" constant="-2" id="Jbu-2G-VE1"/>
+                                                                <constraint firstItem="C3e-6U-2sf" firstAttribute="leading" secondItem="CrS-NB-OYo" secondAttribute="leading" constant="19" id="6Vk-g9-f8J"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="xzP-39-YXw" secondAttribute="trailing" id="Jbu-2G-VE1"/>
                                                                 <constraint firstAttribute="bottom" secondItem="C3e-6U-2sf" secondAttribute="bottom" constant="11" id="hA3-cd-Lxr"/>
-                                                                <constraint firstAttribute="trailing" secondItem="xzP-39-YXw" secondAttribute="trailing" constant="18" id="mON-a7-rrX"/>
-                                                                <constraint firstItem="xzP-39-YXw" firstAttribute="top" secondItem="CrS-NB-OYo" secondAttribute="top" constant="11" id="vMl-79-3iQ"/>
+                                                                <constraint firstAttribute="trailing" secondItem="xzP-39-YXw" secondAttribute="trailing" constant="20" id="mON-a7-rrX"/>
+                                                                <constraint firstItem="xzP-39-YXw" firstAttribute="centerY" secondItem="CrS-NB-OYo" secondAttribute="centerY" id="wTh-br-Yk3"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <accessibility key="accessibilityConfiguration" identifier="MyPageButtons"/>
@@ -264,7 +261,7 @@
                                                 </prototypes>
                                                 <sections/>
                                             </tableView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myPage_profile" highlightedImage="myPage_profile" translatesAutoresizingMaskIntoConstraints="NO" id="crw-c9-x8V">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_page_profile" highlightedImage="my_page_profile" translatesAutoresizingMaskIntoConstraints="NO" id="crw-c9-x8V">
                                                 <rect key="frame" x="18" y="0.0" width="46" height="46"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="QXo-EH-YP4"/>
@@ -402,7 +399,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gB9-XS-HN0">
-                                                <rect key="frame" x="0.0" y="442" width="360" height="30"/>
+                                                <rect key="frame" x="0.0" y="430" width="360" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="C1h-lh-qxT"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="로그아웃">
                                                     <color key="titleColor" systemColor="systemRedColor"/>
@@ -418,12 +418,12 @@
                                             <constraint firstItem="gB9-XS-HN0" firstAttribute="leading" secondItem="bSk-Rn-OP4" secondAttribute="leading" id="51q-SW-mtv"/>
                                             <constraint firstItem="jKl-nM-dFZ" firstAttribute="leading" secondItem="bSk-Rn-OP4" secondAttribute="leading" id="78x-9z-qbZ"/>
                                             <constraint firstItem="gxf-eX-bQ9" firstAttribute="leading" secondItem="crw-c9-x8V" secondAttribute="trailing" constant="19" id="CJ4-Jn-jGu"/>
-                                            <constraint firstItem="gB9-XS-HN0" firstAttribute="top" secondItem="jKl-nM-dFZ" secondAttribute="bottom" constant="20" id="EDD-oU-QNE"/>
+                                            <constraint firstItem="gB9-XS-HN0" firstAttribute="top" secondItem="jKl-nM-dFZ" secondAttribute="bottom" id="Jo0-qa-l5Y"/>
                                             <constraint firstItem="jKl-nM-dFZ" firstAttribute="centerX" secondItem="bSk-Rn-OP4" secondAttribute="centerX" id="LLb-eh-pQY"/>
                                             <constraint firstItem="crw-c9-x8V" firstAttribute="bottom" secondItem="ib1-x7-llZ" secondAttribute="bottom" id="RVB-D1-ALT"/>
                                             <constraint firstAttribute="trailing" secondItem="gB9-XS-HN0" secondAttribute="trailing" id="Yhr-hY-PXI"/>
                                             <constraint firstItem="Lb4-ti-Fz8" firstAttribute="top" secondItem="crw-c9-x8V" secondAttribute="bottom" constant="8" id="Zdh-kn-sAU"/>
-                                            <constraint firstItem="jKl-nM-dFZ" firstAttribute="top" secondItem="Lb4-ti-Fz8" secondAttribute="bottom" constant="8" symbolic="YES" id="cAH-5C-IyK"/>
+                                            <constraint firstItem="jKl-nM-dFZ" firstAttribute="top" secondItem="Lb4-ti-Fz8" secondAttribute="bottom" constant="16" id="cAH-5C-IyK"/>
                                             <constraint firstItem="crw-c9-x8V" firstAttribute="top" secondItem="bSk-Rn-OP4" secondAttribute="top" id="cf8-8Q-Esf"/>
                                             <constraint firstItem="crw-c9-x8V" firstAttribute="leading" secondItem="bSk-Rn-OP4" secondAttribute="leading" constant="18" id="hKO-eg-MuN"/>
                                             <constraint firstItem="Lb4-ti-Fz8" firstAttribute="leading" secondItem="bSk-Rn-OP4" secondAttribute="leading" constant="15" id="srU-1K-CtN"/>
@@ -451,7 +451,7 @@
                             <constraint firstItem="yA4-4M-m8K" firstAttribute="bottom" secondItem="jQl-Zr-BBb" secondAttribute="bottom" id="kDs-aG-USc"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="360" height="1000"/>
+                    <size key="freeformSize" width="360" height="600"/>
                     <connections>
                         <outlet property="OrderArea" destination="2K9-Ee-B4z" id="KF0-eH-EpE"/>
                         <outlet property="basketArea" destination="SIP-v8-GZU" id="KbU-Ei-xhk"/>
@@ -459,6 +459,7 @@
                         <outlet property="couponArea" destination="wBn-Ae-BaC" id="dyj-Lq-bE9"/>
                         <outlet property="leftBar" destination="lAD-Od-TIS" id="sII-q9-phy"/>
                         <outlet property="logoutBtn" destination="gB9-XS-HN0" id="XvJ-4s-yzh"/>
+                        <outlet property="myBasketCount" destination="ljY-KR-Axj" id="mfd-P6-MfJ"/>
                         <outlet property="myCouponCount" destination="pza-Dz-tzi" id="aRX-VY-Cak"/>
                         <outlet property="myOrderCount" destination="M7M-1n-uhv" id="Eft-2p-rgN"/>
                         <outlet property="rightBar" destination="O2l-CW-BwQ" id="FqT-F4-SnO"/>
@@ -512,8 +513,8 @@
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
-        <image name="arrow_down" width="13" height="7.5"/>
-        <image name="myPage_profile" width="46" height="46"/>
+        <image name="arrow_right" width="7.5" height="13"/>
+        <image name="my_page_profile" width="46" height="46"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
