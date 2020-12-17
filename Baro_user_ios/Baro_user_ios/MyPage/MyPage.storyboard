@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -300,13 +300,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="110" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 건" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-1n-uhv">
-                                                                <rect key="frame" x="41" y="30" width="28.5" height="15"/>
+                                                                <rect key="frame" x="41" y="33.5" width="28.5" height="15"/>
                                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
                                                                 <color key="textColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주문 내역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYa-K0-xzj">
-                                                                <rect key="frame" x="33.5" y="20" width="43" height="10"/>
+                                                                <rect key="frame" x="33.5" y="17" width="43" height="16.5"/>
                                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -316,7 +316,6 @@
                                                         <constraints>
                                                             <constraint firstItem="gYa-K0-xzj" firstAttribute="centerY" secondItem="2K9-Ee-B4z" secondAttribute="centerY" constant="-5" id="1wY-Ak-ijH"/>
                                                             <constraint firstItem="gYa-K0-xzj" firstAttribute="centerX" secondItem="2K9-Ee-B4z" secondAttribute="centerX" id="4ws-Qn-GIr"/>
-                                                            <constraint firstItem="gYa-K0-xzj" firstAttribute="top" secondItem="2K9-Ee-B4z" secondAttribute="top" constant="20" id="DDW-Yk-K9L"/>
                                                             <constraint firstAttribute="width" constant="110" id="Hv6-cO-2QK"/>
                                                             <constraint firstItem="M7M-1n-uhv" firstAttribute="centerX" secondItem="2K9-Ee-B4z" secondAttribute="centerX" id="bxP-t9-k5S"/>
                                                             <constraint firstItem="M7M-1n-uhv" firstAttribute="top" secondItem="gYa-K0-xzj" secondAttribute="bottom" id="ouM-Jk-EqB"/>

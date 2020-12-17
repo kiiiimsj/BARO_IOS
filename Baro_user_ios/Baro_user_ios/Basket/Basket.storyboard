@@ -176,7 +176,7 @@
                                                                 <outlet property="extraPrice" destination="Qhy-9n-tah" id="WyQ-LT-v2s"/>
                                                             </connections>
                                                         </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="Baro_user_ios" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="25" width="382" height="25"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tLr-LY-rLC">
@@ -632,7 +632,10 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex ) 많이 주세요~" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="1ne-Eb-jm4">
-                                        <rect key="frame" x="8" y="487" width="358" height="42.5"/>
+                                        <rect key="frame" x="8" y="489.5" width="358" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ngD-ks-eOY"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
@@ -661,7 +664,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요청사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLo-wf-1sO">
-                                        <rect key="frame" x="20" y="458" width="52" height="21"/>
+                                        <rect key="frame" x="20" y="458" width="52" height="23.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
