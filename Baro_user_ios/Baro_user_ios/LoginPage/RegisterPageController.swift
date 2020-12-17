@@ -91,8 +91,7 @@ class RegisterPageController: UIViewController {
             }
         }
     }
-    @objc
-    func checkEmailInputField() {
+    @objc func checkEmailInputField() {
         let email = emailInput.text
         let emailNSString = email! as NSString
         var emailGetResult : NSTextCheckingResult?

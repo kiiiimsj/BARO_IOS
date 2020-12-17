@@ -147,6 +147,10 @@
 		E39C15842569E70B00520033 /* EmptyBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C15832569E70B00520033 /* EmptyBasket.swift */; };
 		E3AA04C12583E9D80055454A /* VerticalProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04C02583E9D80055454A /* VerticalProgressbar.swift */; };
 		E3AA04C825873F730055454A /* NothingExist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04C725873F730055454A /* NothingExist.swift */; };
+		E3AA04CC258A11580055454A /* FindPassWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04CB258A11570055454A /* FindPassWord.swift */; };
+		E3AA04CF258A19A20055454A /* PhoneCheckForChangePW.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04CE258A19A20055454A /* PhoneCheckForChangePW.swift */; };
+		E3AA04D2258A22400055454A /* SetNewPW.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04D1258A22400055454A /* SetNewPW.swift */; };
+		E3AA04D7258A35DC0055454A /* FindPWComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04D6258A35DB0055454A /* FindPWComplete.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -295,6 +299,10 @@
 		E39C15832569E70B00520033 /* EmptyBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBasket.swift; sourceTree = "<group>"; };
 		E3AA04C02583E9D80055454A /* VerticalProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalProgressbar.swift; sourceTree = "<group>"; };
 		E3AA04C725873F730055454A /* NothingExist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingExist.swift; sourceTree = "<group>"; };
+		E3AA04CB258A11570055454A /* FindPassWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPassWord.swift; sourceTree = "<group>"; };
+		E3AA04CE258A19A20055454A /* PhoneCheckForChangePW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCheckForChangePW.swift; sourceTree = "<group>"; };
+		E3AA04D1258A22400055454A /* SetNewPW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewPW.swift; sourceTree = "<group>"; };
+		E3AA04D6258A35DB0055454A /* FindPWComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWComplete.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,6 +443,10 @@
 				3FA0D066256B4CBC004E4D83 /* PhoneCheckForRegister.swift */,
 				3F041C65256FB689006A2B3B /* PhoneSendForRegister.swift */,
 				3FF086332571509F00D02360 /* RegisterCompletePage.swift */,
+				E3AA04CB258A11570055454A /* FindPassWord.swift */,
+				E3AA04CE258A19A20055454A /* PhoneCheckForChangePW.swift */,
+				E3AA04D1258A22400055454A /* SetNewPW.swift */,
+				E3AA04D6258A35DB0055454A /* FindPWComplete.swift */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -800,11 +812,13 @@
 				04B8679A253B0ECD00336175 /* AppDelegate.swift in Sources */,
 				E356D66F257DD8B400F39463 /* CouponRegisterController.swift in Sources */,
 				043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */,
+				E3AA04D7258A35DC0055454A /* FindPWComplete.swift in Sources */,
 				3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */,
 				E34CAF45255523A600BE3F53 /* SeparateWindowController.swift in Sources */,
 				E31D3FD82542ACAC00B63F77 /* StoreListCell.swift in Sources */,
 				043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */,
 				3F041C66256FB689006A2B3B /* PhoneSendForRegister.swift in Sources */,
+				E3AA04CC258A11580055454A /* FindPassWord.swift in Sources */,
 				E3AA04C825873F730055454A /* NothingExist.swift in Sources */,
 				E31D3FF925469DCE00B63F77 /* EssentialButton.swift in Sources */,
 				E31D401B2550001000B63F77 /* BasketHeader.swift in Sources */,
@@ -837,6 +851,7 @@
 				043DACAC253DA51500C70102 /* MainPageUltraStore.swift in Sources */,
 				3FE2C29E2557E3A5002E6184 /* CouponForBasket.swift in Sources */,
 				E31D3FEF25465F6000B63F77 /* NonEssentialCell.swift in Sources */,
+				E3AA04D2258A22400055454A /* SetNewPW.swift in Sources */,
 				3FE2C2A12557EFAA002E6184 /* CouponForBasketCell.swift in Sources */,
 				E34CAF6625555B6600BE3F53 /* AlertController.swift in Sources */,
 				3F0EB738255A70C400F72604 /* SendServerOrders.swift in Sources */,
@@ -853,6 +868,7 @@
 				3FC20E5A2546E62400EEE783 /* NoticeCell.swift in Sources */,
 				04B8679C253B0ECD00336175 /* SceneDelegate.swift in Sources */,
 				04D11F482543ECB800ADB210 /* OrderHistoryCell.swift in Sources */,
+				E3AA04CF258A19A20055454A /* PhoneCheckForChangePW.swift in Sources */,
 				E31D3FD52542AC3E00B63F77 /* StoreListModel.swift in Sources */,
 				04235C8A254AB35D00BA2BB1 /* OrderStatusDetailModel.swift in Sources */,
 				3FAD95A325527EC600091E3D /* Order.swift in Sources */,
