@@ -24,6 +24,7 @@ class MyPageController : UIViewController {
     
     @IBOutlet weak var myOrderCount: UILabel?
     @IBOutlet weak var myCouponCount: UILabel?
+    @IBOutlet weak var myBasketCount: UILabel!
     
     @IBOutlet weak var topButtonArea: uiViewSetting!
     @IBOutlet weak var buttonList: UITableView?
@@ -57,7 +58,7 @@ class MyPageController : UIViewController {
         logoutBtn.layer.backgroundColor = UIColor.white.cgColor
         logoutBtn.layer.shadowOpacity = 1
         logoutBtn.layer.shadowOffset = CGSize(width: 0, height: 3)
-        print("buttonListHeight", buttonList?.contentSize.height)
+    
         let yPosition = ((buttonList?.contentSize.height)! - (buttonList?.frame.height)!)
         logoutBtn.transform = CGAffineTransform(translationX: 0, y: yPosition)
     }
@@ -87,7 +88,16 @@ class MyPageController : UIViewController {
                 self.myCouponCount?.text = "0 건"
             }
         }
-        // 장바구니는 저장된 UserDefault에서 꺼내오기
+        var basketCount : Int = 0
+        for basketItem in loadBasket() {
+            basketCount += basketItem.menu_count
+        }
+        if (basketCount == 0) {
+            self.myBasketCount?.text = "0 건"
+        }
+        else {
+            myBasketCount.text = "\(basketCount)"
+        }
     }
     func setUserName() {
         let user_name = "\(UserDefaults.standard.value(forKey: "user_name") as! String)"
