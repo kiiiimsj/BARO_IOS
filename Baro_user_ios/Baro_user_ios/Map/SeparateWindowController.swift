@@ -24,10 +24,10 @@ class SeparateWindowController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.baro_main_color.cgColor
-        view.layer.cornerRadius = 10
-        view.layer.masksToBounds = true
+//        view.layer.borderWidth = 1
+//        view.layer.borderColor = UIColor.baro_main_color.cgColor
+//        view.layer.cornerRadius = 10
+//        view.layer.masksToBounds = true
        
     }
     func whenDidUpdate() -> () {

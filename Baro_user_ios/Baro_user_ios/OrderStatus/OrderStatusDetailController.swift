@@ -15,6 +15,7 @@ class OrderStatusDetailController : UIViewController {
 
     @IBOutlet weak var mRequests: UILabel!
     
+    @IBOutlet weak var okayBtn: UIButton!
     
     @IBAction func successBtn(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
@@ -42,7 +43,9 @@ class OrderStatusDetailController : UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         configure()
-        
+        okayBtn.layer.borderWidth = 2
+        okayBtn.layer.borderColor = UIColor.white.cgColor
+        okayBtn.layer.cornerRadius = 5
     }
     
     

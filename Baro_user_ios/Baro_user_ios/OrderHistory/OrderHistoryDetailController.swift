@@ -83,7 +83,9 @@ class OrderHistoryDetailController : UIViewController {
             print("jjj",self.orderHistoryDetailList)
             
         }
-        
+        okayBtn.layer.borderWidth = 2
+        okayBtn.layer.borderColor = UIColor.white.cgColor
+        okayBtn.layer.cornerRadius = 5
         storeName.text = store_name
         totalPrice.text = "총 결제 금액 : " + String(total_price) + "원"
         //요청사항도 찍어주기
