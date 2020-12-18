@@ -23,6 +23,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     var whereAmI : CLLocation?
     var whatIHave = 0
     var newestAlertNumber : Int!
+    var notCalled = false
     lazy var myLocation = MyLocation()
     //table list
     
@@ -147,12 +148,16 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         }
     }
     func getUserNotReadAlertCount() {
+        if notCalled {
+            return
+        }
         netWork.get(method: .get, url: urlMaker.getUserNotReadAlertCount+userPhone) {
             json in
-            print("getUserNotReadaAlertCount : ", json)
             if json["result"].boolValue {
                 if (json["count"].intValue > 0) {
+                    print("getUserNotReadaAlertCount : ", json["count"].intValue)
                     self.alertButton.setImage(UIImage(named: "alert_on"), for: .normal)
+                    self.notCalled = true
                 }
                 else {
                     self.alertButton.setImage(UIImage(named: "alert_off"), for: .normal)
@@ -423,21 +428,21 @@ extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegate
 }
 extension MainPageController {
     func whetherNewOrNot() -> () {
-        let network = CallRequest()
-        let urlMaker = NetWorkURL()
-        network.get(method: .get, url: urlMaker.getLatest) { (json) in
-            print(json)
-            self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
-            self.newestAlertNumber = json["recentlyAlertId"].intValue
-            if self.whatIHave != self.newestAlertNumber {
-                print("볼거있음")
-                self.alertButton.setImage(UIImage(named: "alert_on"), for: .normal)
-            }else{
-                self.alertButton.setImage(UIImage(named: "alert_off"), for: .normal)
-                print("이미봄")
-            }
-            print("what",self.whatIHave)
-        }
+//        let network = CallRequest()
+//        let urlMaker = NetWorkURL()
+//        network.get(method: .get, url: urlMaker.getLatest) { (json) in
+//            print(json)
+//            self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
+//            self.newestAlertNumber = json["recentlyAlertId"].intValue
+//            if self.whatIHave != self.newestAlertNumber {
+//                print("볼거있음")
+//                self.alertButton.setImage(UIImage(named: "alert_on"), for: .normal)
+//            }else{
+//                self.alertButton.setImage(UIImage(named: "alert_off"), for: .normal)
+//                print("이미봄")
+//            }
+//            print("what",self.whatIHave)
+//        }
     }
 }
 

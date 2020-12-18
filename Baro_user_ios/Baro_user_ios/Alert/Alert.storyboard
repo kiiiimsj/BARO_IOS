@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vqD-D7-0Wa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vqD-D7-0Wa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -140,7 +140,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="822"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjM-de-PmA">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="717.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="747.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" restorationIdentifier="DialogView" translatesAutoresizingMaskIntoConstraints="NO" id="XbN-ey-yub" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="10" width="394" height="75"/>
@@ -189,7 +189,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTN-zU-ItT" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="85" width="394" height="632.5"/>
+                                                <rect key="frame" x="10" y="85" width="394" height="662.5"/>
                                                 <subviews>
                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dz-v7-50D">
                                                         <rect key="frame" x="20" y="30" width="354" height="602.5"/>
@@ -222,13 +222,13 @@
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="0Dz-v7-50D" firstAttribute="top" secondItem="KTN-zU-ItT" secondAttribute="top" constant="30" id="42X-OW-YR8"/>
-                                                    <constraint firstAttribute="bottom" secondItem="0Dz-v7-50D" secondAttribute="bottom" id="5op-Im-0Cw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0Dz-v7-50D" secondAttribute="bottom" constant="30" id="5op-Im-0Cw"/>
                                                     <constraint firstItem="0Dz-v7-50D" firstAttribute="leading" secondItem="KTN-zU-ItT" secondAttribute="leading" constant="20" id="bXZ-Sa-IMB"/>
                                                     <constraint firstAttribute="trailing" secondItem="0Dz-v7-50D" secondAttribute="trailing" constant="20" id="dM5-xL-FvY"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
+                                                        <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
