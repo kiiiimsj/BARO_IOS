@@ -65,6 +65,9 @@ extension MainPageNewStore : UICollectionViewDelegate, UICollectionViewDataSourc
         }
         if newStore.is_open == "Y" {
             cell.newStore_isOpen.text = "영업중"
+            cell.newStore_isOpen.backgroundColor = .baro_main_color
+        }else{
+            cell.newStore_isOpen.backgroundColor = .customLightGray
         }
         // 버튼 테두리 둥글게
         cell.newStore_isOpen.layer.cornerRadius = 10

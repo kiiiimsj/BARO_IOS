@@ -142,6 +142,9 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
             return CGSize(width: collectionView.frame.width, height: CGFloat(110 + (nonEssential[indexPath.item].count) * 15))
         }
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
+    }
     func btnDeleteTapped(cell: BasketMenuCell) {
         let indexPath = self.collectionView.indexPath(for: cell)
         let dialogController = self.storyboard?.instantiateViewController(identifier: "BasketDialog") as! BasketDialog

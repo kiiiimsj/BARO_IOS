@@ -28,7 +28,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFT-Ql-mab">
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
-                                <color key="backgroundColor" red="0.47109787269999998" green="0.211157332" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.51372549019607838" green="0.20000000000000001" blue="0.90196078431372551" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="fDl-aT-kcQ"/>
                                 </constraints>
@@ -176,7 +176,7 @@
                                                                 <outlet property="extraPrice" destination="Qhy-9n-tah" id="WyQ-LT-v2s"/>
                                                             </connections>
                                                         </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="Baro_user_ios" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="25" width="382" height="25"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tLr-LY-rLC">

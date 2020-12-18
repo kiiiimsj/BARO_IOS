@@ -197,7 +197,7 @@ extension OrderDetailsController : UICollectionViewDelegate,UICollectionViewData
             let cell = EssentialArea.dequeueReusableCell(withReuseIdentifier: "NonEssentialCell", for: indexPath) as! NonEssentialCell
             let extra = nonEssentials[indexPath.item]
             cell.nonEssentialExtras = extra
-            cell.optionName.text = " · " + extra.extra_name
+            cell.optionName.text = " · " + extra.extra_name + "(+\(extra.extra_price)원)"
             cell.clickListner = self
             return cell
 

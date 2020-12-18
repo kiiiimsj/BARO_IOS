@@ -69,6 +69,9 @@ extension MainPageUltraStore : UICollectionViewDelegate, UICollectionViewDataSou
         cell.ultra_isOpen.layer.cornerRadius = 8
         if ultra.is_open == "Y" {
             cell.ultra_isOpen.text = "영업중"
+            cell.ultra_isOpen.backgroundColor = .baro_main_color
+        }else{
+            cell.ultra_isOpen.backgroundColor = .customLightGray
         }
         // 버튼 테두리 둥글게
         cell.ultra_isOpen.layer.cornerRadius = 10

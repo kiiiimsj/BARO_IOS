@@ -31,7 +31,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var pagerView: FSPagerView!
     //    @IBOutlet weak var collectionViewEvent: UICollectionView!
     @IBOutlet weak var whatPage: UILabel!
-    @IBOutlet weak var pagerControl: FSPageControl!
+//    @IBOutlet weak var pagerControl: FSPageControl!
     @IBOutlet weak var collectionViewType: UICollectionView!
     @IBOutlet weak var collectionViewUltra: UICollectionView!
     @IBOutlet weak var collectionViewNewStore: UICollectionView!
@@ -80,7 +80,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         pagerView.dataSource = self
         pagerView.delegate = self
         pagerView.layer.cornerRadius = 5
-        pagerControl.layer.cornerRadius = 5
+//        pagerControl.layer.cornerRadius = 5
 //        collectionViewEvent.dataSource = self
         
         collectionViewType.dataSource = self
@@ -287,17 +287,17 @@ extension MainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
         self.pagerView.isInfinite = true
         // 자동슬라이드 주기 ( 1.0 = 1초 )
         self.pagerView.automaticSlidingInterval = 4.0
-        self.pagerControl.numberOfPages = self.eventList.count
-        // 점 위치
-        self.pagerControl.contentHorizontalAlignment = .center
-        // 간격들
-        self.pagerControl.itemSpacing = 8
-        //self.pagerControl.interitemSpacing = 8
-        // 현재 슬라이드 색
-        self.pagerControl.setFillColor(.purple, for: .selected)
-        // 점 크기 정하기
-        self.pagerControl.setPath(UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 8, height: 8)), for: .normal)
-        self.pagerControl.setPath(UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 8, height: 8)), for: .selected)
+//        self.pagerControl.numberOfPages = self.eventList.count
+//        // 점 위치
+//        self.pagerControl.contentHorizontalAlignment = .center
+//        // 간격들
+//        self.pagerControl.itemSpacing = 8
+//        //self.pagerControl.interitemSpacing = 8
+//        // 현재 슬라이드 색
+//        self.pagerControl.setFillColor(.purple, for: .selected)
+//        // 점 크기 정하기
+//        self.pagerControl.setPath(UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 8, height: 8)), for: .normal)
+//        self.pagerControl.setPath(UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 8, height: 8)), for: .selected)
         // 현재위치 / 총 개수
         self.whatPage.text = "1 / " + String(self.eventList.count)
     }
@@ -323,12 +323,12 @@ extension MainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
     
     // 광고를 직접슬라이딩 했을때
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
-        self.pagerControl.currentPage = targetIndex
+//        self.pagerControl.currentPage = targetIndex
         self.whatPage.text = String(targetIndex + 1) + " / " + String(eventList.count)
     }
     // 광고 애니메이션이 끝났을때 (자동으로 넘어가는 경우도 있기 때문에 필요)
     func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
-        self.pagerControl.currentPage = pagerView.currentIndex
+//        self.pagerControl.currentPage = pagerView.currentIndex
         self.whatPage.text = String(pagerView.currentIndex + 1) + " / " + String(eventList.count)
     }
     func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {

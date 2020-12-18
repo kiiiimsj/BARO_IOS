@@ -81,7 +81,7 @@ class MyBootPayController : UIViewController {
     //결제 아이템 설정
     func goBuy() {
         //구매정보에 띄워주는 이름 설정 가게이름:메뉴1이름/메뉴2이름/메뉴3이름... 형식으로 저장된다.
-        self.setPayLoadNameBuilder = self.sendStoreName + ":"
+        self.setPayLoadNameBuilder = self.sendStoreName
         var bootPayItems = [BootpayItem]()
         let payload = BootpayPayload()
         let bootUser = BootpayUser()

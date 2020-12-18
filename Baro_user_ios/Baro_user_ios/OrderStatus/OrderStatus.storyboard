@@ -319,7 +319,7 @@
                                 <rect key="frame" x="40" y="124" width="334" height="593"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hQW-lR-Fn3">
-                                        <rect key="frame" x="0.0" y="50" width="334" height="394"/>
+                                        <rect key="frame" x="0.0" y="50" width="334" height="389"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="6te-XF-WAn">
                                             <size key="itemSize" width="332" height="168"/>
@@ -506,13 +506,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 결제 금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPQ-ia-qhc">
-                                        <rect key="frame" x="17" y="456.5" width="56" height="16.5"/>
+                                        <rect key="frame" x="17" y="451.5" width="56" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
                                         <color key="textColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dddd" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVv-hc-8M0" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                        <rect key="frame" x="31" y="500.5" width="282" height="13.5"/>
+                                        <rect key="frame" x="31" y="495.5" width="282" height="13.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="9"/>
                                         <color key="textColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -523,13 +523,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="126000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUr-BJ-z2a">
-                                        <rect key="frame" x="269" y="456.5" width="49" height="16.5"/>
+                                        <rect key="frame" x="269" y="451.5" width="49" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
                                         <color key="textColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="·" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcs-R2-tLy">
-                                        <rect key="frame" x="23" y="481.5" width="5" height="5"/>
+                                        <rect key="frame" x="23" y="476.5" width="5" height="5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="FE0-Cg-zBs"/>
                                             <constraint firstAttribute="width" constant="5" id="nBb-WF-3b0"/>
@@ -539,7 +539,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkJ-ZW-KJi">
-                                        <rect key="frame" x="0.0" y="543" width="334" height="50"/>
+                                        <rect key="frame" x="5" y="538" width="324" height="50"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="PDf-bE-oQR"/>
@@ -553,7 +553,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요청사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3d-Dq-fgT" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="477" width="285" height="13.5"/>
+                                        <rect key="frame" x="33" y="472" width="285" height="13.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="9"/>
                                         <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -564,7 +564,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-aW-UTG">
-                                        <rect key="frame" x="0.0" y="444" width="334" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="439" width="334" height="0.5"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="kJz-p3-dvD"/>
@@ -576,19 +576,17 @@
                                     <constraint firstAttribute="trailing" secondItem="FUr-BJ-z2a" secondAttribute="trailing" constant="16" id="27W-O1-OB8"/>
                                     <constraint firstItem="dkJ-ZW-KJi" firstAttribute="top" secondItem="fVv-hc-8M0" secondAttribute="bottom" constant="29" id="4Bj-Yi-HK5"/>
                                     <constraint firstAttribute="trailing" secondItem="d3d-Dq-fgT" secondAttribute="trailing" constant="16" id="4CX-ys-DTm"/>
-                                    <constraint firstItem="dkJ-ZW-KJi" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" id="5Sx-ib-zE5"/>
                                     <constraint firstItem="uW5-h6-sZm" firstAttribute="top" secondItem="3Hs-TW-iiS" secondAttribute="top" id="7KU-Ry-2OK"/>
-                                    <constraint firstAttribute="trailing" secondItem="dkJ-ZW-KJi" secondAttribute="trailing" id="7yg-zM-R84"/>
+                                    <constraint firstAttribute="trailing" secondItem="dkJ-ZW-KJi" secondAttribute="trailing" constant="5" id="7yg-zM-R84"/>
                                     <constraint firstItem="kcs-R2-tLy" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" constant="23" id="8UM-lI-qG1"/>
                                     <constraint firstItem="gPQ-ia-qhc" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" constant="17" id="9MC-Ik-kC8"/>
-                                    <constraint firstItem="dkJ-ZW-KJi" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" id="9RQ-c2-DZn"/>
+                                    <constraint firstItem="dkJ-ZW-KJi" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" constant="5" id="9RQ-c2-DZn"/>
                                     <constraint firstItem="d3d-Dq-fgT" firstAttribute="top" secondItem="gPQ-ia-qhc" secondAttribute="bottom" constant="4" id="DTG-5H-W9p"/>
                                     <constraint firstItem="2ra-aW-UTG" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" id="Doa-vn-8hK"/>
                                     <constraint firstItem="FUr-BJ-z2a" firstAttribute="top" secondItem="hQW-lR-Fn3" secondAttribute="bottom" constant="12.5" id="Fus-U4-B0a"/>
                                     <constraint firstAttribute="trailing" secondItem="uW5-h6-sZm" secondAttribute="trailing" id="G4z-zI-N8G"/>
                                     <constraint firstItem="gPQ-ia-qhc" firstAttribute="top" secondItem="hQW-lR-Fn3" secondAttribute="bottom" constant="12.5" id="HpJ-wm-iTF"/>
-                                    <constraint firstAttribute="trailing" secondItem="dkJ-ZW-KJi" secondAttribute="trailing" id="Jqb-h2-4ca"/>
-                                    <constraint firstAttribute="bottom" secondItem="dkJ-ZW-KJi" secondAttribute="bottom" id="SH7-TP-uED"/>
+                                    <constraint firstAttribute="bottom" secondItem="dkJ-ZW-KJi" secondAttribute="bottom" constant="5" id="SH7-TP-uED"/>
                                     <constraint firstItem="2ra-aW-UTG" firstAttribute="top" secondItem="hQW-lR-Fn3" secondAttribute="bottom" id="UNZ-6c-uTo"/>
                                     <constraint firstAttribute="trailing" secondItem="2ra-aW-UTG" secondAttribute="trailing" id="Ul1-il-YwG"/>
                                     <constraint firstAttribute="trailing" secondItem="hQW-lR-Fn3" secondAttribute="trailing" id="W50-v3-OA8"/>
@@ -597,7 +595,6 @@
                                     <constraint firstItem="hQW-lR-Fn3" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" id="coC-Gy-nfV"/>
                                     <constraint firstItem="uW5-h6-sZm" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" id="e9N-Kw-Mcq"/>
                                     <constraint firstItem="fVv-hc-8M0" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" constant="31" id="fZQ-yr-q7w"/>
-                                    <constraint firstAttribute="bottom" secondItem="dkJ-ZW-KJi" secondAttribute="bottom" id="gUh-zt-wqH"/>
                                     <constraint firstItem="d3d-Dq-fgT" firstAttribute="leading" secondItem="kcs-R2-tLy" secondAttribute="trailing" constant="5" id="pYk-py-x9E"/>
                                     <constraint firstItem="kcs-R2-tLy" firstAttribute="centerY" secondItem="d3d-Dq-fgT" secondAttribute="centerY" id="rzA-Wp-Dls"/>
                                     <constraint firstItem="hQW-lR-Fn3" firstAttribute="top" secondItem="uW5-h6-sZm" secondAttribute="bottom" id="tvP-Tk-WXb"/>
@@ -616,6 +613,7 @@
                     <connections>
                         <outlet property="collectionView" destination="hQW-lR-Fn3" id="vQn-CZ-CFq"/>
                         <outlet property="mRequests" destination="fVv-hc-8M0" id="SEg-rW-TJg"/>
+                        <outlet property="okayBtn" destination="dkJ-ZW-KJi" id="EsO-2T-d5x"/>
                         <outlet property="storeName" destination="uW5-h6-sZm" id="HV6-Sc-R0M"/>
                         <outlet property="totalPrice" destination="FUr-BJ-z2a" id="x9Y-iV-g9Y"/>
                     </connections>
