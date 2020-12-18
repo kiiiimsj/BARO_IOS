@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZeL-Uk-YU3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZeL-Uk-YU3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -93,7 +92,8 @@
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BAe-Iy-w2T">
                                 <rect key="frame" x="16" y="208" width="382" height="604"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="JEB-Ax-JhU">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="50" height="45"/>
@@ -121,7 +121,7 @@
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cAL-FF-FuD">
                                                     <rect key="frame" x="10" y="18" width="350" height="160"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Nqm-ed-H2c">
                                                         <size key="itemSize" width="349" height="52"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -146,6 +146,7 @@
                                                                         </state>
                                                                     </button>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="omm-pz-HAj" firstAttribute="top" secondItem="12D-ha-RCr" secondAttribute="top" id="7dg-ee-OPt"/>
                                                                     <constraint firstItem="omm-pz-HAj" firstAttribute="leading" secondItem="12D-ha-RCr" secondAttribute="leading" constant="20" id="89p-Gz-dnR"/>
@@ -153,6 +154,7 @@
                                                                     <constraint firstAttribute="bottom" secondItem="omm-pz-HAj" secondAttribute="bottom" id="qT1-vm-Gfl"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <size key="customSize" width="349" height="52"/>
                                                             <connections>
                                                                 <outlet property="menu" destination="omm-pz-HAj" id="CR8-cj-9AT"/>
@@ -167,7 +169,9 @@
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXy-xA-z5b" customClass="EssentialRadios" customModule="Baro_user_ios" customModuleProvider="target">
                                                                         <rect key="frame" x="20" y="5" width="16" height="42"/>
-                                                                        <state key="normal" image="radio_off"/>
+                                                                        <state key="normal" image="radio_off">
+                                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
                                                                         <state key="selected" image="radio_off"/>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9A0-c3-VI3" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
@@ -182,6 +186,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="hXy-xA-z5b" secondAttribute="bottom" constant="5" id="4Nd-o7-euF"/>
                                                                     <constraint firstItem="hXy-xA-z5b" firstAttribute="top" secondItem="FUX-5K-60z" secondAttribute="top" constant="5" id="GIm-Mh-QS6"/>
@@ -191,6 +196,7 @@
                                                                     <constraint firstItem="9A0-c3-VI3" firstAttribute="top" secondItem="FUX-5K-60z" secondAttribute="top" constant="5" id="smP-lq-eS5"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <outlet property="optionName" destination="9A0-c3-VI3" id="h3B-x9-62Z"/>
                                                                 <outlet property="radioBtn" destination="hXy-xA-z5b" id="NQo-u2-Zad"/>
@@ -210,6 +216,8 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="cAL-FF-FuD" firstAttribute="top" secondItem="9Sa-Ru-W1U" secondAttribute="bottom" id="6N0-g9-IvJ"/>
                                                 <constraint firstItem="9Sa-Ru-W1U" firstAttribute="leading" secondItem="3ui-zM-0L5" secondAttribute="leading" constant="10" id="AMj-Eb-rd7"/>
@@ -222,6 +230,7 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="370" height="188"/>
                                         <connections>
                                             <outlet property="collection" destination="cAL-FF-FuD" id="FyK-5t-vNo"/>
@@ -338,6 +347,8 @@
                                             </constraints>
                                         </view>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="Tqc-mF-krw" firstAttribute="centerY" secondItem="a8G-7L-MU8" secondAttribute="centerY" id="6HF-ge-qWs"/>
                                         <constraint firstItem="vFb-dL-U0t" firstAttribute="trailing" secondItem="a8G-7L-MU8" secondAttribute="trailingMargin" id="D9R-hb-J03"/>
@@ -370,7 +381,8 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bKk-a7-FHa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bKk-a7-FHa" firstAttribute="bottom" secondItem="DPU-17-6gL" secondAttribute="bottom" id="4kC-br-WWC"/>
                             <constraint firstItem="Bwc-sr-hCg" firstAttribute="top" secondItem="Vv4-bF-IIC" secondAttribute="bottom" constant="7" id="5DY-ZN-uQp"/>
@@ -429,6 +441,8 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니에 물건이 담겼습니다 다른메뉴를 보시겠습니까?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVw-wL-t0G">
                                         <rect key="frame" x="30" y="54" width="274" height="76"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                         <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -462,7 +476,8 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Jhn-7X-HPs" firstAttribute="top" secondItem="RVw-wL-t0G" secondAttribute="bottom" id="1cE-dA-sIQ"/>
                                     <constraint firstItem="vbu-yN-Zxe" firstAttribute="height" secondItem="fIi-Ei-A86" secondAttribute="height" multiplier="0.3" id="5FL-AK-53n"/>
@@ -573,12 +588,15 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 다른 가게의 메뉴가 존재합니다 기존메뉴를 비우고 선택상품을 담으시겠습니까" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkE-bT-Tzq">
                                         <rect key="frame" x="50" y="54" width="234" height="66"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                         <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="bF4-zi-F1R" firstAttribute="width" secondItem="dOf-9B-Eey" secondAttribute="width" multiplier="0.5" constant="-15" id="5fQ-cm-RUY"/>
                                     <constraint firstAttribute="trailing" secondItem="u2a-fO-VPi" secondAttribute="trailing" constant="10" id="ApY-tk-Bal"/>
@@ -632,8 +650,5 @@
         <image name="minus" width="16" height="16"/>
         <image name="plus" width="16" height="16"/>
         <image name="radio_off" width="16" height="16"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
