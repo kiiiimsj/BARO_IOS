@@ -54,10 +54,10 @@ class MyPageController : UIViewController {
         leftBar.frame = CGRect(x: flexWidth, y: 10, width: 1, height: 40)
         rightBar.frame = CGRect(x: flexWidth * 2, y: 10, width: 1, height: 40)
         
-        logoutBtn.layer.shadowColor = UIColor.gray.cgColor
+//        logoutBtn.layer.shadowColor = UIColor.gray.cgColor
         logoutBtn.layer.backgroundColor = UIColor.white.cgColor
-        logoutBtn.layer.shadowOpacity = 1
-        logoutBtn.layer.shadowOffset = CGSize(width: 0, height: 3)
+//        logoutBtn.layer.shadowOpacity = 1
+//        logoutBtn.layer.shadowOffset = CGSize(width: 0, height: 3)
     
         let yPosition = ((buttonList?.contentSize.height)! - (buttonList?.frame.height)!)
         logoutBtn.transform = CGAffineTransform(translationX: 0, y: yPosition)
@@ -186,7 +186,6 @@ extension MyPageController : UITableViewDelegate, UITableViewDataSource, ClickLo
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
     }
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return buttons.count
