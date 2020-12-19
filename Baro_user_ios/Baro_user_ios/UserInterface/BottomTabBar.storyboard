@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jWx-mQ-KDo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jWx-mQ-KDo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -167,7 +167,11 @@
                         <outlet property="BottomView" destination="3wx-tv-LBl" id="Zoc-sk-7wt"/>
                         <outlet property="ContentView" destination="9u2-xw-p3A" id="vdZ-H4-SHx"/>
                         <outlet property="ContentViewScrollView" destination="ftC-Gg-3Ff" id="PKL-MZ-oxE"/>
+                        <outlet property="FavoriteTabBar" destination="uE3-kj-KQ9" id="EZc-B4-6ux"/>
                         <outlet property="MainPageTabBar" destination="0Ag-Wa-qVW" id="Xy5-vR-SAI"/>
+                        <outlet property="MyPageTabBar" destination="bnZ-hT-dIo" id="pyX-eW-XEO"/>
+                        <outlet property="OrderHistoryTabBar" destination="gBV-gP-Uck" id="foy-X8-aQO"/>
+                        <outlet property="OrderStatusTabBar" destination="m4F-m9-JX4" id="pNo-jx-WX5"/>
                         <outlet property="TopView" destination="J2M-FH-h0m" id="D96-Cj-2oE"/>
                         <outlet property="basketButton" destination="j3l-Wd-Sa4" id="SaB-NI-Yf8"/>
                         <outlet property="bottomTabBar" destination="hf3-Zm-CZA" id="EKR-xl-dRk"/>

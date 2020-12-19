@@ -7,6 +7,7 @@
 
 import UIKit
 import NMapsMap
+import FirebaseAuth
 
 protocol TopViewElementDelegate : AnyObject {
     func backBtnDelegate()
@@ -29,7 +30,12 @@ class BottomTabBarController: UIViewController {
     @IBOutlet weak var bottomTabBar: UITabBar!
     //바텀뷰 텝 아이템
     @IBOutlet weak var MainPageTabBar: UITabBarItem!
+    @IBOutlet weak var FavoriteTabBar: UITabBarItem!
+    @IBOutlet weak var MyPageTabBar: UITabBarItem!
+    @IBOutlet weak var OrderHistoryTabBar: UITabBarItem!
+    @IBOutlet weak var OrderStatusTabBar: UITabBarItem!
     //분기문에 사용할 실제 컨트롤러 아이덴티피어
+    
     let mainPageControllerIdentifier = "MainPageController"
     let storeListControllerIdentifier = "StoreListPageController"
     let orderStatusControllerIdentifier = "OrderStatusController"
@@ -42,6 +48,14 @@ class BottomTabBarController: UIViewController {
     let couponPageControllerIdentifier = "CouponPageController"
     let basketControllerIdentifier = "BasketController"
     let mapControllerIdentifier = "MapController"
+    let termOfUserControllerIdentifier = "TermOfUser"
+    let registerPageControllerIdentifier = "RegisterPageController"
+    let phoneSendForRegisterControllerIdentifier = "PhoneSendForRegister"
+    let phoneCheckForRegisterControllerIdentifier = "PhoneCheckForRegister"
+    let findPassWordControllerIdentifier = "FindPassWord"
+    let phoneCheckForChangePWControllerIdentifier = "PhoneCheckForChangePW"
+    let setNewPwControllerIdentifier = "SetNewPW"
+    let findPWCompleteControllerIdentifier = "FindPWComplete"
     //접근가능 스토리보드
     let mainPageStoryBoard = UIStoryboard(name: "MainPage", bundle: nil)
     let storeListStoryBoard = UIStoryboard(name: "StoreListPage", bundle: nil)
@@ -49,11 +63,13 @@ class BottomTabBarController: UIViewController {
     let orderHistoryStoryBoard = UIStoryboard(name: "OrderHistory", bundle: nil)
     let orderDetailStoryBoard = UIStoryboard(name: "OrderDetails", bundle: nil)
     let myPageStoryBoard = UIStoryboard(name: "MyPage", bundle: nil)
+    let termOfUserStoryBoard = UIStoryboard(name: "TermOfUserPage", bundle: nil)
     let aboutStoreStoryBoard = UIStoryboard(name: "AboutStore", bundle: nil)
     let alertStoryBoard = UIStoryboard(name: "Alert", bundle: nil)
     let couponPageStoryBoard = UIStoryboard(name: "Coupon", bundle: nil)
     let basketStoryBoard = UIStoryboard(name: "Basket", bundle: nil)
-    let mapPageStoreBoard = UIStoryboard(name: "Map", bundle: nil)
+    let mapPageStoryBoard = UIStoryboard(name: "Map", bundle: nil)
+    let loginStoryBoard = UIStoryboard(name: "LoginPage", bundle: nil)
     //화면 이동 할때 필요한 요소.
     var controllerStoryboard = UIStoryboard()
     var controllerIdentifier : String = ""
@@ -67,6 +83,9 @@ class BottomTabBarController: UIViewController {
     var basketOrders = [Order]()
     //aboutstore 관련 요소
     var currentStoreName : String = ""
+    //listStore 관련 요소
+    var beforeKind : String = "0"
+    
     //내부 뷰 사이즈 관련 요소
     var saveTopViewSize = CGSize()
     var saveContentViewSize = CGSize()
@@ -99,11 +118,12 @@ class BottomTabBarController: UIViewController {
                 bottomTabBar.delegate = self
                 return
             }
-            if(controllerIdentifier == "BasketController") {
-                basketButton.isHidden = true
-                return
-            }
-            if(controllerIdentifier == "OrderDetailsController") {
+            //MainPageController, StoreListPageController, OrderStatusPageController, OrderHistoryPageController
+            //MyPageContrllor, AboutStoreController,
+            if(controllerIdentifier == "MainPageController" || controllerIdentifier == "StoreListPageController"
+            || controllerIdentifier == "OrderStatusController" || controllerIdentifier == "OrderHistoryController" || controllerIdentifier == "MyPageContrllor" || controllerIdentifier == "AboutStore") {
+                basketButton.isHidden = false
+            } else {
                 basketButton.isHidden = true
                 return
             }
@@ -164,11 +184,17 @@ class BottomTabBarController: UIViewController {
         if (ContentView.subviews.count != 0) {
             for view in ContentView.subviews {
                 if let viewTitle = view.accessibilityIdentifier {
-                    if(viewTitle == "StoreListPageController") {
-                        view.removeFromSuperview()
-                        continue
-                    }
                     if(viewTitle == controller.restorationIdentifier) {
+                        //storeListPage 오류 분기문
+                        if (viewTitle == "StoreListPageController" && sender as! String != beforeKind) {
+                            //mainpage -> storeList 에서 favoriteStore로 이동 시
+                            //둘 다 같은 StoreListPageController 이므로 favoriteStore 페이지는 로드 되지 않는다.
+                            //beforeKind로 기존의 페이지가 StoreList인지 favoriteStoreList 인지 확인 한다.
+                            
+                            //만약 같은 다른 페이지라면 이전의 storeList를 지우고 favoriteStoreList로 이동
+                            view.removeFromSuperview()
+                            continue
+                        }
                         return
                     }
                 }
@@ -180,7 +206,6 @@ class BottomTabBarController: UIViewController {
         }
         switch(getController) {
             case mainPageControllerIdentifier:
-                bottomTabBar.selectedItem = self.MainPageTabBar
                 self.deleteTopView()
                 self.changeContentView(controller: controller as! MainPageController, sender: nil)
             case storeListControllerIdentifier:
@@ -216,7 +241,19 @@ class BottomTabBarController: UIViewController {
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! MapController, sender: sender)
                 swipeRecognizer()
-            default :
+            case phoneSendForRegisterControllerIdentifier:
+                self.deleteBottomTabBar()
+                self.changeContentView(controller: controller as! PhoneSendForRegister, sender: nil)
+                swipeRecognizer()
+            case phoneCheckForRegisterControllerIdentifier:
+                self.deleteBottomTabBar()
+                self.changeContentView(controller: controller as! PhoneCheckForRegister, sender: sender)
+                swipeRecognizer()
+            case registerPageControllerIdentifier:
+                self.deleteBottomTabBar()
+                self.changeContentView(controller: controller as! RegisterPageController, sender: sender)
+                swipeRecognizer()
+        default :
                 print("error_delegate")
         }
     }
@@ -228,6 +265,7 @@ class BottomTabBarController: UIViewController {
             getController = self.senderHandler(controller: controller, sender: senderNotNil)
         }
         topBarHandler(controller: getController)
+        bottomTabBarItemActive(controller: getController)
         self.addChild(getController)
         getController.view.frame.size = ContentView.frame.size
         //같은 컨트롤러에 다시 접근하는 여부를 알기 위해 restorationidentifier를 넣어주는 구문
@@ -302,6 +340,8 @@ class BottomTabBarController: UIViewController {
                 }
                 VCsender.typeCode = (sender as? String)!
                 if(VCsender.typeCode == "2") {
+                    //즐겨찾기로 넘어갈때 저장.
+                    self.beforeKind = "2"
                     VCsender.kind = 2
                 }
                 else {
@@ -326,11 +366,40 @@ class BottomTabBarController: UIViewController {
                 let VCsender = controller as! MapController
                 VCsender.location = sender as? CLLocation
                 finallController = VCsender
+            case phoneCheckForRegisterControllerIdentifier:
+                let VCsender = controller as! PhoneCheckForRegister
+                let verificationID = sender as! String
+                VCsender.verificationID = verificationID
+                finallController = VCsender
             default:
                 print("error")
             }
         }
         return finallController
+    }
+    
+    //바텀 탭바 아이템 설정
+    func bottomTabBarItemActive(controller : UIViewController) {
+        if let title = controller.title {
+            switch (title) {
+            case mainPageControllerIdentifier:
+                bottomTabBar.selectedItem = self.MainPageTabBar
+            case storeListControllerIdentifier:
+                let controllerData = controller as! StoreListPageController
+                if(controllerData.typeCode == "2") {
+                    self.bottomTabBar.selectedItem = self.FavoriteTabBar
+                }
+            case orderStatusControllerIdentifier:
+                self.bottomTabBar.selectedItem = self.OrderStatusTabBar
+            case orderHistoryControllerIdentifier:
+                self.bottomTabBar.selectedItem = self.OrderHistoryTabBar
+            case myPageControllerIdentifier:
+                self.bottomTabBar.selectedItem = self.MyPageTabBar
+            default:
+                print("default")
+            }
+        }
+        
     }
     //탑바 타이틀 설정
     func topBarHandler(controller : UIViewController) {
@@ -342,6 +411,7 @@ class BottomTabBarController: UIViewController {
             switch(title) {
                 case mainPageControllerIdentifier:
                     topBarViewControllerTitle.text = "main"
+                    
                 case storeListControllerIdentifier:
                     let controllerData = controller as! StoreListPageController
                     if(controllerData.typeCode == "2") {
@@ -370,33 +440,63 @@ class BottomTabBarController: UIViewController {
                     topBarViewControllerTitle.isHidden = false
                     topBarBackBtn.isHidden = false
                     topBarViewControllerTitle.text = "\(currentStoreName)"
+                    
                 case orderStatusControllerIdentifier:
                     topBarViewControllerTitle.text = "주문 현황"
+                    
                 case orderHistoryControllerIdentifier:
                     topBarViewControllerTitle.text = "주문 내역"
+                    
                 case myPageControllerIdentifier:
                     topBarViewControllerTitle.text = "마이페이지"
+                    
                 case alertControllerIdentifier:
                     topBarViewControllerTitle.text = "알 림"
                     topBarBackBtn.isHidden = false
+                    
                 case alertContentControllerIdentifier:
                     topBarViewControllerTitle.isHidden = true
                     topBarBackBtn.isHidden = false
+                    
                 case aboutStoreControllerIdentifier:
                     topBarFavoriteBtn.isHidden = false
                     topBarBackBtn.isHidden = false
                     topBarViewControllerTitle.text = "\(currentStoreName)"
                     let controllerData = controller as! AboutStore
                     controllerData.bottomTabBarInfo = self
+                    
                 case couponPageControllerIdentifier:
                     topBarViewControllerTitle.text = "내 쿠폰 리스트"
                     topBarBackBtn.isHidden = false
+                    
                 case basketControllerIdentifier:
                     topBarViewControllerTitle.text = "장바구니"
                     topBarBackBtn.isHidden = false
+                    
                 case mapControllerIdentifier:
                     topBarViewControllerTitle.text = "내 주변 가게"
                     topBarBackBtn.isHidden = false
+                    
+                case phoneSendForRegisterControllerIdentifier:
+                    self.TopView.backgroundColor = UIColor.baro_main_color
+                    topBarViewControllerTitle.isHidden = true
+                    topBarBackBtn.isHidden = false
+                    view.backgroundColor = UIColor.baro_main_color
+                    topBarBackBtn.backgroundColor = UIColor.baro_main_color
+                    
+                case phoneCheckForRegisterControllerIdentifier:
+                    view.backgroundColor = UIColor.baro_main_color
+                    self.TopView.backgroundColor = UIColor.baro_main_color
+                    topBarViewControllerTitle.isHidden = true
+                    topBarBackBtn.isHidden = false
+                    topBarBackBtn.backgroundColor = UIColor.baro_main_color
+                case registerPageControllerIdentifier:
+                    view.backgroundColor = UIColor.baro_main_color
+                    self.TopView.backgroundColor = UIColor.baro_main_color
+                    topBarViewControllerTitle.isHidden = true
+                    topBarBackBtn.isHidden = false
+                    topBarBackBtn.backgroundColor = UIColor.baro_main_color
+                    
                 default :
                     print("error_delegate")
             }

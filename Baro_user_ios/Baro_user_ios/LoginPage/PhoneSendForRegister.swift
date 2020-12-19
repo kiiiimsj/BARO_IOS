@@ -11,23 +11,34 @@ class PhoneSendForRegister : UIViewController {
     let nationNumber = "+82"
     @IBOutlet weak var inputPhone: UITextField!
     @IBOutlet weak var sendPhoneToFireBaseBtn: UIButton!
+    let bottomTabBarInfo = BottomTabBarController()
     var ToasstMessage = ToastMessage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sendPhoneToFireBaseBtn.layer.cornerRadius = 15
         Auth.auth().settings!.isAppVerificationDisabledForTesting = true
+        
         inputPhone.borderStyle = .none
         swipeRecognizer()
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
+    func moveWithBottomTabBarController(sender : Any) {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewWithTopView = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        ViewWithTopView.controllerIdentifier = bottomTabBarInfo.phoneCheckForRegisterControllerIdentifier
+        ViewWithTopView.controllerStoryboard = bottomTabBarInfo.loginStoryBoard
+        ViewWithTopView.controllerSender = sender
+        
+        ViewWithTopView.moveFromOutSide = true
+        self.present(ViewWithTopView, animated: true)
+    }
     func swipeRecognizer() {
-            let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
-            swipeRight.direction = UISwipeGestureRecognizer.Direction.right
-            self.view.addGestureRecognizer(swipeRight)
-            
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(swipeRight)
     }
         
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
@@ -52,7 +63,7 @@ class PhoneSendForRegister : UIViewController {
                   return
                 }
                 self.ToasstMessage.showToast(message: "해당 핸드폰에 인증문자를 발송했습니다.", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
-                self.performSegue(withIdentifier: "PhoneCheckForRegister", sender: verificationID)
+                self.moveWithBottomTabBarController(sender: verificationID)
             }
         }
     }
