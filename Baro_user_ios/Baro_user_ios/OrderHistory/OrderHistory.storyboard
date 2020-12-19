@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ghr-He-Bh7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ghr-He-Bh7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -34,7 +34,8 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4qa-UT-Jc4">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="giX-tu-ddE">
                                     <size key="itemSize" width="414" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -118,6 +119,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="qUE-AZ-gNW" firstAttribute="leading" secondItem="NEl-xy-mhZ" secondAttribute="leading" constant="40" id="1NS-U9-PF3"/>
                                                 <constraint firstAttribute="trailing" secondItem="mzH-Cl-rMj" secondAttribute="trailing" constant="21" id="6g8-hh-Agp"/>
@@ -138,6 +140,7 @@
                                                 <constraint firstItem="ypT-Af-Wqe" firstAttribute="leading" secondItem="NEl-xy-mhZ" secondAttribute="leading" id="znN-WY-D9W"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="414" height="205"/>
                                         <connections>
                                             <outlet property="goToStoreBtn" destination="qUE-AZ-gNW" id="7x4-3h-tmr"/>
@@ -162,7 +165,9 @@
                                                     <color key="color" red="0.47109787269999998" green="0.211157332" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </activityIndicatorView>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="loading" destination="IpW-Co-7Yl" id="yUq-qI-OK4"/>
                                         </connections>
@@ -171,7 +176,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Byt-Mc-YV3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4qa-UT-Jc4" firstAttribute="trailing" secondItem="Byt-Mc-YV3" secondAttribute="trailing" id="Aks-Ur-4AA"/>
                             <constraint firstItem="4qa-UT-Jc4" firstAttribute="leading" secondItem="Byt-Mc-YV3" secondAttribute="leading" id="Ju6-Im-smy"/>
@@ -214,7 +219,7 @@
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="scZ-Zw-dqc">
                                         <rect key="frame" x="0.0" y="56" width="334" height="419"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="D0l-2r-9lA">
                                             <size key="itemSize" width="334" height="226"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -251,9 +256,9 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZgK-Jw-yuI">
+                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZgK-Jw-yuI">
                                                             <rect key="frame" x="8" y="34" width="318" height="152.5"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="vCV-n8-sCR">
                                                                 <size key="itemSize" width="317" height="44"/>
                                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -286,6 +291,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstItem="O36-sg-x4D" firstAttribute="leading" secondItem="nNt-s4-QY9" secondAttribute="leading" constant="15" id="4ep-eF-eg3"/>
                                                                             <constraint firstAttribute="trailing" secondItem="B3g-Ym-pmd" secondAttribute="trailing" constant="10" id="9Rq-TM-zcO"/>
@@ -293,6 +299,7 @@
                                                                             <constraint firstItem="O36-sg-x4D" firstAttribute="centerY" secondItem="nNt-s4-QY9" secondAttribute="centerY" id="Tje-ce-qFL"/>
                                                                         </constraints>
                                                                     </collectionViewCellContentView>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <size key="customSize" width="317" height="44"/>
                                                                     <connections>
                                                                         <outlet property="extraName" destination="O36-sg-x4D" id="weu-U7-5d2"/>
@@ -353,6 +360,7 @@
                                                             </constraints>
                                                         </view>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="8pG-M7-LhN" secondAttribute="trailing" constant="16" id="0c9-FL-rrg"/>
                                                         <constraint firstItem="GPR-3B-SMW" firstAttribute="leading" secondItem="WuO-KF-Qc9" secondAttribute="leading" constant="16" id="49f-zM-0pq"/>
@@ -379,6 +387,7 @@
                                                         <constraint firstItem="uFW-ZR-2AX" firstAttribute="top" secondItem="WuO-KF-Qc9" secondAttribute="top" id="xnI-hr-56z"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <size key="customSize" width="334" height="226"/>
                                                 <connections>
                                                     <outlet property="collectionView" destination="ZgK-Jw-yuI" id="Id5-G0-7qj"/>
@@ -441,7 +450,8 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="wa3-Ov-AFg" firstAttribute="top" secondItem="scZ-Zw-dqc" secondAttribute="bottom" id="2pV-Vh-8VO"/>
                                     <constraint firstItem="u1M-Be-Ktv" firstAttribute="leading" secondItem="LF0-JN-lnY" secondAttribute="leading" constant="8" id="Gee-lI-cgs"/>
@@ -491,9 +501,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
