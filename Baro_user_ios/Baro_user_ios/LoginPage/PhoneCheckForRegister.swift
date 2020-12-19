@@ -16,9 +16,13 @@ class PhoneCheckForRegister : UIViewController {
     @IBOutlet weak var inputPin6: UITextField!
     @IBOutlet weak var inputPinView: UIView!
     @IBOutlet weak var checkPhoneAuth: UIButton!
+    var UITextFieldfield : UITextField!
     var authString : String = ""
     var verificationID : String = ""
     var phoneNumber : String = ""
+    var getSmsCode : String = ""
+    var credential : AuthCredential?
+    let bottomTabBarInfo = BottomTabBarController()
     var toastMessage = ToastMessage()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +35,21 @@ class PhoneCheckForRegister : UIViewController {
         checkPhoneAuth.layer.cornerRadius = 15
         swipeRecognizer()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        //checkCredential()
+        UITextFieldfield.textContentType = .oneTimeCode
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
+    }
+    func moveRegisterPage() {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewWithTopView = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
+        ViewWithTopView.controllerIdentifier = bottomTabBarInfo.registerPageControllerIdentifier
+        ViewWithTopView.controllerStoryboard = bottomTabBarInfo.loginStoryBoard
+        ViewWithTopView.moveFromOutSide = true
+        self.present(ViewWithTopView, animated: true)
     }
     func swipeRecognizer() {
             let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
@@ -83,9 +100,9 @@ class PhoneCheckForRegister : UIViewController {
     }
     @IBAction func sendAuthNumbers() {
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.verificationID, verificationCode: self.authString)
-        Auth.auth().signInAndRetrieveData(with: credential) { authData, error in
+        Auth.auth().signIn(with: credential) { authData, error in
             if ((error) != nil) {
-                self.toastMessage.showToast(message: "\(error)", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
+                self.toastMessage.showToast(message: "\(String(describing: error))", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
             }
             else {
                 self.performSegue(withIdentifier: "RegisterPageController", sender: self.phoneNumber)

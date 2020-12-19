@@ -238,7 +238,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
         vc.controllerIdentifier = bottomTabBarInfo.mapControllerIdentifier
-        vc.controllerStoryboard = bottomTabBarInfo.mapPageStoreBoard
+        vc.controllerStoryboard = bottomTabBarInfo.mapPageStoryBoard
         vc.controllerSender = whereAmI!
         vc.moveFromOutSide = true
         vc.isModalInPresentation = true

@@ -75,18 +75,17 @@ class RegisterPageController: UIViewController {
             let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
             swipeRight.direction = UISwipeGestureRecognizer.Direction.right
             self.view.addGestureRecognizer(swipeRight)
-            
-        }
-        
+    }
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             print("gesture")
             switch swipeGesture.direction{
             case UISwipeGestureRecognizer.Direction.right:
-                let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
-                let vc = storyboard.instantiateViewController(identifier: "PhoneSendForRegister")
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: false)
+//                let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
+//                let vc = storyboard.instantiateViewController(identifier: "PhoneSendForRegister")
+//                vc.modalPresentationStyle = .fullScreen
+//                self.present(vc, animated: false)
+                self.dismiss(animated: true)
             default: break
             }
         }
