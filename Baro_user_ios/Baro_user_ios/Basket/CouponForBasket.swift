@@ -21,6 +21,7 @@ class CouponForBasket : UIViewController {
     public var UseCouponId : Int = -1
     public var couponDiscountValue : Int = 0
     public var realPriceValue : Int = 0
+    public var restoreFrameValue : CGFloat = 0.0
     let userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
    
     @IBOutlet weak var couponCollectionView: UICollectionView!
@@ -30,11 +31,11 @@ class CouponForBasket : UIViewController {
     public var totalPrice : Int = 0
     
     var coupons = [Coupon]()
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        self.view.endEditing(true)
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        customerRequest.delegate = self
+        restoreFrameValue = self.view.frame.origin.y
         getCoupon()
         setFirstLabelText()
         DialogTitle.layer.cornerRadius = 5
@@ -164,6 +165,48 @@ extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollecti
         return CGSize(width: couponCollectionView.frame.width, height: 100)
     }
 }
+extension CouponForBasket : UITextFieldDelegate {
+    @objc func keyboardWillAppear(noti: NSNotification) {
+    if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        self.view.frame.origin.y -= keyboardHeight
+    }
+    print("keyboard Will appear Execute")
+}
+
+@objc func keyboardWillDisappear(noti: NSNotification) {
+    if self.view.frame.origin.y != restoreFrameValue {
+            if let keyboardFrame: NSValue =                 noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                self.view.frame.origin.y += keyboardHeight
+            }
+            print("keyboard Will Disappear Execute")
+        }
+    }
+
+//self.view.frame.origin.y = restoreFrameValue
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.frame.origin.y = restoreFrameValue
+        print("touches Began Execute")
+        self.view.endEditing(true)
+    }
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    print("textFieldShouldReturn Execute")
+    textField.resignFirstResponder()
+    return true
+}
+
+func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    print("textFieldShouldEndEditing Execute")
+    self.view.frame.origin.y = self.restoreFrameValue
+    return true
+}
+}
+    
 struct Coupon {
     var coupon_title = ""
     var coupon_condition = 0
