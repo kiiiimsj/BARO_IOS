@@ -99,9 +99,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qx-Si-y09">
-                                <rect key="frame" x="16" y="44" width="30" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qx-Si-y09">
+                                <rect key="frame" x="17" y="61" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="KPl-Qp-an3"/>
+                                    <constraint firstAttribute="height" constant="50" id="rcw-uD-KRQ"/>
+                                </constraints>
                                 <connections>
                                     <action selector="backbutton" destination="ZfL-xJ-JU8" eventType="touchUpInside" id="Wyi-dw-fHp"/>
                                 </connections>
@@ -120,8 +123,10 @@
                             <constraint firstItem="PCZ-Me-p43" firstAttribute="top" secondItem="X8u-Xw-6zA" secondAttribute="bottom" constant="54" id="A8v-HO-JRV"/>
                             <constraint firstItem="PCZ-Me-p43" firstAttribute="bottom" secondItem="izx-7H-1ug" secondAttribute="bottom" id="OBE-Ab-X8X"/>
                             <constraint firstItem="X8u-Xw-6zA" firstAttribute="top" secondItem="izx-7H-1ug" secondAttribute="top" constant="36" id="Ufu-5Z-gRf"/>
+                            <constraint firstItem="5qx-Si-y09" firstAttribute="leading" secondItem="izx-7H-1ug" secondAttribute="leading" constant="17" id="ZWy-Xl-tIG"/>
                             <constraint firstItem="PCZ-Me-p43" firstAttribute="trailing" secondItem="izx-7H-1ug" secondAttribute="trailing" id="jpw-92-ALt"/>
                             <constraint firstItem="PCZ-Me-p43" firstAttribute="top" secondItem="dbr-hR-WiS" secondAttribute="bottom" constant="77" id="nqL-ca-XHW"/>
+                            <constraint firstItem="5qx-Si-y09" firstAttribute="top" secondItem="izx-7H-1ug" secondAttribute="top" constant="17" id="olW-oL-hyZ"/>
                             <constraint firstItem="PCZ-Me-p43" firstAttribute="leading" secondItem="izx-7H-1ug" secondAttribute="leading" id="qou-Mp-QDq"/>
                             <constraint firstItem="X8u-Xw-6zA" firstAttribute="centerX" secondItem="lUi-Dq-0GO" secondAttribute="centerX" id="rY0-UQ-Zwd"/>
                         </constraints>

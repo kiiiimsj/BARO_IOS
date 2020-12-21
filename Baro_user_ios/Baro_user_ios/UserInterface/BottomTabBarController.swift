@@ -48,14 +48,6 @@ class BottomTabBarController: UIViewController {
     let couponPageControllerIdentifier = "CouponPageController"
     let basketControllerIdentifier = "BasketController"
     let mapControllerIdentifier = "MapController"
-    let termOfUserControllerIdentifier = "TermOfUser"
-    let registerPageControllerIdentifier = "RegisterPageController"
-    let phoneSendForRegisterControllerIdentifier = "PhoneSendForRegister"
-    let phoneCheckForRegisterControllerIdentifier = "PhoneCheckForRegister"
-    let findPassWordControllerIdentifier = "FindPassWord"
-    let phoneCheckForChangePWControllerIdentifier = "PhoneCheckForChangePW"
-    let setNewPwControllerIdentifier = "SetNewPW"
-    let findPWCompleteControllerIdentifier = "FindPWComplete"
     //접근가능 스토리보드
     let mainPageStoryBoard = UIStoryboard(name: "MainPage", bundle: nil)
     let storeListStoryBoard = UIStoryboard(name: "StoreListPage", bundle: nil)
@@ -69,7 +61,6 @@ class BottomTabBarController: UIViewController {
     let couponPageStoryBoard = UIStoryboard(name: "Coupon", bundle: nil)
     let basketStoryBoard = UIStoryboard(name: "Basket", bundle: nil)
     let mapPageStoryBoard = UIStoryboard(name: "Map", bundle: nil)
-    let loginStoryBoard = UIStoryboard(name: "LoginPage", bundle: nil)
     //화면 이동 할때 필요한 요소.
     var controllerStoryboard = UIStoryboard()
     var controllerIdentifier : String = ""
@@ -241,18 +232,6 @@ class BottomTabBarController: UIViewController {
                 self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! MapController, sender: sender)
                 swipeRecognizer()
-            case phoneSendForRegisterControllerIdentifier:
-                self.deleteBottomTabBar()
-                self.changeContentView(controller: controller as! PhoneSendForRegister, sender: nil)
-                swipeRecognizer()
-            case phoneCheckForRegisterControllerIdentifier:
-                self.deleteBottomTabBar()
-                self.changeContentView(controller: controller as! PhoneCheckForRegister, sender: sender)
-                swipeRecognizer()
-            case registerPageControllerIdentifier:
-                self.deleteBottomTabBar()
-                self.changeContentView(controller: controller as! RegisterPageController, sender: sender)
-                swipeRecognizer()
         default :
                 print("error_delegate")
         }
@@ -366,11 +345,6 @@ class BottomTabBarController: UIViewController {
                 let VCsender = controller as! MapController
                 VCsender.location = sender as? CLLocation
                 finallController = VCsender
-            case phoneCheckForRegisterControllerIdentifier:
-                let VCsender = controller as! PhoneCheckForRegister
-                let verificationID = sender as! String
-                VCsender.verificationID = verificationID
-                finallController = VCsender
             default:
                 print("error")
             }
@@ -476,26 +450,6 @@ class BottomTabBarController: UIViewController {
                 case mapControllerIdentifier:
                     topBarViewControllerTitle.text = "내 주변 가게"
                     topBarBackBtn.isHidden = false
-                    
-                case phoneSendForRegisterControllerIdentifier:
-                    self.TopView.backgroundColor = UIColor.baro_main_color
-                    topBarViewControllerTitle.isHidden = true
-                    topBarBackBtn.isHidden = false
-                    view.backgroundColor = UIColor.baro_main_color
-                    topBarBackBtn.backgroundColor = UIColor.baro_main_color
-                    
-                case phoneCheckForRegisterControllerIdentifier:
-                    view.backgroundColor = UIColor.baro_main_color
-                    self.TopView.backgroundColor = UIColor.baro_main_color
-                    topBarViewControllerTitle.isHidden = true
-                    topBarBackBtn.isHidden = false
-                    topBarBackBtn.backgroundColor = UIColor.baro_main_color
-                case registerPageControllerIdentifier:
-                    view.backgroundColor = UIColor.baro_main_color
-                    self.TopView.backgroundColor = UIColor.baro_main_color
-                    topBarViewControllerTitle.isHidden = true
-                    topBarBackBtn.isHidden = false
-                    topBarBackBtn.backgroundColor = UIColor.baro_main_color
                     
                 default :
                     print("error_delegate")

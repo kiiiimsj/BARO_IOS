@@ -37,27 +37,27 @@ class PhoneCheckForRegister : UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        //checkCredential()
-        UITextFieldfield.textContentType = .oneTimeCode
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
-    }
-    func moveRegisterPage() {
-        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
-        let ViewWithTopView = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
-        ViewWithTopView.controllerIdentifier = bottomTabBarInfo.registerPageControllerIdentifier
-        ViewWithTopView.controllerStoryboard = bottomTabBarInfo.loginStoryBoard
-        ViewWithTopView.moveFromOutSide = true
-        self.present(ViewWithTopView, animated: true)
     }
     func swipeRecognizer() {
             let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
             swipeRight.direction = UISwipeGestureRecognizer.Direction.right
             self.view.addGestureRecognizer(swipeRight)
-            
+    }
+    func backBtnPressed(sender : String) {
+        let vc = self.storyboard?.instantiateViewController(identifier: "RegisterPageController") as! RegisterPageController
+        vc.phoneNumber = sender
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        guard let pvc = self.presentingViewController else {return}
+        self.dismiss(animated: false) {
+            pvc.present(vc, animated: true)
         }
         
+    }
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             print("gesture")
@@ -105,9 +105,12 @@ class PhoneCheckForRegister : UIViewController {
                 self.toastMessage.showToast(message: "\(String(describing: error))", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
             }
             else {
-                self.performSegue(withIdentifier: "RegisterPageController", sender: self.phoneNumber)
+                self.backBtnPressed(sender: self.phoneNumber)
             }
         }
+    }
+    @IBAction func backBtnPressed() {
+        self.dismiss(animated: true)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! RegisterPageController

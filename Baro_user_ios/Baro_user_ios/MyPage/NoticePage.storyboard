@@ -78,9 +78,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTW-jA-Bxu">
-                                <rect key="frame" x="20" y="81" width="38" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTW-jA-Bxu">
+                                <rect key="frame" x="17" y="61" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="7Xp-4a-eS5"/>
+                                    <constraint firstAttribute="height" constant="50" id="rkx-Eu-hQA"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="backbutton" destination="bmQ-fe-5ys" eventType="touchUpInside" id="iYu-yn-w1b"/>
@@ -89,6 +92,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oBg-oX-OWh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mTW-jA-Bxu" firstAttribute="top" secondItem="oBg-oX-OWh" secondAttribute="top" constant="17" id="6VY-lR-pML"/>
+                            <constraint firstItem="mTW-jA-Bxu" firstAttribute="leading" secondItem="oBg-oX-OWh" secondAttribute="leading" constant="17" id="qFr-Oh-r0M"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="mTW-jA-Bxu" id="LeW-eM-WMh"/>

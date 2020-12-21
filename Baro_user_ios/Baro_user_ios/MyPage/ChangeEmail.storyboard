@@ -105,7 +105,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woS-dJ-Aw7">
-                                <rect key="frame" x="33" y="63" width="30" height="34"/>
+                                <rect key="frame" x="17" y="61" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="o95-pk-TdI"/>
+                                    <constraint firstAttribute="height" constant="50" id="uZ8-7S-zup"/>
+                                </constraints>
                                 <connections>
                                     <action selector="backbutton" destination="adc-70-pEw" eventType="touchUpInside" id="IIV-2o-vrS"/>
                                 </connections>
@@ -114,9 +118,8 @@
                         <viewLayoutGuide key="safeArea" id="cJd-qL-dtN"/>
                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="woS-dJ-Aw7" firstAttribute="top" secondItem="MMa-ya-MZZ" secondAttribute="top" constant="63" id="Amo-tf-naQ"/>
+                            <constraint firstItem="woS-dJ-Aw7" firstAttribute="top" secondItem="cJd-qL-dtN" secondAttribute="top" constant="17" id="Amo-tf-naQ"/>
                             <constraint firstItem="6xm-Gg-L5H" firstAttribute="leading" secondItem="cJd-qL-dtN" secondAttribute="leading" id="Fyh-IR-of4"/>
-                            <constraint firstItem="6xm-Gg-L5H" firstAttribute="top" secondItem="woS-dJ-Aw7" secondAttribute="bottom" constant="61" id="JNH-G7-xce"/>
                             <constraint firstItem="6xm-Gg-L5H" firstAttribute="trailing" secondItem="cJd-qL-dtN" secondAttribute="trailing" id="LlV-7J-46H"/>
                             <constraint firstItem="075-H7-ymC" firstAttribute="centerX" secondItem="MMa-ya-MZZ" secondAttribute="centerX" id="QkF-d6-vMo"/>
                             <constraint firstItem="ToW-ID-Vqr" firstAttribute="top" secondItem="cJd-qL-dtN" secondAttribute="top" constant="34" id="ZW4-lE-aTJ"/>
@@ -125,7 +128,7 @@
                             <constraint firstItem="ToW-ID-Vqr" firstAttribute="centerX" secondItem="MMa-ya-MZZ" secondAttribute="centerX" id="duH-7j-tkv"/>
                             <constraint firstItem="075-H7-ymC" firstAttribute="top" secondItem="cJd-qL-dtN" secondAttribute="top" constant="19" id="fFl-5X-teu"/>
                             <constraint firstItem="6xm-Gg-L5H" firstAttribute="top" secondItem="075-H7-ymC" secondAttribute="bottom" constant="77" id="mdz-3i-2eJ"/>
-                            <constraint firstItem="woS-dJ-Aw7" firstAttribute="leading" secondItem="cJd-qL-dtN" secondAttribute="leading" constant="33" id="xDT-Vj-VIy"/>
+                            <constraint firstItem="woS-dJ-Aw7" firstAttribute="leading" secondItem="cJd-qL-dtN" secondAttribute="leading" constant="17" id="xDT-Vj-VIy"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="360" height="640"/>

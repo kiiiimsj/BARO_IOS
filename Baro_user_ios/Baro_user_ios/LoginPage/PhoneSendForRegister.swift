@@ -25,16 +25,6 @@ class PhoneSendForRegister : UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
-    func moveWithBottomTabBarController(sender : Any) {
-        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
-        let ViewWithTopView = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
-        ViewWithTopView.controllerIdentifier = bottomTabBarInfo.phoneCheckForRegisterControllerIdentifier
-        ViewWithTopView.controllerStoryboard = bottomTabBarInfo.loginStoryBoard
-        ViewWithTopView.controllerSender = sender
-        
-        ViewWithTopView.moveFromOutSide = true
-        self.present(ViewWithTopView, animated: true)
-    }
     func swipeRecognizer() {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.right
@@ -51,6 +41,9 @@ class PhoneSendForRegister : UIViewController {
             }
         }
     }
+    @IBAction func backBtnPressed() {
+        self.dismiss(animated: true)
+    }
     @IBAction func sendPhone() {
         if let authNumber = inputPhone.text {
             let range = authNumber.index(authNumber.startIndex, offsetBy: 0)..<authNumber.endIndex
@@ -63,7 +56,13 @@ class PhoneSendForRegister : UIViewController {
                   return
                 }
                 self.ToasstMessage.showToast(message: "해당 핸드폰에 인증문자를 발송했습니다.", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
-                self.moveWithBottomTabBarController(sender: verificationID)
+                let vc = self.storyboard?.instantiateViewController(identifier: "PhoneCheckForRegister") as! PhoneCheckForRegister
+                vc.verificationID = verificationID!
+                vc.modalPresentationStyle = .fullScreen
+                vc.modalTransitionStyle = .crossDissolve
+                self.present(vc, animated: true)
+                
+                //self.performSegue(withIdentifier: "PhoneCheckForRegister", sender: verificationID)
             }
         }
     }
