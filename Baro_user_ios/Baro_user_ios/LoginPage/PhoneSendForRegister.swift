@@ -56,7 +56,13 @@ class PhoneSendForRegister : UIViewController {
                   return
                 }
                 self.ToasstMessage.showToast(message: "해당 핸드폰에 인증문자를 발송했습니다.", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
-                self.performSegue(withIdentifier: "PhoneCheckForRegister", sender: verificationID)
+                let vc = self.storyboard?.instantiateViewController(identifier: "PhoneCheckForRegister") as! PhoneCheckForRegister
+                vc.verificationID = verificationID!
+                vc.modalPresentationStyle = .fullScreen
+                vc.modalTransitionStyle = .crossDissolve
+                self.present(vc, animated: true)
+                
+                //self.performSegue(withIdentifier: "PhoneCheckForRegister", sender: verificationID)
             }
         }
     }

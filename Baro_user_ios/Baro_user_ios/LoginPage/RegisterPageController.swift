@@ -87,12 +87,14 @@ class RegisterPageController: UIViewController {
 //                vc.modalPresentationStyle = .fullScreen
 //                self.present(vc, animated: false)
                 self.dismiss(animated: true)
+                navigationController?.popToRootViewController(animated: true)
             default: break
             }
         }
     }
     @IBAction func backBtnPressed(){
         self.dismiss(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     @objc func checkEmailInputField() {
         let email = emailInput.text
@@ -118,8 +120,7 @@ class RegisterPageController: UIViewController {
                 network.post(method: .post, param: param, url: self.urlMaker.signUpURL) {
                     json in
                     if json["result"].boolValue {
-                        self.performSegue(withIdentifier: "RegisterCompletePage", sender: "")
-                        
+                        self.performSegue(withIdentifier: "RegisterCompletePage", sender: nil)
                     }
                     else {
                         self.toastMessage.showToast(message: json["message"].stringValue, font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 13.0)!, targetController: self)
