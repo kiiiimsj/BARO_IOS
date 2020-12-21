@@ -86,21 +86,8 @@ class LoginPageController: UIViewController {
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
-    func moveRegisterPage() {
-        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
-        let ViewWithTopView = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
-        ViewWithTopView.controllerIdentifier = bottomTabBarInfo.phoneSendForRegisterControllerIdentifier
-        ViewWithTopView.controllerStoryboard = bottomTabBarInfo.loginStoryBoard
-        ViewWithTopView.moveFromOutSide = true
-        
-        ViewWithTopView.modalTransitionStyle = .crossDissolve
-        ViewWithTopView.modalPresentationStyle = .fullScreen
-        self.present(ViewWithTopView, animated: true)
-    }
-    
     @objc func handleRegister(_ sender : UIButton) {
-        moveRegisterPage()
-        //self.performSegue(withIdentifier: "PhoneSendForRegister", sender: nil)
+        self.performSegue(withIdentifier: "PhoneSendForRegister", sender: nil)
     }
     
     @objc private func handleLogin(_ sender: UIButton) {

@@ -22,6 +22,7 @@ class RegisterPageController: UIViewController {
     var toastMessage = ToastMessage()
     override func viewDidLoad() {
         super.viewDidLoad()
+        layoutLoad()
         nameInput.addTarget(self, action: #selector(checkNameInputField), for: .editingChanged)
         passInput.addTarget(self, action: #selector(checkPassInputField), for: .editingChanged)
         passCheckInput.addTarget(self, action: #selector(checkPassInputField), for: .editingChanged)
@@ -89,6 +90,9 @@ class RegisterPageController: UIViewController {
             default: break
             }
         }
+    }
+    @IBAction func backBtnPressed(){
+        self.dismiss(animated: true)
     }
     @objc func checkEmailInputField() {
         let email = emailInput.text
