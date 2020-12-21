@@ -355,9 +355,9 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KQV-rT-n4c">
+                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KQV-rT-n4c">
                                                             <rect key="frame" x="0.0" y="35" width="332" height="97.5"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8gJ-Zm-hZw">
                                                                 <size key="itemSize" width="314" height="26"/>
                                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -397,6 +397,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstItem="HYX-fs-ICe" firstAttribute="centerY" secondItem="k2V-Td-G9c" secondAttribute="centerY" id="NLM-PS-Aqt"/>
                                                                             <constraint firstItem="Off-7N-oO3" firstAttribute="centerY" secondItem="k2V-Td-G9c" secondAttribute="centerY" id="NPB-iy-uZ5"/>
@@ -408,6 +409,7 @@
                                                                             <constraint firstItem="HYX-fs-ICe" firstAttribute="leading" secondItem="2GJ-jH-b4r" secondAttribute="trailing" constant="2" id="sFJ-lK-VSS"/>
                                                                         </constraints>
                                                                     </collectionViewCellContentView>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <size key="customSize" width="314" height="26"/>
                                                                     <connections>
                                                                         <outlet property="extraCount" destination="Off-7N-oO3" id="maZ-qk-2qf"/>
@@ -465,6 +467,7 @@
                                                             </constraints>
                                                         </view>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="zeQ-wT-4Jm" secondAttribute="trailing" constant="16" id="1Ru-Re-TRv"/>
                                                         <constraint firstAttribute="trailing" secondItem="KQV-rT-n4c" secondAttribute="trailing" id="AhH-uB-1Jl"/>
@@ -487,6 +490,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="3E0-DC-ep4" secondAttribute="bottom" constant="8" id="p03-TZ-Y3k"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <size key="customSize" width="332" height="168"/>
                                                 <connections>
                                                     <outlet property="collectionView" destination="KQV-rT-n4c" id="ngF-kM-DwP"/>
@@ -640,9 +644,6 @@
     </scenes>
     <resources>
         <image name="radio_off" width="16" height="16"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
