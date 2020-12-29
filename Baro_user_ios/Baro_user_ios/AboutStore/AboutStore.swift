@@ -7,9 +7,6 @@
 import UIKit
 private let FirstBarIdentifier = "ASFirstBarCell"
 class AboutStore : UIViewController, TopViewElementDelegate {
-    func backBtnDelegate() {
-        print("delegate")
-    }
     func favoriteBtnDelegate(controller : UIViewController) {
         if (self.isFlag == 1) { // 즐겨찾기가 되어있는 경우에서 삭제
             let vc = self.storyboard?.instantiateViewController(identifier: "FavoriteDialog") as! FavoriteDialog
@@ -29,6 +26,9 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             self.present(vc, animated: true)
             
         }
+    }
+    func refreshBtnDelegate(controller : UIViewController) {
+        print("delegate")
     }
     @IBOutlet weak var FirstPage: UIView!
     @IBOutlet weak var menuButton: UIButton!
