@@ -8,11 +8,10 @@
 import UIKit
 import SwiftyJSON
 class BasketController : UIViewController, TopViewElementDelegate{
-    func backBtnDelegate() {
-        saveBasket()
-    }
-    
     func favoriteBtnDelegate(controller: UIViewController) {
+        print("delegate")
+    }
+    func refreshBtnDelegate(controller : UIViewController) {
         print("delegate")
     }
     

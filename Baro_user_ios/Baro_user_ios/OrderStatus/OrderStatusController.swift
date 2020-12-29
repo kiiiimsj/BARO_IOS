@@ -7,7 +7,14 @@
 
 import UIKit
 
-class OrderStatusController : UIViewController {
+class OrderStatusController : UIViewController, TopViewElementDelegate {
+    func favoriteBtnDelegate(controller : UIViewController) {
+        print("delegate")
+    }
+    func refreshBtnDelegate(controller : UIViewController) {
+        print("refresh button clicked")
+        self.viewWillAppear(true)
+    }
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -15,13 +22,17 @@ class OrderStatusController : UIViewController {
     var orderStatusList = [OrderStatusList]()
     let network = CallRequest()
     let networkURL = NetWorkURL()
+    var bottomTabBarInfo = BottomTabBarController()
     
     var phone = UserDefaults.standard.value(forKey: "user_phone") as! String
     var storePhone : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        bottomTabBarInfo.topViewDelegate = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         configureView()
         
         network.post(method: .get, url: networkURL.orderProgressList + "?phone=" + phone) {
@@ -43,14 +54,12 @@ class OrderStatusController : UIViewController {
             self.collectionView.reloadData() //해줘야함
         }
     }
-    
     func configureView() {
         view.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
+        
     }
-    
-    
 }
 
 extension OrderStatusController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

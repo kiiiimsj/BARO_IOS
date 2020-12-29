@@ -4,6 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +42,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ViewControllerTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HC0-eg-GES">
-                                        <rect key="frame" x="83.5" y="19.5" width="193.5" height="30"/>
+                                        <rect key="frame" x="96.5" y="23" width="167" height="23.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
@@ -59,15 +61,32 @@
                                             <action selector="clickFavoriteBtn" destination="jWx-mQ-KDo" eventType="touchUpInside" id="cbX-yk-FP7"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGd-2y-mMf">
+                                        <rect key="frame" x="293" y="9.5" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="BQ1-QA-UMs"/>
+                                            <constraint firstAttribute="height" constant="50" id="t2e-9A-aCR"/>
+                                        </constraints>
+                                        <color key="tintColor" name="mainColor"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="default"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickRefreshBtn" destination="jWx-mQ-KDo" eventType="touchUpInside" id="phc-f8-M2f"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="HC0-eg-GES" firstAttribute="centerX" secondItem="J2M-FH-h0m" secondAttribute="centerX" id="7Uo-tH-DsO"/>
                                     <constraint firstItem="R0I-hX-Wl8" firstAttribute="centerY" secondItem="J2M-FH-h0m" secondAttribute="centerY" id="Klz-mx-faF"/>
+                                    <constraint firstAttribute="trailing" secondItem="zGd-2y-mMf" secondAttribute="trailing" constant="17" id="aFz-XV-irq"/>
                                     <constraint firstItem="Aa6-fN-GjY" firstAttribute="centerY" secondItem="J2M-FH-h0m" secondAttribute="centerY" id="eFQ-yh-7hj"/>
                                     <constraint firstAttribute="trailing" secondItem="R0I-hX-Wl8" secondAttribute="trailing" constant="17" id="foJ-ne-z0P"/>
                                     <constraint firstItem="HC0-eg-GES" firstAttribute="centerY" secondItem="J2M-FH-h0m" secondAttribute="centerY" id="jlR-Bv-uNT"/>
                                     <constraint firstItem="Aa6-fN-GjY" firstAttribute="leading" secondItem="J2M-FH-h0m" secondAttribute="leading" constant="17" id="lJY-rh-ph2"/>
+                                    <constraint firstItem="zGd-2y-mMf" firstAttribute="centerY" secondItem="J2M-FH-h0m" secondAttribute="centerY" id="nB2-gD-VUj"/>
                                     <constraint firstAttribute="height" constant="69" id="wqx-hP-8yY"/>
                                 </constraints>
                             </view>
@@ -177,6 +196,7 @@
                         <outlet property="bottomTabBar" destination="hf3-Zm-CZA" id="EKR-xl-dRk"/>
                         <outlet property="topBarBackBtn" destination="Aa6-fN-GjY" id="ias-8Z-h5p"/>
                         <outlet property="topBarFavoriteBtn" destination="R0I-hX-Wl8" id="Fll-aA-2Z6"/>
+                        <outlet property="topBarRefreshBtn" destination="zGd-2y-mMf" id="asQ-tU-0ra"/>
                         <outlet property="topBarViewControllerTitle" destination="HC0-eg-GES" id="yH4-AX-Etu"/>
                     </connections>
                 </viewController>
@@ -186,6 +206,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="arrow_left" width="7.5" height="13"/>
         <image name="basket" width="39" height="39"/>
         <image name="bottom_favorite_off" width="18.5" height="17"/>
@@ -194,5 +215,8 @@
         <image name="bottom_order_history_off" width="15" height="16"/>
         <image name="bottom_order_status_off" width="16" height="16"/>
         <image name="favorite_empty" width="17.5" height="16"/>
+        <namedColor name="mainColor">
+            <color red="0.51372549019607838" green="0.20000000000000001" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

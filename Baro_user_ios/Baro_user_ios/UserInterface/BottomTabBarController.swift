@@ -10,14 +10,15 @@ import NMapsMap
 import FirebaseAuth
 
 protocol TopViewElementDelegate : AnyObject {
-    func backBtnDelegate()
     func favoriteBtnDelegate(controller : UIViewController)
+    func refreshBtnDelegate(controller : UIViewController)
 }
 class BottomTabBarController: UIViewController {
     //탑뷰 엘리먼트
     @IBOutlet weak var TopView: UIView!
     @IBOutlet weak var topBarBackBtn: UIButton!
     @IBOutlet weak var topBarViewControllerTitle: UILabel!
+    @IBOutlet weak var topBarRefreshBtn: UIButton!
     @IBOutlet weak var topBarFavoriteBtn: UIButton!
     //내부 컨트롤러 클릭 인식용.
     weak var topViewDelegate : TopViewElementDelegate?
@@ -81,7 +82,6 @@ class BottomTabBarController: UIViewController {
     var saveTopViewSize = CGSize()
     var saveContentViewSize = CGSize()
     var saveBottomViewSize = CGSize()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
@@ -89,6 +89,7 @@ class BottomTabBarController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        print("bottom view will appear")
         if let storeName = UserDefaults.standard.value(forKey: "currentStoreName") as? String {
             currentStoreName = storeName
         }
@@ -106,11 +107,8 @@ class BottomTabBarController: UIViewController {
         if(basket != nil) {
             if(basket as! String == "") {
                 basketButton.isHidden = true
-                bottomTabBar.delegate = self
                 return
             }
-            //MainPageController, StoreListPageController, OrderStatusPageController, OrderHistoryPageController
-            //MyPageContrllor, AboutStoreController,
             if(controllerIdentifier == "MainPageController" || controllerIdentifier == "StoreListPageController"
             || controllerIdentifier == "OrderStatusController" || controllerIdentifier == "OrderHistoryController" || controllerIdentifier == "MyPageContrllor" || controllerIdentifier == "AboutStore") {
                 basketButton.isHidden = false
@@ -122,7 +120,6 @@ class BottomTabBarController: UIViewController {
             
             if(basketOrders.count == 0) {
                 basketButton.isHidden = true
-                bottomTabBar.delegate = self
                 return
             }
             basketBadge()
@@ -192,13 +189,14 @@ class BottomTabBarController: UIViewController {
                 view.removeFromSuperview()
             }
         }
+        print("topView : \(TopView.isHidden)")
         if(TopView.isHidden) {
             restoreTopView()
         }
         switch(getController) {
             case mainPageControllerIdentifier:
-                self.deleteTopView()
                 self.changeContentView(controller: controller as! MainPageController, sender: nil)
+                self.deleteTopView()
             case storeListControllerIdentifier:
                 self.changeContentView(controller: controller as! StoreListPageController, sender: sender)
             case orderStatusControllerIdentifier:
@@ -206,31 +204,37 @@ class BottomTabBarController: UIViewController {
             case orderHistoryControllerIdentifier:
                 self.changeContentView(controller: controller as! OrderHistoryController, sender: nil)
             case alertControllerIdentifier:
-                self.deleteBottomTabBar()
                 self.changeContentView(controller: controller as! AlertController, sender: sender)
+                self.deleteBottomTabBar()
                 swipeRecognizer()
             case alertContentControllerIdentifier:
-                self.deleteBottomTabBar()
+                
                 self.changeContentView(controller: controller as! AlertContentController, sender: sender)
+                self.deleteBottomTabBar()
                 swipeRecognizer()
             case orderDetailControllerIdentifier:
-                self.deleteBottomTabBar()
+                
                 self.changeContentView(controller: controller as! OrderDetailsController, sender: sender)
+                self.deleteBottomTabBar()
             case myPageControllerIdentifier:
                 self.changeContentView(controller: controller as! MyPageController, sender: nil)
             case aboutStoreControllerIdentifier:
                 self.changeContentView(controller: controller as! AboutStore, sender: sender)
+                swipeRecognizer()
             case couponPageControllerIdentifier:
-                self.deleteBottomTabBar()
+                
                 self.changeContentView(controller: controller as! CouponPageController, sender: nil)
+                self.deleteBottomTabBar()
                 swipeRecognizer()
             case basketControllerIdentifier:
-                self.deleteBottomTabBar()
+                
                 self.changeContentView(controller: controller as! BasketController, sender: sender)
+                self.deleteBottomTabBar()
                 swipeRecognizer()
             case mapControllerIdentifier:
-                self.deleteBottomTabBar()
+                
                 self.changeContentView(controller: controller as! MapController, sender: sender)
+                self.deleteBottomTabBar()
                 swipeRecognizer()
         default :
                 print("error_delegate")
@@ -258,23 +262,17 @@ class BottomTabBarController: UIViewController {
     //탑뷰 추가
     func restoreTopView() {
         TopView.isHidden = false
-        TopView.frame.size = saveTopViewSize
-        ContentView.frame.size = saveContentViewSize
         ContentViewScrollView.frame.size = saveContentViewSize
-        TopView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        TopView.transform = CGAffineTransform(translationX: 0, y: 69.0)
-        ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 113.0)
+        ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
     }
     //탑뷰 지우기
     func deleteTopView() {
-        ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
+        TopView.isHidden = true
         //컨텐트뷰 사이즈를 다시 조정
         let topViewSize = TopView.frame.size
         let contentViewSize = ContentView.frame.size
-        ContentView.frame.size = CGSize(width: view.frame.width, height: (topViewSize.height + contentViewSize.height))
         ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (topViewSize.height + contentViewSize.height))
-        ContentViewScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        TopView.isHidden = true
+        ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: -69)
     }
     func deleteBottomTabBar() {
         ContentView.frame.size = CGSize(width: view.frame.width, height: (saveContentViewSize.height + saveBottomViewSize.height))
@@ -380,6 +378,7 @@ class BottomTabBarController: UIViewController {
         basketButton.isHidden = true
         topBarBackBtn.isHidden = true
         topBarFavoriteBtn.isHidden = true
+        topBarRefreshBtn.isHidden = true
         topBarViewControllerTitle.isHidden = false
         if let title = controller.title {
             switch(title) {
@@ -417,6 +416,9 @@ class BottomTabBarController: UIViewController {
                     
                 case orderStatusControllerIdentifier:
                     topBarViewControllerTitle.text = "주문 현황"
+                    topBarRefreshBtn.isHidden = false
+                    let controllerData = controller as! OrderStatusController
+                    controllerData.bottomTabBarInfo = self
                     
                 case orderHistoryControllerIdentifier:
                     topBarViewControllerTitle.text = "주문 내역"
@@ -473,31 +475,10 @@ class BottomTabBarController: UIViewController {
             transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
             view.window?.layer.add(transition, forKey: kCATransition)
             self.dismiss(animated: false, completion: nil)
-//            if (swipeGesture.direction == UISwipeGestureRecognizer.Direction.right) {
-//                switch swipeGesture.state{
-//                case .changed:
-//                    viewTranslation = swipeGesture.location(in: view)
-//                    print("location : ", viewTranslation.x)
-//                    UIView.animate(withDuration: 0.5, animations: {
-//                        self.view.transform = CGAffineTransform(translationX: viewTranslation.x, y: 0)
-//                    })
-//                case .ended:
-//                    if viewTranslation.x < 100 {
-//                        UIView.animate(withDuration: 0.5, animations: {
-//                            self.view.transform = .identity
-//                        })
-//                    }
-//                    else if viewTranslation.x < 120 {
-//                        self.dismiss(animated: true, completion: nil)
-//                    }
-//                default: break
-//                }
-//            }
         }
     }
     //뒤로가기 버튼
     @IBAction func clickTopBarBackBtn() {
-//        self.dismiss(animated: true, completion: nil)
         let transition: CATransition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
@@ -505,11 +486,17 @@ class BottomTabBarController: UIViewController {
         transition.subtype = CATransitionSubtype.fromLeft
         self.view.window!.layer.add(transition, forKey: nil)
         self.dismiss(animated: false, completion: nil)
-        topViewDelegate?.backBtnDelegate()
     }
     
     @IBAction func clickFavoriteBtn() {
         topViewDelegate?.favoriteBtnDelegate(controller: self)
+    }
+    @IBAction func clickRefreshBtn() {
+        topViewDelegate?.refreshBtnDelegate(controller: self)
+        UIView.animate(withDuration: 0.7) {
+            self.topBarRefreshBtn?.transform = (self.topBarRefreshBtn?.transform.rotated(by: CGFloat.pi))!
+            self.topBarRefreshBtn?.transform = (self.topBarRefreshBtn?.transform.rotated(by: CGFloat.pi))!
+        }
     }
     @IBAction func clickBasketBtn() {
         self.getOrders()
@@ -525,7 +512,6 @@ class BottomTabBarController: UIViewController {
 }
 extension BottomTabBarController : UITabBarDelegate {
     //탭바아이템 클릭에 따른 분기문
-    
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch(item.title) {
         case "홈":
