@@ -6,6 +6,7 @@
 //
 import UIKit
 import SwiftyJSON
+import KituraWebSocketClient
 
 class LoginPageController: UIViewController {
     @IBOutlet weak var logoImage : UIImageView!
@@ -22,13 +23,11 @@ class LoginPageController: UIViewController {
     @IBOutlet weak var findPasswordText: UIButton!
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
-    
     let SPREF = UserDefaults()
     var remeberInfo = UserDefaults.standard
-    var makeToastMessage = ToastMessage()
     
     let bottomTabBarInfo = BottomTabBarController()
-    
+    var sendMessage = SendMessage()
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
@@ -38,7 +37,6 @@ class LoginPageController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if(remeberInfo.bool(forKey: "checkedBox")) {
@@ -113,9 +111,14 @@ class LoginPageController: UIViewController {
                 self.toMainPageUseBottomBar()
             }
             else {
-                self.makeToastMessage.showToast(message: "입력정보가 틀립니다.", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
-                self.remeberInfo.removeObject(forKey: "checkedBox")
-                self.remeberInfo.removeObject(forKey: "rememberUser")
+                let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
+                dialog.message = "비밀번호 혹은 아이디가 틀립니다."
+                dialog.modalPresentationStyle = .overFullScreen
+                dialog.modalTransitionStyle = .crossDissolve
+                self.present(dialog, animated: true) {
+                    self.remeberInfo.removeObject(forKey: "checkedBox")
+                    self.remeberInfo.removeObject(forKey: "rememberUser")
+                }
             }
         }
     }

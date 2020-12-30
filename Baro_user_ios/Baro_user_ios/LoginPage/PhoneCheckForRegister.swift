@@ -23,7 +23,6 @@ class PhoneCheckForRegister : UIViewController {
     var getSmsCode : String = ""
     var credential : AuthCredential?
     let bottomTabBarInfo = BottomTabBarController()
-    var toastMessage = ToastMessage()
     override func viewDidLoad() {
         super.viewDidLoad()
         inputPin1.addTarget(self, action: #selector(self.pinInputfieldSet(_:)), for: .allEditingEvents)
@@ -102,7 +101,11 @@ class PhoneCheckForRegister : UIViewController {
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.verificationID, verificationCode: self.authString)
         Auth.auth().signIn(with: credential) { authData, error in
             if ((error) != nil) {
-                self.toastMessage.showToast(message: "\(String(describing: error))", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
+                let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
+                dialog.message = "\(String(describing: error))"
+                dialog.modalPresentationStyle = .overFullScreen
+                dialog.modalTransitionStyle = .crossDissolve
+                self.present(dialog, animated: true)
             }
             else {
                 self.backBtnPressed(sender: self.phoneNumber)

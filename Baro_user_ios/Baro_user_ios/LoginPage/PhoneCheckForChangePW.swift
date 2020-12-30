@@ -20,7 +20,6 @@ class PhoneCheckForChangePW : UIViewController {
     var authString : String = ""
     var verificationID : String = ""
     var phoneNumber : String = ""
-    var toastMessage = ToastMessage()
     override func viewDidLoad() {
         super.viewDidLoad()
         inputPin1.addTarget(self, action: #selector(self.pinInputfieldSet(_:)), for: .allEditingEvents)
@@ -80,10 +79,13 @@ class PhoneCheckForChangePW : UIViewController {
     @IBAction func pressBtn(_ sender: Any) {
         print(authString)
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.verificationID, verificationCode: self.authString)
-        Auth.auth().signInAndRetrieveData(with: credential) { authData, error in
+        Auth.auth().signIn(with: credential) { authData, error in
             if ((error) != nil) {
-                print(error)
-                self.toastMessage.showToast(message: "\(error)", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
+                let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
+                dialog.message = "\(String(describing: error))"
+                dialog.modalPresentationStyle = .overFullScreen
+                dialog.modalTransitionStyle = .crossDissolve
+                self.present(dialog, animated: true)
             }
             else {
                 let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "SetNewPW") as! SetNewPW

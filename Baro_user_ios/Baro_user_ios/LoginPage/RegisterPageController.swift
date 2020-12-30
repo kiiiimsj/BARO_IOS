@@ -19,7 +19,6 @@ class RegisterPageController: UIViewController {
     let network = CallRequest()
     let urlMaker = NetWorkURL()
     var phoneNumber : String = ""
-    var toastMessage = ToastMessage()
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutLoad()
@@ -123,7 +122,11 @@ class RegisterPageController: UIViewController {
                         self.performSegue(withIdentifier: "RegisterCompletePage", sender: nil)
                     }
                     else {
-                        self.toastMessage.showToast(message: json["message"].stringValue, font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 13.0)!, targetController: self)
+                        let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
+                        dialog.message = "\(json["message"].stringValue)"
+                        dialog.modalPresentationStyle = .overFullScreen
+                        dialog.modalTransitionStyle = .crossDissolve
+                        self.present(dialog, animated: true)
                     }
                 }
             }

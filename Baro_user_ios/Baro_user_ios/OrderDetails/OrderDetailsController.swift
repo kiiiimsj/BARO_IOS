@@ -25,8 +25,6 @@ class OrderDetailsController : UIViewController {
     
     @IBOutlet weak var EssentialArea: UICollectionView!
     
-    var makeToastMessage = ToastMessage()
-    
     public var menu = Menu()
     public var menu_id = ""
     public var menu_default_price = 0
@@ -123,11 +121,17 @@ class OrderDetailsController : UIViewController {
                     vc.delegate = self
                     vc.store_id = self.storeId
                     self.present(vc, animated: false, completion: nil)
+                    
                 }
             }
         }
         else {
-            self.makeToastMessage.showToast(message: "필수옵션을 선택해 주세요", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
+            let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
+            let dialog = storyboard.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
+            dialog.message = "필수 옵션을 선택해주세요."
+            dialog.modalPresentationStyle = .overFullScreen
+            dialog.modalTransitionStyle = .crossDissolve
+            self.present(dialog, animated: true)
         }
     }
     func swipeRecognizer() {
