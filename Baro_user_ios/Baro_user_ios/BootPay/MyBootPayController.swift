@@ -283,7 +283,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
                 
                 self.result = true
                 UserDefaults.standard.removeObject(forKey: "basket")
-                UserDefaults.standard.removeObject(forKey: "currentStoreId")
+//                UserDefaults.standard.removeObject(forKey: "currentStoreId")
             }
             else {
                 self.createDialog(titleContentString: "결 제 오 류", contentString: "비정상적인 접근입니다.\r\n 결제가 취소 되었습니다.", buttonString: "확인")
