@@ -167,9 +167,9 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         //basketList UserDefault를 가져와서 서버에 보낸다
         //여기서 recept_id가 생성됨
         //data parsing을 통해 recept_id를 받아 DB로 전송
-//        if let getRecept = data["receipt_id"] as? String ?? "" {
-//            self.receptId = getRecept
-//        }
+        if let getRecept = data["receipt_id"] as? String {
+            self.receptId = getRecept
+        }
         let param = ["phone":"\(self.userPhone)","recept_id":"\(receptId)"]
         netWork.post(method: .post, param: param, url: urlMaker.checkReceptId) {
             json in
@@ -198,7 +198,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func onDone(data: [String: Any]) {
         print("Payment processing onDone : ",data)
         print("print recept_id : ", receptId)
-        setOrderInsertParam()
+        setOrderInsertParam(order_date: data["purchased_at"] as! String)
         
     }
     //결제창이 닫힐때 실행되는 부분
@@ -219,7 +219,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         self.present(vc, animated: true, completion: nil)
     }
     
-    func setOrderInsertParam(){
+    func setOrderInsertParam(order_date : String){
         var sendServerOrderdatas = [SendServerOrders]()
         for order in myOrders {
             var sendServerOrderdata = SendServerOrders()
@@ -255,6 +255,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         param2.coupon_id = self.couponId
         param2.requests = "\(self.customerRequest)"
         param2.orders = sendServerOrderdatas
+        param2.order_date = order_date
         
         var param : [String:AnyObject] = [:]
         let enco = JSONEncoder()
@@ -277,7 +278,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
                 if self.websocket!.isConnected {
                     print("socketConnected")
                     self.websocket!.sendText("connect:::\(self.userPhone)")
-                    self.websocket!.sendText("message:::\(self.storeId):::\(param)")
+                    self.websocket!.sendText("message:::\(self.storeId):::\(jsonString)")
                 }
                 
                 self.result = true
