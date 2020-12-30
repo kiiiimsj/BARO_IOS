@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -57,6 +57,8 @@
 		3F0F6EAB25514F0B00099ACC /* MyBootPayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */; };
 		3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */; };
 		3F1C4A55259C21E3002C5B5D /* LoginDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C4A54259C21E3002C5B5D /* LoginDialog.swift */; };
+		3F1C4A5A259C44A5002C5B5D /* KituraWebSocketClient in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1C4A59259C44A5002C5B5D /* KituraWebSocketClient */; };
+		3F1C4A61259C4E8A002C5B5D /* SendMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C4A60259C4E8A002C5B5D /* SendMessage.swift */; };
 		3F418FCF254808E100D89665 /* BottomTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F418FCE254808E100D89665 /* BottomTabBar.storyboard */; };
 		3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F49907F253EB18B00372F83 /* LoginPage.storyboard */; };
 		3F4C5A9F253ECAD700C0E7B6 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9A253ECAD700C0E7B6 /* NotoSansKR-Black.otf */; };
@@ -208,6 +210,7 @@
 		3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBootPayController.swift; sourceTree = "<group>"; };
 		3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BootPay.storyboard; sourceTree = "<group>"; };
 		3F1C4A54259C21E3002C5B5D /* LoginDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDialog.swift; sourceTree = "<group>"; };
+		3F1C4A60259C4E8A002C5B5D /* SendMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessage.swift; sourceTree = "<group>"; };
 		3F418FCE254808E100D89665 /* BottomTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomTabBar.storyboard; sourceTree = "<group>"; };
 		3F49907F253EB18B00372F83 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		3F4C5A9A253ECAD700C0E7B6 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F09CCA5A7FA86F7A3D8ADA6 /* Pods_Baro_user_ios.framework in Frameworks */,
+				3F1C4A5A259C44A5002C5B5D /* KituraWebSocketClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +405,7 @@
 				3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */,
 				3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */,
 				3FF8137925590C8600036A91 /* FinalPaymentCheckDialog.swift */,
+				3F1C4A60259C4E8A002C5B5D /* SendMessage.swift */,
 			);
 			path = BootPay;
 			sourceTree = "<group>";
@@ -672,8 +677,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				3F1C4A5E259C4749002C5B5D /* PBXTargetDependency */,
 			);
 			name = Baro_user_ios;
+			packageProductDependencies = (
+				3F1C4A59259C44A5002C5B5D /* KituraWebSocketClient */,
+			);
 			productName = Baro_user_ios;
 			productReference = 04B86796253B0ECD00336175 /* Baro_user_ios.app */;
 			productType = "com.apple.product-type.application";
@@ -705,6 +714,9 @@
 				Base,
 			);
 			mainGroup = 04B8678D253B0ECD00336175;
+			packageReferences = (
+				3F1C4A58259C44A5002C5B5D /* XCRemoteSwiftPackageReference "Kitura-WebSocket-Client" */,
+			);
 			productRefGroup = 04B86797253B0ECD00336175 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -816,6 +828,7 @@
 				3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */,
 				E34CAF45255523A600BE3F53 /* SeparateWindowController.swift in Sources */,
 				E31D3FD82542ACAC00B63F77 /* StoreListCell.swift in Sources */,
+				3F1C4A61259C4E8A002C5B5D /* SendMessage.swift in Sources */,
 				043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */,
 				3F041C66256FB689006A2B3B /* PhoneSendForRegister.swift in Sources */,
 				E3AA04CC258A11580055454A /* FindPassWord.swift in Sources */,
@@ -918,6 +931,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F1C4A5E259C4749002C5B5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 3F1C4A5D259C4749002C5B5D /* KituraWebSocketClient */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		04B867A4253B0ECF00336175 /* LaunchScreen.storyboard */ = {
@@ -1189,6 +1209,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F1C4A58259C44A5002C5B5D /* XCRemoteSwiftPackageReference "Kitura-WebSocket-Client" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/Kitura-WebSocket-Client.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F1C4A59259C44A5002C5B5D /* KituraWebSocketClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F1C4A58259C44A5002C5B5D /* XCRemoteSwiftPackageReference "Kitura-WebSocket-Client" */;
+			productName = KituraWebSocketClient;
+		};
+		3F1C4A5D259C4749002C5B5D /* KituraWebSocketClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F1C4A58259C44A5002C5B5D /* XCRemoteSwiftPackageReference "Kitura-WebSocket-Client" */;
+			productName = KituraWebSocketClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04B8678E253B0ECD00336175 /* Project object */;
 }

@@ -6,6 +6,7 @@
 //
 import UIKit
 import SwiftyJSON
+import KituraWebSocketClient
 
 class LoginPageController: UIViewController {
     @IBOutlet weak var logoImage : UIImageView!
@@ -22,12 +23,11 @@ class LoginPageController: UIViewController {
     @IBOutlet weak var findPasswordText: UIButton!
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
-    
     let SPREF = UserDefaults()
     var remeberInfo = UserDefaults.standard
     
     let bottomTabBarInfo = BottomTabBarController()
-    
+    var sendMessage = SendMessage()
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
@@ -37,7 +37,6 @@ class LoginPageController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if(remeberInfo.bool(forKey: "checkedBox")) {

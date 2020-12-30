@@ -8,7 +8,7 @@
 import UIKit
 import SwiftyBootpay
 import SwiftyJSON
-
+import KituraWebSocketClient
 class MyBootPayController : UIViewController {
     let netWork = CallRequest()
     let urlMaker = NetWorkURL()
@@ -28,7 +28,7 @@ class MyBootPayController : UIViewController {
     private let sendStoreName : String = UserDefaults.standard.value(forKey: "currentStoreName") as! String
     private let storeId : Int = UserDefaults.standard.value(forKey: "currentStoreId") as! Int
     private var receptId = ""
-    
+    private let websocket = WebSocketClient("ws://3.35.180.57:8080/websocket")
     
     private var setPayLoadNameBuilder : String = ""
     
@@ -270,6 +270,16 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             if json["result"].boolValue {
                 self.createDialog(titleContentString: "결 제 완 료", contentString: "결제가 완료 되었습니다.", buttonString: "확인")
                 //websocket 통신 부분
+                do {
+                    try self.websocket!.connect()
+                } catch {
+                }
+                if self.websocket!.isConnected {
+                    print("socketConnected")
+                    self.websocket!.sendText("connect:::\(self.userPhone)")
+                    self.websocket!.sendText("message:::\(self.storeId):::\(param)")
+                }
+                
                 self.result = true
                 UserDefaults.standard.removeObject(forKey: "basket")
                 UserDefaults.standard.removeObject(forKey: "currentStoreId")
