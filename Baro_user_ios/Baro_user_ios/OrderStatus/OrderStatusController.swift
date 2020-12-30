@@ -13,7 +13,7 @@ class OrderStatusController : UIViewController, TopViewElementDelegate {
     }
     func refreshBtnDelegate(controller : UIViewController) {
         print("refresh button clicked")
-        self.viewWillAppear(true)
+        setNewData()
     }
     
     
@@ -34,7 +34,11 @@ class OrderStatusController : UIViewController, TopViewElementDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         configureView()
-        
+        setNewData()
+    }
+    func setNewData(){
+        orderStatusList.removeAll()
+        collectionView.reloadData()
         network.post(method: .get, url: networkURL.orderProgressList + "?phone=" + phone) {
             json in
             var orderStatusModel = OrderStatusList()
@@ -69,7 +73,7 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let orderStatus = orderStatusList[indexPath.item]
+        let orderStatus = orderStatusList[orderStatusList.count-indexPath.item-1]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderStatusCell", for: indexPath) as! OrderStatusCell
         cell.orderStoreNameLabel.text = String(orderStatus.store_name)
         storePhone = orderStatus.store_phone
