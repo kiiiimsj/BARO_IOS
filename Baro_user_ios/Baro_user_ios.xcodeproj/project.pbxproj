@@ -56,6 +56,7 @@
 		3F0EB738255A70C400F72604 /* SendServerOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0EB737255A70C400F72604 /* SendServerOrders.swift */; };
 		3F0F6EAB25514F0B00099ACC /* MyBootPayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */; };
 		3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */; };
+		3F1C4A55259C21E3002C5B5D /* LoginDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C4A54259C21E3002C5B5D /* LoginDialog.swift */; };
 		3F418FCF254808E100D89665 /* BottomTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F418FCE254808E100D89665 /* BottomTabBar.storyboard */; };
 		3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F49907F253EB18B00372F83 /* LoginPage.storyboard */; };
 		3F4C5A9F253ECAD700C0E7B6 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9A253ECAD700C0E7B6 /* NotoSansKR-Black.otf */; };
@@ -206,6 +207,7 @@
 		3F0EB737255A70C400F72604 /* SendServerOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendServerOrders.swift; sourceTree = "<group>"; };
 		3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBootPayController.swift; sourceTree = "<group>"; };
 		3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BootPay.storyboard; sourceTree = "<group>"; };
+		3F1C4A54259C21E3002C5B5D /* LoginDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDialog.swift; sourceTree = "<group>"; };
 		3F418FCE254808E100D89665 /* BottomTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomTabBar.storyboard; sourceTree = "<group>"; };
 		3F49907F253EB18B00372F83 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		3F4C5A9A253ECAD700C0E7B6 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				E3AA04CE258A19A20055454A /* PhoneCheckForChangePW.swift */,
 				E3AA04D1258A22400055454A /* SetNewPW.swift */,
 				E3AA04D6258A35DB0055454A /* FindPWComplete.swift */,
+				3F1C4A54259C21E3002C5B5D /* LoginDialog.swift */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -554,8 +557,8 @@
 				3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */,
 				043DACBA253DAC5600C70102 /* UrlMaker.swift */,
 				3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */,
-				3F6D861A25653BAA00D65CAC /* ToastMessage.swift */,
 				E356D645256FB20300F39463 /* CustomLabel.swift */,
+				3F6D861A25653BAA00D65CAC /* ToastMessage.swift */,
 				3FECEDD5257658B400E0328F /* DialogForm.swift */,
 				E356D66A257A5EA900F39463 /* Extensions.swift */,
 				E3AA04C02583E9D80055454A /* VerticalProgressbar.swift */,
@@ -856,6 +859,7 @@
 				3FA4FC832542898E00EF2894 /* MyPageButtons.swift in Sources */,
 				E356D66B257A5EAA00F39463 /* Extensions.swift in Sources */,
 				04235C7725493A7100BA2BB1 /* OrderStatusController.swift in Sources */,
+				3F1C4A55259C21E3002C5B5D /* LoginDialog.swift in Sources */,
 				E31D3FF6254692A200B63F77 /* OptionCategoryHeader.swift in Sources */,
 				E31D3FF32546887F00B63F77 /* OptionsHeader.swift in Sources */,
 				E34CAF6C255567D400BE3F53 /* AlertCell.swift in Sources */,

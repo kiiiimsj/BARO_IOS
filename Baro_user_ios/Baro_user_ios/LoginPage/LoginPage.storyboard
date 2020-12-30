@@ -1400,6 +1400,110 @@
             </objects>
             <point key="canvasLocation" x="4516" y="-1736"/>
         </scene>
+        <!--LoginDialog-->
+        <scene sceneID="5JQ-Ib-xdQ">
+            <objects>
+                <viewController storyboardIdentifier="LoginDialog" title="LoginDialog" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UKd-ZV-DmC" customClass="LoginDialog" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="dHq-30-6IY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxa-Pa-tSG" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                <rect key="frame" x="82" y="293" width="250" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 혹은 아이디가 틀렸습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-mt-cdg">
+                                        <rect key="frame" x="43.666666666666671" y="66.333333333333314" width="163" height="16.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqb-sL-QZA">
+                                        <rect key="frame" x="3" y="107" width="244" height="40"/>
+                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Td6-PF-Nfq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                        <state key="normal" title="확 인">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickBtn" destination="UKd-ZV-DmC" eventType="touchUpInside" id="PjZ-lD-htu"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jV7-9t-VAR" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알 림" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5Q-fC-lDI">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="45"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Y5Q-fC-lDI" firstAttribute="top" secondItem="jV7-9t-VAR" secondAttribute="top" id="06K-MU-0GI"/>
+                                            <constraint firstItem="Y5Q-fC-lDI" firstAttribute="leading" secondItem="jV7-9t-VAR" secondAttribute="leading" id="OYK-Ed-ZQd"/>
+                                            <constraint firstAttribute="bottom" secondItem="Y5Q-fC-lDI" secondAttribute="bottom" id="VE9-24-QON"/>
+                                            <constraint firstAttribute="trailing" secondItem="Y5Q-fC-lDI" secondAttribute="trailing" id="p1n-1g-eIp"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="FavoriteDialog"/>
+                                <constraints>
+                                    <constraint firstItem="Ge7-mt-cdg" firstAttribute="centerX" secondItem="nxa-Pa-tSG" secondAttribute="centerX" id="2IZ-Rc-Tlw"/>
+                                    <constraint firstItem="jV7-9t-VAR" firstAttribute="height" secondItem="nxa-Pa-tSG" secondAttribute="height" multiplier="0.3" id="2Iz-De-yAQ"/>
+                                    <constraint firstItem="Ge7-mt-cdg" firstAttribute="centerY" secondItem="nxa-Pa-tSG" secondAttribute="centerY" constant="-0.5" id="9Ed-TF-h3X"/>
+                                    <constraint firstItem="jV7-9t-VAR" firstAttribute="top" secondItem="nxa-Pa-tSG" secondAttribute="top" id="Bww-Jc-1fU"/>
+                                    <constraint firstItem="hqb-sL-QZA" firstAttribute="leading" secondItem="nxa-Pa-tSG" secondAttribute="leading" constant="3" id="McI-hs-l07"/>
+                                    <constraint firstAttribute="trailing" secondItem="hqb-sL-QZA" secondAttribute="trailing" constant="3" id="SGL-6H-sgt"/>
+                                    <constraint firstAttribute="width" constant="250" id="d7A-AG-u0U"/>
+                                    <constraint firstAttribute="bottom" secondItem="hqb-sL-QZA" secondAttribute="bottom" constant="3" id="dAv-sY-j2y"/>
+                                    <constraint firstItem="jV7-9t-VAR" firstAttribute="leading" secondItem="nxa-Pa-tSG" secondAttribute="leading" id="eWS-lW-FbO"/>
+                                    <constraint firstAttribute="trailing" secondItem="jV7-9t-VAR" secondAttribute="trailing" id="jji-Yn-QdL"/>
+                                    <constraint firstAttribute="height" constant="150" id="uC8-T0-2N0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Khm-nr-jFm"/>
+                        <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nxa-Pa-tSG" firstAttribute="centerY" secondItem="dHq-30-6IY" secondAttribute="centerY" id="3RX-YJ-BsZ"/>
+                            <constraint firstItem="nxa-Pa-tSG" firstAttribute="centerX" secondItem="dHq-30-6IY" secondAttribute="centerX" id="vjB-tF-IJX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wNr-ix-fh8"/>
+                    <connections>
+                        <outlet property="dialogContent" destination="Ge7-mt-cdg" id="Khd-9U-LCJ"/>
+                        <outlet property="okayBtn" destination="hqb-sL-QZA" id="Ceo-NZ-973"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FvZ-Xs-RoK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="-1953"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow_left" width="7.6666665077209473" height="13.333333015441895"/>
@@ -1409,6 +1513,9 @@
         <namedColor name="mainColor">
             <color red="0.51372549019607838" green="0.20000000000000001" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

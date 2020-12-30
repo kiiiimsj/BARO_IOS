@@ -12,8 +12,6 @@ class PhoneSendForRegister : UIViewController {
     @IBOutlet weak var inputPhone: UITextField!
     @IBOutlet weak var sendPhoneToFireBaseBtn: UIButton!
     let bottomTabBarInfo = BottomTabBarController()
-    var ToasstMessage = ToastMessage()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         sendPhoneToFireBaseBtn.layer.cornerRadius = 15
@@ -52,16 +50,24 @@ class PhoneSendForRegister : UIViewController {
             PhoneAuthProvider.provider().verifyPhoneNumber(nationPhoneNumber, uiDelegate: nil) {(verificationID, error) in
                 if let error = error {
                     print(error)
-                    self.ToasstMessage.showToast(message: error.localizedDescription, font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
+                    let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
+                    dialog.message = "\(error.localizedDescription)"
+                    dialog.modalPresentationStyle = .overFullScreen
+                    dialog.modalTransitionStyle = .crossDissolve
+                    self.present(dialog, animated: true)
                   return
                 }
-                self.ToasstMessage.showToast(message: "해당 핸드폰에 인증문자를 발송했습니다.", font: UIFont.init(name: "NotoSansCJKkr-Regular", size: 15.0)!, targetController: self)
-                let vc = self.storyboard?.instantiateViewController(identifier: "PhoneCheckForRegister") as! PhoneCheckForRegister
-                vc.verificationID = verificationID!
-                vc.modalPresentationStyle = .fullScreen
-                vc.modalTransitionStyle = .crossDissolve
-                self.present(vc, animated: true)
-                
+                let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
+                dialog.message = "해당 핸드폰에 인증문자를 발송했습니다."
+                dialog.modalPresentationStyle = .overFullScreen
+                dialog.modalTransitionStyle = .crossDissolve
+                self.present(dialog, animated: true) {
+                    let vc = self.storyboard?.instantiateViewController(identifier: "PhoneCheckForRegister") as! PhoneCheckForRegister
+                    vc.verificationID = verificationID!
+                    vc.modalPresentationStyle = .fullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    self.present(vc, animated: true)
+                }
                 //self.performSegue(withIdentifier: "PhoneCheckForRegister", sender: verificationID)
             }
         }
