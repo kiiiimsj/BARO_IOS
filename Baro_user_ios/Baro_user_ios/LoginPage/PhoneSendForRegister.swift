@@ -7,7 +7,16 @@
 
 import UIKit
 import FirebaseAuth
-class PhoneSendForRegister : UIViewController {
+class PhoneSendForRegister : UIViewController, DialogClickDelegate{
+    func clickDialog(verificationID: String) {
+        let vc = self.storyboard?.instantiateViewController(identifier: "PhoneCheckForRegister") as! PhoneCheckForRegister
+        vc.verificationID = verificationID
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
+    }
+    
+    
     let nationNumber = "+82"
     @IBOutlet weak var inputPhone: UITextField!
     @IBOutlet weak var sendPhoneToFireBaseBtn: UIButton!
@@ -15,7 +24,7 @@ class PhoneSendForRegister : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sendPhoneToFireBaseBtn.layer.cornerRadius = 15
-        Auth.auth().settings!.isAppVerificationDisabledForTesting = true
+        Auth.auth().settings!.isAppVerificationDisabledForTesting = false
         
         inputPhone.borderStyle = .none
         swipeRecognizer()
@@ -59,16 +68,15 @@ class PhoneSendForRegister : UIViewController {
                 }
                 let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
                 dialog.message = "해당 핸드폰에 인증문자를 발송했습니다."
+                dialog.dialogClickDelegate = self
+                dialog.verificationID = verificationID!
                 dialog.modalPresentationStyle = .overFullScreen
                 dialog.modalTransitionStyle = .crossDissolve
-                self.present(dialog, animated: true) {
-                    let vc = self.storyboard?.instantiateViewController(identifier: "PhoneCheckForRegister") as! PhoneCheckForRegister
-                    vc.verificationID = verificationID!
-                    vc.modalPresentationStyle = .fullScreen
-                    vc.modalTransitionStyle = .crossDissolve
-                    self.present(vc, animated: true)
+                self.present(dialog, animated: true)
+                if(dialog.isBeingDismissed) {
+                    print("dismissed!")
                 }
-                //self.performSegue(withIdentifier: "PhoneCheckForRegister", sender: verificationID)
+                //pvc.performSegue(withIdentifier: "PhoneCheckForRegister", sender: verificationID)
             }
         }
     }
