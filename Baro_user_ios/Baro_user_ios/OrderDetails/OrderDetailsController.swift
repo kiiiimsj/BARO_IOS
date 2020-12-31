@@ -95,6 +95,9 @@ class OrderDetailsController : UIViewController {
             data = Order(menu: self.menu, essentials: selectedEssential, nonEssentials: selectedNonEssential)
             data?.menu_count = Int(menu_count.text!)!
             data?.menu_total_price = menu_price_current
+            if UserDefaults.standard.value(forKey: "currentStoreId") == nil {
+                print("nil");
+            } // nil  이거때문에 2번 안됨
             if let getStoreId = UserDefaults.standard.value(forKey: "currentStoreId") {
                 print("getSvaeStoreId", getStoreId)
                 if(storeId == getStoreId as? Int) {
@@ -156,9 +159,11 @@ class OrderDetailsController : UIViewController {
     }
     func canGoToNext() -> Bool{
         if selectedEssential.count == essentials.count{
+            print("참")
             return true
         }
         else{
+            print("거짓")
             return false
         }
     }

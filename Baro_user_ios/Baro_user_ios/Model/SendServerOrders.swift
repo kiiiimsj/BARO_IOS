@@ -28,4 +28,5 @@ struct Param : Codable {
     var coupon_id = -1
     var requests = ""
     var orders = [SendServerOrders]()
+    var order_date = ""
 }
