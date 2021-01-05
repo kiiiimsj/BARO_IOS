@@ -126,6 +126,11 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     }
     
     func addFavorite(controller : UIViewController) {
+        guard UserDefaults.standard.value(forKey: "user_phone") != nil else{
+            let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
+            self.present(vc, animated: true, completion: nil)
+            return
+        }
         let favoriteBtn = controller as! BottomTabBarController
         let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
         let param = ["phone":"\(phone)", "store_id":"\(self.store_id)"]
@@ -143,6 +148,11 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     }
     
     func delFavorite(controller : UIViewController) {
+        guard UserDefaults.standard.value(forKey: "user_phone") != nil else{
+            let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
+            self.present(vc, animated: true, completion: nil)
+            return
+        }
         let favoriteBtn = controller as! BottomTabBarController
         let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
         let param = ["phone":"\(phone)", "store_id":"\(self.store_id)"]
@@ -185,21 +195,25 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     }
     func isFavoriteStore() {
         print("in the favoriteStore")
-        let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
-        let param = ["phone":"\(phone)", "store_id":self.store_id] as [String : Any]
-        print("param : " , param)
-        netWork.post(method: .post, param: param, url: urlMaker.isFavoriteURL) {
-            json in
-            print("isFavorite : ",json)
-            if json["result"].boolValue {
-                self.bottomTabBarInfo.topBarFavoriteBtn.setImage(UIImage(named: "favorite_fill"), for: .normal)
-                self.isFlag = 1
+        guard UserDefaults.standard.value(forKey: "user_phone") == nil else{
+            let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
+            let param = ["phone":"\(phone)", "store_id":self.store_id] as [String : Any]
+            print("param : " , param)
+            netWork.post(method: .post, param: param, url: urlMaker.isFavoriteURL) {
+                json in
+                print("isFavorite : ",json)
+                if json["result"].boolValue {
+                    self.bottomTabBarInfo.topBarFavoriteBtn.setImage(UIImage(named: "favorite_fill"), for: .normal)
+                    self.isFlag = 1
+                }
+                else {
+                    self.bottomTabBarInfo.topBarFavoriteBtn.setImage(UIImage(named: "favorite_empty"), for: .normal)
+                    self.isFlag = 0
+                }
             }
-            else {
-                self.bottomTabBarInfo.topBarFavoriteBtn.setImage(UIImage(named: "favorite_empty"), for: .normal)
-                self.isFlag = 0
-            }
+            return
         }
+        
     }
 }
 

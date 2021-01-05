@@ -153,6 +153,7 @@
 		E3AA04CF258A19A20055454A /* PhoneCheckForChangePW.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04CE258A19A20055454A /* PhoneCheckForChangePW.swift */; };
 		E3AA04D2258A22400055454A /* SetNewPW.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04D1258A22400055454A /* SetNewPW.swift */; };
 		E3AA04D7258A35DC0055454A /* FindPWComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04D6258A35DB0055454A /* FindPWComplete.swift */; };
+		E3CEDAFC25A3426900EDE823 /* GoLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDAFB25A3426900EDE823 /* GoLoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -306,6 +307,7 @@
 		E3AA04CE258A19A20055454A /* PhoneCheckForChangePW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCheckForChangePW.swift; sourceTree = "<group>"; };
 		E3AA04D1258A22400055454A /* SetNewPW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewPW.swift; sourceTree = "<group>"; };
 		E3AA04D6258A35DB0055454A /* FindPWComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWComplete.swift; sourceTree = "<group>"; };
+		E3CEDAFB25A3426900EDE823 /* GoLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoLoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,6 +429,7 @@
 			children = (
 				3F418FCE254808E100D89665 /* BottomTabBar.storyboard */,
 				3FA196F42547E34E007CD182 /* BottomTabBarController.swift */,
+				E3CEDAFB25A3426900EDE823 /* GoLoginController.swift */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -917,6 +920,7 @@
 				3FDE5E682546E37A00C05514 /* NoticeListModel.swift in Sources */,
 				048D55E7253D91C6009E9CE4 /* MainPageEventCell.swift in Sources */,
 				E3006A6A25501E3000FFBAAB /* BasketNonEssentialCell.swift in Sources */,
+				E3CEDAFC25A3426900EDE823 /* GoLoginController.swift in Sources */,
 				E33D8542253DC89400E50BAC /* StoreMenuModel.swift in Sources */,
 				3FEAF06F254FFC1100A5ABC0 /* FavoriteDialog.swift in Sources */,
 				048A0BDE2540120A007D4FD3 /* NewStoreListModel.swift in Sources */,

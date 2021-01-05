@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jWx-mQ-KDo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jWx-mQ-KDo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -204,10 +204,93 @@
             </objects>
             <point key="canvasLocation" x="-2208.695652173913" y="-508.25892857142856"/>
         </scene>
+        <!--Go Login Controller-->
+        <scene sceneID="C90-Ac-KcJ">
+            <objects>
+                <viewController storyboardIdentifier="GoLoginController" id="ZYF-Wh-pEm" customClass="GoLoginController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SFO-DG-FF1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8m9-ry-yZy">
+                                <rect key="frame" x="0.0" y="638" width="414" height="224"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인이 필요합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdd-r7-wOw">
+                                        <rect key="frame" x="20" y="30" width="137" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDT-9i-jo3">
+                                        <rect key="frame" x="20" y="159" width="374" height="45"/>
+                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="로그인 하기">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickLogin:" destination="ZYF-Wh-pEm" eventType="touchUpInside" id="MR3-D7-VE0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1D-dz-gio">
+                                        <rect key="frame" x="354" y="20" width="40" height="40"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Al3-Sa-43I"/>
+                                            <constraint firstAttribute="height" constant="40" id="jVb-n1-V67"/>
+                                        </constraints>
+                                        <state key="normal" image="arrow_right">
+                                            <color key="titleColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickCancel:" destination="ZYF-Wh-pEm" eventType="touchUpInside" id="PbF-Cg-7pp"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스를 이용하기 위해서는 로그인이 필요합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQA-o3-H7v">
+                                        <rect key="frame" x="20" y="81" width="326.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="FDT-9i-jo3" firstAttribute="height" secondItem="8m9-ry-yZy" secondAttribute="height" multiplier="0.2" id="6jg-ae-5Rm"/>
+                                    <constraint firstAttribute="bottom" secondItem="FDT-9i-jo3" secondAttribute="bottom" constant="20" id="6nw-op-gPz"/>
+                                    <constraint firstItem="JQA-o3-H7v" firstAttribute="leading" secondItem="Wdd-r7-wOw" secondAttribute="leading" id="9ls-qm-5HZ"/>
+                                    <constraint firstItem="FDT-9i-jo3" firstAttribute="leading" secondItem="8m9-ry-yZy" secondAttribute="leading" constant="20" id="Vg7-O3-yhz"/>
+                                    <constraint firstItem="JQA-o3-H7v" firstAttribute="top" secondItem="Wdd-r7-wOw" secondAttribute="bottom" constant="30" id="WAq-bP-xg0"/>
+                                    <constraint firstItem="Wdd-r7-wOw" firstAttribute="leading" secondItem="8m9-ry-yZy" secondAttribute="leading" constant="20" id="X2L-TZ-FOS"/>
+                                    <constraint firstItem="Wdd-r7-wOw" firstAttribute="top" secondItem="8m9-ry-yZy" secondAttribute="top" constant="30" id="i6O-6A-C9O"/>
+                                    <constraint firstAttribute="trailing" secondItem="U1D-dz-gio" secondAttribute="trailing" constant="20" id="soe-ZX-2iP"/>
+                                    <constraint firstAttribute="trailing" secondItem="FDT-9i-jo3" secondAttribute="trailing" constant="20" id="tcS-43-nFy"/>
+                                    <constraint firstItem="U1D-dz-gio" firstAttribute="top" secondItem="8m9-ry-yZy" secondAttribute="top" constant="20" id="y4C-1h-pHa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aZf-ba-6mw"/>
+                        <constraints>
+                            <constraint firstItem="8m9-ry-yZy" firstAttribute="height" secondItem="SFO-DG-FF1" secondAttribute="height" multiplier="0.25" id="4Nc-qc-EBx"/>
+                            <constraint firstItem="aZf-ba-6mw" firstAttribute="trailing" secondItem="8m9-ry-yZy" secondAttribute="trailing" id="7nB-W7-yfF"/>
+                            <constraint firstItem="8m9-ry-yZy" firstAttribute="leading" secondItem="aZf-ba-6mw" secondAttribute="leading" id="gOT-dM-agG"/>
+                            <constraint firstItem="aZf-ba-6mw" firstAttribute="bottom" secondItem="8m9-ry-yZy" secondAttribute="bottom" id="ue5-56-k1i"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="414" height="200"/>
+                    <connections>
+                        <outlet property="cancelBtn" destination="U1D-dz-gio" id="Veb-Xx-h22"/>
+                        <outlet property="loginBtn" destination="FDT-9i-jo3" id="XMf-Ns-eUP"/>
+                        <outlet property="window" destination="8m9-ry-yZy" id="msv-s5-KrC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NaT-9Z-m3E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1371.0144927536232" y="-473.4375"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="arrow_left" width="7.5" height="13"/>
+        <image name="arrow_right" width="7.5" height="13"/>
         <image name="basket" width="39" height="39"/>
         <image name="bottom_favorite_off" width="18.5" height="17"/>
         <image name="bottom_home_off" width="17" height="17"/>

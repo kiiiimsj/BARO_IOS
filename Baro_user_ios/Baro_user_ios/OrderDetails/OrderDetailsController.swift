@@ -90,6 +90,11 @@ class OrderDetailsController : UIViewController {
         recalcPrice()
     }
     @IBAction func nextPage(_ sender: Any) {
+        guard UserDefaults.standard.value(forKey: "user_phone") != nil else{
+            let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
+            self.present(vc, animated: true, completion: nil)
+            return
+        }
         let storyboard = UIStoryboard(name: "OrderDetails", bundle: nil)
         if (canGoToNext()){
             data = Order(menu: self.menu, essentials: selectedEssential, nonEssentials: selectedNonEssential)

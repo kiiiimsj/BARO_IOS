@@ -152,6 +152,7 @@ class MyPageController : UIViewController {
         present(vc, animated: false, completion: nil)
     }
     @IBAction func logoutBtnClick() {
+        
         self.performSegue(withIdentifier: "LogoutDialog", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -174,17 +175,27 @@ extension MyPageController : UITableViewDelegate, UITableViewDataSource, ClickLo
     func clickYesBtnDelegate() {
         if (UserDefaults.standard.bool(forKey: "checkedBox") ) {
             UserDefaults.standard.removeObject(forKey: "basket")
-            UserDefaults.standard.removeObject(forKey: "currentStoreId")
-            UserDefaults.standard.removeObject(forKey: "currentStoreName")
+            UserDefaults.standard.removeObject(forKey: "user_email")
+            UserDefaults.standard.removeObject(forKey: "user_name")
+            UserDefaults.standard.removeObject(forKey: "user_phone")
         }
         else {
             UserDefaults.resetStandardUserDefaults()
         }
         let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "LoginPageController")
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
+        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.mainPageControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.mainPageStoryBoard
+        ViewInBottomTabBar.moveFromOutSide = true
+        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+        self.present(ViewInBottomTabBar, animated: true, completion: nil)
+//        let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "LoginPageController")
+//        vc.modalPresentationStyle = .fullScreen
+//        vc.modalTransitionStyle = .crossDissolve
+//        self.present(vc, animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
