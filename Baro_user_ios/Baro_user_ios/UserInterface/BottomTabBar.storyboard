@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jWx-mQ-KDo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jWx-mQ-KDo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -175,11 +175,17 @@
                             <constraint firstItem="3wx-tv-LBl" firstAttribute="top" secondItem="ftC-Gg-3Ff" secondAttribute="bottom" id="c6t-0G-GcL"/>
                             <constraint firstItem="J2M-FH-h0m" firstAttribute="trailing" secondItem="CJ7-Ga-GRx" secondAttribute="trailing" id="cFZ-Qn-Cv3"/>
                             <constraint firstItem="3wx-tv-LBl" firstAttribute="top" secondItem="j3l-Wd-Sa4" secondAttribute="bottom" constant="20" id="cpJ-zD-uMl"/>
+                            <constraint firstItem="ftC-Gg-3Ff" firstAttribute="top" secondItem="Z2Y-wm-gUk" secondAttribute="top" id="dBk-Rn-YOi"/>
                             <constraint firstItem="CJ7-Ga-GRx" firstAttribute="trailing" secondItem="j3l-Wd-Sa4" secondAttribute="trailing" constant="20" id="qL3-6L-E8o"/>
                             <constraint firstItem="J2M-FH-h0m" firstAttribute="centerX" secondItem="Z2Y-wm-gUk" secondAttribute="centerX" id="qww-ro-YRE"/>
                             <constraint firstItem="J2M-FH-h0m" firstAttribute="leading" secondItem="CJ7-Ga-GRx" secondAttribute="leading" id="w6K-oj-jTw"/>
                             <constraint firstItem="3wx-tv-LBl" firstAttribute="trailing" secondItem="CJ7-Ga-GRx" secondAttribute="trailing" id="yMS-ej-Lsb"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dBk-Rn-YOi"/>
+                            </mask>
+                        </variation>
                     </view>
                     <size key="freeformSize" width="360" height="896"/>
                     <connections>
@@ -194,6 +200,8 @@
                         <outlet property="TopView" destination="J2M-FH-h0m" id="D96-Cj-2oE"/>
                         <outlet property="basketButton" destination="j3l-Wd-Sa4" id="SaB-NI-Yf8"/>
                         <outlet property="bottomTabBar" destination="hf3-Zm-CZA" id="EKR-xl-dRk"/>
+                        <outlet property="contentViewTopDeleteConstraint" destination="dBk-Rn-YOi" id="n5X-8Q-D8A"/>
+                        <outlet property="contentViewTopRestoreConstraint" destination="CTL-TD-OaE" id="tqc-HV-Oe8"/>
                         <outlet property="topBarBackBtn" destination="Aa6-fN-GjY" id="ias-8Z-h5p"/>
                         <outlet property="topBarFavoriteBtn" destination="R0I-hX-Wl8" id="Fll-aA-2Z6"/>
                         <outlet property="topBarRefreshBtn" destination="zGd-2y-mMf" id="asQ-tU-0ra"/>
