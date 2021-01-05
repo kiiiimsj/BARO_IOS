@@ -59,6 +59,8 @@
 		3F1C4A55259C21E3002C5B5D /* LoginDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C4A54259C21E3002C5B5D /* LoginDialog.swift */; };
 		3F1C4A5A259C44A5002C5B5D /* KituraWebSocketClient in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1C4A59259C44A5002C5B5D /* KituraWebSocketClient */; };
 		3F1C4A61259C4E8A002C5B5D /* SendMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C4A60259C4E8A002C5B5D /* SendMessage.swift */; };
+		3F1C4A8625A47AB2002C5B5D /* FirstPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C4A8525A47AB2002C5B5D /* FirstPageController.swift */; };
+		3F1C4A8925A47AE8002C5B5D /* FirstPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C4A8825A47AE8002C5B5D /* FirstPage.storyboard */; };
 		3F418FCF254808E100D89665 /* BottomTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F418FCE254808E100D89665 /* BottomTabBar.storyboard */; };
 		3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F49907F253EB18B00372F83 /* LoginPage.storyboard */; };
 		3F4C5A9F253ECAD700C0E7B6 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9A253ECAD700C0E7B6 /* NotoSansKR-Black.otf */; };
@@ -213,6 +215,8 @@
 		3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BootPay.storyboard; sourceTree = "<group>"; };
 		3F1C4A54259C21E3002C5B5D /* LoginDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDialog.swift; sourceTree = "<group>"; };
 		3F1C4A60259C4E8A002C5B5D /* SendMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessage.swift; sourceTree = "<group>"; };
+		3F1C4A8525A47AB2002C5B5D /* FirstPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageController.swift; sourceTree = "<group>"; };
+		3F1C4A8825A47AE8002C5B5D /* FirstPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstPage.storyboard; sourceTree = "<group>"; };
 		3F418FCE254808E100D89665 /* BottomTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomTabBar.storyboard; sourceTree = "<group>"; };
 		3F49907F253EB18B00372F83 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		3F4C5A9A253ECAD700C0E7B6 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
@@ -359,6 +363,7 @@
 		04B86798253B0ECD00336175 /* Baro_user_ios */ = {
 			isa = PBXGroup;
 			children = (
+				3F1C4A8425A47A8B002C5B5D /* FirstPage */,
 				E34CAF9E255A89CC00BE3F53 /* Event */,
 				E34CAF89255959AF00BE3F53 /* CouponPage */,
 				E34CAF6425555B4C00BE3F53 /* Alert */,
@@ -412,6 +417,15 @@
 				3F1C4A60259C4E8A002C5B5D /* SendMessage.swift */,
 			);
 			path = BootPay;
+			sourceTree = "<group>";
+		};
+		3F1C4A8425A47A8B002C5B5D /* FirstPage */ = {
+			isa = PBXGroup;
+			children = (
+				3F1C4A8525A47AB2002C5B5D /* FirstPageController.swift */,
+				3F1C4A8825A47AE8002C5B5D /* FirstPage.storyboard */,
+			);
+			path = FirstPage;
 			sourceTree = "<group>";
 		};
 		3F499082253EC11B00372F83 /* Font */ = {
@@ -747,6 +761,7 @@
 				3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */,
 				3FDE5E382546968000C05514 /* NoticePage.storyboard in Resources */,
 				04B867A6253B0ECF00336175 /* LaunchScreen.storyboard in Resources */,
+				3F1C4A8925A47AE8002C5B5D /* FirstPage.storyboard in Resources */,
 				3F4C5AA2253ECAD700C0E7B6 /* NotoSansKR-Thin.otf in Resources */,
 				E34CAF6925555B7000BE3F53 /* Alert.storyboard in Resources */,
 				3F4C5A9F253ECAD700C0E7B6 /* NotoSansKR-Black.otf in Resources */,
@@ -929,6 +944,7 @@
 				048A0BDE2540120A007D4FD3 /* NewStoreListModel.swift in Sources */,
 				3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */,
 				E3CEDAFF25A41B7100EDE823 /* BeforeRegister.swift in Sources */,
+				3F1C4A8625A47AB2002C5B5D /* FirstPageController.swift in Sources */,
 				E3AA04C12583E9D80055454A /* VerticalProgressbar.swift in Sources */,
 				E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */,
 				04D11F452543D41D00ADB210 /* OrderHistoryModel.swift in Sources */,

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fgp-h4-6qO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansCJKkr-Bold</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--FirstPageController-->
+        <scene sceneID="kWf-U0-Y6O">
+            <objects>
+                <viewController storyboardIdentifier="FirstPageController" title="FirstPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fgp-h4-6qO" customClass="FirstPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jiz-bi-r2S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wab-aj-w9D">
+                                <rect key="frame" x="137.5" y="419" width="139" height="58.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주문을" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfQ-kS-iLy">
+                                <rect key="frame" x="137.5" y="387.5" width="52" height="23.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바로잡다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQS-SL-X3d">
+                                <rect key="frame" x="207" y="387.5" width="69.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7x8-7y-KR7"/>
+                        <color key="backgroundColor" name="mainColor"/>
+                        <constraints>
+                            <constraint firstItem="wab-aj-w9D" firstAttribute="leading" secondItem="EfQ-kS-iLy" secondAttribute="leading" id="26x-aa-FYo"/>
+                            <constraint firstItem="MQS-SL-X3d" firstAttribute="trailing" secondItem="wab-aj-w9D" secondAttribute="trailing" id="8MM-tF-Tt7"/>
+                            <constraint firstItem="wab-aj-w9D" firstAttribute="centerX" secondItem="jiz-bi-r2S" secondAttribute="centerX" id="DDp-hB-DVa"/>
+                            <constraint firstItem="wab-aj-w9D" firstAttribute="centerY" secondItem="jiz-bi-r2S" secondAttribute="centerY" id="jnE-vH-M8D"/>
+                            <constraint firstItem="wab-aj-w9D" firstAttribute="top" secondItem="MQS-SL-X3d" secondAttribute="bottom" constant="8" id="om6-P4-bBZ"/>
+                            <constraint firstItem="wab-aj-w9D" firstAttribute="top" secondItem="EfQ-kS-iLy" secondAttribute="bottom" constant="8" id="yyr-iR-Fld"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="baroText" destination="wab-aj-w9D" id="0lI-zD-hTQ"/>
+                        <outlet property="catchText" destination="MQS-SL-X3d" id="K4T-Ly-uxe"/>
+                        <outlet property="orderText" destination="EfQ-kS-iLy" id="Mfa-rY-WYK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aqt-gb-59b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="200" y="106"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="mainColor">
+            <color red="0.51372549019607838" green="0.20000000000000001" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -90,17 +90,13 @@ class BottomTabBarController: UIViewController {
     var saveTopViewSize = CGSize()
     var saveContentViewSize = CGSize()
     var saveBottomViewSize = CGSize()
-
+    @IBOutlet weak var contentViewTopDeleteConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var contentViewTopRestoreConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
         saveTopViewSize = CGSize(width: view.frame.width, height: 69.0)
-//        indicator.startAnimating()
-//        BottomTabBarController.activityIndicator.center = self.view.center
-//        self.view.addSubview(BottomTabBarController.activityIndicator)
-//
-//
-//        BottomTabBarController.activityIndicator.startAnimating()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -210,8 +206,9 @@ class BottomTabBarController: UIViewController {
         }
         switch(getController) {
             case mainPageControllerIdentifier:
-                self.changeContentView(controller: controller as! MainPageController, sender: nil)
                 self.deleteTopView()
+                self.changeContentView(controller: controller as! MainPageController, sender: nil)
+                
             case storeListControllerIdentifier:
                 self.changeContentView(controller: controller as! StoreListPageController, sender: sender)
             case orderStatusControllerIdentifier:
@@ -277,17 +274,14 @@ class BottomTabBarController: UIViewController {
     //탑뷰 추가
     func restoreTopView() {
         TopView.isHidden = false
-        ContentViewScrollView.frame.size = saveContentViewSize
-        ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
+        contentViewTopDeleteConstraint.isActive = false
+        contentViewTopRestoreConstraint.isActive = true
     }
     //탑뷰 지우기
     func deleteTopView() {
         TopView.isHidden = true
-        //컨텐트뷰 사이즈를 다시 조정
-        let topViewSize = TopView.frame.size
-        let contentViewSize = ContentView.frame.size
-        ContentViewScrollView.frame.size = CGSize(width: view.frame.width, height: (topViewSize.height + contentViewSize.height))
-        ContentViewScrollView.transform = CGAffineTransform(translationX: 0, y: -69)
+        contentViewTopDeleteConstraint.isActive = true
+        contentViewTopRestoreConstraint.isActive = false
     }
     func deleteBottomTabBar() {
         ContentView.frame.size = CGSize(width: view.frame.width, height: (saveContentViewSize.height + saveBottomViewSize.height))

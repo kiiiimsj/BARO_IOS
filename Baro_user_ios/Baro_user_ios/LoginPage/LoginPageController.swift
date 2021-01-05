@@ -108,7 +108,7 @@ class LoginPageController: UIViewController {
                     self.remeberInfo.removeObject(forKey: "checkedBox")
                     self.remeberInfo.removeObject(forKey: "rememberUser")
                 }
-                self.toMainPageUseBottomBar()
+                self.dismiss(animated: false)
             }
             else {
                 let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
