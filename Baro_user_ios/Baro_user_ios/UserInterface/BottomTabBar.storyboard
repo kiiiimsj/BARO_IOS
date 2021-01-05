@@ -221,7 +221,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8m9-ry-yZy">
-                                <rect key="frame" x="0.0" y="638" width="414" height="224"/>
+                                <rect key="frame" x="0.0" y="662" width="414" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인이 필요합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdd-r7-wOw">
                                         <rect key="frame" x="20" y="30" width="137" height="21"/>
@@ -230,7 +230,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDT-9i-jo3">
-                                        <rect key="frame" x="20" y="159" width="374" height="45"/>
+                                        <rect key="frame" x="20" y="132" width="374" height="48"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="로그인 하기">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -262,7 +262,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="FDT-9i-jo3" firstAttribute="height" secondItem="8m9-ry-yZy" secondAttribute="height" multiplier="0.2" id="6jg-ae-5Rm"/>
                                     <constraint firstAttribute="bottom" secondItem="FDT-9i-jo3" secondAttribute="bottom" constant="20" id="6nw-op-gPz"/>
                                     <constraint firstItem="JQA-o3-H7v" firstAttribute="leading" secondItem="Wdd-r7-wOw" secondAttribute="leading" id="9ls-qm-5HZ"/>
                                     <constraint firstItem="FDT-9i-jo3" firstAttribute="leading" secondItem="8m9-ry-yZy" secondAttribute="leading" constant="20" id="Vg7-O3-yhz"/>
@@ -270,14 +269,15 @@
                                     <constraint firstItem="Wdd-r7-wOw" firstAttribute="leading" secondItem="8m9-ry-yZy" secondAttribute="leading" constant="20" id="X2L-TZ-FOS"/>
                                     <constraint firstItem="Wdd-r7-wOw" firstAttribute="top" secondItem="8m9-ry-yZy" secondAttribute="top" constant="30" id="i6O-6A-C9O"/>
                                     <constraint firstAttribute="trailing" secondItem="U1D-dz-gio" secondAttribute="trailing" constant="20" id="soe-ZX-2iP"/>
+                                    <constraint firstItem="FDT-9i-jo3" firstAttribute="top" secondItem="JQA-o3-H7v" secondAttribute="bottom" constant="30" id="tMK-k3-Ltr"/>
                                     <constraint firstAttribute="trailing" secondItem="FDT-9i-jo3" secondAttribute="trailing" constant="20" id="tcS-43-nFy"/>
                                     <constraint firstItem="U1D-dz-gio" firstAttribute="top" secondItem="8m9-ry-yZy" secondAttribute="top" constant="20" id="y4C-1h-pHa"/>
+                                    <constraint firstAttribute="height" constant="200" id="zDR-io-hU3"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aZf-ba-6mw"/>
                         <constraints>
-                            <constraint firstItem="8m9-ry-yZy" firstAttribute="height" secondItem="SFO-DG-FF1" secondAttribute="height" multiplier="0.25" id="4Nc-qc-EBx"/>
                             <constraint firstItem="aZf-ba-6mw" firstAttribute="trailing" secondItem="8m9-ry-yZy" secondAttribute="trailing" id="7nB-W7-yfF"/>
                             <constraint firstItem="8m9-ry-yZy" firstAttribute="leading" secondItem="aZf-ba-6mw" secondAttribute="leading" id="gOT-dM-agG"/>
                             <constraint firstItem="aZf-ba-6mw" firstAttribute="bottom" secondItem="8m9-ry-yZy" secondAttribute="bottom" id="ue5-56-k1i"/>
