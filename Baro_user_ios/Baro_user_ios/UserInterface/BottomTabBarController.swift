@@ -13,6 +13,7 @@ protocol TopViewElementDelegate : AnyObject {
     func favoriteBtnDelegate(controller : UIViewController)
     func refreshBtnDelegate(controller : UIViewController)
 }
+
 class BottomTabBarController: UIViewController {
     //탑뷰 엘리먼트
     @IBOutlet weak var TopView: UIView!
@@ -36,6 +37,13 @@ class BottomTabBarController: UIViewController {
     @IBOutlet weak var OrderHistoryTabBar: UITabBarItem!
     @IBOutlet weak var OrderStatusTabBar: UITabBarItem!
     //분기문에 사용할 실제 컨트롤러 아이덴티피어
+    static var activityIndicator: UIActivityIndicatorView = { // Create an indicator.
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }()
+
     
     let mainPageControllerIdentifier = "MainPageController"
     let storeListControllerIdentifier = "StoreListPageController"
@@ -82,10 +90,17 @@ class BottomTabBarController: UIViewController {
     var saveTopViewSize = CGSize()
     var saveContentViewSize = CGSize()
     var saveBottomViewSize = CGSize()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
         saveTopViewSize = CGSize(width: view.frame.width, height: 69.0)
+//        indicator.startAnimating()
+//        BottomTabBarController.activityIndicator.center = self.view.center
+//        self.view.addSubview(BottomTabBarController.activityIndicator)
+//
+//
+//        BottomTabBarController.activityIndicator.startAnimating()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -509,6 +524,9 @@ class BottomTabBarController: UIViewController {
         basketControllerWithTopView.moveFromOutSide = true
         self.present(basketControllerWithTopView, animated: true)
     }
+    public static func stopLoading(){
+        activityIndicator.stopAnimating()
+    }
 }
 extension BottomTabBarController : UITabBarDelegate {
     //탭바아이템 클릭에 따른 분기문
@@ -517,15 +535,37 @@ extension BottomTabBarController : UITabBarDelegate {
         case "홈":
             changeViewController(getController: mainPageControllerIdentifier, getStoryBoard: mainPageStoryBoard, sender: nil)
         case "찜한 가게":
+            guard UserDefaults.standard.value(forKey: "user_phone") != nil else{
+                let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
+                self.present(vc, animated: true, completion: nil)
+                return
+            }
             changeViewController(getController: storeListControllerIdentifier, getStoryBoard: storeListStoryBoard, sender: "2")
         case "주문 현황":
+            guard UserDefaults.standard.value(forKey: "user_phone") != nil else{
+                let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
+                self.present(vc, animated: true, completion: nil)
+                return
+            }
             changeViewController(getController: orderStatusControllerIdentifier, getStoryBoard: orderStatusStoryBoard, sender: nil)
         case "주문 내역":
+            guard UserDefaults.standard.value(forKey: "user_phone") != nil else{
+                let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
+                self.present(vc, animated: true, completion: nil)
+                return
+            }
             changeViewController(getController: orderHistoryControllerIdentifier, getStoryBoard: orderHistoryStoryBoard, sender: nil)
         case "마이페이지":
+            guard UserDefaults.standard.value(forKey: "user_phone") != nil else{
+                let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
+                self.present(vc, animated: true, completion: nil)
+                return
+            }
             changeViewController(getController: myPageControllerIdentifier, getStoryBoard: myPageStoryBoard, sender: nil)
         default :
             print("click none")
         }
     }
+    
 }
+

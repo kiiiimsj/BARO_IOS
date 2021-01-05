@@ -30,4 +30,5 @@ class LogoutDialog : UIViewController {
             self.delegate?.clickYesBtnDelegate()
         }
     }
+    
 }

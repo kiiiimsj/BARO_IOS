@@ -45,7 +45,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     var netWork = CallRequest()
     var urlMaker = NetWorkURL()
     var eventList = [EventListModel]()
-    var userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
+    var userPhone = UserDefaults.standard.value(forKey: "user_phone") as? String
     //blur view
     @IBOutlet weak var aboutHereLabel: UILabel!
     @IBOutlet weak var newStoreThisWeekLabel: UILabel!
@@ -151,7 +151,11 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         if notCalled {
             return
         }
-        netWork.get(method: .get, url: urlMaker.getUserNotReadAlertCount+userPhone) {
+        guard let phone = userPhone else{
+            
+            return
+        }
+        netWork.get(method: .get, url: urlMaker.getUserNotReadAlertCount+phone) {
             json in
             if json["result"].boolValue {
                 if (json["count"].intValue > 0) {
@@ -221,18 +225,24 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
     func toAlertUseBottomBar() {
-        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
-        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        if userPhone != nil {
+            let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+            let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+            
+            ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.alertControllerIdentifier
+            ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.alertStoryBoard
+            ViewInBottomTabBar.controllerSender = userPhone
+            ViewInBottomTabBar.moveFromOutSide = true
+            ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+            ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+            
         
-        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.alertControllerIdentifier
-        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.alertStoryBoard
-        ViewInBottomTabBar.controllerSender = userPhone
-        ViewInBottomTabBar.moveFromOutSide = true
-        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
-        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+            self.present(ViewInBottomTabBar, animated: true, completion: nil)
+        }else{
+            let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
+            self.present(vc, animated: true, completion: nil)
+        }
         
-    
-        self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
     func setUseTopBarWithBottomTabBarController() {
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
