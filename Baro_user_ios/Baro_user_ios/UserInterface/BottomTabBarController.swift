@@ -531,6 +531,7 @@ extension BottomTabBarController : UITabBarDelegate {
         case "찜한 가게":
             guard UserDefaults.standard.value(forKey: "user_phone") != nil else{
                 let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
+                checkController()
                 self.present(vc, animated: true, completion: nil)
                 return
             }
@@ -538,6 +539,7 @@ extension BottomTabBarController : UITabBarDelegate {
         case "주문 현황":
             guard UserDefaults.standard.value(forKey: "user_phone") != nil else{
                 let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
+                checkController()
                 self.present(vc, animated: true, completion: nil)
                 return
             }
@@ -545,6 +547,7 @@ extension BottomTabBarController : UITabBarDelegate {
         case "주문 내역":
             guard UserDefaults.standard.value(forKey: "user_phone") != nil else{
                 let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
+                checkController()
                 self.present(vc, animated: true, completion: nil)
                 return
             }
@@ -552,12 +555,25 @@ extension BottomTabBarController : UITabBarDelegate {
         case "마이페이지":
             guard UserDefaults.standard.value(forKey: "user_phone") != nil else{
                 let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
+                checkController()
                 self.present(vc, animated: true, completion: nil)
                 return
             }
             changeViewController(getController: myPageControllerIdentifier, getStoryBoard: myPageStoryBoard, sender: nil)
         default :
             print("click none")
+        }
+    }
+    func checkController() {
+        if (ContentView.subviews.count != 0) {
+            for view in ContentView.subviews {
+                if(view.accessibilityIdentifier == "StoreListPageController" ||
+                    view.accessibilityIdentifier == "AboutStore") {
+                    self.bottomTabBar.selectedItem = nil
+                }else {
+                    self.bottomTabBar.selectedItem = self.MainPageTabBar
+                }
+            }
         }
     }
     
