@@ -234,10 +234,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Pca-R4-Umg" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="162.66666666666666" width="360" height="482.33333333333337"/>
+                                <rect key="frame" x="0.0" y="153.66666666666666" width="360" height="491.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-zt-Opx">
-                                        <rect key="frame" x="19" y="22" width="88" height="21"/>
+                                        <rect key="frame" x="19" y="22" width="88" height="16.333333333333329"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
@@ -245,7 +245,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nU3-3Z-AZy">
-                                        <rect key="frame" x="19" y="257" width="67.666666666666671" height="21"/>
+                                        <rect key="frame" x="19" y="243.00000000000003" width="64.666666666666671" height="16.333333333333343"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
@@ -253,7 +253,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZc-S9-cQF">
-                                        <rect key="frame" x="19.999999999999996" y="101.00000000000003" width="53.666666666666657" height="21"/>
+                                        <rect key="frame" x="19.999999999999996" y="96.333333333333343" width="53.666666666666657" height="16.333333333333329"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
@@ -261,7 +261,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61w-lS-yIc">
-                                        <rect key="frame" x="20" y="179.00000000000003" width="80.666666666666671" height="21"/>
+                                        <rect key="frame" x="20" y="169.66666666666666" width="76.666666666666671" height="16.333333333333343"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
@@ -269,7 +269,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2aw-Zy-h02">
-                                        <rect key="frame" x="19" y="51" width="320" height="34"/>
+                                        <rect key="frame" x="19" y="46.333333333333343" width="320" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -280,7 +280,7 @@
                                         <textInputTraits key="textInputTraits" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" textContentType="username"/>
                                     </textField>
                                     <view contentMode="top" restorationIdentifier="NameInputUnderLine" translatesAutoresizingMaskIntoConstraints="NO" id="Qoa-wV-XVN" userLabel="NameInputUnderLine">
-                                        <rect key="frame" x="19" y="85" width="320" height="1"/>
+                                        <rect key="frame" x="19" y="80.333333333333343" width="320" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -289,7 +289,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dC-Q7-8zq">
-                                        <rect key="frame" x="19" y="86" width="85.333333333333329" height="15"/>
+                                        <rect key="frame" x="19" y="81.333333333333343" width="80.666666666666671" height="11.666666666666671"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
@@ -297,7 +297,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iz-Xd-ACh">
-                                        <rect key="frame" x="20" y="130.00000000000003" width="320" height="34"/>
+                                        <rect key="frame" x="20" y="120.66666666666666" width="320" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -308,7 +308,7 @@
                                         <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" textContentType="password"/>
                                     </textField>
                                     <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="kHY-Eb-ziP" userLabel="PassInputUnderLine">
-                                        <rect key="frame" x="20" y="164.00000000000003" width="320" height="1"/>
+                                        <rect key="frame" x="20" y="154.66666666666666" width="320" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -317,7 +317,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ofM-aF-h8W">
-                                        <rect key="frame" x="20" y="208.00000000000003" width="320" height="34"/>
+                                        <rect key="frame" x="20" y="194.00000000000003" width="320" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -328,7 +328,7 @@
                                         <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zh8-Z6-Qjx">
-                                        <rect key="frame" x="20" y="286" width="320" height="34"/>
+                                        <rect key="frame" x="20" y="267.33333333333337" width="320" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -339,7 +339,7 @@
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="mx0-vS-i2k" userLabel="PassCheckInputUnderLine">
-                                        <rect key="frame" x="20" y="241.00000000000003" width="320" height="1"/>
+                                        <rect key="frame" x="20" y="227.00000000000003" width="320" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -348,7 +348,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="DCO-hA-zvS" userLabel="EmailCheckInputUnderLine">
-                                        <rect key="frame" x="19" y="320" width="320" height="1"/>
+                                        <rect key="frame" x="19" y="301.33333333333337" width="320" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -357,7 +357,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhD-EN-JVD">
-                                        <rect key="frame" x="20" y="402" width="320" height="50"/>
+                                        <rect key="frame" x="20" y="383.33333333333337" width="320" height="50"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ncs-GI-hId"/>
@@ -372,21 +372,21 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 4자 이상 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stU-AZ-8HG">
-                                        <rect key="frame" x="19" y="165.00000000000003" width="141.33333333333334" height="15"/>
+                                        <rect key="frame" x="19" y="155.66666666666666" width="135" height="11.666666666666657"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일을 형식에 맞게 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNc-st-LQE">
-                                        <rect key="frame" x="19" y="321" width="145" height="15"/>
+                                        <rect key="frame" x="19" y="302.33333333333337" width="138.33333333333334" height="11.666666666666686"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입력한 비밀번호를 확인해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igJ-Z6-zUx">
-                                        <rect key="frame" x="19" y="242.00000000000003" width="133.33333333333334" height="14.999999999999972"/>
+                                        <rect key="frame" x="19.000000000000007" y="228.00000000000003" width="126.66666666666669" height="11.666666666666657"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -446,7 +446,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정보입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9Z-cb-Qzo">
-                                <rect key="frame" x="128.33333333333334" y="107" width="103.33333333333334" height="41.666666666666657"/>
+                                <rect key="frame" x="131.66666666666666" y="107" width="97" height="32.666666666666657"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -505,13 +505,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입 완료!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foJ-sY-lBt">
-                                <rect key="frame" x="94.000000000000014" y="299.33333333333331" width="172.33333333333337" height="41.666666666666686"/>
+                                <rect key="frame" x="99.666666666666671" y="303.66666666666669" width="160.66666666666663" height="32.666666666666686"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="v3T-6i-vl5">
-                                <rect key="frame" x="130" y="189" width="100" height="99.999999999999986"/>
+                                <rect key="frame" x="130" y="193.33333333333334" width="100" height="100.00000000000001"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="101.33" id="aaK-9m-niV"/>
@@ -519,7 +519,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkv-CP-iKg">
-                                <rect key="frame" x="20" y="351" width="320" height="50"/>
+                                <rect key="frame" x="20" y="346.33333333333331" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Lvg-eZ-Qze"/>
@@ -563,7 +563,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="핸드폰 인증" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iW-tI-hSI">
-                                <rect key="frame" x="112.33333333333333" y="97" width="135.33333333333337" height="41.666666666666657"/>
+                                <rect key="frame" x="115.66666666666669" y="97" width="129" height="32.666666666666657"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -573,7 +573,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleAspectFit" restorationIdentifier="PhoneCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="hSZ-J3-zxi" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="162.66666666666666" width="360" height="477.33333333333337"/>
+                                <rect key="frame" x="0.0" y="153.66666666666666" width="360" height="486.33333333333337"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0k7-4q-58d">
                                         <rect key="frame" x="20" y="194.00000000000003" width="320" height="50"/>
@@ -603,7 +603,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="du4-tV-oPQ">
-                                                <rect key="frame" x="-15" y="47.000000000000028" width="50" height="50"/>
+                                                <rect key="frame" x="-15" y="47" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -615,7 +615,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKD-DI-Tsr">
-                                                <rect key="frame" x="45" y="47.000000000000028" width="50" height="50"/>
+                                                <rect key="frame" x="45" y="47" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -627,7 +627,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PGg-lu-FNQ">
-                                                <rect key="frame" x="105" y="47.000000000000028" width="50" height="50"/>
+                                                <rect key="frame" x="105" y="47" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -639,7 +639,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jXu-kd-cS7">
-                                                <rect key="frame" x="165" y="47.000000000000028" width="50" height="50"/>
+                                                <rect key="frame" x="165" y="47" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -651,7 +651,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUU-RE-o6x">
-                                                <rect key="frame" x="225" y="47.000000000000028" width="50" height="50"/>
+                                                <rect key="frame" x="225" y="47" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -663,7 +663,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eow-3i-FzL">
-                                                <rect key="frame" x="285" y="47.000000000000028" width="50" height="50"/>
+                                                <rect key="frame" x="285" y="47" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -772,10 +772,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" restorationIdentifier="PhoneCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="8TE-Hy-AX6" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="162.66666666666666" width="360" height="477.33333333333337"/>
+                                <rect key="frame" x="0.0" y="153.66666666666666" width="360" height="486.33333333333337"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WK9-oq-H1Q">
-                                        <rect key="frame" x="20" y="144.00000000000003" width="320" height="34"/>
+                                        <rect key="frame" x="20" y="138.66666666666666" width="320" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -783,7 +783,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfE-TS-YQf">
-                                        <rect key="frame" x="20" y="198.00000000000003" width="320" height="50"/>
+                                        <rect key="frame" x="20" y="192.66666666666666" width="320" height="50"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bg6-iN-hZa"/>
@@ -797,7 +797,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰 번호 입력" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjU-gs-ZoM">
-                                        <rect key="frame" x="19.999999999999993" y="100.00000000000003" width="110.33333333333331" height="24"/>
+                                        <rect key="frame" x="20" y="100" width="106" height="18.666666666666671"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
@@ -805,7 +805,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="Hos-tE-5U0">
-                                        <rect key="frame" x="20" y="183.00000000000003" width="320" height="1"/>
+                                        <rect key="frame" x="20" y="177.66666666666666" width="320" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -835,7 +835,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="핸드폰 인증" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8U-q2-kL0">
-                                <rect key="frame" x="112.33333333333333" y="97" width="135.33333333333337" height="41.666666666666657"/>
+                                <rect key="frame" x="115.66666666666669" y="97" width="129" height="32.666666666666657"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -903,10 +903,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" restorationIdentifier="PhoneCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="2Sd-cD-fXu" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="162.66666666666666" width="360" height="477.33333333333337"/>
+                                <rect key="frame" x="0.0" y="153.66666666666666" width="360" height="486.33333333333337"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OdO-fA-XZE">
-                                        <rect key="frame" x="20" y="144.00000000000003" width="320" height="34"/>
+                                        <rect key="frame" x="20" y="138.66666666666666" width="320" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -914,7 +914,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰 번호 입력" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTb-lb-tZh">
-                                        <rect key="frame" x="19.999999999999993" y="100.00000000000003" width="110.33333333333331" height="24"/>
+                                        <rect key="frame" x="20" y="100" width="106" height="18.666666666666671"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
@@ -922,7 +922,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="XSP-qJ-NeF">
-                                        <rect key="frame" x="20" y="183.00000000000003" width="320" height="1"/>
+                                        <rect key="frame" x="20" y="177.66666666666666" width="320" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -930,7 +930,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbX-jv-2Iq">
-                                        <rect key="frame" x="20" y="198.00000000000003" width="320" height="50"/>
+                                        <rect key="frame" x="20" y="192.66666666666666" width="320" height="50"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="izC-8j-2kL"/>
@@ -966,7 +966,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 찾기" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoS-yF-h1M">
-                                <rect key="frame" x="99.666666666666686" y="97" width="161" height="41.666666666666657"/>
+                                <rect key="frame" x="103.33333333333333" y="97" width="153.33333333333337" height="32.666666666666657"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1012,7 +1012,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="핸드폰 인증" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrQ-CD-PIf">
-                                <rect key="frame" x="112.33333333333333" y="97" width="135.33333333333337" height="41.666666666666657"/>
+                                <rect key="frame" x="115.66666666666669" y="97" width="129" height="32.666666666666657"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1022,7 +1022,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleAspectFit" restorationIdentifier="PhoneCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="dOs-aa-tZc" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="162.66666666666666" width="360" height="477.33333333333337"/>
+                                <rect key="frame" x="0.0" y="153.66666666666666" width="360" height="486.33333333333337"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8K-Kb-0k5">
                                         <rect key="frame" x="20" y="194.00000000000003" width="320" height="50"/>
@@ -1051,7 +1051,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mMI-8N-6Vo">
-                                                <rect key="frame" x="-15" y="47.000000000000028" width="50" height="50"/>
+                                                <rect key="frame" x="-15" y="47" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -1063,7 +1063,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgM-MI-aIS">
-                                                <rect key="frame" x="45" y="47.000000000000028" width="50" height="50"/>
+                                                <rect key="frame" x="45" y="47" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -1075,7 +1075,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tc-uf-Rwg">
-                                                <rect key="frame" x="105" y="47.000000000000028" width="50" height="50"/>
+                                                <rect key="frame" x="105" y="47" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -1087,7 +1087,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ibw-Lu-pfi">
-                                                <rect key="frame" x="165" y="47.000000000000028" width="50" height="50"/>
+                                                <rect key="frame" x="165" y="47" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -1099,7 +1099,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgM-Lf-6hJ">
-                                                <rect key="frame" x="225" y="47.000000000000028" width="50" height="50"/>
+                                                <rect key="frame" x="225" y="47" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -1111,7 +1111,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zle-h1-LQm">
-                                                <rect key="frame" x="285" y="47.000000000000028" width="50" height="50"/>
+                                                <rect key="frame" x="285" y="47" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -1203,17 +1203,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" restorationIdentifier="PhoneCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="yqc-jF-hcr" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="161.66666666666669" width="414" height="574.33333333333326"/>
+                                <rect key="frame" x="0.0" y="152.66666666666669" width="414" height="583.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KC9-df-sCP">
-                                        <rect key="frame" x="20" y="144.00000000000003" width="374" height="34"/>
+                                        <rect key="frame" x="20" y="138.66666666666666" width="374" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새 비밀 번호 설정" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oa-UQ-GyQ">
-                                        <rect key="frame" x="20" y="100.00000000000003" width="114" height="24"/>
+                                        <rect key="frame" x="19.999999999999993" y="100" width="110.33333333333331" height="18.666666666666671"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
@@ -1221,7 +1221,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="sae-tV-k8W">
-                                        <rect key="frame" x="20" y="183.00000000000003" width="374" height="1"/>
+                                        <rect key="frame" x="20" y="177.66666666666666" width="374" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1229,7 +1229,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새 비밀 번호 확인" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gup-7u-4AX">
-                                        <rect key="frame" x="20" y="209.00000000000003" width="114" height="24"/>
+                                        <rect key="frame" x="19.999999999999993" y="203.66666666666666" width="110.33333333333331" height="18.666666666666657"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
@@ -1237,14 +1237,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Dl-42-8WC">
-                                        <rect key="frame" x="20" y="253" width="374" height="34"/>
+                                        <rect key="frame" x="20" y="242.33333333333337" width="374" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
                                     <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="KWG-l5-u0I">
-                                        <rect key="frame" x="20" y="292" width="374" height="1"/>
+                                        <rect key="frame" x="20" y="281.33333333333337" width="374" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1252,7 +1252,7 @@
                                         </constraints>
                                     </view>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9og-TA-maj">
-                                        <rect key="frame" x="20" y="184.00000000000003" width="85.333333333333329" height="15"/>
+                                        <rect key="frame" x="20" y="178.66666666666666" width="80.666666666666671" height="11.666666666666657"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
@@ -1260,7 +1260,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호와 비밀번호확인이 일치하지 않습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQ8-SH-27Y">
-                                        <rect key="frame" x="20" y="293" width="191" height="15"/>
+                                        <rect key="frame" x="20" y="282.33333333333337" width="181.66666666666666" height="11.666666666666686"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
@@ -1268,7 +1268,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfE-RX-qsf">
-                                        <rect key="frame" x="20" y="322" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="308" width="374" height="50"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="j6g-k2-dIZ"/>
@@ -1315,7 +1315,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새 비밀 번호 설정" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF9-XU-xPZ">
-                                <rect key="frame" x="107.33333333333333" y="95" width="199.66666666666669" height="41.666666666666657"/>
+                                <rect key="frame" x="110.66666666666669" y="95" width="193" height="32.666666666666657"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1353,13 +1353,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 찾기 완료!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPp-Xc-Bk8">
-                                <rect key="frame" x="92.000000000000014" y="347.33333333333331" width="230.33333333333337" height="41.666666666666686"/>
+                                <rect key="frame" x="98.666666666666671" y="351.66666666666669" width="216.66666666666663" height="32.666666666666686"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="C1Z-pj-T2S">
-                                <rect key="frame" x="157" y="237" width="100" height="100"/>
+                                <rect key="frame" x="157" y="241.33333333333337" width="100" height="100"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="101.33" id="PNX-Ou-g4A"/>
@@ -1367,7 +1367,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UY5-LR-BEJ">
-                                <rect key="frame" x="20" y="399" width="374" height="50"/>
+                                <rect key="frame" x="20" y="394.33333333333331" width="374" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ePY-Zk-HGO"/>
@@ -1514,10 +1514,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" restorationIdentifier="PhoneCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="Igm-bx-kd7" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="162.66666666666666" width="360" height="477.33333333333337"/>
+                                <rect key="frame" x="0.0" y="153.66666666666666" width="360" height="486.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약관에 동의해주세요!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woO-4V-GBf">
-                                        <rect key="frame" x="20" y="20" width="141.33333333333334" height="24"/>
+                                        <rect key="frame" x="20" y="20" width="133.33333333333334" height="18.666666666666671"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
@@ -1525,7 +1525,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETx-9q-Jzc">
-                                        <rect key="frame" x="20" y="64" width="320" height="353.33333333333331"/>
+                                        <rect key="frame" x="20" y="58.666666666666686" width="320" height="367.66666666666669"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlg-Ig-W3T">
                                                 <rect key="frame" x="10" y="10" width="300" height="30"/>
@@ -1539,7 +1539,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bov-qb-9US">
-                                                        <rect key="frame" x="36.000000000000007" y="2.3333333333333428" width="66.666666666666686" height="25.333333333333332"/>
+                                                        <rect key="frame" x="36" y="5" width="63.666666666666657" height="20"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1555,7 +1555,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="hWm-Dx-Lmc">
-                                                <rect key="frame" x="0.0" y="59.000000000000028" width="320" height="1"/>
+                                                <rect key="frame" x="0.0" y="58.999999999999972" width="320" height="1"/>
                                                 <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -1563,7 +1563,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Lc-IF-F3N">
-                                                <rect key="frame" x="10" y="80.000000000000028" width="300" height="30"/>
+                                                <rect key="frame" x="10" y="79.999999999999972" width="300" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zH-Ft-owL">
                                                         <rect key="frame" x="0.0" y="4" width="16" height="22"/>
@@ -1585,7 +1585,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 이용약관 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bew-tI-xnR">
-                                                        <rect key="frame" x="36" y="4" width="141.33333333333334" height="22.333333333333332"/>
+                                                        <rect key="frame" x="36" y="6.3333333333333712" width="133" height="17.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1603,7 +1603,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lb9-iT-Kni">
-                                                <rect key="frame" x="10" y="120.00000000000003" width="300" height="30"/>
+                                                <rect key="frame" x="10" y="119.99999999999997" width="300" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ArF-L1-7Se">
                                                         <rect key="frame" x="0.0" y="4" width="16" height="22"/>
@@ -1625,7 +1625,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 취급방침 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4z-na-xsf">
-                                                        <rect key="frame" x="36" y="4" width="155" height="22.333333333333332"/>
+                                                        <rect key="frame" x="36" y="6.3333333333333712" width="146" height="17.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1643,7 +1643,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7D-R7-y5g">
-                                                <rect key="frame" x="10" y="160.00000000000003" width="300" height="30"/>
+                                                <rect key="frame" x="10" y="159.99999999999997" width="300" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QR-VX-I8Q">
                                                         <rect key="frame" x="0.0" y="4" width="16" height="22"/>
@@ -1665,7 +1665,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치정보 이용약관 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyM-bz-A2g">
-                                                        <rect key="frame" x="36" y="4" width="155" height="22.333333333333332"/>
+                                                        <rect key="frame" x="36" y="6.3333333333333712" width="146" height="17.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1683,7 +1683,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKZ-eW-ZQV">
-                                                <rect key="frame" x="10" y="200.00000000000003" width="300" height="30"/>
+                                                <rect key="frame" x="10" y="199.99999999999997" width="300" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNl-eW-c3K">
                                                         <rect key="frame" x="0.0" y="4" width="16" height="22"/>
@@ -1705,7 +1705,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마케팅정보 SNS 수신동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rex-D8-mh8">
-                                                        <rect key="frame" x="36" y="4" width="201" height="22.333333333333332"/>
+                                                        <rect key="frame" x="36.000000000000014" y="6.3333333333333712" width="193.33333333333337" height="17.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1746,7 +1746,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bav-wX-wNP">
-                                        <rect key="frame" x="0.0" y="427.33333333333337" width="360" height="50"/>
+                                        <rect key="frame" x="0.0" y="436.33333333333337" width="360" height="50"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Tr2-BZ-sVt"/>
@@ -1780,7 +1780,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVN-xf-NMc">
-                                <rect key="frame" x="128.33333333333334" y="97" width="103.33333333333334" height="41.666666666666657"/>
+                                <rect key="frame" x="131.66666666666666" y="97" width="97" height="32.666666666666657"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>

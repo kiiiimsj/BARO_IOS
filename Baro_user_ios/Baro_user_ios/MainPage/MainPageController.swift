@@ -97,7 +97,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         collectionViewNewStore.delegate = self
         
         
-        locationCheck()
+//        locationCheck()
         
         print("main's viewDidLoad")
         locationManager.startUpdatingLocation()
@@ -177,7 +177,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             let location: CLLocation = locations[locations.count - 1]
         print("dddd",location)
         getMyLocation(String(location.coordinate.longitude), String(location.coordinate.latitude))
-        locationManager.stopUpdatingLocation()
+//        locationManager.stopUpdatingLocation()
     }
     
     //기기의 gps 꺼져있을때
@@ -190,6 +190,26 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         }
         else if status == CLAuthorizationStatus.authorizedWhenInUse {
             //앱 실행중일시에만
+        }
+        if status == CLAuthorizationStatus.denied || status == CLAuthorizationStatus.restricted || status == CLAuthorizationStatus.notDetermined {
+            let alter = UIAlertController(title: "위치권한 설정이 '안함'으로 되어있습니다.", message: "앱 설정화면으로 가시겠습니까? ", preferredStyle: UIAlertController.Style.alert)
+            let logOkAction = UIAlertAction(title: "네", style: UIAlertAction.Style.default) {
+                (action: UIAlertAction) in
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
+                }
+                else {
+                    UIApplication.shared.canOpenURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
+                }
+                
+            }
+//            let logNoAction = UIAlertAction(title: "아니오", style: UIAlertAction.Style.destructive) {
+//                (action: UIAlertAction) in
+//                exit(0)
+//            }
+//            alter.addAction(logNoAction)
+            alter.addAction(logOkAction)
+            self.present(alter, animated: true, completion: nil)
         }
     }
     func toStoreListUseBottomBar(tag : String) {
@@ -266,10 +286,10 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         refreshControl.endRefreshing()
     }
     //기기의 gps (위치권한 설정) 안함 되어있을경우 alert띄워 앱의 위치권한 설정으로
-    @objc func locationCheck() {
+    func locationCheck() {
         let status = CLLocationManager.authorizationStatus()
         
-        if status == CLAuthorizationStatus.denied || status == CLAuthorizationStatus.restricted {
+        if status == CLAuthorizationStatus.denied || status == CLAuthorizationStatus.restricted || status == CLAuthorizationStatus.notDetermined {
             let alter = UIAlertController(title: "위치권한 설정이 '안함'으로 되어있습니다.", message: "앱 설정화면으로 가시겠습니까? ", preferredStyle: UIAlertController.Style.alert)
             let logOkAction = UIAlertAction(title: "네", style: UIAlertAction.Style.default) {
                 (action: UIAlertAction) in
