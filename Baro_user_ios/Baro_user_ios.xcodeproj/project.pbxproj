@@ -154,6 +154,7 @@
 		E3AA04D2258A22400055454A /* SetNewPW.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04D1258A22400055454A /* SetNewPW.swift */; };
 		E3AA04D7258A35DC0055454A /* FindPWComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04D6258A35DB0055454A /* FindPWComplete.swift */; };
 		E3CEDAFC25A3426900EDE823 /* GoLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDAFB25A3426900EDE823 /* GoLoginController.swift */; };
+		E3CEDAFF25A41B7100EDE823 /* BeforeRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDAFE25A41B7100EDE823 /* BeforeRegister.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -308,6 +309,7 @@
 		E3AA04D1258A22400055454A /* SetNewPW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewPW.swift; sourceTree = "<group>"; };
 		E3AA04D6258A35DB0055454A /* FindPWComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWComplete.swift; sourceTree = "<group>"; };
 		E3CEDAFB25A3426900EDE823 /* GoLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoLoginController.swift; sourceTree = "<group>"; };
+		E3CEDAFE25A41B7100EDE823 /* BeforeRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeRegister.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +458,7 @@
 				E3AA04D1258A22400055454A /* SetNewPW.swift */,
 				E3AA04D6258A35DB0055454A /* FindPWComplete.swift */,
 				3F1C4A54259C21E3002C5B5D /* LoginDialog.swift */,
+				E3CEDAFE25A41B7100EDE823 /* BeforeRegister.swift */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				3FEAF06F254FFC1100A5ABC0 /* FavoriteDialog.swift in Sources */,
 				048A0BDE2540120A007D4FD3 /* NewStoreListModel.swift in Sources */,
 				3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */,
+				E3CEDAFF25A41B7100EDE823 /* BeforeRegister.swift in Sources */,
 				E3AA04C12583E9D80055454A /* VerticalProgressbar.swift in Sources */,
 				E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */,
 				04D11F452543D41D00ADB210 /* OrderHistoryModel.swift in Sources */,

@@ -85,7 +85,7 @@ class LoginPageController: UIViewController {
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
     @objc func handleRegister(_ sender : UIButton) {
-        self.performSegue(withIdentifier: "PhoneSendForRegister", sender: nil)
+        self.performSegue(withIdentifier: "BeforeRegister", sender: nil)
     }
     
     @objc private func handleLogin(_ sender: UIButton) {
