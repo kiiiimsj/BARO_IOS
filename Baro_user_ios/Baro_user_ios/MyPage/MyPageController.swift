@@ -228,8 +228,8 @@ extension MyPageController : UITableViewDelegate, UITableViewDataSource, ClickLo
         case 0 :
             switch indexPath.row {
             case 0 : self.performSegue(withIdentifier: "NoticePageController", sender: nil)
-            case 1 : UIApplication.shared.open(URL(string:"http://pf.kakao.com/_bYeuk/chat")!)
-            case 2 : UIApplication.shared.open(URL(string:"http://pf.kakao.com/_bYeuk/chat")!)
+            case 1 : UIApplication.shared.open(URL(string:"https://pf.kakao.com/_bYeuK/chat")!)
+            case 2 : UIApplication.shared.open(URL(string:"https://pf.kakao.com/_bYeuK/chat")!)
             default : return
             }
         case 1 :
