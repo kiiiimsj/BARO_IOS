@@ -191,26 +191,27 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         else if status == CLAuthorizationStatus.authorizedWhenInUse {
             //앱 실행중일시에만
         }
-        if status == CLAuthorizationStatus.denied || status == CLAuthorizationStatus.restricted || status == CLAuthorizationStatus.notDetermined {
-            let alter = UIAlertController(title: "위치권한 설정이 '안함'으로 되어있습니다.", message: "앱 설정화면으로 가시겠습니까? ", preferredStyle: UIAlertController.Style.alert)
-            let logOkAction = UIAlertAction(title: "네", style: UIAlertAction.Style.default) {
-                (action: UIAlertAction) in
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
-                }
-                else {
-                    UIApplication.shared.canOpenURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
-                }
-                
-            }
-//            let logNoAction = UIAlertAction(title: "아니오", style: UIAlertAction.Style.destructive) {
+        locationCheck()
+//        if status == CLAuthorizationStatus.denied || status == CLAuthorizationStatus.restricted || status == CLAuthorizationStatus.notDetermined {
+//            let alter = UIAlertController(title: "위치권한 설정이 '안함'으로 되어있습니다.", message: "앱 설정화면으로 가시겠습니까? ", preferredStyle: UIAlertController.Style.alert)
+//            let logOkAction = UIAlertAction(title: "네", style: UIAlertAction.Style.default) {
 //                (action: UIAlertAction) in
-//                exit(0)
+//                if #available(iOS 10.0, *) {
+//                    UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
+//                }
+//                else {
+//                    UIApplication.shared.canOpenURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
+//                }
+//
 //            }
-//            alter.addAction(logNoAction)
-            alter.addAction(logOkAction)
-            self.present(alter, animated: true, completion: nil)
-        }
+////            let logNoAction = UIAlertAction(title: "아니오", style: UIAlertAction.Style.destructive) {
+////                (action: UIAlertAction) in
+////                exit(0)
+////            }
+////            alter.addAction(logNoAction)
+//            alter.addAction(logOkAction)
+//            self.present(alter, animated: true, completion: nil)
+//        }
     }
     func toStoreListUseBottomBar(tag : String) {
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
@@ -294,18 +295,28 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             let logOkAction = UIAlertAction(title: "네", style: UIAlertAction.Style.default) {
                 (action: UIAlertAction) in
                 if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
+                    let status2 = CLLocationManager.authorizationStatus()
+                    print(status2)
+                    if status2 != CLAuthorizationStatus.authorizedAlways && status2 != CLAuthorizationStatus.authorizedWhenInUse {
+                        self.locationCheck()
+                        UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
+                    }
                 }
                 else {
-                    UIApplication.shared.canOpenURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
+                    let status2 = CLLocationManager.authorizationStatus()
+                    print(status2)
+                    if status2 != CLAuthorizationStatus.authorizedAlways && status2 != CLAuthorizationStatus.authorizedWhenInUse {
+                        self.locationCheck()
+                        UIApplication.shared.canOpenURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
+                    }
                 }
                 
             }
-            let logNoAction = UIAlertAction(title: "아니오", style: UIAlertAction.Style.destructive) {
-                (action: UIAlertAction) in
-                exit(0)
-            }
-            alter.addAction(logNoAction)
+//            let logNoAction = UIAlertAction(title: "아니오", style: UIAlertAction.Style.destructive) {
+//                (action: UIAlertAction) in
+//                exit(0)
+//            }
+//            alter.addAction(logNoAction)
             alter.addAction(logOkAction)
             self.present(alter, animated: true, completion: nil)
         }
