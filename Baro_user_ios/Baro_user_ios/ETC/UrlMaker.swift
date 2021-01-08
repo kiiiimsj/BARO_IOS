@@ -124,7 +124,8 @@ class NetWorkURL {
     let couponRegister = "http://3.35.180.57:8080/CouponInsertByNumber.do?"
     // phone = 휴대전화 번호 & coupon_id = 쿠폰번호(고객입력)
     
-    //
+    //주문시 가게가 열었는지 확인
+    let clarityIsOpen = "http://3.35.180.57:8080/StoreCheckIsOpen.do?store_id="
     
     //BootPay관련 url
     let getUserToken = "http://3.35.180.57:8080/BillingGetUserToken.do"

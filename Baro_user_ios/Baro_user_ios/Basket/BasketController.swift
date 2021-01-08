@@ -19,6 +19,7 @@ class BasketController : UIViewController, TopViewElementDelegate{
     var orders = [Order]()
     let netWork = CallRequest()
     let urlMaker = NetWorkURL()
+    let store_id = String(UserDefaults.standard.value(forKey: "currentStoreId") as! Int)
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -65,15 +66,25 @@ class BasketController : UIViewController, TopViewElementDelegate{
         self.view.endEditing(true)
     }
     @IBAction func clickPay(_ sender: Any) {
-        saveBasket()
-        let storyboard = UIStoryboard(name: "Basket", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "CouponForBasket") as! CouponForBasket
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        vc.totalPrice = self.totalPrice
-        vc.sendOrderToBootPay = self.orders
-        self.present(vc, animated: true, completion: nil)
-        print(totalPriceLabel.text!)
+        netWork.get(method: .get, url: urlMaker.clarityIsOpen + store_id ) { json in
+            if json["result"].boolValue {
+                self.saveBasket()
+                let storyboard = UIStoryboard(name: "Basket", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "CouponForBasket") as! CouponForBasket
+                vc.modalPresentationStyle = .overFullScreen
+                vc.modalTransitionStyle = .crossDissolve
+                vc.totalPrice = self.totalPrice
+                vc.sendOrderToBootPay = self.orders
+                self.present(vc, animated: true, completion: nil)
+                print(self.totalPriceLabel.text!)
+            }else{
+                let vc = UIStoryboard.init(name: "Basket", bundle: nil).instantiateViewController(withIdentifier: "StoreNotOpen")
+                vc.modalPresentationStyle = .overFullScreen
+                vc.modalTransitionStyle = .crossDissolve
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+        
     }
     func recalcPrice(){
         for item in orders {

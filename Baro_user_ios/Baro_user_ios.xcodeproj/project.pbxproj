@@ -69,7 +69,6 @@
 		3F4C5AA2253ECAD700C0E7B6 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9D253ECAD700C0E7B6 /* NotoSansKR-Thin.otf */; };
 		3F4C5AA3253ECAD700C0E7B6 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C5A9E253ECAD700C0E7B6 /* NotoSansKR-Light.otf */; };
 		3F4C5AB7253ED5D000C0E7B6 /* uiViewSettingAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */; };
-		3F4F8DAF254572220015BACE /* NoticePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F8DAE254572220015BACE /* NoticePageController.swift */; };
 		3F65DCF8254854B40029D36E /* uiLabelAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */; };
 		3F6D861B25653BAA00D65CAC /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D861A25653BAA00D65CAC /* ToastMessage.swift */; };
 		3F90855F257525B100D13759 /* LogoutDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F90855E257525B100D13759 /* LogoutDialog.swift */; };
@@ -85,7 +84,6 @@
 		3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20E622546EFD400EEE783 /* ChangeEmail.swift */; };
 		3FC20E662546EFF700EEE783 /* ChangeEmail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC20E652546EFF700EEE783 /* ChangeEmail.storyboard */; };
 		3FCC4814257A649B00BAD807 /* AlertContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC4813257A649B00BAD807 /* AlertContentController.swift */; };
-		3FDE5E382546968000C05514 /* NoticePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE5E372546968000C05514 /* NoticePage.storyboard */; };
 		3FDE5E5E2546A16C00C05514 /* TermOfUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE5E5D2546A16C00C05514 /* TermOfUser.swift */; };
 		3FDE5E612546A1C800C05514 /* TermOfUserPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */; };
 		3FDE5E652546B70C00C05514 /* privacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE5E642546B70C00C05514 /* privacyPolicy.html */; };
@@ -157,6 +155,7 @@
 		E3AA04D7258A35DC0055454A /* FindPWComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA04D6258A35DB0055454A /* FindPWComplete.swift */; };
 		E3CEDAFC25A3426900EDE823 /* GoLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDAFB25A3426900EDE823 /* GoLoginController.swift */; };
 		E3CEDAFF25A41B7100EDE823 /* BeforeRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDAFE25A41B7100EDE823 /* BeforeRegister.swift */; };
+		E3CEDB0325A83E1400EDE823 /* StoreNotOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDB0225A83E1400EDE823 /* StoreNotOpen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -225,7 +224,6 @@
 		3F4C5A9D253ECAD700C0E7B6 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
 		3F4C5A9E253ECAD700C0E7B6 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		3F4C5AB6253ED5D000C0E7B6 /* uiViewSettingAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiViewSettingAttribute.swift; sourceTree = "<group>"; };
-		3F4F8DAE254572220015BACE /* NoticePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePageController.swift; sourceTree = "<group>"; };
 		3F65DCF7254854B40029D36E /* uiLabelAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiLabelAnimation.swift; sourceTree = "<group>"; };
 		3F6D861A25653BAA00D65CAC /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		3F90855E257525B100D13759 /* LogoutDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutDialog.swift; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 		3FC20E622546EFD400EEE783 /* ChangeEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmail.swift; sourceTree = "<group>"; };
 		3FC20E652546EFF700EEE783 /* ChangeEmail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeEmail.storyboard; sourceTree = "<group>"; };
 		3FCC4813257A649B00BAD807 /* AlertContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContentController.swift; sourceTree = "<group>"; };
-		3FDE5E372546968000C05514 /* NoticePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NoticePage.storyboard; sourceTree = "<group>"; };
 		3FDE5E5D2546A16C00C05514 /* TermOfUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermOfUser.swift; sourceTree = "<group>"; };
 		3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermOfUserPage.storyboard; sourceTree = "<group>"; };
 		3FDE5E642546B70C00C05514 /* privacyPolicy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacyPolicy.html; sourceTree = "<group>"; };
@@ -314,6 +311,7 @@
 		E3AA04D6258A35DB0055454A /* FindPWComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWComplete.swift; sourceTree = "<group>"; };
 		E3CEDAFB25A3426900EDE823 /* GoLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoLoginController.swift; sourceTree = "<group>"; };
 		E3CEDAFE25A41B7100EDE823 /* BeforeRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeRegister.swift; sourceTree = "<group>"; };
+		E3CEDB0225A83E1400EDE823 /* StoreNotOpen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreNotOpen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -560,8 +558,6 @@
 				3F05C563254116AC0066DAAD /* MyPageController.swift */,
 				3F05C566254116C70066DAAD /* MyPage.storyboard */,
 				3FA4FC822542898E00EF2894 /* MyPageButtons.swift */,
-				3F4F8DAE254572220015BACE /* NoticePageController.swift */,
-				3FDE5E372546968000C05514 /* NoticePage.storyboard */,
 				3FDE5E5D2546A16C00C05514 /* TermOfUser.swift */,
 				3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */,
 				3FC20E592546E62400EEE783 /* NoticeCell.swift */,
@@ -627,6 +623,7 @@
 				E3006A6925501E3000FFBAAB /* BasketNonEssentialCell.swift */,
 				3FE2C29D2557E3A5002E6184 /* CouponForBasket.swift */,
 				3FE2C2A02557EFAA002E6184 /* CouponForBasketCell.swift */,
+				E3CEDB0225A83E1400EDE823 /* StoreNotOpen.swift */,
 			);
 			path = Basket;
 			sourceTree = "<group>";
@@ -759,7 +756,6 @@
 				3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */,
 				3FDE5E652546B70C00C05514 /* privacyPolicy.html in Resources */,
 				3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */,
-				3FDE5E382546968000C05514 /* NoticePage.storyboard in Resources */,
 				04B867A6253B0ECF00336175 /* LaunchScreen.storyboard in Resources */,
 				3F1C4A8925A47AE8002C5B5D /* FirstPage.storyboard in Resources */,
 				3F4C5AA2253ECAD700C0E7B6 /* NotoSansKR-Thin.otf in Resources */,
@@ -838,6 +834,7 @@
 				3FC20E5D2546EEE600EEE783 /* ChangePass.swift in Sources */,
 				E33D8566253F20E200E50BAC /* ASMenuCell.swift in Sources */,
 				048D55E0253D838E009E9CE4 /* MainPageType.swift in Sources */,
+				E3CEDB0325A83E1400EDE823 /* StoreNotOpen.swift in Sources */,
 				043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */,
 				04B8679E253B0ECD00336175 /* ViewController.swift in Sources */,
 				E31D400C254AC7DE00B63F77 /* EssentialRadio.swift in Sources */,
@@ -916,7 +913,6 @@
 				E3006A6725501D0900FFBAAB /* BasketEssentialCell.swift in Sources */,
 				3F9B48ED254946720012D89F /* ChangePass2.swift in Sources */,
 				E33D853B253DC69700E50BAC /* StoreInfoController.swift in Sources */,
-				3F4F8DAF254572220015BACE /* NoticePageController.swift in Sources */,
 				04235C84254AA94E00BA2BB1 /* OrderStatusDetail.swift in Sources */,
 				048A0BE52541AD71007D4FD3 /* testController.swift in Sources */,
 				E33D8560253EF24A00E50BAC /* ASCategoryCell.swift in Sources */,
