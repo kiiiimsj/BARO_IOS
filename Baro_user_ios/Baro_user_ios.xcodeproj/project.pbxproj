@@ -21,6 +21,9 @@
 		043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */; };
 		043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACB6253DABFB00C70102 /* EventListModel.swift */; };
 		043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACBA253DAC5600C70102 /* UrlMaker.swift */; };
+		04798A0F25A8357F0014FAB5 /* terms_of_service.html in Resources */ = {isa = PBXBuildFile; fileRef = 04798A0C25A8357E0014FAB5 /* terms_of_service.html */; };
+		04798A1025A8357F0014FAB5 /* location_information.html in Resources */ = {isa = PBXBuildFile; fileRef = 04798A0D25A8357E0014FAB5 /* location_information.html */; };
+		04798A1125A8357F0014FAB5 /* privacy_statement.html in Resources */ = {isa = PBXBuildFile; fileRef = 04798A0E25A8357E0014FAB5 /* privacy_statement.html */; };
 		048A0BD82540117B007D4FD3 /* MainPageNewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A0BD72540117B007D4FD3 /* MainPageNewStore.swift */; };
 		048A0BDB25401194007D4FD3 /* MainPageNewStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A0BDA25401194007D4FD3 /* MainPageNewStoreCell.swift */; };
 		048A0BDE2540120A007D4FD3 /* NewStoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A0BDD2540120A007D4FD3 /* NewStoreListModel.swift */; };
@@ -88,7 +91,6 @@
 		3FDE5E382546968000C05514 /* NoticePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE5E372546968000C05514 /* NoticePage.storyboard */; };
 		3FDE5E5E2546A16C00C05514 /* TermOfUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE5E5D2546A16C00C05514 /* TermOfUser.swift */; };
 		3FDE5E612546A1C800C05514 /* TermOfUserPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */; };
-		3FDE5E652546B70C00C05514 /* privacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE5E642546B70C00C05514 /* privacyPolicy.html */; };
 		3FDE5E682546E37A00C05514 /* NoticeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE5E672546E37A00C05514 /* NoticeListModel.swift */; };
 		3FE2C29E2557E3A5002E6184 /* CouponForBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE2C29D2557E3A5002E6184 /* CouponForBasket.swift */; };
 		3FE2C2A12557EFAA002E6184 /* CouponForBasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE2C2A02557EFAA002E6184 /* CouponForBasketCell.swift */; };
@@ -174,6 +176,9 @@
 		043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageUltraStoreCell.swift; sourceTree = "<group>"; };
 		043DACB6253DABFB00C70102 /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
 		043DACBA253DAC5600C70102 /* UrlMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlMaker.swift; sourceTree = "<group>"; };
+		04798A0C25A8357E0014FAB5 /* terms_of_service.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = terms_of_service.html; path = ../../../../../../Desktop/terms_of_service.html; sourceTree = "<group>"; };
+		04798A0D25A8357E0014FAB5 /* location_information.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = location_information.html; path = ../../../../../../Desktop/location_information.html; sourceTree = "<group>"; };
+		04798A0E25A8357E0014FAB5 /* privacy_statement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = privacy_statement.html; path = ../../../../../../Desktop/privacy_statement.html; sourceTree = "<group>"; };
 		048A0BD72540117B007D4FD3 /* MainPageNewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageNewStore.swift; sourceTree = "<group>"; };
 		048A0BDA25401194007D4FD3 /* MainPageNewStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageNewStoreCell.swift; sourceTree = "<group>"; };
 		048A0BDD2540120A007D4FD3 /* NewStoreListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStoreListModel.swift; sourceTree = "<group>"; };
@@ -244,7 +249,6 @@
 		3FDE5E372546968000C05514 /* NoticePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NoticePage.storyboard; sourceTree = "<group>"; };
 		3FDE5E5D2546A16C00C05514 /* TermOfUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermOfUser.swift; sourceTree = "<group>"; };
 		3FDE5E602546A1C800C05514 /* TermOfUserPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermOfUserPage.storyboard; sourceTree = "<group>"; };
-		3FDE5E642546B70C00C05514 /* privacyPolicy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacyPolicy.html; sourceTree = "<group>"; };
 		3FDE5E672546E37A00C05514 /* NoticeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListModel.swift; sourceTree = "<group>"; };
 		3FE2C29D2557E3A5002E6184 /* CouponForBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponForBasket.swift; sourceTree = "<group>"; };
 		3FE2C2A02557EFAA002E6184 /* CouponForBasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponForBasketCell.swift; sourceTree = "<group>"; };
@@ -453,7 +457,9 @@
 		3FDE5E632546B6EF00C05514 /* policy */ = {
 			isa = PBXGroup;
 			children = (
-				3FDE5E642546B70C00C05514 /* privacyPolicy.html */,
+				04798A0D25A8357E0014FAB5 /* location_information.html */,
+				04798A0E25A8357E0014FAB5 /* privacy_statement.html */,
+				04798A0C25A8357E0014FAB5 /* terms_of_service.html */,
 			);
 			path = policy;
 			sourceTree = "<group>";
@@ -756,12 +762,13 @@
 				E31D4018254FC6E800B63F77 /* Basket.storyboard in Resources */,
 				3F4C5AA1253ECAD700C0E7B6 /* NotoSansKR-Bold.otf in Resources */,
 				E31D3FE22545DF7D00B63F77 /* OrderDetails.storyboard in Resources */,
+				04798A0F25A8357F0014FAB5 /* terms_of_service.html in Resources */,
 				3F499080253EB18B00372F83 /* LoginPage.storyboard in Resources */,
-				3FDE5E652546B70C00C05514 /* privacyPolicy.html in Resources */,
 				3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */,
 				3FDE5E382546968000C05514 /* NoticePage.storyboard in Resources */,
 				04B867A6253B0ECF00336175 /* LaunchScreen.storyboard in Resources */,
 				3F1C4A8925A47AE8002C5B5D /* FirstPage.storyboard in Resources */,
+				04798A1125A8357F0014FAB5 /* privacy_statement.html in Resources */,
 				3F4C5AA2253ECAD700C0E7B6 /* NotoSansKR-Thin.otf in Resources */,
 				E34CAF6925555B7000BE3F53 /* Alert.storyboard in Resources */,
 				3F4C5A9F253ECAD700C0E7B6 /* NotoSansKR-Black.otf in Resources */,
@@ -772,6 +779,7 @@
 				3F4C5AA3253ECAD700C0E7B6 /* NotoSansKR-Light.otf in Resources */,
 				E31D3FDB2542AD7300B63F77 /* StoreListPage.storyboard in Resources */,
 				04235C742549386100BA2BB1 /* OrderStatus.storyboard in Resources */,
+				04798A1025A8357F0014FAB5 /* location_information.html in Resources */,
 				04B28DD6255250D9007D1ED6 /* GoogleService-Info.plist in Resources */,
 				3F4C5AA0253ECAD700C0E7B6 /* NotoSansKR-Regular.otf in Resources */,
 				04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */,
