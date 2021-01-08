@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="adc-70-pEw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="adc-70-pEw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6xm-Gg-L5H" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="158" width="360" height="482"/>
+                                <rect key="frame" x="0.0" y="160" width="360" height="480"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDJ-63-RXP">
                                         <rect key="frame" x="20" y="223" width="320" height="50"/>
@@ -92,12 +92,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToW-ID-Vqr">
-                                <rect key="frame" x="138.5" y="78" width="83" height="26"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="075-H7-ymC">
                                 <rect key="frame" x="164" y="63" width="32" height="18"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
@@ -114,6 +108,12 @@
                                     <action selector="backbutton" destination="adc-70-pEw" eventType="touchUpInside" id="IIV-2o-vrS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToW-ID-Vqr">
+                                <rect key="frame" x="138.5" y="86" width="83" height="26"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cJd-qL-dtN"/>
                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -122,12 +122,11 @@
                             <constraint firstItem="6xm-Gg-L5H" firstAttribute="leading" secondItem="cJd-qL-dtN" secondAttribute="leading" id="Fyh-IR-of4"/>
                             <constraint firstItem="6xm-Gg-L5H" firstAttribute="trailing" secondItem="cJd-qL-dtN" secondAttribute="trailing" id="LlV-7J-46H"/>
                             <constraint firstItem="075-H7-ymC" firstAttribute="centerX" secondItem="MMa-ya-MZZ" secondAttribute="centerX" id="QkF-d6-vMo"/>
-                            <constraint firstItem="ToW-ID-Vqr" firstAttribute="top" secondItem="cJd-qL-dtN" secondAttribute="top" constant="34" id="ZW4-lE-aTJ"/>
                             <constraint firstItem="6xm-Gg-L5H" firstAttribute="bottom" secondItem="cJd-qL-dtN" secondAttribute="bottom" id="Zjv-vw-87X"/>
-                            <constraint firstItem="6xm-Gg-L5H" firstAttribute="top" secondItem="ToW-ID-Vqr" secondAttribute="bottom" constant="54" id="dQu-IV-IJZ"/>
+                            <constraint firstItem="ToW-ID-Vqr" firstAttribute="top" secondItem="075-H7-ymC" secondAttribute="bottom" constant="5" id="aq3-5y-l1y"/>
                             <constraint firstItem="ToW-ID-Vqr" firstAttribute="centerX" secondItem="MMa-ya-MZZ" secondAttribute="centerX" id="duH-7j-tkv"/>
                             <constraint firstItem="075-H7-ymC" firstAttribute="top" secondItem="cJd-qL-dtN" secondAttribute="top" constant="19" id="fFl-5X-teu"/>
-                            <constraint firstItem="6xm-Gg-L5H" firstAttribute="top" secondItem="075-H7-ymC" secondAttribute="bottom" constant="77" id="mdz-3i-2eJ"/>
+                            <constraint firstItem="6xm-Gg-L5H" firstAttribute="height" secondItem="MMa-ya-MZZ" secondAttribute="height" multiplier="0.75" id="pPg-5O-4Fp"/>
                             <constraint firstItem="woS-dJ-Aw7" firstAttribute="leading" secondItem="cJd-qL-dtN" secondAttribute="leading" constant="17" id="xDT-Vj-VIy"/>
                         </constraints>
                     </view>
