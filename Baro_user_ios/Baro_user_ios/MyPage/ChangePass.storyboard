@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZfL-xJ-JU8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZfL-xJ-JU8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,14 +25,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="360" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8u-Xw-6zA">
-                                <rect key="frame" x="131" y="80" width="98" height="21"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="PCZ-Me-p43" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="155" width="360" height="485"/>
+                                <rect key="frame" x="0.0" y="160" width="360" height="480"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKD-EE-Zm5">
                                         <rect key="frame" x="20" y="223" width="320" height="50"/>
@@ -109,10 +103,15 @@
                                     <action selector="backbutton" destination="ZfL-xJ-JU8" eventType="touchUpInside" id="Wyi-dw-fHp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dbr-hR-WiS">
-                                <rect key="frame" x="164" y="60" width="32" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="BARO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbr-hR-WiS">
+                                <rect key="frame" x="164" y="64" width="32" height="18"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8u-Xw-6zA">
+                                <rect key="frame" x="131" y="87" width="98" height="25.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -120,15 +119,16 @@
                         <viewLayoutGuide key="safeArea" id="izx-7H-1ug"/>
                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="PCZ-Me-p43" firstAttribute="top" secondItem="X8u-Xw-6zA" secondAttribute="bottom" constant="54" id="A8v-HO-JRV"/>
                             <constraint firstItem="PCZ-Me-p43" firstAttribute="bottom" secondItem="izx-7H-1ug" secondAttribute="bottom" id="OBE-Ab-X8X"/>
-                            <constraint firstItem="X8u-Xw-6zA" firstAttribute="top" secondItem="izx-7H-1ug" secondAttribute="top" constant="36" id="Ufu-5Z-gRf"/>
+                            <constraint firstItem="X8u-Xw-6zA" firstAttribute="top" secondItem="dbr-hR-WiS" secondAttribute="bottom" constant="5" id="Qcq-VY-9dc"/>
                             <constraint firstItem="5qx-Si-y09" firstAttribute="leading" secondItem="izx-7H-1ug" secondAttribute="leading" constant="17" id="ZWy-Xl-tIG"/>
                             <constraint firstItem="PCZ-Me-p43" firstAttribute="trailing" secondItem="izx-7H-1ug" secondAttribute="trailing" id="jpw-92-ALt"/>
-                            <constraint firstItem="PCZ-Me-p43" firstAttribute="top" secondItem="dbr-hR-WiS" secondAttribute="bottom" constant="77" id="nqL-ca-XHW"/>
+                            <constraint firstItem="PCZ-Me-p43" firstAttribute="height" secondItem="lUi-Dq-0GO" secondAttribute="height" multiplier="0.75" id="law-Vh-wm5"/>
+                            <constraint firstItem="dbr-hR-WiS" firstAttribute="top" secondItem="izx-7H-1ug" secondAttribute="top" constant="20" id="nqB-Cj-BRG"/>
                             <constraint firstItem="5qx-Si-y09" firstAttribute="top" secondItem="izx-7H-1ug" secondAttribute="top" constant="17" id="olW-oL-hyZ"/>
                             <constraint firstItem="PCZ-Me-p43" firstAttribute="leading" secondItem="izx-7H-1ug" secondAttribute="leading" id="qou-Mp-QDq"/>
                             <constraint firstItem="X8u-Xw-6zA" firstAttribute="centerX" secondItem="lUi-Dq-0GO" secondAttribute="centerX" id="rY0-UQ-Zwd"/>
+                            <constraint firstItem="dbr-hR-WiS" firstAttribute="centerX" secondItem="lUi-Dq-0GO" secondAttribute="centerX" id="yvc-Ah-y8g"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="360" height="640"/>

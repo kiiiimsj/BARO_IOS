@@ -22,7 +22,7 @@ class TermOfUser : UIViewController{
         self.dismiss(animated: true)
     }
     func loadUrl() {
-        let url = Bundle.main.url(forResource: "privacyPolicy", withExtension:"html")
+        let url = Bundle.main.url(forResource: "privacy_statement", withExtension:"html")
         let request = URLRequest(url: url!)
         webView.load(request)
         
