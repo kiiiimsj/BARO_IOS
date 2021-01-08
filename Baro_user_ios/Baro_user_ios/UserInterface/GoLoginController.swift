@@ -9,6 +9,7 @@ import UIKit
 
 class GoLoginController: UIViewController {
     
+    @IBOutlet var background: UIView!
     @IBOutlet weak var loginBtn: UIButton!
     
     @IBOutlet weak var window: UIView!
@@ -20,6 +21,7 @@ class GoLoginController: UIViewController {
         loginBtn.layer.cornerRadius = 10
         loginBtn.layer.borderColor = UIColor.white.cgColor
         window.layer.cornerRadius = 20
+        background.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cancel(_:))))
     }
     @IBAction func clickLogin(_ sender: Any) {
         let vc = UIStoryboard.init(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginPageController")
@@ -35,6 +37,9 @@ class GoLoginController: UIViewController {
         
     }
     @IBAction func clickCancel(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    @objc func cancel(_ sender: UITapGestureRecognizer) {
         self.dismiss(animated: false, completion: nil)
     }
 }

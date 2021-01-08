@@ -33,7 +33,7 @@ class MyPageController : UIViewController {
     @IBOutlet weak var rightBar: UIView!
     
     let bottomTabBarInfo = BottomTabBarController()
-    var buttons = [ [" ", "공지사항", "입점요청", "1:1 문의"], [" ","비밀번호 변경", "이메일 변경"], [" ","이용약관", "개인정보 처리방침"] ]
+    var buttons = [ [" ", "입점요청", "1:1 문의"], [" ","비밀번호 변경", "이메일 변경"], [" ","이용약관", "개인정보 처리방침"] ]
     var buttonsSectionHeight : CGFloat = 12.0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -181,6 +181,10 @@ extension MyPageController : UITableViewDelegate, UITableViewDataSource, ClickLo
         }
         else {
             UserDefaults.resetStandardUserDefaults()
+            UserDefaults.standard.removeObject(forKey: "basket")
+            UserDefaults.standard.removeObject(forKey: "user_email")
+            UserDefaults.standard.removeObject(forKey: "user_name")
+            UserDefaults.standard.removeObject(forKey: "user_phone")
         }
         let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
         let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
@@ -227,9 +231,9 @@ extension MyPageController : UITableViewDelegate, UITableViewDataSource, ClickLo
         switch indexPath.section {
         case 0 :
             switch indexPath.row {
-            case 0 : self.performSegue(withIdentifier: "NoticePageController", sender: nil)
+//            case 0 : self.performSegue(withIdentifier: "NoticePageController", sender: nil)
+            case 0 : UIApplication.shared.open(URL(string:"https://pf.kakao.com/_bYeuK/chat")!)
             case 1 : UIApplication.shared.open(URL(string:"https://pf.kakao.com/_bYeuK/chat")!)
-            case 2 : UIApplication.shared.open(URL(string:"https://pf.kakao.com/_bYeuK/chat")!)
             default : return
             }
         case 1 :

@@ -118,7 +118,6 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         getMyLocation(String(longitude!), String(latitude!))
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
 //        UserDefaults.standard.setValue(0, forKey: "newestAlert")
-        whetherNewOrNot()
         netWork.post(method: .get, url: urlMaker.eventList) { json in
             var eventModel = EventListModel()
             print("jj",json)
@@ -192,26 +191,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             //앱 실행중일시에만
         }
         locationCheck()
-//        if status == CLAuthorizationStatus.denied || status == CLAuthorizationStatus.restricted || status == CLAuthorizationStatus.notDetermined {
-//            let alter = UIAlertController(title: "위치권한 설정이 '안함'으로 되어있습니다.", message: "앱 설정화면으로 가시겠습니까? ", preferredStyle: UIAlertController.Style.alert)
-//            let logOkAction = UIAlertAction(title: "네", style: UIAlertAction.Style.default) {
-//                (action: UIAlertAction) in
-//                if #available(iOS 10.0, *) {
-//                    UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
-//                }
-//                else {
-//                    UIApplication.shared.canOpenURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
-//                }
-//
-//            }
-////            let logNoAction = UIAlertAction(title: "아니오", style: UIAlertAction.Style.destructive) {
-////                (action: UIAlertAction) in
-////                exit(0)
-////            }
-////            alter.addAction(logNoAction)
-//            alter.addAction(logOkAction)
-//            self.present(alter, animated: true, completion: nil)
-//        }
+
     }
     func toStoreListUseBottomBar(tag : String) {
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
@@ -312,11 +292,6 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
                 }
                 
             }
-//            let logNoAction = UIAlertAction(title: "아니오", style: UIAlertAction.Style.destructive) {
-//                (action: UIAlertAction) in
-//                exit(0)
-//            }
-//            alter.addAction(logNoAction)
             alter.addAction(logOkAction)
             self.present(alter, animated: true, completion: nil)
         }
@@ -391,11 +366,6 @@ extension MainPageController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if(collectionView == ) {
-//            let cell = collectionViewEvent?.dequeueReusableCell(withReuseIdentifier: "MainPageEvent", for: indexPath) as! MainPageEvent
-//            cell.delegateEvent = self
-//            return cell
-//        }
          if(collectionView == collectionViewType) {
             let cell = collectionViewType?.dequeueReusableCell(withReuseIdentifier: "MainPageType", for: indexPath) as! MainPageType
             cell.delegateType = self
@@ -416,9 +386,6 @@ extension MainPageController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if collectionView == collectionViewEvent {
-//            return  CGSize(width: self.collectionViewEvent.frame.width, height: self.collectionViewEvent.frame.height)
-//        }
         if collectionView == collectionViewType {
             return CGSize(width: self.collectionViewType.frame.width , height:  collectionView.frame.height)
         }
@@ -466,25 +433,6 @@ extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegate
         
     }
     
-}
-extension MainPageController {
-    func whetherNewOrNot() -> () {
-//        let network = CallRequest()
-//        let urlMaker = NetWorkURL()
-//        network.get(method: .get, url: urlMaker.getLatest) { (json) in
-//            print(json)
-//            self.whatIHave = UserDefaults.standard.integer(forKey: "newestAlert")
-//            self.newestAlertNumber = json["recentlyAlertId"].intValue
-//            if self.whatIHave != self.newestAlertNumber {
-//                print("볼거있음")
-//                self.alertButton.setImage(UIImage(named: "alert_on"), for: .normal)
-//            }else{
-//                self.alertButton.setImage(UIImage(named: "alert_off"), for: .normal)
-//                print("이미봄")
-//            }
-//            print("what",self.whatIHave)
-//        }
-    }
 }
 
 //위도 경도에 해당하는 구조체
