@@ -66,10 +66,10 @@
                                                     <color key="highlightedColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWa-Dd-bFb">
-                                                    <rect key="frame" x="49.5" y="12" width="20" height="20"/>
+                                                    <rect key="frame" x="47.5" y="13.5" width="17" height="17"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-61-j0K">
-                                                            <rect key="frame" x="5" y="5" width="10" height="10"/>
+                                                            <rect key="frame" x="5" y="5" width="7" height="7"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -80,9 +80,9 @@
                                                         <constraint firstItem="ObT-61-j0K" firstAttribute="leading" secondItem="QWa-Dd-bFb" secondAttribute="leading" constant="5" id="49D-Y4-MCO"/>
                                                         <constraint firstAttribute="trailing" secondItem="ObT-61-j0K" secondAttribute="trailing" constant="5" id="65o-G5-Iy3"/>
                                                         <constraint firstAttribute="bottom" secondItem="ObT-61-j0K" secondAttribute="bottom" constant="5" id="Csu-3x-bMe"/>
-                                                        <constraint firstAttribute="width" constant="20" id="JFc-HL-WW5"/>
+                                                        <constraint firstAttribute="width" constant="17" id="JFc-HL-WW5"/>
                                                         <constraint firstItem="ObT-61-j0K" firstAttribute="top" secondItem="QWa-Dd-bFb" secondAttribute="top" constant="5" id="SPJ-5B-ISe"/>
-                                                        <constraint firstAttribute="height" constant="20" id="Xfd-ni-8uj"/>
+                                                        <constraint firstAttribute="height" constant="17" id="Xfd-ni-8uj"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -96,7 +96,7 @@
                                                 <constraint firstItem="a9C-NM-hv4" firstAttribute="centerY" secondItem="uiI-4W-ea1" secondAttribute="centerY" id="nj1-xq-Hxq"/>
                                                 <constraint firstItem="vDY-dd-EB2" firstAttribute="leading" secondItem="uiI-4W-ea1" secondAttribute="leading" constant="20" id="sOO-Bw-dCU"/>
                                                 <constraint firstItem="aR2-6q-RsD" firstAttribute="leading" secondItem="uiI-4W-ea1" secondAttribute="leading" constant="10" id="u9M-LR-4yS"/>
-                                                <constraint firstItem="QWa-Dd-bFb" firstAttribute="leading" secondItem="aR2-6q-RsD" secondAttribute="trailing" constant="10" id="x0N-gV-tKE"/>
+                                                <constraint firstItem="QWa-Dd-bFb" firstAttribute="leading" secondItem="aR2-6q-RsD" secondAttribute="trailing" constant="8" id="x0N-gV-tKE"/>
                                                 <constraint firstAttribute="trailing" secondItem="vDY-dd-EB2" secondAttribute="trailing" constant="20" id="xYf-uY-MbX"/>
                                             </constraints>
                                         </collectionViewCellContentView>
