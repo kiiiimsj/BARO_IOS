@@ -12,6 +12,7 @@ class StoreNotOpen: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func clickOut(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "basket")
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
         let bottomTabBarInfo = BottomTabBarController()
