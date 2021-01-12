@@ -18,6 +18,8 @@ class StoreInfoController : UIViewController{
     @IBOutlet weak var holiday: UILabel!
     @IBOutlet weak var phonenumber: UILabel!
     @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var representativeLabel: UILabel!
+    @IBOutlet weak var businessLabel: UILabel!
     @IBOutlet weak var map: NMFMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,8 @@ class StoreInfoController : UIViewController{
         holiday.text = StoreInfo.store_daysoff
         phonenumber.text = StoreInfo.store_phone
         location.text = StoreInfo.store_location
-        
+        representativeLabel.text = StoreInfo.representative_name
+        businessLabel.text = StoreInfo.business_number
         let storeMarker = NMFMarker(position: NMGLatLng(lat: StoreInfo.store_latitude, lng: StoreInfo.store_longitude), iconImage: NMFOverlayImage(name: "store_marker") )
         storeMarker.mapView = map
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: StoreInfo.store_latitude, lng: StoreInfo.store_longitude))
