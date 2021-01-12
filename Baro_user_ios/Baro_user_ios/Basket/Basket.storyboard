@@ -38,8 +38,16 @@
                                     <action selector="clickPay:" destination="HI5-FX-0F0" eventType="touchUpInside" id="iQ7-Xq-OcE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바로는 통신판매 중계자이며 ,통신판매의 당사자가 아닙니다. 따라서 바로는 상품,거래 정보 및 거래에 책임을 지지않습니다" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYE-SA-B43">
-                                <rect key="frame" x="14" y="784" width="386" height="10"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바로는 통신판매 중계자이며 ,통신판매의 당사자가 아닙니다." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYE-SA-B43">
+                                <rect key="frame" x="112" y="780" width="190.5" height="10"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="따라서 바로는 상품,거래 정보 및 거래에 책임을 지지않습니다" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRH-yK-quR">
+                                <rect key="frame" x="110.5" y="790" width="193" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
@@ -47,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5E-Vl-gDA">
-                                <rect key="frame" x="0.0" y="710" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="718" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 주문금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAe-uo-ehs">
                                         <rect key="frame" x="17" y="14.5" width="68" height="21"/>
@@ -81,7 +89,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tau-Pl-sdi">
-                                <rect key="frame" x="0.0" y="44" width="414" height="659"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pxg-So-a3h">
@@ -181,7 +189,7 @@
                                                                 <outlet property="extraPrice" destination="Qhy-9n-tah" id="WyQ-LT-v2s"/>
                                                             </connections>
                                                         </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="Baro_user_ios" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="25" width="382" height="25"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tLr-LY-rLC">
@@ -412,16 +420,18 @@
                         <constraints>
                             <constraint firstItem="tau-Pl-sdi" firstAttribute="leading" secondItem="2jU-gd-LZs" secondAttribute="leading" id="9ut-ST-eXI"/>
                             <constraint firstItem="2jU-gd-LZs" firstAttribute="trailing" secondItem="tau-Pl-sdi" secondAttribute="trailing" id="Cyv-kC-t6O"/>
+                            <constraint firstItem="SRH-yK-quR" firstAttribute="top" secondItem="SYE-SA-B43" secondAttribute="bottom" id="DUg-Wr-fzi"/>
                             <constraint firstItem="eFT-Ql-mab" firstAttribute="bottom" secondItem="2jU-gd-LZs" secondAttribute="bottom" id="EwY-Am-1Z9"/>
+                            <constraint firstItem="SRH-yK-quR" firstAttribute="centerX" secondItem="zdp-4w-shf" secondAttribute="centerX" id="PQN-bf-yUN"/>
                             <constraint firstItem="p5E-Vl-gDA" firstAttribute="top" secondItem="tau-Pl-sdi" secondAttribute="bottom" constant="7" id="V6X-2S-F9Z"/>
                             <constraint firstItem="eFT-Ql-mab" firstAttribute="leading" secondItem="2jU-gd-LZs" secondAttribute="leading" id="aRu-ON-Q2u"/>
+                            <constraint firstItem="eFT-Ql-mab" firstAttribute="top" secondItem="SRH-yK-quR" secondAttribute="bottom" constant="12" id="dT0-9t-qGq"/>
                             <constraint firstItem="tau-Pl-sdi" firstAttribute="top" secondItem="2jU-gd-LZs" secondAttribute="top" id="eEQ-cT-f26"/>
                             <constraint firstItem="SYE-SA-B43" firstAttribute="centerX" secondItem="zdp-4w-shf" secondAttribute="centerX" id="fwp-5k-fSy"/>
                             <constraint firstItem="p5E-Vl-gDA" firstAttribute="leading" secondItem="2jU-gd-LZs" secondAttribute="leading" id="lKk-mi-mqH"/>
                             <constraint firstItem="2jU-gd-LZs" firstAttribute="trailing" secondItem="p5E-Vl-gDA" secondAttribute="trailing" id="lgf-wA-yua"/>
-                            <constraint firstItem="eFT-Ql-mab" firstAttribute="top" secondItem="SYE-SA-B43" secondAttribute="bottom" constant="18" id="nkM-SD-nKW"/>
                             <constraint firstItem="2jU-gd-LZs" firstAttribute="trailing" secondItem="eFT-Ql-mab" secondAttribute="trailing" id="tsU-tr-X4m"/>
-                            <constraint firstItem="SYE-SA-B43" firstAttribute="top" secondItem="p5E-Vl-gDA" secondAttribute="bottom" constant="24" id="u1V-LL-ECC"/>
+                            <constraint firstItem="SYE-SA-B43" firstAttribute="top" secondItem="p5E-Vl-gDA" secondAttribute="bottom" constant="12" id="u1V-LL-ECC"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="896"/>

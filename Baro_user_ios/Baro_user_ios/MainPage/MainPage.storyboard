@@ -23,7 +23,7 @@
             <objects>
                 <viewController storyboardIdentifier="MainPageController" title="MainPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="901-Ku-IQw" customClass="MainPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CvG-KU-mmZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baro_logo" translatesAutoresizingMaskIntoConstraints="NO" id="7G0-F5-9z9">
@@ -33,10 +33,10 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Kc-nQH">
-                                <rect key="frame" x="0.0" y="135" width="414" height="931"/>
+                                <rect key="frame" x="0.0" y="135" width="414" height="1131"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-N1-OLA">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1084"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVL-S1-iAt" customClass="FSPagerView" customModule="FSPagerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -390,11 +390,30 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRl-fe-wA3">
+                                                <rect key="frame" x="10" y="906" width="394" height="178"/>
+                                                <string key="text">Contect
+
+BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
+아래의 방법으로 언제든지 문의주세요!
+
+이메일 : ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
+전화 : 02 ) 000 - 0000
+
+(주) 티피엔
+사업자등록번호 : 111-11-11111
+통신판매업신고번호 : 0000 - 서울동작 - 0000
+주소 : 서울특별시 동작구 숭실대학교 창신관 113호</string>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.80555152893066406" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="kMf-5D-UdD" firstAttribute="leading" secondItem="WDd-N1-OLA" secondAttribute="leading" id="3Op-XJ-YrX"/>
                                             <constraint firstItem="xgw-S3-4pR" firstAttribute="top" secondItem="kMf-5D-UdD" secondAttribute="bottom" constant="8" id="5fN-5d-QKb"/>
+                                            <constraint firstItem="dRl-fe-wA3" firstAttribute="leading" secondItem="WDd-N1-OLA" secondAttribute="leading" constant="10" id="6Ht-g7-PvS"/>
                                             <constraint firstItem="gAk-24-856" firstAttribute="top" secondItem="xgw-S3-4pR" secondAttribute="bottom" id="6dH-nb-y9g"/>
                                             <constraint firstAttribute="trailing" secondItem="kMf-5D-UdD" secondAttribute="trailing" id="7bx-fJ-xtL"/>
                                             <constraint firstAttribute="trailing" secondItem="xgw-S3-4pR" secondAttribute="trailing" id="D4h-py-jKA"/>
@@ -404,10 +423,12 @@
                                             <constraint firstAttribute="trailing" secondItem="d3i-Qf-2MZ" secondAttribute="trailing" id="Oy5-JM-7Y6"/>
                                             <constraint firstAttribute="trailing" secondItem="AVL-S1-iAt" secondAttribute="trailing" id="PSe-Yw-O2e"/>
                                             <constraint firstItem="xgw-S3-4pR" firstAttribute="leading" secondItem="WDd-N1-OLA" secondAttribute="leading" id="QUg-8L-Hvq"/>
-                                            <constraint firstAttribute="bottom" secondItem="d3i-Qf-2MZ" secondAttribute="bottom" id="YFv-oy-tAd"/>
                                             <constraint firstAttribute="trailing" secondItem="fmR-m7-MS2" secondAttribute="trailing" id="ceA-sp-Mdo"/>
+                                            <constraint firstAttribute="bottom" secondItem="dRl-fe-wA3" secondAttribute="bottom" id="e1h-0k-TgP"/>
+                                            <constraint firstAttribute="trailing" secondItem="dRl-fe-wA3" secondAttribute="trailing" constant="10" id="exf-Sb-W4O"/>
                                             <constraint firstItem="fmR-m7-MS2" firstAttribute="leading" secondItem="WDd-N1-OLA" secondAttribute="leading" id="fne-CZ-feN"/>
                                             <constraint firstItem="fmR-m7-MS2" firstAttribute="top" secondItem="gAk-24-856" secondAttribute="bottom" constant="8" id="j31-B6-05F"/>
+                                            <constraint firstItem="dRl-fe-wA3" firstAttribute="top" secondItem="d3i-Qf-2MZ" secondAttribute="bottom" constant="10" id="mDK-As-bb0"/>
                                             <constraint firstItem="d3i-Qf-2MZ" firstAttribute="leading" secondItem="WDd-N1-OLA" secondAttribute="leading" id="oR0-Vh-OrS"/>
                                             <constraint firstItem="gAk-24-856" firstAttribute="leading" secondItem="WDd-N1-OLA" secondAttribute="leading" id="pP2-DX-7Kz"/>
                                             <constraint firstItem="AVL-S1-iAt" firstAttribute="top" secondItem="WDd-N1-OLA" secondAttribute="top" id="wgR-OL-WEw"/>
@@ -452,7 +473,7 @@
                                     <constraint firstItem="xiE-0U-fFK" firstAttribute="bottom" secondItem="AVL-S1-iAt" secondAttribute="bottom" constant="-16" id="6Gx-Ml-RQW"/>
                                     <constraint firstAttribute="trailing" secondItem="xiE-0U-fFK" secondAttribute="trailing" constant="16" id="6jv-wH-OrP"/>
                                     <constraint firstItem="WDd-N1-OLA" firstAttribute="top" secondItem="Trs-Kc-nQH" secondAttribute="top" id="IRF-5b-mh0"/>
-                                    <constraint firstAttribute="bottom" secondItem="WDd-N1-OLA" secondAttribute="bottom" constant="28" id="R31-qI-6SL"/>
+                                    <constraint firstAttribute="bottom" secondItem="WDd-N1-OLA" secondAttribute="bottom" id="R31-qI-6SL"/>
                                     <constraint firstItem="WDd-N1-OLA" firstAttribute="width" secondItem="Trs-Kc-nQH" secondAttribute="width" id="V0P-af-PN1"/>
                                     <constraint firstAttribute="trailing" secondItem="WDd-N1-OLA" secondAttribute="trailing" id="Z6r-da-619"/>
                                     <constraint firstItem="WDd-N1-OLA" firstAttribute="leading" secondItem="Trs-Kc-nQH" secondAttribute="leading" id="eNP-35-8Bl"/>
@@ -513,7 +534,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vUk-kb-yeq"/>
-                    <size key="freeformSize" width="414" height="1100"/>
+                    <size key="freeformSize" width="414" height="1300"/>
                     <connections>
                         <outlet property="aboutHereLabel" destination="xgw-S3-4pR" id="6uL-yn-yXn"/>
                         <outlet property="alertButton" destination="Laq-LU-sua" id="YOH-f9-Vnf"/>
