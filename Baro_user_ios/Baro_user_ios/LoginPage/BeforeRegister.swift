@@ -67,26 +67,26 @@ class BeforeRegister: UIViewController {
         
     }
     @IBAction func pressArrow1(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "TermOfUserPage", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser")
+        let vc = UIStoryboard.init(name: "Terms", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser")
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = . crossDissolve
         self.present(vc, animated: true, completion: nil)
     }
     @IBAction func pressArrow2(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "TermOfUserPage", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser")
+        let vc = UIStoryboard.init(name: "Terms", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser")
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = . crossDissolve
         self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func pressArrow3(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "TermOfUserPage", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser")
+        let vc = UIStoryboard.init(name: "Terms", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser")
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = . crossDissolve
         self.present(vc, animated: true, completion: nil)
     }
     @IBAction func pressArrow4(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "TermOfUserPage", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser")
+        let vc = UIStoryboard.init(name: "Terms", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser")
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = . crossDissolve
         self.present(vc, animated: true, completion: nil)
