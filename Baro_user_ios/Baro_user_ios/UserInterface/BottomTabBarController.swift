@@ -64,7 +64,7 @@ class BottomTabBarController: UIViewController {
     let orderHistoryStoryBoard = UIStoryboard(name: "OrderHistory", bundle: nil)
     let orderDetailStoryBoard = UIStoryboard(name: "OrderDetails", bundle: nil)
     let myPageStoryBoard = UIStoryboard(name: "MyPage", bundle: nil)
-    let termOfUserStoryBoard = UIStoryboard(name: "TermOfUserPage", bundle: nil)
+    let termOfUserStoryBoard = UIStoryboard(name: "Terms", bundle: nil)
     let aboutStoreStoryBoard = UIStoryboard(name: "AboutStore", bundle: nil)
     let alertStoryBoard = UIStoryboard(name: "Alert", bundle: nil)
     let couponPageStoryBoard = UIStoryboard(name: "Coupon", bundle: nil)
