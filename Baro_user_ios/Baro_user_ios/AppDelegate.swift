@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {_, _ in})
         application.registerForRemoteNotifications()
         requestAuthorizationForRemotePushNotification()
+        UserDefaults.standard.removeObject(forKey: "basket")
         return true
     }
 
