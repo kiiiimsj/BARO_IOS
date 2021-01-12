@@ -251,5 +251,8 @@ extension MyPageController : UITableViewDelegate, UITableViewDataSource, ClickLo
         default : return
         }
     }
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        
+    }
 }
 
