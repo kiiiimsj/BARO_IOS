@@ -54,8 +54,8 @@ class LoginPageController: UIViewController {
         passwordInput.borderStyle = .none
         passwordInput.isSecureTextEntry = true
         loginButton.addTarget(self, action: #selector(handleLogin(_:)), for: .touchUpInside)
-        registerBtn1.isUserInteractionEnabled = true
-        registerBtn1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRegister(_:))))
+        registerBtn2.isUserInteractionEnabled = true
+        registerBtn2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRegister(_:))))
     }
     @IBAction func rememberUserInfo() {
         if(memoryMyAccountCheckBox.isSelected) {
