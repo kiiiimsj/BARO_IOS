@@ -187,6 +187,8 @@ class AboutStore : UIViewController, TopViewElementDelegate {
                 self.StoreInfo.type_code = json["type_code"].stringValue
                 self.StoreInfo.store_image = json["store_image"].stringValue
                 self.StoreInfo.is_open = json["is_open"].stringValue
+                self.StoreInfo.representative_name = json["representative_name"].stringValue
+                self.StoreInfo.business_number = json["business_number"].stringValue
                 self.makeChildVC()
             } else {
                 print("make request fail")
@@ -233,4 +235,6 @@ struct StoreInfoModel {
     var type_code = "CAFE"
     var store_image = "test_cafe1.png"
     var is_open = "N"
+    var representative_name = ""
+    var business_number = ""
 }
