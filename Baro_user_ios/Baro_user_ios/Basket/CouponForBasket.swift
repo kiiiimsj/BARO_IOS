@@ -23,7 +23,6 @@ class CouponForBasket : UIViewController {
     public var realPriceValue : Int = 0
     public var restoreFrameValue : CGFloat = 0.0
     let userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
-   
     @IBOutlet weak var couponCollectionView: UICollectionView!
     @IBOutlet weak var pay: UIButton!
     
@@ -180,14 +179,17 @@ extension CouponForBasket : UITextFieldDelegate {
     if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
+        if self.view.frame.origin.y == restoreFrameValue{
         self.view.frame.origin.y -= keyboardHeight
+        }
     }
     print("keyboard Will appear Execute")
+        
 }
 
 @objc func keyboardWillDisappear(noti: NSNotification) {
     if self.view.frame.origin.y != restoreFrameValue {
-            if let keyboardFrame: NSValue =                 noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 let keyboardRectangle = keyboardFrame.cgRectValue
                 let keyboardHeight = keyboardRectangle.height
                 self.view.frame.origin.y += keyboardHeight
