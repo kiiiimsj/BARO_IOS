@@ -66,23 +66,21 @@
                                                     <color key="highlightedColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWa-Dd-bFb">
-                                                    <rect key="frame" x="47.5" y="13.5" width="17" height="17"/>
+                                                    <rect key="frame" x="47.5" y="13" width="18" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-61-j0K">
-                                                            <rect key="frame" x="5" y="5" width="7" height="7"/>
-                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="12"/>
+                                                            <rect key="frame" x="5" y="1.5" width="8" height="15"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="10"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.51372549019607838" green="0.20000000000000001" blue="0.90196078431372551" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="ObT-61-j0K" firstAttribute="leading" secondItem="QWa-Dd-bFb" secondAttribute="leading" constant="5" id="49D-Y4-MCO"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ObT-61-j0K" secondAttribute="trailing" constant="5" id="65o-G5-Iy3"/>
-                                                        <constraint firstAttribute="bottom" secondItem="ObT-61-j0K" secondAttribute="bottom" constant="5" id="Csu-3x-bMe"/>
-                                                        <constraint firstAttribute="width" constant="17" id="JFc-HL-WW5"/>
-                                                        <constraint firstItem="ObT-61-j0K" firstAttribute="top" secondItem="QWa-Dd-bFb" secondAttribute="top" constant="5" id="SPJ-5B-ISe"/>
-                                                        <constraint firstAttribute="height" constant="17" id="Xfd-ni-8uj"/>
+                                                        <constraint firstItem="ObT-61-j0K" firstAttribute="centerX" secondItem="QWa-Dd-bFb" secondAttribute="centerX" id="9v0-rW-vNs"/>
+                                                        <constraint firstItem="ObT-61-j0K" firstAttribute="centerY" secondItem="QWa-Dd-bFb" secondAttribute="centerY" id="GfP-Mf-g8n"/>
+                                                        <constraint firstAttribute="width" constant="18" id="JFc-HL-WW5"/>
+                                                        <constraint firstAttribute="height" constant="18" id="Xfd-ni-8uj"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
