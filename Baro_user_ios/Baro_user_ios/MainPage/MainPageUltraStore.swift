@@ -35,16 +35,18 @@ class MainPageUltraStore : UICollectionViewCell {
         networkModel.post(method: .post, param: jsonObject, url: networkURL.ultraList) { (json) in
             print("json",json)
             var ultraModel = UltraStoreListModel()
-            for item in json["store"].array! {
-                ultraModel.store_name = item["store_name"].stringValue
-                ultraModel.store_info = item["store_info"].stringValue
-                ultraModel.store_image = item["store_image"].stringValue
-                ultraModel.store_id = item["store_id"].intValue
-                ultraModel.distance = item["distance"].stringValue
-                ultraModel.is_open = item["is_open"].stringValue
-                self.ultraList.append(ultraModel)
+            if json["result"].boolValue {
+                for item in json["store"].array! {
+                    ultraModel.store_name = item["store_name"].stringValue
+                    ultraModel.store_info = item["store_info"].stringValue
+                    ultraModel.store_image = item["store_image"].stringValue
+                    ultraModel.store_id = item["store_id"].intValue
+                    ultraModel.distance = item["distance"].stringValue
+                    ultraModel.is_open = item["is_open"].stringValue
+                    self.ultraList.append(ultraModel)
+                }
+                self.collectionView.reloadData()
             }
-            self.collectionView.reloadData()
         }
         
     }

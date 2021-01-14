@@ -38,7 +38,8 @@ extension OrderHistoryDetail : UICollectionViewDelegate, UICollectionViewDataSou
         let extra = extraList[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderHistoryDetailCell", for: indexPath) as! OrderHistoryDetailCell
         cell.extraName.text =  "· " + extra.extra_name
-        cell.extraPrice.text = "+ " + String(extra.extra_price) + "원"
+        cell.extraCount.text = String(extra.extra_count)
+        cell.extraPrice.text = "+ " + String(extra.extra_price * extra.extra_count) + "원"
         return cell
     }
     

@@ -13,10 +13,10 @@ class FindPWComplete: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func pressGoLogin(_ sender: Any) {
-        let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginPageController") as! LoginPageController
-        guard let pvc = self.presentingViewController else { return }
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = . crossDissolve
+//        let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginPageController") as! LoginPageController
+//        guard let pvc = self.presentingViewController else { return }
+//        vc.modalPresentationStyle = .fullScreen
+//        vc.modalTransitionStyle = . crossDissolve
 //        self.present(vc, animated: true, completion: nil)
         self.dismiss(animated: false, completion: nil)
 //        self.dismiss(animated: false){

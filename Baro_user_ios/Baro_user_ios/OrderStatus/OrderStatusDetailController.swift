@@ -117,6 +117,7 @@ extension OrderStatusDetailController : UICollectionViewDelegate, UICollectionVi
         cell.eachPrice.text = String(orderList.menu_defaultprice) + "원"
         cell.collectionView.delegate = cell.self
         cell.collectionView.dataSource = cell.self
+        cell.collectionView.reloadData()
      //   cell.clickListener = self
 
         return cell

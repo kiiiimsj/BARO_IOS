@@ -49,8 +49,12 @@ class BeforeRegister: UIViewController {
         check()
     }
     func check() {
-        if radio1.isSelected && radio2.isSelected && radio3.isSelected && radio4.isSelected {
-            radioEntire.isSelected = true
+        if radio1.isSelected && radio2.isSelected && radio3.isSelected {
+            if radio4.isSelected {
+                radioEntire.isSelected = true
+            }else{
+                radioEntire.isSelected = false
+            }
             nextBtn.backgroundColor = UIColor.baro_main_color
             canGo = true
         }else{
@@ -67,28 +71,28 @@ class BeforeRegister: UIViewController {
         
     }
     @IBAction func pressArrow1(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Terms", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser")
+        let vc = UIStoryboard.init(name: "Terms", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser") as! TermOfUser
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = . crossDissolve
+        vc.type = TermOfUser.TERMS
         self.present(vc, animated: true, completion: nil)
     }
     @IBAction func pressArrow2(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Terms", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser")
+        let vc = UIStoryboard.init(name: "Terms", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser") as! TermOfUser
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = . crossDissolve
+        vc.type = TermOfUser.PRIVACY
         self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func pressArrow3(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Terms", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser")
+        let vc = UIStoryboard.init(name: "Terms", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser") as! TermOfUser
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = . crossDissolve
+        vc.type = TermOfUser.LOCATION
         self.present(vc, animated: true, completion: nil)
     }
-    @IBAction func pressArrow4(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Terms", bundle: nil).instantiateViewController(withIdentifier: "TermOfUser")
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = . crossDissolve
-        self.present(vc, animated: true, completion: nil)
+    @IBAction func pressBackBtn(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
     }
 }

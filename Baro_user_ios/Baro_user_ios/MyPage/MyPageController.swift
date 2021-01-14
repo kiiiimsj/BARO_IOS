@@ -33,7 +33,7 @@ class MyPageController : UIViewController {
     @IBOutlet weak var rightBar: UIView!
     
     let bottomTabBarInfo = BottomTabBarController()
-    var buttons = [ [" ", "입점요청", "1:1 문의"], [" ","비밀번호 변경", "이메일 변경"], [" ","이용약관", "개인정보 처리방침"] ]
+    var buttons = [ [" ", "입점요청", "1:1 문의"], [" ","비밀번호 변경", "이메일 변경"], [" ","이용약관", "개인정보 처리방침", "위치정보이용약관"] ]
     var buttonsSectionHeight : CGFloat = 12.0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -159,8 +159,12 @@ class MyPageController : UIViewController {
         if (segue.destination.restorationIdentifier == "LogoutDialog") {
             let vc = segue.destination as! LogoutDialog
             vc.delegate = self
+        }else if let nextViewController = segue.destination as? TermOfUser {
+            let type = sender as! String
+            nextViewController.type = type
         }
     }
+    
     func loadBasket() -> [Order]{
         let decoder = JSONDecoder()
         var jsonToOrder = [Order]()
@@ -244,8 +248,9 @@ extension MyPageController : UITableViewDelegate, UITableViewDataSource, ClickLo
             }
         case 2 :
             switch indexPath.row {
-            case 0 : self.performSegue(withIdentifier: "TermOfUser", sender: nil)
-            case 1 : self.performSegue(withIdentifier: "TermOfUser", sender: nil)
+            case 0 : self.performSegue(withIdentifier: "TermOfUser", sender: TermOfUser.TERMS)
+            case 1 : self.performSegue(withIdentifier: "TermOfUser", sender: TermOfUser.PRIVACY)
+            case 2 : self.performSegue(withIdentifier: "TermOfUser", sender: TermOfUser.LOCATION)
             default : return
             }
         default : return

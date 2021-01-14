@@ -158,6 +158,8 @@
 		E3CEDAFC25A3426900EDE823 /* GoLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDAFB25A3426900EDE823 /* GoLoginController.swift */; };
 		E3CEDAFF25A41B7100EDE823 /* BeforeRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDAFE25A41B7100EDE823 /* BeforeRegister.swift */; };
 		E3CEDB0325A83E1400EDE823 /* StoreNotOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDB0225A83E1400EDE823 /* StoreNotOpen.swift */; };
+		E3CEDB0A25B0047300EDE823 /* ChangeEmailComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDB0925B0047200EDE823 /* ChangeEmailComplete.swift */; };
+		E3CEDB0D25B00AF600EDE823 /* ChangePassComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDB0C25B00AF600EDE823 /* ChangePassComplete.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -316,6 +318,8 @@
 		E3CEDAFB25A3426900EDE823 /* GoLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoLoginController.swift; sourceTree = "<group>"; };
 		E3CEDAFE25A41B7100EDE823 /* BeforeRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeRegister.swift; sourceTree = "<group>"; };
 		E3CEDB0225A83E1400EDE823 /* StoreNotOpen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreNotOpen.swift; sourceTree = "<group>"; };
+		E3CEDB0925B0047200EDE823 /* ChangeEmailComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailComplete.swift; sourceTree = "<group>"; };
+		E3CEDB0C25B00AF600EDE823 /* ChangePassComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassComplete.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -574,6 +578,8 @@
 				3F9B48EC254946720012D89F /* ChangePass2.swift */,
 				3F90855E257525B100D13759 /* LogoutDialog.swift */,
 				E3AA04C725873F730055454A /* NothingExist.swift */,
+				E3CEDB0925B0047200EDE823 /* ChangeEmailComplete.swift */,
+				E3CEDB0C25B00AF600EDE823 /* ChangePassComplete.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -846,6 +852,7 @@
 				043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */,
 				04B8679E253B0ECD00336175 /* ViewController.swift in Sources */,
 				E31D400C254AC7DE00B63F77 /* EssentialRadio.swift in Sources */,
+				E3CEDB0D25B00AF600EDE823 /* ChangePassComplete.swift in Sources */,
 				3F0F6EAB25514F0B00099ACC /* MyBootPayController.swift in Sources */,
 				04B8679A253B0ECD00336175 /* AppDelegate.swift in Sources */,
 				E356D66F257DD8B400F39463 /* CouponRegisterController.swift in Sources */,
@@ -902,6 +909,7 @@
 				E31D3FF6254692A200B63F77 /* OptionCategoryHeader.swift in Sources */,
 				E31D3FF32546887F00B63F77 /* OptionsHeader.swift in Sources */,
 				E34CAF6C255567D400BE3F53 /* AlertCell.swift in Sources */,
+				E3CEDB0A25B0047300EDE823 /* ChangeEmailComplete.swift in Sources */,
 				3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */,
 				E34CAF3F255280B200BE3F53 /* MapController.swift in Sources */,
 				E34CAF422552A36F00BE3F53 /* LocationModel.swift in Sources */,

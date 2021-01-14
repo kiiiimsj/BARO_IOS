@@ -48,7 +48,7 @@ class OrderHistoryDetailController : UIViewController {
     }
     func configure() {
         
-        
+        print("수지",receipt_id)
         networkModel.post(method: .get, url: networkURL.orderHistoryRegular + "?receipt_id=" + receipt_id) {
             json in
             print("rr",json)
@@ -123,6 +123,7 @@ extension OrderHistoryDetailController : UICollectionViewDelegate, UICollectionV
         
         cell.collectionView.delegate = cell.self
         cell.collectionView.dataSource = cell.self
+        cell.collectionView.reloadData()
         return cell
     }
     

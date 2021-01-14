@@ -39,7 +39,13 @@ class ChangePass2 : UIViewController {
                 json in
                 if json["result"].boolValue {
                     print("비밀번호 변경 완료")
-                    self.performSegue(withIdentifier: "LoginPageController", sender: nil)
+                    let vc = UIStoryboard.init(name: "ChangePass", bundle: nil).instantiateViewController(withIdentifier: "ChangePassComplete")
+                    vc.modalPresentationStyle = .fullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    guard let pvc = self.presentingViewController else {return}
+                    self.dismiss(animated: false) {
+                        pvc.present(vc, animated: false, completion: nil)
+                    }
                 }
                 else {
                     print("비밀번호 변경 실패")

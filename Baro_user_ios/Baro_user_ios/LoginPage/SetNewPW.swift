@@ -37,6 +37,9 @@ class SetNewPW: UIViewController {
             }
         }
     }
+    @IBAction func pressBack(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
     @IBAction func changePW(_ sender: Any) {
         if newPW.text != newPWAgain.text {
             newPwAgainText.isHidden = false
