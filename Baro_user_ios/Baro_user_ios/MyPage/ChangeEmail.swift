@@ -32,6 +32,13 @@ class ChangeEmail : UIViewController, CAAnimationDelegate {
             json in
             print(json)
             if json["result"].boolValue {
+                let vc = UIStoryboard.init(name: "ChangeEmail", bundle: nil).instantiateViewController(withIdentifier: "ChangeEmailComplete")
+                vc.modalPresentationStyle = .fullScreen
+                vc.modalTransitionStyle = .crossDissolve
+                guard let pvc = self.presentingViewController else {return}
+                self.dismiss(animated: false) {
+                    pvc.present(vc, animated: false, completion: nil)
+                }
                 
             }
             else {

@@ -76,6 +76,9 @@ class PhoneCheckForChangePW : UIViewController {
             }
         }
     }
+    @IBAction func pressBack(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
     @IBAction func pressBtn(_ sender: Any) {
         print(authString)
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.verificationID, verificationCode: self.authString)

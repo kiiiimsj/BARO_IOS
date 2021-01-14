@@ -34,6 +34,9 @@ class FindPassWord: UIViewController {
             }
         }
     }
+    @IBAction func clickBackBtn(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
     @IBAction func clickSendNumber(_ sender: Any) {
         print("clcik")
         if let authNumber = inputPhone.text {
@@ -54,17 +57,28 @@ class FindPassWord: UIViewController {
                 dialog.message = "해당 핸드폰에 인증문자를 발송했습니다."
                 dialog.modalPresentationStyle = .overFullScreen
                 dialog.modalTransitionStyle = .crossDissolve
-                self.present(dialog, animated: true) {
-                    let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "PhoneCheckForChangePW") as! PhoneCheckForChangePW
-                    if let num = self.inputPhone.text {
-                        vc.phoneNumber = num
-                        vc.modalPresentationStyle = .fullScreen
-                        vc.modalTransitionStyle = .crossDissolve
-                        vc.verificationID = verificationID!
-                        guard let pvc = self.presentingViewController else { return }
-                        self.dismiss(animated: false){
-                            pvc.present(vc, animated: true, completion: nil)
-                        }
+//                self.present(dialog, animated: true) {
+//                    let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "PhoneCheckForChangePW") as! PhoneCheckForChangePW
+//                    if let num = self.inputPhone.text {
+//                        vc.phoneNumber = num
+//                        vc.modalPresentationStyle = .fullScreen
+//                        vc.modalTransitionStyle = .crossDissolve
+//                        vc.verificationID = verificationID!
+//                        guard let pvc = self.presentingViewController else { return }
+//                        self.dismiss(animated: false){
+//                            pvc.present(vc, animated: true, completion: nil)
+//                        }
+//                    }
+//                }
+                let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "PhoneCheckForChangePW") as! PhoneCheckForChangePW
+                if let num = self.inputPhone.text {
+                    vc.phoneNumber = num
+                    vc.modalPresentationStyle = .fullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.verificationID = verificationID!
+                    guard let pvc = self.presentingViewController else { return }
+                    self.dismiss(animated: false){
+                        pvc.present(vc, animated: true, completion: nil)
                     }
                 }
             }

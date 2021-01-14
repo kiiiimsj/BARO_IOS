@@ -28,7 +28,13 @@ class ChangePass : UIViewController {
         let param = ["phone":"\(phone)","pass":"\(password)"]
         networkModel.post(method: .post, param: param, url: networkURL.logInURL) { (json) in
             if json["result"].boolValue {
-                self.performSegue(withIdentifier: "ChangePass2", sender: nil)
+                let vc = UIStoryboard.init(name: "ChangePass", bundle: nil).instantiateViewController(withIdentifier: "ChangePass2")
+                vc.modalPresentationStyle = .fullScreen
+                vc.modalTransitionStyle = .crossDissolve
+                guard let pvc = self.presentingViewController else {return}
+                self.dismiss(animated: false) {
+                    pvc.present(vc, animated: false, completion: nil)
+                }
             }
             else {
                 self.errorAlarmText.isHidden = false

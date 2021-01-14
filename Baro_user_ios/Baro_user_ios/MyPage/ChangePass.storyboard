@@ -4,11 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NotoSansKR-Black.otf">
+            <string>NotoSansCJKkr-Black</string>
+        </array>
         <array key="NotoSansKR-Bold.otf">
             <string>NotoSansCJKkr-Bold</string>
         </array>
@@ -104,14 +108,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="BARO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbr-hR-WiS">
-                                <rect key="frame" x="164" y="64" width="32" height="18"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                <rect key="frame" x="159" y="67" width="43" height="22"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8u-Xw-6zA">
-                                <rect key="frame" x="131" y="87" width="98" height="25.5"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
+                                <rect key="frame" x="99.5" y="93.5" width="161" height="41.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -119,12 +123,12 @@
                         <viewLayoutGuide key="safeArea" id="izx-7H-1ug"/>
                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="PCZ-Me-p43" firstAttribute="top" secondItem="X8u-Xw-6zA" secondAttribute="bottom" constant="25" id="326-HI-kpM"/>
                             <constraint firstItem="PCZ-Me-p43" firstAttribute="bottom" secondItem="izx-7H-1ug" secondAttribute="bottom" id="OBE-Ab-X8X"/>
-                            <constraint firstItem="X8u-Xw-6zA" firstAttribute="top" secondItem="dbr-hR-WiS" secondAttribute="bottom" constant="5" id="Qcq-VY-9dc"/>
                             <constraint firstItem="5qx-Si-y09" firstAttribute="leading" secondItem="izx-7H-1ug" secondAttribute="leading" constant="17" id="ZWy-Xl-tIG"/>
                             <constraint firstItem="PCZ-Me-p43" firstAttribute="trailing" secondItem="izx-7H-1ug" secondAttribute="trailing" id="jpw-92-ALt"/>
                             <constraint firstItem="PCZ-Me-p43" firstAttribute="height" secondItem="lUi-Dq-0GO" secondAttribute="height" multiplier="0.75" id="law-Vh-wm5"/>
-                            <constraint firstItem="dbr-hR-WiS" firstAttribute="top" secondItem="izx-7H-1ug" secondAttribute="top" constant="20" id="nqB-Cj-BRG"/>
+                            <constraint firstItem="X8u-Xw-6zA" firstAttribute="top" secondItem="dbr-hR-WiS" secondAttribute="bottom" constant="5" id="miG-iP-GEU"/>
                             <constraint firstItem="5qx-Si-y09" firstAttribute="top" secondItem="izx-7H-1ug" secondAttribute="top" constant="17" id="olW-oL-hyZ"/>
                             <constraint firstItem="PCZ-Me-p43" firstAttribute="leading" secondItem="izx-7H-1ug" secondAttribute="leading" id="qou-Mp-QDq"/>
                             <constraint firstItem="X8u-Xw-6zA" firstAttribute="centerX" secondItem="lUi-Dq-0GO" secondAttribute="centerX" id="rY0-UQ-Zwd"/>
@@ -137,7 +141,6 @@
                         <outlet property="enterCurrentPass" destination="MKD-EE-Zm5" id="yaw-QV-eRr"/>
                         <outlet property="errorAlarmText" destination="coR-HG-IAf" id="V0d-NA-BBr"/>
                         <outlet property="inputNewPass" destination="SYI-aV-BQ9" id="PEb-7V-ry8"/>
-                        <segue destination="aON-YC-HVj" kind="presentation" identifier="ChangePass2" modalPresentationStyle="fullScreen" id="LIn-2e-MfO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="liD-z7-64I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -153,8 +156,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNP-Fg-vLc">
-                                <rect key="frame" x="131" y="80" width="98" height="21"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
+                                <rect key="frame" x="99.5" y="93.5" width="161" height="41.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -163,18 +166,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="backbutton" destination="aON-YC-HVj" eventType="touchUpInside" id="m7H-Go-iih"/>
-                                    <segue destination="ZfL-xJ-JU8" kind="presentation" identifier="ChangePass" modalPresentationStyle="fullScreen" id="ILB-be-rve"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DrG-Gf-id3">
-                                <rect key="frame" x="164" y="60" width="32" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="V8y-RG-9zD" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="155" width="360" height="485"/>
+                                <rect key="frame" x="0.0" y="160" width="360" height="480"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgp-nY-Eg3">
                                         <rect key="frame" x="20" y="325" width="320" height="50"/>
@@ -272,16 +267,23 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="BARO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeL-KF-QbM">
+                                <rect key="frame" x="159" y="67" width="43" height="22"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="s8u-O0-lPN"/>
                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="V8y-RG-9zD" firstAttribute="top" secondItem="yNP-Fg-vLc" secondAttribute="bottom" constant="54" id="7HK-vs-JAF"/>
+                            <constraint firstItem="TeL-KF-QbM" firstAttribute="centerX" secondItem="xVF-8D-wdS" secondAttribute="centerX" id="687-pL-N1o"/>
+                            <constraint firstItem="yNP-Fg-vLc" firstAttribute="top" secondItem="TeL-KF-QbM" secondAttribute="bottom" constant="5" id="AqR-bj-sHO"/>
                             <constraint firstItem="V8y-RG-9zD" firstAttribute="leading" secondItem="s8u-O0-lPN" secondAttribute="leading" id="OfS-KC-OKg"/>
-                            <constraint firstItem="V8y-RG-9zD" firstAttribute="top" secondItem="DrG-Gf-id3" secondAttribute="bottom" constant="77" id="bFU-YU-1sT"/>
                             <constraint firstItem="yNP-Fg-vLc" firstAttribute="centerX" secondItem="xVF-8D-wdS" secondAttribute="centerX" id="e9i-7r-8ge"/>
                             <constraint firstItem="V8y-RG-9zD" firstAttribute="trailing" secondItem="s8u-O0-lPN" secondAttribute="trailing" id="eyh-Wz-gCm"/>
-                            <constraint firstItem="yNP-Fg-vLc" firstAttribute="top" secondItem="s8u-O0-lPN" secondAttribute="top" constant="36" id="f30-aK-Dea"/>
+                            <constraint firstItem="V8y-RG-9zD" firstAttribute="top" secondItem="yNP-Fg-vLc" secondAttribute="bottom" constant="25" id="kgf-KA-3tD"/>
+                            <constraint firstItem="V8y-RG-9zD" firstAttribute="height" secondItem="xVF-8D-wdS" secondAttribute="height" multiplier="0.75" id="l7P-1M-1Y0"/>
                             <constraint firstItem="V8y-RG-9zD" firstAttribute="bottom" secondItem="s8u-O0-lPN" secondAttribute="bottom" id="oE1-VV-gFC"/>
                         </constraints>
                     </view>
@@ -296,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oT-k4-uyE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1110" y="13"/>
+            <point key="canvasLocation" x="560.86956521739137" y="12.723214285714285"/>
         </scene>
         <!--Storyboard Reference-->
         <scene sceneID="uHB-Pa-9xN">
@@ -306,8 +308,66 @@
             </objects>
             <point key="canvasLocation" x="1693" y="-200"/>
         </scene>
+        <!--Change Pass Complete-->
+        <scene sceneID="nFW-W3-2TA">
+            <objects>
+                <viewController storyboardIdentifier="ChangePassComplete" id="Nom-fp-dhs" customClass="ChangePassComplete" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Hm-17-JXV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 변경 완료!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNI-8P-Wz2">
+                                <rect key="frame" x="98.5" y="431.5" width="217" height="33"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Oh-Sp-HTv">
+                                <rect key="frame" x="157" y="320.5" width="100" height="100.5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="EWS-fv-5jF"/>
+                                    <constraint firstAttribute="height" constant="101.33" id="Ki5-U5-ZwW"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIx-gK-xgi">
+                                <rect key="frame" x="20" y="474.5" width="374" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jns-vP-ZaU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
+                                <state key="normal" title="마이페이지로 이동">
+                                    <color key="titleColor" white="0.46000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressComplete:" destination="Nom-fp-dhs" eventType="touchUpInside" id="7pF-wQ-vRU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Phv-YA-ZNQ"/>
+                        <color key="backgroundColor" name="mainColor"/>
+                        <constraints>
+                            <constraint firstItem="oNI-8P-Wz2" firstAttribute="centerY" secondItem="0Hm-17-JXV" secondAttribute="centerY" id="HRW-GY-bVm"/>
+                            <constraint firstItem="oNI-8P-Wz2" firstAttribute="top" secondItem="5Oh-Sp-HTv" secondAttribute="bottom" constant="10" id="MPF-8X-nVN"/>
+                            <constraint firstItem="nIx-gK-xgi" firstAttribute="leading" secondItem="Phv-YA-ZNQ" secondAttribute="leading" constant="20" id="TPe-I7-iNq"/>
+                            <constraint firstItem="nIx-gK-xgi" firstAttribute="top" secondItem="oNI-8P-Wz2" secondAttribute="bottom" constant="10" id="Tfz-Cn-vby"/>
+                            <constraint firstItem="oNI-8P-Wz2" firstAttribute="centerX" secondItem="0Hm-17-JXV" secondAttribute="centerX" id="Tsp-e2-fc5"/>
+                            <constraint firstItem="5Oh-Sp-HTv" firstAttribute="centerX" secondItem="0Hm-17-JXV" secondAttribute="centerX" id="n7q-Vc-xgz"/>
+                            <constraint firstAttribute="trailing" secondItem="nIx-gK-xgi" secondAttribute="trailing" constant="20" id="umd-n9-MyR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HIY-na-ejf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="99"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="exclamationmark.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="mainColor">
+            <color red="0.51372549019607838" green="0.20000000000000001" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
