@@ -19,17 +19,29 @@ class RegisterPageController: UIViewController {
     let network = CallRequest()
     let urlMaker = NetWorkURL()
     var phoneNumber : String = ""
+    public var restoreFrameValue : CGFloat = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutLoad()
+        nameInput.delegate = self
+        passInput.delegate = self
+        passCheckInput.delegate = self
+        emailInput.delegate = self
         nameInput.addTarget(self, action: #selector(checkNameInputField), for: .editingChanged)
         passInput.addTarget(self, action: #selector(checkPassInputField), for: .editingChanged)
         passCheckInput.addTarget(self, action: #selector(checkPassInputField), for: .editingChanged)
         emailInput.addTarget(self, action: #selector(checkEmailInputField), for: .editingChanged)
         swipeRecognizer()
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        self.view.endEditing(true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     func layoutLoad() {
         nameInput.borderStyle = .none
@@ -119,7 +131,12 @@ class RegisterPageController: UIViewController {
                 network.post(method: .post, param: param, url: self.urlMaker.signUpURL) {
                     json in
                     if json["result"].boolValue {
-                        self.performSegue(withIdentifier: "RegisterCompletePage", sender: nil)
+//                        self.performSegue(withIdentifier: "RegisterCompletePage", sender: nil)
+                        let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "RegisterCompletePage") as! RegisterCompletePage
+                        guard let pvc = self.presentingViewController else { return }
+                        self.dismiss(animated: false){
+                            pvc.present(vc, animated: false, completion: nil)
+                        }
                     }
                     else {
                         let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
@@ -132,4 +149,48 @@ class RegisterPageController: UIViewController {
             }
         }
     }
+}
+extension RegisterPageController : UITextFieldDelegate {
+    @objc func keyboardWillAppear(noti: NSNotification) {
+    if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        if self.view.frame.origin.y == restoreFrameValue{
+        self.view.frame.origin.y -= keyboardHeight
+        }
+    }
+    print("keyboard Will appear Execute")
+        
+}
+
+@objc func keyboardWillDisappear(noti: NSNotification) {
+    if self.view.frame.origin.y != restoreFrameValue {
+            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                self.view.frame.origin.y += keyboardHeight
+            }
+            print("keyboard Will Disappear Execute")
+        }
+    }
+
+//self.view.frame.origin.y = restoreFrameValue
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.frame.origin.y = restoreFrameValue
+        print("touches Began Execute")
+        self.view.endEditing(true)
+    }
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    print("textFieldShouldReturn Execute")
+    textField.resignFirstResponder()
+    return true
+}
+
+func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    print("textFieldShouldEndEditing Execute")
+    self.view.frame.origin.y = self.restoreFrameValue
+    return true
+}
 }

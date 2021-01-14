@@ -67,7 +67,11 @@ class BeforeRegister: UIViewController {
         if !canGo {
             return
         }
-        self.performSegue(withIdentifier: "PhoneSendForRegister", sender: nil)
+        let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "PhoneSendForRegister") as! PhoneSendForRegister
+        guard let pvc = self.presentingViewController else { return }
+        self.dismiss(animated: false){
+            pvc.present(vc, animated: false, completion: nil)
+        }
         
     }
     @IBAction func pressArrow1(_ sender: Any) {

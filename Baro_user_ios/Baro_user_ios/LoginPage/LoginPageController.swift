@@ -13,8 +13,7 @@ class LoginPageController: UIViewController {
     @IBOutlet weak var bottomArea : UIView!
     
     @IBOutlet weak var phoneInput : UITextField!
-    @IBOutlet weak var passwordInput:
-    UITextField!
+    @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var loginButton : UIButton!
     @IBOutlet weak var registerBtn1: UILabel!
     
@@ -28,14 +27,17 @@ class LoginPageController: UIViewController {
     
     let bottomTabBarInfo = BottomTabBarController()
     var sendMessage = SendMessage()
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        self.view.endEditing(true)
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-    }
+    public var restoreFrameValue : CGFloat = 0.0
+    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +51,9 @@ class LoginPageController: UIViewController {
         
         phoneInput.placeholder = "01012345678"
         phoneInput.borderStyle = .none
+        phoneInput.delegate = self
 
+        passwordInput.delegate = self
         passwordInput.placeholder = "비밀번호를 입력하세요"
         passwordInput.borderStyle = .none
         passwordInput.isSecureTextEntry = true
@@ -129,4 +133,49 @@ class LoginPageController: UIViewController {
         vc.modalTransitionStyle = . crossDissolve
         self.present(vc, animated: true, completion: nil)
     }
+}
+
+extension LoginPageController : UITextFieldDelegate {
+    @objc func keyboardWillAppear(noti: NSNotification) {
+    if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        if self.view.frame.origin.y == restoreFrameValue{
+        self.view.frame.origin.y -= keyboardHeight
+        }
+    }
+    print("keyboard Will appear Execute")
+        
+}
+
+@objc func keyboardWillDisappear(noti: NSNotification) {
+    if self.view.frame.origin.y != restoreFrameValue {
+            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                self.view.frame.origin.y += keyboardHeight
+            }
+            print("keyboard Will Disappear Execute")
+        }
+    }
+
+//self.view.frame.origin.y = restoreFrameValue
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.frame.origin.y = restoreFrameValue
+        print("touches Began Execute")
+        self.view.endEditing(true)
+    }
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    print("textFieldShouldReturn Execute")
+    textField.resignFirstResponder()
+    return true
+}
+
+func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    print("textFieldShouldEndEditing Execute")
+    self.view.frame.origin.y = self.restoreFrameValue
+    return true
+}
 }

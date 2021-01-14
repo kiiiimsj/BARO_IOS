@@ -50,7 +50,6 @@ class CouponForBasket : UIViewController {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-
     }
     @IBAction func clickPayButton() {
         let storyboard = UIStoryboard(name: "Basket", bundle: nil)

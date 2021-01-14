@@ -11,9 +11,17 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
     func clickDialog(verificationID: String) {
         let vc = self.storyboard?.instantiateViewController(identifier: "PhoneCheckForRegister") as! PhoneCheckForRegister
         vc.verificationID = verificationID
+        if let num = inputPhone.text {
+            vc.phoneNumber = num
+        }else{
+            return
+        }
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
+        guard let pvc = self.presentingViewController else {return}
+        self.dismiss(animated: false) {
+            pvc.present(vc, animated: true)
+        }
     }
     
     

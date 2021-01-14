@@ -18,6 +18,7 @@ class OrderHistoryController : UIViewController {
     
     var phone = "01093756927"
     var startPoint = 0
+    var end = false
     
     
     override func viewDidLoad() {
@@ -87,7 +88,7 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0{
             return orderHistoryList.count
-        }else if section == 1 && callMoreData {
+        }else if section == 1 && callMoreData && !end {
             return 1
         }else{
             return 0
@@ -169,10 +170,12 @@ extension OrderHistoryController : UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         if position > (collectionView.contentSize.height-100 - collectionView.frame.size.height){
-            print("바닥에 닿음")
-            if !callMoreData {
-                loadData()
-                print("ddddd",startPoint)
+            print("바닥에 닿음",callMoreData)
+            if !end {
+                if !callMoreData {
+                    loadData()
+                    print("ddddd",startPoint)
+                }
             }
             
         }
@@ -196,9 +199,14 @@ extension OrderHistoryController : UIScrollViewDelegate {
                     orderHistoryModel.total_count = item["total_count"].intValue
                     self.orderHistoryList.append(orderHistoryModel)
                 }
-                self.collectionView.reloadData()
-                self.startPoint += 20
-                self.callMoreData = false
+                if json["order"].array!.count < 20 {
+                    self.collectionView.reloadData()
+                    self.end = true
+                }else{
+                    self.collectionView.reloadData()
+                    self.startPoint += 20
+                    self.callMoreData = false
+                }
             }
             
         }

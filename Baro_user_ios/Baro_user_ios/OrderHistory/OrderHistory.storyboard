@@ -153,23 +153,28 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="loadingCell" id="HOY-0c-znw" customClass="LoadingCellCollectionViewCell" customModule="Baro_user_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="215" width="414" height="128"/>
+                                        <rect key="frame" x="197" y="215" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="N9v-0f-fbg">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="IpW-Co-7Yl">
-                                                    <rect key="frame" x="0.0" y="-270" width="414" height="668"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="color" red="0.47109787269999998" green="0.211157332" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="UfG-oI-efs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                    <color key="color" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="UfG-oI-efs" secondAttribute="trailing" id="Jlb-cx-Gv8"/>
+                                                <constraint firstAttribute="bottom" secondItem="UfG-oI-efs" secondAttribute="bottom" id="UGP-bM-GAB"/>
+                                                <constraint firstItem="UfG-oI-efs" firstAttribute="top" secondItem="N9v-0f-fbg" secondAttribute="top" id="iSA-wN-ofO"/>
+                                                <constraint firstItem="UfG-oI-efs" firstAttribute="leading" secondItem="N9v-0f-fbg" secondAttribute="leading" id="sQM-pW-zQ7"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="loading" destination="IpW-Co-7Yl" id="yUq-qI-OK4"/>
+                                            <outlet property="loading" destination="UfG-oI-efs" id="MEz-D0-bBn"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
