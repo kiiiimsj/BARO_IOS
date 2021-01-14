@@ -34,16 +34,18 @@ class MainPageNewStore : UICollectionViewCell {
         
         networkModel.post(method: .post, param: jsonObject, url: networkURL.newStoreList) { (json) in
             var newStoreModel = NewStoreListModel()
-            for item in json["store"].array! {
-                newStoreModel.store_name = item["store_name"].stringValue
-                newStoreModel.store_info = item["store_info"].stringValue
-                newStoreModel.store_image = item["store_image"].stringValue
-                newStoreModel.store_id = item["store_id"].intValue
-                newStoreModel.distance = item["distance"].stringValue
-                newStoreModel.is_open = item["is_open"].stringValue
-                self.newStoreList.append(newStoreModel)
+            if json["result"].boolValue {
+                for item in json["store"].array! {
+                    newStoreModel.store_name = item["store_name"].stringValue
+                    newStoreModel.store_info = item["store_info"].stringValue
+                    newStoreModel.store_image = item["store_image"].stringValue
+                    newStoreModel.store_id = item["store_id"].intValue
+                    newStoreModel.distance = item["distance"].stringValue
+                    newStoreModel.is_open = item["is_open"].stringValue
+                    self.newStoreList.append(newStoreModel)
+                }
+                self.collectionView.reloadData()
             }
-            self.collectionView.reloadData()
         }
     }
 }

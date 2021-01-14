@@ -341,54 +341,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "044F021B-05E1-45DF-A567-639172F7465B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Baro_user_ios/OrderHistory/OrderHistoryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "loadData(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "044F021B-05E1-45DF-A567-639172F7465B - 4d16b4e656e80d2d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Baro_user_ios.OrderHistoryController.loadData(__C.UIRefreshControl) -&gt; ()"
-                  moduleName = "Baro_user_ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a./Desktop/BARO_IOS/Baro_user_ios/Baro_user_ios/OrderHistory/OrderHistoryController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "37">
-               </Location>
-               <Location
-                  uuid = "044F021B-05E1-45DF-A567-639172F7465B - f610ec9cad98d5e3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in Baro_user_ios.OrderHistoryController.loadData(__C.UIRefreshControl) -&gt; ()"
-                  moduleName = "Baro_user_ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a./Desktop/BARO_IOS/Baro_user_ios/Baro_user_ios/OrderHistory/OrderHistoryController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "252">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "8A96CDE3-89C0-4217-BF1F-61424B71266B"
             shouldBeEnabled = "No"
             ignoreCount = "0"

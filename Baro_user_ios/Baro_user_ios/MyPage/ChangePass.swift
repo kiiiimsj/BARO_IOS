@@ -17,7 +17,9 @@ class ChangePass : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.errorAlarmText.isHidden = true
+        inputNewPass.isSecureTextEntry = true
         backBtn.setImage(UIImage(named: "arrow_left"), for: .normal)
+        swipeRecognizer()
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
@@ -48,5 +50,20 @@ class ChangePass : UIViewController {
     
     @IBAction func backbutton() {
         self.dismiss(animated: true)
+    }
+    func swipeRecognizer() {
+            let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
+            swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+            self.view.addGestureRecognizer(swipeRight)
+    }
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            print("gesture")
+            switch swipeGesture.direction{
+            case UISwipeGestureRecognizer.Direction.right:
+                self.dismiss(animated: true, completion: nil)
+            default: break
+            }
+        }
     }
 }

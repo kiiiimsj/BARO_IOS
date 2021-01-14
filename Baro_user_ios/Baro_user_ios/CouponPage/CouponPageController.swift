@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CouponPageController: UIViewController {
+class CouponPageController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var typeCouponNumber: UITextField!
     var userPhone = ""
@@ -24,6 +24,7 @@ class CouponPageController: UIViewController {
         configureUI()
         collection.delegate = self
         collection.dataSource = self
+        typeCouponNumber.delegate = self
         reloadCoupon()
     }
     func configureUI(){
@@ -68,6 +69,13 @@ class CouponPageController: UIViewController {
             }
             self.collection.reloadData()
         }
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

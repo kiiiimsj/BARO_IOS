@@ -13,10 +13,11 @@ class RegisterCompletePage : UIViewController {
         goToLoginPage.layer.cornerRadius = 15
     }
     @IBAction func goLogin() {
-        let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "LoginPageController")
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
+//        let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "LoginPageController")
+//        vc.modalPresentationStyle = .fullScreen
+//        vc.modalTransitionStyle = .crossDissolve
+//        self.present(vc, animated: true)
+        self.dismiss(animated: false, completion: nil)
     }
 }

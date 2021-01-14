@@ -32,6 +32,7 @@ class ChangeEmail : UIViewController, CAAnimationDelegate {
             json in
             print(json)
             if json["result"].boolValue {
+                UserDefaults.standard.set(self.inputNewEmail.text, forKey: "user_email")
                 let vc = UIStoryboard.init(name: "ChangeEmail", bundle: nil).instantiateViewController(withIdentifier: "ChangeEmailComplete")
                 vc.modalPresentationStyle = .fullScreen
                 vc.modalTransitionStyle = .crossDissolve

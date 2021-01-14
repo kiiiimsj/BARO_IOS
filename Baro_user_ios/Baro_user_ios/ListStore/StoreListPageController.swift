@@ -37,17 +37,19 @@ class StoreListPageController : UIViewController {
             network.post(method: .post, param: jsonObject, url: urlCaller.storeDetailListURL) {
                 (json) in
                 var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
-                for item in json["store"].array! {
-                    storeListModel.store_image = item["store_image"].stringValue
-                    storeListModel.is_open = item["is_open"].stringValue
-                    storeListModel.distance = item["distance"].doubleValue
-                    storeListModel.store_id = item["store_id"].intValue
-                    storeListModel.store_info = item["store_info"].stringValue
-                    storeListModel.store_location = item["store_location"].stringValue
-                    storeListModel.store_name = item["store_name"].stringValue
-                    self.storeList.append(storeListModel)
+                if json["result"].boolValue {
+                    for item in json["store"].array! {
+                        storeListModel.store_image = item["store_image"].stringValue
+                        storeListModel.is_open = item["is_open"].stringValue
+                        storeListModel.distance = item["distance"].doubleValue
+                        storeListModel.store_id = item["store_id"].intValue
+                        storeListModel.store_info = item["store_info"].stringValue
+                        storeListModel.store_location = item["store_location"].stringValue
+                        storeListModel.store_name = item["store_name"].stringValue
+                        self.storeList.append(storeListModel)
+                    }
+                    self.storeListView.reloadData()
                 }
-                self.storeListView.reloadData()
             }
             typeCode = ""
         }
