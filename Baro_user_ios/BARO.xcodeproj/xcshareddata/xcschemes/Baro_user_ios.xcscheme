@@ -17,7 +17,7 @@
                BlueprintIdentifier = "04B86795253B0ECD00336175"
                BuildableName = "Baro_user_ios.app"
                BlueprintName = "Baro_user_ios"
-               ReferencedContainer = "container:Baro_user_ios.xcodeproj">
+               ReferencedContainer = "container:BARO.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,7 +48,7 @@
             BlueprintIdentifier = "04B86795253B0ECD00336175"
             BuildableName = "Baro_user_ios.app"
             BlueprintName = "Baro_user_ios"
-            ReferencedContainer = "container:Baro_user_ios.xcodeproj">
+            ReferencedContainer = "container:BARO.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -65,7 +65,7 @@
             BlueprintIdentifier = "04B86795253B0ECD00336175"
             BuildableName = "Baro_user_ios.app"
             BlueprintName = "Baro_user_ios"
-            ReferencedContainer = "container:Baro_user_ios.xcodeproj">
+            ReferencedContainer = "container:BARO.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

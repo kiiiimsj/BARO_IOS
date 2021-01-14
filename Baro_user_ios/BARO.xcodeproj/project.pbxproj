@@ -21,6 +21,7 @@
 		043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */; };
 		043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACB6253DABFB00C70102 /* EventListModel.swift */; };
 		043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACBA253DAC5600C70102 /* UrlMaker.swift */; };
+		046B7A1E25B07F9A001B8751 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 046B7A1D25B07F99001B8751 /* GoogleService-Info.plist */; };
 		048A0BD82540117B007D4FD3 /* MainPageNewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A0BD72540117B007D4FD3 /* MainPageNewStore.swift */; };
 		048A0BDB25401194007D4FD3 /* MainPageNewStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A0BDA25401194007D4FD3 /* MainPageNewStoreCell.swift */; };
 		048A0BDE2540120A007D4FD3 /* NewStoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A0BDD2540120A007D4FD3 /* NewStoreListModel.swift */; };
@@ -34,7 +35,6 @@
 		048D55E3253D83AD009E9CE4 /* MainPageTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D55E2253D83AD009E9CE4 /* MainPageTypeCell.swift */; };
 		048D55E7253D91C6009E9CE4 /* MainPageEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D55E6253D91C6009E9CE4 /* MainPageEventCell.swift */; };
 		04B28D4D255245B5007D1ED6 /* FIrebaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B28D4C255245B5007D1ED6 /* FIrebaseTest.swift */; };
-		04B28DD6255250D9007D1ED6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04B28DD5255250D9007D1ED6 /* GoogleService-Info.plist */; };
 		04B8679A253B0ECD00336175 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B86799253B0ECD00336175 /* AppDelegate.swift */; };
 		04B8679C253B0ECD00336175 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8679B253B0ECD00336175 /* SceneDelegate.swift */; };
 		04B8679E253B0ECD00336175 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8679D253B0ECD00336175 /* ViewController.swift */; };
@@ -177,6 +177,7 @@
 		043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageUltraStoreCell.swift; sourceTree = "<group>"; };
 		043DACB6253DABFB00C70102 /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
 		043DACBA253DAC5600C70102 /* UrlMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlMaker.swift; sourceTree = "<group>"; };
+		046B7A1D25B07F99001B8751 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		048A0BD72540117B007D4FD3 /* MainPageNewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageNewStore.swift; sourceTree = "<group>"; };
 		048A0BDA25401194007D4FD3 /* MainPageNewStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageNewStoreCell.swift; sourceTree = "<group>"; };
 		048A0BDD2540120A007D4FD3 /* NewStoreListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStoreListModel.swift; sourceTree = "<group>"; };
@@ -191,8 +192,7 @@
 		048D55E6253D91C6009E9CE4 /* MainPageEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageEventCell.swift; sourceTree = "<group>"; };
 		04B28D4C255245B5007D1ED6 /* FIrebaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrebaseTest.swift; sourceTree = "<group>"; };
 		04B28D4F255247DE007D1ED6 /* Baro_user_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Baro_user_ios.entitlements; sourceTree = "<group>"; };
-		04B28DD5255250D9007D1ED6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		04B86796253B0ECD00336175 /* Baro_user_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baro_user_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B86796253B0ECD00336175 /* BARO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BARO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B86799253B0ECD00336175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B8679B253B0ECD00336175 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		04B8679D253B0ECD00336175 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -361,7 +361,7 @@
 		04B86797253B0ECD00336175 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04B86796253B0ECD00336175 /* Baro_user_ios.app */,
+				04B86796253B0ECD00336175 /* BARO.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -394,8 +394,8 @@
 				04B8679B253B0ECD00336175 /* SceneDelegate.swift */,
 				04B8679D253B0ECD00336175 /* ViewController.swift */,
 				04B867A2253B0ECF00336175 /* Assets.xcassets */,
+				046B7A1D25B07F99001B8751 /* GoogleService-Info.plist */,
 				04B867A4253B0ECF00336175 /* LaunchScreen.storyboard */,
-				04B28DD5255250D9007D1ED6 /* GoogleService-Info.plist */,
 				04B867A7253B0ECF00336175 /* Info.plist */,
 				048A0BE12541ACBE007D4FD3 /* testController.storyboard */,
 				048A0BE42541AD71007D4FD3 /* testController.swift */,
@@ -693,9 +693,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04B86795253B0ECD00336175 /* Baro_user_ios */ = {
+		04B86795253B0ECD00336175 /* BARO */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04B867AA253B0ECF00336175 /* Build configuration list for PBXNativeTarget "Baro_user_ios" */;
+			buildConfigurationList = 04B867AA253B0ECF00336175 /* Build configuration list for PBXNativeTarget "BARO" */;
 			buildPhases = (
 				149778AA4A33992D10EA8DD1 /* [CP] Check Pods Manifest.lock */,
 				04B86792253B0ECD00336175 /* Sources */,
@@ -708,12 +708,12 @@
 			dependencies = (
 				3F1C4A5E259C4749002C5B5D /* PBXTargetDependency */,
 			);
-			name = Baro_user_ios;
+			name = BARO;
 			packageProductDependencies = (
 				3F1C4A59259C44A5002C5B5D /* KituraWebSocketClient */,
 			);
 			productName = Baro_user_ios;
-			productReference = 04B86796253B0ECD00336175 /* Baro_user_ios.app */;
+			productReference = 04B86796253B0ECD00336175 /* BARO.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -734,7 +734,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 04B86791253B0ECD00336175 /* Build configuration list for PBXProject "Baro_user_ios" */;
+			buildConfigurationList = 04B86791253B0ECD00336175 /* Build configuration list for PBXProject "BARO" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -750,7 +750,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04B86795253B0ECD00336175 /* Baro_user_ios */,
+				04B86795253B0ECD00336175 /* BARO */,
 			);
 		};
 /* End PBXProject section */
@@ -775,12 +775,12 @@
 				3F4C5A9F253ECAD700C0E7B6 /* NotoSansKR-Black.otf in Resources */,
 				3FDE5E612546A1C800C05514 /* Terms.storyboard in Resources */,
 				3F05C567254116C70066DAAD /* MyPage.storyboard in Resources */,
+				046B7A1E25B07F9A001B8751 /* GoogleService-Info.plist in Resources */,
 				3FC20E662546EFF700EEE783 /* ChangeEmail.storyboard in Resources */,
 				E34CAF8E255959DA00BE3F53 /* Coupon.storyboard in Resources */,
 				3F4C5AA3253ECAD700C0E7B6 /* NotoSansKR-Light.otf in Resources */,
 				E31D3FDB2542AD7300B63F77 /* StoreListPage.storyboard in Resources */,
 				04235C742549386100BA2BB1 /* OrderStatus.storyboard in Resources */,
-				04B28DD6255250D9007D1ED6 /* GoogleService-Info.plist in Resources */,
 				3F4C5AA0253ECAD700C0E7B6 /* NotoSansKR-Regular.otf in Resources */,
 				04DDBA2525A83DAC00C65AFC /* location_information.html in Resources */,
 				04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */,
@@ -1158,7 +1158,7 @@
 					"-framework",
 					"\"SwiftyRequest\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.baro.baro.Baro-user-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tpn.baro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1216,7 +1216,7 @@
 					"-framework",
 					"\"SwiftyRequest\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.baro.baro.Baro-user-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tpn.baro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1226,7 +1226,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04B86791253B0ECD00336175 /* Build configuration list for PBXProject "Baro_user_ios" */ = {
+		04B86791253B0ECD00336175 /* Build configuration list for PBXProject "BARO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B867A8253B0ECF00336175 /* Debug */,
@@ -1235,7 +1235,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04B867AA253B0ECF00336175 /* Build configuration list for PBXNativeTarget "Baro_user_ios" */ = {
+		04B867AA253B0ECF00336175 /* Build configuration list for PBXNativeTarget "BARO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B867AB253B0ECF00336175 /* Debug */,
