@@ -192,7 +192,7 @@
 		048D55E6253D91C6009E9CE4 /* MainPageEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageEventCell.swift; sourceTree = "<group>"; };
 		04B28D4C255245B5007D1ED6 /* FIrebaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrebaseTest.swift; sourceTree = "<group>"; };
 		04B28D4F255247DE007D1ED6 /* Baro_user_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Baro_user_ios.entitlements; sourceTree = "<group>"; };
-		04B86796253B0ECD00336175 /* Baro_user_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baro_user_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B86796253B0ECD00336175 /* BARO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BARO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B86799253B0ECD00336175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B8679B253B0ECD00336175 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		04B8679D253B0ECD00336175 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -351,7 +351,7 @@
 		04B8678D253B0ECD00336175 = {
 			isa = PBXGroup;
 			children = (
-				04B86798253B0ECD00336175 /* Baro_user_ios */,
+				04B86798253B0ECD00336175 /* BARO */,
 				04B86797253B0ECD00336175 /* Products */,
 				E997DD1537C720F796AAE31D /* Pods */,
 				133460D23A99534FEB59747D /* Frameworks */,
@@ -361,12 +361,12 @@
 		04B86797253B0ECD00336175 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04B86796253B0ECD00336175 /* Baro_user_ios.app */,
+				04B86796253B0ECD00336175 /* BARO.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		04B86798253B0ECD00336175 /* Baro_user_ios */ = {
+		04B86798253B0ECD00336175 /* BARO */ = {
 			isa = PBXGroup;
 			children = (
 				046B7A3325B1A416001B8751 /* GoogleService-Info.plist */,
@@ -403,7 +403,7 @@
 				04B28D4C255245B5007D1ED6 /* FIrebaseTest.swift */,
 				3FA3CEBF256ABB78006F857C /* BasketDialog.swift */,
 			);
-			path = Baro_user_ios;
+			path = BARO;
 			sourceTree = "<group>";
 		};
 		133460D23A99534FEB59747D /* Frameworks */ = {
@@ -693,9 +693,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04B86795253B0ECD00336175 /* Baro_user_ios */ = {
+		04B86795253B0ECD00336175 /* BARO */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04B867AA253B0ECF00336175 /* Build configuration list for PBXNativeTarget "Baro_user_ios" */;
+			buildConfigurationList = 04B867AA253B0ECF00336175 /* Build configuration list for PBXNativeTarget "BARO" */;
 			buildPhases = (
 				149778AA4A33992D10EA8DD1 /* [CP] Check Pods Manifest.lock */,
 				04B86792253B0ECD00336175 /* Sources */,
@@ -708,12 +708,12 @@
 			dependencies = (
 				3F1C4A5E259C4749002C5B5D /* PBXTargetDependency */,
 			);
-			name = Baro_user_ios;
+			name = BARO;
 			packageProductDependencies = (
 				3F1C4A59259C44A5002C5B5D /* KituraWebSocketClient */,
 			);
 			productName = Baro_user_ios;
-			productReference = 04B86796253B0ECD00336175 /* Baro_user_ios.app */;
+			productReference = 04B86796253B0ECD00336175 /* BARO.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -734,7 +734,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 04B86791253B0ECD00336175 /* Build configuration list for PBXProject "Baro_user_ios" */;
+			buildConfigurationList = 04B86791253B0ECD00336175 /* Build configuration list for PBXProject "BARO" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -750,7 +750,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04B86795253B0ECD00336175 /* Baro_user_ios */,
+				04B86795253B0ECD00336175 /* BARO */,
 			);
 		};
 /* End PBXProject section */
@@ -1114,14 +1114,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
-				CODE_SIGN_ENTITLEMENTS = Baro_user_ios/Baro_user_ios.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BARO/Baro_user_ios.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J4HX7ZWJHF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = Baro_user_ios/Info.plist;
+				INFOPLIST_FILE = BARO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1172,14 +1172,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
-				CODE_SIGN_ENTITLEMENTS = Baro_user_ios/Baro_user_ios.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BARO/Baro_user_ios.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J4HX7ZWJHF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = Baro_user_ios/Info.plist;
+				INFOPLIST_FILE = BARO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1226,7 +1226,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04B86791253B0ECD00336175 /* Build configuration list for PBXProject "Baro_user_ios" */ = {
+		04B86791253B0ECD00336175 /* Build configuration list for PBXProject "BARO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B867A8253B0ECF00336175 /* Debug */,
@@ -1235,7 +1235,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04B867AA253B0ECF00336175 /* Build configuration list for PBXNativeTarget "Baro_user_ios" */ = {
+		04B867AA253B0ECF00336175 /* Build configuration list for PBXNativeTarget "BARO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B867AB253B0ECF00336175 /* Debug */,
