@@ -19,7 +19,9 @@ class ChangePass2 : UIViewController {
     let networkURL = NetWorkURL()
     
     var flag : Int = 0
-    
+    public var restoreFrameValue : CGFloat = 0.0
+    var up = false
+    var currentSelectedTF : UITextField?
     let regex = try? NSRegularExpression(pattern:"[0-9a-zA-Z]{4,}$", options: .caseInsensitive)
     
     override func viewDidLoad() {
@@ -27,9 +29,21 @@ class ChangePass2 : UIViewController {
         errorAlarmText1.isHidden = true
         errorAlarmText2.isHidden = true
         inputNewPass.isSecureTextEntry = true
+        inputNewPass.delegate = self
         checkNewPass.isSecureTextEntry = true
+        checkNewPass.delegate = self
         backBtn.setImage(UIImage(named: "arrow_left"), for: .normal)
         swipeRecognizer()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     @IBAction func sendNewPassToServer() {
         checkPassVaild()
@@ -76,10 +90,7 @@ class ChangePass2 : UIViewController {
         }
         
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        self.view.endEditing(true)
-        
-    }
+    
     @objc func textFieldDidChange1(textField: UITextField){
         errorAlarmText1.isHidden = true
     }
@@ -103,5 +114,61 @@ class ChangePass2 : UIViewController {
             default: break
             }
         }
+    }
+}
+
+extension ChangePass2 : UITextFieldDelegate {
+    @objc func keyboardWillAppear(noti: NSNotification) {
+        if up {
+            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                if self.view.frame.origin.y == restoreFrameValue{
+                    self.view.frame.origin.y -= keyboardHeight
+                }
+            }
+            print("keyboard Will appear Execute")
+        }
+    }
+
+    @objc func keyboardWillDisappear(noti: NSNotification) {
+        if self.view.frame.origin.y != restoreFrameValue {
+            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                self.view.frame.origin.y += keyboardHeight
+            }
+            print("keyboard Will Disappear Execute")
+        }
+    }
+
+//self.view.frame.origin.y = restoreFrameValue
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.frame.origin.y = restoreFrameValue
+        print("touches Began Execute")
+        self.view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("textFieldShouldReturn Execute")
+        textField.resignFirstResponder()
+        return true
+    }
+
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        print("textFieldShouldEndEditing Execute")
+        self.view.frame.origin.y = self.restoreFrameValue
+        return true
+    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("textFieldShouldbegin")
+        currentSelectedTF = textField
+        if currentSelectedTF!.isEqual(checkNewPass){
+            up = true
+        }else {
+            up = false
+        }
+        return true
     }
 }

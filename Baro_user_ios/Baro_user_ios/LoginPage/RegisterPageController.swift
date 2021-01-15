@@ -20,6 +20,8 @@ class RegisterPageController: UIViewController {
     let urlMaker = NetWorkURL()
     var phoneNumber : String = ""
     public var restoreFrameValue : CGFloat = 0.0
+    var up = false
+    var currentSelectedTF : UITextField?
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutLoad()
@@ -152,19 +154,20 @@ class RegisterPageController: UIViewController {
 }
 extension RegisterPageController : UITextFieldDelegate {
     @objc func keyboardWillAppear(noti: NSNotification) {
-    if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-        let keyboardRectangle = keyboardFrame.cgRectValue
-        let keyboardHeight = keyboardRectangle.height
-        if self.view.frame.origin.y == restoreFrameValue{
-        self.view.frame.origin.y -= keyboardHeight
+        if up {
+            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                if self.view.frame.origin.y == restoreFrameValue{
+                self.view.frame.origin.y -= keyboardHeight
+                }
+            }
+            print("keyboard Will appear Execute")
         }
     }
-    print("keyboard Will appear Execute")
-        
-}
 
-@objc func keyboardWillDisappear(noti: NSNotification) {
-    if self.view.frame.origin.y != restoreFrameValue {
+    @objc func keyboardWillDisappear(noti: NSNotification) {
+        if self.view.frame.origin.y != restoreFrameValue {
             if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 let keyboardRectangle = keyboardFrame.cgRectValue
                 let keyboardHeight = keyboardRectangle.height
@@ -182,15 +185,24 @@ extension RegisterPageController : UITextFieldDelegate {
         self.view.endEditing(true)
     }
 
-func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    print("textFieldShouldReturn Execute")
-    textField.resignFirstResponder()
-    return true
-}
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("textFieldShouldReturn Execute")
+        textField.resignFirstResponder()
+        return true
+    }
 
-func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-    print("textFieldShouldEndEditing Execute")
-    self.view.frame.origin.y = self.restoreFrameValue
-    return true
-}
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        print("textFieldShouldEndEditing Execute")
+        self.view.frame.origin.y = self.restoreFrameValue
+        return true
+    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        currentSelectedTF = textField
+        if currentSelectedTF!.isEqual(passCheckInput) || isEqual(emailInput){
+            up = true
+        }else {
+            up = false
+        }
+        return true
+    }
 }
