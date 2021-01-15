@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Baro_user_ios</string>
+	<string>BARO</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -23,9 +23,11 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.188217718840-hktaq5fi10fp2c1lj2tg95kskkv9of14</string>
+				<string>com.googleusercontent.apps.188217718840-caiqmi5q08afcjoh72d21ngov492ocon</string>
 			</array>
 		</dict>
 	</array>
