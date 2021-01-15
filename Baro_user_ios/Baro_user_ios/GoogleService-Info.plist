@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>188217718840-hktaq5fi10fp2c1lj2tg95kskkv9of14.apps.googleusercontent.com</string>
+	<string>188217718840-caiqmi5q08afcjoh72d21ngov492ocon.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.188217718840-hktaq5fi10fp2c1lj2tg95kskkv9of14</string>
+	<string>com.googleusercontent.apps.188217718840-caiqmi5q08afcjoh72d21ngov492ocon</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>188217718840-a1sv8ka0191pap928ckdd4te2qii58lt.apps.googleusercontent.com</string>
+	<string>188217718840-10ok4k6bd6lsjputdid3eiva2s82e66s.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCSknBw2tnCQ20gOYamikGomBm7hzPJWWw</string>
 	<key>GCM_SENDER_ID</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.baro.baro.Baro-user-ios</string>
+	<string>com.tpn.baro</string>
 	<key>PROJECT_ID</key>
 	<string>baro-69065</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:188217718840:ios:bd946287186b25763e8ecd</string>
+	<string>1:188217718840:ios:41fd12c8f49e31be3e8ecd</string>
 	<key>DATABASE_URL</key>
 	<string>https://baro-69065.firebaseio.com</string>
 </dict>
