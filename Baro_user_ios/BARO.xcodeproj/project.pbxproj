@@ -192,7 +192,7 @@
 		048D55E2253D83AD009E9CE4 /* MainPageTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTypeCell.swift; sourceTree = "<group>"; };
 		048D55E6253D91C6009E9CE4 /* MainPageEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageEventCell.swift; sourceTree = "<group>"; };
 		04B28D4C255245B5007D1ED6 /* FIrebaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrebaseTest.swift; sourceTree = "<group>"; };
-		04B28D4F255247DE007D1ED6 /* BARO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BARO.entitlements; sourceTree = "<group>"; };
+		04B28D4F255247DE007D1ED6 /* Baro_user_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Baro_user_ios.entitlements; sourceTree = "<group>"; };
 		04B86796253B0ECD00336175 /* BARO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BARO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B86799253B0ECD00336175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B8679B253B0ECD00336175 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -380,7 +380,7 @@
 				E34CAF6425555B4C00BE3F53 /* Alert */,
 				3F0F6EA925514EFA00099ACC /* BootPay */,
 				E34CAF382552808E00BE3F53 /* Map */,
-				04B28D4F255247DE007D1ED6 /* BARO.entitlements */,
+				04B28D4F255247DE007D1ED6 /* Baro_user_ios.entitlements */,
 				E31D4012254FC62300B63F77 /* Basket */,
 				3FA196EE2547C311007CD182 /* UserInterface */,
 				E31D3FFD2547B8EA00B63F77 /* LoginPage */,
