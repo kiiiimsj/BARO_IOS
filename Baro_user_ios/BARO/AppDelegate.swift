@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1.0)
         Bootpay.sharedInstance.appLaunch(application_id: "5f28e2c002f57e0033305757") // production sample
         FirebaseApp.configure()
-        Messaging.messaging().delegate = self
+        //Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {_, _ in})
@@ -59,11 +59,11 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     }
 }
 
-extension AppDelegate: MessagingDelegate {
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("device token : \(fcmToken)")
-        UserDefaults.standard.set(fcmToken, forKey: "device_token")
-        let dataDict: [String : String] = ["token" : fcmToken]
-        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-    }
-}
+//extension AppDelegate: MessagingDelegate {
+//    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+//        print("device token : \(fcmToken)")
+//        UserDefaults.standard.set(fcmToken, forKey: "device_token")
+//        let dataDict: [String : String] = ["token" : fcmToken]
+//        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+//    }
+//}
