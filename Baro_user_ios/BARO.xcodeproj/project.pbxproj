@@ -60,7 +60,7 @@
 		3F0F6EAB25514F0B00099ACC /* MyBootPayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAA25514F0B00099ACC /* MyBootPayController.swift */; };
 		3F0F6EAF25514F1B00099ACC /* BootPay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */; };
 		3F1C4A55259C21E3002C5B5D /* LoginDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C4A54259C21E3002C5B5D /* LoginDialog.swift */; };
-		3F1C4A5A259C44A5002C5B5D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1C4A59259C44A5002C5B5D /* SwiftPackageProductDependency */; };
+		3F1C4A5A259C44A5002C5B5D /* KituraWebSocketClient in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1C4A59259C44A5002C5B5D /* KituraWebSocketClient */; };
 		3F1C4A61259C4E8A002C5B5D /* SendMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C4A60259C4E8A002C5B5D /* SendMessage.swift */; };
 		3F1C4A8625A47AB2002C5B5D /* FirstPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C4A8525A47AB2002C5B5D /* FirstPageController.swift */; };
 		3F1C4A8925A47AE8002C5B5D /* FirstPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C4A8825A47AE8002C5B5D /* FirstPage.storyboard */; };
@@ -329,7 +329,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F1C4A5A259C44A5002C5B5D /* BuildFile in Frameworks */,
+				3F1C4A5A259C44A5002C5B5D /* KituraWebSocketClient in Frameworks */,
 				AA117C3D03D67B360DB8C173 /* Pods_BARO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -714,7 +714,7 @@
 			);
 			name = BARO;
 			packageProductDependencies = (
-				3F1C4A59259C44A5002C5B5D /* SwiftPackageProductDependency */,
+				3F1C4A59259C44A5002C5B5D /* KituraWebSocketClient */,
 			);
 			productName = Baro_user_ios;
 			productReference = 04B86796253B0ECD00336175 /* BARO.app */;
@@ -748,7 +748,7 @@
 			);
 			mainGroup = 04B8678D253B0ECD00336175;
 			packageReferences = (
-				3F1C4A58259C44A5002C5B5D /* RemoteSwiftPackageReference */,
+				3F1C4A58259C44A5002C5B5D /* XCRemoteSwiftPackageReference "Kitura-WebSocket-Client" */,
 			);
 			productRefGroup = 04B86797253B0ECD00336175 /* Products */;
 			projectDirPath = "";
@@ -975,7 +975,6 @@
 /* Begin PBXTargetDependency section */
 		3F1C4A5E259C4749002C5B5D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 3F1C4A5D259C4749002C5B5D;
 		};
 /* End PBXTargetDependency section */
 
@@ -1251,7 +1250,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3F1C4A58259C44A5002C5B5D /* RemoteSwiftPackageReference */ = {
+		3F1C4A58259C44A5002C5B5D /* XCRemoteSwiftPackageReference "Kitura-WebSocket-Client" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Kitura/Kitura-WebSocket-Client.git";
 			requirement = {
@@ -1262,9 +1261,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3F1C4A59259C44A5002C5B5D /* SwiftPackageProductDependency */ = {
+		3F1C4A59259C44A5002C5B5D /* KituraWebSocketClient */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3F1C4A58259C44A5002C5B5D /* RemoteSwiftPackageReference */;
+			package = 3F1C4A58259C44A5002C5B5D /* XCRemoteSwiftPackageReference "Kitura-WebSocket-Client" */;
 			productName = KituraWebSocketClient;
 		};
 /* End XCSwiftPackageProductDependency section */
