@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/kimseongjae/Documents/GitHub/BARO_IOS/Baro_user_ios/BARO.xcodeproj">
+      location = "group:BARO.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

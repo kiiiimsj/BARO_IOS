@@ -90,7 +90,7 @@ class NetWorkURL {
     let logInURL = "http://3.35.180.57:8080/MemberLogin.do"
     let signUpURL = "http://3.35.180.57:8080/MemberRegister.do"
     let noticeURL = "http://3.35.180.57:8080/NoticeFindAll.do"
-    let phoneNumberCheckURL = "http://3.35.180.57:8080/MemberPhoneCheck.do"
+    let phoneNumberCheckURL = "http://3.35.180.57:8080/MemberPhoneCheck.do?phone="
     let passwordUpdateURL = "http://3.35.180.57:8080/MemberPassUpdate.do"
     let emailUpdateURL = "http://3.35.180.57:8080/MemberEmailUpdate.do"
     let categoryURL = "http://3.35.180.57:8080/CategoryFindByStoreId.do"

@@ -28,7 +28,7 @@ class LoginPageController: UIViewController {
     let bottomTabBarInfo = BottomTabBarController()
     var sendMessage = SendMessage()
     public var restoreFrameValue : CGFloat = 0.0
-    
+    public var up = false
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -137,19 +137,20 @@ class LoginPageController: UIViewController {
 
 extension LoginPageController : UITextFieldDelegate {
     @objc func keyboardWillAppear(noti: NSNotification) {
-    if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-        let keyboardRectangle = keyboardFrame.cgRectValue
-        let keyboardHeight = keyboardRectangle.height
-        if self.view.frame.origin.y == restoreFrameValue{
-        self.view.frame.origin.y -= keyboardHeight
+        if up {
+            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                if self.view.frame.origin.y == restoreFrameValue{
+                self.view.frame.origin.y -= keyboardHeight
+                }
+            }
+            print("keyboard Will appear Execute")
         }
     }
-    print("keyboard Will appear Execute")
-        
-}
 
-@objc func keyboardWillDisappear(noti: NSNotification) {
-    if self.view.frame.origin.y != restoreFrameValue {
+    @objc func keyboardWillDisappear(noti: NSNotification) {
+        if self.view.frame.origin.y != restoreFrameValue {
             if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 let keyboardRectangle = keyboardFrame.cgRectValue
                 let keyboardHeight = keyboardRectangle.height
@@ -167,15 +168,23 @@ extension LoginPageController : UITextFieldDelegate {
         self.view.endEditing(true)
     }
 
-func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    print("textFieldShouldReturn Execute")
-    textField.resignFirstResponder()
-    return true
-}
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("textFieldShouldReturn Execute")
+        textField.resignFirstResponder()
+        return true
+    }
 
-func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-    print("textFieldShouldEndEditing Execute")
-    self.view.frame.origin.y = self.restoreFrameValue
-    return true
-}
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        print("textFieldShouldEndEditing Execute")
+        self.view.frame.origin.y = self.restoreFrameValue
+        return true
+    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField.isEqual(passwordInput) {
+            up = true
+        }else{
+            up = false
+        }
+        return true
+    }
 }
