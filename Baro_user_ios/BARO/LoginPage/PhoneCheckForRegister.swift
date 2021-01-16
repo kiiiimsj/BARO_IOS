@@ -102,7 +102,8 @@ class PhoneCheckForRegister : UIViewController {
         Auth.auth().signIn(with: credential) { authData, error in
             if ((error) != nil) {
                 let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
-                dialog.message = "\(String(describing: error))"
+//                dialog.message = "\(String(describing: error))"
+                dialog.message = "인증번호가 일치하지 않습니다."
                 dialog.modalPresentationStyle = .overFullScreen
                 dialog.modalTransitionStyle = .crossDissolve
                 self.present(dialog, animated: true)
