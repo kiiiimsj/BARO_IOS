@@ -1,6 +1,0 @@
-framework module Pods_Baro_user_ios {
-  umbrella header "Pods-Baro_user_ios-umbrella.h"
-
-  export *
-  module * { export * }
-}

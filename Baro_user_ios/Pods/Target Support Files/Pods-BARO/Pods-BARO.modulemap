@@ -1,0 +1,6 @@
+framework module Pods_BARO {
+  umbrella header "Pods-BARO-umbrella.h"
+
+  export *
+  module * { export * }
+}

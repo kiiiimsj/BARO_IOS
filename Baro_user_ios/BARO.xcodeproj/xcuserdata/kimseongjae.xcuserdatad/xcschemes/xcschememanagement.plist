@@ -6,11 +6,6 @@
 	<dict>
 		<key>BARO.xcscheme_^#shared#^_</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>32</integer>
-		</dict>
-		<key>Baro_user_ios.xcscheme_^#shared#^_</key>
-		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
