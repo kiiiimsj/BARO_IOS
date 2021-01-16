@@ -160,6 +160,7 @@
 		E3CEDB0325A83E1400EDE823 /* StoreNotOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDB0225A83E1400EDE823 /* StoreNotOpen.swift */; };
 		E3CEDB0A25B0047300EDE823 /* ChangeEmailComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDB0925B0047200EDE823 /* ChangeEmailComplete.swift */; };
 		E3CEDB0D25B00AF600EDE823 /* ChangePassComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDB0C25B00AF600EDE823 /* ChangePassComplete.swift */; };
+		E3F9716025B2CBA4008CF3D0 /* DuplicateNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F9715F25B2CBA4008CF3D0 /* DuplicateNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -321,6 +322,7 @@
 		E3CEDB0225A83E1400EDE823 /* StoreNotOpen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreNotOpen.swift; sourceTree = "<group>"; };
 		E3CEDB0925B0047200EDE823 /* ChangeEmailComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailComplete.swift; sourceTree = "<group>"; };
 		E3CEDB0C25B00AF600EDE823 /* ChangePassComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassComplete.swift; sourceTree = "<group>"; };
+		E3F9715F25B2CBA4008CF3D0 /* DuplicateNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateNumber.swift; sourceTree = "<group>"; };
 		ED03160DBC46E11745206C30 /* Pods_BARO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BARO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -483,6 +485,7 @@
 				E3AA04D6258A35DB0055454A /* FindPWComplete.swift */,
 				3F1C4A54259C21E3002C5B5D /* LoginDialog.swift */,
 				E3CEDAFE25A41B7100EDE823 /* BeforeRegister.swift */,
+				E3F9715F25B2CBA4008CF3D0 /* DuplicateNumber.swift */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -865,6 +868,7 @@
 				3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */,
 				E34CAF45255523A600BE3F53 /* SeparateWindowController.swift in Sources */,
 				E31D3FD82542ACAC00B63F77 /* StoreListCell.swift in Sources */,
+				E3F9716025B2CBA4008CF3D0 /* DuplicateNumber.swift in Sources */,
 				3F1C4A61259C4E8A002C5B5D /* SendMessage.swift in Sources */,
 				043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */,
 				3F041C66256FB689006A2B3B /* PhoneSendForRegister.swift in Sources */,

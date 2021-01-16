@@ -28,6 +28,8 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
     let nationNumber = "+82"
     @IBOutlet weak var inputPhone: UITextField!
     @IBOutlet weak var sendPhoneToFireBaseBtn: UIButton!
+    public var netWork = CallRequest()
+    public var urlMaker = NetWorkURL()
     let bottomTabBarInfo = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,28 +66,39 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
             let range = authNumber.index(authNumber.startIndex, offsetBy: 0)..<authNumber.endIndex
             let nationPhoneNumber = nationNumber + authNumber[range]
             print("phone : ",nationPhoneNumber)
-            PhoneAuthProvider.provider().verifyPhoneNumber(nationPhoneNumber, uiDelegate: nil) {(verificationID, error) in
-                if let error = error {
-                    print(error)
-                    let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
-                    dialog.message = "\(error.localizedDescription)"
+            netWork.get(method: .get, url: urlMaker.phoneNumberCheckURL+authNumber ){ json in
+                print(json)
+                if json["result"].boolValue {
+                    PhoneAuthProvider.provider().verifyPhoneNumber(nationPhoneNumber, uiDelegate: nil) {(verificationID, error) in
+                        if let error = error {
+                            print(error)
+                            let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
+                            dialog.message = "\(error.localizedDescription)"
+                            dialog.modalPresentationStyle = .overFullScreen
+                            dialog.modalTransitionStyle = .crossDissolve
+                            self.present(dialog, animated: true)
+                          return
+                        }
+                        let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
+                        dialog.message = "해당 핸드폰에 인증문자를 발송했습니다."
+                        dialog.dialogClickDelegate = self
+                        dialog.verificationID = verificationID!
+                        dialog.modalPresentationStyle = .overFullScreen
+                        dialog.modalTransitionStyle = .crossDissolve
+                        self.present(dialog, animated: true)
+                        if(dialog.isBeingDismissed) {
+                            print("dismissed!")
+                        }
+                        //pvc.performSegue(withIdentifier: "PhoneCheckForRegister", sender: verificationID)
+                    }
+                } else {
+                    let dialog = self.storyboard?.instantiateViewController(identifier: "DuplicateNumber") as! DuplicateNumber
                     dialog.modalPresentationStyle = .overFullScreen
                     dialog.modalTransitionStyle = .crossDissolve
                     self.present(dialog, animated: true)
-                  return
                 }
-                let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
-                dialog.message = "해당 핸드폰에 인증문자를 발송했습니다."
-                dialog.dialogClickDelegate = self
-                dialog.verificationID = verificationID!
-                dialog.modalPresentationStyle = .overFullScreen
-                dialog.modalTransitionStyle = .crossDissolve
-                self.present(dialog, animated: true)
-                if(dialog.isBeingDismissed) {
-                    print("dismissed!")
-                }
-                //pvc.performSegue(withIdentifier: "PhoneCheckForRegister", sender: verificationID)
             }
+            
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
