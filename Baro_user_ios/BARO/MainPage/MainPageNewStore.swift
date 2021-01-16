@@ -59,7 +59,7 @@ extension MainPageNewStore : UICollectionViewDelegate, UICollectionViewDataSourc
         let newStore = newStoreList[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageNewStoreCell", for: indexPath) as! MainPageNewStoreCell
         cell.newStoreName.text = newStore.store_name
-        cell.newStoreImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + newStore.store_image))
+        cell.newStoreImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/UltraNewImageStore.do?image_name=" + newStore.store_image))
         if Double(newStore.distance)! > 1000 {
             cell.newStoreDistance.text = String(Int(Double(newStore.distance)!)/1000) + " km"
         }else{
