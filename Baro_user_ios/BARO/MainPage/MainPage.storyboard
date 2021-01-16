@@ -21,7 +21,7 @@
         <!--MainPageController-->
         <scene sceneID="D5o-Fe-Ks9">
             <objects>
-                <viewController storyboardIdentifier="MainPageController" title="MainPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="901-Ku-IQw" customClass="MainPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainPageController" title="MainPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="901-Ku-IQw" customClass="MainPageController" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CvG-KU-mmZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVL-S1-iAt" customClass="FSPagerView" customModule="FSPagerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
-                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="Cc5-ve-2Nq"/>
                                                 </constraints>
@@ -78,7 +78,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageUltraStore" reuseIdentifier="MainPageUltraStore" id="pIg-FW-hU6" customClass="MainPageUltraStore" customModule="Baro_user_ios" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageUltraStore" reuseIdentifier="MainPageUltraStore" id="pIg-FW-hU6" customClass="MainPageUltraStore" customModule="BARO" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="25" width="419" height="200"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xlj-Oa-sZ2">
@@ -98,7 +98,7 @@
                                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                     </collectionViewFlowLayout>
                                                                     <cells>
-                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageUltraStoreCell" reuseIdentifier="MainPageUltraStoreCell" id="nS3-KF-tRz" customClass="MainPageUltraStoreCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageUltraStoreCell" reuseIdentifier="MainPageUltraStoreCell" id="nS3-KF-tRz" customClass="MainPageUltraStoreCell" customModule="BARO" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="278" height="200"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Zdn-ex-Dau">
@@ -197,7 +197,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageNewStore" reuseIdentifier="MainPageNewStore" id="pz8-1W-Fv9" customClass="MainPageNewStore" customModule="Baro_user_ios" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageNewStore" reuseIdentifier="MainPageNewStore" id="pz8-1W-Fv9" customClass="MainPageNewStore" customModule="BARO" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="25" width="414" height="200"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q3A-TH-kUR">
@@ -217,7 +217,7 @@
                                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                     </collectionViewFlowLayout>
                                                                     <cells>
-                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageNewStoreCell" reuseIdentifier="MainPageNewStoreCell" id="efz-4y-D2Z" customClass="MainPageNewStoreCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageNewStoreCell" reuseIdentifier="MainPageNewStoreCell" id="efz-4y-D2Z" customClass="MainPageNewStoreCell" customModule="BARO" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="419" height="200"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4na-25-Qff">
@@ -312,7 +312,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageType" reuseIdentifier="MainPageType" id="54C-LC-pA4" customClass="MainPageType" customModule="Baro_user_ios" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageType" reuseIdentifier="MainPageType" id="54C-LC-pA4" customClass="MainPageType" customModule="BARO" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="14" width="422" height="92"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ovi-0p-qkX">
@@ -329,7 +329,7 @@
                                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                     </collectionViewFlowLayout>
                                                                     <cells>
-                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageTypeCell" reuseIdentifier="MainPageTypeCell" id="dve-gi-S65" customClass="MainPageTypeCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainPageTypeCell" reuseIdentifier="MainPageTypeCell" id="dve-gi-S65" customClass="MainPageTypeCell" customModule="BARO" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="96" height="90"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xb7-jK-CtM">
@@ -337,14 +337,14 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xv9-XD-6Ir">
-                                                                                        <rect key="frame" x="21.5" y="10" width="53" height="53"/>
+                                                                                        <rect key="frame" x="23" y="10" width="50" height="50"/>
                                                                                         <constraints>
-                                                                                            <constraint firstAttribute="width" constant="53" id="7OQ-vX-2uH"/>
-                                                                                            <constraint firstAttribute="height" constant="53" id="BU0-gd-P31"/>
+                                                                                            <constraint firstAttribute="width" constant="50" id="7OQ-vX-2uH"/>
+                                                                                            <constraint firstAttribute="height" constant="50" id="BU0-gd-P31"/>
                                                                                         </constraints>
                                                                                     </imageView>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSg-nR-H2Z" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                                                        <rect key="frame" x="34" y="73" width="28.5" height="16.5"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSg-nR-H2Z" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                                                                        <rect key="frame" x="34" y="70" width="28.5" height="16.5"/>
                                                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                                                         <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
@@ -438,7 +438,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                     <view clipsSubviews="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="xiE-0U-fFK">
                                         <rect key="frame" x="348" y="159" width="50" height="25"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 / 1" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3S-l2-uDO" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 / 1" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3S-l2-uDO" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="5" width="40" height="15"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -575,12 +575,12 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
         <!--MainPageSearchController-->
         <scene sceneID="Kxt-fj-TIh">
             <objects>
-                <viewController storyboardIdentifier="MainPageSearchController" title="MainPageSearchController" modalPresentationStyle="overCurrentContext" id="kpU-U4-PbF" customClass="MainPageSearchController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainPageSearchController" title="MainPageSearchController" modalPresentationStyle="overCurrentContext" id="kpU-U4-PbF" customClass="MainPageSearchController" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QXj-kz-H5P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7v5-4c-E4S" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7v5-4c-E4S" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
                                 <rect key="frame" x="40" y="348" width="334" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 검색" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-1o-PrE">
@@ -734,9 +734,6 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

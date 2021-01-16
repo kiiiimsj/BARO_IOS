@@ -27,7 +27,7 @@
         <!--AboutStore-->
         <scene sceneID="znx-37-STw">
             <objects>
-                <viewController storyboardIdentifier="AboutStore" title="AboutStore" id="n3R-Xf-dIg" customClass="AboutStore" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutStore" title="AboutStore" id="n3R-Xf-dIg" customClass="AboutStore" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LgM-xG-BLO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +100,7 @@
         <!--Store Info Controller-->
         <scene sceneID="Nza-0H-chm">
             <objects>
-                <viewController storyboardIdentifier="StoreInfoController" id="Cpx-Th-ad8" customClass="StoreInfoController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoreInfoController" id="Cpx-Th-ad8" customClass="StoreInfoController" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lEn-iK-HlW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -337,7 +337,7 @@
         <!--StoreMenuController-->
         <scene sceneID="YHo-TD-8FS">
             <objects>
-                <viewController storyboardIdentifier="StoreMenuController" title="StoreMenuController" id="LDZ-uN-ZP4" customClass="StoreMenuController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoreMenuController" title="StoreMenuController" id="LDZ-uN-ZP4" customClass="StoreMenuController" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UHf-yP-UZC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -355,7 +355,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" restorationIdentifier="ASCategoryCell" reuseIdentifier="ASCategoryCell" id="OML-UK-txU" customClass="ASCategoryCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" restorationIdentifier="ASCategoryCell" reuseIdentifier="ASCategoryCell" id="OML-UK-txU" customClass="ASCategoryCell" customModule="BARO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="-5.5" width="114" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QO2-3a-b8H">
@@ -384,7 +384,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="categoryIndecator" translatesAutoresizingMaskIntoConstraints="NO" id="Mqn-Os-oTh" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="categoryIndecator" translatesAutoresizingMaskIntoConstraints="NO" id="Mqn-Os-oTh" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -438,7 +438,7 @@
         <!--StoreMenu2Controller-->
         <scene sceneID="rzV-RV-UBQ">
             <objects>
-                <viewController storyboardIdentifier="StoreMenu2Controller" title="StoreMenu2Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="baI-M4-zw5" customClass="StoreMenu2Controller" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoreMenu2Controller" title="StoreMenu2Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="baI-M4-zw5" customClass="StoreMenu2Controller" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U4J-Sb-Vg4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -453,15 +453,15 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ASMenuCell" id="Xwg-fN-abT" customClass="ASMenuCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ASMenuCell" id="Xwg-fN-abT" customClass="ASMenuCell" customModule="BARO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9Jt-DO-6W1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f47-12-y4Y" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                                    <rect key="frame" x="100" y="15" width="20.5" height="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f47-12-y4Y" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                                    <rect key="frame" x="110" y="15" width="20.5" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="rzL-EI-lVx"/>
                                                     </constraints>
@@ -475,14 +475,14 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5O9-ZI-E0L">
-                                                    <rect key="frame" x="20" y="15" width="60" height="98"/>
+                                                    <rect key="frame" x="20" y="15" width="70" height="98"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="VbE-Ri-CnR"/>
-                                                        <constraint firstAttribute="width" constant="60" id="We9-to-qsr"/>
+                                                        <constraint firstAttribute="height" constant="70" id="VbE-Ri-CnR"/>
+                                                        <constraint firstAttribute="width" constant="70" id="We9-to-qsr"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설명" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQA-k6-aku">
-                                                    <rect key="frame" x="100" y="50" width="180" height="16.5"/>
+                                                    <rect key="frame" x="110" y="50" width="180" height="16.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="180" id="gZF-61-Gcy"/>
                                                     </constraints>
@@ -490,7 +490,7 @@
                                                     <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="가격" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8E-Mk-3os" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="가격" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8E-Mk-3os" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
                                                     <rect key="frame" x="373.5" y="56" width="20.5" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="11"/>
                                                     <nil key="textColor"/>
@@ -559,12 +559,12 @@
         <!--FavoriteDialog-->
         <scene sceneID="pkB-8N-XDx">
             <objects>
-                <viewController restorationIdentifier="FavoriteDialog" storyboardIdentifier="FavoriteDialog" title="FavoriteDialog" modalPresentationStyle="overCurrentContext" id="erg-za-UnV" customClass="FavoriteDialog" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="FavoriteDialog" storyboardIdentifier="FavoriteDialog" title="FavoriteDialog" modalPresentationStyle="overCurrentContext" id="erg-za-UnV" customClass="FavoriteDialog" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="2IY-GO-TaO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yw-Mj-3JP" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yw-Mj-3JP" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
                                 <rect key="frame" x="82" y="373" width="250" height="150"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨찾기에 추가 되었습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMz-ie-Ors">
@@ -587,7 +587,7 @@
                                             <action selector="okayButton" destination="erg-za-UnV" eventType="touchUpInside" id="t5c-T2-Jjp"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPR-nL-Qna" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPR-nL-Qna" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨찾기 추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzy-zl-0Hw">
