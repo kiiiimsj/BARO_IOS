@@ -66,7 +66,12 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         getUserNotReadAlertCount()
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         print("룰루")
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self,name: UIApplication.willEnterForegroundNotification,object: nil)
     }
     
     override func viewDidLoad() {
@@ -98,7 +103,9 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         
         
 //        locationCheck()
-        
+       
+
+
         print("main's viewDidLoad")
         locationManager.startUpdatingLocation()
         
@@ -180,6 +187,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.denied {
             //위치권한 거부되어있을 경우
+            locationCheck()
         }
         else if status == CLAuthorizationStatus.authorizedAlways {
             //위치 권한 항상
@@ -187,7 +195,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         else if status == CLAuthorizationStatus.authorizedWhenInUse {
             //앱 실행중일시에만
         }
-        locationCheck()
+        
 
     }
     func toStoreListUseBottomBar(tag : String) {
@@ -261,6 +269,11 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         refreshControl.endRefreshing()
     }
+    @objc func willEnterForeground() {
+        // do stuff
+        print("back")
+        locationCheck()
+    }
     //기기의 gps (위치권한 설정) 안함 되어있을경우 alert띄워 앱의 위치권한 설정으로
     func locationCheck() {
         let status = CLLocationManager.authorizationStatus()
@@ -270,20 +283,22 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             let logOkAction = UIAlertAction(title: "네", style: UIAlertAction.Style.default) {
                 (action: UIAlertAction) in
                 if #available(iOS 10.0, *) {
-                    let status2 = CLLocationManager.authorizationStatus()
-                    print(status2)
-                    if status2 != CLAuthorizationStatus.authorizedAlways && status2 != CLAuthorizationStatus.authorizedWhenInUse {
-                        self.locationCheck()
-                        UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
-                    }
+//                    let status2 = CLLocationManager.authorizationStatus()
+//                    print(status2)
+//                    if status2 != CLAuthorizationStatus.authorizedAlways && status2 != CLAuthorizationStatus.authorizedWhenInUse {
+//                        self.locationCheck()
+//                        UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
+//                    }
+                    UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
                 }
                 else {
-                    let status2 = CLLocationManager.authorizationStatus()
-                    print(status2)
-                    if status2 != CLAuthorizationStatus.authorizedAlways && status2 != CLAuthorizationStatus.authorizedWhenInUse {
-                        self.locationCheck()
-                        UIApplication.shared.canOpenURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
-                    }
+//                    let status2 = CLLocationManager.authorizationStatus()
+//                    print(status2)
+//                    if status2 != CLAuthorizationStatus.authorizedAlways && status2 != CLAuthorizationStatus.authorizedWhenInUse {
+//                        self.locationCheck()
+//                        UIApplication.shared.canOpenURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
+//                    }
+                    UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
                 }
                 
             }
