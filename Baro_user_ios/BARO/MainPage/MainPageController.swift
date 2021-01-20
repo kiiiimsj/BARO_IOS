@@ -9,6 +9,10 @@ import NMapsMap
 import FSPagerView
 
 class MainPageController: UIViewController, CLLocationManagerDelegate {
+    public static let TAG = "MainPageController"
+    // 에뮬테스트용 위도/경도
+    public static let DEFAULTLATITUDE = 37.49808785857802
+    public static let DEFAULTLONGITUDE = 127.02758604547965
     var latitude: Double?
     var longitude: Double?
     
@@ -64,10 +68,13 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     @IBAction func alertClick(_ sender: Any) {
         toAlertUseBottomBar()
     }
+    override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
+    }
     override func viewWillAppear(_ animated: Bool) {
         getUserNotReadAlertCount()
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-        print("룰루")
+        print(MainPageController.TAG,"룰루")
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -100,23 +107,20 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         collectionViewType.delegate = self
         collectionViewUltra.delegate = self
         collectionViewNewStore.delegate = self
-        
-        
-//        locationCheck()
-       
 
-
-        print("main's viewDidLoad")
+        print(MainPageController.TAG,"main's viewDidLoad")
         locationManager.startUpdatingLocation()
         
         let coor = locationManager.location?.coordinate
         
         //회원의 위도/경도
-        latitude = coor?.latitude
-        longitude = coor?.longitude
-        // 에뮬테스트용 위도/경도ㅌ
-        latitude = 37.4954847
-        longitude = 126.959691
+        if coor == nil {
+            latitude = MainPageController.DEFAULTLATITUDE
+            longitude = MainPageController.DEFAULTLONGITUDE
+        }else{
+            latitude = coor?.latitude
+            longitude = coor?.longitude
+        }
         
         //회원의 위도경도 model을 userdefaults에 저장 ( 제일 아래에 구조체에 저장)
         //location이라는 key로 위도경도 저장
@@ -124,7 +128,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         UserDefaults.standard.set(try? PropertyListEncoder().encode(location), forKey: "location")
         getMyLocation(String(longitude!), String(latitude!))
         whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
-//        UserDefaults.standard.setValue(0, forKey: "newestAlert")
+        
         netWork.post(method: .get, url: urlMaker.eventList) { json in
             var eventModel = EventListModel()
             print("jj",json)
@@ -185,17 +189,30 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     
     //기기의 gps 꺼져있을때
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print(MainPageController.TAG,"lmcalled")
         if status == CLAuthorizationStatus.denied {
             //위치권한 거부되어있을 경우
             locationCheck()
+            latitude = MainPageController.DEFAULTLATITUDE
+            longitude = MainPageController.DEFAULTLONGITUDE
         }
         else if status == CLAuthorizationStatus.authorizedAlways {
             //위치 권한 항상
+            let coor = manager.location?.coordinate
+            latitude = coor?.latitude
+            longitude = coor?.longitude
+            
         }
         else if status == CLAuthorizationStatus.authorizedWhenInUse {
             //앱 실행중일시에만
+            let coor = manager.location?.coordinate
+            latitude = coor?.latitude
+            longitude = coor?.longitude
         }
-        
+        let location = Location(latitude: latitude, longitude: longitude)
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(location), forKey: "location")
+        getMyLocation(String(longitude!), String(latitude!))
+        whereAmI = CLLocation(latitude: latitude!, longitude: longitude!)
 
     }
     func toStoreListUseBottomBar(tag : String) {
@@ -270,9 +287,8 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         refreshControl.endRefreshing()
     }
     @objc func willEnterForeground() {
-        // do stuff
-        print("back")
-        locationCheck()
+        
+//        locationCheck()
     }
     //기기의 gps (위치권한 설정) 안함 되어있을경우 alert띄워 앱의 위치권한 설정으로
     func locationCheck() {
@@ -283,26 +299,18 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             let logOkAction = UIAlertAction(title: "네", style: UIAlertAction.Style.default) {
                 (action: UIAlertAction) in
                 if #available(iOS 10.0, *) {
-//                    let status2 = CLLocationManager.authorizationStatus()
-//                    print(status2)
-//                    if status2 != CLAuthorizationStatus.authorizedAlways && status2 != CLAuthorizationStatus.authorizedWhenInUse {
-//                        self.locationCheck()
-//                        UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
-//                    }
                     UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
                 }
                 else {
-//                    let status2 = CLLocationManager.authorizationStatus()
-//                    print(status2)
-//                    if status2 != CLAuthorizationStatus.authorizedAlways && status2 != CLAuthorizationStatus.authorizedWhenInUse {
-//                        self.locationCheck()
-//                        UIApplication.shared.canOpenURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
-//                    }
                     UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString)! as URL)
                 }
-                
+            }
+            let cancelAction = UIAlertAction(title: "아니오", style: .cancel ){
+                (action : UIAlertAction) in
+                alter.dismiss(animated: true, completion: nil)
             }
             alter.addAction(logOkAction)
+            alter.addAction(cancelAction)
             self.present(alter, animated: true, completion: nil)
         }
     }
@@ -314,6 +322,7 @@ extension MainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
     func setFSPager(){
         self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
         self.pagerView.itemSize = FSPagerView.automaticSize
+        
         // 무한슬라이딩
         self.pagerView.isInfinite = true
         // 자동슬라이드 주기 ( 1.0 = 1초 )
@@ -340,7 +349,7 @@ extension MainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
         let event = eventList[index]
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
         cell.imageView?.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageEvent.do?image_name=" + event.event_image))
-        cell.imageView?.contentMode = .scaleAspectFit
+//        cell.imageView?.contentMode = .scaleAspectFit
 //        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goStore(_:))))
         return cell
     }
