@@ -220,6 +220,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     }
     
     func setOrderInsertParam(order_date : String){
+        var eachCount = 0
         var sendServerOrderdatas = [SendServerOrders]()
         for order in myOrders {
             var sendServerOrderdata = SendServerOrders()
@@ -244,6 +245,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             sendServerOrderdata.menu_defaultprice = "\(order.menu.menu_defaultprice)"
             sendServerOrderdata.menu_name = "\(order.menu.menu_name)"
             sendServerOrderdata.order_count = order.menu_count
+            eachCount += order.menu_count
             sendServerOrderdatas.append(sendServerOrderdata)
         }
         var param2 = Param()
@@ -251,12 +253,16 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         param2.store_id = self.storeId
         param2.receipt_id = "\(self.receptId)"
         param2.total_price = self.totalPrice
-        param2.discount_price = self.couponDiscountValue
+        if self.couponDiscountValue == 0 {
+            param2.discount_price = -1
+        }else{
+            param2.discount_price = self.couponDiscountValue
+        }
         param2.coupon_id = self.couponId
         param2.requests = "\(self.customerRequest)"
         param2.orders = sendServerOrderdatas
         param2.order_date = order_date
-        
+        param2.each_count = eachCount
         var param : [String:AnyObject] = [:]
         let enco = JSONEncoder()
         let jsonData = try? enco.encode(param2)
