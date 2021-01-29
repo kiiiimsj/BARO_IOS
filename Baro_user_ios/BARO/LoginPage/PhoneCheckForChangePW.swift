@@ -39,7 +39,6 @@ class PhoneCheckForChangePW : UIViewController {
     }
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            print("gesture")
             switch swipeGesture.direction{
             case UISwipeGestureRecognizer.Direction.right:
                 self.dismiss(animated: true, completion: nil)
@@ -69,7 +68,6 @@ class PhoneCheckForChangePW : UIViewController {
                     authString.append(inputPin4.text!)
                     authString.append(inputPin5.text!)
                     authString.append(inputPin6.text!)
-                    print("authString : ", authString)
                     textField.endEditing(true)
                 default :
                     print("none")
@@ -80,7 +78,6 @@ class PhoneCheckForChangePW : UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     @IBAction func pressBtn(_ sender: Any) {
-        print(authString)
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.verificationID, verificationCode: self.authString)
         Auth.auth().signIn(with: credential) { authData, error in
             if ((error) != nil) {

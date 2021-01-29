@@ -39,13 +39,11 @@ extension OrderStatusDetail : UICollectionViewDelegate, UICollectionViewDataSour
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("uu", extraList.count)
         return extraList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let extra = extraList[indexPath.item]
-        print("hj", extra.extra_name)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderStatusDetailCell", for: indexPath) as! OrderStatusDetailCell
         cell.extraName.text = extra.extra_name
         cell.extraPrice.text = "+" + String(extra.extra_price * extra.extra_count) + "원"

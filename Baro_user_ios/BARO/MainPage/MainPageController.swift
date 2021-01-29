@@ -74,7 +74,6 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         getUserNotReadAlertCount()
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-        print(MainPageController.TAG,"룰루")
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -108,7 +107,6 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         collectionViewUltra.delegate = self
         collectionViewNewStore.delegate = self
 
-        print(MainPageController.TAG,"main's viewDidLoad")
         locationManager.startUpdatingLocation()
         
         let coor = locationManager.location?.coordinate
@@ -131,7 +129,6 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
         
         netWork.post(method: .get, url: urlMaker.eventList) { json in
             var eventModel = EventListModel()
-            print("jj",json)
             for item in json["event"].array! {
                 eventModel.event_id = item["event_id"].stringValue
                 eventModel.event_image = item["event_image"].stringValue
@@ -166,7 +163,6 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             json in
             if json["result"].boolValue {
                 if (json["count"].intValue > 0) {
-                    print("getUserNotReadaAlertCount : ", json["count"].intValue)
                     self.alertButton.setImage(UIImage(named: "alert_on"), for: .normal)
                     
                 }
@@ -182,14 +178,12 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let location: CLLocation = locations[locations.count - 1]
-        print("dddd",location)
         getMyLocation(String(location.coordinate.longitude), String(location.coordinate.latitude))
 //        locationManager.stopUpdatingLocation()
     }
     
     //기기의 gps 꺼져있을때
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        print(MainPageController.TAG,"lmcalled")
         if status == CLAuthorizationStatus.denied {
             //위치권한 거부되어있을 경우
             locationCheck()
@@ -418,22 +412,18 @@ extension MainPageController : UICollectionViewDelegate, UICollectionViewDataSou
 //클릭에 해당하는 extension들
 extension MainPageController : CellDelegateEvent, CellDelegateType, CellDelegateUltra, CellDelegateNewStore {
     func tapClickEvent(tag: String) {
-        print(tag)
         navigationController?.pushViewController(EventPageController(), animated: false)
         performSegue(withIdentifier: "mainToEvent", sender: tag)
     }
     func tapClickType(tag: String) {
-        print(tag)
         self.toStoreListUseBottomBar(tag: tag)
     }
     
     func tapClickUltra(tag: Int) {
-        print(tag)
         self.toAboutStoreUseBottomBar(tag: tag)
     }
     
     func tapClickNewStore(tag: Int) {
-        print(tag)
         self.toAboutStoreUseBottomBar(tag: tag)
     }
     

@@ -77,12 +77,10 @@ class CouponForBasket : UIViewController {
         
     }
     func getCoupon() {
-        print("getUserPhone : ", userPhone, "getTotalPrice", totalPrice)
         netWork.get(method: .get, url: urlMaker.couponListCanUse + "\(userPhone)" + "&price=\(self.totalPrice)") {
             json in
             if json["result"].boolValue {
                 var coupon = Coupon()
-                print(json)
                 for item in json["coupon"].array! {
                     coupon.coupon_title = item["coupon_title"].stringValue
                     coupon.coupon_condition = item["coupon_condition"].intValue
@@ -182,7 +180,6 @@ extension CouponForBasket : UITextFieldDelegate {
         self.view.frame.origin.y -= keyboardHeight
         }
     }
-    print("keyboard Will appear Execute")
         
 }
 
@@ -193,7 +190,6 @@ extension CouponForBasket : UITextFieldDelegate {
                 let keyboardHeight = keyboardRectangle.height
                 self.view.frame.origin.y += keyboardHeight
             }
-            print("keyboard Will Disappear Execute")
         }
     }
 
@@ -201,18 +197,15 @@ extension CouponForBasket : UITextFieldDelegate {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.frame.origin.y = restoreFrameValue
-        print("touches Began Execute")
         self.view.endEditing(true)
     }
 
 func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    print("textFieldShouldReturn Execute")
     textField.resignFirstResponder()
     return true
 }
 
 func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-    print("textFieldShouldEndEditing Execute")
     self.view.frame.origin.y = self.restoreFrameValue
     return true
 }

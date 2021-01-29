@@ -100,7 +100,6 @@ class BottomTabBarController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print("bottom view will appear")
         if let storeName = UserDefaults.standard.value(forKey: "currentStoreName") as? String {
             currentStoreName = storeName
         }
@@ -200,7 +199,6 @@ class BottomTabBarController: UIViewController {
                 view.removeFromSuperview()
             }
         }
-        print("topView : \(TopView.isHidden)")
         if(TopView.isHidden) {
             restoreTopView()
         }
@@ -305,10 +303,8 @@ class BottomTabBarController: UIViewController {
                 if let getData = param["menu"] as? String {
                     let data = getData.data(using: .utf8)!
                     VCsender.menu  = try! decoder.decode(Menu.self, from: data)
-                    print("VCsender.menu : ", VCsender.menu)
                 }
                 VCsender.storeId = param["storeId"] as! Int
-                print("VCsender.menu : ", VCsender.storeId)
                 finallController = VCsender
             case aboutStoreControllerIdentifier:
                 let VCsender = controller as! AboutStore
@@ -341,7 +337,6 @@ class BottomTabBarController: UIViewController {
                 finallController = VCsender
             case alertContentControllerIdentifier:
                 let VCsender = controller as! AlertContentController
-                print("alert indexPath row : ", sender)
                 VCsender.Alert = sender as! AlertModel
                 finallController = VCsender
             case basketControllerIdentifier:
@@ -476,7 +471,6 @@ class BottomTabBarController: UIViewController {
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         var viewTranslation = CGPoint(x: 0, y: 0)
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            print("gesture")
             let transition = CATransition()
             transition.duration = 0.5
             transition.type = CATransitionType.moveIn

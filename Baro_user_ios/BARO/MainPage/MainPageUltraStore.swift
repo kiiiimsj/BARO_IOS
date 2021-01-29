@@ -33,7 +33,6 @@ class MainPageUltraStore : UICollectionViewCell {
         ]
         
         networkModel.post(method: .post, param: jsonObject, url: networkURL.ultraList) { (json) in
-            print("json",json)
             var ultraModel = UltraStoreListModel()
             if json["result"].boolValue {
                 for item in json["store"].array! {
@@ -92,7 +91,6 @@ extension MainPageUltraStore : UICollectionViewDelegate, UICollectionViewDataSou
         if let index = indexPath {
             let storeId = ultraList[index.row].store_id
             UserDefaults.standard.set(ultraList[index.row].store_name, forKey: "currentStoreName")
-            print("ultra tap!! index : \(storeId)")
             delegateUltra?.tapClickUltra(tag: storeId)
         }
     }

@@ -19,7 +19,6 @@ class AlertContentController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("ALERT :! ", Alert)
         alertTitle.text = "\(Alert.alert_title)"
         alertDate.text = "\(Alert.alert_startdate)"
         getAlertDetail()
@@ -48,13 +47,11 @@ class AlertContentController : UIViewController {
     func getAlertDetail() {
         netWork.get(method: .get, url: urlMaker.getAlertDetail+"\(Alert.alert_id)") {
             json in
-            print("json : ", json)
             if json["result"].boolValue {
                 self.setAlertContent(content: json["content"].stringValue)
                 self.setAlertRead()
             }
             else {
-                print("alert_error")
             }
         }
     }
@@ -65,10 +62,10 @@ class AlertContentController : UIViewController {
         netWork.get(method: .get, url: urlMaker.alertUserReaded+"\(Alert.alert_id)"+"&phone="+userPhone) {
             json in
             if json["result"].boolValue {
-                print("read success")
+                
             }
             else {
-                print("read error")
+                
             }
         }
     }

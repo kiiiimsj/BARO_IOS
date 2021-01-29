@@ -9,10 +9,8 @@ import UIKit
 
 class OrderStatusController : UIViewController, TopViewElementDelegate {
     func favoriteBtnDelegate(controller : UIViewController) {
-        print("delegate")
     }
     func refreshBtnDelegate(controller : UIViewController) {
-        print("refresh button clicked")
         setNewData()
     }
     
@@ -43,7 +41,6 @@ class OrderStatusController : UIViewController, TopViewElementDelegate {
             json in
             var orderStatusModel = OrderStatusList()
             for item in json["order"].array! {
-                print(json)
                 orderStatusModel.order_date = item["order_date"].stringValue
                 orderStatusModel.receipt_id = item["receipt_id"].stringValue
                 orderStatusModel.store_name = item["store_name"].stringValue

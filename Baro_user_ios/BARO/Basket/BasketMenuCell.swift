@@ -25,7 +25,6 @@ class BasketMenuCell: UICollectionViewCell {
         
         override func prepareForReuse() {
             super.prepareForReuse()
-            print("prepare")
             nonEssential = nil
             eachMenu = nil
             essential = nil

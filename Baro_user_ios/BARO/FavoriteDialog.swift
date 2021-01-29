@@ -15,7 +15,6 @@ class FavoriteDialog : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDialogLabel(index: isFlag)
-        print("isFlag : ", isFlag)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)

@@ -16,7 +16,6 @@ class StoreMenu2Controller : UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        print("twice?")
     }
     func toOrderDetial(param : [String:Any]) {
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
@@ -28,7 +27,6 @@ class StoreMenu2Controller : UIViewController {
         
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = .crossDissolve
-        print("moveToOrderDetail : ", ViewInBottomTabBar.moveFromOutSide)
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
 }

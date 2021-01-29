@@ -41,7 +41,6 @@ class MainPageEvent : UICollectionViewCell {
 
         networkModel.post(method: .get, url: networkURL.eventList) { json in
             var eventModel = EventListModel()
-            print("jj",json)
             for item in json["event"].array! {
                 eventModel.event_id = item["event_id"].stringValue
                 eventModel.event_image = item["event_image"].stringValue
@@ -49,21 +48,6 @@ class MainPageEvent : UICollectionViewCell {
                 self.eventList.append(eventModel)
             }
             self.collectionView.reloadData()
-//            DispatchQueue.global().async {
-//
-//                while true {
-//                    Thread.sleep(forTimeInterval: 5)
-//                    print("zzz",self.a)
-//
-//                    DispatchQueue.main.sync {
-//                        self.collectionView.scrollToItem(at: self.indexPaths[self.a], at: .right, animated: true)
-//                        self.a += 1
-//                    }
-//                    if self.a >= self.eventList.count {
-//                        self.a = 0
-//                    }
-//                }
-//            }
         }
         
     }
@@ -72,7 +56,6 @@ class MainPageEvent : UICollectionViewCell {
 
 extension MainPageEvent : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("tt",eventList.count)
         return eventList.count
     }
     
@@ -102,7 +85,6 @@ extension MainPageEvent : UICollectionViewDelegate, UICollectionViewDataSource, 
         let indexPath = self.collectionView.indexPathForItem(at: location)
         let eventId = eventList[indexPath!.row].event_id
         if let index = indexPath {
-            print("eventtap!! index : \(eventId)")
             delegateEvent?.tapClickEvent(tag: eventId)
         }
     }
@@ -113,21 +95,17 @@ extension MainPageEvent : UICollectionViewDelegate, UICollectionViewDataSource, 
     @objc func swipe(recognizer : UISwipeGestureRecognizer){
         switch recognizer.direction {
         case .right:
-            print("rightDirection",eventList.count - 1)
             self.collectionView.scrollToItem(at: IndexPath(item: eventList.count-1, section: 0) , at: .right, animated: true)
         case .left:
-            print("leftDirection")
             self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .right, animated: true)
         default:
             print("?????")
         }
     }
     @objc func handleSwipeRightGesture(_ recognizer: UISwipeGestureRecognizer) {
-        print("This swipe is right")
 //        self.collectionView.scrollToItem(at: self.indexPaths[eventList.count-1], at: .right, animated: true)
     }
     @objc func handleSwipeLeftGesture(_ recognizer: UISwipeGestureRecognizer) {
-        print("This swipe is left")
     }
 }
 

@@ -16,10 +16,8 @@ class EventPageController: UIViewController {
     var urlMaker = NetWorkURL()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(eventId)
         guard (Int(eventId) == nil) else {
             network.get(method: .get, url: urlMaker.eventDetail+eventId) { json in
-                print(json)
                 if json["result"].boolValue {
                     self.dueDate.text = json["event_startdate"].stringValue+"부터 " + json["event_startdate"].stringValue+"까지"
                     self.content.text = json["event_content"].stringValue

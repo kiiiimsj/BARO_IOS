@@ -29,7 +29,6 @@ class StoreMenuController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         isFirstViewLoad = true
-        print("collectionViewSize : ", categoryCollectionView.frame.size)
         netWork.get(method: .get, url: urlMaker.categoryURL + "?store_id="+store_id) {
             (json) in
             if json["result"].boolValue{

@@ -43,7 +43,6 @@ class OrderDetailsController : UIViewController {
     let bottomTabBarInfo = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("orderdetailviewLoad")
         swipeRecognizer()
         setMenuInfo()
         menu_price_current = menu.menu_defaultprice
@@ -101,12 +100,9 @@ class OrderDetailsController : UIViewController {
             data?.menu_count = Int(menu_count.text!)!
             data?.menu_total_price = menu_price_current
             if UserDefaults.standard.value(forKey: "currentStoreId") == nil {
-                print("nil");
             } // nil  이거때문에 2번 안됨
             if let getStoreId = UserDefaults.standard.value(forKey: "currentStoreId") {
-                print("getSvaeStoreId", getStoreId)
                 if(storeId == getStoreId as? Int) {
-                    print("1")
                     let vc = storyboard.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
                     vc.delegate = self
                     vc.store_id = self.storeId
@@ -114,7 +110,6 @@ class OrderDetailsController : UIViewController {
                     vc.modalTransitionStyle = .crossDissolve
                     self.present(vc, animated: false, completion: nil)
                 }else if(getStoreId as? String == ""){
-                    print("2")
                     let vc = storyboard.instantiateViewController(identifier: "MenuOrBasket") as! MenuOrBasket
                     vc.delegate = self
                     vc.store_id = self.storeId
@@ -122,7 +117,6 @@ class OrderDetailsController : UIViewController {
                     vc.modalTransitionStyle = .crossDissolve
                     self.present(vc, animated: false, completion: nil)
                 }else if(storeId != getStoreId as? Int){
-                    print("3")
                     let vc = storyboard.instantiateViewController(identifier: "EmptyBasket") as! EmptyBasket
                     vc.modalPresentationStyle = .overFullScreen
                     vc.modalTransitionStyle = .crossDissolve
@@ -151,7 +145,6 @@ class OrderDetailsController : UIViewController {
         
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            print("gesture")
             switch swipeGesture.direction{
             case UISwipeGestureRecognizer.Direction.right:
                 self.dismiss(animated: true, completion: nil)
@@ -164,11 +157,9 @@ class OrderDetailsController : UIViewController {
     }
     func canGoToNext() -> Bool{
         if selectedEssential.count == essentials.count{
-            print("참")
             return true
         }
         else{
-            print("거짓")
             return false
         }
     }
@@ -325,9 +316,7 @@ extension OrderDetailsController : CellDelegateNonExtra{
 }
 extension OrderDetailsController : ExpandDelegate {
     func clickExpand(open: Bool, iPath : IndexPath) {
-        print(open)
         self.nonEssentialOpen = open
-        print(nonEssentialOpen)
         let layout = EssentialArea.collectionViewLayout
         layout.invalidateLayout()
     }

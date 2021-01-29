@@ -27,7 +27,6 @@ class StoreListPageController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        print("kind",kind)
         if(kind == 1) { //mainpage에서 넘어온 페이지일 경우
             let jsonObject : [ String : Any ] = [
                 "type_code" : typeCode,
@@ -86,7 +85,6 @@ class StoreListPageController : UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print("kind : ", kind)
         if kind == 2 { //favorite list 에서 넘어온 페이지일 경우
             storeList.removeAll()
             let jsonObject : [String : Any ] = [
@@ -233,7 +231,6 @@ extension StoreListPageController : UIScrollViewDelegate {
         if position > (storeListView.contentSize.height-100 - storeListView.frame.size.height) && kind == 3{
             if !callMoreData {
                 loadData()
-                print("ddddd",startPoint)
             }
                 
         }
@@ -247,13 +244,11 @@ extension StoreListPageController : UIScrollViewDelegate {
             "longitude" : "126.956",
             "startPoint" : startPoint
         ]
-        print("point",startPoint)
         network.post(method: .post, param: jsonObject, url: urlCaller.storeSearchURL ) {
             (json) in
             var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
             if json["result"].boolValue {
                 self.storeListView.reloadData()
-                print(json)
                 for item in json["store"].array! {
                     storeListModel.store_image = item["store_image"].stringValue
                     storeListModel.is_open = item["is_open"].stringValue

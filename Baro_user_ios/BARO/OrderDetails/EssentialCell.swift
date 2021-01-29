@@ -38,7 +38,6 @@ class EssentialCell : UICollectionViewCell{
 
 extension EssentialCell : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("zzzz",extras.count)
         return extras.count
     }
     

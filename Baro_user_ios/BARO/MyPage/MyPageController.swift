@@ -37,7 +37,6 @@ class MyPageController : UIViewController {
     var buttonsSectionHeight : CGFloat = 12.0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print("qwerqwer")
         userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
         
         setUserName()

@@ -28,7 +28,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         }
     }
     func refreshBtnDelegate(controller : UIViewController) {
-        print("delegate")
     }
     @IBOutlet weak var FirstPage: UIView!
     @IBOutlet weak var menuButton: UIButton!
@@ -93,7 +92,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     
     func attachToMainView(vc : UIViewController){
         vc.view.frame.size = FirstPage.frame.size
-        print("FirstPage Size : ", FirstPage.frame, "vc view frame size : ", vc.view.frame)
         FirstPage.addSubview(vc.view)
         vc.didMove(toParent: self)
     }
@@ -136,7 +134,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         let param = ["phone":"\(phone)", "store_id":"\(self.store_id)"]
         netWork.post(method: .post, param: param, url: urlMaker.addFavoriteURL) {
             json in
-            print("addFavorite: ", json)
             if json["result"].boolValue {
                 favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "favorite_fill"), for: .normal)
                 self.isFlag = 1
@@ -158,7 +155,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         let param = ["phone":"\(phone)", "store_id":"\(self.store_id)"]
         netWork.post(method: .post, param: param, url: urlMaker.delFavoriteURL) {
             json in
-            print("delFavorite: ", json)
             if json["result"].boolValue {
                 favoriteBtn.topBarFavoriteBtn.setImage(UIImage(named: "favorite_empty"), for: .normal)
                 self.isFlag = 0
@@ -171,7 +167,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     func getStoreInfo() {
         netWork.get(method: .get, url: urlMaker.storeIntroductionURL + "\(self.store_id)") {
             json in
-            print("storeInfo : ",json)
             if (json["result"].boolValue) {
                 self.StoreInfo.store_id = json["store_id"].intValue
                 self.StoreInfo.store_opentime = json["store_opentime"].stringValue
@@ -196,14 +191,11 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         }
     }
     func isFavoriteStore() {
-        print("in the favoriteStore")
         guard UserDefaults.standard.value(forKey: "user_phone") == nil else{
             let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
             let param = ["phone":"\(phone)", "store_id":self.store_id] as [String : Any]
-            print("param : " , param)
             netWork.post(method: .post, param: param, url: urlMaker.isFavoriteURL) {
                 json in
-                print("isFavorite : ",json)
                 if json["result"].boolValue {
                     self.bottomTabBarInfo.topBarFavoriteBtn.setImage(UIImage(named: "favorite_fill"), for: .normal)
                     self.isFlag = 1

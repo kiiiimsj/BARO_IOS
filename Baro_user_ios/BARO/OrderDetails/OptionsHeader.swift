@@ -33,7 +33,6 @@ class OptionsHeader: UICollectionReusableView {
             arrow.setImage(image, for: .normal)
         }
        
-        print("open?",open)
         clickListener?.clickExpand(open: open,iPath: iPath)
     }
     @IBAction func expand(_ sender: Any) {
@@ -47,7 +46,6 @@ class OptionsHeader: UICollectionReusableView {
             arrow.setImage(image, for: .normal)
         }
        
-        print("open?",open)
         clickListener?.clickExpand(open: open,iPath: iPath)
     }
 }

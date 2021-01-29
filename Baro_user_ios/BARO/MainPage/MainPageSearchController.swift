@@ -25,7 +25,6 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(searchBar.text)
         if searchBar.text!.count <= 1 {
             return
         }
@@ -47,7 +46,6 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchContent = searchText
-        print("searchh", searchContent)
         let dialogButtonForm = DialogForm()
         dialogButtonForm.setTopView(top: topViewLabel)
     }

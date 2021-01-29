@@ -50,7 +50,6 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
         
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            print("gesture")
             switch swipeGesture.direction{
             case UISwipeGestureRecognizer.Direction.right:
                 self.dismiss(animated: true, completion: nil)
@@ -65,9 +64,7 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
         if let authNumber = inputPhone.text {
             let range = authNumber.index(authNumber.startIndex, offsetBy: 0)..<authNumber.endIndex
             let nationPhoneNumber = nationNumber + authNumber[range]
-            print("phone : ",nationPhoneNumber)
             netWork.get(method: .get, url: urlMaker.phoneNumberCheckURL+authNumber ){ json in
-                print(json)
                 if json["result"].boolValue {
                     PhoneAuthProvider.provider().verifyPhoneNumber(nationPhoneNumber, uiDelegate: nil) {(verificationID, error) in
                         if let error = error {
@@ -87,7 +84,7 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
                         dialog.modalTransitionStyle = .crossDissolve
                         self.present(dialog, animated: true)
                         if(dialog.isBeingDismissed) {
-                            print("dismissed!")
+                            
                         }
                         //pvc.performSegue(withIdentifier: "PhoneCheckForRegister", sender: verificationID)
                     }

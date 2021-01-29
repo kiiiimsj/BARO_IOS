@@ -36,7 +36,6 @@ class MainPageType : UICollectionViewCell {
     func configure(){
         networkModel.post(method: .get, url: networkURL.typeListURL) { [self] json in
             var typeModel = TypeListModel()
-            print("zz", json)
             for item in json["type"].array! {
                 typeModel.type_code = item["type_code"].stringValue
                 typeModel.type_name = item["type_name"].stringValue
@@ -58,7 +57,6 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("zzz", typeList.count)
         return typeList.count
     }
 
@@ -82,13 +80,11 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
         let indexPath = self.collectionView.indexPathForItem(at: location)
         let typeCode = typeList[indexPath!.row].type_code
         if let index = indexPath {
-            print("tap!! index : \(typeCode)")
             delegateType?.tapClickType(tag: typeCode)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        print("찍",collectionView.frame.width)
         return CGSize(width: collectionView.frame.width / 3 - 1, height: 100)
     }
 }

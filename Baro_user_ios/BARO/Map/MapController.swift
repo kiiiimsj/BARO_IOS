@@ -125,7 +125,6 @@ class MapController : UIViewController {
 //        infoWindow.dataSource = infoWindowDataSource
         setWindowEnvironment()
         var params = Dictionary<String,String>()
-        print("dooooo")
         params["latitude"] = String((location?.coordinate.latitude)!)
         params["longitude"] = String((location?.coordinate.longitude)!)
         netWork.post(method: .post, param: params, url: urlMaker.storeLocation){ (json) in
@@ -150,7 +149,6 @@ class MapController : UIViewController {
         changeCameraShowing(latlng: myLatLng!)
     }
     @objc func returnMe(_ sender: UITapGestureRecognizer) {
-        print("return")
         changeCameraShowing(latlng: myLatLng!)
     }
 }

@@ -9,10 +9,8 @@ import UIKit
 import SwiftyJSON
 class BasketController : UIViewController, TopViewElementDelegate{
     func favoriteBtnDelegate(controller: UIViewController) {
-        print("delegate")
     }
     func refreshBtnDelegate(controller : UIViewController) {
-        print("delegate")
     }
     
     var menu : Order!
@@ -34,7 +32,7 @@ class BasketController : UIViewController, TopViewElementDelegate{
         if(orders.count == 0) {
             orders.append(contentsOf: loadBasket())
         }
-        print("orders : ", orders)
+        
         optionsSeparate()
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -76,7 +74,6 @@ class BasketController : UIViewController, TopViewElementDelegate{
                 vc.totalPrice = self.totalPrice
                 vc.sendOrderToBootPay = self.orders
                 self.present(vc, animated: true, completion: nil)
-                print(self.totalPriceLabel.text!)
             }else{
                 let vc = UIStoryboard.init(name: "Basket", bundle: nil).instantiateViewController(withIdentifier: "StoreNotOpen")
                 vc.modalPresentationStyle = .overFullScreen
@@ -181,6 +178,5 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
     }
     
     func tabRight(index : Int) {
-        print("click Right")
     }
 }

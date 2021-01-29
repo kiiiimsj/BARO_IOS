@@ -145,7 +145,6 @@ extension LoginPageController : UITextFieldDelegate {
                 self.view.frame.origin.y -= keyboardHeight
                 }
             }
-            print("keyboard Will appear Execute")
         }
     }
 
@@ -156,7 +155,6 @@ extension LoginPageController : UITextFieldDelegate {
                 let keyboardHeight = keyboardRectangle.height
                 self.view.frame.origin.y += keyboardHeight
             }
-            print("keyboard Will Disappear Execute")
         }
     }
 
@@ -164,18 +162,15 @@ extension LoginPageController : UITextFieldDelegate {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.frame.origin.y = restoreFrameValue
-        print("touches Began Execute")
         self.view.endEditing(true)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("textFieldShouldReturn Execute")
         textField.resignFirstResponder()
         return true
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        print("textFieldShouldEndEditing Execute")
         self.view.frame.origin.y = self.restoreFrameValue
         return true
     }

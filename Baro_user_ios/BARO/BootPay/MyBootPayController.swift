@@ -40,7 +40,7 @@ class MyBootPayController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("orders : ", myOrders)
+        
         getUserToken() // get user token from baro_server
     }
     
@@ -106,7 +106,6 @@ class MyBootPayController : UIViewController {
         payload.params {
             $0.name = self.setPayLoadNameBuilder
             $0.order_id = self.payDate + self.userName
-            print("payload_order_id : ", $0.order_id)
             $0.price = Double((self.realPrice))
             //UserToken 여부 확인 2
             if let getUserToken = self.userToken {
@@ -159,11 +158,9 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     }
     // 가상계좌 입금 계좌번호가 발급되면 호출되는 함수입니다.
     func onReady(data: [String: Any]) {
-        print("Payment processing onReady : " , data)
     }
     // 결제가 진행되기 바로 직전 호출되는 함수로, 주로 재고처리 등의 로직이 수행
     func onConfirm(data: [String: Any]) {
-        print("Payment processing onConfirm : ",data)
         //basketList UserDefault를 가져와서 서버에 보낸다
         //여기서 recept_id가 생성됨
         //data parsing을 통해 recept_id를 받아 DB로 전송
@@ -189,21 +186,17 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     }
     // 결제 취소시 호출
     func onCancel(data: [String: Any]) {
-        print("Payment processing onCancel : ",data)
         self.result = false
         self.createDialog(titleContentString: "결 제 오 류", contentString: "결제가 취소되었습니다.", buttonString: "확인")
     }
     // 결제완료시 호출
     // 아이템 지급 등 데이터 동기화 로직을 수행합니다
     func onDone(data: [String: Any]) {
-        print("Payment processing onDone : ",data)
-        print("print recept_id : ", receptId)
         setOrderInsertParam(order_date: data["purchased_at"] as! String)
         
     }
     //결제창이 닫힐때 실행되는 부분
     func onClose() {
-        print("Payment processing onClose")
         Bootpay.dismiss() // 결제창 종료
         //결제 취소를 알리는 Dialog생성
     }
@@ -267,10 +260,8 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         let enco = JSONEncoder()
         let jsonData = try? enco.encode(param2)
         let jsonString = String(data: jsonData!, encoding: .utf8)!
-        print("jsonString : ", jsonString)
         
         param = convertStringToDictionary(text: jsonString)!
-        print("param :", param)
         
         self.netWork.post(method: .post, param: param, url: self.urlMaker.orderInsertToServer) {
             json in
@@ -282,7 +273,6 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
                 } catch {
                 }
                 if self.websocket!.isConnected {
-                    print("socketConnected")
                     self.websocket!.sendText("connect:::\(self.userPhone)")
                     self.websocket!.sendText("message:::\(self.storeId):::\(jsonString)")
                 }
@@ -298,14 +288,13 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     }
     func convertStringToDictionary(text: String) -> [String:AnyObject]? {
        if let data = text.data(using: .utf8) {
-        print("data : ", data)
         do {
             if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:AnyObject] {
-                print("json : ", json)
+                
                 return json
             }
         } catch {
-               print("Something went wrong")
+            
            }
        }
        return nil

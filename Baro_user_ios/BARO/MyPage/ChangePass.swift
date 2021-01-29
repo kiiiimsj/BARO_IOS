@@ -58,7 +58,6 @@ class ChangePass : UIViewController {
     }
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            print("gesture")
             switch swipeGesture.direction{
             case UISwipeGestureRecognizer.Direction.right:
                 self.dismiss(animated: true, completion: nil)
