@@ -18,9 +18,7 @@ class CouponPageController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("couponPageViewDidLoad")
         userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
-        print("userPhone : ", userPhone)
         configureUI()
         collection.delegate = self
         collection.dataSource = self

@@ -31,7 +31,6 @@ class ChangeEmail : UIViewController, CAAnimationDelegate {
         let param = ["phone":"\(phone)","email":"\(email)"]
         networkModel.post(method: .put, param: param, url: networkURL.emailUpdateURL) {
             json in
-            print(json)
             if json["result"].boolValue {
                 UserDefaults.standard.set(self.inputNewEmail.text, forKey: "user_email")
                 let vc = UIStoryboard.init(name: "ChangeEmail", bundle: nil).instantiateViewController(withIdentifier: "ChangeEmailComplete")
@@ -56,7 +55,6 @@ class ChangeEmail : UIViewController, CAAnimationDelegate {
         let text = inputNewEmail.text
         let textNSString = text! as NSString
         let checkRegexResult = regex?.matches(in: text!, options: [], range: NSRange(location: 0, length: textNSString.length))
-        print(checkRegexResult)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
@@ -72,7 +70,6 @@ class ChangeEmail : UIViewController, CAAnimationDelegate {
     }
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            print("gesture")
             switch swipeGesture.direction{
             case UISwipeGestureRecognizer.Direction.right:
                 self.dismiss(animated: true, completion: nil)

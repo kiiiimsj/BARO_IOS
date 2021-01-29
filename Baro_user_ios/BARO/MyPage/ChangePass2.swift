@@ -53,7 +53,6 @@ class ChangePass2 : UIViewController {
             networkModel.post(method: .put, param: param,url: networkURL.passwordUpdateURL) {
                 json in
                 if json["result"].boolValue {
-                    print("비밀번호 변경 완료")
                     let vc = UIStoryboard.init(name: "ChangePass", bundle: nil).instantiateViewController(withIdentifier: "ChangePassComplete")
                     vc.modalPresentationStyle = .fullScreen
                     vc.modalTransitionStyle = .crossDissolve
@@ -72,8 +71,6 @@ class ChangePass2 : UIViewController {
         guard let newPass = inputNewPass.text else { return }
         guard let checkPass = checkNewPass.text else {return}
         let passVaild = regex?.matches(in: newPass, options: [], range: NSRange(location: 0, length: newPass.count))
-        print("check vaild count : ",passVaild?.count)
-        print("check check count : ", newPass.count)
         if (passVaild?.count == 1) {
             if (newPass != checkPass){
                 self.errorAlarmText2.isHidden = false
@@ -106,7 +103,6 @@ class ChangePass2 : UIViewController {
     }
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            print("gesture")
             switch swipeGesture.direction{
             case UISwipeGestureRecognizer.Direction.right:
                 self.dismiss(animated: true, completion: nil)
@@ -126,7 +122,6 @@ extension ChangePass2 : UITextFieldDelegate {
                 self.view.frame.origin.y -= keyboardHeight
                 }
             }
-            print("keyboard Will appear Execute")
         }
     }
 
@@ -137,7 +132,6 @@ extension ChangePass2 : UITextFieldDelegate {
                 let keyboardHeight = keyboardRectangle.height
                 self.view.frame.origin.y += keyboardHeight
             }
-            print("keyboard Will Disappear Execute")
         }
     }
 
@@ -145,18 +139,15 @@ extension ChangePass2 : UITextFieldDelegate {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.frame.origin.y = restoreFrameValue
-        print("touches Began Execute")
         self.view.endEditing(true)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("textFieldShouldReturn Execute")
         textField.resignFirstResponder()
         return true
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        print("textFieldShouldEndEditing Execute")
         self.view.frame.origin.y = self.restoreFrameValue
         return true
     }

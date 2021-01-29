@@ -86,7 +86,6 @@ extension MainPageNewStore : UICollectionViewDelegate, UICollectionViewDataSourc
         let location = sender.location(in: self.collectionView)
         let indexPath = self.collectionView.indexPathForItem(at: location)
         let newStoreId = newStoreList[indexPath!.row].store_id
-        print("new store!! index : \(newStoreId)")
         UserDefaults.standard.set(newStoreList[indexPath!.row].store_name, forKey: "currentStoreName")
         delegateNewStore?.tapClickNewStore(tag: newStoreId)
     }

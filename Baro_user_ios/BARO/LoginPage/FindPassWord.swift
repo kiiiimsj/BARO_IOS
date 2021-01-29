@@ -14,7 +14,6 @@ class FindPassWord: UIViewController {
     @IBOutlet weak var inputPhone: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("fpw")
         sendPhoneToFireBaseBtn.layer.cornerRadius = 15
         Auth.auth().settings!.isAppVerificationDisabledForTesting = false
         inputPhone.borderStyle = .none
@@ -38,11 +37,9 @@ class FindPassWord: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     @IBAction func clickSendNumber(_ sender: Any) {
-        print("clcik")
         if let authNumber = inputPhone.text {
             let range = authNumber.index(authNumber.startIndex, offsetBy: 0)..<authNumber.endIndex
             let nationPhoneNumber = nationNumber + authNumber[range]
-            print("phone : ",nationPhoneNumber)
             PhoneAuthProvider.provider().verifyPhoneNumber(nationPhoneNumber, uiDelegate: nil) {(verificationID, error) in
                 if let error = error {
                     print(error)

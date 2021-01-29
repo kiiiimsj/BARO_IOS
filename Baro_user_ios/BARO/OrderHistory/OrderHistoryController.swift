@@ -23,7 +23,6 @@ class OrderHistoryController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("iii")
 //        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "HistoryLoadingCell")
         configureView()
 //        initRefresh()
@@ -31,7 +30,6 @@ class OrderHistoryController : UIViewController {
             json in
             var orderHistoryModel = OrderHistoryList()
             for item in json["order"].array! {
-                print(json)
                 orderHistoryModel.store_id = item["store_id"].intValue
                 orderHistoryModel.store_phone = item["store_phone"].stringValue
                 orderHistoryModel.store_latitude = item["store_latitude"].doubleValue
@@ -60,10 +58,8 @@ class OrderHistoryController : UIViewController {
     @objc func loadData(_ refreshControll : UIRefreshControl) {
         network.post(method: .get, url: networkURL.orderHistoryList + "?phone=" + phone + "&startPoint=" + String(startPoint)) {
             json in
-            print("startPoint",self.startPoint)
             var orderHistoryModel = OrderHistoryList()
             for item in json["order"].array! {
-                print(json)
                 orderHistoryModel.store_id = item["store_id"].intValue
                 orderHistoryModel.store_phone = item["store_phone"].stringValue
                 orderHistoryModel.store_latitude = item["store_latitude"].doubleValue
@@ -170,11 +166,9 @@ extension OrderHistoryController : UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         if position > (collectionView.contentSize.height-100 - collectionView.frame.size.height){
-            print("바닥에 닿음",callMoreData)
             if !end {
                 if !callMoreData {
                     loadData()
-                    print("ddddd",startPoint)
                 }
             }
             
@@ -184,13 +178,11 @@ extension OrderHistoryController : UIScrollViewDelegate {
         callMoreData = true
         network.post(method: .get, url: networkURL.orderHistoryList + "?phone=" + phone + "&startPoint=" + String(startPoint)) {
             json in
-            print("받는중",self.startPoint)
             var orderHistoryModel = OrderHistoryList()
             if json["result"].boolValue {
                 self.collectionView.reloadSections(IndexSet(integer: 1))
                 for item in json["order"].array! {
     //                    self.collectionView. createSpinnerFooter()
-                    print(json)
                     orderHistoryModel.order_date = item["order_date"].stringValue
                     orderHistoryModel.receipt_id = item["receipt_id"].stringValue
                     orderHistoryModel.store_name = item["store_name"].stringValue

@@ -23,7 +23,6 @@ class AlertController : UIViewController {
         collectinView.delegate = self
         collectinView.dataSource = self
         netWork.get(method: .get, url: urlMaker.alertFindAll+userPhone) { (json) in
-            print(json)
             for item in json["alert"].array! {
                 var temp = AlertModel()
                 temp.is_read = item["is_read"].stringValue
@@ -46,7 +45,6 @@ extension AlertController : UICollectionViewDelegate,UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlertCell", for: indexPath) as! AlertCell
         let model = Alerts[Alerts.count - indexPath.item - 1]
-        print("index ROw : ", Alerts.count - indexPath.item - 1)
         cell.title.text = model.alert_title
         cell.date.text = model.alert_startdate
         cell.newLabelView.isHidden = false
@@ -68,7 +66,6 @@ extension AlertController : UICollectionViewDelegate,UICollectionViewDataSource,
 //    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let alert = Alerts[Alerts.count - indexPath.item - 1]
-        print("alert indexPath row : ", alert)
         
         //alert click 시 insert 해주는 구문.
         //

@@ -32,7 +32,6 @@ class SeparateWindowController : UIViewController {
     }
     func whenDidUpdate() -> () {
         netWork.get(method: .get, url: urlMaker.storeIntroductionURL+String(storeData.store_id)) { (json) in
-            print(json)
             self.Store_address_label.text = json["store_location"].stringValue
             if self.storeData.distance > 1000 {
                 self.Store_distance_label.text = String(format: "%.1f",self.storeData.distance/1000) + " km"

@@ -90,7 +90,6 @@ class RegisterPageController: UIViewController {
     }
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            print("gesture")
             switch swipeGesture.direction{
             case UISwipeGestureRecognizer.Direction.right:
 //                let storyboard = UIStoryboard(name: "LoginPage", bundle: nil)
@@ -115,7 +114,6 @@ class RegisterPageController: UIViewController {
         let emailRegex = try? NSRegularExpression(pattern: "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+[.][A-Za-z]{2,3}$", options: .caseInsensitive)
         emailGetResult = emailRegex?.firstMatch(in: email!, options: [], range: NSRange(location: 0, length: emailNSString.length))
         let result = emailGetResult?.numberOfRanges as? Int
-        print("emailcheck :", emailGetResult?.numberOfRanges)
         if(result == nil) {
             emailInputError.isHidden = false
         }
@@ -126,7 +124,6 @@ class RegisterPageController: UIViewController {
     @IBAction func registerSend() {
         if (nameInputError.isHidden && passInputError.isHidden && passCheckInputError.isHidden && emailInputError.isHidden ) {
             if let email = emailInput.text, let nick = nameInput.text, let pass = passInput.text {
-                print("email :", email, "nick :", nick, "pass : ", pass, "phone : ", self.phoneNumber)
                 let param = ["phone":"\(self.phoneNumber)","email":"\(email)","nick":"\(nick)","pass":"\(pass)"]
                 network.post(method: .post, param: param, url: self.urlMaker.signUpURL) {
                     json in
@@ -159,7 +156,6 @@ extension RegisterPageController : UITextFieldDelegate {
         self.view.frame.origin.y -= keyboardHeight
         }
     }
-    print("keyboard Will appear Execute")
         
 }
 
@@ -170,7 +166,6 @@ extension RegisterPageController : UITextFieldDelegate {
                 let keyboardHeight = keyboardRectangle.height
                 self.view.frame.origin.y += keyboardHeight
             }
-            print("keyboard Will Disappear Execute")
         }
     }
 
@@ -178,18 +173,15 @@ extension RegisterPageController : UITextFieldDelegate {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.frame.origin.y = restoreFrameValue
-        print("touches Began Execute")
         self.view.endEditing(true)
     }
 
 func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    print("textFieldShouldReturn Execute")
     textField.resignFirstResponder()
     return true
 }
 
 func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-    print("textFieldShouldEndEditing Execute")
     self.view.frame.origin.y = self.restoreFrameValue
     return true
 }

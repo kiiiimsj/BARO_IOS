@@ -61,7 +61,6 @@ class BasketDialog : UIViewController {
         isClickLeft = true
         
         self.dismiss(animated: false) {
-            print("deletePos", self.deleteItemPos)
             self.delegate?.tabLeft(index : self.deleteItemPos)
         }
     }

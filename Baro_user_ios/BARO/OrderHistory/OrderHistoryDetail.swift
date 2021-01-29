@@ -30,7 +30,6 @@ class OrderHistoryDetail : UICollectionViewCell {
 
 extension OrderHistoryDetail : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("Ffff",extraList.count)
         return extraList.count
     }
     

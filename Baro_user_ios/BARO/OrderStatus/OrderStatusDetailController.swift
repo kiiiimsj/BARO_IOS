@@ -52,9 +52,7 @@ class OrderStatusDetailController : UIViewController {
     func configure() {
         networkModel.post(method: .get, url: networkURL.orderHistoryRegular + "?receipt_id=" + receipt_id) {
             json in
-            print("rr", json)
             let requests = json["requests"].stringValue
-            //print("req", requests)
             if requests == "" {
                 self.mRequests.text = "요청사항 없음"
             }
@@ -81,7 +79,6 @@ class OrderStatusDetailController : UIViewController {
             }
             
             self.collectionView.reloadData()
-            print("ggg", self.orderStatusDetailList)
         }
         storeName.text = String(store_name)
         totalPrice.text = String(total_price) + "원"
@@ -102,7 +99,6 @@ extension OrderStatusDetailController : UICollectionViewDelegate, UICollectionVi
         cell.menuName.text = orderList.menu_name
         cell.menuCount.text = String(orderList.order_count) + "개"
         for item in orderList.OrderStatusDetailExtra {
-            print("ll",item.extra_name)
         }
 
         var extra_total = 0

@@ -53,7 +53,6 @@ class SetNewPW: UIViewController {
         
         network.post(method: .put,param: jsonObject, url: urlMaker.passwordUpdateURL){
             json in
-            print(json)
             if json["result"].boolValue {
                 let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "FindPWComplete") as! FindPWComplete
 //                guard let pvc = self.presentingViewController else { return }

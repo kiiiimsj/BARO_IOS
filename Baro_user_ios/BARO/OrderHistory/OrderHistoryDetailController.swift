@@ -38,7 +38,6 @@ class OrderHistoryDetailController : UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        print("receipt", receipt_id)
         configure()
         
     }
@@ -47,11 +46,8 @@ class OrderHistoryDetailController : UIViewController {
         self.dismiss(animated: true)
     }
     func configure() {
-        
-        print("수지",receipt_id)
         networkModel.post(method: .get, url: networkURL.orderHistoryRegular + "?receipt_id=" + receipt_id) {
             json in
-            print("rr",json)
             self.requestText = json["requests"].stringValue
             for item in json["orders"].array! {
                 var orderHistoryDetailModel = OrderHistoryDetailList()
@@ -70,7 +66,6 @@ class OrderHistoryDetailController : UIViewController {
                         orderHistoryDetailModel.OrderHistoryDetailExtra.append(orderHistoryDetailExtraModel)
                     }
                 }
-                print("????",self.requestText)
                 
                 self.orderHistoryDetailList.append(orderHistoryDetailModel)
             }
@@ -80,7 +75,6 @@ class OrderHistoryDetailController : UIViewController {
                 self.requests.text = self.requestText
             }
             self.collectionView.reloadData()
-            print("jjj",self.orderHistoryDetailList)
             
         }
         okayBtn.layer.borderWidth = 2
@@ -95,14 +89,11 @@ class OrderHistoryDetailController : UIViewController {
 extension OrderHistoryDetailController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("oo", orderHistoryDetailList.count)
         return orderHistoryDetailList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("11111",111)
         let orderList = orderHistoryDetailList[indexPath.item]
-        print("orderrr", orderList.menu_name)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderHistoryDetail", for: indexPath) as! OrderHistoryDetail
 
         //한 메뉴에 대한 total 가격 찍기
@@ -113,13 +104,11 @@ extension OrderHistoryDetailController : UICollectionViewDelegate, UICollectionV
         let menu_one_total_price = (orderList.menu_defaultprice + extra_total)
 
         cell.menu_name.text = String(orderList.menu_name)
-        print("kkkkk", String(orderList.menu_name))
         cell.menu_default_price.text = String(orderList.menu_defaultprice) + "원"
         cell.menu_one_total_price.text = String(menu_one_total_price) + "원"
         cell.menu_count.text = String(orderList.order_count)
         cell.menu_total_price.text = "합계 : " + String(menu_one_total_price * orderList.order_count) + "원"
         cell.extraList = orderList.OrderHistoryDetailExtra
-        print("jkk", orderList.OrderHistoryDetailExtra)
         
         cell.collectionView.delegate = cell.self
         cell.collectionView.dataSource = cell.self
