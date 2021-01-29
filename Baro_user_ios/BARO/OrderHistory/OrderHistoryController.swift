@@ -45,6 +45,10 @@ class OrderHistoryController : UIViewController {
             
                 self.orderHistoryList.append(orderHistoryModel)
             }
+            if json["order"].array!.count < 20 {
+                self.collectionView.reloadData()
+                self.end = true
+            }
             self.collectionView.reloadData()
         }
     }
@@ -97,6 +101,7 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
+            print("sizeeeeeeeee",orderHistoryList.count)
             let orderHistory = orderHistoryList[indexPath.item]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderHistoryCell", for: indexPath) as! OrderHistoryCell
             cell.storeImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + String(orderHistory.store_image)))
