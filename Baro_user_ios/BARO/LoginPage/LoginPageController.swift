@@ -97,7 +97,7 @@ class LoginPageController: UIViewController {
     @objc private func handleLogin(_ sender: UIButton) {
         guard let phone = phoneInput.text else {return}
         guard let password = passwordInput.text else { return}
-        let param = ["phone":"\(phone)","pass":"\(password)"]
+        let param = ["phone":"\(phone)","pass":"\(password)","device_token":UserDefaults.standard.string(forKey: "device_token")]
         networkModel.post(method: .post, param: param, url: networkURL.logInURL) { (json) in
             if json["result"].boolValue {
                 UserDefaults.standard.set("", forKey: "basket")
