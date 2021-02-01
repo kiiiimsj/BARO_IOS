@@ -321,6 +321,25 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
             self.present(alter, animated: true, completion: nil)
         }
     }
+    func toStoreListUseBottomBar(id : Int) {
+        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+        
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
+        ViewInBottomTabBar.controllerSender = id
+        ViewInBottomTabBar.moveFromOutSide = true
+        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+        ViewInBottomTabBar.modalTransitionStyle = .crossDissolve
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        view.window?.layer.add(transition, forKey: kCATransition)
+        self.present(ViewInBottomTabBar, animated: true, completion: nil)
+//        navigationController?.pushViewController(ViewInBottomTabBar, animated: false)
+    }
 }
 
 //FSPager 관련
@@ -417,7 +436,12 @@ extension NewMainPageController : UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionview.frame.width, height: 100)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let id = storeList[indexPath.item].store_id
+        let storeName = String(storeList[indexPath.item].store_name)
+        UserDefaults.standard.set(storeName, forKey: "currentStoreName")
+        self.toStoreListUseBottomBar(id : id)
+    }
 }
 //클릭에 해당하는 extension들
 extension NewMainPageController : CellDelegateEvent, CellDelegateType, CellDelegateUltra, CellDelegateNewStore {
@@ -451,6 +475,7 @@ extension NewMainPageController : CellDelegateEvent, CellDelegateType, CellDeleg
         }
         
     }
+    
     
 }
 
