@@ -53,8 +53,10 @@ class FirstPageController : UIViewController {
         
         
         
-        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.mainPageControllerIdentifier
-        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.mainPageStoryBoard
+//        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.mainPageControllerIdentifier
+//        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.mainPageStoryBoard
+        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.newMainPageControllerIdentifier
+        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.newMainPageStoryBoard
         ViewInBottomTabBar.moveFromOutSide = true
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = . crossDissolve

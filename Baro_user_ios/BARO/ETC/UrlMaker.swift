@@ -100,6 +100,7 @@ class NetWorkURL {
     let getAlert = "http://3.35.180.57:8080/AlertFindAll.do"
 
     //store 상세
+    let findAllStore = "http://3.35.180.57:8080/StoreFindAll.do"
     let typeListURL = "http://3.35.180.57:8080/TypeFindAll.do"
     let storeDetailListURL = "http://3.35.180.57:8080/StoreInfoFindByType.do"
     let storeIntroductionURL = "http://3.35.180.57:8080/StoreFindById.do?store_id="
