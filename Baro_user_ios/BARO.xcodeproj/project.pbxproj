@@ -161,6 +161,8 @@
 		E3CEDB0A25B0047300EDE823 /* ChangeEmailComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDB0925B0047200EDE823 /* ChangeEmailComplete.swift */; };
 		E3CEDB0D25B00AF600EDE823 /* ChangePassComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CEDB0C25B00AF600EDE823 /* ChangePassComplete.swift */; };
 		E3F9716025B2CBA4008CF3D0 /* DuplicateNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F9715F25B2CBA4008CF3D0 /* DuplicateNumber.swift */; };
+		E3F971A625C7FE0A008CF3D0 /* NewMainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F971A525C7FE0A008CF3D0 /* NewMainPage.storyboard */; };
+		E3F971A925C7FECB008CF3D0 /* NewMainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F971A825C7FECB008CF3D0 /* NewMainPageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -323,6 +325,8 @@
 		E3CEDB0925B0047200EDE823 /* ChangeEmailComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailComplete.swift; sourceTree = "<group>"; };
 		E3CEDB0C25B00AF600EDE823 /* ChangePassComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassComplete.swift; sourceTree = "<group>"; };
 		E3F9715F25B2CBA4008CF3D0 /* DuplicateNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateNumber.swift; sourceTree = "<group>"; };
+		E3F971A525C7FE0A008CF3D0 /* NewMainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewMainPage.storyboard; sourceTree = "<group>"; };
+		E3F971A825C7FECB008CF3D0 /* NewMainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMainPageController.swift; sourceTree = "<group>"; };
 		ED03160DBC46E11745206C30 /* Pods_BARO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BARO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -384,6 +388,7 @@
 				E31D4012254FC62300B63F77 /* Basket */,
 				3FA196EE2547C311007CD182 /* UserInterface */,
 				E31D3FFD2547B8EA00B63F77 /* LoginPage */,
+				E3F971A425C7FD31008CF3D0 /* NewMainPage */,
 				E31D3FFE2547B95F00B63F77 /* MainPage */,
 				E31D40002547B9ED00B63F77 /* ListStore */,
 				E31D40022547BA7300B63F77 /* AboutStore */,
@@ -686,6 +691,15 @@
 			path = Event;
 			sourceTree = "<group>";
 		};
+		E3F971A425C7FD31008CF3D0 /* NewMainPage */ = {
+			isa = PBXGroup;
+			children = (
+				E3F971A525C7FE0A008CF3D0 /* NewMainPage.storyboard */,
+				E3F971A825C7FECB008CF3D0 /* NewMainPageController.swift */,
+			);
+			path = NewMainPage;
+			sourceTree = "<group>";
+		};
 		E997DD1537C720F796AAE31D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -792,6 +806,7 @@
 				04DDBA2525A83DAC00C65AFC /* location_information.html in Resources */,
 				04B867A3253B0ECF00336175 /* Assets.xcassets in Resources */,
 				E33D855B253ECB5000E50BAC /* AboutStore.storyboard in Resources */,
+				E3F971A625C7FE0A008CF3D0 /* NewMainPage.storyboard in Resources */,
 				04DDBA2625A83DAC00C65AFC /* terms_of_service.html in Resources */,
 				E34CAFA0255A89F300BE3F53 /* Event.storyboard in Resources */,
 				04D11F422543D31900ADB210 /* OrderHistory.storyboard in Resources */,
@@ -872,6 +887,7 @@
 				3F1C4A61259C4E8A002C5B5D /* SendMessage.swift in Sources */,
 				043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */,
 				3F041C66256FB689006A2B3B /* PhoneSendForRegister.swift in Sources */,
+				E3F971A925C7FECB008CF3D0 /* NewMainPageController.swift in Sources */,
 				E3AA04CC258A11580055454A /* FindPassWord.swift in Sources */,
 				E3AA04C825873F730055454A /* NothingExist.swift in Sources */,
 				E31D3FF925469DCE00B63F77 /* EssentialButton.swift in Sources */,

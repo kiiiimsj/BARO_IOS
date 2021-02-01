@@ -46,6 +46,7 @@ class BottomTabBarController: UIViewController {
 
     
     let mainPageControllerIdentifier = "MainPageController"
+    let newMainPageControllerIdentifier = "NewMainPageController"
     let storeListControllerIdentifier = "StoreListPageController"
     let orderStatusControllerIdentifier = "OrderStatusController"
     let orderHistoryControllerIdentifier = "OrderHistoryController"
@@ -59,6 +60,7 @@ class BottomTabBarController: UIViewController {
     let mapControllerIdentifier = "MapController"
     //접근가능 스토리보드
     let mainPageStoryBoard = UIStoryboard(name: "MainPage", bundle: nil)
+    let newMainPageStoryBoard = UIStoryboard(name: "NewMainPage", bundle: nil)
     let storeListStoryBoard = UIStoryboard(name: "StoreListPage", bundle: nil)
     let orderStatusStoryBoard = UIStoryboard(name: "OrderStatus", bundle: nil)
     let orderHistoryStoryBoard = UIStoryboard(name: "OrderHistory", bundle: nil)
@@ -119,7 +121,7 @@ class BottomTabBarController: UIViewController {
                 basketButton.isHidden = true
                 return
             }
-            if(controllerIdentifier == "MainPageController" || controllerIdentifier == "StoreListPageController"
+            if(controllerIdentifier == "MainPageController" || controllerIdentifier == "StoreListPageController" || controllerIdentifier == "NewMainPageController"
             || controllerIdentifier == "OrderStatusController" || controllerIdentifier == "OrderHistoryController" || controllerIdentifier == "MyPageContrllor" || controllerIdentifier == "AboutStore") {
                 basketButton.isHidden = false
             } else {
@@ -206,7 +208,9 @@ class BottomTabBarController: UIViewController {
             case mainPageControllerIdentifier:
                 self.deleteTopView()
                 self.changeContentView(controller: controller as! MainPageController, sender: nil)
-                
+            case newMainPageControllerIdentifier:
+                self.deleteTopView()
+                self.changeContentView(controller: controller as! NewMainPageController, sender: nil)
             case storeListControllerIdentifier:
                 self.changeContentView(controller: controller as! StoreListPageController, sender: sender)
             case orderStatusControllerIdentifier:
@@ -360,6 +364,8 @@ class BottomTabBarController: UIViewController {
             switch (title) {
             case mainPageControllerIdentifier:
                 bottomTabBar.selectedItem = self.MainPageTabBar
+            case newMainPageControllerIdentifier:
+                bottomTabBar.selectedItem = self.MainPageTabBar
             case storeListControllerIdentifier:
                 let controllerData = controller as! StoreListPageController
                 if(controllerData.typeCode == "2") {
@@ -388,7 +394,8 @@ class BottomTabBarController: UIViewController {
             switch(title) {
                 case mainPageControllerIdentifier:
                     topBarViewControllerTitle.text = "main"
-                    
+                case newMainPageControllerIdentifier:
+                    topBarViewControllerTitle.text = "main"
                 case storeListControllerIdentifier:
                     let controllerData = controller as! StoreListPageController
                     if(controllerData.typeCode == "2") {
@@ -521,7 +528,8 @@ extension BottomTabBarController : UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch(item.title) {
         case "홈":
-            changeViewController(getController: mainPageControllerIdentifier, getStoryBoard: mainPageStoryBoard, sender: nil)
+//            changeViewController(getController: mainPageControllerIdentifier, getStoryBoard: mainPageStoryBoard, sender: nil)
+            changeViewController(getController: newMainPageControllerIdentifier, getStoryBoard: newMainPageStoryBoard, sender: nil)
         case "찜한 가게":
             guard UserDefaults.standard.value(forKey: "user_phone") != nil else{
                 let vc = UIStoryboard.init(name: "BottomTabBar", bundle: nil).instantiateViewController(identifier: "GoLoginController")
