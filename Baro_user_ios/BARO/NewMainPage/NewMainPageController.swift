@@ -18,7 +18,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     public static let DEFAULTLONGITUDE = 127.02758604547965
     var latitude: Double?
     var longitude: Double?
-    
+    var storeList = [StoreList]()
     lazy var locationManager: CLLocationManager = {
             let manager = CLLocationManager()
             manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -39,9 +39,6 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     //    @IBOutlet weak var collectionViewEvent: UICollectionView!
     @IBOutlet weak var whatPage: UILabel!
 //    @IBOutlet weak var pagerControl: FSPageControl!
-    @IBOutlet weak var collectionViewType: UICollectionView!
-    @IBOutlet weak var collectionViewUltra: UICollectionView!
-    @IBOutlet weak var collectionViewNewStore: UICollectionView!
     
     let bottomTabBarInfo = BottomTabBarController()
     
@@ -53,12 +50,11 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     var eventList = [EventListModel]()
     var userPhone = UserDefaults.standard.value(forKey: "user_phone") as? String
     //blur view
-    @IBOutlet weak var aboutHereLabel: UILabel!
-    @IBOutlet weak var newStoreThisWeekLabel: UILabel!
     
     //alert이미지 - 아래에서 off/on체크해주기
     @IBOutlet weak var alertButton: UIButton!
     
+    @IBOutlet weak var collectionview: UICollectionView!
     lazy var refreshControl: UIRefreshControl = {
 
             let refreshControl = UIRefreshControl()
@@ -86,8 +82,6 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(refreshControl)
-        aboutHereLabel.layer.cornerRadius = 5
-        newStoreThisWeekLabel.layer.cornerRadius = 5
         
         self.definesPresentationContext = true
         getUserNotReadAlertCount()
@@ -97,18 +91,8 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
         pagerView.layer.cornerRadius = 5
 //        pagerControl.layer.cornerRadius = 5
 //        collectionViewEvent.dataSource = self
-        
-        collectionViewType.dataSource = self
-        collectionViewType.layer.cornerRadius = 5
-        collectionViewUltra.dataSource = self
-        collectionViewUltra.layer.cornerRadius = 5
-        collectionViewNewStore.dataSource = self
-        collectionViewNewStore.layer.cornerRadius = 5
-        
-//        collectionViewEvent.delegate = self
-        collectionViewType.delegate = self
-        collectionViewUltra.delegate = self
-        collectionViewNewStore.delegate = self
+        collectionview.delegate = self
+        collectionview.dataSource = self
 
         locationManager.startUpdatingLocation()
         
@@ -141,6 +125,32 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
             self.setFSPager()
             self.pagerView.reloadData()
             
+        }
+        let jsonObject : [ String : Any ] = [
+            "latitude" : latitude!,
+            "longitude" : longitude!
+        ]
+        netWork.post(method: .post,param: jsonObject, url: urlMaker.findAllStore) { json in
+            var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
+            if json["result"].boolValue {
+                for item in json["store"].array! {
+                    storeListModel.store_image = item["store_image"].stringValue
+                    storeListModel.is_open = item["is_open"].stringValue
+                    storeListModel.distance = item["distance"].doubleValue
+                    storeListModel.store_id = item["store_id"].intValue
+                    storeListModel.store_info = item["store_info"].stringValue
+                    storeListModel.store_location = item["store_location"].stringValue
+                    storeListModel.store_name = item["store_name"].stringValue
+                    self.storeList.append(storeListModel)
+                }
+//                var newFrame = self.collectionview.frame
+//                newFrame.size.height = CGFloat(self.storeList.count * 200)
+//                self.collectionview.frame = newFrame
+                self.collectionview.reloadData()
+                let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
+                    equalToConstant: CGFloat(self.storeList.count * 90))
+                issueLabelsHeightConstraint.isActive = true
+            }
         }
     }
     
@@ -378,37 +388,34 @@ extension NewMainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
 
 extension NewMainPageController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return storeList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         if(collectionView == collectionViewType) {
-            let cell = collectionViewType?.dequeueReusableCell(withReuseIdentifier: "MainPageType", for: indexPath) as! MainPageType
-            cell.delegateType = self
-            return cell
+        let store = storeList[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoreListCell", for: indexPath) as! StoreListCell
+        cell.textLabel.text = String(store.store_name)
+        cell.imageView.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + String(store.store_image)))
+        if store.is_open == "Y" {
+            cell.is_OpenLable.text = "영업중"
+            cell.is_OpenLable.backgroundColor = UIColor.init(cgColor: CGColor(red: 131/255, green: 51/255, blue: 230/255, alpha: 1))
+        }else{
+            cell.is_OpenLable.text = "준비중"
+            cell.is_OpenLable.backgroundColor = UIColor.init(cgColor: CGColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1))
         }
-        else if(collectionView == collectionViewUltra) {
-            let cell = collectionViewUltra?.dequeueReusableCell(withReuseIdentifier: "MainPageUltraStore", for: indexPath) as! MainPageUltraStore
-            cell.delegateUltra = self
-            return cell
+        cell.is_OpenLable.layer.borderColor = UIColor.white.cgColor
+        cell.is_OpenLable.layer.borderWidth = 2
+        cell.is_OpenLable.layer.cornerRadius = 5
+        cell.is_OpenLable.layer.masksToBounds = true
+        if Int(store.distance) > 1000 {
+            cell.distance_Label.text = String(Double(Int(store.distance/100) / 10)) + "km"
+        }else{
+            cell.distance_Label.text = String(Int(store.distance)) + "m"
         }
-        else {
-            let cell = collectionViewNewStore?.dequeueReusableCell(withReuseIdentifier: "MainPageNewStore", for: indexPath) as! MainPageNewStore
-            cell.delegateNewStore = self
-            self.scrollView.contentSize = CGSize(width: self.scrollView.contentSize.width, height: self.scrollView.contentSize.height)
-            return cell
-        }
-        
+        return cell
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == collectionViewType {
-            return CGSize(width: self.collectionViewType.frame.width , height:  collectionView.frame.height)
-        }
-        else{
-            return CGSize(width: self.mainView.frame.width, height: 200)
-        }
-        
+        return CGSize(width: collectionview.frame.width, height: 100)
     }
     
 }
