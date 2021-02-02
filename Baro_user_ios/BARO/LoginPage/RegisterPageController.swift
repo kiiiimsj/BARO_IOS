@@ -88,6 +88,28 @@ class RegisterPageController: UIViewController {
             swipeRight.direction = UISwipeGestureRecognizer.Direction.right
             self.view.addGestureRecognizer(swipeRight)
     }
+    func insertRegisterCoupon() {
+        network.post(method: .post, url: self.urlMaker.couponRegister+"9") {
+            json in
+            if json["result"].boolValue {
+                print("성공")
+            }
+            else {
+                print("실패")
+            }
+        }
+    }
+    func insertAllForNewAlert() {
+        network.post(method: .post, url: self.urlMaker.insertAllForNew+"\(phoneNumber)") {
+            json in
+            if json["result"].boolValue {
+                print("성공")
+            }
+            else {
+                print("실패")
+            }
+        }
+    }
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction{
@@ -129,6 +151,8 @@ class RegisterPageController: UIViewController {
                     json in
                     if json["result"].boolValue {
 //                        self.performSegue(withIdentifier: "RegisterCompletePage", sender: nil)
+                        self.insertRegisterCoupon()
+                        self.insertAllForNewAlert()
                         let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "RegisterCompletePage") as! RegisterCompletePage
                         guard let pvc = self.presentingViewController else { return }
                         self.dismiss(animated: false){
