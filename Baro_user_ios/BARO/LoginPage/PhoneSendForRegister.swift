@@ -84,7 +84,7 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
                         dialog.modalTransitionStyle = .crossDissolve
                         self.present(dialog, animated: true)
                         if(dialog.isBeingDismissed) {
-                            
+                        
                         }
                         //pvc.performSegue(withIdentifier: "PhoneCheckForRegister", sender: verificationID)
                     }
