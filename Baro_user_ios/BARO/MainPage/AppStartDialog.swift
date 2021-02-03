@@ -16,8 +16,8 @@ class AppStartDialog: UIViewController {
     private var ads = [AdvertiseModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        closeBtn.layer.borderColor = UIColor.baro_main_color.cgColor
-        closeBtn.layer.borderWidth = 1
+        notTodayBtn.layer.borderColor = UIColor.baro_main_color.cgColor
+        notTodayBtn.layer.borderWidth = 1
         network.get(method: .get, url: urlMaker.findAdvertise) { [self] json in
             print(json)
             imageView.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageEvent.do?image_name=" + json["event_image"].stringValue))

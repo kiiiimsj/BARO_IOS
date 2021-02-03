@@ -746,7 +746,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                                 <rect key="frame" x="178.5" y="0.0" width="171.5" height="45"/>
                                                 <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
-                                                <state key="normal" title="오늘 보지 않기">
+                                                <state key="normal" title="닫기">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -758,7 +758,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="tapNotToday:" destination="n5K-Qa-lr1" eventType="touchUpInside" id="DbU-O4-OHG"/>
+                                                    <action selector="tapClose:" destination="n5K-Qa-lr1" eventType="touchUpInside" id="mvr-7t-Nem"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cs-0M-6Gk">
@@ -777,7 +777,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="tapClose:" destination="n5K-Qa-lr1" eventType="touchUpInside" id="HDw-PM-w9d"/>
+                                                    <action selector="tapNotToday:" destination="n5K-Qa-lr1" eventType="touchUpInside" id="obH-gw-40u"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -822,9 +822,9 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="closeBtn" destination="2cs-0M-6Gk" id="0uA-gC-dR3"/>
+                        <outlet property="closeBtn" destination="X58-aS-yJT" id="Rgv-ZD-jEN"/>
                         <outlet property="imageView" destination="VsY-cd-wnr" id="3xA-hc-GNr"/>
-                        <outlet property="notTodayBtn" destination="X58-aS-yJT" id="7a7-Mw-k6e"/>
+                        <outlet property="notTodayBtn" destination="2cs-0M-6Gk" id="6dH-yC-agZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUM-9Y-uHN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
