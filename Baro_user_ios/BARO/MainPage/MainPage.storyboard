@@ -721,6 +721,116 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
             </objects>
             <point key="canvasLocation" x="4247" y="465"/>
         </scene>
+        <!--AppStartDialog-->
+        <scene sceneID="MhT-EQ-mzb">
+            <objects>
+                <viewController storyboardIdentifier="AppStartDialog" title="AppStartDialog" modalPresentationStyle="overCurrentContext" id="n5K-Qa-lr1" customClass="AppStartDialog" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="315-52-DoZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2Q-jK-vMQ" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
+                                <rect key="frame" x="27" y="328" width="360" height="240"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VsY-cd-wnr">
+                                        <rect key="frame" x="0.0" y="5" width="360" height="180"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="Mqa-Of-mcl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKQ-0v-occ">
+                                        <rect key="frame" x="5" y="190" width="350" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X58-aS-yJT">
+                                                <rect key="frame" x="178.5" y="0.0" width="171.5" height="45"/>
+                                                <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                                <state key="normal" title="오늘 보지 않기">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapNotToday:" destination="n5K-Qa-lr1" eventType="touchUpInside" id="DbU-O4-OHG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cs-0M-6Gk">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="45"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                                <state key="normal" title="오늘 보지 않기">
+                                                    <color key="titleColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapClose:" destination="n5K-Qa-lr1" eventType="touchUpInside" id="HDw-PM-w9d"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="2cs-0M-6Gk" firstAttribute="width" secondItem="LKQ-0v-occ" secondAttribute="width" multiplier="0.5" id="BnP-vI-oS3"/>
+                                            <constraint firstItem="2cs-0M-6Gk" firstAttribute="height" secondItem="LKQ-0v-occ" secondAttribute="height" id="GeC-ta-QEe"/>
+                                            <constraint firstItem="2cs-0M-6Gk" firstAttribute="leading" secondItem="LKQ-0v-occ" secondAttribute="leading" id="Ira-1Q-zT4"/>
+                                            <constraint firstAttribute="bottom" secondItem="X58-aS-yJT" secondAttribute="bottom" id="b5f-Ey-qv3"/>
+                                            <constraint firstAttribute="bottom" secondItem="2cs-0M-6Gk" secondAttribute="bottom" id="cgF-Bd-1mf"/>
+                                            <constraint firstAttribute="trailing" secondItem="X58-aS-yJT" secondAttribute="trailing" id="f1g-BL-ENs"/>
+                                            <constraint firstItem="2cs-0M-6Gk" firstAttribute="top" secondItem="LKQ-0v-occ" secondAttribute="top" id="fK1-Cz-9O1"/>
+                                            <constraint firstItem="X58-aS-yJT" firstAttribute="top" secondItem="LKQ-0v-occ" secondAttribute="top" id="fX0-82-y9W"/>
+                                            <constraint firstItem="X58-aS-yJT" firstAttribute="width" secondItem="LKQ-0v-occ" secondAttribute="width" multiplier="0.49" id="vfW-y2-4yV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="LKQ-0v-occ" firstAttribute="top" secondItem="VsY-cd-wnr" secondAttribute="bottom" constant="5" id="JKX-At-e6J"/>
+                                    <constraint firstAttribute="trailing" secondItem="VsY-cd-wnr" secondAttribute="trailing" id="ODQ-H2-FdQ"/>
+                                    <constraint firstAttribute="height" constant="240" id="WUR-Mv-fOL"/>
+                                    <constraint firstAttribute="width" constant="360" id="Xq5-8S-4oj"/>
+                                    <constraint firstAttribute="trailing" secondItem="LKQ-0v-occ" secondAttribute="trailing" constant="5" id="YcO-oH-DPY"/>
+                                    <constraint firstAttribute="bottom" secondItem="LKQ-0v-occ" secondAttribute="bottom" constant="5" id="kc0-o3-4kU"/>
+                                    <constraint firstItem="LKQ-0v-occ" firstAttribute="leading" secondItem="O2Q-jK-vMQ" secondAttribute="leading" constant="5" id="m74-aF-KIm"/>
+                                    <constraint firstItem="VsY-cd-wnr" firstAttribute="top" secondItem="O2Q-jK-vMQ" secondAttribute="top" constant="5" id="waM-tu-Oum"/>
+                                    <constraint firstItem="VsY-cd-wnr" firstAttribute="leading" secondItem="O2Q-jK-vMQ" secondAttribute="leading" id="wgR-cc-Hbx"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wXP-lu-3VB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.26512984154929575" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="O2Q-jK-vMQ" firstAttribute="centerY" secondItem="315-52-DoZ" secondAttribute="centerY" id="7eD-n8-EdT"/>
+                            <constraint firstItem="O2Q-jK-vMQ" firstAttribute="centerX" secondItem="315-52-DoZ" secondAttribute="centerX" id="zz5-Xz-9DN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeBtn" destination="2cs-0M-6Gk" id="0uA-gC-dR3"/>
+                        <outlet property="imageView" destination="VsY-cd-wnr" id="3xA-hc-GNr"/>
+                        <outlet property="notTodayBtn" destination="X58-aS-yJT" id="7a7-Mw-k6e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUM-9Y-uHN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2376.811594202899" y="95.758928571428569"/>
+        </scene>
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
@@ -734,6 +844,12 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

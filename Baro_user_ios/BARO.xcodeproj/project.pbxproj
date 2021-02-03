@@ -163,6 +163,8 @@
 		E3F9716025B2CBA4008CF3D0 /* DuplicateNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F9715F25B2CBA4008CF3D0 /* DuplicateNumber.swift */; };
 		E3F971A625C7FE0A008CF3D0 /* NewMainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F971A525C7FE0A008CF3D0 /* NewMainPage.storyboard */; };
 		E3F971A925C7FECB008CF3D0 /* NewMainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F971A825C7FECB008CF3D0 /* NewMainPageController.swift */; };
+		E3F971AC25C95C45008CF3D0 /* AppStartDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F971AB25C95C45008CF3D0 /* AppStartDialog.swift */; };
+		E3F971AF25C989AD008CF3D0 /* AdvertiseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F971AE25C989AD008CF3D0 /* AdvertiseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -327,6 +329,8 @@
 		E3F9715F25B2CBA4008CF3D0 /* DuplicateNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateNumber.swift; sourceTree = "<group>"; };
 		E3F971A525C7FE0A008CF3D0 /* NewMainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewMainPage.storyboard; sourceTree = "<group>"; };
 		E3F971A825C7FECB008CF3D0 /* NewMainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMainPageController.swift; sourceTree = "<group>"; };
+		E3F971AB25C95C45008CF3D0 /* AppStartDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartDialog.swift; sourceTree = "<group>"; };
+		E3F971AE25C989AD008CF3D0 /* AdvertiseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseModel.swift; sourceTree = "<group>"; };
 		ED03160DBC46E11745206C30 /* Pods_BARO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BARO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -509,6 +513,7 @@
 				048A0BD72540117B007D4FD3 /* MainPageNewStore.swift */,
 				048A0BDA25401194007D4FD3 /* MainPageNewStoreCell.swift */,
 				04D11F4A2544010800ADB210 /* MainPageSearchController.swift */,
+				E3F971AB25C95C45008CF3D0 /* AppStartDialog.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -630,6 +635,7 @@
 				E34CAF6E25556A1D00BE3F53 /* AlertModel.swift */,
 				3F0EB737255A70C400F72604 /* SendServerOrders.swift */,
 				E34CAF942559814300BE3F53 /* CouponModel.swift */,
+				E3F971AE25C989AD008CF3D0 /* AdvertiseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -880,6 +886,7 @@
 				E356D66F257DD8B400F39463 /* CouponRegisterController.swift in Sources */,
 				043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */,
 				E3AA04D7258A35DC0055454A /* FindPWComplete.swift in Sources */,
+				E3F971AF25C989AD008CF3D0 /* AdvertiseModel.swift in Sources */,
 				3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */,
 				E34CAF45255523A600BE3F53 /* SeparateWindowController.swift in Sources */,
 				E31D3FD82542ACAC00B63F77 /* StoreListCell.swift in Sources */,
@@ -932,6 +939,7 @@
 				3F1C4A55259C21E3002C5B5D /* LoginDialog.swift in Sources */,
 				E31D3FF6254692A200B63F77 /* OptionCategoryHeader.swift in Sources */,
 				E31D3FF32546887F00B63F77 /* OptionsHeader.swift in Sources */,
+				E3F971AC25C95C45008CF3D0 /* AppStartDialog.swift in Sources */,
 				E34CAF6C255567D400BE3F53 /* AlertCell.swift in Sources */,
 				E3CEDB0A25B0047300EDE823 /* ChangeEmailComplete.swift in Sources */,
 				3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */,

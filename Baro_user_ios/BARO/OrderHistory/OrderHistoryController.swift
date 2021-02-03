@@ -16,7 +16,7 @@ class OrderHistoryController : UIViewController {
     let network = CallRequest()
     let networkURL = NetWorkURL()
     
-    var phone = "01093756927"
+    var phone = UserDefaults.standard.value(forKey: "user_phone") as! String
     var startPoint = 0
     var end = false
     
@@ -101,7 +101,6 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            print("sizeeeeeeeee",orderHistoryList.count)
             let orderHistory = orderHistoryList[indexPath.item]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderHistoryCell", for: indexPath) as! OrderHistoryCell
             cell.storeImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + String(orderHistory.store_image)))

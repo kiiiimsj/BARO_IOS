@@ -87,6 +87,9 @@ class CallRequest {
 }
 class NetWorkURL {
 
+    //advertise
+    let findAdvertise = "http://3.35.180.57:8080/EventFindAdvertising.do"
+
     let logInURL = "http://3.35.180.57:8080/MemberLogin.do"
     let signUpURL = "http://3.35.180.57:8080/MemberRegister.do"
     let noticeURL = "http://3.35.180.57:8080/NoticeFindAll.do"
