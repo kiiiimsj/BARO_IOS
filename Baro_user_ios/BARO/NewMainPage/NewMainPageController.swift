@@ -73,6 +73,20 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         getUserNotReadAlertCount()
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+        let token = UserDefaults.standard.string(forKey: "device_token")
+        let phone = UserDefaults.standard.string(forKey: "user_phone")
+        
+        guard phone == nil else {
+            let jsonObject : [ String : Any ] = [
+                "phone" : phone!,
+                "device_token" : token!
+            ]
+            netWork.post(method: .post,param: jsonObject, url: urlMaker.setDeviceToken) { json in
+                print("챔피언",json)
+            }
+            return
+        }
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -309,7 +323,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
         refreshControl.endRefreshing()
     }
     @objc func willEnterForeground() {
-        
+//        UserDefaults.standard.string(forKey: "device_token")
 //        locationCheck()
     }
     //기기의 gps (위치권한 설정) 안함 되어있을경우 alert띄워 앱의 위치권한 설정으로
