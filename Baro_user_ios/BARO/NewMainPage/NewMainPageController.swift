@@ -157,10 +157,10 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
-        let savedTime = dateFormatter.date(from: UserDefaults.standard.string(forKey: "notTodayDate")!)
+        let savedTime = dateFormatter.date(from: UserDefaults.standard.string(forKey: "notTodayDate") ?? "1970-01-01 00:00:00")
         if calendar.compare(today, to: savedTime!, toGranularity: .day) == .orderedSame {
             
-        } else {
+        } else { // 다를때
             let vc = UIStoryboard.init(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "AppStartDialog") as! AppStartDialog
             vc.modalPresentationStyle = .overFullScreen
             vc.modalTransitionStyle = .crossDissolve
