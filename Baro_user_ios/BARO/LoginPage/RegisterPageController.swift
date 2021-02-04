@@ -22,6 +22,7 @@ class RegisterPageController: UIViewController {
     public var restoreFrameValue : CGFloat = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(phoneNumber)
         layoutLoad()
         nameInput.delegate = self
         passInput.delegate = self
