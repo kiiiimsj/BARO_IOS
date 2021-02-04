@@ -22,6 +22,7 @@ class RegisterPageController: UIViewController {
     public var restoreFrameValue : CGFloat = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(phoneNumber)
         layoutLoad()
         nameInput.delegate = self
         passInput.delegate = self
@@ -89,7 +90,7 @@ class RegisterPageController: UIViewController {
             self.view.addGestureRecognizer(swipeRight)
     }
     func insertRegisterCoupon() {
-        network.post(method: .post, url: self.urlMaker.couponRegister+"9") {
+        network.get(method: .get, url: self.urlMaker.couponRegister+"phone="+phoneNumber+"&coupon_id=9") {
             json in
             if json["result"].boolValue {
                 print("성공")

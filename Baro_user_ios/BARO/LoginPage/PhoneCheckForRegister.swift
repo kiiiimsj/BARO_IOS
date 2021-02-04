@@ -46,7 +46,7 @@ class PhoneCheckForRegister : UIViewController {
             swipeRight.direction = UISwipeGestureRecognizer.Direction.right
             self.view.addGestureRecognizer(swipeRight)
     }
-    func backBtnPressed(sender : String) {
+    func moveToRegisterPage(sender : String) {
         let vc = self.storyboard?.instantiateViewController(identifier: "RegisterPageController") as! RegisterPageController
         vc.phoneNumber = sender
         vc.modalTransitionStyle = .crossDissolve
@@ -107,7 +107,7 @@ class PhoneCheckForRegister : UIViewController {
                 self.present(dialog, animated: true)
             }
             else {
-                self.backBtnPressed(sender: self.phoneNumber)
+                self.moveToRegisterPage(sender: self.phoneNumber)
             }
         }
     }
