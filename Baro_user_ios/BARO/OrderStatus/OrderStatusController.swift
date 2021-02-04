@@ -40,19 +40,21 @@ class OrderStatusController : UIViewController, TopViewElementDelegate {
         network.post(method: .get, url: networkURL.orderProgressList + "?phone=" + phone) {
             json in
             var orderStatusModel = OrderStatusList()
-            for item in json["order"].array! {
-                orderStatusModel.order_date = item["order_date"].stringValue
-                orderStatusModel.receipt_id = item["receipt_id"].stringValue
-                orderStatusModel.store_name = item["store_name"].stringValue
-                orderStatusModel.store_phone = item["store_phone"].stringValue
-                orderStatusModel.total_price = item["total_price"].intValue
-                orderStatusModel.order_state = item["order_state"].stringValue
-                orderStatusModel.total_count = item["total_count"].intValue
-                orderStatusModel.store_image = item["store_image"].stringValue
-                
-                self.orderStatusList.append(orderStatusModel)
+            if(json["order"].array != nil) {
+                for item in json["order"].array! {
+                    orderStatusModel.order_date = item["order_date"].stringValue
+                    orderStatusModel.receipt_id = item["receipt_id"].stringValue
+                    orderStatusModel.store_name = item["store_name"].stringValue
+                    orderStatusModel.store_phone = item["store_phone"].stringValue
+                    orderStatusModel.total_price = item["total_price"].intValue
+                    orderStatusModel.order_state = item["order_state"].stringValue
+                    orderStatusModel.total_count = item["total_count"].intValue
+                    orderStatusModel.store_image = item["store_image"].stringValue
+                    
+                    self.orderStatusList.append(orderStatusModel)
+                }
+                self.collectionView.reloadData() //해줘야함
             }
-            self.collectionView.reloadData() //해줘야함
         }
     }
     func configureView() {

@@ -89,7 +89,7 @@ class RegisterPageController: UIViewController {
             self.view.addGestureRecognizer(swipeRight)
     }
     func insertRegisterCoupon() {
-        network.post(method: .post, url: self.urlMaker.couponRegister+"9") {
+        network.get(method: .get, url: self.urlMaker.couponRegister+"phone="+phoneNumber+"&coupon_id=9") {
             json in
             if json["result"].boolValue {
                 print("성공")

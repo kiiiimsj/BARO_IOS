@@ -54,18 +54,20 @@ class CouponPageController: UIViewController, UITextFieldDelegate {
     func reloadCoupon(){
         couponData = [CouponModel]()
         network.get(method: .get, url: urlMaker.couponList+userPhone) { (json) in
-            for item in json["coupon"].array! {
-                var temp = CouponModel()
-                temp.coupon_title = item["coupon_title"].stringValue
-                temp.coupon_condition = item["coupon_condition"].intValue
-                temp.coupon_id = item["coupon_id"].intValue
-                temp.coupon_content = item["coupon_content"].stringValue
-                temp.coupon_enddate = item["coupon_enddate"].stringValue
-                temp.coupon_discount = item["coupon_discount"].doubleValue
-                temp.coupon_type = item["coupon_type"].stringValue
-                self.couponData.append(temp)
+            if(json["coupon"].array != nil) {
+                for item in json["coupon"].array! {
+                    var temp = CouponModel()
+                    temp.coupon_title = item["coupon_title"].stringValue
+                    temp.coupon_condition = item["coupon_condition"].intValue
+                    temp.coupon_id = item["coupon_id"].intValue
+                    temp.coupon_content = item["coupon_content"].stringValue
+                    temp.coupon_enddate = item["coupon_enddate"].stringValue
+                    temp.coupon_discount = item["coupon_discount"].doubleValue
+                    temp.coupon_type = item["coupon_type"].stringValue
+                    self.couponData.append(temp)
+                }
+                self.collection.reloadData()
             }
-            self.collection.reloadData()
         }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
