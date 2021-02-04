@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -63,7 +63,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hZ2-9Z-Sq2">
-                                                <rect key="frame" x="0.0" y="217" width="414" height="726"/>
+                                                <rect key="frame" x="0.0" y="207" width="414" height="736"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="HSS-fW-OhR">
                                                     <size key="itemSize" width="414" height="111"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -166,7 +166,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                             <constraint firstAttribute="trailing" secondItem="gNH-P5-N7s" secondAttribute="trailing" id="c88-TY-RNb"/>
                                             <constraint firstItem="kIh-fY-T6c" firstAttribute="leading" secondItem="mV9-RH-w9p" secondAttribute="leading" constant="10" id="hq1-Zp-3Ot"/>
                                             <constraint firstAttribute="bottom" secondItem="kIh-fY-T6c" secondAttribute="bottom" id="tb0-NP-qoV"/>
-                                            <constraint firstItem="hZ2-9Z-Sq2" firstAttribute="top" secondItem="gNH-P5-N7s" secondAttribute="bottom" constant="10" id="vc8-Vf-tJM"/>
+                                            <constraint firstItem="hZ2-9Z-Sq2" firstAttribute="top" secondItem="gNH-P5-N7s" secondAttribute="bottom" id="vc8-Vf-tJM"/>
                                             <constraint firstItem="hZ2-9Z-Sq2" firstAttribute="leading" secondItem="mV9-RH-w9p" secondAttribute="leading" id="zCN-Lb-n9r"/>
                                         </constraints>
                                     </view>
