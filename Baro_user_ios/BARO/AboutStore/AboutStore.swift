@@ -7,6 +7,7 @@
 import UIKit
 private let FirstBarIdentifier = "ASFirstBarCell"
 class AboutStore : UIViewController, TopViewElementDelegate {
+    public static var this : AboutStore?
     func favoriteBtnDelegate(controller : UIViewController) {
         if (self.isFlag == 1) { // 즐겨찾기가 되어있는 경우에서 삭제
             let vc = self.storyboard?.instantiateViewController(identifier: "FavoriteDialog") as! FavoriteDialog
@@ -15,7 +16,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             vc.modalPresentationStyle = .overFullScreen
             self.delFavorite(controller : controller)
             self.present(vc, animated: true)
-            
         }
         else { // 즐겨찾기가 안되있는 경우에서 추가
             let vc = self.storyboard?.instantiateViewController(identifier: "FavoriteDialog") as! FavoriteDialog
@@ -63,6 +63,8 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         UIView.animate(withDuration: 0.0) {
             self.tabIndecator.transform = CGAffineTransform(rotationAngle: 0.0)
         }
+        AboutStore.this = self
+        
     }
     func makeChildVC() {
         let storyBoard = UIStoryboard(name: "AboutStore", bundle: nil)

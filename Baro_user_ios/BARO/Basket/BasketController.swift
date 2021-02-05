@@ -12,7 +12,7 @@ class BasketController : UIViewController, TopViewElementDelegate{
     }
     func refreshBtnDelegate(controller : UIViewController) {
     }
-    
+    public static var this : BasketController?
     var menu : Order!
     var orders = [Order]()
     let netWork = CallRequest()
@@ -37,6 +37,7 @@ class BasketController : UIViewController, TopViewElementDelegate{
         collectionView.delegate = self
         collectionView.dataSource = self
         recalcPrice()
+        BasketController.this = self
     }
     func optionsSeparate(){
         for item in orders {
