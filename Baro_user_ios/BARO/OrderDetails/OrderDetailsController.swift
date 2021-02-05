@@ -47,7 +47,7 @@ class OrderDetailsController : UIViewController {
         setMenuInfo()
         menu_price_current = menu.menu_defaultprice
         menu_count.text = "1"
-        
+    
         recalcPrice()
         network.get(method: .get, url: urlMaker.extra+"?menu_id="+menu_id) {(json) in
             if json["result"].boolValue{

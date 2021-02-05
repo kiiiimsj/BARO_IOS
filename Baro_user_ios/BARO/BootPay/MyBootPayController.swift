@@ -133,17 +133,23 @@ class MyBootPayController : UIViewController {
 extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func clickPaymentCheckBtn() {
         if (self.result) {
-            let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
-            let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+//            let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+//            let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+//
+//            //        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.mainPageControllerIdentifier
+//            //        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.mainPageStoryBoard
+//                    ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.newMainPageControllerIdentifier
+//                    ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.newMainPageStoryBoard
+//            ViewInBottomTabBar.moveFromOutSide = true
+//            ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+//            ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+//            self.present(ViewInBottomTabBar, animated: true, completion: nil)
             
-            //        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.mainPageControllerIdentifier
-            //        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.mainPageStoryBoard
-                    ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.newMainPageControllerIdentifier
-                    ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.newMainPageStoryBoard
-            ViewInBottomTabBar.moveFromOutSide = true
-            ViewInBottomTabBar.modalPresentationStyle = .fullScreen
-            ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
-            self.present(ViewInBottomTabBar, animated: true, completion: nil)
+            if AboutStore.this?.presentingViewController == nil {
+                BasketController.this?.presentingViewController?.dismiss(animated: false, completion: nil)
+            }else{
+                AboutStore.this?.presentingViewController?.dismiss(animated: false, completion: nil)
+            }
         }else {
             self.dismiss(animated: true, completion: nil)
         }
