@@ -165,6 +165,7 @@
 		E3F971A925C7FECB008CF3D0 /* NewMainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F971A825C7FECB008CF3D0 /* NewMainPageController.swift */; };
 		E3F971AC25C95C45008CF3D0 /* AppStartDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F971AB25C95C45008CF3D0 /* AppStartDialog.swift */; };
 		E3F971AF25C989AD008CF3D0 /* AdvertiseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F971AE25C989AD008CF3D0 /* AdvertiseModel.swift */; };
+		E3F971B625D2BAC1008CF3D0 /* CustomTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F971B525D2BAC1008CF3D0 /* CustomTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -331,6 +332,7 @@
 		E3F971A825C7FECB008CF3D0 /* NewMainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMainPageController.swift; sourceTree = "<group>"; };
 		E3F971AB25C95C45008CF3D0 /* AppStartDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartDialog.swift; sourceTree = "<group>"; };
 		E3F971AE25C989AD008CF3D0 /* AdvertiseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseModel.swift; sourceTree = "<group>"; };
+		E3F971B525D2BAC1008CF3D0 /* CustomTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimer.swift; sourceTree = "<group>"; };
 		ED03160DBC46E11745206C30 /* Pods_BARO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BARO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -465,6 +467,7 @@
 				3F418FCE254808E100D89665 /* BottomTabBar.storyboard */,
 				3FA196F42547E34E007CD182 /* BottomTabBarController.swift */,
 				E3CEDAFB25A3426900EDE823 /* GoLoginController.swift */,
+				E3F971B525D2BAC1008CF3D0 /* CustomTimer.swift */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -885,6 +888,7 @@
 				04B8679A253B0ECD00336175 /* AppDelegate.swift in Sources */,
 				E356D66F257DD8B400F39463 /* CouponRegisterController.swift in Sources */,
 				043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */,
+				E3F971B625D2BAC1008CF3D0 /* CustomTimer.swift in Sources */,
 				E3AA04D7258A35DC0055454A /* FindPWComplete.swift in Sources */,
 				E3F971AF25C989AD008CF3D0 /* AdvertiseModel.swift in Sources */,
 				3FC20E632546EFD400EEE783 /* ChangeEmail.swift in Sources */,

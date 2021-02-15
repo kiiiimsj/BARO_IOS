@@ -16,8 +16,9 @@ class OrderDetailsController : UIViewController {
     @IBOutlet weak var menu_count: UILabel!
     @IBOutlet weak var plus: UIButton!
     @IBOutlet weak var goToBasket: UIButton!
+    @IBOutlet weak var realPrice: CustomLabel!
     
-    private var network = CallRequest()
+    private var netWork = CallRequest()
     private var urlMaker = NetWorkURL()
     private var essentials = [String : [Extra]]()
     private var nonEssentials = [Extra]()
@@ -27,6 +28,7 @@ class OrderDetailsController : UIViewController {
     
     public var menu = Menu()
     public var menu_id = ""
+    public var discount_rate : Int = 0
     public var menu_default_price = 0
     public var menu_price_current = 0
     
@@ -47,9 +49,9 @@ class OrderDetailsController : UIViewController {
         setMenuInfo()
         menu_price_current = menu.menu_defaultprice
         menu_count.text = "1"
-    
+        menu_price.attributedText = menu_price.text?.strikeThrough()
         recalcPrice()
-        network.get(method: .get, url: urlMaker.extra+"?menu_id="+menu_id) {(json) in
+        netWork.get(method: .get, url: urlMaker.extra+"?menu_id="+menu_id) {(json) in
             if json["result"].boolValue{
                 for item in json["extra"].array!{
                     var temp = Extra()
@@ -153,7 +155,8 @@ class OrderDetailsController : UIViewController {
         }
     }
     func recalcPrice(){
-        menu_price.text = String(Int(menu_count.text!)! * menu_price_current)+"원"
+        menu_price.text = String(Int(menu_count.text!)! * menu_price_current )+"원"
+        realPrice.text = String(Int(menu_count.text!)! * menu_price_current * (100 - discount_rate) / 100)+"원"
     }
     func canGoToNext() -> Bool{
         if selectedEssential.count == essentials.count{
@@ -281,7 +284,7 @@ extension OrderDetailsController : CellDelegateExtra{
     
     func click(type: Bool, extraPrice: Int,selected: Extra) {
         menu_price_current += extraPrice
-        menu_price.text = String(Int(menu_count.text!)! * menu_price_current)+"원"
+        recalcPrice()
         if type {
             selectedEssential[selected.extra_group] = selected
         }
@@ -330,9 +333,10 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
             basketDialog.delegate = self
             self.present(basketDialog, animated: true, completion: nil)
         }
-        self.ordersForUserDefault = loadBasket()
+        self.ordersForUserDefault = loadBasket()["jsonToOrder"] as! [Order]
         self.ordersForUserDefault.append(data!)
         saveBasket(orders: self.ordersForUserDefault)
+        BottomTabBarController.discount_rate = discount_rate
         self.dismiss(animated: false)
     }
     func tapClick(dialog: UIViewController, type: String) {
@@ -340,7 +344,8 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
         let vc2 = storyboard2.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
         
         guard let pvc = self.presentingViewController else { return }
-        self.ordersForUserDefault = loadBasket()
+        let loadBasketData = loadBasket()
+        self.ordersForUserDefault = loadBasketData["jsonToOrder"] as! [Order]
         self.ordersForUserDefault.append(data!)
         saveBasket(orders: self.ordersForUserDefault)
         
@@ -348,6 +353,7 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
         vc2.controllerStoryboard = self.bottomTabBarInfo.basketStoryBoard
         vc2.controllerSender = loadBasket()
         vc2.moveFromOutSide = true
+        BottomTabBarController.discount_rate = discount_rate
         
         self.dismiss(animated: false) {
             vc2.modalPresentationStyle = .fullScreen
@@ -363,13 +369,28 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
             UserDefaults.standard.synchronize()
         }
     }
-    func loadBasket() -> [Order]{
+    func loadBasket() -> [String : Any]{
         let decoder = JSONDecoder()
         var jsonToOrder = [Order]()
         if let getData = UserDefaults.standard.value(forKey: "basket") as? String {
             let data = getData.data(using: .utf8)!
             jsonToOrder = try! decoder.decode([Order].self, from: data)
         }
-        return jsonToOrder
+        let data = ["jsonToOrder" : jsonToOrder,"discount_rate" : discount_rate] as [String : Any]
+        return data
+    }
+}
+extension OrderDetailsController {
+    func reloadOrderDetail() -> Void {
+        netWork.get(method: .get, url: urlMaker.reloadStoreDiscount+String(storeId)) { json in
+            if json["result"].boolValue {
+                let value = json["discount_rate"].intValue
+                self.discount_rate = value
+                let pvc = self.parent as! BottomTabBarController
+                pvc.maxDiscountLabel.text = "- \(self.discount_rate)%"
+                self.recalcPrice()
+                
+            }
+        }
     }
 }

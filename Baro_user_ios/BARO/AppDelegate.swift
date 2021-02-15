@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         requestAuthorizationForRemotePushNotification()
         UserDefaults.standard.removeObject(forKey: "basket")
+        CustomTimer.init()
         return true
     }
 

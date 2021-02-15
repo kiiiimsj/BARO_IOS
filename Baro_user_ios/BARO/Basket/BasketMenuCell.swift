@@ -19,6 +19,7 @@ class BasketMenuCell: UICollectionViewCell {
     @IBOutlet weak var menu_extra_sum: UILabel!
     @IBOutlet weak var menu_count: UILabel!
     @IBOutlet weak var menu_totalPrice: UILabel!
+    @IBOutlet weak var menu_realPrice: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
     weak var delegate : BasketMenuCellDelegate?
     var eachMenu : Order?
