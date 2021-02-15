@@ -105,6 +105,7 @@ class BottomTabBarController: UIViewController {
         ///
         
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -317,14 +318,14 @@ class BottomTabBarController: UIViewController {
                 }
                 VCsender.storeId = param["storeId"] as! Int
                 VCsender.discount_rate = param["discount_rate"] as! Int
-                maxDiscountLabel.text = "- \(VCsender.discount_rate)%"
+                maxDiscountLabel.text = "-\(VCsender.discount_rate)%"
                 finallController = VCsender
             case aboutStoreControllerIdentifier:
                 let VCsender = controller as! AboutStore
                 let data = sender as! [String : Int]
                 VCsender.store_id = data["id"]! as Int
                 VCsender.discount_rate = data["discount_rate"]! as Int
-                maxDiscountLabel.text = "- \(VCsender.discount_rate)%"
+                maxDiscountLabel.text = "-\(VCsender.discount_rate)%"
                 finallController = VCsender
             case storeListControllerIdentifier:
                 let VCsender = controller as! StoreListPageController
@@ -441,7 +442,7 @@ class BottomTabBarController: UIViewController {
                     topBarViewControllerTitle.text = "\(currentStoreName)"
                     let controllerData = controller as! OrderDetailsController
                     showTime(controller: controllerData)
-                    
+                    break
                 case orderStatusControllerIdentifier:
                     topBarViewControllerTitle.text = "주문 현황"
                     topBarRefreshBtn.isHidden = false
@@ -469,7 +470,7 @@ class BottomTabBarController: UIViewController {
                     let controllerData = controller as! AboutStore
                     controllerData.bottomTabBarInfo = self
                     showTime(controller: controllerData)
-                    
+                    break
                 case couponPageControllerIdentifier:
                     topBarViewControllerTitle.text = "내 쿠폰 리스트"
                     topBarBackBtn.isHidden = false
@@ -479,6 +480,7 @@ class BottomTabBarController: UIViewController {
                     topBarBackBtn.isHidden = false
                     let controllerData = controller as! BasketController
                     showTime(controller: controllerData)
+                    break
                 case mapControllerIdentifier:
                     topBarViewControllerTitle.text = "내 주변 가게"
                     topBarBackBtn.isHidden = false
@@ -546,6 +548,8 @@ class BottomTabBarController: UIViewController {
 extension BottomTabBarController : UITabBarDelegate {
     //탭바아이템 클릭에 따른 분기문
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        timeView.isHidden = true
+        maxDiscountLabel.isHidden = true
         switch(item.title) {
         case "홈":
 //            changeViewController(getController: mainPageControllerIdentifier, getStoryBoard: mainPageStoryBoard, sender: nil)
@@ -602,6 +606,7 @@ extension BottomTabBarController : UITabBarDelegate {
 extension BottomTabBarController {
     func showTime(controller : UIViewController){ // 시간탭 보여주는 부분
         timeView.isHidden = false
+        maxDiscountLabel.isHidden = false
         timeLabel.text = CustomTimer.getTime()
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updatetime(sender:)), userInfo: controller, repeats: true)
     }

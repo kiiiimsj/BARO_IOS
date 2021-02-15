@@ -164,7 +164,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
 //                self.collectionview.frame = newFrame
                 self.collectionview.reloadData()
                 let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
-                    equalToConstant: CGFloat(self.storeList.count * 90))
+                    equalToConstant: CGFloat(self.storeList.count * 100))
                 issueLabelsHeightConstraint.isActive = true
                 self.showTime()
             }
@@ -462,6 +462,7 @@ extension NewMainPageController : UICollectionViewDelegate, UICollectionViewData
             cell.discount_rate_label.layer.cornerRadius = 5
             cell.discount_rate_label.layer.masksToBounds = true
             cell.discount_rate_label.isHidden = false
+            cell.discount_rate_label.layer.cornerRadius = cell.discount_rate_label.frame.width / 2
         }else{
             cell.discount_rate_label.isHidden = true
         }
@@ -554,7 +555,7 @@ extension NewMainPageController {
                     self.storeList.append(storeListModel)
                 }
                 let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
-                    equalToConstant: CGFloat(self.storeList.count * 90))
+                    equalToConstant: CGFloat(self.storeList.count * 100))
                 issueLabelsHeightConstraint.isActive = true
                 self.collectionview.reloadData()
             }
