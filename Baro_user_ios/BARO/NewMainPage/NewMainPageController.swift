@@ -181,6 +181,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
             let vc = UIStoryboard.init(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "AppStartDialog") as! AppStartDialog
             vc.modalPresentationStyle = .overFullScreen
             vc.modalTransitionStyle = .crossDissolve
+            vc.delegate = self
             self.present(vc, animated: false, completion: nil)
         }
         
@@ -519,6 +520,11 @@ extension NewMainPageController : CellDelegateEvent, CellDelegateType, CellDeleg
             return
         }
         
+    }
+}
+extension NewMainPageController : AppStartDialogDelegate {
+    func closeDialog() {
+        locationCheck()
     }
 }
 extension NewMainPageController {
