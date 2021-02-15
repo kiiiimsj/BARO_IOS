@@ -20,6 +20,7 @@ class OrderStatusDetail : UICollectionViewCell {
     
     @IBOutlet weak var optionContainEachPrice: CustomLabel!
     @IBOutlet weak var eachPrice: CustomLabel!
+    @IBOutlet weak var realPrice: UILabel!
     
     public var extraList = [OrderStatusDetailExtraList]()
     
