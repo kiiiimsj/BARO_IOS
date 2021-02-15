@@ -15,7 +15,7 @@ class OrderHistoryDetail : UICollectionViewCell {
     @IBOutlet weak var menu_one_total_price: UILabel!
     @IBOutlet weak var menu_count: UILabel!
     @IBOutlet weak var menu_total_price: UILabel!
-    
+    @IBOutlet weak var realPrice: CustomLabel!
     
     public var extraList = [OrderHistoryDetailExtraList]()
     

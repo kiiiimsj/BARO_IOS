@@ -24,3 +24,10 @@ extension String {
     }
 }
 
+extension Int {
+    func applyDiscountRate (discount_rate : Int) -> Int {
+        return self * (100 - discount_rate) / 100 
+    }
+    
+}
+
