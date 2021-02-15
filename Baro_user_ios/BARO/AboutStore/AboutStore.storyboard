@@ -496,7 +496,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="가격" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8E-Mk-3os" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                    <rect key="frame" x="373.5" y="56" width="20.5" height="16.5"/>
+                                                    <rect key="frame" x="338" y="56" width="20.5" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -517,19 +517,32 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="가격" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuV-0J-Zix" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                                    <rect key="frame" x="373.5" y="56" width="20.5" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                            <real key="value" value="-0.029999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="IcF-f4-Q10" firstAttribute="trailing" secondItem="L8E-Mk-3os" secondAttribute="trailing" id="AzK-0p-4E4"/>
+                                                <constraint firstItem="IcF-f4-Q10" firstAttribute="trailing" secondItem="vuV-0J-Zix" secondAttribute="trailing" id="1zX-HC-d67"/>
                                                 <constraint firstItem="5O9-ZI-E0L" firstAttribute="centerY" secondItem="9Jt-DO-6W1" secondAttribute="centerY" id="H5a-1f-UnC"/>
+                                                <constraint firstItem="vuV-0J-Zix" firstAttribute="leading" secondItem="L8E-Mk-3os" secondAttribute="trailing" constant="15" id="LEB-MC-Wvx"/>
                                                 <constraint firstItem="QQA-k6-aku" firstAttribute="leading" secondItem="5O9-ZI-E0L" secondAttribute="trailing" constant="20" id="NTH-ts-cwb"/>
                                                 <constraint firstItem="f47-12-y4Y" firstAttribute="top" secondItem="5O9-ZI-E0L" secondAttribute="top" id="Upy-6v-fSH"/>
                                                 <constraint firstAttribute="bottom" secondItem="5O9-ZI-E0L" secondAttribute="bottom" constant="15" id="f0G-eS-l8C"/>
                                                 <constraint firstItem="QQA-k6-aku" firstAttribute="top" secondItem="f47-12-y4Y" secondAttribute="bottom" constant="10" id="fsp-tf-KmV"/>
                                                 <constraint firstItem="f47-12-y4Y" firstAttribute="leading" secondItem="5O9-ZI-E0L" secondAttribute="trailing" constant="20" id="mXz-wW-jWZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="vuV-0J-Zix" secondAttribute="trailing" constant="20" id="nHv-t0-6D3"/>
                                                 <constraint firstItem="5O9-ZI-E0L" firstAttribute="leading" secondItem="9Jt-DO-6W1" secondAttribute="leading" constant="20" id="nLt-be-j3Z"/>
                                                 <constraint firstItem="IcF-f4-Q10" firstAttribute="top" secondItem="5O9-ZI-E0L" secondAttribute="top" id="nma-F3-mcu"/>
+                                                <constraint firstItem="vuV-0J-Zix" firstAttribute="centerY" secondItem="9Jt-DO-6W1" secondAttribute="centerY" id="pyN-Gc-G42"/>
                                                 <constraint firstItem="L8E-Mk-3os" firstAttribute="centerY" secondItem="9Jt-DO-6W1" secondAttribute="centerY" id="wHZ-6b-KFj"/>
-                                                <constraint firstAttribute="trailing" secondItem="L8E-Mk-3os" secondAttribute="trailing" constant="20" id="yGZ-vj-7by"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="128"/>
@@ -539,6 +552,7 @@
                                             <outlet property="menu_picture" destination="5O9-ZI-E0L" id="6wF-FM-Fpv"/>
                                             <outlet property="menu_price" destination="L8E-Mk-3os" id="4Vf-Fz-1p4"/>
                                             <outlet property="menu_state" destination="IcF-f4-Q10" id="jn0-6o-Bpn"/>
+                                            <outlet property="realPrice" destination="vuV-0J-Zix" id="aMP-r7-ATy"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

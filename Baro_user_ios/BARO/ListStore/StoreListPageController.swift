@@ -35,7 +35,7 @@ class StoreListPageController : UIViewController {
             ]
             network.post(method: .post, param: jsonObject, url: urlCaller.storeDetailListURL) {
                 (json) in
-                var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
+                var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "", discount_rate: 0)
                 if json["result"].boolValue {
                     for item in json["store"].array! {
                         storeListModel.store_image = item["store_image"].stringValue
@@ -61,7 +61,7 @@ class StoreListPageController : UIViewController {
             ]
             network.post(method: .post, param: jsonObject, url: urlCaller.storeSearchURL ) {
                 (json) in
-                var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
+                var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
                 if json["result"].count < 20 {
                     self.endOfData = true
                 }
@@ -94,7 +94,7 @@ class StoreListPageController : UIViewController {
             ]
             network.post(method: .post, param: jsonObject, url: urlCaller.myStoreList) {
                 (json) in
-                var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
+                var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "", discount_rate: 0)
                 if json["result"].boolValue {
                     for item in json["favorite"].array! {
                         storeListModel.store_image = item["store_image"].stringValue
@@ -246,7 +246,7 @@ extension StoreListPageController : UIScrollViewDelegate {
         ]
         network.post(method: .post, param: jsonObject, url: urlCaller.storeSearchURL ) {
             (json) in
-            var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
+            var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
             if json["result"].boolValue {
                 self.storeListView.reloadData()
                 for item in json["store"].array! {

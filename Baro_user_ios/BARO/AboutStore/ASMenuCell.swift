@@ -14,6 +14,7 @@ class ASMenuCell : UICollectionViewCell {
     @IBOutlet weak var menu_description: UILabel!
     @IBOutlet weak var menu_price: UILabel!
     @IBOutlet weak var menu_state: UILabel!
+    @IBOutlet weak var realPrice: CustomLabel!
     override func prepareForReuse() {
         super.prepareForReuse()
     }

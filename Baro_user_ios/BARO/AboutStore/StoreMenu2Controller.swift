@@ -12,6 +12,13 @@ class StoreMenu2Controller : UIViewController {
     public var menus = [Menu]()
     let bottomTabBarInfo = BottomTabBarController()
     @IBOutlet weak var collectionView: UICollectionView!
+    public var discount_rate  : Int = 0 {
+        didSet {
+            if collectionView != nil {
+                collectionView.reloadData()
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -40,6 +47,9 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
         cell.menu_name.text  = data.menu_name
         cell.menu_description.text  = data.menu_info
         cell.menu_price.text  = String(data.menu_defaultprice)+"원"
+        cell.menu_price.attributedText = cell.menu_price.text?.strikeThrough()
+        cell.realPrice.text = String(data.menu_defaultprice * (100-discount_rate)/100)+"원"
+//        cell.menu_price.text  = String(Int(Float(data.menu_defaultprice) * (Float(100-discount_rate))/100))+"원"
         cell.menu_state.text = "품절"
         cell.menu_picture.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageMenu.do?store_id="+String(data.store_id)+"&image_name="+String(data.menu_image)))
         if data.is_soldout == "N" {
@@ -63,7 +73,7 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
                 let encoder = JSONEncoder()
                 let jsonSaveData = try? encoder.encode(item)
                 if let _ = jsonSaveData, let jsonString = String(data: jsonSaveData!, encoding: .utf8) {
-                    let param = ["storeId":item.store_id,"menu":"\(jsonString)","menuId":"\(menu_id)"] as [String : Any]
+                    let param = ["storeId":item.store_id,"menu":"\(jsonString)","menuId":"\(menu_id)","discount_rate" : discount_rate] as [String : Any]
                     toOrderDetial(param: param)
                 }
             }

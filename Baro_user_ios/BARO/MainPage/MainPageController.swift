@@ -139,6 +139,7 @@ class MainPageController: UIViewController, CLLocationManagerDelegate {
             self.pagerView.reloadData()
             
         }
+        
     }
     
     func getMyLocation(_ longitude : String, _ latitude :String) {

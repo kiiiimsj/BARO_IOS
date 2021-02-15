@@ -21,6 +21,9 @@ class BottomTabBarController: UIViewController {
     @IBOutlet weak var topBarViewControllerTitle: UILabel!
     @IBOutlet weak var topBarRefreshBtn: UIButton!
     @IBOutlet weak var topBarFavoriteBtn: UIButton!
+    @IBOutlet weak var maxDiscountLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var timeView: UIView!
     //내부 컨트롤러 클릭 인식용.
     weak var topViewDelegate : TopViewElementDelegate?
     //컨텐트뷰 엘리먼트
@@ -44,7 +47,7 @@ class BottomTabBarController: UIViewController {
         return activityIndicator
     }()
 
-    
+    static var discount_rate = 0
     let mainPageControllerIdentifier = "MainPageController"
     let newMainPageControllerIdentifier = "NewMainPageController"
     let storeListControllerIdentifier = "StoreListPageController"
@@ -75,7 +78,7 @@ class BottomTabBarController: UIViewController {
     //화면 이동 할때 필요한 요소.
     var controllerStoryboard = UIStoryboard()
     var controllerIdentifier : String = ""
-    var controllerSender : Any = ""
+    var controllerSender : Any?
     //내부이동 (바텀 탭바를 이용한 화면 이동)이 아닌경우 이 값은 true로 해주어야 이동가능.
     var moveFromOutSide : Bool = false
     //바텀탭 로딩후 선택되어지는 탭바아이템
@@ -99,7 +102,11 @@ class BottomTabBarController: UIViewController {
         super.viewDidLoad()
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
         saveTopViewSize = CGSize(width: view.frame.width, height: 69.0)
+        ///
+        
+        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if let storeName = UserDefaults.standard.value(forKey: "currentStoreName") as? String {
@@ -309,10 +316,15 @@ class BottomTabBarController: UIViewController {
                     VCsender.menu  = try! decoder.decode(Menu.self, from: data)
                 }
                 VCsender.storeId = param["storeId"] as! Int
+                VCsender.discount_rate = param["discount_rate"] as! Int
+                maxDiscountLabel.text = "- \(VCsender.discount_rate)%"
                 finallController = VCsender
             case aboutStoreControllerIdentifier:
                 let VCsender = controller as! AboutStore
-                VCsender.store_id = sender as! Int
+                let data = sender as! [String : Int]
+                VCsender.store_id = data["id"]! as Int
+                VCsender.discount_rate = data["discount_rate"]! as Int
+                maxDiscountLabel.text = "- \(VCsender.discount_rate)%"
                 finallController = VCsender
             case storeListControllerIdentifier:
                 let VCsender = controller as! StoreListPageController
@@ -345,7 +357,10 @@ class BottomTabBarController: UIViewController {
                 finallController = VCsender
             case basketControllerIdentifier:
                 let VCsender = controller as! BasketController
-                VCsender.orders = sender as! [Order]
+                let data = sender as! [String : Any]
+                VCsender.orders = data["jsonToOrder"] as! [Order]
+                VCsender.discount_rate = data["discount_rate"] as! Int
+                maxDiscountLabel.text = "- \(VCsender.discount_rate)%"
                 finallController = VCsender
             case mapControllerIdentifier:
                 let VCsender = controller as! MapController
@@ -424,6 +439,8 @@ class BottomTabBarController: UIViewController {
                     topBarViewControllerTitle.isHidden = false
                     topBarBackBtn.isHidden = false
                     topBarViewControllerTitle.text = "\(currentStoreName)"
+                    let controllerData = controller as! OrderDetailsController
+                    showTime(controller: controllerData)
                     
                 case orderStatusControllerIdentifier:
                     topBarViewControllerTitle.text = "주문 현황"
@@ -451,6 +468,7 @@ class BottomTabBarController: UIViewController {
                     topBarViewControllerTitle.text = "\(currentStoreName)"
                     let controllerData = controller as! AboutStore
                     controllerData.bottomTabBarInfo = self
+                    showTime(controller: controllerData)
                     
                 case couponPageControllerIdentifier:
                     topBarViewControllerTitle.text = "내 쿠폰 리스트"
@@ -459,7 +477,8 @@ class BottomTabBarController: UIViewController {
                 case basketControllerIdentifier:
                     topBarViewControllerTitle.text = "장바구니"
                     topBarBackBtn.isHidden = false
-                    
+                    let controllerData = controller as! BasketController
+                    showTime(controller: controllerData)
                 case mapControllerIdentifier:
                     topBarViewControllerTitle.text = "내 주변 가게"
                     topBarBackBtn.isHidden = false
@@ -515,7 +534,8 @@ class BottomTabBarController: UIViewController {
         basketControllerWithTopView.modalTransitionStyle = .crossDissolve
         basketControllerWithTopView.controllerStoryboard = self.basketStoryBoard
         basketControllerWithTopView.controllerIdentifier = self.basketControllerIdentifier
-        basketControllerWithTopView.controllerSender = self.basketOrders
+        let data = ["jsonToOrder" : self.basketOrders,"discount_rate" : BottomTabBarController.discount_rate] as [String : Any]
+        basketControllerWithTopView.controllerSender = data
         basketControllerWithTopView.moveFromOutSide = true
         self.present(basketControllerWithTopView, animated: true)
     }
@@ -578,6 +598,34 @@ extension BottomTabBarController : UITabBarDelegate {
             }
         }
     }
-    
+}
+extension BottomTabBarController {
+    func showTime(controller : UIViewController){ // 시간탭 보여주는 부분
+        timeView.isHidden = false
+        timeLabel.text = CustomTimer.getTime()
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updatetime(sender:)), userInfo: controller, repeats: true)
+    }
+    @objc func updatetime(sender : Timer) {
+        let time = CustomTimer.getTime()
+        timeLabel.text = time
+        if time == CustomTimer.RELOAD_TIME {
+            let vc = sender.userInfo as! UIViewController
+            switch vc.title {
+            case aboutStoreControllerIdentifier:
+                let rvc = vc as! AboutStore
+                rvc.reloadAboutStore()
+            case orderDetailControllerIdentifier :
+                let rvc = vc as! OrderDetailsController
+                rvc.reloadOrderDetail()
+            case basketControllerIdentifier :
+                let rvc = vc as! BasketController
+                rvc.reloadBasket()
+            default: break
+                
+            }
+        }else {
+            return
+        }
+    }
 }
 

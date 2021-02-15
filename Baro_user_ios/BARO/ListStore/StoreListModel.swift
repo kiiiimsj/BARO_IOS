@@ -15,4 +15,6 @@ struct StoreList : Codable{
     var store_info : String
     var store_location : String
     var store_name : String
+    var discount_rate : Int
+    
 }
