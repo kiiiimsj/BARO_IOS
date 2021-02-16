@@ -22,6 +22,7 @@ class PhoneCheckForRegister : UIViewController {
     var phoneNumber : String = ""
     var getSmsCode : String = ""
     var credential : AuthCredential?
+    var marketing = false
     let bottomTabBarInfo = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()
