@@ -19,10 +19,12 @@ class RegisterPageController: UIViewController {
     let network = CallRequest()
     let urlMaker = NetWorkURL()
     var phoneNumber : String = ""
+    var marketing = false
     public var restoreFrameValue : CGFloat = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(phoneNumber)
+        print(marketing
+        )
         layoutLoad()
         nameInput.delegate = self
         passInput.delegate = self
