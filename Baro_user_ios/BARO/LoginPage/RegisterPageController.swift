@@ -103,7 +103,7 @@ class RegisterPageController: UIViewController {
         }
     }
     func insertAllForNewAlert() {
-        network.post(method: .post, url: self.urlMaker.insertAllForNew+"\(phoneNumber)") {
+        network.post(method: .get, url: self.urlMaker.insertAllForNew+"\(phoneNumber)") {
             json in
             if json["result"].boolValue {
                 print("성공")
@@ -149,7 +149,7 @@ class RegisterPageController: UIViewController {
     @IBAction func registerSend() {
         if (nameInputError.isHidden && passInputError.isHidden && passCheckInputError.isHidden && emailInputError.isHidden ) {
             if let email = emailInput.text, let nick = nameInput.text, let pass = passInput.text {
-                let param = ["phone":"\(self.phoneNumber)","email":"\(email)","nick":"\(nick)","pass":"\(pass)"]
+                let param = ["phone":"\(self.phoneNumber)","email":"\(email)","nick":"\(nick)","pass":"\(pass)","marketing":"\(marketing)"]
                 network.post(method: .post, param: param, url: self.urlMaker.signUpURL) {
                     json in
                     if json["result"].boolValue {
