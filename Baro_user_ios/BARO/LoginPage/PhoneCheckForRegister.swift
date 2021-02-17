@@ -50,6 +50,7 @@ class PhoneCheckForRegister : UIViewController {
     func moveToRegisterPage(sender : String) {
         let vc = self.storyboard?.instantiateViewController(identifier: "RegisterPageController") as! RegisterPageController
         vc.phoneNumber = sender
+        vc.marketing = marketing
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .fullScreen
         guard let pvc = self.presentingViewController else {return}
