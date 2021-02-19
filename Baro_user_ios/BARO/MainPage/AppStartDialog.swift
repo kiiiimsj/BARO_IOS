@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+protocol AppStartDialogDelegate : class{
+    func closeDialog()
+}
 class AppStartDialog: UIViewController {
     @IBOutlet weak var notTodayBtn: UIButton!
     @IBOutlet weak var closeBtn: UIButton!
@@ -14,6 +16,7 @@ class AppStartDialog: UIViewController {
     private let network = CallRequest()
     private let urlMaker = NetWorkURL()
     private var ads = [AdvertiseModel]()
+    public var delegate : AppStartDialogDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         notTodayBtn.layer.borderColor = UIColor.baro_main_color.cgColor
@@ -30,10 +33,13 @@ class AppStartDialog: UIViewController {
         dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
         let dateString = dateFormatter.string(from: today)
         UserDefaults.standard.setValue(dateString, forKey: "notTodayDate")
+        delegate?.closeDialog()
         self.dismiss(animated: false, completion: nil)
+        
     }
     @IBAction func tapClose(_ sender: Any) {
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: false)
+        delegate?.closeDialog()
     }
     
 }

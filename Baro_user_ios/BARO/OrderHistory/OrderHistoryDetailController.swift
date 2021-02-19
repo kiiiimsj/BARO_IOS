@@ -13,6 +13,7 @@ class OrderHistoryDetailController : UIViewController {
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var couponDiscountPriceLabel: UILabel!
     @IBOutlet weak var totalPrice: UILabel!
     @IBOutlet weak var requests: CustomLabel!
     
@@ -29,6 +30,8 @@ class OrderHistoryDetailController : UIViewController {
     var store_name = ""
     var total_price = 0
     var order_count = 0
+    var coupon_discount = 0
+    var discount_rate = 0
     
     
     
@@ -48,40 +51,47 @@ class OrderHistoryDetailController : UIViewController {
     func configure() {
         networkModel.post(method: .get, url: networkURL.orderHistoryRegular + "?receipt_id=" + receipt_id) {
             json in
-            self.requestText = json["requests"].stringValue
-            for item in json["orders"].array! {
-                var orderHistoryDetailModel = OrderHistoryDetailList()
-                orderHistoryDetailModel.order_id = item["order_id"].intValue
-                orderHistoryDetailModel.order_state = item["order_state"].stringValue
-                orderHistoryDetailModel.order_count = item["order_count"].intValue
-                orderHistoryDetailModel.menu_name = item["menu_name"].stringValue
-                orderHistoryDetailModel.menu_defaultprice = item["menu_defaultprice"].intValue
-                
-                if let extra = item["extras"].array {
-                    for item2 in extra {
-                        var orderHistoryDetailExtraModel = OrderHistoryDetailExtraList()
-                        orderHistoryDetailExtraModel.extra_count = item2["extra_count"].intValue
-                        orderHistoryDetailExtraModel.extra_name = item2["extra_name"].stringValue
-                        orderHistoryDetailExtraModel.extra_price = item2["extra_price"].intValue
-                        orderHistoryDetailModel.OrderHistoryDetailExtra.append(orderHistoryDetailExtraModel)
+            print(json)
+            if json["result"].boolValue {
+                self.requestText = json["requests"].stringValue
+                self.coupon_discount = json["coupon_discount"].intValue
+                self.discount_rate = json["discount_rate"].intValue
+                for item in json["orders"].array! {
+                    var orderHistoryDetailModel = OrderHistoryDetailList()
+                    orderHistoryDetailModel.order_id = item["order_id"].intValue
+                    orderHistoryDetailModel.order_state = item["order_state"].stringValue
+                    orderHistoryDetailModel.order_count = item["order_count"].intValue
+                    orderHistoryDetailModel.menu_name = item["menu_name"].stringValue
+                    orderHistoryDetailModel.menu_defaultprice = item["menu_defaultprice"].intValue
+                    
+                    if let extra = item["extras"].array {
+                        for item2 in extra {
+                            var orderHistoryDetailExtraModel = OrderHistoryDetailExtraList()
+                            orderHistoryDetailExtraModel.extra_count = item2["extra_count"].intValue
+                            orderHistoryDetailExtraModel.extra_name = item2["extra_name"].stringValue
+                            orderHistoryDetailExtraModel.extra_price = item2["extra_price"].intValue
+                            orderHistoryDetailModel.OrderHistoryDetailExtra.append(orderHistoryDetailExtraModel)
+                        }
                     }
+                    
+                    self.orderHistoryDetailList.append(orderHistoryDetailModel)
                 }
-                
-                self.orderHistoryDetailList.append(orderHistoryDetailModel)
+                if self.requestText == "null" || self.requestText == "" {
+                    self.requests.text = "요청없음"
+                }else{
+                    self.requests.text = self.requestText
+                }
+                self.couponDiscountPriceLabel.text = "쿠폰 할인 금액 : \(self.coupon_discount) 원"
+                self.totalPrice.text = "총 결제 금액 : " + String(self.total_price.applyDiscountRate(discount_rate: self.discount_rate) - self.coupon_discount) + "원"
+                self.collectionView.reloadData()
             }
-            if self.requestText == "null" {
-                self.requests.text = "요청없음"
-            }else{
-                self.requests.text = self.requestText
-            }
-            self.collectionView.reloadData()
             
         }
         okayBtn.layer.borderWidth = 2
         okayBtn.layer.borderColor = UIColor.white.cgColor
         okayBtn.layer.cornerRadius = 5
         storeName.text = store_name
-        totalPrice.text = "총 결제 금액 : " + String(total_price) + "원"
+        
         //요청사항도 찍어주기
     }
 }
@@ -107,7 +117,9 @@ extension OrderHistoryDetailController : UICollectionViewDelegate, UICollectionV
         cell.menu_default_price.text = String(orderList.menu_defaultprice) + "원"
         cell.menu_one_total_price.text = String(menu_one_total_price) + "원"
         cell.menu_count.text = String(orderList.order_count)
-        cell.menu_total_price.text = "합계 : " + String(menu_one_total_price * orderList.order_count) + "원"
+        cell.menu_total_price.text = String(menu_one_total_price * orderList.order_count)
+        cell.menu_total_price.attributedText = cell.menu_total_price.text?.strikeThrough()
+        cell.realPrice.text = "합계 : " + String((menu_one_total_price * orderList.order_count).applyDiscountRate(discount_rate: discount_rate))  + "원"
         cell.extraList = orderList.OrderHistoryDetailExtra
         
         cell.collectionView.delegate = cell.self

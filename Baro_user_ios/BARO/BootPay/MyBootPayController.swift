@@ -20,6 +20,7 @@ class MyBootPayController : UIViewController {
     public var totalPrice : Int = 0
     public var couponDiscountValue : Int = 0
     public var realPrice : Int = 0
+    public var discount_rate : Int = 0
     
     
     private let userPhone : String = UserDefaults.standard.value(forKey: "user_phone") as! String
@@ -42,6 +43,7 @@ class MyBootPayController : UIViewController {
         super.viewDidLoad()
         
         getUserToken() // get user token from baro_server
+        Timer.scheduledTimer(timeInterval: 300.0, target: self, selector: #selector(self.closeAutomatical(sender:)), userInfo: nil, repeats: false)
     }
     
     func getUserToken() {
@@ -133,17 +135,23 @@ class MyBootPayController : UIViewController {
 extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func clickPaymentCheckBtn() {
         if (self.result) {
-            let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
-            let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+//            let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+//            let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+//
+//            //        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.mainPageControllerIdentifier
+//            //        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.mainPageStoryBoard
+//                    ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.newMainPageControllerIdentifier
+//                    ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.newMainPageStoryBoard
+//            ViewInBottomTabBar.moveFromOutSide = true
+//            ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+//            ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+//            self.present(ViewInBottomTabBar, animated: true, completion: nil)
             
-            //        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.mainPageControllerIdentifier
-            //        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.mainPageStoryBoard
-                    ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.newMainPageControllerIdentifier
-                    ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.newMainPageStoryBoard
-            ViewInBottomTabBar.moveFromOutSide = true
-            ViewInBottomTabBar.modalPresentationStyle = .fullScreen
-            ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
-            self.present(ViewInBottomTabBar, animated: true, completion: nil)
+            if AboutStore.this?.presentingViewController == nil {
+                BasketController.this?.presentingViewController?.dismiss(animated: false, completion: nil)
+            }else{
+                AboutStore.this?.presentingViewController?.dismiss(animated: false, completion: nil)
+            }
         }else {
             self.dismiss(animated: true, completion: nil)
         }
@@ -258,6 +266,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         param2.orders = sendServerOrderdatas
         param2.order_date = order_date
         param2.each_count = eachCount
+        param2.discount_rate = discount_rate
         var param : [String:AnyObject] = [:]
         let enco = JSONEncoder()
         let jsonData = try? enco.encode(param2)
@@ -300,5 +309,10 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
            }
        }
        return nil
+    }
+}
+extension MyBootPayController {
+    @objc func closeAutomatical(sender : Timer) {
+        self.dismiss(animated: false, completion: nil)
     }
 }

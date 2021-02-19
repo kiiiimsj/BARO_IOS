@@ -12,7 +12,7 @@ class BasketController : UIViewController, TopViewElementDelegate{
     }
     func refreshBtnDelegate(controller : UIViewController) {
     }
-    
+    public static var this : BasketController?
     var menu : Order!
     var orders = [Order]()
     let netWork = CallRequest()
@@ -23,6 +23,7 @@ class BasketController : UIViewController, TopViewElementDelegate{
     @IBOutlet weak var collectionView: UICollectionView!
     public var essential = [[Extra]]()
     public var nonEssential = [[SelectedExtra]]()
+    public var discount_rate : Int = 0
     public var totalPrice : Int = 0
     public var basket = UserDefaults.standard
     private var getStoreNameFromUserDefault = UserDefaults.standard.value(forKey: "currentStoreName") as! String
@@ -37,6 +38,7 @@ class BasketController : UIViewController, TopViewElementDelegate{
         collectionView.delegate = self
         collectionView.dataSource = self
         recalcPrice()
+        BasketController.this = self // 원격으로 해당 컨트롤러를 끄기위해
     }
     func optionsSeparate(){
         for item in orders {
@@ -71,8 +73,9 @@ class BasketController : UIViewController, TopViewElementDelegate{
                 let vc = storyboard.instantiateViewController(identifier: "CouponForBasket") as! CouponForBasket
                 vc.modalPresentationStyle = .overFullScreen
                 vc.modalTransitionStyle = .crossDissolve
-                vc.totalPrice = self.totalPrice
+                vc.totalPrice = self.totalPrice * (100-self.discount_rate)/100
                 vc.sendOrderToBootPay = self.orders
+                vc.discount_rate = self.discount_rate
                 self.present(vc, animated: true, completion: nil)
             }else{
                 let vc = UIStoryboard.init(name: "Basket", bundle: nil).instantiateViewController(withIdentifier: "StoreNotOpen")
@@ -84,10 +87,11 @@ class BasketController : UIViewController, TopViewElementDelegate{
         
     }
     func recalcPrice(){
+        self.totalPrice = 0
         for item in orders {
             self.totalPrice += (item.menu_total_price * item.menu_count)
         }
-        self.totalPriceLabel.text = "\(self.totalPrice)"
+        self.totalPriceLabel.text = "\(self.totalPrice * (100-discount_rate)/100)"
     }
     func saveBasket() {
         let encoder = JSONEncoder()
@@ -123,7 +127,10 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         cell.menu_count.text = String(eachMenu.menu_count)
         cell.menu_defaultPrice.text = String(eachMenu.menu.menu_defaultprice)
         cell.menu_extra_sum.text = String(eachMenu.menu_total_price)
-        cell.menu_totalPrice.text = String(eachMenu.menu_total_price * eachMenu.menu_count)
+        let totalPrice = eachMenu.menu_total_price * eachMenu.menu_count
+        cell.menu_totalPrice.text = String(totalPrice) + " 원"
+        cell.menu_totalPrice.attributedText = cell.menu_totalPrice.text?.strikeThrough()
+        cell.menu_realPrice.text = String(totalPrice * (100-discount_rate)/100) + " 원"
         cell.extraCollectionView.delegate = cell.self
         cell.extraCollectionView.dataSource = cell.self
         cell.delegate = self
@@ -178,5 +185,24 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
     }
     
     func tabRight(index : Int) {
+    }
+}
+extension BasketController {
+    func reloadBasket() -> Void {
+        netWork.get(method: .get, url: urlMaker.reloadStoreDiscount+String(store_id)) { json in
+            if json["result"].boolValue {
+                let value = json["discount_rate"].intValue
+                self.discount_rate = value
+                let pvc = self.parent as! BottomTabBarController
+                pvc.maxDiscountLabel.text = "- \(self.discount_rate)%"
+                self.recalcPrice()
+                self.collectionView.reloadData()
+//                CouponForBasket.this!.dismiss(animated: false)
+                if CouponForBasket.this != nil {
+                    CouponForBasket.this!.discountChnage(newValue: self.totalPrice * (100-self.discount_rate)/100,newDiscount_rate: value)
+                }
+                
+            }
+        }
     }
 }

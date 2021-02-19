@@ -24,7 +24,7 @@
         <!--OrderStatusController-->
         <scene sceneID="ld1-1R-7cF">
             <objects>
-                <viewController storyboardIdentifier="OrderStatusController" title="OrderStatusController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gbj-09-OGc" customClass="OrderStatusController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderStatusController" title="OrderStatusController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gbj-09-OGc" customClass="OrderStatusController" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SyC-bn-vR6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="OrderStatusCell" reuseIdentifier="OrderStatusCell" id="VhB-ao-wMC" customClass="OrderStatusCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="OrderStatusCell" reuseIdentifier="OrderStatusCell" id="VhB-ao-wMC" customClass="OrderStatusCell" customModule="BARO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="371"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jn3-Dg-yzB">
@@ -318,7 +318,7 @@
         <!--OrderStatusDetailController-->
         <scene sceneID="6J6-iw-m0w">
             <objects>
-                <viewController storyboardIdentifier="OrderStatusDetailController" title="OrderStatusDetailController" id="YhS-io-SCg" customClass="OrderStatusDetailController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderStatusDetailController" title="OrderStatusDetailController" id="YhS-io-SCg" customClass="OrderStatusDetailController" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T08-Ua-PmQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,7 +327,7 @@
                                 <rect key="frame" x="40" y="124" width="334" height="593"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hQW-lR-Fn3">
-                                        <rect key="frame" x="0.0" y="50" width="334" height="389"/>
+                                        <rect key="frame" x="0.0" y="50" width="334" height="371.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="6te-XF-WAn">
@@ -337,14 +337,14 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="OrderStatusDetail" reuseIdentifier="OrderStatusDetail" id="s58-Mx-fBp" customClass="OrderStatusDetail" customModule="Baro_user_ios" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="OrderStatusDetail" reuseIdentifier="OrderStatusDetail" id="s58-Mx-fBp" customClass="OrderStatusDetail" customModule="BARO" customModuleProvider="target">
                                                 <rect key="frame" x="1" y="0.0" width="332" height="168"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hda-52-ktY">
                                                     <rect key="frame" x="0.0" y="0.0" width="332" height="168"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아메리카노" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVG-DM-8c2" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아메리카노" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVG-DM-8c2" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
                                                             <rect key="frame" x="17" y="8" width="55.5" height="18"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="12"/>
                                                             <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -365,7 +365,7 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="OrderStatusDetailCell" reuseIdentifier="OrderStatusDetailCell" id="n5Q-ij-NAz" customClass="OrderStatusDetailCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="OrderStatusDetailCell" reuseIdentifier="OrderStatusDetailCell" id="n5Q-ij-NAz" customClass="OrderStatusDetailCell" customModule="BARO" customModuleProvider="target">
                                                                     <rect key="frame" x="9" y="0.0" width="314" height="26"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="k2V-Td-G9c">
@@ -419,7 +419,7 @@
                                                                 </collectionViewCell>
                                                             </cells>
                                                         </collectionView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500원" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E0-DC-ep4" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500원" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E0-DC-ep4" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="140.5" width="43" height="19.5"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
                                                             <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -442,13 +442,13 @@
                                                             <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7SG-TG-NsN">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3e-cl-gt7">
                                                             <rect key="frame" x="273" y="140.5" width="43" height="19.5"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
                                                             <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500원" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeQ-wT-4Jm" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500원" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeQ-wT-4Jm" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
                                                             <rect key="frame" x="281" y="9" width="35" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                             <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -466,10 +466,18 @@
                                                                 <constraint firstAttribute="height" constant="0.5" id="Vcu-Gh-Dp0"/>
                                                             </constraints>
                                                         </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7SG-TG-NsN">
+                                                            <rect key="frame" x="220" y="140.5" width="43" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                                            <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="zeQ-wT-4Jm" secondAttribute="trailing" constant="16" id="1Ru-Re-TRv"/>
+                                                        <constraint firstItem="h3e-cl-gt7" firstAttribute="top" secondItem="7SG-TG-NsN" secondAttribute="top" id="4ad-tM-0Os"/>
+                                                        <constraint firstAttribute="trailing" secondItem="h3e-cl-gt7" secondAttribute="trailing" constant="16" id="7CU-rt-Zyw"/>
                                                         <constraint firstAttribute="trailing" secondItem="KQV-rT-n4c" secondAttribute="trailing" id="AhH-uB-1Jl"/>
                                                         <constraint firstAttribute="trailing" secondItem="cWV-Oo-l0Q" secondAttribute="trailing" id="BLs-g0-6pj"/>
                                                         <constraint firstItem="zeQ-wT-4Jm" firstAttribute="centerY" secondItem="tVG-DM-8c2" secondAttribute="centerY" id="BYc-eI-9A0"/>
@@ -483,11 +491,11 @@
                                                         <constraint firstItem="ZwG-qh-fE8" firstAttribute="centerY" secondItem="3E0-DC-ep4" secondAttribute="centerY" id="fc6-tJ-gj8"/>
                                                         <constraint firstItem="3E0-DC-ep4" firstAttribute="leading" secondItem="hda-52-ktY" secondAttribute="leading" constant="16" id="ic2-Et-jJk"/>
                                                         <constraint firstItem="tVG-DM-8c2" firstAttribute="leading" secondItem="hda-52-ktY" secondAttribute="leading" constant="17" id="jDD-qV-4uk"/>
-                                                        <constraint firstAttribute="trailing" secondItem="7SG-TG-NsN" secondAttribute="trailing" constant="16" id="lbi-2y-jCY"/>
                                                         <constraint firstItem="cWV-Oo-l0Q" firstAttribute="leading" secondItem="hda-52-ktY" secondAttribute="leading" id="nbt-dc-57Z"/>
                                                         <constraint firstItem="KQV-rT-n4c" firstAttribute="leading" secondItem="hda-52-ktY" secondAttribute="leading" id="nsK-KW-ZC5"/>
                                                         <constraint firstItem="KQV-rT-n4c" firstAttribute="top" secondItem="tVG-DM-8c2" secondAttribute="bottom" constant="9" id="oOg-1I-7qM"/>
                                                         <constraint firstAttribute="bottom" secondItem="3E0-DC-ep4" secondAttribute="bottom" constant="8" id="p03-TZ-Y3k"/>
+                                                        <constraint firstItem="h3e-cl-gt7" firstAttribute="leading" secondItem="7SG-TG-NsN" secondAttribute="trailing" constant="10" id="xeg-uM-U08"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -499,11 +507,12 @@
                                                     <outlet property="menuName" destination="tVG-DM-8c2" id="TUo-uI-GrM"/>
                                                     <outlet property="oneMenuTotalPrice" destination="7SG-TG-NsN" id="KqX-uY-sRa"/>
                                                     <outlet property="optionContainEachPrice" destination="3E0-DC-ep4" id="uqx-V2-5w5"/>
+                                                    <outlet property="realPrice" destination="h3e-cl-gt7" id="cY4-9g-pND"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테스트카페" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uW5-h6-sZm" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테스트카페" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uW5-h6-sZm" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -518,15 +527,15 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 결제 금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPQ-ia-qhc">
-                                        <rect key="frame" x="17" y="451.5" width="56" height="16.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 결제 금액 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPQ-ia-qhc">
+                                        <rect key="frame" x="161.5" y="505.5" width="84.5" height="22.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="15"/>
                                         <color key="textColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dddd" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVv-hc-8M0" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                        <rect key="frame" x="31" y="495.5" width="282" height="13.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dddd" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVv-hc-8M0" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                        <rect key="frame" x="31" y="455.5" width="282" height="13.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="9"/>
                                         <color key="textColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -538,14 +547,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="126000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUr-BJ-z2a">
-                                        <rect key="frame" x="269" y="451.5" width="49" height="16.5"/>
+                                        <rect key="frame" x="251" y="505.5" width="67" height="22.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="15"/>
                                         <color key="textColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="·" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcs-R2-tLy">
-                                        <rect key="frame" x="23" y="476.5" width="5" height="5"/>
+                                        <rect key="frame" x="16" y="460" width="5" height="5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="FE0-Cg-zBs"/>
@@ -569,8 +578,8 @@
                                             <action selector="successBtn:" destination="YhS-io-SCg" eventType="touchUpInside" id="swv-ca-cPz"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요청사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3d-Dq-fgT" customClass="CustomLabel" customModule="Baro_user_ios" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="472" width="285" height="13.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요청사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3d-Dq-fgT" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                        <rect key="frame" x="21" y="432" width="297" height="13.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="9"/>
                                         <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -582,41 +591,50 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-aW-UTG">
-                                        <rect key="frame" x="0.0" y="439" width="334" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="421.5" width="334" height="0.5"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="kJz-p3-dvD"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="126000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6g-bF-Lz4">
+                                        <rect key="frame" x="269" y="479" width="49" height="16.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
+                                        <color key="textColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="FUr-BJ-z2a" secondAttribute="trailing" constant="16" id="27W-O1-OB8"/>
-                                    <constraint firstItem="dkJ-ZW-KJi" firstAttribute="top" secondItem="fVv-hc-8M0" secondAttribute="bottom" constant="29" id="4Bj-Yi-HK5"/>
+                                    <constraint firstItem="d3d-Dq-fgT" firstAttribute="top" secondItem="2ra-aW-UTG" secondAttribute="bottom" constant="10" id="3qU-pn-2Zw"/>
                                     <constraint firstAttribute="trailing" secondItem="d3d-Dq-fgT" secondAttribute="trailing" constant="16" id="4CX-ys-DTm"/>
                                     <constraint firstItem="uW5-h6-sZm" firstAttribute="top" secondItem="3Hs-TW-iiS" secondAttribute="top" id="7KU-Ry-2OK"/>
                                     <constraint firstAttribute="trailing" secondItem="dkJ-ZW-KJi" secondAttribute="trailing" constant="5" id="7yg-zM-R84"/>
-                                    <constraint firstItem="kcs-R2-tLy" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" constant="23" id="8UM-lI-qG1"/>
-                                    <constraint firstItem="gPQ-ia-qhc" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" constant="17" id="9MC-Ik-kC8"/>
+                                    <constraint firstItem="kcs-R2-tLy" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" constant="16" id="8UM-lI-qG1"/>
                                     <constraint firstItem="dkJ-ZW-KJi" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" constant="5" id="9RQ-c2-DZn"/>
-                                    <constraint firstItem="d3d-Dq-fgT" firstAttribute="top" secondItem="gPQ-ia-qhc" secondAttribute="bottom" constant="4" id="DTG-5H-W9p"/>
+                                    <constraint firstItem="kcs-R2-tLy" firstAttribute="centerY" secondItem="fVv-hc-8M0" secondAttribute="centerY" id="AO2-Lf-ydk"/>
                                     <constraint firstItem="2ra-aW-UTG" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" id="Doa-vn-8hK"/>
-                                    <constraint firstItem="FUr-BJ-z2a" firstAttribute="top" secondItem="hQW-lR-Fn3" secondAttribute="bottom" constant="12.5" id="Fus-U4-B0a"/>
                                     <constraint firstAttribute="trailing" secondItem="uW5-h6-sZm" secondAttribute="trailing" id="G4z-zI-N8G"/>
-                                    <constraint firstItem="gPQ-ia-qhc" firstAttribute="top" secondItem="hQW-lR-Fn3" secondAttribute="bottom" constant="12.5" id="HpJ-wm-iTF"/>
                                     <constraint firstAttribute="bottom" secondItem="dkJ-ZW-KJi" secondAttribute="bottom" constant="5" id="SH7-TP-uED"/>
+                                    <constraint firstAttribute="trailing" secondItem="R6g-bF-Lz4" secondAttribute="trailing" constant="16" id="Swh-Ke-7CT"/>
                                     <constraint firstItem="2ra-aW-UTG" firstAttribute="top" secondItem="hQW-lR-Fn3" secondAttribute="bottom" id="UNZ-6c-uTo"/>
                                     <constraint firstAttribute="trailing" secondItem="2ra-aW-UTG" secondAttribute="trailing" id="Ul1-il-YwG"/>
+                                    <constraint firstItem="dkJ-ZW-KJi" firstAttribute="top" secondItem="FUr-BJ-z2a" secondAttribute="bottom" constant="10" id="V8c-yM-Kau"/>
+                                    <constraint firstItem="gPQ-ia-qhc" firstAttribute="top" secondItem="FUr-BJ-z2a" secondAttribute="top" id="Vqz-39-U9r"/>
                                     <constraint firstAttribute="trailing" secondItem="hQW-lR-Fn3" secondAttribute="trailing" id="W50-v3-OA8"/>
+                                    <constraint firstItem="FUr-BJ-z2a" firstAttribute="top" secondItem="R6g-bF-Lz4" secondAttribute="bottom" constant="10" id="YeI-jW-YgB"/>
                                     <constraint firstAttribute="trailing" secondItem="fVv-hc-8M0" secondAttribute="trailing" constant="21" id="aj7-6M-pLB"/>
                                     <constraint firstItem="fVv-hc-8M0" firstAttribute="top" secondItem="d3d-Dq-fgT" secondAttribute="bottom" constant="10" id="cZf-wO-hPv"/>
+                                    <constraint firstAttribute="trailing" secondItem="FUr-BJ-z2a" secondAttribute="trailing" constant="16" id="cZh-dv-ZQR"/>
                                     <constraint firstItem="hQW-lR-Fn3" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" id="coC-Gy-nfV"/>
                                     <constraint firstItem="uW5-h6-sZm" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" id="e9N-Kw-Mcq"/>
                                     <constraint firstItem="fVv-hc-8M0" firstAttribute="leading" secondItem="3Hs-TW-iiS" secondAttribute="leading" constant="31" id="fZQ-yr-q7w"/>
-                                    <constraint firstItem="d3d-Dq-fgT" firstAttribute="leading" secondItem="kcs-R2-tLy" secondAttribute="trailing" constant="5" id="pYk-py-x9E"/>
-                                    <constraint firstItem="kcs-R2-tLy" firstAttribute="centerY" secondItem="d3d-Dq-fgT" secondAttribute="centerY" id="rzA-Wp-Dls"/>
+                                    <constraint firstItem="d3d-Dq-fgT" firstAttribute="leading" secondItem="kcs-R2-tLy" secondAttribute="trailing" id="pYk-py-x9E"/>
                                     <constraint firstItem="hQW-lR-Fn3" firstAttribute="top" secondItem="uW5-h6-sZm" secondAttribute="bottom" id="tvP-Tk-WXb"/>
+                                    <constraint firstItem="R6g-bF-Lz4" firstAttribute="top" secondItem="fVv-hc-8M0" secondAttribute="bottom" constant="10" id="uZ8-56-Iw9"/>
+                                    <constraint firstItem="FUr-BJ-z2a" firstAttribute="leading" secondItem="gPQ-ia-qhc" secondAttribute="trailing" constant="5" id="v9V-JC-jsR"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -631,6 +649,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="hQW-lR-Fn3" id="vQn-CZ-CFq"/>
+                        <outlet property="coupon_discount_label" destination="R6g-bF-Lz4" id="Rcx-9C-PZg"/>
                         <outlet property="mRequests" destination="fVv-hc-8M0" id="SEg-rW-TJg"/>
                         <outlet property="okayBtn" destination="dkJ-ZW-KJi" id="EsO-2T-d5x"/>
                         <outlet property="storeName" destination="uW5-h6-sZm" id="HV6-Sc-R0M"/>

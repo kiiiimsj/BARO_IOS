@@ -22,6 +22,7 @@ class PhoneCheckForRegister : UIViewController {
     var phoneNumber : String = ""
     var getSmsCode : String = ""
     var credential : AuthCredential?
+    var marketing = false
     let bottomTabBarInfo = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,7 @@ class PhoneCheckForRegister : UIViewController {
     func moveToRegisterPage(sender : String) {
         let vc = self.storyboard?.instantiateViewController(identifier: "RegisterPageController") as! RegisterPageController
         vc.phoneNumber = sender
+        vc.marketing = marketing
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .fullScreen
         guard let pvc = self.presentingViewController else {return}

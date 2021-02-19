@@ -30,4 +30,5 @@ struct Param : Codable {
     var orders = [SendServerOrders]()
     var order_date = ""
     var each_count = 0
+    var discount_rate = 0
 }

@@ -7,6 +7,7 @@
 import UIKit
 private let FirstBarIdentifier = "ASFirstBarCell"
 class AboutStore : UIViewController, TopViewElementDelegate {
+    public static var this : AboutStore?
     func favoriteBtnDelegate(controller : UIViewController) {
         if (self.isFlag == 1) { // 즐겨찾기가 되어있는 경우에서 삭제
             let vc = self.storyboard?.instantiateViewController(identifier: "FavoriteDialog") as! FavoriteDialog
@@ -15,7 +16,6 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             vc.modalPresentationStyle = .overFullScreen
             self.delFavorite(controller : controller)
             self.present(vc, animated: true)
-            
         }
         else { // 즐겨찾기가 안되있는 경우에서 추가
             let vc = self.storyboard?.instantiateViewController(identifier: "FavoriteDialog") as! FavoriteDialog
@@ -35,6 +35,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     @IBOutlet weak var tabIndecator: UIView!
     
     public var store_id  : Int = 0
+    public var discount_rate  : Int = 0
     public var isFlag : Int = 0
     
     private let netWork = CallRequest()
@@ -59,10 +60,11 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         self.setTabBarItem()
         self.isFavoriteStore()
         bottomTabBarInfo.topViewDelegate = self
-        
         UIView.animate(withDuration: 0.0) {
             self.tabIndecator.transform = CGAffineTransform(rotationAngle: 0.0)
         }
+        AboutStore.this = self
+        
     }
     func makeChildVC() {
         let storyBoard = UIStoryboard(name: "AboutStore", bundle: nil)
@@ -70,6 +72,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         infoController = storyBoard.instantiateViewController(identifier: "StoreInfoController")
         infoController?.StoreInfo = self.StoreInfo
         menuController?.store_id = String(self.StoreInfo.store_id)
+        menuController?.discount_rate = discount_rate
         self.addChild(infoController!)
         self.addChild(menuController!)
         contollers.append(menuController!)
@@ -208,6 +211,18 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             return
         }
         
+    }
+    public func reloadAboutStore() -> Void {
+        netWork.get(method: .get, url: urlMaker.reloadStoreDiscount+String(store_id)) { json in
+            if json["result"].boolValue {
+                let value = json["discount_rate"].intValue
+                self.discount_rate = value
+                let pvc = self.parent as! BottomTabBarController
+                pvc.maxDiscountLabel.text = "- \(self.discount_rate)%"
+                let menuVc = self.contollers[0] as! StoreMenuController
+                menuVc.discount_rate = self.discount_rate
+            }
+        }
     }
 }
 

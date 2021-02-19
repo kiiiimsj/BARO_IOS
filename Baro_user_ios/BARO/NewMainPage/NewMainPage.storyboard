@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KEk-eT-DGy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,10 +33,10 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7Z-sE-lT2">
-                                <rect key="frame" x="0.0" y="135" width="414" height="1131"/>
+                                <rect key="frame" x="0.0" y="177" width="414" height="1089"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mV9-RH-w9p">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1131"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1089"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNH-P5-N7s" customClass="FSPagerView" customModule="FSPagerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
@@ -45,7 +46,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIh-fY-T6c">
-                                                <rect key="frame" x="10" y="953" width="394" height="178"/>
+                                                <rect key="frame" x="10" y="911" width="394" height="178"/>
                                                 <string key="text">Contact Us
 
 BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
@@ -63,7 +64,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hZ2-9Z-Sq2">
-                                                <rect key="frame" x="0.0" y="207" width="414" height="736"/>
+                                                <rect key="frame" x="0.0" y="207" width="414" height="694"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="HSS-fW-OhR">
                                                     <size key="itemSize" width="414" height="111"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -79,7 +80,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2bD-QD-fJt">
-                                                                    <rect key="frame" x="10" y="18" width="55" height="75"/>
+                                                                    <rect key="frame" x="10" y="23" width="55" height="65"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="55" id="9sF-zr-Gj9"/>
                                                                         <constraint firstAttribute="width" constant="55" id="nPF-sM-2T0"/>
@@ -125,21 +126,34 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                                                         <constraint firstAttribute="height" constant="0.5" id="EIZ-3e-DnD"/>
                                                                     </constraints>
                                                                 </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-10%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psk-yh-6J3">
+                                                                    <rect key="frame" x="45" y="3" width="40" height="40"/>
+                                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="40" id="gss-hS-3Jv"/>
+                                                                        <constraint firstAttribute="width" constant="40" id="hZ6-Kp-0vv"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
+                                                                <constraint firstItem="Psk-yh-6J3" firstAttribute="top" secondItem="2bD-QD-fJt" secondAttribute="top" constant="-20" id="5g1-Qj-5qJ"/>
                                                                 <constraint firstItem="Jiz-u2-DIQ" firstAttribute="centerY" secondItem="4hH-vS-BNl" secondAttribute="centerY" id="8uH-i4-aJQ"/>
                                                                 <constraint firstItem="2bD-QD-fJt" firstAttribute="leading" secondItem="4hH-vS-BNl" secondAttribute="leading" constant="10" id="Gng-5U-nJX"/>
                                                                 <constraint firstItem="IYa-rt-z6D" firstAttribute="leading" secondItem="4hH-vS-BNl" secondAttribute="leading" id="LP0-rR-LcA"/>
+                                                                <constraint firstItem="Psk-yh-6J3" firstAttribute="trailing" secondItem="2bD-QD-fJt" secondAttribute="trailing" constant="20" id="V6y-Ew-Uz2"/>
                                                                 <constraint firstItem="TpS-Sl-9sh" firstAttribute="top" secondItem="JfD-rF-Bnv" secondAttribute="bottom" constant="7" id="YyS-8Y-j99"/>
                                                                 <constraint firstItem="Jiz-u2-DIQ" firstAttribute="leading" secondItem="2bD-QD-fJt" secondAttribute="trailing" constant="32" id="Zzk-Xb-U1A"/>
                                                                 <constraint firstAttribute="trailing" secondItem="TpS-Sl-9sh" secondAttribute="trailing" constant="16" id="aca-V8-Ckd"/>
                                                                 <constraint firstItem="IYa-rt-z6D" firstAttribute="top" secondItem="4hH-vS-BNl" secondAttribute="top" id="ahR-T2-3QK"/>
                                                                 <constraint firstAttribute="trailing" secondItem="IYa-rt-z6D" secondAttribute="trailing" id="dLK-pQ-UTw"/>
-                                                                <constraint firstItem="2bD-QD-fJt" firstAttribute="top" secondItem="4hH-vS-BNl" secondAttribute="top" constant="18" id="h9Z-q3-n0B"/>
+                                                                <constraint firstItem="2bD-QD-fJt" firstAttribute="top" secondItem="4hH-vS-BNl" secondAttribute="top" constant="23" id="h9Z-q3-n0B"/>
                                                                 <constraint firstAttribute="trailing" secondItem="JfD-rF-Bnv" secondAttribute="trailing" constant="16" id="qoI-Pm-deX"/>
-                                                                <constraint firstAttribute="bottom" secondItem="2bD-QD-fJt" secondAttribute="bottom" constant="18" id="tQN-En-ORs"/>
+                                                                <constraint firstAttribute="bottom" secondItem="2bD-QD-fJt" secondAttribute="bottom" constant="23" id="tQN-En-ORs"/>
                                                                 <constraint firstItem="TpS-Sl-9sh" firstAttribute="centerY" secondItem="2bD-QD-fJt" secondAttribute="centerY" constant="10" id="tp6-bI-02J"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
@@ -147,6 +161,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <size key="customSize" width="414" height="111"/>
                                                         <connections>
+                                                            <outlet property="discount_rate_label" destination="Psk-yh-6J3" id="rTt-f6-aLC"/>
                                                             <outlet property="distance_Label" destination="TpS-Sl-9sh" id="tsE-i7-SRi"/>
                                                             <outlet property="imageView" destination="2bD-QD-fJt" id="of9-o5-inu"/>
                                                             <outlet property="is_OpenLable" destination="JfD-rF-Bnv" id="7fu-xa-xBh"/>
@@ -250,19 +265,59 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                     <action selector="goToMap:" destination="KEk-eT-DGy" eventType="touchUpInside" id="QF0-rM-Gjc"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf9-UV-lVA">
+                                <rect key="frame" x="92" y="125" width="230.5" height="37"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARO 할인 : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjw-9S-7rS">
+                                        <rect key="frame" x="0.0" y="0.0" width="140.5" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="25"/>
+                                        <color key="textColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 : 00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsa-Dr-leK">
+                                        <rect key="frame" x="145.5" y="0.0" width="85" height="37"/>
+                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="0.86787522009999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="85" id="LLf-SX-dSi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qsa-Dr-leK" secondAttribute="bottom" id="31Y-bb-MnL"/>
+                                    <constraint firstItem="Yjw-9S-7rS" firstAttribute="leading" secondItem="Bf9-UV-lVA" secondAttribute="leading" id="4ja-7o-UzU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Yjw-9S-7rS" secondAttribute="bottom" id="Auo-8A-tEc"/>
+                                    <constraint firstItem="qsa-Dr-leK" firstAttribute="top" secondItem="Bf9-UV-lVA" secondAttribute="top" id="Xay-i9-aLn"/>
+                                    <constraint firstItem="qsa-Dr-leK" firstAttribute="leading" secondItem="Yjw-9S-7rS" secondAttribute="trailing" constant="5" id="mEh-FM-eBm"/>
+                                    <constraint firstItem="Yjw-9S-7rS" firstAttribute="top" secondItem="Bf9-UV-lVA" secondAttribute="top" id="pij-k2-geA"/>
+                                    <constraint firstAttribute="trailing" secondItem="qsa-Dr-leK" secondAttribute="trailing" id="rF7-yG-Gn2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eee-XB-Tlc"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Bf9-UV-lVA" firstAttribute="top" secondItem="r44-DN-nIP" secondAttribute="bottom" constant="5" id="EZM-xA-BP6"/>
+                            <constraint firstItem="B7Z-sE-lT2" firstAttribute="top" secondItem="Bf9-UV-lVA" secondAttribute="bottom" constant="15" id="IOg-Ke-API"/>
                             <constraint firstItem="KXd-lg-bym" firstAttribute="leading" secondItem="Jaa-IV-bMF" secondAttribute="trailing" id="IOy-DR-Dak"/>
-                            <constraint firstItem="B7Z-sE-lT2" firstAttribute="top" secondItem="r44-DN-nIP" secondAttribute="bottom" constant="15" id="JR7-5K-Hq5"/>
                             <constraint firstItem="Jaa-IV-bMF" firstAttribute="top" secondItem="eee-XB-Tlc" secondAttribute="top" constant="20" id="Jyi-TA-QK5"/>
                             <constraint firstItem="B7Z-sE-lT2" firstAttribute="leading" secondItem="eee-XB-Tlc" secondAttribute="leading" id="KsV-7v-EoO"/>
                             <constraint firstItem="eee-XB-Tlc" firstAttribute="bottom" secondItem="B7Z-sE-lT2" secondAttribute="bottom" id="P2J-bU-dh0"/>
                             <constraint firstItem="seP-qc-XCq" firstAttribute="leading" secondItem="eee-XB-Tlc" secondAttribute="leading" constant="16" id="RVz-F6-2FJ"/>
                             <constraint firstItem="r44-DN-nIP" firstAttribute="leading" secondItem="seP-qc-XCq" secondAttribute="leading" id="Yao-nP-bhQ"/>
                             <constraint firstItem="eee-XB-Tlc" firstAttribute="trailing" secondItem="KXd-lg-bym" secondAttribute="trailing" constant="19" id="avV-Qh-e3Y"/>
+                            <constraint firstItem="Bf9-UV-lVA" firstAttribute="centerX" secondItem="fNa-T4-bzZ" secondAttribute="centerX" id="dxK-R2-Jan"/>
                             <constraint firstItem="r44-DN-nIP" firstAttribute="top" secondItem="seP-qc-XCq" secondAttribute="bottom" id="f5B-ja-QKo"/>
                             <constraint firstItem="seP-qc-XCq" firstAttribute="top" secondItem="eee-XB-Tlc" secondAttribute="top" constant="20" id="nlH-10-QcB"/>
                             <constraint firstItem="B7Z-sE-lT2" firstAttribute="trailing" secondItem="eee-XB-Tlc" secondAttribute="trailing" id="uy9-7L-Jmn"/>
@@ -278,6 +333,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                         <outlet property="mainView" destination="fNa-T4-bzZ" id="9Nn-Ap-VF3"/>
                         <outlet property="pagerView" destination="gNH-P5-N7s" id="d1k-rR-Uuu"/>
                         <outlet property="scrollView" destination="B7Z-sE-lT2" id="otm-wZ-Ni7"/>
+                        <outlet property="timeLabel" destination="qsa-Dr-leK" id="kjh-BO-Zxz"/>
                         <outlet property="whatPage" destination="qde-hU-tGp" id="goC-ag-LmZ"/>
                         <segue destination="KHO-m2-knG" kind="presentation" identifier="mainToMap" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="SPx-90-4zY"/>
                         <segue destination="bHS-ww-sqy" kind="presentation" identifier="goToAlert" id="1oW-jC-gLi"/>
@@ -460,5 +516,11 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
         <image name="baro_logo" width="37.5" height="10"/>
         <image name="search" width="17" height="16.5"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

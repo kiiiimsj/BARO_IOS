@@ -16,6 +16,7 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
         }else{
             return
         }
+        vc.marketing = self.marketing
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
         guard let pvc = self.presentingViewController else {return}
@@ -30,6 +31,7 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
     @IBOutlet weak var sendPhoneToFireBaseBtn: UIButton!
     public var netWork = CallRequest()
     public var urlMaker = NetWorkURL()
+    public var marketing = false
     let bottomTabBarInfo = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()

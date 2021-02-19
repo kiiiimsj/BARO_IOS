@@ -45,6 +45,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet var mainView: UIView!
+    @IBOutlet weak var timeLabel: UILabel!
     var netWork = CallRequest()
     var urlMaker = NetWorkURL()
     var eventList = [EventListModel]()
@@ -145,7 +146,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
             "longitude" : longitude!
         ]
         netWork.post(method: .post,param: jsonObject, url: urlMaker.findAllStore) { json in
-            var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "")
+            var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
             if json["result"].boolValue {
                 for item in json["store"].array! {
                     storeListModel.store_image = item["store_image"].stringValue
@@ -155,6 +156,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
                     storeListModel.store_info = item["store_info"].stringValue
                     storeListModel.store_location = item["store_location"].stringValue
                     storeListModel.store_name = item["store_name"].stringValue
+                    storeListModel.discount_rate = item["discount_rate"].intValue
                     self.storeList.append(storeListModel)
                 }
 //                var newFrame = self.collectionview.frame
@@ -162,8 +164,9 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
 //                self.collectionview.frame = newFrame
                 self.collectionview.reloadData()
                 let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
-                    equalToConstant: CGFloat(self.storeList.count * 90))
+                    equalToConstant: CGFloat(self.storeList.count * 100))
                 issueLabelsHeightConstraint.isActive = true
+                self.showTime()
             }
         }
         let calendar = Calendar.current
@@ -178,6 +181,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
             let vc = UIStoryboard.init(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "AppStartDialog") as! AppStartDialog
             vc.modalPresentationStyle = .overFullScreen
             vc.modalTransitionStyle = .crossDissolve
+            vc.delegate = self
             self.present(vc, animated: false, completion: nil)
         }
         
@@ -350,13 +354,14 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
             self.present(alter, animated: true, completion: nil)
         }
     }
-    func toStoreListUseBottomBar(id : Int) {
+    func toStoreListUseBottomBar(id : Int,discount_rate : Int) {
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
-        
+        var data = ["id" : id,"discount_rate" : discount_rate]
+    
         ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
         ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
-        ViewInBottomTabBar.controllerSender = id
+        ViewInBottomTabBar.controllerSender = data
         ViewInBottomTabBar.moveFromOutSide = true
         ViewInBottomTabBar.modalPresentationStyle = .fullScreen
         ViewInBottomTabBar.modalTransitionStyle = .crossDissolve
@@ -451,10 +456,22 @@ extension NewMainPageController : UICollectionViewDelegate, UICollectionViewData
             cell.is_OpenLable.text = "준비중"
             cell.is_OpenLable.backgroundColor = UIColor.init(cgColor: CGColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1))
         }
+        if store.discount_rate != 0 {
+            cell.discount_rate_label.text = "- \(store.discount_rate)%"
+            cell.discount_rate_label.layer.borderColor = UIColor.white.cgColor
+            cell.discount_rate_label.layer.borderWidth = 2
+            cell.discount_rate_label.layer.cornerRadius = 5
+            cell.discount_rate_label.layer.masksToBounds = true
+            cell.discount_rate_label.isHidden = false
+            cell.discount_rate_label.layer.cornerRadius = cell.discount_rate_label.frame.width / 2
+        }else{
+            cell.discount_rate_label.isHidden = true
+        }
         cell.is_OpenLable.layer.borderColor = UIColor.white.cgColor
         cell.is_OpenLable.layer.borderWidth = 2
         cell.is_OpenLable.layer.cornerRadius = 5
         cell.is_OpenLable.layer.masksToBounds = true
+       
         if Int(store.distance) > 1000 {
             cell.distance_Label.text = String(Double(Int(store.distance/100) / 10)) + "km"
         }else{
@@ -466,10 +483,10 @@ extension NewMainPageController : UICollectionViewDelegate, UICollectionViewData
         return CGSize(width: collectionview.frame.width, height: 100)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let id = storeList[indexPath.item].store_id
+        let data = storeList[indexPath.item]
         let storeName = String(storeList[indexPath.item].store_name)
         UserDefaults.standard.set(storeName, forKey: "currentStoreName")
-        self.toStoreListUseBottomBar(id : id)
+        self.toStoreListUseBottomBar(id : data.store_id,discount_rate: data.discount_rate)
     }
 }
 //클릭에 해당하는 extension들
@@ -504,8 +521,52 @@ extension NewMainPageController : CellDelegateEvent, CellDelegateType, CellDeleg
         }
         
     }
-    
-    
+}
+extension NewMainPageController : AppStartDialogDelegate {
+    func closeDialog() {
+        locationCheck()
+    }
+}
+extension NewMainPageController {
+    func showTime(){ // 시간탭 보여주는 부분
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updatetime(sender:)), userInfo: [], repeats: true)
+    }
+    @objc func updatetime(sender : Timer) {
+        let time = CustomTimer.getTime()
+        timeLabel.text = time
+        if time == CustomTimer.RELOAD_TIME {
+            reloadMainPage()
+        }else{
+            return
+        }
+    }
+    public func reloadMainPage() -> Void {
+        let jsonObject : [ String : Any ] = [
+            "latitude" : latitude!,
+            "longitude" : longitude!
+        ]
+        netWork.post(method: .post,param: jsonObject, url: urlMaker.findAllStore) { json in
+            var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
+            if json["result"].boolValue {
+                self.storeList.removeAll()
+                for item in json["store"].array! {
+                    storeListModel.store_image = item["store_image"].stringValue
+                    storeListModel.is_open = item["is_open"].stringValue
+                    storeListModel.distance = item["distance"].doubleValue
+                    storeListModel.store_id = item["store_id"].intValue
+                    storeListModel.store_info = item["store_info"].stringValue
+                    storeListModel.store_location = item["store_location"].stringValue
+                    storeListModel.store_name = item["store_name"].stringValue
+                    storeListModel.discount_rate = item["discount_rate"].intValue
+                    self.storeList.append(storeListModel)
+                }
+                let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
+                    equalToConstant: CGFloat(self.storeList.count * 100))
+                issueLabelsHeightConstraint.isActive = true
+                self.collectionview.reloadData()
+            }
+        }
+    }
 }
 
 

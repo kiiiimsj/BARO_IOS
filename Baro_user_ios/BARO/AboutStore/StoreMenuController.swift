@@ -18,6 +18,13 @@ class StoreMenuController : UIViewController{
     public var categoryNames = [String]()
     public var menus = [Menu]()
     public var store_id = ""
+    public var discount_rate  : Int = 0 {
+        didSet {
+            if (childController != nil) {
+                childController?.discount_rate = discount_rate
+            }
+        }
+    }
     public var saveCellsPoint = [CGFloat]()
     public var saveCelly = CGFloat()
     public var saveIndecatorWidth = [CGFloat]()
@@ -25,7 +32,7 @@ class StoreMenuController : UIViewController{
     private var initiateComplete = false
     var isFirstViewLoad = false
     @IBOutlet weak var menuPage: UIView!
-    private lazy var childController : StoreMenu2Controller? = nil
+    public lazy var childController : StoreMenu2Controller? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         isFirstViewLoad = true
@@ -72,6 +79,7 @@ class StoreMenuController : UIViewController{
             let storyboard = UIStoryboard(name: storyboard, bundle: nil)
             childController = storyboard.instantiateViewController(withIdentifier: viewControllerID) as? StoreMenu2Controller
             (childController!).menus = menus
+            (childController!).discount_rate = discount_rate
             self.addChild(childController!)
             menuPage.addSubview((childController!.view)!)
             childController!.view.frame = menuPage.bounds
