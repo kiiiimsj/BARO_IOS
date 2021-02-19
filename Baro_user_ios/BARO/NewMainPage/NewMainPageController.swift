@@ -164,7 +164,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
 //                self.collectionview.frame = newFrame
                 self.collectionview.reloadData()
                 let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
-                    equalToConstant: CGFloat(self.storeList.count * 100))
+                    equalToConstant: CGFloat(self.storeList.count * 110))
                 issueLabelsHeightConstraint.isActive = true
                 self.showTime()
             }
@@ -457,13 +457,13 @@ extension NewMainPageController : UICollectionViewDelegate, UICollectionViewData
             cell.is_OpenLable.backgroundColor = UIColor.init(cgColor: CGColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1))
         }
         if store.discount_rate != 0 {
-            cell.discount_rate_label.text = "- \(store.discount_rate)%"
-            cell.discount_rate_label.layer.borderColor = UIColor.white.cgColor
-            cell.discount_rate_label.layer.borderWidth = 2
-            cell.discount_rate_label.layer.cornerRadius = 5
-            cell.discount_rate_label.layer.masksToBounds = true
-            cell.discount_rate_label.isHidden = false
-            cell.discount_rate_label.layer.cornerRadius = cell.discount_rate_label.frame.width / 2
+            cell.discount_rate_label.text = "SALE \(store.discount_rate)%"
+//            cell.discount_rate_label.layer.borderColor = UIColor.white.cgColor
+//            cell.discount_rate_label.layer.borderWidth = 2
+//            cell.discount_rate_label.layer.cornerRadius = 5
+//            cell.discount_rate_label.layer.masksToBounds = true
+//            cell.discount_rate_label.isHidden = false
+//            cell.discount_rate_label.layer.cornerRadius = cell.discount_rate_label.frame.width / 2
         }else{
             cell.discount_rate_label.isHidden = true
         }
@@ -480,7 +480,7 @@ extension NewMainPageController : UICollectionViewDelegate, UICollectionViewData
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionview.frame.width, height: 100)
+        return CGSize(width: collectionview.frame.width, height: 110)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let data = storeList[indexPath.item]
@@ -561,7 +561,7 @@ extension NewMainPageController {
                     self.storeList.append(storeListModel)
                 }
                 let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
-                    equalToConstant: CGFloat(self.storeList.count * 100))
+                    equalToConstant: CGFloat(self.storeList.count * 110))
                 issueLabelsHeightConstraint.isActive = true
                 self.collectionview.reloadData()
             }

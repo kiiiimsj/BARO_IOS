@@ -166,6 +166,7 @@
 		E3F971AC25C95C45008CF3D0 /* AppStartDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F971AB25C95C45008CF3D0 /* AppStartDialog.swift */; };
 		E3F971AF25C989AD008CF3D0 /* AdvertiseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F971AE25C989AD008CF3D0 /* AdvertiseModel.swift */; };
 		E3F971B625D2BAC1008CF3D0 /* CustomTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F971B525D2BAC1008CF3D0 /* CustomTimer.swift */; };
+		E3F971F725DD5521008CF3D0 /* PayTimeOverDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F971F625DD5520008CF3D0 /* PayTimeOverDialog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -333,6 +334,7 @@
 		E3F971AB25C95C45008CF3D0 /* AppStartDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartDialog.swift; sourceTree = "<group>"; };
 		E3F971AE25C989AD008CF3D0 /* AdvertiseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseModel.swift; sourceTree = "<group>"; };
 		E3F971B525D2BAC1008CF3D0 /* CustomTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimer.swift; sourceTree = "<group>"; };
+		E3F971F625DD5520008CF3D0 /* PayTimeOverDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTimeOverDialog.swift; sourceTree = "<group>"; };
 		ED03160DBC46E11745206C30 /* Pods_BARO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BARO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -436,6 +438,7 @@
 				3F0F6EAE25514F1B00099ACC /* BootPay.storyboard */,
 				3FF8137925590C8600036A91 /* FinalPaymentCheckDialog.swift */,
 				3F1C4A60259C4E8A002C5B5D /* SendMessage.swift */,
+				E3F971F625DD5520008CF3D0 /* PayTimeOverDialog.swift */,
 			);
 			path = BootPay;
 			sourceTree = "<group>";
@@ -997,6 +1000,7 @@
 				E33D8537253DC63600E50BAC /* AboutStore.swift in Sources */,
 				04D11F452543D41D00ADB210 /* OrderHistoryModel.swift in Sources */,
 				E39C1581256952A000520033 /* MenuOrBasket.swift in Sources */,
+				E3F971F725DD5521008CF3D0 /* PayTimeOverDialog.swift in Sources */,
 				3FF3509A253E7F3B007B7B29 /* RegisterPageController.swift in Sources */,
 				043DACAF253DA54600C70102 /* UltraStoreListModel.swift in Sources */,
 			);

@@ -131,16 +131,18 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nB2-HP-3sn">
-                                        <rect key="frame" x="20.000000000000007" y="228.00000000000003" width="112.66666666666669" height="18"/>
+                                        <rect key="frame" x="20" y="228.00000000000003" width="110" height="16"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="10"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="아이디/비밀번호 저장" image="rectangle" catalog="system">
+                                        <state key="normal" title="  아이디/비밀번호 저장" image="radio_off">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <state key="selected">
-                                            <imageReference key="image" image="checkmark.rectangle.fill" catalog="system" symbolScale="default"/>
+                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
                                         </state>
-                                        <state key="highlighted" image="checkmark.rectangle.fill" catalog="system"/>
+                                        <state key="highlighted">
+                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
+                                        </state>
                                         <connections>
                                             <action selector="rememberUserInfo" destination="e5m-c8-bea" eventType="touchUpInside" id="LE1-7l-1E8"/>
                                         </connections>
@@ -1581,7 +1583,9 @@
                                                             <constraint firstAttribute="height" constant="40" id="z7a-Vx-BPQ"/>
                                                         </constraints>
                                                         <state key="normal" image="radio_off"/>
-                                                        <state key="selected" image="radio_on"/>
+                                                        <state key="selected">
+                                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="pressRadioEntire:" destination="EA3-Jg-Xmp" eventType="touchUpInside" id="hPt-eO-FCo"/>
                                                         </connections>
@@ -1620,7 +1624,9 @@
                                                             <constraint firstAttribute="width" constant="40" id="qFx-s8-hMq"/>
                                                         </constraints>
                                                         <state key="normal" image="radio_off"/>
-                                                        <state key="selected" image="radio_on"/>
+                                                        <state key="selected">
+                                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="pressRadio1:" destination="EA3-Jg-Xmp" eventType="touchUpInside" id="216-6O-WNJ"/>
                                                         </connections>
@@ -1664,7 +1670,9 @@
                                                             <constraint firstAttribute="height" constant="40" id="j8g-qG-5Qc"/>
                                                         </constraints>
                                                         <state key="normal" image="radio_off"/>
-                                                        <state key="selected" image="radio_on"/>
+                                                        <state key="selected">
+                                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="pressRadio2:" destination="EA3-Jg-Xmp" eventType="touchUpInside" id="KZ7-pt-ldu"/>
                                                         </connections>
@@ -1708,7 +1716,9 @@
                                                             <constraint firstAttribute="height" constant="40" id="vcb-53-JiP"/>
                                                         </constraints>
                                                         <state key="normal" image="radio_off"/>
-                                                        <state key="selected" image="radio_on"/>
+                                                        <state key="selected">
+                                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="pressRadio3:" destination="EA3-Jg-Xmp" eventType="touchUpInside" id="a61-FE-bhA"/>
                                                         </connections>
@@ -1752,7 +1762,9 @@
                                                             <constraint firstAttribute="height" constant="40" id="o5F-J2-9sa"/>
                                                         </constraints>
                                                         <state key="normal" image="radio_off"/>
-                                                        <state key="selected" image="radio_on"/>
+                                                        <state key="selected">
+                                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="pressRadio4:" destination="EA3-Jg-Xmp" eventType="touchUpInside" id="Us3-z3-M41"/>
                                                         </connections>
@@ -1985,16 +1997,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zrd-Tj-FVf"/>
+        <segue reference="E9i-LZ-h6q"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow_left" width="7.6666665077209473" height="13.333333015441895"/>
         <image name="arrow_right" width="7.6666665077209473" height="13.333333015441895"/>
-        <image name="checkmark.rectangle.fill" catalog="system" width="128" height="93"/>
         <image name="exclamationmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="radio_off" width="16" height="16"/>
         <image name="radio_on" width="16" height="16"/>
-        <image name="rectangle" catalog="system" width="128" height="93"/>
         <namedColor name="mainColor">
             <color red="0.51372549019607838" green="0.20000000000000001" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
