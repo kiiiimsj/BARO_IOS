@@ -448,20 +448,23 @@ class BottomTabBarController: UIViewController {
                     topBarRefreshBtn.isHidden = false
                     let controllerData = controller as! OrderStatusController
                     controllerData.bottomTabBarInfo = self
-                    
+                    minimizeTopView()
                 case orderHistoryControllerIdentifier:
                     topBarViewControllerTitle.text = "주문 내역"
-                    
+                    minimizeTopView()
                 case myPageControllerIdentifier:
                     topBarViewControllerTitle.text = "마이페이지"
+                    minimizeTopView()
                     
                 case alertControllerIdentifier:
                     topBarViewControllerTitle.text = "알 림"
                     topBarBackBtn.isHidden = false
+                    minimizeTopView()
                     
                 case alertContentControllerIdentifier:
                     topBarViewControllerTitle.isHidden = true
                     topBarBackBtn.isHidden = false
+                    minimizeTopView()
                     
                 case aboutStoreControllerIdentifier:
                     topBarFavoriteBtn.isHidden = false
@@ -474,7 +477,7 @@ class BottomTabBarController: UIViewController {
                 case couponPageControllerIdentifier:
                     topBarViewControllerTitle.text = "내 쿠폰 리스트"
                     topBarBackBtn.isHidden = false
-                    
+                    minimizeTopView()
                 case basketControllerIdentifier:
                     topBarViewControllerTitle.text = "장바구니"
                     topBarBackBtn.isHidden = false
@@ -484,7 +487,7 @@ class BottomTabBarController: UIViewController {
                 case mapControllerIdentifier:
                     topBarViewControllerTitle.text = "내 주변 가게"
                     topBarBackBtn.isHidden = false
-                    
+                    minimizeTopView()
                 default :
                     print("error_delegate")
             }
@@ -495,7 +498,7 @@ class BottomTabBarController: UIViewController {
             swipeRight.direction = UISwipeGestureRecognizer.Direction.right
             self.view.addGestureRecognizer(swipeRight)
         }
-        
+    
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
         var viewTranslation = CGPoint(x: 0, y: 0)
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
@@ -604,6 +607,11 @@ extension BottomTabBarController : UITabBarDelegate {
     }
 }
 extension BottomTabBarController {
+    func minimizeTopView() -> Void {
+        let issueLabelsHeightConstraint = self.TopView.heightAnchor.constraint(
+            equalToConstant: CGFloat(50))
+        issueLabelsHeightConstraint.isActive = true
+    }
     func showTime(controller : UIViewController){ // 시간탭 보여주는 부분
         timeView.isHidden = false
         maxDiscountLabel.isHidden = false

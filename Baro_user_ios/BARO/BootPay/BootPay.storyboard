@@ -16,7 +16,7 @@
         <!--BootPayPage-->
         <scene sceneID="gaX-To-wt8">
             <objects>
-                <viewController storyboardIdentifier="BootPayPage" title="BootPayPage" id="tcY-q4-1IB" customClass="MyBootPayController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BootPayPage" title="BootPayPage" id="tcY-q4-1IB" customClass="MyBootPayController" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bzy-0V-UyN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,15 +31,15 @@
         <!--FinalPaymentCheckDialog-->
         <scene sceneID="MDU-oE-Hx8">
             <objects>
-                <viewController storyboardIdentifier="FinalPaymentCheckDialog" title="FinalPaymentCheckDialog" id="Coh-Xb-9Qr" customClass="FinalPaymentCheckDialog" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FinalPaymentCheckDialog" title="FinalPaymentCheckDialog" id="Coh-Xb-9Qr" customClass="FinalPaymentCheckDialog" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7AJ-iw-EUh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3g-m6-Rxh" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3g-m6-Rxh" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
                                 <rect key="frame" x="60" y="358" width="294" height="180"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uze-br-O2b" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uze-br-O2b" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="294" height="36"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결 제 완 료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-ql-svH" customClass="하지만">
@@ -161,6 +161,137 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHw-jP-5ff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="857.97101449275374" y="64.955357142857139"/>
+        </scene>
+        <!--PayTimeOverDialog-->
+        <scene sceneID="FkE-tH-5Uu">
+            <objects>
+                <viewController storyboardIdentifier="PayTimeOverDialog" title="PayTimeOverDialog" id="fea-r6-h67" customClass="PayTimeOverDialog" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bCU-AS-y4z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHE-b4-rqW" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
+                                <rect key="frame" x="60" y="358" width="294" height="180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAW-1s-KJt" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결 제 완 료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8f-bq-6H8" customClass="하지만">
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="j8f-bq-6H8" secondAttribute="bottom" id="6Hg-t4-r6E"/>
+                                            <constraint firstItem="j8f-bq-6H8" firstAttribute="top" secondItem="MAW-1s-KJt" secondAttribute="top" id="Wcs-fq-Aw0"/>
+                                            <constraint firstItem="j8f-bq-6H8" firstAttribute="leading" secondItem="MAW-1s-KJt" secondAttribute="leading" id="Z3r-m6-uzn"/>
+                                            <constraint firstAttribute="trailing" secondItem="j8f-bq-6H8" secondAttribute="trailing" id="ztF-PC-lMd"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" restorationIdentifier="BootPayDialog" translatesAutoresizingMaskIntoConstraints="NO" id="Eeb-EF-OXK">
+                                        <rect key="frame" x="0.0" y="140" width="294" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byb-fu-FYa">
+                                                <rect key="frame" x="5" y="0.0" width="284" height="35"/>
+                                                <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="rpQ-Jt-cMK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                                <state key="normal" title="확 인">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressOkay:" destination="fea-r6-h67" eventType="touchUpInside" id="dqn-db-V7P"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Byb-fu-FYa" firstAttribute="top" secondItem="Eeb-EF-OXK" secondAttribute="top" id="MnY-4J-SA5"/>
+                                            <constraint firstAttribute="trailing" secondItem="Byb-fu-FYa" secondAttribute="trailing" constant="5" id="q1K-bA-ndD"/>
+                                            <constraint firstAttribute="bottom" secondItem="Byb-fu-FYa" secondAttribute="bottom" constant="5" id="rXj-wJ-VyF"/>
+                                            <constraint firstItem="Byb-fu-FYa" firstAttribute="leading" secondItem="Eeb-EF-OXK" secondAttribute="leading" constant="5" id="suw-rw-Url"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghM-wQ-Dzz">
+                                        <rect key="frame" x="88.5" y="73.5" width="117.5" height="33"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">페이지가 만료되었습니다.
+다시 결제시도 해주세요</string>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Eeb-EF-OXK" secondAttribute="trailing" id="ALR-xt-LzR"/>
+                                    <constraint firstItem="MAW-1s-KJt" firstAttribute="leading" secondItem="yHE-b4-rqW" secondAttribute="leading" id="O7g-Vo-lhJ"/>
+                                    <constraint firstItem="MAW-1s-KJt" firstAttribute="height" secondItem="yHE-b4-rqW" secondAttribute="height" multiplier="0.2" id="Rzq-lw-2f4"/>
+                                    <constraint firstAttribute="height" constant="180" id="UEp-Ld-1oS"/>
+                                    <constraint firstItem="Eeb-EF-OXK" firstAttribute="leading" secondItem="yHE-b4-rqW" secondAttribute="leading" id="VPl-O7-E9L"/>
+                                    <constraint firstAttribute="trailing" secondItem="MAW-1s-KJt" secondAttribute="trailing" id="aYg-dz-SIS"/>
+                                    <constraint firstItem="MAW-1s-KJt" firstAttribute="centerX" secondItem="yHE-b4-rqW" secondAttribute="centerX" id="dcI-0h-oOy"/>
+                                    <constraint firstItem="ghM-wQ-Dzz" firstAttribute="centerY" secondItem="yHE-b4-rqW" secondAttribute="centerY" id="eAK-B7-f6v"/>
+                                    <constraint firstAttribute="bottom" secondItem="Eeb-EF-OXK" secondAttribute="bottom" id="lE1-DA-O95"/>
+                                    <constraint firstItem="ghM-wQ-Dzz" firstAttribute="centerX" secondItem="yHE-b4-rqW" secondAttribute="centerX" id="qNG-x5-8RA"/>
+                                    <constraint firstItem="MAW-1s-KJt" firstAttribute="top" secondItem="yHE-b4-rqW" secondAttribute="top" id="t3I-Pv-36G"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lGx-QG-AeI"/>
+                        <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lGx-QG-AeI" firstAttribute="trailing" secondItem="yHE-b4-rqW" secondAttribute="trailing" constant="60" id="36g-ER-7OE"/>
+                            <constraint firstItem="yHE-b4-rqW" firstAttribute="leading" secondItem="lGx-QG-AeI" secondAttribute="leading" constant="60" id="7K7-fX-nW3"/>
+                            <constraint firstItem="yHE-b4-rqW" firstAttribute="centerX" secondItem="bCU-AS-y4z" secondAttribute="centerX" id="MAF-Hv-27Z"/>
+                            <constraint firstItem="yHE-b4-rqW" firstAttribute="centerY" secondItem="bCU-AS-y4z" secondAttribute="centerY" id="tdX-WF-1I0"/>
+                            <constraint firstItem="yHE-b4-rqW" firstAttribute="centerX" secondItem="bCU-AS-y4z" secondAttribute="centerX" id="y3f-0B-HZa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aie-6b-HNs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1571" y="65"/>
         </scene>
     </scenes>
 </document>

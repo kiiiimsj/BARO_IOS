@@ -43,7 +43,7 @@ class MyBootPayController : UIViewController {
         super.viewDidLoad()
         
         getUserToken() // get user token from baro_server
-        Timer.scheduledTimer(timeInterval: 300.0, target: self, selector: #selector(self.closeAutomatical(sender:)), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.closeAutomatical(sender:)), userInfo: nil, repeats: false)
     }
     
     func getUserToken() {
@@ -313,6 +313,12 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
 }
 extension MyBootPayController {
     @objc func closeAutomatical(sender : Timer) {
-        self.dismiss(animated: false, completion: nil)
+        let pvc = self.presentingViewController
+        self.dismiss(animated: false){
+            let vc = UIStoryboard.init(name: "BootPay", bundle: nil).instantiateViewController(withIdentifier: "PayTimeOverDialog") as! PayTimeOverDialog
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
+            pvc?.present(vc, animated: false, completion: nil)
+        }
     }
 }
