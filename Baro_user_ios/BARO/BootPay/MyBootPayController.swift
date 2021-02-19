@@ -43,7 +43,7 @@ class MyBootPayController : UIViewController {
         super.viewDidLoad()
         
         getUserToken() // get user token from baro_server
-        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.closeAutomatical(sender:)), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 300.0, target: self, selector: #selector(self.closeAutomatical(sender:)), userInfo: nil, repeats: false)
     }
     
     func getUserToken() {
@@ -239,7 +239,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             for extraNon in order.nonEssentials {
                 var extraNonEssentials = Extras()
                 extraNonEssentials.extra_id = extraNon.value.Extra!.extra_id
-                extraNonEssentials.extra_count = extraNon.value.Extra!.extra_maxcount
+                extraNonEssentials.extra_count = extraNon.value.optionCount
                 extraNonEssentials.extra_name = extraNon.value.Extra!.extra_name
                 extraNonEssentials.extra_price = extraNon.value.Extra!.extra_price
                 sendServerOrderdata.extras.append(extraNonEssentials)
@@ -273,7 +273,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         let jsonString = String(data: jsonData!, encoding: .utf8)!
         
         param = convertStringToDictionary(text: jsonString)!
-        
+        print("drx",param)
         self.netWork.post(method: .post, param: param, url: self.urlMaker.orderInsertToServer) {
             json in
             if json["result"].boolValue {
