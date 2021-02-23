@@ -239,7 +239,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             for extraNon in order.nonEssentials {
                 var extraNonEssentials = Extras()
                 extraNonEssentials.extra_id = extraNon.value.Extra!.extra_id
-                extraNonEssentials.extra_count = extraNon.value.Extra!.extra_maxcount
+                extraNonEssentials.extra_count = extraNon.value.optionCount
                 extraNonEssentials.extra_name = extraNon.value.Extra!.extra_name
                 extraNonEssentials.extra_price = extraNon.value.Extra!.extra_price
                 sendServerOrderdata.extras.append(extraNonEssentials)
@@ -273,7 +273,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         let jsonString = String(data: jsonData!, encoding: .utf8)!
         
         param = convertStringToDictionary(text: jsonString)!
-        
+        print("drx",param)
         self.netWork.post(method: .post, param: param, url: self.urlMaker.orderInsertToServer) {
             json in
             if json["result"].boolValue {
@@ -313,6 +313,12 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
 }
 extension MyBootPayController {
     @objc func closeAutomatical(sender : Timer) {
-        self.dismiss(animated: false, completion: nil)
+        let pvc = self.presentingViewController
+        self.dismiss(animated: false){
+            let vc = UIStoryboard.init(name: "BootPay", bundle: nil).instantiateViewController(withIdentifier: "PayTimeOverDialog") as! PayTimeOverDialog
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
+            pvc?.present(vc, animated: false, completion: nil)
+        }
     }
 }
