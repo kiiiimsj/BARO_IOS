@@ -263,16 +263,19 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                 <rect key="frame" x="0.0" y="139" width="414" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf9-UV-lVA">
-                                        <rect key="frame" x="98" y="13" width="218.5" height="24"/>
+                                        <rect key="frame" x="80.5" y="13" width="253.5" height="24"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer_white" translatesAutoresizingMaskIntoConstraints="NO" id="PlC-77-MuW">
+                                                <rect key="frame" x="0.0" y="2" width="18" height="20"/>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARO 할인이" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjw-9S-7rS">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="24"/>
+                                                <rect key="frame" x="31" y="0.0" width="90" height="24"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 : 00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsa-Dr-leK">
-                                                <rect key="frame" x="95" y="0.0" width="50.5" height="24"/>
+                                                <rect key="frame" x="128" y="0.0" width="50.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -284,7 +287,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남았어요 !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lc-qr-RNt">
-                                                <rect key="frame" x="150.5" y="0.0" width="68" height="24"/>
+                                                <rect key="frame" x="185.5" y="0.0" width="68" height="24"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -292,13 +295,15 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="5lc-qr-RNt" secondAttribute="trailing" id="14a-vj-1Xp"/>
+                                            <constraint firstItem="Yjw-9S-7rS" firstAttribute="leading" secondItem="PlC-77-MuW" secondAttribute="trailing" constant="13" id="1hc-S7-jlo"/>
                                             <constraint firstAttribute="bottom" secondItem="qsa-Dr-leK" secondAttribute="bottom" id="31Y-bb-MnL"/>
-                                            <constraint firstItem="Yjw-9S-7rS" firstAttribute="leading" secondItem="Bf9-UV-lVA" secondAttribute="leading" id="4ja-7o-UzU"/>
                                             <constraint firstAttribute="bottom" secondItem="Yjw-9S-7rS" secondAttribute="bottom" id="Auo-8A-tEc"/>
+                                            <constraint firstItem="PlC-77-MuW" firstAttribute="centerY" secondItem="Bf9-UV-lVA" secondAttribute="centerY" id="KeO-OB-Gvt"/>
                                             <constraint firstItem="5lc-qr-RNt" firstAttribute="centerY" secondItem="qsa-Dr-leK" secondAttribute="centerY" id="UTI-6Y-6JS"/>
-                                            <constraint firstItem="5lc-qr-RNt" firstAttribute="leading" secondItem="qsa-Dr-leK" secondAttribute="trailing" constant="5" id="WYg-tt-BSY"/>
+                                            <constraint firstItem="5lc-qr-RNt" firstAttribute="leading" secondItem="qsa-Dr-leK" secondAttribute="trailing" constant="7" id="WYg-tt-BSY"/>
                                             <constraint firstItem="qsa-Dr-leK" firstAttribute="top" secondItem="Bf9-UV-lVA" secondAttribute="top" id="Xay-i9-aLn"/>
-                                            <constraint firstItem="qsa-Dr-leK" firstAttribute="leading" secondItem="Yjw-9S-7rS" secondAttribute="trailing" constant="5" id="mEh-FM-eBm"/>
+                                            <constraint firstItem="PlC-77-MuW" firstAttribute="leading" secondItem="Bf9-UV-lVA" secondAttribute="leading" id="XcI-fy-coz"/>
+                                            <constraint firstItem="qsa-Dr-leK" firstAttribute="leading" secondItem="Yjw-9S-7rS" secondAttribute="trailing" constant="7" id="mEh-FM-eBm"/>
                                             <constraint firstItem="Yjw-9S-7rS" firstAttribute="top" secondItem="Bf9-UV-lVA" secondAttribute="top" id="pij-k2-geA"/>
                                         </constraints>
                                     </view>
@@ -523,6 +528,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
         <image name="arrow_down" width="13" height="7.5"/>
         <image name="baro_logo" width="37.5" height="10"/>
         <image name="search" width="17" height="16.5"/>
+        <image name="timer_white" width="18" height="20"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>

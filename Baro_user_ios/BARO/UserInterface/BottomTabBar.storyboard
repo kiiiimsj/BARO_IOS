@@ -101,16 +101,19 @@
                                         <rect key="frame" x="0.0" y="50" width="360" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0y-8T-fOD">
-                                                <rect key="frame" x="78" y="0.0" width="204.5" height="50"/>
+                                                <rect key="frame" x="58" y="0.0" width="244.5" height="50"/>
                                                 <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer_white" translatesAutoresizingMaskIntoConstraints="NO" id="fUU-zV-EoX">
+                                                        <rect key="frame" x="0.0" y="15" width="18" height="20"/>
+                                                    </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARO 할인이" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKv-h8-OEW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="50"/>
+                                                        <rect key="frame" x="31" y="0.0" width="90.5" height="50"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Light" family="Noto Sans CJK KR" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 : 00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wwv-AP-R2f">
-                                                        <rect key="frame" x="90.5" y="15.5" width="49" height="19"/>
+                                                        <rect key="frame" x="128.5" y="15.5" width="49" height="19"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -122,7 +125,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남았어요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqG-1j-Tqr">
-                                                        <rect key="frame" x="144.5" y="15.5" width="60" height="19"/>
+                                                        <rect key="frame" x="184.5" y="15.5" width="60" height="19"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Light" family="Noto Sans CJK KR" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -132,11 +135,13 @@
                                                     <constraint firstItem="Wwv-AP-R2f" firstAttribute="centerY" secondItem="t0y-8T-fOD" secondAttribute="centerY" id="13P-Ud-ebl"/>
                                                     <constraint firstItem="mqG-1j-Tqr" firstAttribute="centerY" secondItem="t0y-8T-fOD" secondAttribute="centerY" id="98Q-sc-SJm"/>
                                                     <constraint firstAttribute="bottom" secondItem="RKv-h8-OEW" secondAttribute="bottom" id="AV5-Gh-7gK"/>
-                                                    <constraint firstItem="Wwv-AP-R2f" firstAttribute="leading" secondItem="RKv-h8-OEW" secondAttribute="trailing" id="a4m-Hx-pLZ"/>
+                                                    <constraint firstItem="fUU-zV-EoX" firstAttribute="centerY" secondItem="t0y-8T-fOD" secondAttribute="centerY" id="VFB-Ub-PZ3"/>
+                                                    <constraint firstItem="fUU-zV-EoX" firstAttribute="leading" secondItem="t0y-8T-fOD" secondAttribute="leading" id="Woj-Ex-2Fq"/>
+                                                    <constraint firstItem="Wwv-AP-R2f" firstAttribute="leading" secondItem="RKv-h8-OEW" secondAttribute="trailing" constant="7" id="a4m-Hx-pLZ"/>
+                                                    <constraint firstItem="RKv-h8-OEW" firstAttribute="leading" secondItem="fUU-zV-EoX" secondAttribute="trailing" constant="13" id="gIr-yg-vR7"/>
                                                     <constraint firstItem="RKv-h8-OEW" firstAttribute="top" secondItem="t0y-8T-fOD" secondAttribute="top" id="gLN-sq-0wV"/>
                                                     <constraint firstAttribute="trailing" secondItem="mqG-1j-Tqr" secondAttribute="trailing" id="kIT-Or-OgM"/>
-                                                    <constraint firstItem="mqG-1j-Tqr" firstAttribute="leading" secondItem="Wwv-AP-R2f" secondAttribute="trailing" constant="5" id="mH7-zc-TI0"/>
-                                                    <constraint firstItem="RKv-h8-OEW" firstAttribute="leading" secondItem="t0y-8T-fOD" secondAttribute="leading" id="prI-lq-B75"/>
+                                                    <constraint firstItem="mqG-1j-Tqr" firstAttribute="leading" secondItem="Wwv-AP-R2f" secondAttribute="trailing" constant="7" id="mH7-zc-TI0"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -389,6 +394,7 @@
         <image name="bottom_order_history_off" width="15" height="16"/>
         <image name="bottom_order_status_off" width="16" height="16"/>
         <image name="favorite_empty" width="17.5" height="16"/>
+        <image name="timer_white" width="18" height="20"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="mainColor">
             <color red="0.51372549019607838" green="0.20000000000000001" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
