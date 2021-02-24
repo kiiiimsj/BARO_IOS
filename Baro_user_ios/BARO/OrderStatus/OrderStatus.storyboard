@@ -442,8 +442,8 @@
                                                             <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3e-cl-gt7">
-                                                            <rect key="frame" x="273" y="140.5" width="43" height="19.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4500원" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3e-cl-gt7">
+                                                            <rect key="frame" x="279" y="140.5" width="37" height="21"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
                                                             <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -459,6 +459,10 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="polygon" id="0bR-x3-OTj">
+                                                            <rect key="frame" x="263" y="144" width="9" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWV-Oo-l0Q">
                                                             <rect key="frame" x="0.0" y="0.0" width="332" height="0.5"/>
                                                             <color key="backgroundColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -466,16 +470,28 @@
                                                                 <constraint firstAttribute="height" constant="0.5" id="Vcu-Gh-Dp0"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7SG-TG-NsN">
-                                                            <rect key="frame" x="220" y="140.5" width="43" height="19.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="합계 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfV-Qb-JmY" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                                            <rect key="frame" x="174.5" y="140.5" width="31.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
-                                                            <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                                    <real key="value" value="-0.029999999999999999"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7SG-TG-NsN">
+                                                            <rect key="frame" x="213" y="140.5" width="43" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                                            <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="0.84870158450704225" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="zeQ-wT-4Jm" secondAttribute="trailing" constant="16" id="1Ru-Re-TRv"/>
+                                                        <constraint firstItem="7SG-TG-NsN" firstAttribute="leading" secondItem="JfV-Qb-JmY" secondAttribute="trailing" constant="7" id="4BD-1K-6Og"/>
                                                         <constraint firstItem="h3e-cl-gt7" firstAttribute="top" secondItem="7SG-TG-NsN" secondAttribute="top" id="4ad-tM-0Os"/>
                                                         <constraint firstAttribute="trailing" secondItem="h3e-cl-gt7" secondAttribute="trailing" constant="16" id="7CU-rt-Zyw"/>
                                                         <constraint firstAttribute="trailing" secondItem="KQV-rT-n4c" secondAttribute="trailing" id="AhH-uB-1Jl"/>
@@ -485,17 +501,20 @@
                                                         <constraint firstItem="cWV-Oo-l0Q" firstAttribute="top" secondItem="hda-52-ktY" secondAttribute="top" id="I82-mw-PqC"/>
                                                         <constraint firstItem="Yrg-g2-pSh" firstAttribute="leading" secondItem="3E0-DC-ep4" secondAttribute="trailing" constant="8" symbolic="YES" id="K0g-Wm-jG3"/>
                                                         <constraint firstItem="tVG-DM-8c2" firstAttribute="top" secondItem="hda-52-ktY" secondAttribute="top" constant="8" id="N8b-Pi-Tdo"/>
+                                                        <constraint firstItem="0bR-x3-OTj" firstAttribute="centerY" secondItem="h3e-cl-gt7" secondAttribute="centerY" id="P9L-ok-N4d"/>
                                                         <constraint firstItem="ZwG-qh-fE8" firstAttribute="leading" secondItem="Yrg-g2-pSh" secondAttribute="trailing" constant="8" id="Pdg-SL-JOf"/>
                                                         <constraint firstItem="7SG-TG-NsN" firstAttribute="centerY" secondItem="3E0-DC-ep4" secondAttribute="centerY" id="UW9-Fp-2uq"/>
                                                         <constraint firstItem="3E0-DC-ep4" firstAttribute="top" secondItem="KQV-rT-n4c" secondAttribute="bottom" constant="8" symbolic="YES" id="aP1-Qw-gZz"/>
+                                                        <constraint firstItem="0bR-x3-OTj" firstAttribute="leading" secondItem="7SG-TG-NsN" secondAttribute="trailing" constant="7" id="cAs-8l-L8I"/>
                                                         <constraint firstItem="ZwG-qh-fE8" firstAttribute="centerY" secondItem="3E0-DC-ep4" secondAttribute="centerY" id="fc6-tJ-gj8"/>
+                                                        <constraint firstItem="h3e-cl-gt7" firstAttribute="leading" secondItem="0bR-x3-OTj" secondAttribute="trailing" constant="7" id="fha-pP-YxC"/>
                                                         <constraint firstItem="3E0-DC-ep4" firstAttribute="leading" secondItem="hda-52-ktY" secondAttribute="leading" constant="16" id="ic2-Et-jJk"/>
                                                         <constraint firstItem="tVG-DM-8c2" firstAttribute="leading" secondItem="hda-52-ktY" secondAttribute="leading" constant="17" id="jDD-qV-4uk"/>
                                                         <constraint firstItem="cWV-Oo-l0Q" firstAttribute="leading" secondItem="hda-52-ktY" secondAttribute="leading" id="nbt-dc-57Z"/>
                                                         <constraint firstItem="KQV-rT-n4c" firstAttribute="leading" secondItem="hda-52-ktY" secondAttribute="leading" id="nsK-KW-ZC5"/>
                                                         <constraint firstItem="KQV-rT-n4c" firstAttribute="top" secondItem="tVG-DM-8c2" secondAttribute="bottom" constant="9" id="oOg-1I-7qM"/>
                                                         <constraint firstAttribute="bottom" secondItem="3E0-DC-ep4" secondAttribute="bottom" constant="8" id="p03-TZ-Y3k"/>
-                                                        <constraint firstItem="h3e-cl-gt7" firstAttribute="leading" secondItem="7SG-TG-NsN" secondAttribute="trailing" constant="10" id="xeg-uM-U08"/>
+                                                        <constraint firstItem="JfV-Qb-JmY" firstAttribute="centerY" secondItem="7SG-TG-NsN" secondAttribute="centerY" id="tge-3S-qd2"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -662,6 +681,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="polygon" width="7" height="7"/>
         <image name="radio_off" width="16" height="16"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

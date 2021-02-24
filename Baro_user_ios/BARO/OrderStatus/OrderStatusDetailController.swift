@@ -113,7 +113,7 @@ extension OrderStatusDetailController : UICollectionViewDelegate, UICollectionVi
         let menu_one_total_price = (orderList.menu_defaultprice + extra_total)
         cell.oneMenuTotalPrice.text = String(orderList.order_count * menu_one_total_price) + "원"
         cell.oneMenuTotalPrice.attributedText = cell.oneMenuTotalPrice.text?.strikeThrough()
-        cell.realPrice.text = "합계 : " + String((orderList.order_count * menu_one_total_price).applyDiscountRate(discount_rate: discount_rate)) + "원"
+        cell.realPrice.text = String((orderList.order_count * menu_one_total_price).applyDiscountRate(discount_rate: discount_rate)) + "원"
         cell.extraList = orderList.OrderStatusDetailExtra
         cell.optionContainEachPrice.text =  String(menu_one_total_price) + "원"
         cell.eachPrice.text = String(orderList.menu_defaultprice) + "원"

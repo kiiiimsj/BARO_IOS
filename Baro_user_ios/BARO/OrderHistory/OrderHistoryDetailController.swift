@@ -119,7 +119,7 @@ extension OrderHistoryDetailController : UICollectionViewDelegate, UICollectionV
         cell.menu_count.text = String(orderList.order_count)
         cell.menu_total_price.text = String(menu_one_total_price * orderList.order_count)
         cell.menu_total_price.attributedText = cell.menu_total_price.text?.strikeThrough()
-        cell.realPrice.text = "합계 : " + String((menu_one_total_price * orderList.order_count).applyDiscountRate(discount_rate: discount_rate))  + "원"
+        cell.realPrice.text = String((menu_one_total_price * orderList.order_count).applyDiscountRate(discount_rate: discount_rate))  + "원"
         cell.extraList = orderList.OrderHistoryDetailExtra
         
         cell.collectionView.delegate = cell.self
