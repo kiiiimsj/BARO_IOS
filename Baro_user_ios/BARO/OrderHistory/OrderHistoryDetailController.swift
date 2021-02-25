@@ -124,13 +124,16 @@ extension OrderHistoryDetailController : UICollectionViewDelegate, UICollectionV
         
         cell.collectionView.delegate = cell.self
         cell.collectionView.dataSource = cell.self
+        let extraCVHeightContraint = cell.collectionView.heightAnchor.constraint(
+            equalToConstant: CGFloat((orderList.OrderHistoryDetailExtra.count) * 20))
+        extraCVHeightContraint.isActive = true
         cell.collectionView.reloadData()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let orderList = orderHistoryDetailList[indexPath.item]
-        return CGSize(width: collectionView.frame.width, height: CGFloat(orderList.OrderHistoryDetailExtra.count) * 20 + 70)
+        return CGSize(width: collectionView.frame.width, height: CGFloat(orderList.OrderHistoryDetailExtra.count) * 20 + 60)
     }
     
 }

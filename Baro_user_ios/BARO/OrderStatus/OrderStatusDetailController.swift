@@ -121,7 +121,9 @@ extension OrderStatusDetailController : UICollectionViewDelegate, UICollectionVi
         cell.collectionView.dataSource = cell.self
         cell.collectionView.reloadData()
      //   cell.clickListener = self
-
+        let extraCVHeightContraint = cell.collectionView.heightAnchor.constraint(
+            equalToConstant: CGFloat((orderList.OrderStatusDetailExtra.count) * 20))
+        extraCVHeightContraint.isActive = true
         return cell
     }
     
@@ -130,7 +132,7 @@ extension OrderStatusDetailController : UICollectionViewDelegate, UICollectionVi
         
         
     //    if self.extraOpen {
-        return CGSize(width: collectionView.frame.width, height: CGFloat(orderList.OrderStatusDetailExtra.count) * 20 + 70)
+        return CGSize(width: collectionView.frame.width, height: CGFloat(orderList.OrderStatusDetailExtra.count * 20 + 60))
    //     }
 //        else {
 //            return CGSize(width: self.view.frame.width * 0.8, height: 0)

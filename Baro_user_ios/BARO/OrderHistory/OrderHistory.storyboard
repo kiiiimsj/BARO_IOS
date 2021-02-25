@@ -239,31 +239,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="334" height="226"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아메리카노" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPR-3B-SMW" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                            <rect key="frame" x="16" y="16" width="55.5" height="18"/>
-                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="12"/>
-                                                            <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                                    <real key="value" value="-0.029999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pG-M7-LhN" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                            <rect key="frame" x="277" y="16" width="41" height="18"/>
-                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
-                                                            <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                                    <real key="value" value="-0.029999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZgK-Jw-yuI">
-                                                            <rect key="frame" x="8" y="34" width="318" height="152.5"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <rect key="frame" x="8" y="30.5" width="318" height="165.5"/>
                                                             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="vCV-n8-sCR">
                                                                 <size key="itemSize" width="317" height="44"/>
                                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -327,39 +304,6 @@
                                                                 </collectionViewCell>
                                                             </cells>
                                                         </collectionView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KJ-qK-3is" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                            <rect key="frame" x="16" y="196.5" width="43" height="19.5"/>
-                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
-                                                            <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                                    <real key="value" value="-0.029999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEC-4U-AtZ" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                            <rect key="frame" x="67" y="196.5" width="8" height="19.5"/>
-                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                                    <real key="value" value="-0.029999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPM-X4-Q20" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                            <rect key="frame" x="83" y="196.5" width="20" height="19.5"/>
-                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
-                                                            <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                                    <real key="value" value="-0.029999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFW-ZR-2AX">
                                                             <rect key="frame" x="0.0" y="0.0" width="334" height="0.5"/>
                                                             <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -367,74 +311,146 @@
                                                                 <constraint firstAttribute="height" constant="0.5" id="Lr6-0u-nch"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6g4-0w-7A2" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                            <rect key="frame" x="273.5" y="196.5" width="50.5" height="19.5"/>
-                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
-                                                            <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                                    <real key="value" value="-0.029999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="polygon" translatesAutoresizingMaskIntoConstraints="NO" id="hpZ-lC-4Rx">
-                                                            <rect key="frame" x="259.5" y="203" width="7" height="7"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="합계 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTZ-r0-J5M" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                            <rect key="frame" x="163.5" y="196.5" width="31.5" height="20"/>
-                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
-                                                            <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                                    <real key="value" value="-0.029999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRZ-qZ-u4a" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                            <rect key="frame" x="202" y="196.5" width="50.5" height="19.5"/>
-                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
-                                                            <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="0.84870158450704225" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                                    <real key="value" value="-0.029999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7b6-qT-awM">
+                                                            <rect key="frame" x="0.0" y="0.5" width="334" height="30"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아메리카노" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPR-3B-SMW" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                                                    <rect key="frame" x="16" y="6" width="55.5" height="18"/>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="12"/>
+                                                                    <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                                            <real key="value" value="-0.029999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pG-M7-LhN" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                                                    <rect key="frame" x="277" y="7" width="41" height="16.5"/>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
+                                                                    <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                                            <real key="value" value="-0.029999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="8pG-M7-LhN" secondAttribute="trailing" constant="16" id="4CV-tE-oVf"/>
+                                                                <constraint firstItem="GPR-3B-SMW" firstAttribute="leading" secondItem="7b6-qT-awM" secondAttribute="leading" constant="16" id="555-BH-qUB"/>
+                                                                <constraint firstItem="GPR-3B-SMW" firstAttribute="centerY" secondItem="7b6-qT-awM" secondAttribute="centerY" id="fPF-gf-Odd"/>
+                                                                <constraint firstAttribute="height" constant="30" id="tUe-rm-lxE"/>
+                                                                <constraint firstItem="8pG-M7-LhN" firstAttribute="centerY" secondItem="7b6-qT-awM" secondAttribute="centerY" id="xYI-ca-Tvw"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TnL-AN-ldZ">
+                                                            <rect key="frame" x="0.0" y="196" width="334" height="30"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KJ-qK-3is" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                                                    <rect key="frame" x="16" y="5.5" width="43" height="19.5"/>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                                                    <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                                            <real key="value" value="-0.029999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEC-4U-AtZ" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                                                    <rect key="frame" x="67" y="5.5" width="8" height="19.5"/>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                                            <real key="value" value="-0.029999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPM-X4-Q20" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                                                    <rect key="frame" x="83" y="5.5" width="20" height="19.5"/>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                                                    <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                                            <real key="value" value="-0.029999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6g4-0w-7A2" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                                                    <rect key="frame" x="267.5" y="5.5" width="50.5" height="19.5"/>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                                                    <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                                            <real key="value" value="-0.029999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_triangle_small" translatesAutoresizingMaskIntoConstraints="NO" id="hpZ-lC-4Rx">
+                                                                    <rect key="frame" x="253.5" y="11.5" width="7" height="7"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRZ-qZ-u4a" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                                                    <rect key="frame" x="196" y="5.5" width="50.5" height="19.5"/>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                                                    <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="0.84870158450704225" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                                            <real key="value" value="-0.029999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="합계 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTZ-r0-J5M" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
+                                                                    <rect key="frame" x="157.5" y="5" width="31.5" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
+                                                                    <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                                            <real key="value" value="-0.029999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="pPM-X4-Q20" firstAttribute="leading" secondItem="MEC-4U-AtZ" secondAttribute="trailing" constant="8" id="0fP-L4-PVA"/>
+                                                                <constraint firstItem="hpZ-lC-4Rx" firstAttribute="leading" secondItem="GRZ-qZ-u4a" secondAttribute="trailing" constant="7" id="CRf-AH-TJm"/>
+                                                                <constraint firstItem="6g4-0w-7A2" firstAttribute="leading" secondItem="hpZ-lC-4Rx" secondAttribute="trailing" constant="7" id="GWh-Nf-uat"/>
+                                                                <constraint firstItem="MEC-4U-AtZ" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="GsC-4V-9wu"/>
+                                                                <constraint firstItem="MEC-4U-AtZ" firstAttribute="leading" secondItem="9KJ-qK-3is" secondAttribute="trailing" constant="8" id="IQD-6n-nUU"/>
+                                                                <constraint firstItem="GRZ-qZ-u4a" firstAttribute="leading" secondItem="GTZ-r0-J5M" secondAttribute="trailing" constant="7" id="PWK-Mb-yhf"/>
+                                                                <constraint firstAttribute="trailing" secondItem="6g4-0w-7A2" secondAttribute="trailing" constant="16" id="Scs-2D-60R"/>
+                                                                <constraint firstItem="hpZ-lC-4Rx" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="UuN-zQ-6dy"/>
+                                                                <constraint firstItem="6g4-0w-7A2" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="XiQ-fv-RuZ"/>
+                                                                <constraint firstItem="9KJ-qK-3is" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="cSG-v7-IqU"/>
+                                                                <constraint firstItem="pPM-X4-Q20" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="e2V-Hj-ynC"/>
+                                                                <constraint firstItem="9KJ-qK-3is" firstAttribute="leading" secondItem="TnL-AN-ldZ" secondAttribute="leading" constant="16" id="e7p-u0-5lq"/>
+                                                                <constraint firstAttribute="height" constant="30" id="fvF-wq-yXv"/>
+                                                                <constraint firstItem="GTZ-r0-J5M" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="gW3-MF-Ud6"/>
+                                                                <constraint firstItem="GRZ-qZ-u4a" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="tKP-eO-4KX"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="8pG-M7-LhN" secondAttribute="trailing" constant="16" id="0c9-FL-rrg"/>
-                                                        <constraint firstItem="GPR-3B-SMW" firstAttribute="leading" secondItem="WuO-KF-Qc9" secondAttribute="leading" constant="16" id="49f-zM-0pq"/>
-                                                        <constraint firstAttribute="trailing" secondItem="6g4-0w-7A2" secondAttribute="trailing" constant="10" id="8sS-D5-WU5"/>
-                                                        <constraint firstItem="8pG-M7-LhN" firstAttribute="top" secondItem="WuO-KF-Qc9" secondAttribute="top" constant="16" id="Czg-V3-316"/>
-                                                        <constraint firstItem="GRZ-qZ-u4a" firstAttribute="top" secondItem="ZgK-Jw-yuI" secondAttribute="bottom" constant="10" id="HGt-Ry-eAX"/>
-                                                        <constraint firstItem="ZgK-Jw-yuI" firstAttribute="top" secondItem="8pG-M7-LhN" secondAttribute="bottom" id="HeA-zT-8qz"/>
-                                                        <constraint firstAttribute="bottom" secondItem="9KJ-qK-3is" secondAttribute="bottom" constant="10" id="IEs-DB-nQp"/>
-                                                        <constraint firstItem="GPR-3B-SMW" firstAttribute="top" secondItem="WuO-KF-Qc9" secondAttribute="top" constant="16" id="Ils-Mj-f28"/>
-                                                        <constraint firstItem="hpZ-lC-4Rx" firstAttribute="centerY" secondItem="6g4-0w-7A2" secondAttribute="centerY" id="KPV-iC-m8j"/>
-                                                        <constraint firstAttribute="bottom" secondItem="GRZ-qZ-u4a" secondAttribute="bottom" constant="10" id="RWs-1t-xEq"/>
-                                                        <constraint firstAttribute="bottom" secondItem="6g4-0w-7A2" secondAttribute="bottom" constant="10" id="S1f-Ts-OQ1"/>
-                                                        <constraint firstItem="6g4-0w-7A2" firstAttribute="top" secondItem="ZgK-Jw-yuI" secondAttribute="bottom" constant="10" id="U4f-Ca-nmD"/>
-                                                        <constraint firstItem="GTZ-r0-J5M" firstAttribute="centerY" secondItem="GRZ-qZ-u4a" secondAttribute="centerY" id="Xav-KN-Ugf"/>
-                                                        <constraint firstItem="hpZ-lC-4Rx" firstAttribute="leading" secondItem="GRZ-qZ-u4a" secondAttribute="trailing" constant="7" id="ZxF-m5-qJO"/>
-                                                        <constraint firstItem="MEC-4U-AtZ" firstAttribute="leading" secondItem="9KJ-qK-3is" secondAttribute="trailing" constant="8" symbolic="YES" id="ZyS-G3-JJ2"/>
+                                                        <constraint firstAttribute="trailing" secondItem="7b6-qT-awM" secondAttribute="trailing" id="9pn-4E-zXI"/>
+                                                        <constraint firstItem="TnL-AN-ldZ" firstAttribute="top" secondItem="ZgK-Jw-yuI" secondAttribute="bottom" id="CpB-wL-3Rs"/>
+                                                        <constraint firstAttribute="bottom" secondItem="TnL-AN-ldZ" secondAttribute="bottom" id="STP-9R-l3u"/>
+                                                        <constraint firstItem="7b6-qT-awM" firstAttribute="top" secondItem="uFW-ZR-2AX" secondAttribute="bottom" id="ZHx-25-Ki1"/>
                                                         <constraint firstItem="uFW-ZR-2AX" firstAttribute="leading" secondItem="WuO-KF-Qc9" secondAttribute="leading" id="bIU-yM-ou4"/>
-                                                        <constraint firstItem="GRZ-qZ-u4a" firstAttribute="leading" secondItem="GTZ-r0-J5M" secondAttribute="trailing" constant="7" id="bif-Wx-kUJ"/>
                                                         <constraint firstAttribute="trailing" secondItem="ZgK-Jw-yuI" secondAttribute="trailing" constant="8" id="bs9-Em-BXk"/>
-                                                        <constraint firstItem="9KJ-qK-3is" firstAttribute="top" secondItem="ZgK-Jw-yuI" secondAttribute="bottom" constant="10" id="cHj-ZA-6UK"/>
-                                                        <constraint firstItem="pPM-X4-Q20" firstAttribute="top" secondItem="ZgK-Jw-yuI" secondAttribute="bottom" constant="10" id="cpR-Ni-bcK"/>
-                                                        <constraint firstItem="ZgK-Jw-yuI" firstAttribute="top" secondItem="GPR-3B-SMW" secondAttribute="bottom" id="eVD-Q7-cmI"/>
+                                                        <constraint firstItem="7b6-qT-awM" firstAttribute="leading" secondItem="WuO-KF-Qc9" secondAttribute="leading" id="cmc-NC-9HU"/>
+                                                        <constraint firstItem="TnL-AN-ldZ" firstAttribute="leading" secondItem="WuO-KF-Qc9" secondAttribute="leading" id="dKh-Ih-llj"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TnL-AN-ldZ" secondAttribute="trailing" id="dvO-bf-DPm"/>
+                                                        <constraint firstItem="ZgK-Jw-yuI" firstAttribute="top" secondItem="7b6-qT-awM" secondAttribute="bottom" id="fFc-cl-8NI"/>
                                                         <constraint firstItem="ZgK-Jw-yuI" firstAttribute="leading" secondItem="WuO-KF-Qc9" secondAttribute="leading" constant="8" id="gZd-oj-PgJ"/>
-                                                        <constraint firstAttribute="bottom" secondItem="MEC-4U-AtZ" secondAttribute="bottom" constant="10" id="hIN-Zw-nho"/>
-                                                        <constraint firstItem="pPM-X4-Q20" firstAttribute="leading" secondItem="MEC-4U-AtZ" secondAttribute="trailing" constant="8" symbolic="YES" id="qnn-M8-RCP"/>
                                                         <constraint firstAttribute="trailing" secondItem="uFW-ZR-2AX" secondAttribute="trailing" id="rwM-5V-Hzz"/>
-                                                        <constraint firstAttribute="bottom" secondItem="pPM-X4-Q20" secondAttribute="bottom" constant="10" id="uFR-M4-WBt"/>
-                                                        <constraint firstItem="6g4-0w-7A2" firstAttribute="leading" secondItem="hpZ-lC-4Rx" secondAttribute="trailing" constant="7" id="v5f-lS-ILE"/>
-                                                        <constraint firstItem="MEC-4U-AtZ" firstAttribute="top" secondItem="ZgK-Jw-yuI" secondAttribute="bottom" constant="10" id="wvt-dM-Dem"/>
-                                                        <constraint firstItem="9KJ-qK-3is" firstAttribute="leading" secondItem="WuO-KF-Qc9" secondAttribute="leading" constant="16" id="xZm-on-Cpl"/>
                                                         <constraint firstItem="uFW-ZR-2AX" firstAttribute="top" secondItem="WuO-KF-Qc9" secondAttribute="top" id="xnI-hr-56z"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
@@ -563,7 +579,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="polygon" width="7" height="7"/>
+        <image name="arrow_triangle_small" width="7" height="7"/>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
