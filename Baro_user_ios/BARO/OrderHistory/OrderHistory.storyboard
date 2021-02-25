@@ -406,17 +406,6 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="합계 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTZ-r0-J5M" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                                    <rect key="frame" x="157.5" y="5" width="31.5" height="20"/>
-                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
-                                                                    <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                                            <real key="value" value="-0.029999999999999999"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </label>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="pPM-X4-Q20" firstAttribute="leading" secondItem="MEC-4U-AtZ" secondAttribute="trailing" constant="8" id="0fP-L4-PVA"/>
@@ -424,7 +413,6 @@
                                                                 <constraint firstItem="6g4-0w-7A2" firstAttribute="leading" secondItem="hpZ-lC-4Rx" secondAttribute="trailing" constant="7" id="GWh-Nf-uat"/>
                                                                 <constraint firstItem="MEC-4U-AtZ" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="GsC-4V-9wu"/>
                                                                 <constraint firstItem="MEC-4U-AtZ" firstAttribute="leading" secondItem="9KJ-qK-3is" secondAttribute="trailing" constant="8" id="IQD-6n-nUU"/>
-                                                                <constraint firstItem="GRZ-qZ-u4a" firstAttribute="leading" secondItem="GTZ-r0-J5M" secondAttribute="trailing" constant="7" id="PWK-Mb-yhf"/>
                                                                 <constraint firstAttribute="trailing" secondItem="6g4-0w-7A2" secondAttribute="trailing" constant="16" id="Scs-2D-60R"/>
                                                                 <constraint firstItem="hpZ-lC-4Rx" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="UuN-zQ-6dy"/>
                                                                 <constraint firstItem="6g4-0w-7A2" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="XiQ-fv-RuZ"/>
@@ -432,7 +420,6 @@
                                                                 <constraint firstItem="pPM-X4-Q20" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="e2V-Hj-ynC"/>
                                                                 <constraint firstItem="9KJ-qK-3is" firstAttribute="leading" secondItem="TnL-AN-ldZ" secondAttribute="leading" constant="16" id="e7p-u0-5lq"/>
                                                                 <constraint firstAttribute="height" constant="30" id="fvF-wq-yXv"/>
-                                                                <constraint firstItem="GTZ-r0-J5M" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="gW3-MF-Ud6"/>
                                                                 <constraint firstItem="GRZ-qZ-u4a" firstAttribute="centerY" secondItem="TnL-AN-ldZ" secondAttribute="centerY" id="tKP-eO-4KX"/>
                                                             </constraints>
                                                         </view>

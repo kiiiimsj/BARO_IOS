@@ -452,11 +452,7 @@
                                                             <rect key="frame" x="0.0" y="138" width="332" height="30"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500원" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E0-DC-ep4" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                                    <rect key="frame" x="16" y="6" width="43" height="18"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="6Ob-Hq-9pY"/>
-                                                                        <constraint firstAttribute="height" constant="18" id="mNk-7K-S4P"/>
-                                                                    </constraints>
+                                                                    <rect key="frame" x="16" y="5.5" width="43" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
                                                                     <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -485,39 +481,25 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7SG-TG-NsN">
-                                                                    <rect key="frame" x="207" y="5.5" width="43" height="19.5"/>
+                                                                    <rect key="frame" x="209" y="5.5" width="43" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
                                                                     <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="0.84870158450704225" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="합계 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfV-Qb-JmY" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                                    <rect key="frame" x="168.5" y="5" width="31.5" height="20"/>
-                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
-                                                                    <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                                            <real key="value" value="-0.029999999999999999"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_triangle_small" id="0bR-x3-OTj">
-                                                                    <rect key="frame" x="257" y="8" width="9" height="14"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_triangle_small" translatesAutoresizingMaskIntoConstraints="NO" id="Gar-7m-o2g">
+                                                                    <rect key="frame" x="259" y="11.5" width="7" height="7"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="h3e-cl-gt7" secondAttribute="trailing" constant="16" id="4S7-xj-mVo"/>
-                                                                <constraint firstItem="JfV-Qb-JmY" firstAttribute="centerY" secondItem="fkp-6B-HmI" secondAttribute="centerY" id="B5R-pr-4Jh"/>
                                                                 <constraint firstItem="3E0-DC-ep4" firstAttribute="centerY" secondItem="fkp-6B-HmI" secondAttribute="centerY" id="BkJ-tQ-BCg"/>
+                                                                <constraint firstItem="Gar-7m-o2g" firstAttribute="centerY" secondItem="fkp-6B-HmI" secondAttribute="centerY" id="DnP-uD-GWI"/>
                                                                 <constraint firstItem="3E0-DC-ep4" firstAttribute="leading" secondItem="fkp-6B-HmI" secondAttribute="leading" constant="16" id="L7t-7z-a8c"/>
-                                                                <constraint firstItem="0bR-x3-OTj" firstAttribute="centerY" secondItem="h3e-cl-gt7" secondAttribute="centerY" id="Lxm-So-JLn"/>
                                                                 <constraint firstAttribute="height" constant="30" id="N9h-dF-tzN"/>
-                                                                <constraint firstItem="7SG-TG-NsN" firstAttribute="leading" secondItem="JfV-Qb-JmY" secondAttribute="trailing" constant="7" id="Qe1-uC-7JO"/>
+                                                                <constraint firstItem="Gar-7m-o2g" firstAttribute="leading" secondItem="7SG-TG-NsN" secondAttribute="trailing" constant="7" id="OCW-ss-YoG"/>
                                                                 <constraint firstItem="Yrg-g2-pSh" firstAttribute="centerY" secondItem="fkp-6B-HmI" secondAttribute="centerY" id="Uf7-Ed-gKo"/>
-                                                                <constraint firstItem="0bR-x3-OTj" firstAttribute="leading" secondItem="7SG-TG-NsN" secondAttribute="trailing" constant="7" id="Yst-c2-WJc"/>
+                                                                <constraint firstItem="h3e-cl-gt7" firstAttribute="leading" secondItem="Gar-7m-o2g" secondAttribute="trailing" constant="7" id="Yu3-W4-sJd"/>
                                                                 <constraint firstItem="7SG-TG-NsN" firstAttribute="centerY" secondItem="fkp-6B-HmI" secondAttribute="centerY" id="hVA-BX-aw1"/>
-                                                                <constraint firstItem="h3e-cl-gt7" firstAttribute="leading" secondItem="0bR-x3-OTj" secondAttribute="trailing" constant="7" id="hpO-8R-MWu"/>
                                                                 <constraint firstItem="h3e-cl-gt7" firstAttribute="centerY" secondItem="fkp-6B-HmI" secondAttribute="centerY" id="lud-bi-52Y"/>
                                                                 <constraint firstItem="ZwG-qh-fE8" firstAttribute="centerY" secondItem="fkp-6B-HmI" secondAttribute="centerY" id="m2H-A6-kgv"/>
                                                                 <constraint firstItem="ZwG-qh-fE8" firstAttribute="leading" secondItem="Yrg-g2-pSh" secondAttribute="trailing" constant="8" id="vmi-Wb-cfG"/>

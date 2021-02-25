@@ -436,6 +436,7 @@ class BottomTabBarController: UIViewController {
                     if (controllerData.typeCode == "KOREAN") {
                         topBarViewControllerTitle.text = "한식"
                     }
+                    minimizeTopView()
                 case orderDetailControllerIdentifier:
                     topBarViewControllerTitle.isHidden = false
                     topBarBackBtn.isHidden = false

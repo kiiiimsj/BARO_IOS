@@ -132,7 +132,7 @@ extension OrderStatusDetailController : UICollectionViewDelegate, UICollectionVi
         
         
     //    if self.extraOpen {
-        return CGSize(width: collectionView.frame.width, height: CGFloat(orderList.OrderStatusDetailExtra.count * 20 + 60))
+        return CGSize(width: self.collectionView.frame.width, height: CGFloat(orderList.OrderStatusDetailExtra.count * 20 + 60))
    //     }
 //        else {
 //            return CGSize(width: self.view.frame.width * 0.8, height: 0)
