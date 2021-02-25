@@ -61,7 +61,8 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         self.isFavoriteStore()
         bottomTabBarInfo.topViewDelegate = self
         UIView.animate(withDuration: 0.0) {
-            self.tabIndecator.transform = CGAffineTransform(rotationAngle: 0.0)
+//            self.tabIndecator.transform = CGAffineTransform(rotationAngle: 0.0)
+            self.tabIndecator.transform = CGAffineTransform(translationX: 0.0, y: self.menuButton.bounds.maxY)
         }
         AboutStore.this = self
         
@@ -111,8 +112,8 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     @IBAction func menuButtonClick() {
         menuButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
         storeInfoButton.tintColor = UIColor(red: 196/255.0, green: 196/255.0, blue: 196/255.0, alpha: 1)
-        UIView.animate(withDuration: 0.7) {
-            self.tabIndecator.transform = CGAffineTransform(translationX: 0.0, y: self.tabIndecator.bounds.height - 2)
+        UIView.animate(withDuration: 0.3) {
+            self.tabIndecator.transform = CGAffineTransform(translationX: 0.0, y: self.menuButton.bounds.maxY)
         }
         changeVC(index: 0)
     }
@@ -120,8 +121,9 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     @IBAction func storeInfoButtonClick() {
         storeInfoButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
         menuButton.tintColor = UIColor(red: 196/255.0, green: 196/255.0, blue: 196/255.0, alpha: 1)
-        UIView.animate(withDuration: 0.7) {
-            self.tabIndecator.transform = CGAffineTransform(translationX: self.storeInfoButton.bounds.width, y: self.tabIndecator.bounds.height - 2)
+        UIView.animate(withDuration: 0.3 ) {
+            self.tabIndecator.transform = CGAffineTransform(translationX: self.storeInfoButton.bounds.width, y:
+                                                                self.menuButton.bounds.maxY)
         }
         changeVC(index: 1)
     }
