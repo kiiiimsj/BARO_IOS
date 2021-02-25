@@ -357,7 +357,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     func toStoreListUseBottomBar(id : Int,discount_rate : Int) {
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
-        var data = ["id" : id,"discount_rate" : discount_rate]
+        var data = ["id" : id,"discount_rate" : discount_rate] 
     
         ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
         ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard

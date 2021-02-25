@@ -482,5 +482,68 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34572B3B-C68F-4C76-AC91-1CA0404812E0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BARO/OrderHistory/OrderHistoryCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "pressGoToStore(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "34572B3B-C68F-4C76-AC91-1CA0404812E0 - cd92af6b1e174c03"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BARO.OrderHistoryCell.pressGoToStore(Any) -&gt; ()"
+                  moduleName = "BARO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a./Desktop/BARO/Baro_user_ios/BARO/OrderHistory/OrderHistoryCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "294">
+               </Location>
+               <Location
+                  uuid = "34572B3B-C68F-4C76-AC91-1CA0404812E0 - cd92af6b1e174c03"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BARO.OrderHistoryCell.pressGoToStore(Any) -&gt; ()"
+                  moduleName = "BARO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a./Desktop/BARO/Baro_user_ios/BARO/OrderHistory/OrderHistoryCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "747">
+               </Location>
+               <Location
+                  uuid = "34572B3B-C68F-4C76-AC91-1CA0404812E0 - 90681b3791364c10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in BARO.OrderHistoryCell.pressGoToStore(Any) -&gt; ()"
+                  moduleName = "BARO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a./Desktop/BARO/Baro_user_ios/BARO/OrderHistory/OrderHistoryCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "207">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

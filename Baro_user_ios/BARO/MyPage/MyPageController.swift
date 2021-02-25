@@ -133,7 +133,8 @@ class MyPageController : UIViewController {
         }else{
             vc.controllerStoryboard = bottomTabBarInfo.basketStoryBoard
             vc.controllerIdentifier = bottomTabBarInfo.basketControllerIdentifier
-            vc.controllerSender = loadBasket()
+            let data = ["jsonToOrder" : self.loadBasket(),"discount_rate" : BottomTabBarController.discount_rate] as [String : Any]
+            vc.controllerSender = data
             vc.moveFromOutSide = true
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .fullScreen

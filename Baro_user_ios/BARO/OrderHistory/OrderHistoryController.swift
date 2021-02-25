@@ -42,14 +42,13 @@ class OrderHistoryController : UIViewController {
                     orderHistoryModel.order_state = item["order_state"].stringValue
                     orderHistoryModel.total_count = item["total_count"].intValue
                     orderHistoryModel.store_image = item["store_image"].stringValue
-                    orderHistoryModel.store_id = item["store_id"].intValue
-                
                     self.orderHistoryList.append(orderHistoryModel)
                 }
-                if json["order"].array!.count < 20 {
+                if self.orderHistoryList.count < 20 {
                     self.collectionView.reloadData()
                     self.end = true
                 }
+                self.startPoint += 20
                 self.collectionView.reloadData()
             }
         }
@@ -189,12 +188,17 @@ extension OrderHistoryController : UIScrollViewDelegate {
                 self.collectionView.reloadSections(IndexSet(integer: 1))
                 for item in json["order"].array! {
     //                    self.collectionView. createSpinnerFooter()
+                    orderHistoryModel.store_id = item["store_id"].intValue
+                    orderHistoryModel.store_phone = item["store_phone"].stringValue
+                    orderHistoryModel.store_latitude = item["store_latitude"].doubleValue
+                    orderHistoryModel.store_longitude = item["store_longitude"].doubleValue
                     orderHistoryModel.order_date = item["order_date"].stringValue
                     orderHistoryModel.receipt_id = item["receipt_id"].stringValue
                     orderHistoryModel.store_name = item["store_name"].stringValue
                     orderHistoryModel.total_price = item["total_price"].intValue
                     orderHistoryModel.order_state = item["order_state"].stringValue
                     orderHistoryModel.total_count = item["total_count"].intValue
+                    orderHistoryModel.store_image = item["store_image"].stringValue
                     self.orderHistoryList.append(orderHistoryModel)
                 }
                 if json["order"].array!.count < 20 {
