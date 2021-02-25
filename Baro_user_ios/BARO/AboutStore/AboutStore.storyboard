@@ -109,7 +109,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfL-Pq-0ub">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="940.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="714"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S83-rD-DBa" customClass="NMFMapView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="327"/>
@@ -284,6 +284,7 @@
                                             <constraint firstItem="XjI-Fy-wK2" firstAttribute="top" secondItem="DT1-aV-m8N" secondAttribute="bottom" constant="20" id="Zdc-mO-inK"/>
                                             <constraint firstItem="40m-Xq-zGC" firstAttribute="leading" secondItem="ZfL-Pq-0ub" secondAttribute="leading" constant="20" id="ZtJ-Yf-0ZB"/>
                                             <constraint firstItem="T87-DQ-2J1" firstAttribute="leading" secondItem="uwj-Mx-kbe" secondAttribute="leading" id="aiR-2E-roE"/>
+                                            <constraint firstAttribute="bottom" secondItem="Yea-qf-vbZ" secondAttribute="bottom" constant="20" id="bUd-QB-Odk"/>
                                             <constraint firstItem="S83-rD-DBa" firstAttribute="leading" secondItem="ZfL-Pq-0ub" secondAttribute="leading" id="cSF-Rt-JyD"/>
                                             <constraint firstItem="uwj-Mx-kbe" firstAttribute="leading" secondItem="ZfL-Pq-0ub" secondAttribute="leading" constant="20" id="dDX-lg-Zl3"/>
                                             <constraint firstItem="h28-XG-Lpd" firstAttribute="centerY" secondItem="skY-v9-fU8" secondAttribute="centerY" id="eGT-QU-LBo"/>
@@ -305,10 +306,10 @@
                                     <constraint firstItem="ZfL-Pq-0ub" firstAttribute="centerX" secondItem="8bF-RK-epd" secondAttribute="centerX" id="1if-jh-C4H"/>
                                     <constraint firstItem="S83-rD-DBa" firstAttribute="height" secondItem="8bF-RK-epd" secondAttribute="height" multiplier="0.4" id="DOE-ff-67z"/>
                                     <constraint firstItem="ZfL-Pq-0ub" firstAttribute="width" secondItem="8bF-RK-epd" secondAttribute="width" id="Lsf-hP-42X"/>
-                                    <constraint firstItem="ZfL-Pq-0ub" firstAttribute="height" secondItem="8bF-RK-epd" secondAttribute="height" multiplier="1.15" id="OVz-S9-58J"/>
                                     <constraint firstAttribute="bottom" secondItem="ZfL-Pq-0ub" secondAttribute="bottom" id="gNc-U9-c9w"/>
                                     <constraint firstAttribute="trailing" secondItem="ZfL-Pq-0ub" secondAttribute="trailing" id="iQc-6f-wNy"/>
                                     <constraint firstItem="ZfL-Pq-0ub" firstAttribute="top" secondItem="8bF-RK-epd" secondAttribute="top" id="iry-rL-ctu"/>
+                                    <constraint firstItem="ZfL-Pq-0ub" firstAttribute="height" secondItem="8bF-RK-epd" secondAttribute="height" priority="250" id="tnK-k2-H2A"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="aIp-zO-SUg"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="JPu-he-d1A"/>
