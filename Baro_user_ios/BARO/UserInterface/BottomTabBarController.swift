@@ -39,6 +39,9 @@ class BottomTabBarController: UIViewController {
     @IBOutlet weak var MyPageTabBar: UITabBarItem!
     @IBOutlet weak var OrderHistoryTabBar: UITabBarItem!
     @IBOutlet weak var OrderStatusTabBar: UITabBarItem!
+// 서버통신
+    public lazy var netWork = CallRequest()
+    public lazy var urlMaker = NetWorkURL()
     //분기문에 사용할 실제 컨트롤러 아이덴티피어
     static var activityIndicator: UIActivityIndicatorView = { // Create an indicator.
         let activityIndicator = UIActivityIndicatorView()
@@ -47,7 +50,6 @@ class BottomTabBarController: UIViewController {
         return activityIndicator
     }()
 
-    static var discount_rate = 0
     let mainPageControllerIdentifier = "MainPageController"
     let newMainPageControllerIdentifier = "NewMainPageController"
     let storeListControllerIdentifier = "StoreListPageController"
@@ -540,10 +542,25 @@ class BottomTabBarController: UIViewController {
         basketControllerWithTopView.modalTransitionStyle = .crossDissolve
         basketControllerWithTopView.controllerStoryboard = self.basketStoryBoard
         basketControllerWithTopView.controllerIdentifier = self.basketControllerIdentifier
-        let data = ["jsonToOrder" : self.basketOrders,"discount_rate" : BottomTabBarController.discount_rate] as [String : Any]
-        basketControllerWithTopView.controllerSender = data
-        basketControllerWithTopView.moveFromOutSide = true
-        self.present(basketControllerWithTopView, animated: true)
+        let store_id = UserDefaults.standard.value(forKey: "currentStoreId")
+        if store_id == nil {
+            return
+        } else if store_id as? String == ""{
+            return
+        }else{
+            netWork.get(method: .get, url: urlMaker.reloadStoreDiscount + String(store_id as! Int)) {json in
+                if json["result"].boolValue {
+                    let discount_rate = json["discount_rate"].intValue
+                    let data = ["jsonToOrder" : self.basketOrders,"discount_rate" : discount_rate] as [String : Any]
+                    basketControllerWithTopView.controllerSender = data
+                    basketControllerWithTopView.moveFromOutSide = true
+                    self.present(basketControllerWithTopView, animated: true)
+                }else{
+                    return
+                }
+            }
+        }
+       
     }
     public static func stopLoading(){
         activityIndicator.stopAnimating()

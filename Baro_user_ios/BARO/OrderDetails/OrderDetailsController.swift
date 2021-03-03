@@ -336,7 +336,6 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
         self.ordersForUserDefault = loadBasket()["jsonToOrder"] as! [Order]
         self.ordersForUserDefault.append(data!)
         saveBasket(orders: self.ordersForUserDefault)
-        BottomTabBarController.discount_rate = discount_rate
         self.dismiss(animated: false)
     }
     func tapClick(dialog: UIViewController, type: String) {
@@ -353,7 +352,6 @@ extension OrderDetailsController : TurnOffOrderDetailListener {
         vc2.controllerStoryboard = self.bottomTabBarInfo.basketStoryBoard
         vc2.controllerSender = loadBasket()
         vc2.moveFromOutSide = true
-        BottomTabBarController.discount_rate = discount_rate
         
         self.dismiss(animated: false) {
             vc2.modalPresentationStyle = .fullScreen

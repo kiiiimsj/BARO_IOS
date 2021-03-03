@@ -133,12 +133,32 @@ class MyPageController : UIViewController {
         }else{
             vc.controllerStoryboard = bottomTabBarInfo.basketStoryBoard
             vc.controllerIdentifier = bottomTabBarInfo.basketControllerIdentifier
-            let data = ["jsonToOrder" : self.loadBasket(),"discount_rate" : BottomTabBarController.discount_rate] as [String : Any]
-            vc.controllerSender = data
-            vc.moveFromOutSide = true
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: false, completion: nil)
+            let store_id = UserDefaults.standard.value(forKey: "currentStoreId")
+            if store_id == nil {
+                return
+            } else if store_id as? String == ""{
+                return
+            }else{
+                networkModel.get(method: .get, url: networkURL.reloadStoreDiscount + String(store_id as! Int)) {json in
+                    if json["result"].boolValue {
+                        let discount_rate = json["discount_rate"].intValue
+                        let data = ["jsonToOrder" : self.loadBasket(),"discount_rate" : discount_rate] as [String : Any]
+                        vc.controllerSender = data
+                        vc.moveFromOutSide = true
+                        vc.modalTransitionStyle = .crossDissolve
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: false, completion: nil)
+                    }else{
+                        return
+                    }
+                }
+            }
+//            let data = ["jsonToOrder" : self.loadBasket(),"discount_rate" : BottomTabBarController.discount_rate] as [String : Any]
+//            vc.controllerSender = data
+//            vc.moveFromOutSide = true
+//            vc.modalTransitionStyle = .crossDissolve
+//            vc.modalPresentationStyle = .fullScreen
+//            present(vc, animated: false, completion: nil)
         }
     }
     @objc func goToOrder(_ sender : UIGestureRecognizer){
