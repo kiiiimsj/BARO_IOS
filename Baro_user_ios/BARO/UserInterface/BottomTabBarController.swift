@@ -47,9 +47,11 @@ class BottomTabBarController: UIViewController {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = UIColor.baro_main_color// Start animation.
+//        activityIndicator.startAnimating()
         return activityIndicator
     }()
-
+    
     let mainPageControllerIdentifier = "MainPageController"
     let newMainPageControllerIdentifier = "NewMainPageController"
     let storeListControllerIdentifier = "StoreListPageController"
@@ -634,12 +636,15 @@ extension BottomTabBarController {
         timeView.isHidden = false
         maxDiscountLabel.isHidden = false
         timeLabel.text = CustomTimer.getTime()
+        self.view.addSubview(BottomTabBarController.activityIndicator)
+        BottomTabBarController.activityIndicator.center = self.view.center
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updatetime(sender:)), userInfo: controller, repeats: true)
     }
     @objc func updatetime(sender : Timer) {
         let time = CustomTimer.getTime()
         timeLabel.text = time
         if time == CustomTimer.RELOAD_TIME {
+            BottomTabBarController.activityIndicator.startAnimating()
             let vc = sender.userInfo as! UIViewController
             switch vc.title {
             case aboutStoreControllerIdentifier:

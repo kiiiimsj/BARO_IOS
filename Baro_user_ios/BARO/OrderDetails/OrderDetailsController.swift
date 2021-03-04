@@ -387,7 +387,7 @@ extension OrderDetailsController {
                 let pvc = self.parent as! BottomTabBarController
                 pvc.maxDiscountLabel.text = "- \(self.discount_rate)%"
                 self.recalcPrice()
-                
+                BottomTabBarController.activityIndicator.stopAnimating()
             }
         }
     }

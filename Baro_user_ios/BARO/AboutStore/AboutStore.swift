@@ -54,6 +54,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     private var deleteStoreIndex = 0
     var bottomTabBarInfo = BottomTabBarController()
 
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.getStoreInfo()
@@ -65,7 +66,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
             self.tabIndecator.transform = CGAffineTransform(translationX: 0.0, y: self.menuButton.bounds.maxY)
         }
         AboutStore.this = self
-        
+//        self.view.addSubview(self.activityIndicator)
     }
     func makeChildVC() {
         let storyBoard = UIStoryboard(name: "AboutStore", bundle: nil)
@@ -223,6 +224,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
                 pvc.maxDiscountLabel.text = "- \(self.discount_rate)%"
                 let menuVc = self.contollers[0] as! StoreMenuController
                 menuVc.discount_rate = self.discount_rate
+                BottomTabBarController.activityIndicator.stopAnimating()
             }
         }
     }
