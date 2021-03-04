@@ -212,7 +212,7 @@ extension BasketController {
                 if CouponForBasket.this != nil {
                     CouponForBasket.this!.discountChnage(newValue: self.totalPrice * (100-self.discount_rate)/100,newDiscount_rate: value)
                 }
-                
+                BottomTabBarController.activityIndicator.stopAnimating()
             }
         }
     }

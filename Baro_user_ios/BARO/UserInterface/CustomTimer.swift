@@ -8,7 +8,7 @@
 import Foundation
 
 class CustomTimer {
-    static let RELOAD_TIME = "00:00"
+    static let RELOAD_TIME = "11:00"
     static let myTimer = DispatchQueue(label: "myTimer")
     var a = 0
     let mformatter = DateFormatter()
@@ -51,6 +51,7 @@ class CustomTimer {
             timeString += (String(realSec))
         }
         CustomTimer.timersTime = timeString
+        print(timeString)
     }
     public static func getTime() -> String {
         return CustomTimer.timersTime
