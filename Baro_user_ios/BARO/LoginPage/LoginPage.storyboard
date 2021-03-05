@@ -140,9 +140,7 @@
                                         <state key="selected">
                                             <imageReference key="image" image="radio_on" symbolScale="default"/>
                                         </state>
-                                        <state key="highlighted">
-                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
-                                        </state>
+                                        <state key="highlighted" image="radio_on"/>
                                         <connections>
                                             <action selector="rememberUserInfo" destination="e5m-c8-bea" eventType="touchUpInside" id="LE1-7l-1E8"/>
                                         </connections>
@@ -1078,7 +1076,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgM-MI-aIS">
                                                 <rect key="frame" x="45" y="47" width="50" height="50"/>
@@ -1090,7 +1088,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tc-uf-Rwg">
                                                 <rect key="frame" x="105" y="47" width="50" height="50"/>
@@ -1102,7 +1100,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ibw-Lu-pfi">
                                                 <rect key="frame" x="165" y="47" width="50" height="50"/>
@@ -1114,7 +1112,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgM-Lf-6hJ">
                                                 <rect key="frame" x="225" y="47" width="50" height="50"/>
@@ -1126,7 +1124,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zle-h1-LQm">
                                                 <rect key="frame" x="285" y="47" width="50" height="50"/>
@@ -1138,7 +1136,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1583,9 +1581,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="z7a-Vx-BPQ"/>
                                                         </constraints>
                                                         <state key="normal" image="radio_off"/>
-                                                        <state key="selected">
-                                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
-                                                        </state>
+                                                        <state key="selected" image="radio_on"/>
                                                         <connections>
                                                             <action selector="pressRadioEntire:" destination="EA3-Jg-Xmp" eventType="touchUpInside" id="hPt-eO-FCo"/>
                                                         </connections>
@@ -1624,9 +1620,7 @@
                                                             <constraint firstAttribute="width" constant="40" id="qFx-s8-hMq"/>
                                                         </constraints>
                                                         <state key="normal" image="radio_off"/>
-                                                        <state key="selected">
-                                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
-                                                        </state>
+                                                        <state key="selected" image="radio_on"/>
                                                         <connections>
                                                             <action selector="pressRadio1:" destination="EA3-Jg-Xmp" eventType="touchUpInside" id="216-6O-WNJ"/>
                                                         </connections>
@@ -1670,9 +1664,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="j8g-qG-5Qc"/>
                                                         </constraints>
                                                         <state key="normal" image="radio_off"/>
-                                                        <state key="selected">
-                                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
-                                                        </state>
+                                                        <state key="selected" image="radio_on"/>
                                                         <connections>
                                                             <action selector="pressRadio2:" destination="EA3-Jg-Xmp" eventType="touchUpInside" id="KZ7-pt-ldu"/>
                                                         </connections>
@@ -1716,9 +1708,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="vcb-53-JiP"/>
                                                         </constraints>
                                                         <state key="normal" image="radio_off"/>
-                                                        <state key="selected">
-                                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
-                                                        </state>
+                                                        <state key="selected" image="radio_on"/>
                                                         <connections>
                                                             <action selector="pressRadio3:" destination="EA3-Jg-Xmp" eventType="touchUpInside" id="a61-FE-bhA"/>
                                                         </connections>
@@ -1762,9 +1752,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="o5F-J2-9sa"/>
                                                         </constraints>
                                                         <state key="normal" image="radio_off"/>
-                                                        <state key="selected">
-                                                            <imageReference key="image" image="radio_on" symbolScale="default"/>
-                                                        </state>
+                                                        <state key="selected" image="radio_on"/>
                                                         <connections>
                                                             <action selector="pressRadio4:" destination="EA3-Jg-Xmp" eventType="touchUpInside" id="Us3-z3-M41"/>
                                                         </connections>
