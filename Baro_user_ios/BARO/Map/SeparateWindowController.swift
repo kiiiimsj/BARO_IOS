@@ -51,13 +51,18 @@ class SeparateWindowController : UIViewController {
         
         ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
         ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
-        ViewInBottomTabBar.controllerSender = self.storeData.store_id
-        ViewInBottomTabBar.moveFromOutSide = true
-        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
-        ViewInBottomTabBar.modalTransitionStyle = .crossDissolve
-        guard let pvc = self.presentingViewController else {return}
-        self.dismiss(animated: false) {
-            pvc.present(ViewInBottomTabBar, animated: true, completion: nil)
+        netWork.get(method: .get, url: urlMaker.reloadStoreDiscount+String(self.storeData.store_id)) { [self] json in
+            if json["result"].boolValue {
+                let data = ["id" : self.storeData.store_id,"discount_rate" : json["discount_rate"].intValue]
+                ViewInBottomTabBar.controllerSender = data
+                ViewInBottomTabBar.moveFromOutSide = true
+                ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+                ViewInBottomTabBar.modalTransitionStyle = .crossDissolve
+                guard let pvc = self.presentingViewController else {return}
+                self.dismiss(animated: false) {
+                    pvc.present(ViewInBottomTabBar, animated: true, completion: nil)
+                }
+            }
         }
     }
 }
