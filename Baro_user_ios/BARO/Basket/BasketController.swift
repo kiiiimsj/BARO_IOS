@@ -134,6 +134,16 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         cell.extraCollectionView.delegate = cell.self
         cell.extraCollectionView.dataSource = cell.self
         cell.delegate = self
+        if orders[indexPath.item].Essentials.count > 0 {
+            let extraCVHeightContraint = cell.extraCollectionView.heightAnchor.constraint(
+                equalToConstant: CGFloat((1+nonEssential[indexPath.item].count) * 20))
+            extraCVHeightContraint.isActive = true
+        }else{
+            let extraCVHeightContraint = cell.extraCollectionView.heightAnchor.constraint(
+                equalToConstant: CGFloat((nonEssential[indexPath.item].count) * 20))
+            extraCVHeightContraint.isActive = true
+        }
+        
      
         return cell
     }
@@ -151,10 +161,11 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if orders[indexPath.item].Essentials.count > 0 {
-            return CGSize(width: collectionView.frame.width, height: CGFloat(110 + ( nonEssential[indexPath.item].count) * 15))
+            return CGSize(width: collectionView.frame.width, height: CGFloat(110 + (1 + nonEssential[indexPath.item].count) * 20))
         }else{
-            return CGSize(width: collectionView.frame.width, height: CGFloat(110 + (nonEssential[indexPath.item].count) * 15))
+            return CGSize(width: collectionView.frame.width, height: CGFloat(110 + (nonEssential[indexPath.item].count) * 20))
         }
+//        return CGSize(width: collectionView.frame.width, height: CGFloat(80 + (1 + nonEssential[indexPath.item].count) * 15) )
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
@@ -201,7 +212,7 @@ extension BasketController {
                 if CouponForBasket.this != nil {
                     CouponForBasket.this!.discountChnage(newValue: self.totalPrice * (100-self.discount_rate)/100,newDiscount_rate: value)
                 }
-                
+                BottomTabBarController.activityIndicator.stopAnimating()
             }
         }
     }

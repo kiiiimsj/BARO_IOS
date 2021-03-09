@@ -64,6 +64,16 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
             return refreshControl
 
         }()
+    lazy var activityIndicator: UIActivityIndicatorView = { // Create an indicator.
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.center = self.view.center // Also show the indicator even when the animation is stopped.
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = UIColor.baro_main_color// Start animation.
+//        activityIndicator.startAnimating()
+        return activityIndicator
+    }()
+
     //alert 클릭시
     @IBAction func alertClick(_ sender: Any) {
         toAlertUseBottomBar()
@@ -97,7 +107,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(refreshControl)
-        
+        self.view.addSubview(self.activityIndicator)
         self.definesPresentationContext = true
         getUserNotReadAlertCount()
         
@@ -357,7 +367,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     func toStoreListUseBottomBar(id : Int,discount_rate : Int) {
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
-        var data = ["id" : id,"discount_rate" : discount_rate]
+        var data = ["id" : id,"discount_rate" : discount_rate] 
     
         ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
         ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
@@ -541,6 +551,7 @@ extension NewMainPageController {
         }
     }
     public func reloadMainPage() -> Void {
+        activityIndicator.startAnimating()
         let jsonObject : [ String : Any ] = [
             "latitude" : latitude!,
             "longitude" : longitude!
@@ -565,6 +576,7 @@ extension NewMainPageController {
                 issueLabelsHeightConstraint.isActive = true
                 self.collectionview.reloadData()
             }
+            self.activityIndicator.stopAnimating()
         }
     }
 }

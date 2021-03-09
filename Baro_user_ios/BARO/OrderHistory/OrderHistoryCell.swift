@@ -31,17 +31,26 @@ class OrderHistoryCell : UICollectionViewCell {
     @IBOutlet weak var showDetailsBtn: UIButton!
     @IBOutlet weak var storeImage: UIImageView!
     @IBAction func pressGoToStore(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
-        let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
-
-        ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
-        ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
-        ViewInBottomTabBar.controllerSender = cellData!.store_id
-        ViewInBottomTabBar.moveFromOutSide = true
-        ViewInBottomTabBar.modalPresentationStyle = .fullScreen
-        ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
-        
-        cellDelegate?.clickGoToStore(vc: ViewInBottomTabBar)
+        let network = CallRequest()
+        let urlMaker = NetWorkURL()
+        print(cellData)
+        network.get(method: .get, url: urlMaker.reloadStoreDiscount+String(cellData!.store_id)) { [self] json in
+            
+            if json["result"].boolValue {
+                let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
+                let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
+                ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
+                ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
+                var data = ["id" : cellData!.store_id,"discount_rate" : json["discount_rate"].intValue]
+                ViewInBottomTabBar.controllerSender = data
+                ViewInBottomTabBar.moveFromOutSide = true
+                ViewInBottomTabBar.modalPresentationStyle = .fullScreen
+                ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
+                
+                cellDelegate?.clickGoToStore(vc: ViewInBottomTabBar)
+            }
+            
+        }
     }
     @IBAction func pressShowDetails(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "OrderHistory", bundle: nil)

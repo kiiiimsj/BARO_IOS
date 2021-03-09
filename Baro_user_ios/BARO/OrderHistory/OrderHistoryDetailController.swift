@@ -119,18 +119,21 @@ extension OrderHistoryDetailController : UICollectionViewDelegate, UICollectionV
         cell.menu_count.text = String(orderList.order_count)
         cell.menu_total_price.text = String(menu_one_total_price * orderList.order_count)
         cell.menu_total_price.attributedText = cell.menu_total_price.text?.strikeThrough()
-        cell.realPrice.text = "합계 : " + String((menu_one_total_price * orderList.order_count).applyDiscountRate(discount_rate: discount_rate))  + "원"
+        cell.realPrice.text = String((menu_one_total_price * orderList.order_count).applyDiscountRate(discount_rate: discount_rate))  + "원"
         cell.extraList = orderList.OrderHistoryDetailExtra
         
         cell.collectionView.delegate = cell.self
         cell.collectionView.dataSource = cell.self
+        let extraCVHeightContraint = cell.collectionView.heightAnchor.constraint(
+            equalToConstant: CGFloat((orderList.OrderHistoryDetailExtra.count) * 20))
+        extraCVHeightContraint.isActive = true
         cell.collectionView.reloadData()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let orderList = orderHistoryDetailList[indexPath.item]
-        return CGSize(width: collectionView.frame.width, height: CGFloat(orderList.OrderHistoryDetailExtra.count) * 20 + 70)
+        return CGSize(width: collectionView.frame.width, height: CGFloat(orderList.OrderHistoryDetailExtra.count) * 20 + 60)
     }
     
 }

@@ -51,6 +51,7 @@ class CustomTimer {
             timeString += (String(realSec))
         }
         CustomTimer.timersTime = timeString
+        print(timeString)
     }
     public static func getTime() -> String {
         return CustomTimer.timersTime
