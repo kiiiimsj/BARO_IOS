@@ -36,6 +36,7 @@ class MyBootPayController : UIViewController {
     private var payDate : String = ""
     private var userToken : String? = nil //서버에서 받아온 userToken
     private let UnknownValue : Int = -1 // 성별을 위한 value
+    var isOnClose : Bool = false
     
     let bottomTabBarInfo = BottomTabBarController()
     
@@ -193,11 +194,12 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         if iWantPay == true {  // 재고가 있을 경우.
             Bootpay.transactionConfirm(data: data) // 결제 승인
         } else { // 재고가 없어 중간에 결제창을 닫고 싶을 경우
-            Bootpay.dismiss() // 결제창 종료
+            //Bootpay.dismiss() // 결제창 종료
         }
     }
     // 결제 취소시 호출
     func onCancel(data: [String: Any]) {
+        print("onCancel")
         self.result = false
         self.createDialog(titleContentString: "결 제 오 류", contentString: "결제가 취소되었습니다.", buttonString: "확인")
     }
@@ -209,7 +211,14 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     }
     //결제창이 닫힐때 실행되는 부분
     func onClose() {
+        if(self.isOnClose) {
+            self.dismiss(animated: true)
+        }else {
+            self.isOnClose = true
+        }
+        print("onClose")
         Bootpay.dismiss() // 결제창 종료
+        
         //결제 취소를 알리는 Dialog생성
     }
     func createDialog(titleContentString: String, contentString: String, buttonString: String) {
