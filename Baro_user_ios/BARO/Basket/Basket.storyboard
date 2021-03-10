@@ -408,6 +408,12 @@
                                                 <constraint firstAttribute="height" constant="1" id="2zn-v9-oIR"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-10%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RU5-aV-NlL" customClass="DiscountLabel" customModule="BARO" customModuleProvider="target">
+                                            <rect key="frame" x="118.5" y="17" width="28" height="16.5"/>
+                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -415,11 +421,14 @@
                                         <constraint firstItem="i8y-Yk-hcQ" firstAttribute="leading" secondItem="Etc-wc-6ln" secondAttribute="leading" constant="10" id="EBO-nZ-U8x"/>
                                         <constraint firstAttribute="bottom" secondItem="i8y-Yk-hcQ" secondAttribute="bottom" id="N0Q-wj-Z15"/>
                                         <constraint firstItem="6Rf-OD-WD6" firstAttribute="centerY" secondItem="Etc-wc-6ln" secondAttribute="centerY" id="Nfe-rV-dOu"/>
+                                        <constraint firstItem="RU5-aV-NlL" firstAttribute="leading" secondItem="6Rf-OD-WD6" secondAttribute="trailing" constant="15" id="R0E-pb-rLm"/>
                                         <constraint firstAttribute="trailing" secondItem="i8y-Yk-hcQ" secondAttribute="trailing" constant="10" id="brR-ir-bnW"/>
                                         <constraint firstItem="6Rf-OD-WD6" firstAttribute="leading" secondItem="Etc-wc-6ln" secondAttribute="leadingMargin" constant="17" id="qYi-SA-utR"/>
+                                        <constraint firstItem="RU5-aV-NlL" firstAttribute="centerY" secondItem="Etc-wc-6ln" secondAttribute="centerY" id="uw7-iJ-Tmf"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="storeName" destination="6Rf-OD-WD6" id="a97-WF-CFR"/>
+                                        <outlet property="storeName" destination="6Rf-OD-WD6" id="Rgv-f0-NCz"/>
+                                        <outlet property="store_discount_label" destination="RU5-aV-NlL" id="FVn-j0-xoz"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>

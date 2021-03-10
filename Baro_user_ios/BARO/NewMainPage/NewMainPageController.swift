@@ -468,12 +468,7 @@ extension NewMainPageController : UICollectionViewDelegate, UICollectionViewData
         }
         if store.discount_rate != 0 {
             cell.discount_rate_label.text = "SALE \(store.discount_rate)%"
-//            cell.discount_rate_label.layer.borderColor = UIColor.white.cgColor
-//            cell.discount_rate_label.layer.borderWidth = 2
-//            cell.discount_rate_label.layer.cornerRadius = 5
-//            cell.discount_rate_label.layer.masksToBounds = true
-//            cell.discount_rate_label.isHidden = false
-//            cell.discount_rate_label.layer.cornerRadius = cell.discount_rate_label.frame.width / 2
+            cell.discount_rate_label.isHidden = false
         }else{
             cell.discount_rate_label.isHidden = true
         }

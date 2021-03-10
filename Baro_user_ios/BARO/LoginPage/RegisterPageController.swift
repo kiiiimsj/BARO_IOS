@@ -21,6 +21,7 @@ class RegisterPageController: UIViewController {
     var phoneNumber : String = ""
     var marketing = false
     public var restoreFrameValue : CGFloat = 0.0
+    public var up = false
     override func viewDidLoad() {
         super.viewDidLoad()
         print(marketing
@@ -67,25 +68,7 @@ class RegisterPageController: UIViewController {
             nameInputError.isHidden = true
         }
     }
-    @objc
-    func checkPassInputField() {
-        let pass = passInput.text
-        let passCheck = passCheckInput.text
-        
-        if (pass == "" || pass!.count <= 4) {
-            
-            passInputError.isHidden = false
-        }
-        else {
-            passInputError.isHidden = true
-        }
-        if (passCheck != pass) {
-            passCheckInputError.isHidden = false
-        }
-        else {
-            passCheckInputError.isHidden = true
-        }
-    }
+   
     func swipeRecognizer() {
             let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
             swipeRight.direction = UISwipeGestureRecognizer.Direction.right
@@ -131,6 +114,39 @@ class RegisterPageController: UIViewController {
         self.dismiss(animated: true)
         navigationController?.popToRootViewController(animated: true)
     }
+    @objc func checkPassInputField() {
+        let pass = passInput.text
+        let passNSString = pass! as NSString
+        let passCheck = passCheckInput.text
+        
+        if (pass == "" || pass!.count <= 4) {
+            
+            passInputError.text = "비밀번호를 4자리 이상 입력해주세요."
+            passInputError.isHidden = false
+        }
+        else {
+            passInputError.isHidden = true
+            var passGetResult : NSTextCheckingResult?
+            
+            let passRegex = try? NSRegularExpression(pattern: "([A-Z]*[0-9a-z]){8,}", options: .caseInsensitive)
+            passGetResult = passRegex?.firstMatch(in: pass!, options: [], range: NSRange(location: 0, length: passNSString.length))
+            let result = passGetResult?.numberOfRanges as? Int
+            if(result == nil) {
+                passInputError.isHidden = false
+                passInputError.text = "비밀번호 형식이 일치하지않습니다."
+            }
+            else {
+                passInputError.isHidden = true
+            }
+        }
+        
+        if (passCheck != pass) {
+            passCheckInputError.isHidden = false
+        }
+        else {
+            passCheckInputError.isHidden = true
+        }
+    }
     @objc func checkEmailInputField() {
         let email = emailInput.text
         let emailNSString = email! as NSString
@@ -147,7 +163,8 @@ class RegisterPageController: UIViewController {
         }
     }
     @IBAction func registerSend() {
-        if (nameInputError.isHidden && passInputError.isHidden && passCheckInputError.isHidden && emailInputError.isHidden ) {
+        if (nameInputError.isHidden && passInputError.isHidden && passCheckInputError.isHidden && emailInputError.isHidden
+                && nameInput.text != "" && passInput.text != "" && passCheckInput.text != "" && emailInput.text != "") {
             if let email = emailInput.text, let nick = nameInput.text, let pass = passInput.text {
                 let param = ["phone":"\(self.phoneNumber)","email":"\(email)","nick":"\(nick)","pass":"\(pass)","marketing":"\(marketing)"]
                 network.post(method: .post, param: param, url: self.urlMaker.signUpURL) {
@@ -176,22 +193,23 @@ class RegisterPageController: UIViewController {
 }
 extension RegisterPageController : UITextFieldDelegate {
     @objc func keyboardWillAppear(noti: NSNotification) {
-    if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-        let keyboardRectangle = keyboardFrame.cgRectValue
-        let keyboardHeight = keyboardRectangle.height
-        if self.view.frame.origin.y == restoreFrameValue{
-        self.view.frame.origin.y -= keyboardHeight
+        if up {
+            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                if self.view.frame.origin.y == restoreFrameValue{
+                self.view.frame.origin.y -= keyboardHeight / 2
+                }
+            }
         }
     }
-        
-}
 
 @objc func keyboardWillDisappear(noti: NSNotification) {
     if self.view.frame.origin.y != restoreFrameValue {
             if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 let keyboardRectangle = keyboardFrame.cgRectValue
                 let keyboardHeight = keyboardRectangle.height
-                self.view.frame.origin.y += keyboardHeight
+                self.view.frame.origin.y += keyboardHeight / 2
             }
         }
     }
@@ -203,13 +221,21 @@ extension RegisterPageController : UITextFieldDelegate {
         self.view.endEditing(true)
     }
 
-func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
-    return true
-}
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
-func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-    self.view.frame.origin.y = self.restoreFrameValue
-    return true
-}
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        self.view.frame.origin.y = self.restoreFrameValue
+        return true
+    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField.isEqual(passCheckInput) || textField.isEqual(emailInput) {
+            up = true
+        }else{
+            up = false
+        }
+        return true
+    }
 }
