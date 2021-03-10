@@ -17,7 +17,7 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
             return
         }
         vc.marketing = self.marketing
-        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         guard let pvc = self.presentingViewController else {return}
         self.dismiss(animated: false) {
