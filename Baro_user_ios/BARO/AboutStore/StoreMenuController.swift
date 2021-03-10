@@ -65,8 +65,7 @@ class StoreMenuController : UIViewController{
                         }
                     }
                     self.categoryCollectionView.delegate = self
-                    self.categoryCollectionView.dataSource = self
-                }
+                    self.categoryCollectionView.dataSource = self                }
             }
         }
         categoryCollectionView.addSubview(categoryIndecator)

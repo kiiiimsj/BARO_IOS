@@ -11,11 +11,15 @@ private let cellIdentifier = "ASMenuCell"
 class StoreMenu2Controller : UIViewController {
     public var menus = [Menu]()
     let bottomTabBarInfo = BottomTabBarController()
+    @IBOutlet weak var discount_alarm: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var alarmImage: UIImageView!
+    @IBOutlet weak var discount_alarm_label: CustomLabel!
     public var discount_rate  : Int = 0 {
         didSet {
             if collectionView != nil {
                 collectionView.reloadData()
+                discount_alarm_label.text = "\(discount_rate)%"
             }
         }
     }
@@ -23,6 +27,9 @@ class StoreMenu2Controller : UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        createAlarmShpae()
+        alarmImage.tintColor = UIColor.baro_main_color
+        alarmImage.image = UIImage(named: "timer_white")?.withRenderingMode(.alwaysTemplate)
     }
     func toOrderDetial(param : [String:Any]) {
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
@@ -36,8 +43,14 @@ class StoreMenu2Controller : UIViewController {
         ViewInBottomTabBar.modalTransitionStyle = .crossDissolve
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
     }
+    func createAlarmShpae(){
+        discount_alarm.layer.cornerRadius = 10
+        discount_alarm.layer.borderWidth = 0.5
+        discount_alarm.layer.borderColor = UIColor.baro_main_color.cgColor
+        discount_alarm_label.text = "\(discount_rate)%"
+    }
 }
-extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate{
     func collectionView(_ collectionView : UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menus.count
     }
@@ -81,5 +94,14 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 85)
+    }
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        print("draggggggg","start")
+        discount_alarm.isHidden = true
+        
+    }
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        print("draggggggg","end")
+        discount_alarm.isHidden = false
     }
 }

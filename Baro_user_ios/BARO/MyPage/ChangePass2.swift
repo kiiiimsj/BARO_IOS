@@ -21,7 +21,9 @@ class ChangePass2 : UIViewController {
     var flag : Int = 0
     public var restoreFrameValue : CGFloat = 0.0
     public var up = false
-    let regex = try? NSRegularExpression(pattern:"[0-9a-zA-Z]{4,}$", options: .caseInsensitive)
+//    let regex = try? NSRegularExpression(pattern:"[0-9a-zA-Z]{4,}$", options: .caseInsensitive)
+    
+    let regex = try? NSRegularExpression(pattern:"([A-Z]*[0-9a-z]){8,}", options: .caseInsensitive)
     
     override func viewDidLoad() {
         super.viewDidLoad()

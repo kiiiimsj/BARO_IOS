@@ -21,7 +21,6 @@ class BottomTabBarController: UIViewController {
     @IBOutlet weak var topBarViewControllerTitle: UILabel!
     @IBOutlet weak var topBarRefreshBtn: UIButton!
     @IBOutlet weak var topBarFavoriteBtn: UIButton!
-    @IBOutlet weak var maxDiscountLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeView: UIView!
     //내부 컨트롤러 클릭 인식용.
@@ -322,14 +321,12 @@ class BottomTabBarController: UIViewController {
                 }
                 VCsender.storeId = param["storeId"] as! Int
                 VCsender.discount_rate = param["discount_rate"] as! Int
-                maxDiscountLabel.text = "-\(VCsender.discount_rate)%"
                 finallController = VCsender
             case aboutStoreControllerIdentifier:
                 let VCsender = controller as! AboutStore
                 let data = sender as! [String : Int]
                 VCsender.store_id = data["id"]! as Int
                 VCsender.discount_rate = data["discount_rate"]! as Int
-                maxDiscountLabel.text = "-\(VCsender.discount_rate)%"
                 finallController = VCsender
             case storeListControllerIdentifier:
                 let VCsender = controller as! StoreListPageController
@@ -365,7 +362,6 @@ class BottomTabBarController: UIViewController {
                 let data = sender as! [String : Any]
                 VCsender.orders = data["jsonToOrder"] as! [Order]
                 VCsender.discount_rate = data["discount_rate"] as! Int
-                maxDiscountLabel.text = "- \(VCsender.discount_rate)%"
                 finallController = VCsender
             case mapControllerIdentifier:
                 let VCsender = controller as! MapController
@@ -572,7 +568,6 @@ extension BottomTabBarController : UITabBarDelegate {
     //탭바아이템 클릭에 따른 분기문
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         timeView.isHidden = true
-        maxDiscountLabel.isHidden = true
         switch(item.title) {
         case "홈":
 //            changeViewController(getController: mainPageControllerIdentifier, getStoryBoard: mainPageStoryBoard, sender: nil)
@@ -634,7 +629,6 @@ extension BottomTabBarController {
     }
     func showTime(controller : UIViewController){ // 시간탭 보여주는 부분
         timeView.isHidden = false
-        maxDiscountLabel.isHidden = false
         timeLabel.text = CustomTimer.getTime()
         self.view.addSubview(BottomTabBarController.activityIndicator)
         BottomTabBarController.activityIndicator.center = self.view.center

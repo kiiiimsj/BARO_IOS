@@ -221,7 +221,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
                 let value = json["discount_rate"].intValue
                 self.discount_rate = value
                 let pvc = self.parent as! BottomTabBarController
-                pvc.maxDiscountLabel.text = "- \(self.discount_rate)%"
+//                pvc.maxDiscountLabel.text = "- \(self.discount_rate)%"
                 let menuVc = self.contollers[0] as! StoreMenuController
                 menuVc.discount_rate = self.discount_rate
                 BottomTabBarController.activityIndicator.stopAnimating()

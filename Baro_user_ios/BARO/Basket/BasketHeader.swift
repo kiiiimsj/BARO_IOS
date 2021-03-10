@@ -9,6 +9,7 @@ import UIKit
 
 class BasketHeader : UICollectionReusableView {
     @IBOutlet weak var storeName : UILabel!
+    @IBOutlet weak var store_discount_label: DiscountLabel!
     override func prepareForReuse() {
         super.prepareForReuse()
         

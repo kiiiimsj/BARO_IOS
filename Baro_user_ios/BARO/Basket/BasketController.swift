@@ -33,7 +33,6 @@ class BasketController : UIViewController, TopViewElementDelegate{
         if(orders.count == 0) {
             orders.append(contentsOf: loadBasket())
         }
-        
         optionsSeparate()
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -156,7 +155,7 @@ extension BasketController : UICollectionViewDelegate , BasketMenuCellDelegate, 
         else {
             headerview.storeName .text = "store"
         }
-        
+        headerview.store_discount_label.text = "SALE \(self.discount_rate)%"
         return headerview
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -204,10 +203,9 @@ extension BasketController {
             if json["result"].boolValue {
                 let value = json["discount_rate"].intValue
                 self.discount_rate = value
-                let pvc = self.parent as! BottomTabBarController
-                pvc.maxDiscountLabel.text = "- \(self.discount_rate)%"
                 self.recalcPrice()
                 self.collectionView.reloadData()
+                self.collectionView.collectionViewLayout.invalidateLayout()
 //                CouponForBasket.this!.dismiss(animated: false)
                 if CouponForBasket.this != nil {
                     CouponForBasket.this!.discountChnage(newValue: self.totalPrice * (100-self.discount_rate)/100,newDiscount_rate: value)
