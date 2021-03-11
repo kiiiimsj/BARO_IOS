@@ -121,7 +121,7 @@ class MyBootPayController : UIViewController {
             }
 //            $0.pg = BootpayPG.NICEPAY // 결제할 PG사
 //            $0.method = BootpayMethod.EASY_CARD
-            $0.methods = [BootpayMethod.EASY_CARD,BootpayMethod.PHONE,BootpayMethod.BANK,BootpayMethod.PHONE,BootpayMethod.CARD,BootpayMethod.VBANK,BootpayMethod.KAKAO,BootpayMethod.NPAY,BootpayMethod.PAYCO]
+            $0.methods = [BootpayMethod.EASY_CARD,BootpayMethod.BANK,BootpayMethod.CARD,BootpayMethod.VBANK,BootpayMethod.KAKAO,BootpayMethod.NPAY,BootpayMethod.PAYCO]
             $0.ux = UX.PG_DIALOG
            //            $0.account_expire_at = "2019-09-25" // 가상계좌 입금기간 제한 ( yyyy-mm-dd 포멧으로 입력해주세요. 가상계좌만 적용됩니다. 오늘 날짜보다 더 뒤(미래)여야 합니다 )
            //            $0.method = "card" // 결제수단
