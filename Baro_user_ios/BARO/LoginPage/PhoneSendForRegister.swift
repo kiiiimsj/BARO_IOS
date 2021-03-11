@@ -72,7 +72,7 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
                         if let error = error {
                             print(error)
                             let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
-                            dialog.message = "\(error.localizedDescription)"
+                            dialog.message = "요청오류 : 잠시후 다시 시도해주세요"
                             dialog.modalPresentationStyle = .overFullScreen
                             dialog.modalTransitionStyle = .crossDissolve
                             self.present(dialog, animated: true)
