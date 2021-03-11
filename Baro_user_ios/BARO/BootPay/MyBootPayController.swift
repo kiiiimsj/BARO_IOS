@@ -215,6 +215,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             self.dismiss(animated: true)
         }else {
             self.isOnClose = true
+            self.dismiss(animated: true)
         }
         print("onClose")
         Bootpay.dismiss() // 결제창 종료
