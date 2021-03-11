@@ -24,12 +24,12 @@
         <!--ChangePass-->
         <scene sceneID="WhP-mT-H3q">
             <objects>
-                <viewController storyboardIdentifier="ChangePass" title="ChangePass" id="ZfL-xJ-JU8" customClass="ChangePass" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePass" title="ChangePass" id="ZfL-xJ-JU8" customClass="ChangePass" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lUi-Dq-0GO">
                         <rect key="frame" x="0.0" y="0.0" width="360" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="PCZ-Me-p43" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="PCZ-Me-p43" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="160" width="360" height="480"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKD-EE-Zm5">
@@ -108,7 +108,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="BARO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbr-hR-WiS">
-                                <rect key="frame" x="159" y="67" width="43" height="22"/>
+                                <rect key="frame" x="158.5" y="66.5" width="43" height="22"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -150,7 +150,7 @@
         <!--ChangePass2-->
         <scene sceneID="mAH-yh-bjj">
             <objects>
-                <viewController storyboardIdentifier="ChangePass2" title="ChangePass2" id="aON-YC-HVj" customClass="ChangePass2" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePass2" title="ChangePass2" id="aON-YC-HVj" customClass="ChangePass2" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xVF-8D-wdS">
                         <rect key="frame" x="0.0" y="0.0" width="360" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,7 +168,7 @@
                                     <action selector="backbutton" destination="aON-YC-HVj" eventType="touchUpInside" id="m7H-Go-iih"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="V8y-RG-9zD" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="V8y-RG-9zD" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="160" width="360" height="480"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgp-nY-Eg3">
@@ -268,7 +268,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="BARO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeL-KF-QbM">
-                                <rect key="frame" x="159" y="67" width="43" height="22"/>
+                                <rect key="frame" x="158.5" y="66.5" width="43" height="22"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -311,7 +311,7 @@
         <!--Change Pass Complete-->
         <scene sceneID="nFW-W3-2TA">
             <objects>
-                <viewController storyboardIdentifier="ChangePassComplete" id="Nom-fp-dhs" customClass="ChangePassComplete" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePassComplete" id="Nom-fp-dhs" customClass="ChangePassComplete" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Hm-17-JXV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

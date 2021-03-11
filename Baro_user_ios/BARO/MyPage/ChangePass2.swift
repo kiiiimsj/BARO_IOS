@@ -35,6 +35,8 @@ class ChangePass2 : UIViewController {
         checkNewPass.delegate = self
         backBtn.setImage(UIImage(named: "arrow_left"), for: .normal)
         swipeRecognizer()
+        self.inputNewPass.addTarget(self, action: #selector(self.textFieldDidChange1(textField:)), for: .editingChanged)
+        self.checkNewPass.addTarget(self, action: #selector(self.textFieldDidChange2(textField:)), for: .editingChanged)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -47,8 +49,7 @@ class ChangePass2 : UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     @IBAction func sendNewPassToServer() {
-        checkPassVaild()
-        if flag == 1 {
+        if (inputNewPass.text != "" && checkNewPass.text != "" && errorAlarmText1.isHidden && errorAlarmText2.isHidden){
             let phone = UserDefaults.standard.value(forKey: "user_phone") as! String
             guard let password = inputNewPass.text else {return}
             let param = ["phone":"\(phone)","pass":"\(password)"]
@@ -86,14 +87,35 @@ class ChangePass2 : UIViewController {
             self.errorAlarmText1.isHidden = false
             self.inputNewPass.addTarget(self, action: #selector(self.textFieldDidChange1(textField:)), for: .editingChanged)
         }
-        
     }
     
     @objc func textFieldDidChange1(textField: UITextField){
-        errorAlarmText1.isHidden = true
+        let pass = inputNewPass.text
+        let passNSString = pass! as NSString
+        
+        if (pass == "" || pass!.count <= 4) {
+            errorAlarmText1.text = "비밀번호를 4자리 이상 입력해주세요."
+            errorAlarmText1.isHidden = false
+        }
+        else {
+            let passVaild = regex?.firstMatch(in: pass!, options: [], range: NSRange(location: 0, length: pass!.count))
+            let result = passVaild?.numberOfRanges as? Int
+            if (result == nil) {
+                errorAlarmText1.isHidden = false
+                errorAlarmText1.text = "영어 와 숫자 조합으로 8글자 이상 입력해주세요."
+            }
+            else {
+                errorAlarmText1.isHidden = true
+            }
+        }
     }
     @objc func textFieldDidChange2(textField: UITextField){
-        errorAlarmText2.isHidden = true
+        if (inputNewPass.text != checkNewPass.text) {
+            errorAlarmText2.isHidden = false
+        }
+        else {
+            errorAlarmText2.isHidden = true
+        }
     }
     @IBAction func backbutton() {
         self.dismiss(animated: true)
