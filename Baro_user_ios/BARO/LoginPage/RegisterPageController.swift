@@ -128,7 +128,7 @@ class RegisterPageController: UIViewController {
             passInputError.isHidden = true
             var passGetResult : NSTextCheckingResult?
             
-            let passRegex = try? NSRegularExpression(pattern: "([A-Z]*[0-9a-z]){8,}", options: .caseInsensitive)
+            let passRegex = try? NSRegularExpression(pattern: "(([a-zA-Z]|[0-9])+([0-9]|[a-zA-Z])){4,}", options: .caseInsensitive)
             passGetResult = passRegex?.firstMatch(in: pass!, options: [], range: NSRange(location: 0, length: passNSString.length))
             let result = passGetResult?.numberOfRanges as? Int
             if(result == nil) {

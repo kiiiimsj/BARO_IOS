@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HI5-FX-0F0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HI5-FX-0F0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,15 +41,12 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바로는 통신판매 중계자이며 ,통신판매의 당사자가 아닙니다." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYE-SA-B43">
                                 <rect key="frame" x="112" y="780" width="190.5" height="10"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="따라서 바로는 상품,거래 정보 및 거래에 책임을 지지않습니다" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRH-yK-quR">
                                 <rect key="frame" x="110.5" y="790" width="193" height="10"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,7 +191,7 @@
                                                                 <outlet property="extraPrice" destination="Qhy-9n-tah" id="WyQ-LT-v2s"/>
                                                             </connections>
                                                         </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="BARO" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BasketNonEssentialCell" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-Do-yB8" customClass="BasketNonEssentialCell" customModule="BARO" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="25" width="382" height="25"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tLr-LY-rLC">
@@ -432,24 +430,40 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEi-cZ-Wz4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYR-PT-7Jx">
+                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2jU-gd-LZs"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="0.84870158450704225" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="BYR-PT-7Jx" firstAttribute="top" secondItem="eFT-Ql-mab" secondAttribute="bottom" id="3cp-UF-EjE"/>
                             <constraint firstItem="tau-Pl-sdi" firstAttribute="leading" secondItem="2jU-gd-LZs" secondAttribute="leading" id="9ut-ST-eXI"/>
                             <constraint firstItem="2jU-gd-LZs" firstAttribute="trailing" secondItem="tau-Pl-sdi" secondAttribute="trailing" id="Cyv-kC-t6O"/>
                             <constraint firstItem="SRH-yK-quR" firstAttribute="top" secondItem="SYE-SA-B43" secondAttribute="bottom" id="DUg-Wr-fzi"/>
+                            <constraint firstItem="IEi-cZ-Wz4" firstAttribute="leading" secondItem="zdp-4w-shf" secondAttribute="leading" id="Dcz-ee-YVX"/>
                             <constraint firstItem="eFT-Ql-mab" firstAttribute="bottom" secondItem="2jU-gd-LZs" secondAttribute="bottom" id="EwY-Am-1Z9"/>
+                            <constraint firstItem="tau-Pl-sdi" firstAttribute="top" secondItem="IEi-cZ-Wz4" secondAttribute="bottom" id="HbE-a2-ftS"/>
+                            <constraint firstItem="BYR-PT-7Jx" firstAttribute="leading" secondItem="zdp-4w-shf" secondAttribute="leading" id="J2Y-hD-1jy"/>
                             <constraint firstItem="SRH-yK-quR" firstAttribute="centerX" secondItem="zdp-4w-shf" secondAttribute="centerX" id="PQN-bf-yUN"/>
                             <constraint firstItem="p5E-Vl-gDA" firstAttribute="top" secondItem="tau-Pl-sdi" secondAttribute="bottom" constant="7" id="V6X-2S-F9Z"/>
+                            <constraint firstAttribute="trailing" secondItem="IEi-cZ-Wz4" secondAttribute="trailing" id="ZWm-hK-2og"/>
                             <constraint firstItem="eFT-Ql-mab" firstAttribute="leading" secondItem="2jU-gd-LZs" secondAttribute="leading" id="aRu-ON-Q2u"/>
                             <constraint firstItem="eFT-Ql-mab" firstAttribute="top" secondItem="SRH-yK-quR" secondAttribute="bottom" constant="12" id="dT0-9t-qGq"/>
                             <constraint firstItem="tau-Pl-sdi" firstAttribute="top" secondItem="2jU-gd-LZs" secondAttribute="top" id="eEQ-cT-f26"/>
                             <constraint firstItem="SYE-SA-B43" firstAttribute="centerX" secondItem="zdp-4w-shf" secondAttribute="centerX" id="fwp-5k-fSy"/>
+                            <constraint firstAttribute="trailing" secondItem="BYR-PT-7Jx" secondAttribute="trailing" id="ggI-tl-owq"/>
+                            <constraint firstAttribute="bottom" secondItem="BYR-PT-7Jx" secondAttribute="bottom" id="jB9-am-yKf"/>
                             <constraint firstItem="p5E-Vl-gDA" firstAttribute="leading" secondItem="2jU-gd-LZs" secondAttribute="leading" id="lKk-mi-mqH"/>
                             <constraint firstItem="2jU-gd-LZs" firstAttribute="trailing" secondItem="p5E-Vl-gDA" secondAttribute="trailing" id="lgf-wA-yua"/>
                             <constraint firstItem="2jU-gd-LZs" firstAttribute="trailing" secondItem="eFT-Ql-mab" secondAttribute="trailing" id="tsU-tr-X4m"/>
                             <constraint firstItem="SYE-SA-B43" firstAttribute="top" secondItem="p5E-Vl-gDA" secondAttribute="bottom" constant="12" id="u1V-LL-ECC"/>
+                            <constraint firstItem="IEi-cZ-Wz4" firstAttribute="top" secondItem="zdp-4w-shf" secondAttribute="top" id="v2M-1q-Mcy"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
@@ -1019,5 +1033,8 @@
     <resources>
         <image name="arrow_triangle_small" width="7" height="7"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

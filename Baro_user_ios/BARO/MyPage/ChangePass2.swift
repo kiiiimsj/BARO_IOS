@@ -23,7 +23,7 @@ class ChangePass2 : UIViewController {
     public var up = false
 //    let regex = try? NSRegularExpression(pattern:"[0-9a-zA-Z]{4,}$", options: .caseInsensitive)
     
-    let regex = try? NSRegularExpression(pattern:"([A-Z]*[0-9a-z]){8,}", options: .caseInsensitive)
+    let regex = try? NSRegularExpression(pattern:"(([a-zA-Z]|[0-9])+([0-9]|[a-zA-Z])){4,}", options: .caseInsensitive)
     
     override func viewDidLoad() {
         super.viewDidLoad()
