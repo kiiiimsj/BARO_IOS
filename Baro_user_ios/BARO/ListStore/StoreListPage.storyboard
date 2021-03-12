@@ -89,6 +89,12 @@
                                                         <constraint firstAttribute="height" constant="0.5" id="Rtc-Kd-3GX"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-10%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8L-b3-NRi" customClass="DiscountLabel" customModule="BARO" customModuleProvider="target">
+                                                    <rect key="frame" x="97" y="24.5" width="28" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,8 +103,10 @@
                                                 <constraint firstItem="ZB5-Ok-mTe" firstAttribute="centerY" secondItem="Ru1-w4-M1G" secondAttribute="centerY" id="BLA-zX-3Gm"/>
                                                 <constraint firstAttribute="trailing" secondItem="ViC-8L-ntW" secondAttribute="trailing" constant="16" id="CFi-86-4jQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="Kqi-CA-Bu2" secondAttribute="bottom" constant="18" id="FSR-EV-AVa"/>
+                                                <constraint firstItem="ZB5-Ok-mTe" firstAttribute="top" secondItem="S8L-b3-NRi" secondAttribute="bottom" constant="5" id="Hd0-aZ-wD4"/>
                                                 <constraint firstItem="Kqi-CA-Bu2" firstAttribute="leading" secondItem="Ru1-w4-M1G" secondAttribute="leading" constant="10" id="Hd2-WZ-6BY"/>
                                                 <constraint firstItem="9rf-y1-RUH" firstAttribute="top" secondItem="Ru1-w4-M1G" secondAttribute="top" id="I1d-D3-Hkt"/>
+                                                <constraint firstItem="S8L-b3-NRi" firstAttribute="leading" secondItem="ZB5-Ok-mTe" secondAttribute="leading" id="Kjv-hv-gJr"/>
                                                 <constraint firstItem="Kqi-CA-Bu2" firstAttribute="top" secondItem="Ru1-w4-M1G" secondAttribute="top" constant="18" id="M6G-v2-SBB"/>
                                                 <constraint firstItem="ViC-8L-ntW" firstAttribute="centerY" secondItem="Kqi-CA-Bu2" secondAttribute="centerY" constant="10" id="Prt-tO-R5d"/>
                                                 <constraint firstItem="ViC-8L-ntW" firstAttribute="top" secondItem="RlK-Pb-X2Y" secondAttribute="bottom" constant="7" id="p8D-nR-axc"/>
@@ -111,6 +119,7 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="414" height="111"/>
                                         <connections>
+                                            <outlet property="discount_rate_label" destination="S8L-b3-NRi" id="o9G-V3-h4p"/>
                                             <outlet property="distance_Label" destination="ViC-8L-ntW" id="hRN-4Y-mEY"/>
                                             <outlet property="imageView" destination="Kqi-CA-Bu2" id="g27-If-sdH"/>
                                             <outlet property="is_OpenLable" destination="RlK-Pb-X2Y" id="TFZ-tI-3IG"/>

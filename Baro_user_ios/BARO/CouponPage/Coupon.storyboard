@@ -23,7 +23,7 @@
         <!--CouponPageController-->
         <scene sceneID="eqD-fj-Sm5">
             <objects>
-                <viewController storyboardIdentifier="CouponPageController" title="CouponPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kxe-lW-kmD" customClass="CouponPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CouponPageController" title="CouponPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kxe-lW-kmD" customClass="CouponPageController" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JiN-Q4-ou7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CouponCell" id="8BG-u9-JBA" customClass="CouponCell" customModule="Baro_user_ios" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CouponCell" id="8BG-u9-JBA" customClass="CouponCell" customModule="BARO" customModuleProvider="target">
                                         <rect key="frame" x="-6" y="0.0" width="394" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lH0-8e-WGm">
@@ -170,16 +170,16 @@
         <!--Coupon Register Controller-->
         <scene sceneID="DSq-9m-cpL">
             <objects>
-                <viewController storyboardIdentifier="CouponRegisterController" id="UPx-Dw-tD1" customClass="CouponRegisterController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CouponRegisterController" id="UPx-Dw-tD1" customClass="CouponRegisterController" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RgY-ne-fEE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nkm-pn-dj0">
-                                <rect key="frame" x="50" y="348" width="314" height="200"/>
+                                <rect key="frame" x="50" y="373" width="314" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fg-Z8-EI2">
-                                        <rect key="frame" x="2" y="158" width="310" height="40"/>
+                                        <rect key="frame" x="5" y="115" width="304" height="30"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="16"/>
                                         <state key="normal" title="확인">
@@ -190,13 +190,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쿠폰 등록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ur3-ez-eoj">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="45"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                         <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKl-Ui-Mcn">
-                                        <rect key="frame" x="0.0" y="60" width="314" height="98"/>
+                                        <rect key="frame" x="20" y="45" width="274" height="70"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -206,18 +206,18 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="uKl-Ui-Mcn" firstAttribute="top" secondItem="Ur3-ez-eoj" secondAttribute="bottom" id="8eI-Fr-Cos"/>
-                                    <constraint firstItem="uKl-Ui-Mcn" firstAttribute="leading" secondItem="Nkm-pn-dj0" secondAttribute="leading" id="Azd-xN-RQg"/>
+                                    <constraint firstItem="uKl-Ui-Mcn" firstAttribute="leading" secondItem="Nkm-pn-dj0" secondAttribute="leading" constant="20" id="Azd-xN-RQg"/>
                                     <constraint firstItem="Ur3-ez-eoj" firstAttribute="height" secondItem="Nkm-pn-dj0" secondAttribute="height" multiplier="0.3" id="DSl-u1-nHP"/>
                                     <constraint firstItem="Ur3-ez-eoj" firstAttribute="top" secondItem="Nkm-pn-dj0" secondAttribute="top" id="EaL-o3-OVc"/>
-                                    <constraint firstAttribute="trailing" secondItem="uKl-Ui-Mcn" secondAttribute="trailing" id="Nrr-Ia-M7c"/>
-                                    <constraint firstAttribute="trailing" secondItem="8fg-Z8-EI2" secondAttribute="trailing" constant="2" id="Ph2-Hv-OuN"/>
+                                    <constraint firstAttribute="trailing" secondItem="uKl-Ui-Mcn" secondAttribute="trailing" constant="20" id="Nrr-Ia-M7c"/>
+                                    <constraint firstAttribute="trailing" secondItem="8fg-Z8-EI2" secondAttribute="trailing" constant="5" id="Ph2-Hv-OuN"/>
                                     <constraint firstItem="Ur3-ez-eoj" firstAttribute="leading" secondItem="Nkm-pn-dj0" secondAttribute="leading" id="Ura-CW-tsN"/>
                                     <constraint firstItem="8fg-Z8-EI2" firstAttribute="top" secondItem="uKl-Ui-Mcn" secondAttribute="bottom" id="ZJb-Nz-SBc"/>
-                                    <constraint firstAttribute="height" constant="200" id="g52-qV-cjG"/>
+                                    <constraint firstAttribute="height" constant="150" id="g52-qV-cjG"/>
                                     <constraint firstAttribute="trailing" secondItem="Ur3-ez-eoj" secondAttribute="trailing" id="gNK-4u-cSf"/>
-                                    <constraint firstAttribute="bottom" secondItem="8fg-Z8-EI2" secondAttribute="bottom" constant="2" id="lHw-uA-W0o"/>
+                                    <constraint firstAttribute="bottom" secondItem="8fg-Z8-EI2" secondAttribute="bottom" constant="5" id="lHw-uA-W0o"/>
                                     <constraint firstItem="8fg-Z8-EI2" firstAttribute="height" secondItem="Nkm-pn-dj0" secondAttribute="height" multiplier="0.2" id="rm4-4u-xeg"/>
-                                    <constraint firstItem="8fg-Z8-EI2" firstAttribute="leading" secondItem="Nkm-pn-dj0" secondAttribute="leading" constant="2" id="v18-RU-cQc"/>
+                                    <constraint firstItem="8fg-Z8-EI2" firstAttribute="leading" secondItem="Nkm-pn-dj0" secondAttribute="leading" constant="5" id="v18-RU-cQc"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -93,6 +93,7 @@ class BottomTabBarController: UIViewController {
     var currentStoreName : String = ""
     //listStore 관련 요소
     var beforeKind : String = "0"
+    var tempStoreName = ""
     
     //내부 뷰 사이즈 관련 요소
     var saveTopViewSize = CGSize()
@@ -324,9 +325,10 @@ class BottomTabBarController: UIViewController {
                 finallController = VCsender
             case aboutStoreControllerIdentifier:
                 let VCsender = controller as! AboutStore
-                let data = sender as! [String : Int]
-                VCsender.store_id = data["id"]! as Int
-                VCsender.discount_rate = data["discount_rate"]! as Int
+                let data = sender as! [String : Any]
+                VCsender.store_id = data["id"]! as! Int
+                VCsender.discount_rate = data["discount_rate"]! as! Int
+
                 finallController = VCsender
             case storeListControllerIdentifier:
                 let VCsender = controller as! StoreListPageController
@@ -416,27 +418,35 @@ class BottomTabBarController: UIViewController {
                     let controllerData = controller as! StoreListPageController
                     if(controllerData.typeCode == "2") {
                         topBarViewControllerTitle.text = "찜한 가게"
+                        showTime(controller: controllerData)
+                    }
+                    else if(controllerData.kind == 3) {
+                        topBarViewControllerTitle.text = "검색 가게"
+                        topBarBackBtn.isHidden = false
+                        showTime(controller: controllerData)
                     }
                     else {
                         topBarBackBtn.isHidden = false
+                        minimizeTopView()
                     }
-                    if(controllerData.kind == 3) {
-                        topBarViewControllerTitle.text = "검색 가게"
-                        topBarBackBtn.isHidden = false
-                    }
+                    
                     if (controllerData.typeCode == "CAFE") {
                         topBarViewControllerTitle.text = "카페"
+                        minimizeTopView()
                     }
                     if (controllerData.typeCode == "DESSERT") {
                         topBarViewControllerTitle.text = "디저트"
+                        minimizeTopView()
                     }
                     if (controllerData.typeCode == "JAPANESE") {
                         topBarViewControllerTitle.text = "일식"
+                        minimizeTopView()
                     }
                     if (controllerData.typeCode == "KOREAN") {
                         topBarViewControllerTitle.text = "한식"
+                        minimizeTopView()
                     }
-                    minimizeTopView()
+                    
                 case orderDetailControllerIdentifier:
                     topBarViewControllerTitle.isHidden = false
                     topBarBackBtn.isHidden = false
@@ -470,7 +480,12 @@ class BottomTabBarController: UIViewController {
                 case aboutStoreControllerIdentifier:
                     topBarFavoriteBtn.isHidden = false
                     topBarBackBtn.isHidden = false
-                    topBarViewControllerTitle.text = "\(currentStoreName)"
+                    if tempStoreName != "" {
+                        topBarViewControllerTitle.text = "\(tempStoreName)"
+                        tempStoreName = ""
+                    }else{
+                        topBarViewControllerTitle.text = "\(currentStoreName)"
+                    }
                     let controllerData = controller as! AboutStore
                     controllerData.bottomTabBarInfo = self
                     showTime(controller: controllerData)
@@ -650,6 +665,9 @@ extension BottomTabBarController {
             case basketControllerIdentifier :
                 let rvc = vc as! BasketController
                 rvc.reloadBasket()
+            case storeListControllerIdentifier :
+                let rvc = vc as! StoreListPageController
+                rvc.reloadStoreList()
             default: break
                 
             }

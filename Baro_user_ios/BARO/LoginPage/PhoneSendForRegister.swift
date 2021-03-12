@@ -36,7 +36,7 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         sendPhoneToFireBaseBtn.layer.cornerRadius = 15
-        Auth.auth().settings!.isAppVerificationDisabledForTesting = false
+        Auth.auth().settings!.isAppVerificationDisabledForTesting = true
         
         inputPhone.borderStyle = .none
         swipeRecognizer()
