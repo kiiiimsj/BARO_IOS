@@ -10,6 +10,10 @@ import SwiftyBootpay
 import SwiftyJSON
 import KituraWebSocketClient
 class MyBootPayController : UIViewController {
+    let ON_ERROR = 0
+    let ON_DONE = 1
+    let ON_CANCEL = 2
+    
     let netWork = CallRequest()
     let urlMaker = NetWorkURL()
     var result : Bool = false
@@ -39,6 +43,7 @@ class MyBootPayController : UIViewController {
     var isOnClose : Bool = false
     
     let bottomTabBarInfo = BottomTabBarController()
+    private var getBootPayAction = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,6 +142,7 @@ class MyBootPayController : UIViewController {
 extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func clickPaymentCheckBtn() {
         if (self.result) {
+            Bootpay.dismiss() // 결제창 종료
 //            let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
 //            let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
 //
@@ -201,13 +207,11 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     func onCancel(data: [String: Any]) {
         print("onCancel")
         self.result = false
-        self.createDialog(titleContentString: "결 제 오 류", contentString: "결제가 취소되었습니다.", buttonString: "확인")
     }
     // 결제완료시 호출
     // 아이템 지급 등 데이터 동기화 로직을 수행합니다
     func onDone(data: [String: Any]) {
         setOrderInsertParam(order_date: data["purchased_at"] as! String)
-        
     }
     //결제창이 닫힐때 실행되는 부분
     func onClose() {
@@ -215,11 +219,21 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             self.dismiss(animated: true)
         }else {
             self.isOnClose = true
-            self.dismiss(animated: true)
+            switch(self.getBootPayAction) {
+                case ON_ERROR:
+                    self.createDialog(titleContentString: "결 제 오 류", contentString: "결제가 취소되었습니다.", buttonString: "확인")
+                    break;
+                case ON_DONE:
+                    self.createDialog(titleContentString: "결 제 완 료", contentString: "결제가 완료 되었습니다.", buttonString: "확인")
+                    break;
+                case ON_CANCEL:
+                    self.createDialog(titleContentString: "결 제 오 류", contentString: "결제가 취소되었습니다.", buttonString: "확인")
+                    break;
+                default:
+                    break;
+            }
         }
         print("onClose")
-        Bootpay.dismiss() // 결제창 종료
-        
         //결제 취소를 알리는 Dialog생성
     }
     func createDialog(titleContentString: String, contentString: String, buttonString: String) {
@@ -289,7 +303,6 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         self.netWork.post(method: .post, param: param, url: self.urlMaker.orderInsertToServer) {
             json in
             if json["result"].boolValue {
-                self.createDialog(titleContentString: "결 제 완 료", contentString: "결제가 완료 되었습니다.", buttonString: "확인")
                 //websocket 통신 부분
                 do {
                     try self.websocket!.connect()
