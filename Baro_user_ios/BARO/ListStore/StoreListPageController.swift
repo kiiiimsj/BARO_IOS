@@ -74,6 +74,7 @@ class StoreListPageController : UIViewController {
                         storeListModel.store_info = item["store_info"].stringValue
                         storeListModel.store_location = item["store_location"].stringValue
                         storeListModel.store_name = item["store_name"].stringValue
+                        storeListModel.discount_rate = item["discount_rate"].intValue
                         self.storeList.append(storeListModel)
                     }
                 }else{
@@ -104,6 +105,7 @@ class StoreListPageController : UIViewController {
                         storeListModel.store_info = item["store_info"].stringValue
                         storeListModel.store_location = item["store_location"].stringValue
                         storeListModel.store_name = item["store_name"].stringValue
+                        storeListModel.discount_rate = item["discount_rate"].intValue
                         self.storeList.append(storeListModel)
                     }
                     
@@ -199,6 +201,12 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
                 cell.is_OpenLable.text = "준비중"
                 cell.is_OpenLable.backgroundColor = UIColor.init(cgColor: CGColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1))
             }
+            if store.discount_rate != 0 {
+                cell.discount_rate_label.text = "SALE \(store.discount_rate)%"
+                cell.discount_rate_label.isHidden = false
+            }else{
+                cell.discount_rate_label.isHidden = true
+            }
             cell.is_OpenLable.layer.borderColor = UIColor.white.cgColor
             cell.is_OpenLable.layer.borderWidth = 2
             cell.is_OpenLable.layer.cornerRadius = 5
@@ -274,6 +282,74 @@ extension StoreListPageController : UIScrollViewDelegate {
                 self.endOfData = true
             }
             self.callMoreData = false
+        }
+    }
+}
+
+extension StoreListPageController {
+    func reloadStoreList() {
+        switch kind {
+        case 2:
+            storeList.removeAll()
+            let jsonObject : [String : Any ] = [
+                "latitude" : "37.499",
+                "longitude" : "126.956",
+                "phone" : UserDefaults.standard.value(forKey: "user_phone") as! String
+            ]
+            network.post(method: .post, param: jsonObject, url: urlCaller.myStoreList) {
+                (json) in
+                var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "", discount_rate: 0)
+                if json["result"].boolValue {
+                    for item in json["favorite"].array! {
+                        storeListModel.store_image = item["store_image"].stringValue
+                        storeListModel.is_open = item["is_open"].stringValue
+                        storeListModel.distance = item["distance"].doubleValue
+                        storeListModel.store_id = item["store_id"].intValue
+                        storeListModel.store_info = item["store_info"].stringValue
+                        storeListModel.store_location = item["store_location"].stringValue
+                        storeListModel.store_name = item["store_name"].stringValue
+                        storeListModel.discount_rate = item["discount_rate"].intValue
+                        self.storeList.append(storeListModel)
+                    }
+                    
+                }else{
+                    
+                }
+                self.storeListView.reloadData()
+            }
+        case 3 :
+            storeList.removeAll()
+            let jsonObject : [String : Any ] = [
+                "keyword" : searchWord,
+                "latitude" : "37.499",
+                "longitude" : "126.956",
+                "startPoint" : 0
+            ]
+            network.post(method: .post, param: jsonObject, url: urlCaller.storeSearchURL ) {
+                (json) in
+                var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
+                if json["result"].count < 20 {
+                    self.endOfData = true
+                }
+                if json["result"].boolValue {
+                    for item in json["store"].array! {
+                        storeListModel.store_image = item["store_image"].stringValue
+                        storeListModel.is_open = item["is_open"].stringValue
+                        storeListModel.distance = item["distance"].doubleValue
+                        storeListModel.store_id = item["store_id"].intValue
+                        storeListModel.store_info = item["store_info"].stringValue
+                        storeListModel.store_location = item["store_location"].stringValue
+                        storeListModel.store_name = item["store_name"].stringValue
+                        storeListModel.discount_rate = item["discount_rate"].intValue
+                        self.storeList.append(storeListModel)
+                    }
+                }else{
+                    self.endOfData = true
+                }
+                self.storeListView.reloadData()
+            }
+        default:
+            return
         }
     }
 }

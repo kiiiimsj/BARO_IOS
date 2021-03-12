@@ -12,6 +12,27 @@ class ChangePassComplete: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func pressComplete(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        let pvc = self.presentingViewController
+        self.dismiss(animated: false) {
+            if (UserDefaults.standard.bool(forKey: "checkedBox") ) {
+                UserDefaults.standard.removeObject(forKey: "basket")
+                UserDefaults.standard.removeObject(forKey: "user_email")
+                UserDefaults.standard.removeObject(forKey: "user_name")
+                UserDefaults.standard.removeObject(forKey: "user_phone")
+            }
+            else {
+                UserDefaults.resetStandardUserDefaults()
+                UserDefaults.standard.removeObject(forKey: "basket")
+                UserDefaults.standard.removeObject(forKey: "user_email")
+                UserDefaults.standard.removeObject(forKey: "user_name")
+                UserDefaults.standard.removeObject(forKey: "user_phone")
+            }
+            let vc = UIStoryboard.init(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginPageController")
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            pvc!.present(vc, animated: true, completion: nil)
+            let bottom = pvc as? BottomTabBarController
+            bottom!.changeViewController(getController: "NewMainPageController", getStoryBoard: UIStoryboard(name: "NewMainPage", bundle: nil), sender: nil)
+        }
     }
 }

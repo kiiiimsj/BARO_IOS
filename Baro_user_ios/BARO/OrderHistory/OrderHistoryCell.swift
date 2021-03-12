@@ -41,9 +41,10 @@ class OrderHistoryCell : UICollectionViewCell {
                 let ViewInBottomTabBar = storyboard.instantiateViewController(withIdentifier: "BottomTabBarController") as! BottomTabBarController
                 ViewInBottomTabBar.controllerIdentifier = bottomTabBarInfo.aboutStoreControllerIdentifier
                 ViewInBottomTabBar.controllerStoryboard = bottomTabBarInfo.aboutStoreStoryBoard
-                var data = ["id" : cellData!.store_id,"discount_rate" : json["discount_rate"].intValue]
+                let data = ["id" : cellData!.store_id,"discount_rate" : json["discount_rate"].intValue] as [String : Any]
                 ViewInBottomTabBar.controllerSender = data
                 ViewInBottomTabBar.moveFromOutSide = true
+                ViewInBottomTabBar.tempStoreName = cellData!.store_name
                 ViewInBottomTabBar.modalPresentationStyle = .fullScreen
                 ViewInBottomTabBar.modalTransitionStyle = . crossDissolve
                 
