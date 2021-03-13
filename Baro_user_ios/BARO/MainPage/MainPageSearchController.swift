@@ -25,7 +25,7 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if searchBar.text!.count <= 1 {
+        if searchBar.text!.count <= 0 {
             return
         }
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
@@ -51,7 +51,7 @@ class MainPageSearchController : UIViewController, UISearchBarDelegate {
     }
     
     @IBAction func searchBtn(_ sender: Any) {
-        if searchBar.text!.count <= 1 {
+        if searchBar.text!.count < 1 {
             return
         }
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
