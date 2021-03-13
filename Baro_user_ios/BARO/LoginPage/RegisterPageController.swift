@@ -133,7 +133,7 @@ class RegisterPageController: UIViewController {
             let result = passGetResult?.numberOfRanges as? Int
             if(result == nil) {
                 passInputError.isHidden = false
-                passInputError.text = "영어 와 숫자 조합으로 8글자 이상 입력해주세요."
+                passInputError.text = "영어와 숫자 조합으로 8글자 이상 입력해주세요."
             }
             else {
                 passInputError.isHidden = true
