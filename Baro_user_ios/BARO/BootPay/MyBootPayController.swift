@@ -166,6 +166,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     }
     // 에러가 났을때 호출되는 부분
     func onError(data: [String: Any]) {
+        self.getBootPayAction = ON_ERROR
         print("Payment processing onError : ",data)
 //        if let getError = data["msg"] as? String ?? "" {
 //            let errorMessage = getError
@@ -206,11 +207,13 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     // 결제 취소시 호출
     func onCancel(data: [String: Any]) {
         print("onCancel")
+        self.getBootPayAction = ON_DONE
         self.result = false
     }
     // 결제완료시 호출
     // 아이템 지급 등 데이터 동기화 로직을 수행합니다
     func onDone(data: [String: Any]) {
+        self.getBootPayAction = ON_DONE
         setOrderInsertParam(order_date: data["purchased_at"] as! String)
     }
     //결제창이 닫힐때 실행되는 부분
