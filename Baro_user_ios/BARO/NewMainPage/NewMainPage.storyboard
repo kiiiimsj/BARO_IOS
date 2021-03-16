@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KEk-eT-DGy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KEk-eT-DGy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baro_logo" translatesAutoresizingMaskIntoConstraints="NO" id="seP-qc-XCq">
-                                <rect key="frame" x="16" y="64" width="53.5" height="30"/>
+                                <rect key="frame" x="16" y="64" width="61" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="2HX-1j-P0p"/>
                                 </constraints>
@@ -307,7 +308,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="0.86787522009999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="mainColor"/>
                                 <constraints>
                                     <constraint firstItem="Bf9-UV-lVA" firstAttribute="centerX" secondItem="Qv9-rc-6cU" secondAttribute="centerX" id="fRg-z2-BDY"/>
                                     <constraint firstAttribute="height" constant="50" id="kHB-4S-tdD"/>
@@ -417,7 +418,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                     </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgO-9g-WMp">
                                         <rect key="frame" x="5" y="155" width="324" height="40"/>
-                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="mainColor"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                         <state key="normal" title="검색하기">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -525,9 +526,12 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
     <resources>
         <image name="alert_off" width="14" height="16.5"/>
         <image name="arrow_down" width="13" height="7.5"/>
-        <image name="baro_logo" width="53.5" height="14"/>
+        <image name="baro_logo" width="61" height="16"/>
         <image name="search" width="17" height="16.5"/>
         <image name="timer_white" width="17" height="19.5"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="mainColor">
+            <color red="0.51372549019607838" green="0.20000000000000001" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

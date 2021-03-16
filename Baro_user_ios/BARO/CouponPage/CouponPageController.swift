@@ -93,7 +93,7 @@ extension CouponPageController : UICollectionViewDelegate,UICollectionViewDataSo
         cell.CouponEndDate.text = data.coupon_enddate+"까지"
         cell.couponCondition.text = String(data.coupon_condition)+"원 이상 구매시 적용 가능"
         cell.layer.borderWidth = 3
-        cell.layer.borderColor = UIColor.init(red: 131/255, green: 51/255, blue: 230/255, alpha: 0.5).cgColor
+        cell.layer.borderColor = UIColor.baro_main_color.cgColor
         cell.layer.cornerRadius = 10
 //        cell.backgroundColor = .purple
         return cell

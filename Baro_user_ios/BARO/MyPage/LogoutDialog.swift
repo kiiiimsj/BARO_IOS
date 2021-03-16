@@ -18,7 +18,7 @@ class LogoutDialog : UIViewController {
         yesBtn.layer.cornerRadius = 5
         yesBtn.layer.masksToBounds = true
         yesBtn.layer.borderWidth = 1
-        yesBtn.layer.borderColor = UIColor(red: 131/255, green: 51/255, blue: 230/255, alpha: 1).cgColor
+        yesBtn.layer.borderColor = UIColor.baro_main_color.cgColor
         noBtn.layer.cornerRadius = 5
         noBtn.layer.masksToBounds = true
     }

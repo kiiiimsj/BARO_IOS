@@ -99,17 +99,13 @@ class BottomTabBarController: UIViewController {
     var saveTopViewSize = CGSize()
     var saveContentViewSize = CGSize()
     var saveBottomViewSize = CGSize()
+    @IBOutlet weak var timeViewRestoreConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentViewTopDeleteConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var contentViewTopRestoreConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         saveContentViewSize = CGSize(width: view.frame.width, height: 700.0)
         saveTopViewSize = CGSize(width: view.frame.width, height: 69.0)
-        ///
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -181,7 +177,7 @@ class BottomTabBarController: UIViewController {
         label.textAlignment = .center
         label.layer.masksToBounds = true
         label.font = UIFont(name: "NotoSansCJKkr-Regular", size: 9)
-        label.textColor = UIColor.init(red: 131/255, green: 51/255, blue: 230/255, alpha: 1)
+        label.textColor = UIColor.baro_main_color
         label.backgroundColor = .white
         for order in basketOrders {
             count += order.menu_count
@@ -290,6 +286,7 @@ class BottomTabBarController: UIViewController {
         TopView.isHidden = false
         contentViewTopDeleteConstraint.isActive = false
         contentViewTopRestoreConstraint.isActive = true
+//        timeViewRestoreConstraint.isActive = true
     }
     //탑뷰 지우기
     func deleteTopView() {
@@ -405,6 +402,7 @@ class BottomTabBarController: UIViewController {
     func topBarHandler(controller : UIViewController) {
         basketButton.isHidden = true
         topBarBackBtn.isHidden = true
+        timeView.isHidden = true
         topBarFavoriteBtn.isHidden = true
         topBarRefreshBtn.isHidden = true
         topBarViewControllerTitle.isHidden = false
@@ -582,7 +580,7 @@ class BottomTabBarController: UIViewController {
 extension BottomTabBarController : UITabBarDelegate {
     //탭바아이템 클릭에 따른 분기문
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        timeView.isHidden = true
+//        timeView.isHidden = true
         switch(item.title) {
         case "홈":
 //            changeViewController(getController: mainPageControllerIdentifier, getStoryBoard: mainPageStoryBoard, sender: nil)

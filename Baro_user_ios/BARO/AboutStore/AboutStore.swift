@@ -104,14 +104,14 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     func setTabBarItem() {
         menuButton.setTitle("메뉴", for: .normal)
         menuButton.backgroundColor = .white
-        menuButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
+        menuButton.tintColor = UIColor.baro_main_color
         
         storeInfoButton.setTitle("가게 정보", for: .normal)
         storeInfoButton.backgroundColor = .white
         storeInfoButton.tintColor = UIColor(red: 196/255.0, green: 196/255.0, blue: 196/255.0, alpha: 1)
     }
     @IBAction func menuButtonClick() {
-        menuButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
+        menuButton.tintColor = UIColor.baro_main_color
         storeInfoButton.tintColor = UIColor(red: 196/255.0, green: 196/255.0, blue: 196/255.0, alpha: 1)
         UIView.animate(withDuration: 0.3) {
             self.tabIndecator.transform = CGAffineTransform(translationX: 0.0, y: self.menuButton.bounds.maxY)
@@ -120,7 +120,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     }
     
     @IBAction func storeInfoButtonClick() {
-        storeInfoButton.tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1)
+        storeInfoButton.tintColor = UIColor.baro_main_color
         menuButton.tintColor = UIColor(red: 196/255.0, green: 196/255.0, blue: 196/255.0, alpha: 1)
         UIView.animate(withDuration: 0.3 ) {
             self.tabIndecator.transform = CGAffineTransform(translationX: self.storeInfoButton.bounds.width, y:
