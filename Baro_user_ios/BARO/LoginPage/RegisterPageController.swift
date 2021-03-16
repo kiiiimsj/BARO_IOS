@@ -120,7 +120,6 @@ class RegisterPageController: UIViewController {
         let passCheck = passCheckInput.text
         
         if (pass == "" || pass!.count <= 4) {
-            
             passInputError.text = "비밀번호를 4자리 이상 입력해주세요."
             passInputError.isHidden = false
         }
@@ -128,7 +127,7 @@ class RegisterPageController: UIViewController {
             passInputError.isHidden = true
             var passGetResult : NSTextCheckingResult?
             
-            let passRegex = try? NSRegularExpression(pattern: "(([a-zA-Z]|[0-9])+([0-9]|[a-zA-Z])){4,}", options: .caseInsensitive)
+            let passRegex = try? NSRegularExpression(pattern: "^(?=.*[0-9]+)[a-zA-Z][a-zA-Z0-9]{7,}$", options: .caseInsensitive)
             passGetResult = passRegex?.firstMatch(in: pass!, options: [], range: NSRange(location: 0, length: passNSString.length))
             let result = passGetResult?.numberOfRanges as? Int
             if(result == nil) {

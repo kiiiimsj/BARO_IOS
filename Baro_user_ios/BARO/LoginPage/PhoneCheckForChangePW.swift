@@ -47,6 +47,13 @@ class PhoneCheckForChangePW : UIViewController {
         }
     }
     @objc func pinInputfieldSet(_ textField : UITextField) {
+        let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "SetNewPW") as! SetNewPW
+//                guard self.presentingViewController != nil else { return }
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = . crossDissolve
+        vc.phoneNumber = self.phoneNumber
+        guard let pvc = self.presentingViewController else { return }
+        pvc.present(vc, animated: true, completion: nil)
         textField.clearsOnBeginEditing = true
         authString = ""
         if(textField.text!.count >= 1) {
@@ -78,32 +85,34 @@ class PhoneCheckForChangePW : UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     @IBAction func pressBtn(_ sender: Any) {
-        let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.verificationID, verificationCode: self.authString)
-        Auth.auth().signIn(with: credential) { authData, error in
-            if ((error) != nil) {
-                let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
-                dialog.message = "\(String(describing: error))"
-                dialog.modalPresentationStyle = .overFullScreen
-                dialog.modalTransitionStyle = .crossDissolve
-                self.present(dialog, animated: true)
-            }
-            else {
-                let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "SetNewPW") as! SetNewPW
+        let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "SetNewPW") as! SetNewPW
 //                guard self.presentingViewController != nil else { return }
-                vc.modalPresentationStyle = .fullScreen
-                vc.modalTransitionStyle = . crossDissolve
-                vc.phoneNumber = self.phoneNumber
-                guard let pvc = self.presentingViewController else { return }
-                self.dismiss(animated: false){
-                    pvc.present(vc, animated: true, completion: nil)
-                }
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = . crossDissolve
+        vc.phoneNumber = self.phoneNumber
+        guard let pvc = self.presentingViewController else { return }
+        self.dismiss(animated: false){
+            pvc.present(vc, animated: true, completion: nil)
+        }
+        //테스트 끝나면 위에 지우고 아래 주석 풀어주기
+        
+//        let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.verificationID, verificationCode: self.authString)
+//        Auth.auth().signIn(with: credential) { authData, error in
+//            if ((error) != nil) {
+//                let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
+//                dialog.message = "\(String(describing: error))"
+//                dialog.modalPresentationStyle = .overFullScreen
+//                dialog.modalTransitionStyle = .crossDissolve
+//                self.present(dialog, animated: true)
+//            }
+//            else {
 //                self.dismiss(animated: false){
 //                    vc.modalPresentationStyle = .fullScreen
 //                    vc.modalTransitionStyle = . crossDissolve
 //                    vc.phoneNumber = self.phoneNumber
 //                    pvc.present(vc, animated: true, completion: nil)
 //                }
-            }
-        }
+//            }
+//        }
     }
 }

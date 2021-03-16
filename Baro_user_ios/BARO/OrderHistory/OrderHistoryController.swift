@@ -121,11 +121,11 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
             cell.cellData = orderHistory
             cell.orderTotalPriceLabel.text = "합계 : " + String(orderHistory.total_price.applyDiscountRate(discount_rate: orderHistory.discount_rate)) + " 원"
             cell.cellDelegate = self
-            cell.goToStoreBtn.layer.borderColor = UIColor.init(red: 131/255, green: 51/255, blue: 230/255, alpha: 1) .cgColor
+            cell.goToStoreBtn.layer.borderColor = UIColor.baro_main_color.cgColor
             cell.goToStoreBtn.layer.borderWidth = 1
             cell.goToStoreBtn.layer.cornerRadius = 10
             cell.goToStoreBtn.layer.masksToBounds = true
-            cell.showDetailsBtn.layer.borderColor = UIColor.init(red: 131/255, green: 51/255, blue: 230/255, alpha: 1) .cgColor
+            cell.showDetailsBtn.layer.borderColor = UIColor.baro_main_color.cgColor
             cell.showDetailsBtn.layer.borderWidth = 1
             cell.showDetailsBtn.layer.cornerRadius = 10
             cell.showDetailsBtn.layer.masksToBounds = true
