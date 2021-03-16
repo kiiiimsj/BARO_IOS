@@ -19,4 +19,5 @@ struct OrderHistoryList {
     var store_name = "가게이름"
     var order_state = "주문상태"
     var store_image = ""
+    var discount_rate = 0
 }

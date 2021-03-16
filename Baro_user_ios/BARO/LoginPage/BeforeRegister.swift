@@ -69,6 +69,8 @@ class BeforeRegister: UIViewController {
         }
         let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "PhoneSendForRegister") as! PhoneSendForRegister
         vc.marketing = radio4.isSelected
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = . crossDissolve
         guard let pvc = self.presentingViewController else { return }
         self.dismiss(animated: false){
             pvc.present(vc, animated: false, completion: nil)
