@@ -50,7 +50,7 @@ class OrderStatusController : UIViewController, TopViewElementDelegate {
                     orderStatusModel.order_state = item["order_state"].stringValue
                     orderStatusModel.total_count = item["total_count"].intValue
                     orderStatusModel.store_image = item["store_image"].stringValue
-                    
+                    orderStatusModel.discount_rate = item["discount_rate"].intValue
                     self.orderStatusList.append(orderStatusModel)
                 }
                 self.collectionView.reloadData() //해줘야함
@@ -76,7 +76,7 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderStatusCell", for: indexPath) as! OrderStatusCell
         cell.orderStoreNameLabel.text = String(orderStatus.store_name)
         storePhone = orderStatus.store_phone
-        cell.orderTotalPriceLabel.text = String(orderStatus.total_price)
+        cell.orderTotalPriceLabel.text = String(orderStatus.total_price.applyDiscountRate(discount_rate: orderStatus.discount_rate))
         cell.orderStoreImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + orderStatus.store_image))
         cell.orderInfo = orderStatus
         cell.timeLabel.text = orderStatus.order_date
