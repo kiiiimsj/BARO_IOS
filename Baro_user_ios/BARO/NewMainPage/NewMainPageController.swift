@@ -461,7 +461,7 @@ extension NewMainPageController : UICollectionViewDelegate, UICollectionViewData
         cell.imageView.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + String(store.store_image)))
         if store.is_open == "Y" {
             cell.is_OpenLable.text = "영업중"
-            cell.is_OpenLable.backgroundColor = UIColor.init(cgColor: CGColor(red: 131/255, green: 51/255, blue: 230/255, alpha: 1))
+            cell.is_OpenLable.backgroundColor = UIColor.baro_main_color
         }else{
             cell.is_OpenLable.text = "준비중"
             cell.is_OpenLable.backgroundColor = UIColor.init(cgColor: CGColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1))

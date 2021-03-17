@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UITabBar.appearance().tintColor = UIColor(red: 131/255.0, green: 51/255.0, blue: 230/255.0, alpha: 1.0)
+        UITabBar.appearance().tintColor = UIColor.baro_main_color
         Bootpay.sharedInstance.appLaunch(application_id: "5f28e2c002f57e0033305757") // production sample
         FirebaseApp.configure()
         Messaging.messaging().delegate = self

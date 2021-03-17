@@ -20,7 +20,7 @@
         <!--FirstPageController-->
         <scene sceneID="kWf-U0-Y6O">
             <objects>
-                <viewController storyboardIdentifier="FirstPageController" title="FirstPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fgp-h4-6qO" customClass="FirstPageController" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstPageController" title="FirstPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fgp-h4-6qO" customClass="FirstPageController" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jiz-bi-r2S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

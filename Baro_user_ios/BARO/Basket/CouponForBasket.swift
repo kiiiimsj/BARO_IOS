@@ -41,7 +41,7 @@ class CouponForBasket : UIViewController {
         getCoupon()
         setFirstLabelText()
         DialogTitle.layer.cornerRadius = 5
-        DialogTitle.layer.borderColor = UIColor(red: 131/255, green: 51/255, blue: 230/255, alpha: 1).cgColor
+        DialogTitle.layer.borderColor = UIColor.baro_main_color.cgColor
         DialogTitle.layer.masksToBounds = true
     }
     override func viewWillAppear(_ animated: Bool) {

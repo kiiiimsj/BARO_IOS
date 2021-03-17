@@ -29,7 +29,7 @@ class ToastMessage : UIViewController {
             }
         }
         toastLabel.numberOfLines = Int(((CGFloat(message.count) * 10.0) / 10))
-        toastLabel.backgroundColor = UIColor(red: 131/255, green: 51/255, blue: 230/255, alpha: 1)
+        toastLabel.backgroundColor = UIColor.baro_main_color
         toastLabel.textColor = UIColor.white
         toastLabel.font = font
         toastLabel.textAlignment = .center
