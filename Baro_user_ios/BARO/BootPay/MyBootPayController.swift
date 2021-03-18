@@ -207,14 +207,36 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
     // 결제 취소시 호출
     func onCancel(data: [String: Any]) {
         print("onCancel")
-        self.getBootPayAction = ON_DONE
+        self.getBootPayAction = ON_CANCEL
         self.result = false
     }
     // 결제완료시 호출
     // 아이템 지급 등 데이터 동기화 로직을 수행합니다
     func onDone(data: [String: Any]) {
         self.getBootPayAction = ON_DONE
-        setOrderInsertParam(order_date: data["purchased_at"] as! String)
+        let dateString = data["purchased_at"] as! String
+        let convertFormatter = DateFormatter()
+        convertFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let convertDate = convertFormatter.date(from: dateString)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일 hh시 mm분 ss초"
+        print("onDone")
+        
+//        let dateStr = "2020-08-13 16:30" // Date 형태의 String
+//
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" // 2020-08-13 16:30
+//
+//        let convertDate = dateFormatter.date(from: dateStr) // Date 타입으로 변환
+//
+//        let myDateFormatter = DateFormatter()
+//        myDateFormatter.dateFormat = "yyyy년 MM월 dd일 a hh시 mm분" // 2020년 08월 13일 오후 04시 30분
+//        myDateFormatter.locale = Locale(identifier:"ko_KR") // PM, AM을 언어에 맞게 setting (ex: PM -> 오후)
+//        let convertStr = myDateFormatter.string(from: convertDate!)
+        let orderDate = dateFormatter.string(from: convertDate!)
+        print("orderDate : \(orderDate)")
+        setOrderInsertParam(order_date: orderDate)
     }
     //결제창이 닫힐때 실행되는 부분
     func onClose() {
@@ -224,13 +246,13 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             self.isOnClose = true
             switch(self.getBootPayAction) {
                 case ON_ERROR:
-                    self.createDialog(titleContentString: "결 제 오 류", contentString: "결제가 취소되었습니다.", buttonString: "확인")
+                    self.createDialog(titleContentString: "결 제 오 류", contentString: "결제 중 오류가 발생하였습니다.", buttonString: "확인")
                     break;
                 case ON_DONE:
-                    self.createDialog(titleContentString: "결 제 완 료", contentString: "결제가 완료 되었습니다.", buttonString: "확인")
+                    self.createDialog(titleContentString: "결 제 완 료", contentString: "결제가 완료되었습니다.", buttonString: "확인")
                     break;
                 case ON_CANCEL:
-                    self.createDialog(titleContentString: "결 제 오 류", contentString: "결제가 취소되었습니다.", buttonString: "확인")
+                    self.createDialog(titleContentString: "결 제 취 소", contentString: "결제가 취소되었습니다.", buttonString: "확인")
                     break;
                 default:
                     break;
