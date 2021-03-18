@@ -35,6 +35,8 @@ class MyPageController : UIViewController {
     let bottomTabBarInfo = BottomTabBarController()
     var buttons = [ [" ", "입점요청", "1:1 문의"], [" ","비밀번호 변경", "이메일 변경"], [" ","이용약관", "개인정보 처리방침", "위치정보이용약관"] ]
     var buttonsSectionHeight : CGFloat = 12.0
+    var basketOrder = [Order]()
+    var basketCount : Int = 0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         userPhone = UserDefaults.standard.value(forKey: "user_phone") as! String
@@ -72,6 +74,13 @@ class MyPageController : UIViewController {
         OrderArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToOrder(_:))))
     }
     func setMyCountInfo() {
+        basketOrder = loadBasket()
+        if (basketOrder.isEmpty || basketOrder.count == 0 ) {
+            self.myBasketCount?.text = "0 건"
+        }
+        else {
+            myBasketCount.text = "\(basketCount)"
+        }
         networkModel.post(method: .get, param: nil, url: networkURL.orderCount+"\(userPhone)") { (json) in
             if json["result"].boolValue {
                 self.myOrderCount?.text = "\(json["total_orders"].intValue) 건"
@@ -87,16 +96,6 @@ class MyPageController : UIViewController {
             else {
                 self.myCouponCount?.text = "0 건"
             }
-        }
-        var basketCount : Int = 0
-        for basketItem in loadBasket() {
-            basketCount += basketItem.menu_count
-        }
-        if (basketCount == 0) {
-            self.myBasketCount?.text = "0 건"
-        }
-        else {
-            myBasketCount.text = "\(basketCount)"
         }
     }
     func setUserName() {
@@ -123,7 +122,7 @@ class MyPageController : UIViewController {
     @objc func goToBasket(_ sender : UIGestureRecognizer){
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
-        if(UserDefaults.standard.value(forKey: "basket") == nil || UserDefaults.standard.value(forKey: "basket") as! String == "") {
+        if(UserDefaults.standard.value(forKey: "basket") == nil || UserDefaults.standard.value(forKey: "basket") as! String == "" || basketCount == 0) {
             let notExist = UIStoryboard(name: "MyPage", bundle: nil).instantiateViewController(identifier: "NothingExist") as! NothingExist
             notExist.modalTransitionStyle = .crossDissolve
             notExist.modalPresentationStyle = .overFullScreen
