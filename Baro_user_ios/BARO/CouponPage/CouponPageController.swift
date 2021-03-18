@@ -24,6 +24,10 @@ class CouponPageController: UIViewController, UITextFieldDelegate {
         collection.dataSource = self
         typeCouponNumber.delegate = self
         reloadCoupon()
+        collection.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
+    }
+    @objc func tap(_ sender : UITapGestureRecognizer){
+        self.view.endEditing(true)
     }
     func configureUI(){
         registerBtn.layer.borderColor = UIColor.customLightGray.cgColor

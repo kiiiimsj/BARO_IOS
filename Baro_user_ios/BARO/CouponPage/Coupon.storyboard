@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kxe-lW-kmD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kxe-lW-kmD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -180,7 +180,7 @@
                                 <rect key="frame" x="50" y="373" width="314" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fg-Z8-EI2">
-                                        <rect key="frame" x="5" y="115" width="304" height="30"/>
+                                        <rect key="frame" x="10" y="110" width="294" height="30"/>
                                         <color key="backgroundColor" name="mainColor"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="16"/>
                                         <state key="normal" title="확인">
@@ -197,7 +197,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKl-Ui-Mcn">
-                                        <rect key="frame" x="20" y="45" width="274" height="70"/>
+                                        <rect key="frame" x="20" y="45" width="274" height="65"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -211,14 +211,14 @@
                                     <constraint firstItem="Ur3-ez-eoj" firstAttribute="height" secondItem="Nkm-pn-dj0" secondAttribute="height" multiplier="0.3" id="DSl-u1-nHP"/>
                                     <constraint firstItem="Ur3-ez-eoj" firstAttribute="top" secondItem="Nkm-pn-dj0" secondAttribute="top" id="EaL-o3-OVc"/>
                                     <constraint firstAttribute="trailing" secondItem="uKl-Ui-Mcn" secondAttribute="trailing" constant="20" id="Nrr-Ia-M7c"/>
-                                    <constraint firstAttribute="trailing" secondItem="8fg-Z8-EI2" secondAttribute="trailing" constant="5" id="Ph2-Hv-OuN"/>
+                                    <constraint firstAttribute="trailing" secondItem="8fg-Z8-EI2" secondAttribute="trailing" constant="10" id="Ph2-Hv-OuN"/>
                                     <constraint firstItem="Ur3-ez-eoj" firstAttribute="leading" secondItem="Nkm-pn-dj0" secondAttribute="leading" id="Ura-CW-tsN"/>
                                     <constraint firstItem="8fg-Z8-EI2" firstAttribute="top" secondItem="uKl-Ui-Mcn" secondAttribute="bottom" id="ZJb-Nz-SBc"/>
                                     <constraint firstAttribute="height" constant="150" id="g52-qV-cjG"/>
                                     <constraint firstAttribute="trailing" secondItem="Ur3-ez-eoj" secondAttribute="trailing" id="gNK-4u-cSf"/>
-                                    <constraint firstAttribute="bottom" secondItem="8fg-Z8-EI2" secondAttribute="bottom" constant="5" id="lHw-uA-W0o"/>
+                                    <constraint firstAttribute="bottom" secondItem="8fg-Z8-EI2" secondAttribute="bottom" constant="10" id="lHw-uA-W0o"/>
                                     <constraint firstItem="8fg-Z8-EI2" firstAttribute="height" secondItem="Nkm-pn-dj0" secondAttribute="height" multiplier="0.2" id="rm4-4u-xeg"/>
-                                    <constraint firstItem="8fg-Z8-EI2" firstAttribute="leading" secondItem="Nkm-pn-dj0" secondAttribute="leading" constant="5" id="v18-RU-cQc"/>
+                                    <constraint firstItem="8fg-Z8-EI2" firstAttribute="leading" secondItem="Nkm-pn-dj0" secondAttribute="leading" constant="10" id="v18-RU-cQc"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -232,6 +232,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="background" destination="Nkm-pn-dj0" id="q1X-s6-ScQ"/>
                         <outlet property="message" destination="uKl-Ui-Mcn" id="MF0-y6-KvF"/>
                         <outlet property="okayBtn" destination="8fg-Z8-EI2" id="zFC-VY-sVb"/>
                         <outlet property="titleLabel" destination="Ur3-ez-eoj" id="xVS-fP-PVh"/>
