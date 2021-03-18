@@ -467,7 +467,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f47-12-y4Y" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                    <rect key="frame" x="110" y="15" width="19.5" height="25"/>
+                                                    <rect key="frame" x="110" y="20" width="19.5" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="rzL-EI-lVx"/>
                                                     </constraints>
@@ -539,9 +539,9 @@
                                                 <constraint firstItem="5O9-ZI-E0L" firstAttribute="centerY" secondItem="9Jt-DO-6W1" secondAttribute="centerY" id="H5a-1f-UnC"/>
                                                 <constraint firstItem="vuV-0J-Zix" firstAttribute="leading" secondItem="AXP-20-r40" secondAttribute="trailing" constant="7" id="HB7-8e-WpF"/>
                                                 <constraint firstItem="QQA-k6-aku" firstAttribute="leading" secondItem="5O9-ZI-E0L" secondAttribute="trailing" constant="20" id="NTH-ts-cwb"/>
-                                                <constraint firstItem="f47-12-y4Y" firstAttribute="top" secondItem="5O9-ZI-E0L" secondAttribute="top" id="Upy-6v-fSH"/>
+                                                <constraint firstItem="f47-12-y4Y" firstAttribute="top" secondItem="5O9-ZI-E0L" secondAttribute="top" constant="5" id="Upy-6v-fSH"/>
                                                 <constraint firstAttribute="bottom" secondItem="5O9-ZI-E0L" secondAttribute="bottom" constant="15" id="f0G-eS-l8C"/>
-                                                <constraint firstItem="QQA-k6-aku" firstAttribute="top" secondItem="f47-12-y4Y" secondAttribute="bottom" constant="10" id="fsp-tf-KmV"/>
+                                                <constraint firstItem="QQA-k6-aku" firstAttribute="top" secondItem="f47-12-y4Y" secondAttribute="bottom" constant="5" id="fsp-tf-KmV"/>
                                                 <constraint firstItem="AXP-20-r40" firstAttribute="centerY" secondItem="vuV-0J-Zix" secondAttribute="centerY" id="hy2-EJ-fsP"/>
                                                 <constraint firstItem="f47-12-y4Y" firstAttribute="leading" secondItem="5O9-ZI-E0L" secondAttribute="trailing" constant="20" id="mXz-wW-jWZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="vuV-0J-Zix" secondAttribute="trailing" constant="20" id="nHv-t0-6D3"/>

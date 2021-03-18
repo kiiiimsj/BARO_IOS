@@ -186,18 +186,17 @@ extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollecti
 }
 extension CouponForBasket : UITextFieldDelegate {
     @objc func keyboardWillAppear(noti: NSNotification) {
-    if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-        let keyboardRectangle = keyboardFrame.cgRectValue
-        let keyboardHeight = keyboardRectangle.height
-        if self.view.frame.origin.y == restoreFrameValue{
-        self.view.frame.origin.y -= keyboardHeight
+        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            if self.view.frame.origin.y == restoreFrameValue{
+            self.view.frame.origin.y -= keyboardHeight
+            }
         }
     }
-        
-}
 
-@objc func keyboardWillDisappear(noti: NSNotification) {
-    if self.view.frame.origin.y != restoreFrameValue {
+    @objc func keyboardWillDisappear(noti: NSNotification) {
+        if self.view.frame.origin.y != restoreFrameValue {
             if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 let keyboardRectangle = keyboardFrame.cgRectValue
                 let keyboardHeight = keyboardRectangle.height
@@ -213,15 +212,26 @@ extension CouponForBasket : UITextFieldDelegate {
         self.view.endEditing(true)
     }
 
-func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
-    return true
-}
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
-func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-    self.view.frame.origin.y = self.restoreFrameValue
-    return true
-}
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        self.view.frame.origin.y = self.restoreFrameValue
+        return true
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,replacementString string: String) -> Bool {
+        guard let text = textField.text else {return false}
+            
+        // 최대 글자수 이상을 입력한 이후에는 중간에 다른 글자를 추가할 수 없게끔 작동
+        if text.count > 25 {
+            textField.deleteBackward()
+            return false
+        }
+            
+        return true
+    }
 }
     
 struct Coupon {
