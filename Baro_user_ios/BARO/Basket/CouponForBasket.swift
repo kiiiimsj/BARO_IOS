@@ -131,7 +131,7 @@ extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollecti
             cell.contentView.backgroundColor = .white
             return
         }else{
-            currentSelectedCoupon?.backgroundColor = .white
+            currentSelectedCoupon?.contentView.backgroundColor = .white
         }
         let indexPath = self.couponCollectionView.indexPath(for: cell)
         let couponData = self.coupons[indexPath!.item]
@@ -180,8 +180,9 @@ extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollecti
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: couponCollectionView.frame.width, height: 100)
+        return CGSize(width: couponCollectionView.frame.width-20, height: 100)
     }
+    
 }
 extension CouponForBasket : UITextFieldDelegate {
     @objc func keyboardWillAppear(noti: NSNotification) {
