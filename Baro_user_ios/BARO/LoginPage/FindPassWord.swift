@@ -40,20 +40,20 @@ class FindPassWord: UIViewController {
         if let authNumber = inputPhone.text {
             let range = authNumber.index(authNumber.startIndex, offsetBy: 0)..<authNumber.endIndex
             let nationPhoneNumber = nationNumber + authNumber[range]
-//            PhoneAuthProvider.provider().verifyPhoneNumber(nationPhoneNumber, uiDelegate: nil) {(verificationID, error) in
-//                if let error = error {
-//                    print(error)
-//                    let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
-//                    dialog.message = "\(error.localizedDescription)"
-//                    dialog.modalPresentationStyle = .overFullScreen
-//                    dialog.modalTransitionStyle = .crossDissolve
-//                    self.present(dialog, animated: true)
-//                  return
-//                }
-//                let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
-//                dialog.message = "해당 핸드폰에 인증문자를 발송했습니다."
-//                dialog.modalPresentationStyle = .overFullScreen
-//                dialog.modalTransitionStyle = .crossDissolve
+            PhoneAuthProvider.provider().verifyPhoneNumber(nationPhoneNumber, uiDelegate: nil) {(verificationID, error) in
+                if let error = error {
+                    print(error)
+                    let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
+                    dialog.message = "\(error.localizedDescription)"
+                    dialog.modalPresentationStyle = .overFullScreen
+                    dialog.modalTransitionStyle = .crossDissolve
+                    self.present(dialog, animated: true)
+                  return
+                }
+                let dialog = self.storyboard?.instantiateViewController(identifier: "LoginDialog") as! LoginDialog
+                dialog.message = "해당 핸드폰에 인증문자를 발송했습니다."
+                dialog.modalPresentationStyle = .overFullScreen
+                dialog.modalTransitionStyle = .crossDissolve
                 let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "PhoneCheckForChangePW") as! PhoneCheckForChangePW
                 if let num = self.inputPhone.text {
                     vc.phoneNumber = num
