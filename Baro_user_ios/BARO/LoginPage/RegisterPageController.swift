@@ -16,16 +16,15 @@ class RegisterPageController: UIViewController {
     @IBOutlet weak var passCheckInputError: UILabel!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var emailInputError: UILabel!
+    @IBOutlet weak var whitePart: uiViewSetting!
     let network = CallRequest()
     let urlMaker = NetWorkURL()
     var phoneNumber : String = ""
     var marketing = false
-    public var restoreFrameValue : CGFloat = 0.0
+    public lazy var restoreFrameValue : CGFloat = whitePart.frame.origin.y
     public var up = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(marketing
-        )
         layoutLoad()
         nameInput.delegate = self
         passInput.delegate = self
@@ -173,6 +172,8 @@ class RegisterPageController: UIViewController {
                         self.insertRegisterCoupon()
                         self.insertAllForNewAlert()
                         let vc = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "RegisterCompletePage") as! RegisterCompletePage
+                        vc.modalPresentationStyle = .overFullScreen
+                        vc.modalTransitionStyle = .crossDissolve
                         guard let pvc = self.presentingViewController else { return }
                         self.dismiss(animated: false){
                             pvc.present(vc, animated: false, completion: nil)
@@ -196,19 +197,21 @@ extension RegisterPageController : UITextFieldDelegate {
             if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 let keyboardRectangle = keyboardFrame.cgRectValue
                 let keyboardHeight = keyboardRectangle.height
-                if self.view.frame.origin.y == restoreFrameValue{
-                self.view.frame.origin.y -= keyboardHeight / 2
+                if self.whitePart.frame.origin.y == restoreFrameValue{
+                self.whitePart.frame.origin.y -= keyboardHeight / 2
+                    print(self.whitePart.frame.origin.y)
                 }
             }
         }
     }
 
 @objc func keyboardWillDisappear(noti: NSNotification) {
-    if self.view.frame.origin.y != restoreFrameValue {
+    if self.whitePart.frame.origin.y != restoreFrameValue {
             if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 let keyboardRectangle = keyboardFrame.cgRectValue
                 let keyboardHeight = keyboardRectangle.height
-                self.view.frame.origin.y += keyboardHeight / 2
+                self.whitePart.frame.origin.y += keyboardHeight / 2
+                print(self.whitePart.frame.origin.y)
             }
         }
     }
@@ -216,7 +219,7 @@ extension RegisterPageController : UITextFieldDelegate {
 //self.view.frame.origin.y = restoreFrameValue
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.frame.origin.y = restoreFrameValue
+        self.whitePart.frame.origin.y = restoreFrameValue
         self.view.endEditing(true)
     }
 
@@ -226,7 +229,7 @@ extension RegisterPageController : UITextFieldDelegate {
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        self.view.frame.origin.y = self.restoreFrameValue
+        self.whitePart.frame.origin.y = self.restoreFrameValue
         return true
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
