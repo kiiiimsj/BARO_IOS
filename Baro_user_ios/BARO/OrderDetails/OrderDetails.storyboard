@@ -184,7 +184,7 @@
                                                                         <state key="normal" image="radio_off">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
-                                                                        <state key="selected" image="radio_off"/>
+                                                                        <state key="selected" image="radio_on"/>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9A0-c3-VI3" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
                                                                         <rect key="frame" x="47" y="5" width="24.5" height="42"/>
@@ -684,6 +684,7 @@
         <image name="minus" width="16" height="16"/>
         <image name="plus" width="16" height="16"/>
         <image name="radio_off" width="16" height="16"/>
+        <image name="radio_on" width="16" height="16"/>
         <namedColor name="mainColor">
             <color red="0.51372549019607838" green="0.20000000000000001" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
