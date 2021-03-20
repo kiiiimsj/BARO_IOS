@@ -59,7 +59,7 @@ class FindPassWord: UIViewController {
                     vc.phoneNumber = num
                     vc.modalPresentationStyle = .fullScreen
                     vc.modalTransitionStyle = .crossDissolve
-//                    vc.verificationID = verificationID!
+                    vc.verificationID = verificationID!
                     guard let pvc = self.presentingViewController else { return }
                     self.dismiss(animated: false){
                         pvc.present(vc, animated: true, completion: nil)
@@ -67,5 +67,5 @@ class FindPassWord: UIViewController {
                 }
             }
         }
-//    }
+    }
 }
