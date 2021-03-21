@@ -76,10 +76,12 @@ class MyPageController : UIViewController {
     func setMyCountInfo() {
         basketOrder = loadBasket()
         if (basketOrder.isEmpty || basketOrder.count == 0 ) {
+            print("empty")
+            print("count : \(basketOrder.count)")
             self.myBasketCount?.text = "0 건"
         }
         else {
-            myBasketCount.text = "\(basketCount)"
+            myBasketCount.text = "\(basketOrder.count)"
         }
         networkModel.post(method: .get, param: nil, url: networkURL.orderCount+"\(userPhone)") { (json) in
             if json["result"].boolValue {
@@ -122,7 +124,7 @@ class MyPageController : UIViewController {
     @objc func goToBasket(_ sender : UIGestureRecognizer){
         let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "BottomTabBarController") as! BottomTabBarController
-        if(UserDefaults.standard.value(forKey: "basket") == nil || UserDefaults.standard.value(forKey: "basket") as! String == "" || basketCount == 0) {
+        if(basketOrder.isEmpty || basketOrder.count == 0 ) {
             let notExist = UIStoryboard(name: "MyPage", bundle: nil).instantiateViewController(identifier: "NothingExist") as! NothingExist
             notExist.modalTransitionStyle = .crossDissolve
             notExist.modalPresentationStyle = .overFullScreen
