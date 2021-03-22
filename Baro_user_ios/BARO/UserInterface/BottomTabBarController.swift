@@ -23,6 +23,7 @@ class BottomTabBarController: UIViewController {
     @IBOutlet weak var topBarFavoriteBtn: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeView: UIView!
+    @IBOutlet weak var timeViewHeight: NSLayoutConstraint!
     //내부 컨트롤러 클릭 인식용.
     weak var topViewDelegate : TopViewElementDelegate?
     //컨텐트뷰 엘리먼트
