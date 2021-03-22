@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -27,16 +28,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baro_logo" translatesAutoresizingMaskIntoConstraints="NO" id="7G0-F5-9z9">
-                                <rect key="frame" x="16" y="64" width="53.5" height="30"/>
+                                <rect key="frame" x="16" y="64" width="61" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="RV0-6M-zRw"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Kc-nQH">
-                                <rect key="frame" x="0.0" y="129" width="414" height="1137"/>
+                                <rect key="frame" x="0.0" y="135" width="414" height="1131"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-N1-OLA">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1053"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1091"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVL-S1-iAt" customClass="FSPagerView" customModule="FSPagerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
@@ -113,7 +114,7 @@
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게이름" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViW-na-K6b">
-                                                                                        <rect key="frame" x="8" y="150" width="45" height="25"/>
+                                                                                        <rect key="frame" x="8" y="150" width="48" height="25"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="25" id="DRP-gB-Hjq"/>
                                                                                         </constraints>
@@ -122,7 +123,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100m" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGc-vZ-Mxj">
-                                                                                        <rect key="frame" x="8" y="175" width="33" height="20"/>
+                                                                                        <rect key="frame" x="8" y="175" width="34" height="20"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20" id="wYu-ZK-XQn"/>
                                                                                         </constraints>
@@ -232,7 +233,7 @@
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게이름" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Td0-uN-5VD">
-                                                                                        <rect key="frame" x="15" y="155" width="45" height="25"/>
+                                                                                        <rect key="frame" x="15" y="155" width="48" height="25"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="25" id="wrt-34-1rW"/>
                                                                                         </constraints>
@@ -252,7 +253,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSv-t9-3RO">
-                                                                                        <rect key="frame" x="15" y="185" width="33" height="10"/>
+                                                                                        <rect key="frame" x="15" y="185" width="34" height="10"/>
                                                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                                                                                         <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
@@ -344,7 +345,7 @@
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSg-nR-H2Z" customClass="CustomLabel" customModule="BARO" customModuleProvider="target">
-                                                                                        <rect key="frame" x="34.5" y="70" width="27" height="13"/>
+                                                                                        <rect key="frame" x="34" y="70" width="28.5" height="16.5"/>
                                                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                                                         <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
@@ -391,7 +392,7 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRl-fe-wA3">
-                                                <rect key="frame" x="10" y="913" width="394" height="140"/>
+                                                <rect key="frame" x="10" y="913" width="394" height="178"/>
                                                 <string key="text">Contact Us
 
 BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
@@ -504,7 +505,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODv-sU-A77">
-                                <rect key="frame" x="16" y="94" width="72" height="20"/>
+                                <rect key="frame" x="16" y="94" width="76" height="26"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="대한민국" image="arrow_down">
@@ -744,7 +745,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X58-aS-yJT">
                                                 <rect key="frame" x="178.5" y="0.0" width="171.5" height="50"/>
-                                                <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="mainColor"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                 <state key="normal" title="닫기">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -766,7 +767,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                 <state key="normal" title="오늘 보지 않기">
-                                                    <color key="titleColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" name="mainColor"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -836,9 +837,12 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
     <resources>
         <image name="alert_off" width="14" height="16.5"/>
         <image name="arrow_down" width="13" height="7.5"/>
-        <image name="baro_logo" width="53.5" height="14"/>
+        <image name="baro_logo" width="61" height="16"/>
         <image name="search" width="17" height="16.5"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="mainColor">
+            <color red="0.51372549019607838" green="0.20000000000000001" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
