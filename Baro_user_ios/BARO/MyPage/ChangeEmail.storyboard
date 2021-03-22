@@ -24,48 +24,48 @@
         <!--ChangeEmail-->
         <scene sceneID="RXZ-sw-td1">
             <objects>
-                <viewController storyboardIdentifier="ChangeEmail" title="ChangeEmail" id="adc-70-pEw" customClass="ChangeEmail" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeEmail" title="ChangeEmail" id="adc-70-pEw" customClass="ChangeEmail" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MMa-ya-MZZ">
                         <rect key="frame" x="0.0" y="0.0" width="360" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6xm-Gg-L5H" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6xm-Gg-L5H" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="160" width="360" height="480"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDJ-63-RXP">
-                                        <rect key="frame" x="20" y="223" width="320" height="50"/>
-                                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="20" y="214" width="320" height="50"/>
+                                        <color key="backgroundColor" name="mainColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="RJn-ie-gsj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
                                         <state key="normal" title="변경하기">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" name="mainColor"/>
                                         </state>
                                         <connections>
                                             <action selector="changeEmailBtnPush" destination="adc-70-pEw" eventType="touchUpInside" id="RKa-5L-sOB"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jxn-9J-Oj6">
-                                        <rect key="frame" x="20" y="158" width="320" height="34"/>
+                                        <rect key="frame" x="20" y="153" width="320" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="변경할 이메일 입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23t-wI-U6P">
-                                        <rect key="frame" x="20" y="127.5" width="118" height="22.5"/>
+                                        <rect key="frame" x="20" y="127.5" width="118" height="17.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 사용중인 이메일 입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75k-pS-IoY">
-                                        <rect key="frame" x="20" y="199.5" width="125" height="15"/>
+                                        <rect key="frame" x="20" y="193.5" width="125" height="12"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="egq-sa-M11">
-                                        <rect key="frame" x="20" y="191" width="320" height="1"/>
+                                        <rect key="frame" x="20" y="186" width="320" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="h77-vt-c3p"/>
@@ -97,7 +97,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="075-H7-ymC">
-                                <rect key="frame" x="158.5" y="63" width="43" height="22.5"/>
+                                <rect key="frame" x="159" y="63" width="42" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -113,14 +113,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToW-ID-Vqr">
-                                <rect key="frame" x="112.5" y="90.5" width="135.5" height="41.5"/>
+                                <rect key="frame" x="115.5" y="85.5" width="129" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Black" family="Noto Sans CJK KR" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cJd-qL-dtN"/>
-                        <color key="backgroundColor" red="0.51372549020000002" green="0.20000000000000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="mainColor"/>
                         <constraints>
                             <constraint firstItem="woS-dJ-Aw7" firstAttribute="top" secondItem="cJd-qL-dtN" secondAttribute="top" constant="17" id="Amo-tf-naQ"/>
                             <constraint firstItem="6xm-Gg-L5H" firstAttribute="leading" secondItem="cJd-qL-dtN" secondAttribute="leading" id="Fyh-IR-of4"/>
@@ -150,7 +150,7 @@
         <!--Change Email Complete-->
         <scene sceneID="J0p-N3-aYR">
             <objects>
-                <viewController storyboardIdentifier="ChangeEmailComplete" id="Nng-TR-2mp" customClass="ChangeEmailComplete" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeEmailComplete" id="Nng-TR-2mp" customClass="ChangeEmailComplete" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gfh-w3-3Ua">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
