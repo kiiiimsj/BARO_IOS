@@ -268,11 +268,11 @@
                         <outlet property="contentViewTopRestoreConstraint" destination="CTL-TD-OaE" id="tqc-HV-Oe8"/>
                         <outlet property="timeLabel" destination="Wwv-AP-R2f" id="m9j-V0-Znt"/>
                         <outlet property="timeView" destination="LL0-Xv-tv4" id="myN-zN-Ws3"/>
-                        <outlet property="timeViewHeight" destination="gdT-Q4-9SQ" id="JEq-nX-KDn"/>
                         <outlet property="topBarBackBtn" destination="Aa6-fN-GjY" id="ias-8Z-h5p"/>
                         <outlet property="topBarFavoriteBtn" destination="R0I-hX-Wl8" id="Fll-aA-2Z6"/>
                         <outlet property="topBarRefreshBtn" destination="zGd-2y-mMf" id="asQ-tU-0ra"/>
                         <outlet property="topBarViewControllerTitle" destination="HC0-eg-GES" id="yH4-AX-Etu"/>
+                        <outlet property="topViewHeight" destination="wqx-hP-8yY" id="WNN-YA-cE8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVD-q7-c7X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
