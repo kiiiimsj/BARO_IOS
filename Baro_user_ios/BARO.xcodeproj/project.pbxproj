@@ -144,6 +144,7 @@
 		E34CAF99255A708700BE3F53 /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF98255A708700BE3F53 /* CouponCell.swift */; };
 		E34CAF9C255A89C300BE3F53 /* EventPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CAF9B255A89C200BE3F53 /* EventPageController.swift */; };
 		E34CAFA0255A89F300BE3F53 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34CAF9F255A89F300BE3F53 /* Event.storyboard */; };
+		E352523A260B39E300825813 /* StoreListBigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3525239260B39E300825813 /* StoreListBigCell.swift */; };
 		E356D646256FB20300F39463 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E356D645256FB20300F39463 /* CustomLabel.swift */; };
 		E356D66B257A5EAA00F39463 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E356D66A257A5EA900F39463 /* Extensions.swift */; };
 		E356D66F257DD8B400F39463 /* CouponRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E356D66E257DD8B300F39463 /* CouponRegisterController.swift */; };
@@ -312,6 +313,7 @@
 		E34CAF98255A708700BE3F53 /* CouponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCell.swift; sourceTree = "<group>"; };
 		E34CAF9B255A89C200BE3F53 /* EventPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPageController.swift; sourceTree = "<group>"; };
 		E34CAF9F255A89F300BE3F53 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		E3525239260B39E300825813 /* StoreListBigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListBigCell.swift; sourceTree = "<group>"; };
 		E356D645256FB20300F39463 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		E356D66A257A5EA900F39463 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E356D66E257DD8B300F39463 /* CouponRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponRegisterController.swift; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 				E31D3FD42542AC3E00B63F77 /* StoreListModel.swift */,
 				E31D3FDA2542AD7300B63F77 /* StoreListPage.storyboard */,
 				E34CAF862559427100BE3F53 /* ListStoreLoadingCell.swift */,
+				E3525239260B39E300825813 /* StoreListBigCell.swift */,
 			);
 			path = ListStore;
 			sourceTree = "<group>";
@@ -951,6 +954,7 @@
 				E3CEDB0A25B0047300EDE823 /* ChangeEmailComplete.swift in Sources */,
 				3FF35097253E7E72007B7B29 /* LoginPageController.swift in Sources */,
 				E34CAF3F255280B200BE3F53 /* MapController.swift in Sources */,
+				E352523A260B39E300825813 /* StoreListBigCell.swift in Sources */,
 				E34CAF422552A36F00BE3F53 /* LocationModel.swift in Sources */,
 				3FC20E5A2546E62400EEE783 /* NoticeCell.swift in Sources */,
 				04B8679C253B0ECD00336175 /* SceneDelegate.swift in Sources */,
