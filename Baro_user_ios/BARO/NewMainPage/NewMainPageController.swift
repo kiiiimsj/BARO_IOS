@@ -16,6 +16,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     // 에뮬테스트용 위도/경도
     public static let DEFAULTLATITUDE = 37.49808785857802
     public static let DEFAULTLONGITUDE = 127.02758604547965
+    public let cellHeight = 275 // BIG = 265 SMALL = 110 으로 취사선택
     var latitude: Double?
     var longitude: Double?
     var storeList = [StoreList]()
@@ -174,7 +175,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
 //                self.collectionview.frame = newFrame
                 self.collectionview.reloadData()
                 let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
-                    equalToConstant: CGFloat(self.storeList.count * 110))
+                    equalToConstant: CGFloat(self.storeList.count * self.cellHeight))
                 issueLabelsHeightConstraint.isActive = true
                 self.showTime()
             }
@@ -451,41 +452,79 @@ extension NewMainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
 
 extension NewMainPageController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return storeList.count
+        if section == 0 {
+//            return storeList.count
+            return 0
+        } else { // 큰사진
+            return storeList.count
+        }
+    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let store = storeList[indexPath.item]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoreListCell", for: indexPath) as! StoreListCell
-        cell.textLabel.text = String(store.store_name)
-        cell.imageView.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + String(store.store_image)))
-        if store.is_open == "Y" {
-            cell.is_OpenLable.text = "영업중"
-            cell.is_OpenLable.backgroundColor = UIColor.baro_main_color
-        }else{
-            cell.is_OpenLable.text = "준비중"
-            cell.is_OpenLable.backgroundColor = UIColor.init(cgColor: CGColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1))
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoreListCell", for: indexPath) as! StoreListCell
+            cell.textLabel.text = String(store.store_name)
+            cell.imageView.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + String(store.store_image)))
+            if store.is_open == "Y" {
+                cell.is_OpenLable.text = "영업중"
+                cell.is_OpenLable.backgroundColor = UIColor.baro_main_color
+            }else{
+                cell.is_OpenLable.text = "준비중"
+                cell.is_OpenLable.backgroundColor = UIColor.init(cgColor: CGColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1))
+            }
+            if store.discount_rate != 0 {
+                cell.discount_rate_label.text = "SALE \(store.discount_rate)%"
+                cell.discount_rate_label.isHidden = false
+            }else{
+                cell.discount_rate_label.isHidden = true
+            }
+            cell.is_OpenLable.layer.borderColor = UIColor.white.cgColor
+            cell.is_OpenLable.layer.borderWidth = 2
+            cell.is_OpenLable.layer.cornerRadius = 5
+            cell.is_OpenLable.layer.masksToBounds = true
+           
+            if Int(store.distance) > 1000 {
+                cell.distance_Label.text = String(Double(Int(store.distance/100) / 10)) + "km"
+            }else{
+                cell.distance_Label.text = String(Int(store.distance)) + "m"
+            }
+            return cell
+        }else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoreListBigCell", for: indexPath) as! StoreListBigCell
+            cell.textLabel.text = String(store.store_name)
+            cell.imageView.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + String(store.store_image)))
+            if store.is_open == "Y" {
+                cell.is_OpenLable.text = "영업중"
+                cell.is_OpenLable.backgroundColor = UIColor.baro_main_color
+            }else{
+                cell.is_OpenLable.text = "준비중"
+                cell.is_OpenLable.backgroundColor = UIColor.init(cgColor: CGColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1))
+            }
+            if store.discount_rate != 0 {
+                cell.discount_rate_label.text = "SALE \(store.discount_rate)%"
+                cell.discount_rate_label.isHidden = false
+            }else{
+                cell.discount_rate_label.isHidden = true
+            }
+            cell.is_OpenLable.layer.borderColor = UIColor.white.cgColor
+            cell.is_OpenLable.layer.borderWidth = 2
+            cell.is_OpenLable.layer.cornerRadius = 5
+            cell.is_OpenLable.layer.masksToBounds = true
+           
+            if Int(store.distance) > 1000 {
+                cell.distance_Label.text = String(Double(Int(store.distance/100) / 10)) + "km"
+            }else{
+                cell.distance_Label.text = String(Int(store.distance)) + "m"
+            }
+            return cell
         }
-        if store.discount_rate != 0 {
-            cell.discount_rate_label.text = "SALE \(store.discount_rate)%"
-            cell.discount_rate_label.isHidden = false
-        }else{
-            cell.discount_rate_label.isHidden = true
-        }
-        cell.is_OpenLable.layer.borderColor = UIColor.white.cgColor
-        cell.is_OpenLable.layer.borderWidth = 2
-        cell.is_OpenLable.layer.cornerRadius = 5
-        cell.is_OpenLable.layer.masksToBounds = true
-       
-        if Int(store.distance) > 1000 {
-            cell.distance_Label.text = String(Double(Int(store.distance/100) / 10)) + "km"
-        }else{
-            cell.distance_Label.text = String(Int(store.distance)) + "m"
-        }
-        return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionview.frame.width, height: 110)
+        return CGSize(width: collectionview.frame.width, height: CGFloat(cellHeight))
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let data = storeList[indexPath.item]
@@ -567,7 +606,7 @@ extension NewMainPageController {
                     self.storeList.append(storeListModel)
                 }
                 let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
-                    equalToConstant: CGFloat(self.storeList.count * 110))
+                    equalToConstant: CGFloat(self.storeList.count * self.cellHeight))
                 issueLabelsHeightConstraint.isActive = true
                 self.collectionview.reloadData()
             }
