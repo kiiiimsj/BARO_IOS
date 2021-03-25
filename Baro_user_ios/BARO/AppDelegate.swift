@@ -58,7 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate : UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("\(#function)")
+//        print(notification.request.content.userInfo)
+//        Messaging.messaging().appDidReceiveMessage(notification.request.content.userInfo)
+        completionHandler([.alert, .sound, .badge])
     }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+    
 }
 
 extension AppDelegate: MessagingDelegate {
@@ -68,4 +75,10 @@ extension AppDelegate: MessagingDelegate {
         let dataDict: [String : String] = ["token" : fcmToken!]
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("fir msg : \(userInfo)")
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
+
 }
