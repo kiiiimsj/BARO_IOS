@@ -22,17 +22,28 @@ class StoreListPageController : UIViewController {
     //전 페이지에서 받아와야할 값
     var typeCode = ""
     var searchWord = ""
-    
+    var location : Location?
     let bottomTabBarInfo = BottomTabBarController()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        if UserDefaults.standard.object(forKey: "location") != nil{
+            if let data = UserDefaults.standard.value(forKey: "location") as? Data{
+                let decoderUserInfo = try? PropertyListDecoder().decode(Location.self, from: data)
+                location = decoderUserInfo!
+            }
+        }
         if(kind == 1) { //mainpage에서 넘어온 페이지일 경우
-            let jsonObject : [ String : Any ] = [
-                "type_code" : typeCode,
-                "latitude" : "37.499",
-                "longitude" : "126.956"
-            ]
+            var jsonObject = [String : Any]()
+            if location != nil {
+                jsonObject["type_code"] = typeCode
+                jsonObject["latitude"] = location?.latitude
+                jsonObject["longitude"] = location?.longitude
+            } else{
+                jsonObject["type_code"] = typeCode
+                jsonObject["latitude"] = NewMainPageController.DEFAULTLATITUDE
+                jsonObject["longitude"] = NewMainPageController.DEFAULTLONGITUDE
+            }
             network.post(method: .post, param: jsonObject, url: urlCaller.storeDetailListURL) {
                 (json) in
                 var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "", discount_rate: 0)
@@ -53,12 +64,18 @@ class StoreListPageController : UIViewController {
             typeCode = ""
         }
         else if kind == 3{  //kind == 3   -> search에서 넘어온 페이지일 경우
-            let jsonObject : [String : Any ] = [
-                "keyword" : searchWord,
-                "latitude" : "37.499",
-                "longitude" : "126.956",
-                "startPoint" : 0
-            ]
+            var jsonObject = [String : Any]()
+            if location != nil {
+                jsonObject["startPoint"] = 0
+                jsonObject["keyword"] = searchWord
+                jsonObject["latitude"] = location?.latitude
+                jsonObject["longitude"] = location?.longitude
+            } else{
+                jsonObject["startPoint"] = 0
+                jsonObject["keyword"] = searchWord
+                jsonObject["latitude"] = NewMainPageController.DEFAULTLATITUDE
+                jsonObject["longitude"] = NewMainPageController.DEFAULTLONGITUDE
+            }
             network.post(method: .post, param: jsonObject, url: urlCaller.storeSearchURL ) {
                 (json) in
                 var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
@@ -66,6 +83,7 @@ class StoreListPageController : UIViewController {
                     self.endOfData = true
                 }
                 if json["result"].boolValue {
+                    print("hty",json)
                     for item in json["store"].array! {
                         storeListModel.store_image = item["store_image"].stringValue
                         storeListModel.is_open = item["is_open"].stringValue
@@ -88,11 +106,16 @@ class StoreListPageController : UIViewController {
         super.viewWillAppear(true)
         if kind == 2 { //favorite list 에서 넘어온 페이지일 경우
             storeList.removeAll()
-            let jsonObject : [String : Any ] = [
-                "latitude" : "37.499",
-                "longitude" : "126.956",
-                "phone" : UserDefaults.standard.value(forKey: "user_phone") as! String
-            ]
+            var jsonObject = [String : Any]()
+            if location != nil {
+                jsonObject["phone"] = UserDefaults.standard.value(forKey: "user_phone") as! String
+                jsonObject["latitude"] = location?.latitude
+                jsonObject["longitude"] = location?.longitude
+            } else{
+                jsonObject["phone"] = UserDefaults.standard.value(forKey: "user_phone") as! String
+                jsonObject["latitude"] = NewMainPageController.DEFAULTLATITUDE
+                jsonObject["longitude"] = NewMainPageController.DEFAULTLONGITUDE
+            }
             network.post(method: .post, param: jsonObject, url: urlCaller.myStoreList) {
                 (json) in
                 var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "", discount_rate: 0)
@@ -207,6 +230,12 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
             }else{
                 cell.discount_rate_label.isHidden = true
             }
+            if store.discount_rate != 0 {
+                cell.discount_rate_label.text = "SALE \(store.discount_rate)%"
+                cell.discount_rate_label.isHidden = false
+            }else{
+                cell.discount_rate_label.isHidden = true
+            }
             cell.is_OpenLable.layer.borderColor = UIColor.white.cgColor
             cell.is_OpenLable.layer.borderWidth = 2
             cell.is_OpenLable.layer.cornerRadius = 5
@@ -252,13 +281,18 @@ extension StoreListPageController : UIScrollViewDelegate {
     }
     func loadData() {
         callMoreData = true
-        
-        let jsonObject : [String : Any ] = [
-            "keyword" : searchWord,
-            "latitude" : "37.499",
-            "longitude" : "126.956",
-            "startPoint" : startPoint
-        ]
+        var jsonObject = [String : Any]()
+        if location != nil {
+            jsonObject["startPoint"] = startPoint
+            jsonObject["keyword"] = searchWord
+            jsonObject["latitude"] = location?.latitude
+            jsonObject["longitude"] = location?.longitude
+        } else{
+            jsonObject["startPoint"] = startPoint
+            jsonObject["keyword"] = searchWord
+            jsonObject["latitude"] = NewMainPageController.DEFAULTLATITUDE
+            jsonObject["longitude"] = NewMainPageController.DEFAULTLONGITUDE
+        }
         network.post(method: .post, param: jsonObject, url: urlCaller.storeSearchURL ) {
             (json) in
             var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
@@ -291,11 +325,16 @@ extension StoreListPageController {
         switch kind {
         case 2:
             storeList.removeAll()
-            let jsonObject : [String : Any ] = [
-                "latitude" : "37.499",
-                "longitude" : "126.956",
-                "phone" : UserDefaults.standard.value(forKey: "user_phone") as! String
-            ]
+            var jsonObject = [String : Any]()
+            if location != nil {
+                jsonObject["phone"] = UserDefaults.standard.value(forKey: "user_phone") as! String
+                jsonObject["latitude"] = location?.latitude
+                jsonObject["longitude"] = location?.longitude
+            } else{
+                jsonObject["phone"] = UserDefaults.standard.value(forKey: "user_phone") as! String
+                jsonObject["latitude"] = NewMainPageController.DEFAULTLATITUDE
+                jsonObject["longitude"] = NewMainPageController.DEFAULTLONGITUDE
+            }
             network.post(method: .post, param: jsonObject, url: urlCaller.myStoreList) {
                 (json) in
                 var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "", discount_rate: 0)
@@ -316,15 +355,22 @@ extension StoreListPageController {
                     
                 }
                 self.storeListView.reloadData()
+                BottomTabBarController.activityIndicator.stopAnimating()
             }
         case 3 :
             storeList.removeAll()
-            let jsonObject : [String : Any ] = [
-                "keyword" : searchWord,
-                "latitude" : "37.499",
-                "longitude" : "126.956",
-                "startPoint" : 0
-            ]
+            var jsonObject = [String : Any]()
+            if location != nil {
+                jsonObject["startPoint"] = 0
+                jsonObject["keyword"] = searchWord
+                jsonObject["latitude"] = location?.latitude
+                jsonObject["longitude"] = location?.longitude
+            } else{
+                jsonObject["startPoint"] = 0
+                jsonObject["keyword"] = searchWord
+                jsonObject["latitude"] = NewMainPageController.DEFAULTLATITUDE
+                jsonObject["longitude"] = NewMainPageController.DEFAULTLONGITUDE
+            }
             network.post(method: .post, param: jsonObject, url: urlCaller.storeSearchURL ) {
                 (json) in
                 var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
@@ -347,6 +393,7 @@ extension StoreListPageController {
                     self.endOfData = true
                 }
                 self.storeListView.reloadData()
+                BottomTabBarController.activityIndicator.stopAnimating()
             }
         default:
             return

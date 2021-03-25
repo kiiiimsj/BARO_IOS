@@ -23,7 +23,7 @@ class BottomTabBarController: UIViewController {
     @IBOutlet weak var topBarFavoriteBtn: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeView: UIView!
-    @IBOutlet weak var timeViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var topViewHeight: NSLayoutConstraint!
     //내부 컨트롤러 클릭 인식용.
     weak var topViewDelegate : TopViewElementDelegate?
     //컨텐트뷰 엘리먼트
@@ -418,11 +418,13 @@ class BottomTabBarController: UIViewController {
                     if(controllerData.typeCode == "2") {
                         topBarViewControllerTitle.text = "찜한 가게"
                         showTime(controller: controllerData)
+                        maxmizeTopView()
                     }
                     else if(controllerData.kind == 3) {
                         topBarViewControllerTitle.text = "검색 가게"
                         topBarBackBtn.isHidden = false
                         showTime(controller: controllerData)
+                        maxmizeTopView()
                     }
                     else {
                         topBarBackBtn.isHidden = false
@@ -637,9 +639,16 @@ extension BottomTabBarController : UITabBarDelegate {
 }
 extension BottomTabBarController {
     func minimizeTopView() -> Void {
-        let issueLabelsHeightConstraint = self.TopView.heightAnchor.constraint(
-            equalToConstant: CGFloat(50))
-        issueLabelsHeightConstraint.isActive = true
+//        let issueLabelsHeightConstraint = self.TopView.heightAnchor.constraint(
+//            equalToConstant: CGFloat(50))
+//        issueLabelsHeightConstraint.isActive = true
+        topViewHeight.constant = 50
+    }
+    func maxmizeTopView() -> Void {
+//        let issueLabelsHeightConstraint = self.TopView.heightAnchor.constraint(
+//            equalToConstant: CGFloat(50))
+//        issueLabelsHeightConstraint.isActive = true
+        topViewHeight.constant = 100
     }
     func showTime(controller : UIViewController){ // 시간탭 보여주는 부분
         timeView.isHidden = false

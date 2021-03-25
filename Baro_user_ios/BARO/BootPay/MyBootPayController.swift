@@ -220,7 +220,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
         let convertDate = convertFormatter.date(from: dateString)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy년 MM월 dd일 hh시 mm분 ss초"
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH시 mm분 ss초"
         print("onDone")
         
 //        let dateStr = "2020-08-13 16:30" // Date 형태의 String
