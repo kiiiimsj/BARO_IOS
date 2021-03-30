@@ -35,6 +35,7 @@ class CouponForBasket : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidload")
         CouponForBasket.this = self
         customerRequest.delegate = self
         restoreFrameValue = self.view.frame.origin.y
@@ -53,6 +54,8 @@ class CouponForBasket : UIViewController {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        let pvc = parent as? BasketController
+        pvc?.couponDiallog = nil
     }
     @IBAction func clickPayButton() {
         let storyboard = UIStoryboard(name: "Basket", bundle: nil)
@@ -74,17 +77,21 @@ class CouponForBasket : UIViewController {
         }
     }
     func setFirstLabelText() {
+        
         realPriceValue = totalPrice
         productTotalPrice.text = "\(totalPrice)원"
         couponDiscountPrice.text = "0원"
         realPayPrice.text = "\(realPriceValue)원"
-        
+        pay.setTitle("\(realPriceValue)원 결제하기", for: .normal)
     }
     func discountChnage(newValue : Int,newDiscount_rate : Int){
+        print("SAdfasd")
         totalPrice = newValue
         productTotalPrice.text = "\(totalPrice)원"
-        realPayPrice.text = "\(totalPrice-couponDiscountValue)원"
+        realPriceValue = totalPrice-couponDiscountValue
+        realPayPrice.text = "\(realPriceValue)원"
         discount_rate = newDiscount_rate
+        pay.setTitle("\(realPriceValue)원 결제하기", for: .normal)
     }
     func getCoupon() {
         netWork.get(method: .get, url: urlMaker.couponListCanUse + "\(userPhone)" + "&price=\(self.totalPrice)") {
@@ -129,6 +136,7 @@ extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollecti
             self.currentSelectedCoupon = nil
             self.couponDiscountPrice.text = "\(couponDiscountValue)원"
             cell.contentView.backgroundColor = .white
+            pay.setTitle("\(realPriceValue)원 결제하기", for: .normal)
             return
         }else{
             currentSelectedCoupon?.contentView.backgroundColor = .white
@@ -151,7 +159,7 @@ extension CouponForBasket : UICollectionViewDelegate, ClickCouponBtn, UICollecti
         self.couponDiscountValue = couponData.coupon_discount
         self.realPayPrice.text = "\(changedTotalValue)원"
         self.UseCouponId = couponData.coupon_id
-        
+        pay.setTitle("\(realPriceValue)원 결제하기", for: .normal)
         
         self.currentSelectedCoupon = cell
         

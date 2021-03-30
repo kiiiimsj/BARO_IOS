@@ -13,6 +13,7 @@ class SetNewPW: UIViewController {
     @IBOutlet weak var changeBtn: UIButton!
     @IBOutlet weak var newPwText: UILabel!
     @IBOutlet weak var newPwAgainText: UILabel!
+    @IBOutlet weak var backBtn: UIButton!
     public var restoreFrameValue : CGFloat = 0.0
     public var up = false
     let network = CallRequest()
@@ -20,6 +21,8 @@ class SetNewPW: UIViewController {
     var phoneNumber : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        backBtn.setImage(UIImage(named: "arrow_left")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backBtn.tintColor = UIColor.white
         changeBtn.layer.cornerRadius = 15
         newPW.borderStyle = .none
         newPWAgain.borderStyle = .none

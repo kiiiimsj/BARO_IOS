@@ -27,13 +27,14 @@ class ChangePass2 : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backBtn.setImage(UIImage(named: "arrow_left")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backBtn.tintColor = UIColor.white
         errorAlarmText1.isHidden = true
         errorAlarmText2.isHidden = true
         inputNewPass.isSecureTextEntry = true
         checkNewPass.isSecureTextEntry = true
         inputNewPass.delegate = self
         checkNewPass.delegate = self
-        backBtn.setImage(UIImage(named: "arrow_left"), for: .normal)
         swipeRecognizer()
         self.inputNewPass.addTarget(self, action: #selector(self.textFieldDidChange1(textField:)), for: .editingChanged)
         self.checkNewPass.addTarget(self, action: #selector(self.textFieldDidChange2(textField:)), for: .editingChanged)

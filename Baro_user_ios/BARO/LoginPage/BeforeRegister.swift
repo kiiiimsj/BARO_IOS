@@ -9,6 +9,7 @@ import UIKit
 
 class BeforeRegister: UIViewController {
     private var canGo = false
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var radioEntire: UIButton!
     @IBOutlet weak var radio1: UIButton!
@@ -17,6 +18,8 @@ class BeforeRegister: UIViewController {
     @IBOutlet weak var radio4: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        backBtn.setImage(UIImage(named: "arrow_left")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backBtn.tintColor = UIColor.white
     }
     
     @IBAction func pressRadio1(_ sender: Any) {

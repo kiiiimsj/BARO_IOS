@@ -498,6 +498,7 @@
                     </view>
                     <size key="freeformSize" width="360" height="640"/>
                     <connections>
+                        <outlet property="backBtn" destination="KIb-8K-Jcz" id="pGm-nD-xYH"/>
                         <outlet property="emailInput" destination="zh8-Z6-Qjx" id="HVs-jn-1nM"/>
                         <outlet property="emailInputError" destination="wNc-st-LQE" id="jkz-1r-i5h"/>
                         <outlet property="nameInput" destination="2aw-Zy-h02" id="q0M-aY-VQf"/>
@@ -766,6 +767,7 @@
                     </view>
                     <size key="freeformSize" width="360" height="640"/>
                     <connections>
+                        <outlet property="backBtn" destination="dcO-Cl-pmv" id="lfM-d0-Xvm"/>
                         <outlet property="checkPhoneAuth" destination="0k7-4q-58d" id="tPJ-Q0-HvA"/>
                         <outlet property="inputPin1" destination="du4-tV-oPQ" id="1yy-zD-qZw"/>
                         <outlet property="inputPin2" destination="fKD-DI-Tsr" id="TYF-s3-Hou"/>
@@ -893,6 +895,7 @@
                     </view>
                     <size key="freeformSize" width="360" height="640"/>
                     <connections>
+                        <outlet property="backBtn" destination="bBG-0K-ddi" id="hze-6c-dx3"/>
                         <outlet property="inputPhone" destination="WK9-oq-H1Q" id="0mH-9o-0OV"/>
                         <outlet property="sendPhoneToFireBaseBtn" destination="HfE-TS-YQf" id="nI5-Ct-ps5"/>
                         <segue destination="bO9-Fa-Uql" kind="presentation" identifier="PhoneCheckForRegister" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RXO-tj-tSn"/>
@@ -1021,6 +1024,7 @@
                     </view>
                     <size key="freeformSize" width="360" height="640"/>
                     <connections>
+                        <outlet property="backBtn" destination="yme-yL-ziA" id="11J-me-x0F"/>
                         <outlet property="inputPhone" destination="OdO-fA-XZE" id="yhg-e3-ZZE"/>
                         <outlet property="sendPhoneToFireBaseBtn" destination="TbX-jv-2Iq" id="3ya-cM-3sg"/>
                     </connections>
@@ -1227,6 +1231,7 @@
                     <size key="freeformSize" width="360" height="640"/>
                     <connections>
                         <outlet property="authenticationBtn" destination="v8K-Kb-0k5" id="sGs-3W-KDZ"/>
+                        <outlet property="backBtn" destination="q1c-tn-TWn" id="RyX-oa-7El"/>
                         <outlet property="inputPin1" destination="mMI-8N-6Vo" id="fu7-zH-Dx3"/>
                         <outlet property="inputPin2" destination="XgM-MI-aIS" id="CJe-BO-0wM"/>
                         <outlet property="inputPin3" destination="1tc-uf-Rwg" id="sPK-xR-PFW"/>
@@ -1393,6 +1398,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="apW-7m-aq5" id="rsI-hN-ucE"/>
                         <outlet property="changeBtn" destination="EfE-RX-qsf" id="ka9-AE-SeV"/>
                         <outlet property="newPW" destination="KC9-df-sCP" id="gAr-aE-uJc"/>
                         <outlet property="newPWAgain" destination="2Dl-42-8WC" id="MqQ-Ba-5lw"/>
@@ -1872,6 +1878,7 @@
                                     <constraint firstAttribute="height" constant="50" id="M0g-Si-r7E"/>
                                     <constraint firstAttribute="width" constant="50" id="hX5-6Z-gSb"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="arrow_left"/>
                                 <connections>
                                     <action selector="pressBackBtn:" destination="EA3-Jg-Xmp" eventType="touchUpInside" id="yVw-PA-rk8"/>
@@ -1893,6 +1900,7 @@
                     </view>
                     <size key="freeformSize" width="360" height="640"/>
                     <connections>
+                        <outlet property="backBtn" destination="iU4-yp-jJk" id="8gz-Ek-pmr"/>
                         <outlet property="nextBtn" destination="bav-wX-wNP" id="zDp-xx-7f7"/>
                         <outlet property="radio1" destination="9zH-Ft-owL" id="e9i-L2-1eY"/>
                         <outlet property="radio2" destination="ArF-L1-7Se" id="IsV-Ao-a6r"/>
