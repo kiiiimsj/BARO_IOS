@@ -17,11 +17,14 @@ class PhoneCheckForChangePW : UIViewController {
     @IBOutlet weak var inputPin6: UITextField!
     @IBOutlet weak var inputPinView: UIView!
     @IBOutlet weak var authenticationBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     var authString : String = ""
     var verificationID : String = ""
     var phoneNumber : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        backBtn.setImage(UIImage(named: "arrow_left")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backBtn.tintColor = UIColor.white
         inputPin1.addTarget(self, action: #selector(self.pinInputfieldSet(_:)), for: .allEditingEvents)
         inputPin2.addTarget(self, action: #selector(self.pinInputfieldSet(_:)), for: .allEditingEvents)
         inputPin3.addTarget(self, action: #selector(self.pinInputfieldSet(_:)), for: .allEditingEvents)

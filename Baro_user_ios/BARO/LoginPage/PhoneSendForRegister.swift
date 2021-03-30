@@ -29,6 +29,7 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
     let nationNumber = "+82"
     @IBOutlet weak var inputPhone: UITextField!
     @IBOutlet weak var sendPhoneToFireBaseBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     public var netWork = CallRequest()
     public var urlMaker = NetWorkURL()
     public var marketing = false
@@ -36,6 +37,8 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         sendPhoneToFireBaseBtn.layer.cornerRadius = 15
+        backBtn.setImage(UIImage(named: "arrow_left")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backBtn.tintColor = UIColor.white
         Auth.auth().settings!.isAppVerificationDisabledForTesting = true
         
         inputPhone.borderStyle = .none

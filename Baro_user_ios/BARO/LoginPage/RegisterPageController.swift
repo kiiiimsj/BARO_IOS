@@ -8,6 +8,7 @@
 import UIKit
 
 class RegisterPageController: UIViewController {
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var nameInputError: UILabel!
     @IBOutlet weak var passInput: UITextField!
@@ -26,6 +27,8 @@ class RegisterPageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutLoad()
+        backBtn.setImage(UIImage(named: "arrow_left")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backBtn.tintColor = UIColor.white
         nameInput.delegate = self
         passInput.delegate = self
         passCheckInput.delegate = self
