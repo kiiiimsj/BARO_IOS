@@ -64,6 +64,9 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hZ2-9Z-Sq2">
                                                 <rect key="frame" x="0.0" y="207" width="414" height="726"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="FTz-nZ-w0P"/>
+                                                </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="HSS-fW-OhR">
                                                     <size key="itemSize" width="414" height="111"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -421,6 +424,7 @@ BARO 제휴 문의 또는 서비스 이용 문의가 있으시다면
                     <connections>
                         <outlet property="alertButton" destination="KXd-lg-bym" id="e3Y-PN-KzT"/>
                         <outlet property="collectionview" destination="hZ2-9Z-Sq2" id="nsi-iz-IbW"/>
+                        <outlet property="collectionviewHeight" destination="FTz-nZ-w0P" id="ryU-Zc-23n"/>
                         <outlet property="locationButton" destination="r44-DN-nIP" id="Kxc-va-u0X"/>
                         <outlet property="mainView" destination="fNa-T4-bzZ" id="9Nn-Ap-VF3"/>
                         <outlet property="pagerView" destination="gNH-P5-N7s" id="d1k-rR-Uuu"/>

@@ -63,47 +63,11 @@ class StoreListPageController : UIViewController {
             }
             typeCode = ""
         }
-        else if kind == 3{  //kind == 3   -> search에서 넘어온 페이지일 경우
-            var jsonObject = [String : Any]()
-            if location != nil {
-                jsonObject["startPoint"] = 0
-                jsonObject["keyword"] = searchWord
-                jsonObject["latitude"] = location?.latitude
-                jsonObject["longitude"] = location?.longitude
-            } else{
-                jsonObject["startPoint"] = 0
-                jsonObject["keyword"] = searchWord
-                jsonObject["latitude"] = NewMainPageController.DEFAULTLATITUDE
-                jsonObject["longitude"] = NewMainPageController.DEFAULTLONGITUDE
-            }
-            network.post(method: .post, param: jsonObject, url: urlCaller.storeSearchURL ) {
-                (json) in
-                var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
-                if json["result"].count < 20 {
-                    self.endOfData = true
-                }
-                if json["result"].boolValue {
-                    print("hty",json)
-                    for item in json["store"].array! {
-                        storeListModel.store_image = item["store_image"].stringValue
-                        storeListModel.is_open = item["is_open"].stringValue
-                        storeListModel.distance = item["distance"].doubleValue
-                        storeListModel.store_id = item["store_id"].intValue
-                        storeListModel.store_info = item["store_info"].stringValue
-                        storeListModel.store_location = item["store_location"].stringValue
-                        storeListModel.store_name = item["store_name"].stringValue
-                        storeListModel.discount_rate = item["discount_rate"].intValue
-                        self.storeList.append(storeListModel)
-                    }
-                }else{
-                    self.endOfData = true
-                }
-                self.storeListView.reloadData()
-            }
-        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         if kind == 2 { //favorite list 에서 넘어온 페이지일 경우
             storeList.removeAll()
             var jsonObject = [String : Any]()
@@ -137,8 +101,49 @@ class StoreListPageController : UIViewController {
                 }
                 self.storeListView.reloadData()
             }
+        } else if kind == 3{  //kind == 3   -> search에서 넘어온 페이지일 경우
+            var jsonObject = [String : Any]()
+            if location != nil {
+                jsonObject["startPoint"] = 0
+                jsonObject["keyword"] = searchWord
+                jsonObject["latitude"] = location?.latitude
+                jsonObject["longitude"] = location?.longitude
+            } else{
+                jsonObject["startPoint"] = 0
+                jsonObject["keyword"] = searchWord
+                jsonObject["latitude"] = NewMainPageController.DEFAULTLATITUDE
+                jsonObject["longitude"] = NewMainPageController.DEFAULTLONGITUDE
+            }
+            network.post(method: .post, param: jsonObject, url: urlCaller.storeSearchURL ) {
+                (json) in
+                var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
+                if json["result"].count < 20 {
+                    self.endOfData = true
+                }
+                if json["result"].boolValue {
+                    self.storeList.removeAll()
+                    print("hty",json)
+                    for item in json["store"].array! {
+                        storeListModel.store_image = item["store_image"].stringValue
+                        storeListModel.is_open = item["is_open"].stringValue
+                        storeListModel.distance = item["distance"].doubleValue
+                        storeListModel.store_id = item["store_id"].intValue
+                        storeListModel.store_info = item["store_info"].stringValue
+                        storeListModel.store_location = item["store_location"].stringValue
+                        storeListModel.store_name = item["store_name"].stringValue
+                        storeListModel.discount_rate = item["discount_rate"].intValue
+                        self.storeList.append(storeListModel)
+                    }
+                }else{
+                    self.endOfData = true
+                }
+                self.storeListView.reloadData()
+            }
         }
         
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     func configureView(){
         view.backgroundColor = .white
@@ -398,5 +403,8 @@ extension StoreListPageController {
         default:
             return
         }
+    }
+    @objc func willEnterForeground() {
+        reloadStoreList()
     }
 }

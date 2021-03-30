@@ -79,6 +79,12 @@ class OrderDetailsController : UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        reloadOrderDetail()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        print("disappear","AboutStore")
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     @IBAction func AddCount(_ sender: Any) {
         menu_count.text = String(Int(menu_count.text!)! + 1)
@@ -391,5 +397,8 @@ extension OrderDetailsController {
                 BottomTabBarController.activityIndicator.stopAnimating()
             }
         }
+    }
+    @objc func willEnterForeground() {
+        reloadOrderDetail()
     }
 }

@@ -41,6 +41,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var whatPage: UILabel!
 //    @IBOutlet weak var pagerControl: FSPageControl!
     
+    @IBOutlet weak var collectionviewHeight: NSLayoutConstraint!
     let bottomTabBarInfo = BottomTabBarController()
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -83,12 +84,42 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
             super.didReceiveMemoryWarning()
     }
     override func viewWillAppear(_ animated: Bool) {
+        print("NewMainPage","viewWillAppear")
         getUserNotReadAlertCount()
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
+        let jsonObject : [ String : Any ] = [
+            "latitude" : latitude!,
+            "longitude" : longitude!
+        ]
+        netWork.post(method: .post,param: jsonObject, url: urlMaker.findAllStore) { json in
+            var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
+            if json["result"].boolValue {
+                self.storeList.removeAll()
+                for item in json["store"].array! {
+                    storeListModel.store_image = item["store_image"].stringValue
+                    storeListModel.is_open = item["is_open"].stringValue
+                    storeListModel.distance = item["distance"].doubleValue
+                    storeListModel.store_id = item["store_id"].intValue
+                    storeListModel.store_info = item["store_info"].stringValue
+                    storeListModel.store_location = item["store_location"].stringValue
+                    storeListModel.store_name = item["store_name"].stringValue
+                    storeListModel.discount_rate = item["discount_rate"].intValue
+                    self.storeList.append(storeListModel)
+                }
+//                var newFrame = self.collectionview.frame
+//                newFrame.size.height = CGFloat(self.storeList.count * 200)
+//                self.collectionview.frame = newFrame
+                self.collectionview.reloadData()
+                self.collectionviewHeight.constant = CGFloat(self.storeList.count * self.cellHeight)
+//                let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
+//                    equalToConstant: CGFloat(self.storeList.count * self.cellHeight))
+//                issueLabelsHeightConstraint.isActive = true
+                self.showTime()
+            }
+        }
         let token = UserDefaults.standard.string(forKey: "device_token")
         let phone = UserDefaults.standard.string(forKey: "user_phone")
-        
         guard phone == nil else {
             let jsonObject : [ String : Any ] = [
                 "phone" : phone!,
@@ -99,6 +130,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
             }
             return
         }
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -152,34 +184,7 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
             self.pagerView.reloadData()
             
         }
-        let jsonObject : [ String : Any ] = [
-            "latitude" : latitude!,
-            "longitude" : longitude!
-        ]
-        netWork.post(method: .post,param: jsonObject, url: urlMaker.findAllStore) { json in
-            var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
-            if json["result"].boolValue {
-                for item in json["store"].array! {
-                    storeListModel.store_image = item["store_image"].stringValue
-                    storeListModel.is_open = item["is_open"].stringValue
-                    storeListModel.distance = item["distance"].doubleValue
-                    storeListModel.store_id = item["store_id"].intValue
-                    storeListModel.store_info = item["store_info"].stringValue
-                    storeListModel.store_location = item["store_location"].stringValue
-                    storeListModel.store_name = item["store_name"].stringValue
-                    storeListModel.discount_rate = item["discount_rate"].intValue
-                    self.storeList.append(storeListModel)
-                }
-//                var newFrame = self.collectionview.frame
-//                newFrame.size.height = CGFloat(self.storeList.count * 200)
-//                self.collectionview.frame = newFrame
-                self.collectionview.reloadData()
-                let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
-                    equalToConstant: CGFloat(self.storeList.count * self.cellHeight))
-                issueLabelsHeightConstraint.isActive = true
-                self.showTime()
-            }
-        }
+        
         let calendar = Calendar.current
         let today = Date()
         let dateFormatter = DateFormatter()
@@ -340,6 +345,38 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     @objc func willEnterForeground() {
 //        UserDefaults.standard.string(forKey: "device_token")
 //        locationCheck()
+        activityIndicator.startAnimating()
+        print("NewMainPage","enter foreground")
+        let jsonObject : [ String : Any ] = [
+            "latitude" : latitude!,
+            "longitude" : longitude!
+        ]
+        netWork.post(method: .post,param: jsonObject, url: urlMaker.findAllStore) { json in
+            var storeListModel = StoreList(store_image: "",is_open: "",distance: 0.0,store_id: 0,store_info: "",store_location: "",store_name: "",discount_rate: 0)
+            if json["result"].boolValue {
+                self.storeList.removeAll()
+                for item in json["store"].array! {
+                    storeListModel.store_image = item["store_image"].stringValue
+                    storeListModel.is_open = item["is_open"].stringValue
+                    storeListModel.distance = item["distance"].doubleValue
+                    storeListModel.store_id = item["store_id"].intValue
+                    storeListModel.store_info = item["store_info"].stringValue
+                    storeListModel.store_location = item["store_location"].stringValue
+                    storeListModel.store_name = item["store_name"].stringValue
+                    storeListModel.discount_rate = item["discount_rate"].intValue
+                    self.storeList.append(storeListModel)
+                }
+//                var newFrame = self.collectionview.frame
+//                newFrame.size.height = CGFloat(self.storeList.count * 200)
+//                self.collectionview.frame = newFrame
+                self.collectionview.reloadData()
+                self.collectionviewHeight.constant = CGFloat(self.storeList.count * self.cellHeight)
+//                let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
+//                    equalToConstant: CGFloat(self.storeList.count * self.cellHeight))
+//                issueLabelsHeightConstraint.isActive = true
+            }
+            self.activityIndicator.stopAnimating()
+        }
     }
     //기기의 gps (위치권한 설정) 안함 되어있을경우 alert띄워 앱의 위치권한 설정으로
     func locationCheck() {
@@ -605,9 +642,10 @@ extension NewMainPageController {
                     storeListModel.discount_rate = item["discount_rate"].intValue
                     self.storeList.append(storeListModel)
                 }
-                let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
-                    equalToConstant: CGFloat(self.storeList.count * self.cellHeight))
-                issueLabelsHeightConstraint.isActive = true
+//                let issueLabelsHeightConstraint = self.collectionview.heightAnchor.constraint(
+//                    equalToConstant: CGFloat(self.storeList.count * self.cellHeight))
+//                issueLabelsHeightConstraint.isActive = true
+                self.collectionviewHeight.constant = CGFloat(self.storeList.count * self.cellHeight)
                 self.collectionview.reloadData()
             }
             self.activityIndicator.stopAnimating()
