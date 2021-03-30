@@ -19,9 +19,10 @@ class ChangeEmail : UIViewController, CAAnimationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backBtn.setImage(UIImage(named: "arrow_left")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backBtn.tintColor = UIColor.white
         errorAlarmText.isHidden = true
         inputNewEmail.placeholder = "ex)baro@baro.com"
-        backBtn.setImage(UIImage(named: "arrow_left"), for: .normal)
         swipeRecognizer()
     }
     @IBAction func changeEmailBtnPush() {

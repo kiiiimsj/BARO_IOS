@@ -26,6 +26,7 @@ class BasketController : UIViewController, TopViewElementDelegate{
     public var discount_rate : Int = 0
     public var totalPrice : Int = 0
     public var basket = UserDefaults.standard
+    public var couponDiallog : CouponForBasket?
     private var getStoreNameFromUserDefault = UserDefaults.standard.value(forKey: "currentStoreName") as! String
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -75,6 +76,7 @@ class BasketController : UIViewController, TopViewElementDelegate{
                 vc.totalPrice = self.totalPrice * (100-self.discount_rate)/100
                 vc.sendOrderToBootPay = self.orders
                 vc.discount_rate = self.discount_rate
+                self.couponDiallog = vc
                 self.present(vc, animated: true, completion: nil)
             }else{
                 let vc = UIStoryboard.init(name: "Basket", bundle: nil).instantiateViewController(withIdentifier: "StoreNotOpen")
@@ -207,8 +209,8 @@ extension BasketController {
                 self.collectionView.reloadData()
                 self.collectionView.collectionViewLayout.invalidateLayout()
 //                CouponForBasket.this!.dismiss(animated: false)
-                if CouponForBasket.this != nil {
-                    CouponForBasket.this!.discountChnage(newValue: self.totalPrice * (100-self.discount_rate)/100,newDiscount_rate: value)
+                if self.couponDiallog != nil {
+                    self.couponDiallog?.discountChnage(newValue: self.totalPrice * (100-self.discount_rate)/100,newDiscount_rate: value)
                 }
                 BottomTabBarController.activityIndicator.stopAnimating()
             }

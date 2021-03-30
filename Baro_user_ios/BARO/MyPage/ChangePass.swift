@@ -16,9 +16,10 @@ class ChangePass : UIViewController {
     let networkURL = NetWorkURL()
     override func viewDidLoad() {
         super.viewDidLoad()
+        backBtn.setImage(UIImage(named: "arrow_left")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backBtn.tintColor = UIColor.white
         self.errorAlarmText.isHidden = true
         inputNewPass.isSecureTextEntry = true
-        backBtn.setImage(UIImage(named: "arrow_left"), for: .normal)
         swipeRecognizer()
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){

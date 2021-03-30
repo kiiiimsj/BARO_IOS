@@ -24,12 +24,12 @@
         <!--ChangeEmail-->
         <scene sceneID="RXZ-sw-td1">
             <objects>
-                <viewController storyboardIdentifier="ChangeEmail" title="ChangeEmail" id="adc-70-pEw" customClass="ChangeEmail" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeEmail" title="ChangeEmail" id="adc-70-pEw" customClass="ChangeEmail" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MMa-ya-MZZ">
                         <rect key="frame" x="0.0" y="0.0" width="360" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6xm-Gg-L5H" customClass="uiViewSetting" customModule="Baro_user_ios" customModuleProvider="target">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6xm-Gg-L5H" customClass="uiViewSetting" customModule="BARO" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="160" width="360" height="480"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDJ-63-RXP">
@@ -150,7 +150,7 @@
         <!--Change Email Complete-->
         <scene sceneID="J0p-N3-aYR">
             <objects>
-                <viewController storyboardIdentifier="ChangeEmailComplete" id="Nng-TR-2mp" customClass="ChangeEmailComplete" customModule="Baro_user_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeEmailComplete" id="Nng-TR-2mp" customClass="ChangeEmailComplete" customModule="BARO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gfh-w3-3Ua">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
