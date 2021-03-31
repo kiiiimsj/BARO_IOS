@@ -10,6 +10,8 @@ import UIKit
 protocol TurnOffOrderDetailListener : AnyObject {
     func tapClick(dialog: UIViewController,type: String)
     func tapCancel(dialog: UIViewController)
+    func tapBack(dialog: UIViewController)
+    func tapBasket(dialog: UIViewController,type: String)
 }
 
 class MenuOrBasket : UIViewController {
@@ -34,12 +36,12 @@ class MenuOrBasket : UIViewController {
     }
     @IBAction func pressOrderDetail(_ sender: Any) {
         self.dismiss(animated: true) {
-            self.delegate?.tapCancel(dialog: self)
+            self.delegate?.tapBack(dialog: self)
         }
     }
     @IBAction func pressBasket(_ sender: Any) {
         self.dismiss(animated: true) {
-            self.delegate?.tapClick(dialog: self, type: "")
+            self.delegate?.tapBasket(dialog: self, type: "")
         }
     }
 }

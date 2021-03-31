@@ -566,7 +566,8 @@ extension NewMainPageController : UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let data = storeList[indexPath.item]
         let storeName = String(storeList[indexPath.item].store_name)
-        UserDefaults.standard.set(storeName, forKey: "currentStoreName")
+//        UserDefaults.standard.set(storeName, forKey: "currentStoreName")
+        UserDefaults.standard.set(storeName, forKey: "tempStoreName")
         self.toStoreListUseBottomBar(id : data.store_id,discount_rate: data.discount_rate)
     }
 }

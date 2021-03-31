@@ -268,7 +268,7 @@ extension StoreListPageController : UICollectionViewDelegate,UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let id = storeList[indexPath.item].store_id
         let storeName = String(storeList[indexPath.item].store_name)
-        UserDefaults.standard.set(storeName, forKey: "currentStoreName")
+        UserDefaults.standard.set(storeName, forKey: "tempStoreName")
         self.toStoreListUseBottomBar(id : id)
     }
     
