@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         requestAuthorizationForRemotePushNotification()
         UserDefaults.standard.removeObject(forKey: "basket")
         CustomTimer.init()
+        UIApplication.shared.isIdleTimerDisabled = true
         return true
     }
 

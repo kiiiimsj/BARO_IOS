@@ -157,6 +157,7 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             
             if AboutStore.this?.presentingViewController == nil {
                 BasketController.this?.presentingViewController?.dismiss(animated: false, completion: nil)
+                AboutStore.this = nil
             }else{
                 AboutStore.this?.presentingViewController?.dismiss(animated: false, completion: nil)
             }

@@ -40,6 +40,14 @@ class BasketController : UIViewController, TopViewElementDelegate{
         recalcPrice()
         BasketController.this = self // 원격으로 해당 컨트롤러를 끄기위해
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        reloadBasket()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
     func optionsSeparate(){
         for item in orders {
             essential.append(Array(item.Essentials.values))
@@ -215,5 +223,8 @@ extension BasketController {
                 BottomTabBarController.activityIndicator.stopAnimating()
             }
         }
+    }
+    @objc func willEnterForeground() {
+        reloadBasket()
     }
 }

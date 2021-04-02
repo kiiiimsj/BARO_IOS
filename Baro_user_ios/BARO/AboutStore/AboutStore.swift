@@ -53,7 +53,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
     private var getStoreInfoFromList : StoreList? = nil
     private var deleteStoreIndex = 0
     var bottomTabBarInfo = BottomTabBarController()
-
+    var complete = false
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +68,16 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         AboutStore.this = self
 //        self.view.addSubview(self.activityIndicator)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        if complete {
+            reloadAboutStore()
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
     func makeChildVC() {
         let storyBoard = UIStoryboard(name: "AboutStore", bundle: nil)
         menuController = storyBoard.instantiateViewController(identifier: "StoreMenuController")
@@ -80,6 +90,7 @@ class AboutStore : UIViewController, TopViewElementDelegate {
         contollers.append(menuController!)
         contollers.append(infoController!)
         changeVC(index: 0)
+        complete = true
     }
     
     func changeVC(index : Int){
@@ -227,6 +238,11 @@ class AboutStore : UIViewController, TopViewElementDelegate {
                 BottomTabBarController.activityIndicator.stopAnimating()
             }
         }
+    }
+    @objc func willEnterForeground() {
+
+        print("AboutStore","enter foreground")
+        reloadAboutStore()
     }
 }
 

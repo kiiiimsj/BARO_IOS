@@ -94,7 +94,6 @@ class BottomTabBarController: UIViewController {
     var currentStoreName : String = ""
     //listStore 관련 요소
     var beforeKind : String = "0"
-    var tempStoreName = ""
     
     //내부 뷰 사이즈 관련 요소
     var saveTopViewSize = CGSize()
@@ -123,6 +122,7 @@ class BottomTabBarController: UIViewController {
         isBasketExist()
         bottomTabBar.delegate = self
     }
+    
     func isBasketExist() {
         basket = UserDefaults.standard.value(forKey: "basket")
         if(basket != nil) {
@@ -451,7 +451,12 @@ class BottomTabBarController: UIViewController {
                 case orderDetailControllerIdentifier:
                     topBarViewControllerTitle.isHidden = false
                     topBarBackBtn.isHidden = false
-                    topBarViewControllerTitle.text = "\(currentStoreName)"
+                    let tempStoreName = UserDefaults.standard.value(forKey: "tempStoreName")
+                    if tempStoreName != nil {
+                        topBarViewControllerTitle.text = "\(tempStoreName as! String)"
+                    }else{
+                        topBarViewControllerTitle.text = "\(currentStoreName)"
+                    }
                     let controllerData = controller as! OrderDetailsController
                     showTime(controller: controllerData)
                     break
@@ -481,9 +486,9 @@ class BottomTabBarController: UIViewController {
                 case aboutStoreControllerIdentifier:
                     topBarFavoriteBtn.isHidden = false
                     topBarBackBtn.isHidden = false
-                    if tempStoreName != "" {
-                        topBarViewControllerTitle.text = "\(tempStoreName)"
-                        tempStoreName = ""
+                    let tempStoreName = UserDefaults.standard.value(forKey: "tempStoreName")
+                    if tempStoreName != nil {
+                        topBarViewControllerTitle.text = "\(tempStoreName as! String)"
                     }else{
                         topBarViewControllerTitle.text = "\(currentStoreName)"
                     }

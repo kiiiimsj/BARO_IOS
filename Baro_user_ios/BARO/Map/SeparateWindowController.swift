@@ -58,7 +58,7 @@ class SeparateWindowController : UIViewController {
                 ViewInBottomTabBar.moveFromOutSide = true
                 ViewInBottomTabBar.modalPresentationStyle = .fullScreen
                 ViewInBottomTabBar.modalTransitionStyle = .crossDissolve
-                ViewInBottomTabBar.tempStoreName = self.storeData.store_name
+                UserDefaults.standard.set(self.storeData.store_name, forKey: "tempStoreName")
                 guard let pvc = self.presentingViewController else {return}
                 self.dismiss(animated: false) {
                     pvc.present(ViewInBottomTabBar, animated: true, completion: nil)
