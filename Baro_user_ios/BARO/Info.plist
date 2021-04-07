@@ -49,14 +49,14 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-            <key>com.tpn.baro</key>
-            <dict>
-                <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-                <key>NSIncludesSubdomains</key>
-                <true/>
-            </dict>
-        </dict>
+			<key>com.tpn.baro</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
 	</dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>내 위치 확인을 위해 권한을 허용하시겠습니까? 매장으로부터의 거리를 위해 사용됩니다.</string>
