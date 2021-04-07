@@ -66,7 +66,7 @@ extension MainPageUltraStore : UICollectionViewDelegate, UICollectionViewDataSou
             cell.ultraDistance.text = String(Int(ultra.distance)!) + " m"
         }
        
-        cell.ultraImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/UltraNewImageStore.do?image_name="+ultra.store_image))
+        cell.ultraImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/UltraNewImageStore.do?image_name="+ultra.store_image), options: [.forceRefresh])
         cell.ultra_isOpen.layer.cornerRadius = 8
         if ultra.is_open == "Y" {
             cell.ultra_isOpen.text = "영업중"

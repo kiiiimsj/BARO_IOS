@@ -23,7 +23,7 @@ class AppStartDialog: UIViewController {
         notTodayBtn.layer.borderWidth = 1
         network.get(method: .get, url: urlMaker.findAdvertise) { [self] json in
             print(json)
-            imageView.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageEvent.do?image_name=" + json["event_image"].stringValue))
+            imageView.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageEvent.do?image_name=" + json["event_image"].stringValue), options: [.forceRefresh])
         }
     }
     @IBAction func tapNotToday(_ sender: Any) {

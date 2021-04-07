@@ -180,7 +180,7 @@ class OrderDetailsController : UIViewController {
     }
     func setMenuInfo() {
         self.menu_name.text = self.menu.menu_name
-        self.menu_image.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageMenu.do?store_id=\(self.menu.store_id)&image_name=\(self.menu.menu_image)"))
+        self.menu_image.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageMenu.do?store_id=\(self.menu.store_id)&image_name=\(self.menu.menu_image)"), options: [.forceRefresh])
         self.menu_price.text = "\(self.menu.menu_defaultprice)"
         self.menu_id = "\(self.menu.menu_id)"
         self.store_discount_label.text = "SALE \(self.discount_rate)%"

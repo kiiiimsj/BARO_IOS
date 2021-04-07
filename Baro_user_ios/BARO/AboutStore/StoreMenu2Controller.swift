@@ -64,7 +64,7 @@ extension StoreMenu2Controller : UICollectionViewDelegate,UICollectionViewDataSo
         cell.realPrice.text = String(data.menu_defaultprice * (100-discount_rate)/100)+"원"
 //        cell.menu_price.text  = String(Int(Float(data.menu_defaultprice) * (Float(100-discount_rate))/100))+"원"
         cell.menu_state.text = "품절"
-        cell.menu_picture.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageMenu.do?store_id="+String(data.store_id)+"&image_name="+String(data.menu_image)))
+        cell.menu_picture.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageMenu.do?store_id="+String(data.store_id)+"&image_name="+String(data.menu_image)), options: [.forceRefresh])
         if data.is_soldout == "N" {
             cell.menu_state.isHidden = true
         }else{
