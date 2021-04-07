@@ -106,7 +106,7 @@ extension OrderHistoryController : UICollectionViewDelegate, UICollectionViewDat
         if indexPath.section == 0 {
             let orderHistory = orderHistoryList[indexPath.item]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderHistoryCell", for: indexPath) as! OrderHistoryCell
-            cell.storeImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + String(orderHistory.store_image)))
+            cell.storeImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + String(orderHistory.store_image)), options: [.forceRefresh])
             cell.orderDateLabel.text = String(orderHistory.order_date)
             cell.orderStoreNameLabel.text = String(orderHistory.store_name)
             if orderHistory.order_state == "CANCEL" {

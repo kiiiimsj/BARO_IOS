@@ -64,7 +64,7 @@ extension MainPageType : UICollectionViewDelegate, UICollectionViewDataSource, U
         let type = typeList[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageTypeCell", for: indexPath) as! MainPageTypeCell
         cell.typeName.text = type.type_name
-        cell.typeImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageType.do?image_name=" + type.type_image))
+        cell.typeImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageType.do?image_name=" + type.type_image), options: [.forceRefresh])
       
         //클릭시
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))

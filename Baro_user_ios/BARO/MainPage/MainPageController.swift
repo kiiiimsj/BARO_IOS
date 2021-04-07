@@ -343,7 +343,7 @@ extension MainPageController : FSPagerViewDelegate , FSPagerViewDataSource {
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let event = eventList[index]
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        cell.imageView?.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageEvent.do?image_name=" + event.event_image))
+        cell.imageView?.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageEvent.do?image_name=" + event.event_image), options: [.forceRefresh])
 //        cell.imageView?.contentMode = .scaleAspectFit
 //        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goStore(_:))))
         return cell

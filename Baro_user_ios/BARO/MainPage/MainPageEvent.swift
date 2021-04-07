@@ -65,7 +65,7 @@ extension MainPageEvent : UICollectionViewDelegate, UICollectionViewDataSource, 
         let frame = cell.eventImage.frame
         self.frame = CGRect(x:0,y: 0, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
         cell.eventImage.frame = frame
-        cell.eventImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageEvent.do?image_name=" + event.event_image))
+        cell.eventImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageEvent.do?image_name=" + event.event_image), options: [.forceRefresh])
         cell.backgroundColor = UIColor.baro_main_color
         //cell클릭시
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))

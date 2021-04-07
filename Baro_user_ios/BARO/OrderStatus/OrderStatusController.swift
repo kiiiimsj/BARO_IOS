@@ -77,7 +77,7 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
         cell.orderStoreNameLabel.text = String(orderStatus.store_name)
         storePhone = orderStatus.store_phone
         cell.orderTotalPriceLabel.text = String(orderStatus.total_price.applyDiscountRate(discount_rate: orderStatus.discount_rate))
-        cell.orderStoreImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + orderStatus.store_image))
+        cell.orderStoreImage.kf.setImage(with: URL(string: "http://3.35.180.57:8080/ImageStore.do?image_name=" + orderStatus.store_image), options: [.forceRefresh])
         cell.orderInfo = orderStatus
         cell.timeLabel.text = orderStatus.order_date
         cell.makeStatus(state: orderStatus.order_state)
