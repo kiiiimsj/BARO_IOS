@@ -141,6 +141,9 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.showTime()
+        
         scrollView.addSubview(refreshControl)
         self.view.addSubview(self.activityIndicator)
         self.definesPresentationContext = true
