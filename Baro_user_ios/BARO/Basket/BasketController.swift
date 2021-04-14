@@ -87,10 +87,12 @@ class BasketController : UIViewController, TopViewElementDelegate{
                 self.couponDiallog = vc
                 self.present(vc, animated: true, completion: nil)
             }else{
+                
                 let vc = UIStoryboard.init(name: "Basket", bundle: nil).instantiateViewController(withIdentifier: "StoreNotOpen")
                 vc.modalPresentationStyle = .overFullScreen
                 vc.modalTransitionStyle = .crossDissolve
-                self.present(vc, animated: true, completion: nil)
+                
+                
             }
         }
         

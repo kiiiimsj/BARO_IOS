@@ -199,10 +199,24 @@ extension MyBootPayController: BootpayRequestProtocol, PaymentDialogDelegate {
             }
         }
         var iWantPay = true
-        if iWantPay == true {  // 재고가 있을 경우.
-            Bootpay.transactionConfirm(data: data) // 결제 승인
-        } else { // 재고가 없어 중간에 결제창을 닫고 싶을 경우
-            //Bootpay.dismiss() // 결제창 종료
+        netWork.get(method: .get, url: urlMaker.clarityIsOpen + String(storeId) ) { json in
+            if json["result"].boolValue {
+                iWantPay = true
+            }else{
+                iWantPay = false
+            }
+            if iWantPay == true {  // 재고가 있을 경우.
+                Bootpay.transactionConfirm(data: data) // 결제 승인
+            } else { // 재고가 없어 중간에 결제창을 닫고 싶을 경우
+                //Bootpay.dismiss() // 결제창 종료
+                let vc = UIStoryboard.init(name: "Basket", bundle: nil).instantiateViewController(withIdentifier: "StoreNotOpen")
+                vc.modalPresentationStyle = .overFullScreen
+                vc.modalTransitionStyle = .crossDissolve
+                self.dismiss(animated: false, completion: nil)
+                if BasketController.this != nil {
+                    BasketController.this!.present(vc, animated: true, completion: nil)
+                }
+            }
         }
     }
     // 결제 취소시 호출
