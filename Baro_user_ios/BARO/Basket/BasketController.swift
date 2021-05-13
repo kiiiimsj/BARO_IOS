@@ -91,7 +91,7 @@ class BasketController : UIViewController, TopViewElementDelegate{
                 let vc = UIStoryboard.init(name: "Basket", bundle: nil).instantiateViewController(withIdentifier: "StoreNotOpen")
                 vc.modalPresentationStyle = .overFullScreen
                 vc.modalTransitionStyle = .crossDissolve
-                
+                self.present(vc, animated: true, completion: nil)
                 
             }
         }
