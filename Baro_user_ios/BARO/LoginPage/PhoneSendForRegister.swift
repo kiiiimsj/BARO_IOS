@@ -39,7 +39,7 @@ class PhoneSendForRegister : UIViewController, DialogClickDelegate{
         sendPhoneToFireBaseBtn.layer.cornerRadius = 15
         backBtn.setImage(UIImage(named: "arrow_left")?.withRenderingMode(.alwaysTemplate), for: .normal)
         backBtn.tintColor = UIColor.white
-        Auth.auth().settings!.isAppVerificationDisabledForTesting = true
+        Auth.auth().settings!.isAppVerificationDisabledForTesting = false
         
         inputPhone.borderStyle = .none
         swipeRecognizer()
