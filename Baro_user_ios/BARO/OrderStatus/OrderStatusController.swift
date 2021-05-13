@@ -72,7 +72,7 @@ extension OrderStatusController : UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let orderStatus = orderStatusList[orderStatusList.count-indexPath.item-1]
+        let orderStatus = orderStatusList[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderStatusCell", for: indexPath) as! OrderStatusCell
         cell.orderStoreNameLabel.text = String(orderStatus.store_name)
         storePhone = orderStatus.store_phone
