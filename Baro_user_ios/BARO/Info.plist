@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>개인 맞춤 광고를 제공 수락</string>
+	<string>BARO에서 다양한 혜택 정보를 드리기 위해 데이터 접근 권한 동의를 요청합니다. 정보 보안 정책을 준수하여 정확하고 안전한 정보를 추천드리겠습니다!</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
