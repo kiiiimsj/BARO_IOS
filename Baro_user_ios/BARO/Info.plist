@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>BARO에서 다양한 혜택 정보를 드리기 위해 데이터 접근 권한 동의를 요청합니다. 정보 보안 정책을 준수하여 정확하고 안전한 정보를 추천드리겠습니다!</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -64,6 +62,8 @@
 	<string>내 위치 확인을 위해 권한을 허용하시겠습니까? 매장으로부터의 거리를 위해 사용됩니다.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>내 위치 확인을 위해 권한을 허용하시겠습니까? 매장으로부터의 거리를 위해 사용됩니다.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>BARO에서 다양한 혜택 정보를 드리기 위해 데이터 접근 권한 동의를 요청합니다. 정보 보안 정책을 준수하여 정확하고 안전한 정보를 추천드리겠습니다!</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NotoSansKR-Black.otf</string>
