@@ -101,9 +101,11 @@ class MyPageController : UIViewController {
         }
     }
     func setUserName() {
-        let user_name = "\(UserDefaults.standard.value(forKey: "user_name") as! String)"
+        let user_name = "\(UserDefaults.standard.value(forKey: "user_phone") as! String)"
         if user_name != "" {
-            userName?.text = "\(user_name)"
+            let firstIndex = user_name.index(user_name.endIndex, offsetBy: -4)
+            let lastIndex = user_name.index(user_name.endIndex, offsetBy: 0)
+            userName?.text = "\(user_name[firstIndex..<lastIndex])"
         }
         let user_email = "\(UserDefaults.standard.value(forKey: "user_email") as! String)"
         if user_email != "" {
