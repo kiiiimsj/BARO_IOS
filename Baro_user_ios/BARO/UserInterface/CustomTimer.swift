@@ -8,7 +8,7 @@
 import Foundation
 
 class CustomTimer {
-    static let RELOAD_TIME = "04:30"
+    static let RELOAD_TIME = "60:00"
     static let myTimer = DispatchQueue(label: "myTimer")
     var a = 0
     let mformatter = DateFormatter()
@@ -24,18 +24,18 @@ class CustomTimer {
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updatetime), userInfo: nil, repeats: true)
     }
     @objc func updatetime() {
-        let min = Int(mformatter.string(from: Date()))! % 15
+        let min = Int(mformatter.string(from: Date()))!
         let sec = Int(sformatter.string(from: Date()))!
         var realSec = 0
         var realMin = 0
         if sec == 0 {
 //            print(String(14-min+1)+":"+String(0))
-            realMin = 14-min+1
+            realMin = 60-min
 //            CustomTimer.timersTime = String(14-min+1)+":"+String(0)
         }else{
 //            print(String(14-min)+":"+String(60-sec))
 //            CustomTimer.timersTime = String(14-min)+":"+String(60-sec)
-            realMin = 14-min
+            realMin = 59-min
             realSec = 60 - sec
         }
         var timeString =  ""
