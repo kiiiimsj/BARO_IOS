@@ -167,7 +167,7 @@ class RegisterPageController: UIViewController {
         if (nameInputError.isHidden && passInputError.isHidden && passCheckInputError.isHidden && emailInputError.isHidden
                 && nameInput.text != "" && passInput.text != "" && passCheckInput.text != "" && emailInput.text != "") {
             if let email = emailInput.text, let nick = nameInput.text, let pass = passInput.text {
-                let param = ["phone":"\(self.phoneNumber)","email":"\(email)","nick":"\(nick)","pass":"\(pass)","marketing":"\(marketing)"]
+                let param = ["phone":"\(self.phoneNumber)","email":"\(email)","pass":"\(pass)","marketing":"\(marketing)"]
                 network.post(method: .post, param: param, url: self.urlMaker.signUpURL) {
                     json in
                     if json["result"].boolValue {
