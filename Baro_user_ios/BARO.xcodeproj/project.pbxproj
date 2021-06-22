@@ -21,6 +21,7 @@
 		043DACB3253DA69200C70102 /* MainPageUltraStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */; };
 		043DACB7253DABFB00C70102 /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACB6253DABFB00C70102 /* EventListModel.swift */; };
 		043DACBB253DAC5600C70102 /* UrlMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DACBA253DAC5600C70102 /* UrlMaker.swift */; };
+		04583811264E5F92001EE85E /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04583810264E5F92001EE85E /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		046B7A3425B1A416001B8751 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 046B7A3325B1A416001B8751 /* GoogleService-Info.plist */; };
 		048A0BD82540117B007D4FD3 /* MainPageNewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A0BD72540117B007D4FD3 /* MainPageNewStore.swift */; };
 		048A0BDB25401194007D4FD3 /* MainPageNewStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A0BDA25401194007D4FD3 /* MainPageNewStoreCell.swift */; };
@@ -185,6 +186,7 @@
 		043DACB2253DA69200C70102 /* MainPageUltraStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageUltraStoreCell.swift; sourceTree = "<group>"; };
 		043DACB6253DABFB00C70102 /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
 		043DACBA253DAC5600C70102 /* UrlMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlMaker.swift; sourceTree = "<group>"; };
+		04583810264E5F92001EE85E /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		046B7A3325B1A416001B8751 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		048A0BD72540117B007D4FD3 /* MainPageNewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageNewStore.swift; sourceTree = "<group>"; };
 		048A0BDA25401194007D4FD3 /* MainPageNewStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageNewStoreCell.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04583811264E5F92001EE85E /* AppTrackingTransparency.framework in Frameworks */,
 				3F1C4A5A259C44A5002C5B5D /* KituraWebSocketClient in Frameworks */,
 				AA117C3D03D67B360DB8C173 /* Pods_BARO.framework in Frameworks */,
 			);
@@ -428,6 +431,7 @@
 		133460D23A99534FEB59747D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04583810264E5F92001EE85E /* AppTrackingTransparency.framework */,
 				ED03160DBC46E11745206C30 /* Pods_BARO.framework */,
 			);
 			name = Frameworks;
@@ -1170,7 +1174,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.7;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1231,7 +1235,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.7;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

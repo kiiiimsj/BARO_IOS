@@ -10,6 +10,8 @@ import Alamofire
 import SwiftyJSON
 import NMapsMap
 import FSPagerView
+import AdSupport
+import AppTrackingTransparency
 
 class NewMainPageController: UIViewController, CLLocationManagerDelegate {
     public static let TAG = "MainPageController"
@@ -157,6 +159,10 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
         collectionview.delegate = self
         collectionview.dataSource = self
 
+        if #available(iOS 14, *) {
+            requestPermission()
+        }
+        
         locationManager.startUpdatingLocation()
         
         let coor = locationManager.location?.coordinate
@@ -427,6 +433,41 @@ class NewMainPageController: UIViewController, CLLocationManagerDelegate {
         view.window?.layer.add(transition, forKey: kCATransition)
         self.present(ViewInBottomTabBar, animated: true, completion: nil)
 //        navigationController?.pushViewController(ViewInBottomTabBar, animated: false)
+    }
+    @available(iOS 14, *)
+    func requestPermission() {
+        print("intoPermission")
+        ATTrackingManager.requestTrackingAuthorization { status in
+            switch status {
+            case .authorized:
+                // Tracking authorization dialog was shown
+                // and we are authorized
+                print("Authorized")
+                
+                // Now that we are authorized we can get the IDFA
+                print(ASIdentifierManager.shared().advertisingIdentifier)
+            case .denied:
+                // Tracking authorization dialog was
+                // shown and permission is denied
+                print("Denied")
+            case .notDetermined:
+                // Tracking authorization dialog has not been shown
+                print("Not Determined")
+            case .restricted:
+                print("Restricted")
+            @unknown default:
+                print("Unknown")
+            }
+        }
+    }
+    func gotoAppPrivacySettings() {
+        guard let url = URL(string: UIApplication.openSettingsURLString),
+            UIApplication.shared.canOpenURL(url) else {
+                assertionFailure("Not able to open App privacy settings")
+                return
+        }
+
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }
 
